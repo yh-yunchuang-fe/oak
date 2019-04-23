@@ -1,0 +1,53 @@
+{
+  "name": "oak",
+  "version": "0.0.1",
+  "description": "A Wechat App UI Lib.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env NODE_ENV=development gulp build --gulpfile __build__/gulpfile.js",
+    "new": "node __build__/create"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+git@github.com:yh-yunchuang-fe/oak.git"
+  },
+  "keywords": [
+    "wechat",
+    "weapp",
+    "ui"
+  ],
+  "author": "Mael.Lia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yh-yunchuang-fe/oak/issues"
+  },
+  "homepage": "https://github.com/yh-yunchuang-fe/oak#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-core": "^6.26.3",
+    "cross-env": "^5.2.0",
+    "del": "^4.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "fs-extra": "^7.0.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-eslint": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-less": "^4.0.1",
+    "gulp-print": "^5.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-typescript": "^5.0.1",
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-util": "^3.0.8",
+    "gulp-wechat-weapp-src-alisa": "^1.0.0",
+    "typescript": "^3.4.4"
+  }
+}
