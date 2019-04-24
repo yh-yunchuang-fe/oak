@@ -14,12 +14,12 @@ npm install
 npm start
 ```
 
-### Product Build
+### Build
 ```code
 npm run build
 ```
 
-### new
+### New
 ```code
 npm run new `ComponentName`
 ```
