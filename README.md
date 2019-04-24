@@ -25,16 +25,19 @@ npm run new `ComponentName`
 ```
 
 ## TODO
-- [] Icon
-- [] Button
-- [] Text
-- [] Tips
-- [] Feeds
-- [] List
-- [] Avatar
-- [] From
-- [] SearchBar
-- [] Tabs
+[] Icon
+[] Button
+[] Text
+[] Tips
+[] Feeds 
+[] List
+[] Avatar
+[] From
+[] SearchBar
+[] Tabs
+[] Loading
+[] Tags
+
 
 ## License
 MIT © YongHui
