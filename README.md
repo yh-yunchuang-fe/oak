@@ -1,6 +1,6 @@
 # OAKUI
 > A Wechat App UI Lib.
-
+<br/>
 
 ## Getting Started
 
@@ -25,6 +25,16 @@ npm run new `ComponentName`
 ```
 
 ## TODO
+- [] Icon
+- [] Button
+- [] Text
+- [] Tips
+- [] Feeds
+- [] List
+- [] Avatar
+- [] From
+- [] SearchBar
+- [] Tabs
 
 ## License
 MIT © YongHui
