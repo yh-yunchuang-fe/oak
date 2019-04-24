@@ -29,9 +29,10 @@ const path = {
 const DEST = '../dist';
 
 function _join(dirname) {
-    return Path.join(process.cwd(), 'src', dirname);
+    return Path.join(__dirname, '../src', dirname);
 }
 
+console.log(_join('style'));
 const uglifyOpts = {
     // mangle: false,
     compress: {

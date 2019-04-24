@@ -5,6 +5,7 @@ Component({
         innerText: {
             type: String,
             value: 'default value',
+            optionalTypes: [String],
         }
     },
     data: {

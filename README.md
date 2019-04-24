@@ -26,7 +26,7 @@ npm run new `ComponentName`
 
 ## TODO
 
-- [ ] Icon
+- [x] Icon
 - [ ] Button
 - [ ] Text
 - [ ] Tips

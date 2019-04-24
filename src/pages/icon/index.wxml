@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="icon-list">
+        <view class="icon"  wx:for="{{icons}}"  wx:key="{{index}}">
+            <c-icon name="{{item.font_class}}" color="#FD7622" />
+            <view class="name">{{item.font_class}}</view>
+        </view>
+    </view>
+</view>

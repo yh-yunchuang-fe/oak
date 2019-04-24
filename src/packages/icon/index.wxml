@@ -1,0 +1,2 @@
+<view class="icon-layout icon-{{name}}" style="font-size: {{size}};color: {{color}};">
+</view>

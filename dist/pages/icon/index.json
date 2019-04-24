@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "YHUI",
+    "navigationBarTitleText": "ICON List",
     "usingComponents": {
         "c-icon": "/packages/icon/index"
     }
