@@ -26,5 +26,9 @@ Component({
         }
     },
     data: {},
-    methods: {}
+    methods: {
+        test: function () {
+            console.log(this);
+        }
+    }
 });

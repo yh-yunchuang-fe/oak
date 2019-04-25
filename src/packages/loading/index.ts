@@ -1,4 +1,3 @@
-
 Component({
     properties: {
         // show or hide
@@ -29,5 +28,8 @@ Component({
     data: {
     },
     methods: {
+        test() {
+            console.log(this)
+        }
     }
 })

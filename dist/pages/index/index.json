@@ -2,6 +2,7 @@
     "navigationBarTitleText": "YHUI",
     "usingComponents": {
         "oak-icon": "/packages/icon/index",
-        "oak-loading": "/packages/loading/index"
+        "oak-loading": "/packages/loading/index",
+        "oak-button": "/packages/button/index"
     }
 }

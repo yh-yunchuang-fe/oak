@@ -28,16 +28,17 @@ type PropertyType =
 
 declare interface PropertyOption {
   /** 属性类型 */
+
   type: PropertyType;
   /** 属性初始值 */
-  value: any;
+  value?: any;
   /** 属性值被更改时的响应函数 */
   observer?(
     newVal?: any,
     oldVal?: any,
     changedPath?: Array<string | number>,
   ): void;
-  optionalTypes: PropertyType[];
+  optionalTypes?: PropertyType[];
 }
 
 declare interface TriggerEventOption {
@@ -65,12 +66,6 @@ declare interface WxComponent extends BaseComponent {
   id: string;
   /** 节点dataset */
   dataset: string;
-  /** 组件数据，**包括内部数据和属性值** */
-  data: object;
-  /** 组件数据，**包括内部数据和属性值**（与 `data` 一致） */
-  properties: {
-    [propertyName: string]: PropertyOption;
-  };
 
   /** 设置data并执行视图层渲染 */
   setData(
@@ -91,6 +86,7 @@ declare interface WxComponent extends BaseComponent {
   /** 创建一个 SelectorQuery 对象，选择器选取范围为这个组件实例内 */
   createSelectorQuery(): wx.SelectorQuery;
   /** 创建一个 IntersectionObserver 对象，选择器选取范围为这个组件实例内 */
+
   createIntersectionObserver(
     options: wx.CreateIntersectionObserverOption,
   ): wx.IntersectionObserver;
@@ -132,6 +128,7 @@ declare interface PageLifetimes {
    * 页面隐藏/切入后台时触发。 如 `navigateTo` 或底部 `tab` 切换到其他页面，小程序切入后台等。
    */
   hide?(this: Page.PageInstance): void;
+
   /** 页面生命周期回调—监听页面尺寸变化
    *
    * 所在页面尺寸变化时执行
@@ -165,7 +162,7 @@ declare interface ComponentOptions {
 declare interface BaseComponent extends ComponentLifetimes {
   /** 组件的对外属性，是属性名到属性设置的映射表 */
   properties?: {
-    [propertyName: string]: PropertyOption;
+    [propertyName: string]: PropertyOption | PropertyType;
   };
   /** 组件的内部数据，和 `properties` 一同用于组件的模板渲染 */
   data?: object;
@@ -173,7 +170,7 @@ declare interface BaseComponent extends ComponentLifetimes {
   observers?: object;
   /** object组件的方法，包括事件响应函数和任意的自定义方法，关于事件响应函数的使用，参见 [组件事件](events.md) */
   methods?: {
-    [methodName: string]: (this: WxComponent) => any;
+    [methodName: string]: (this: WxComponent, ...args: any[]) => any;
   };
   /** 类似于mixins和traits的组件间代码复用机制，参见 [behaviors](behaviors.md) */
   behaviors?: string[];
@@ -211,3 +208,8 @@ declare interface BaseComponent extends ComponentLifetimes {
 declare function Component(
   /** 自定义组件注册参数 */ options: BaseComponent,
 ): void;
+
+declare function Behavior(
+  /** 自定义组件注册参数 */ options: BaseComponent,
+): string;
+

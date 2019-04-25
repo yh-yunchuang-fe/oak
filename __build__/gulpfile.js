@@ -44,6 +44,7 @@ const uglifyOpts = {
 const aliasConfig = {
     'Style': _join('style'),
     'WXS': _join('/packages/wxs'),
+    'Mixins': _join('/packages/mixins'),
 };
 
 function sass() {

@@ -2,4 +2,5 @@
 <view class="container">
     <navigator class='link' url='/pages/icon/index'>ICONS</navigator>
     <oak-loading isShow />
+    <oak-button></oak-button>
 </view>
