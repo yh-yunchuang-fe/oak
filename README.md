@@ -34,7 +34,7 @@ npm run new `ComponentName`
 - [ ] From
 - [ ] SearchBar
 - [ ] Tabs
-- [ ] Loading
+- [x] Loading
 - [ ] Tags
 
 
