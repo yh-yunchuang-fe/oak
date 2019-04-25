@@ -1,6 +1,7 @@
 {
     "navigationBarTitleText": "YHUI",
     "usingComponents": {
-        "c-icon": "/packages/icon/index"
+        "oak-icon": "/packages/icon/index",
+        "oak-loading": "/packages/loading/index"
     }
 }

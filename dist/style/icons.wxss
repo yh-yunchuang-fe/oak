@@ -440,17 +440,3 @@
 
 .icon-money:before {
   content: "\e627"; }
-
-.oak-icon {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 32rpx;
-  color: #333; }
-  .oak-icon.icon_image {
-    width: 32rpx;
-    height: 32rpx; }
-  .oak-icon__image {
-    width: 100%;
-    height: 100%; }

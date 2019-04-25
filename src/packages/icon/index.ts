@@ -10,16 +10,23 @@ Component({
         // icon color
         color: {
             type: String,
-            value: '#333',
+            value: '',
             optionalTypes: [String],
         },
         // icon size
         size: {
             type: String,
-            value: '32rpx',
+            value: '',
+            optionalTypes: [String],
+        },
+        // icon classPrefix
+        classPrefix: {
+            type: String,
+            value: 'icon',
             optionalTypes: [String],
         },
     },
+    externalClasses: ['c_class'],
     data: {
     },
     methods: {

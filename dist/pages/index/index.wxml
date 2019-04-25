@@ -1,4 +1,5 @@
 <!--index.wxml-->
 <view class="container">
     <navigator class='link' url='/pages/icon/index'>ICONS</navigator>
+    <oak-loading isShow />
 </view>

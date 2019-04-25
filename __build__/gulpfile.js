@@ -42,7 +42,8 @@ const uglifyOpts = {
 
 // 路径别名配置
 const aliasConfig = {
-    Style: _join('style'),
+    'Style': _join('style'),
+    'WXS': _join('/packages/wxs'),
 };
 
 function sass() {

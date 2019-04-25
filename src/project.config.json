@@ -6,11 +6,6 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
 	"projectname": "YHWeUI",
-	"scripts": {
-		"beforeCompile": "npm run compile",
-		"beforePreview": "npm run compile",
-		"beforeUpload": "npm run compile"
-	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,

@@ -2,24 +2,22 @@
 > A Wechat App UI Lib.
 <br/>
 
-## Getting Started
+## Development
 
-### Install
+### get start
 ```code
-npm install
+$ git clone git@github.com:yh-yunchuang-fe/oak.git
+$ cd oak
+$ npm install
+$ npm start
 ```
 
-### Start
-```code
-npm start
-```
-
-### Build
+### build
 ```code
 npm run build
 ```
 
-### New
+### new
 ```code
 npm run new `ComponentName`
 ```
