@@ -24,7 +24,7 @@ npm run new `ComponentName`
 
 ## TODO
 
-- [x] [Icon](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/icon/README.md)
+- [x] [Icon](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/icon/)
 - [ ] Button
 - [ ] Text
 - [ ] Tips
@@ -34,7 +34,7 @@ npm run new `ComponentName`
 - [ ] From
 - [ ] SearchBar
 - [ ] Tabs
-- [x] [Loading](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/loading/README.md)
+- [x] [Loading](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/loading/)
 - [ ] Tags
 
 
