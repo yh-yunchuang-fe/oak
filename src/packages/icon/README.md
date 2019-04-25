@@ -12,10 +12,10 @@ import in `page.json`:
 ```
 use in `page.wxml`
 ```html
-    <oak-icon isShow />
-    <oak-icon isShow color="#fff" />
-    <oak-icon isShow size="small" />
-    <oak-icon isShow position="fixed" />
+    <oak-icon name='wechat' />
+    <oak-icon name='https://xxxx.com/your/icon/name' />
+    <oak-icon name='wechat' size="60rpx" />
+    <oak-icon name='wechat' color="#000" />
 ```
 
 ### APIS
@@ -24,7 +24,7 @@ use in `page.wxml`
 |-----------|-----------|-----------|-------------|
 | name | can be set to icon name or image url | `String` | none |
 | size | Size of the icon  | `String` | `32rpx` |
-| classPrefix | Class prefix of then icon | `String` | `icon` |
+| classPrefix | Class prefix of the icon | `String` | `icon` |
 | color | Color of the icon  | `String` | `#333` |
 
 
