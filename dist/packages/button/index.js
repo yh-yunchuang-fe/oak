@@ -1,15 +1,38 @@
 "use strict";
 exports.__esModule = true;
 var basic_1 = require("../mixins/basic");
+var open_type_1 = require("../mixins/open-type");
 Component({
-    behaviors: [basic_1["default"]],
+    behaviors: [basic_1["default"], open_type_1["default"]],
     properties: {
-        // 这里定义了innerText属性，属性值可以在组件使用时指定
-        innerText: {
+        size: {
             type: String,
-            value: 'default value',
+            value: 'default',
             optionalTypes: [String]
-        }
+        },
+        type: {
+            type: String,
+            value: 'default',
+            optionalTypes: [String]
+        },
+        lang: {
+            type: String,
+            value: 'en',
+            optionalTypes: [String]
+        },
+        shape: String,
+        icon: String,
+        sessionFrom: String,
+        sendMessageTitle: String,
+        sendMessagePath: String,
+        sendMessageImg: String,
+        showMessageCard: Boolean,
+        appParameter: String,
+        plain: Boolean,
+        loading: Boolean,
+        loaderColor: String,
+        loaderSize: String,
+        disabled: Boolean
     },
     data: {
         // 这里是一些组件内部数据
@@ -17,5 +40,6 @@ Component({
     },
     ready: function () {
     },
-    methods: {}
+    methods: {},
+    externalClasses: ['hover-class', 'loading-class']
 });

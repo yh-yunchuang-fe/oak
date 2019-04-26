@@ -1,9 +1,13 @@
 $bordercolor:           rgba(221, 221, 221, .5);
-$border:                1rpx solid rgba(221, 221, 221, .5);
+$border:                1rpx solid rgba(221, 221, 221, .8);
 
 $stable-bg:             #f8f8f8;
 $default-bg:            #fff;
 $mask-bg:               rgba(0, 0, 0, .7);
+$highligh-bg:           #FD7622;
+$danger-bg:             #FF4600;
+$active-bg:             #FEF1E8;
+
 
 $txt-default:           #333;
 $txt-info:              #999;
@@ -12,6 +16,7 @@ $txt-warning:           #FF0500;
 $txt-highlight:         #FD7622;
 $txt-link:              #00a5e0;
 $txt-feeds:             #314c83;
+$txt-white:               #fff;
 
 $icon-line-height:      1;
 $line-height-base:      1.5;
@@ -20,17 +25,25 @@ $line-height-txt:       24rpx;
 $txt-padding-top:       20rpx;
 $txt-padding-bottom:    20rpx;
 
-$font-size-icon:        32rpx;
-$font-size-base:        24rpx;
-$font-size-title:       16px;
-$font-size-h1:          18px;
-$font-size-title-lg:    17px;
-$font-size-info:        16px;
-$font-size-sub:         14px;
-$font-size-tips:        12px;
+$font-size-icon:            32rpx;
+$font-size-base:            24rpx;
+$font-size-btn-block:       36rpx;
+$font-size-btn-large:       30rpx;
+$font-size-btn-default:     26rpx;
+$font-size-btn-small:       22rpx;
+$font-size-title:           16px;
+$font-size-h1:              18px;
+$font-size-title-lg:        17px;
+$font-size-info:            16px;
+$font-size-sub:             14px;
+$font-size-tips:            12px;
 
-$wrap-padding:          15px;
-$wrap-padding-s:        10px;
+$wrap-padding:                  30rpx;
+$wrap-padding-s:                20rpx;
+$btn-block-lr-padding:          34rpx;
+$btn-large-lr-padding:          28rpx;
+$btn-default-lr-padding:        24rpx;
+$btn-small-lr-padding:          20rpx;
 
 $wrap-link-padding:     30px;
 $wrap-link-padding-s:   25px;
@@ -39,8 +52,8 @@ $border-radius-base:    4rpx;
 $border-radius-lg:      8rpx;
 $border-radius-max:     200rpx;
 
-$active-bg:             #e5e6e7;
-$active-opacity:        .5;
+$active-opacity:                .5;
+$btn-disabled-opacity:          .65;
 
 $poptips-height:                        40rpx;
 $poptips-bg:                            rgba(0,0,0,.6);
@@ -51,7 +64,6 @@ $tab-current-color:                     #FD7622;
 $tab-current-border:                    #FD7622;
 
 // Z-Indexes
-// -------------------------------
 $z-index-placehold:                     -1;
 $z-index-img:                           1;
 $z-index-switch:                        2;
@@ -63,3 +75,9 @@ $z-index-tooltips:                      99;
 $z-index-head:                          100;
 $z-index-poptips:                       999;
 $z-index-overlay:                       9999;
+
+
+$button-block-height:                   80rpx;
+$button-large-height:                   70rpx;
+$button-default-height:                 56rpx;
+$button-small-height:                   40rpx;

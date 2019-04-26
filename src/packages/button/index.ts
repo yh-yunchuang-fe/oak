@@ -1,13 +1,37 @@
 import BasicBehavior from 'Mixins/basic';
+import openType from 'Mixins/open-type';
+
 Component({
-    behaviors: [BasicBehavior],
+    behaviors: [BasicBehavior, openType],
     properties: {
-        // 这里定义了innerText属性，属性值可以在组件使用时指定
-        innerText: {
+        size: {
             type: String,
-            value: 'default value',
+            value: 'default',
             optionalTypes: [String],
-        }
+        },
+        type: {
+            type: String,
+            value: 'default',
+            optionalTypes: [String],
+        },
+        lang: {
+            type: String,
+            value: 'en',
+            optionalTypes: [String],
+        },
+        shape: String,
+        icon: String,
+        sessionFrom: String,
+        sendMessageTitle: String,
+        sendMessagePath: String,
+        sendMessageImg: String,
+        showMessageCard: Boolean,
+        appParameter: String,
+        plain: Boolean,
+        loading: Boolean,
+        loaderColor: String,
+        loaderSize: String,
+        disabled: Boolean,
     },
     data: {
         // 这里是一些组件内部数据
@@ -16,5 +40,6 @@ Component({
     ready() {
     },
     methods: {
-    }
+    },
+    externalClasses: ['hover-class', 'loading-class'],
 })

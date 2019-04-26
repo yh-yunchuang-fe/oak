@@ -9,7 +9,7 @@ Component({
         // loading size
         size: {
             type: String,
-            value: 'normal',
+            value: 'default',
             optionalTypes: [String]
         },
         // position

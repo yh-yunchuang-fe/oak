@@ -37,6 +37,10 @@ declare namespace event {
        * 事件绑定的当前组件
        */
       currentTarget: Target;
+      /**
+       * 额外的信息
+       */
+      detail: any;
   }
 
   /**
@@ -121,3 +125,4 @@ declare namespace event {
       currentTarget: never;
   }
 }
+

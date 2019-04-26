@@ -3,8 +3,8 @@
 .oak-loading {
     display: inline-block;
     position: relative;
-    width: 64rpx;
-    height: 64rpx;
+    width: 40rpx;
+    height: 40rpx;
     box-sizing: border-box;
     vertical-align: middle;
 
@@ -32,33 +32,31 @@
         box-sizing: border-box;
         display: block;
         position: absolute;
-        width: 51rpx;
-        height: 51rpx;
-        margin: 6rpx;
-        border: 6rpx solid transparent;
+        width: 30rpx;
+        height: 30rpx;
+        margin: 4rpx;
+        border: 2rpx solid transparent;
         border-radius: 50%;
         animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
         border-top-color: #FD7622;
     }
 
     &.small {
-        width: 40rpx;
-        height: 40rpx;
+        width: 30rpx;
+        height: 30rpx;
         view {
-            width: 31rpx;
-            height: 31rpx;
-            margin: 4rpx;
-            border-width: 4rpx;
+            width: 20rpx;
+            height: 20rpx;
         }
     }
 
     &.large {
-        width: 84rpx;
-        height: 84rpx;
+        width: 54rpx;
+        height: 54rpx;
         view {
-            width: 71rpx;
-            height: 71rpx;
-            border-width: 8rpx;
+            width: 44rpx;
+            height: 44rpx;
+            border-width: 4rpx;
         }
     }
 

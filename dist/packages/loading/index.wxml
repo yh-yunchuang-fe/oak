@@ -4,10 +4,10 @@
 <view class="{{ Utils.classNames('oak-loading', {small: size === 'small', large: size === 'large', fixed: position === 'fixed', absolute: position === 'absolute'} )}}">
     <view class='oak-loading-v1'
         style="border-top-color: {{color}};"></view>
-    <view class='oak-loading-v2'
+    <view class='oak-loading-v2 loader-color'
         style="border-top-color: {{color}};"></view>
-    <view class='oak-loading-v3'
+    <view class='oak-loading-v3 loader-color'
         style="border-top-color: {{color}};"></view>
-    <view class='oak-loading-v4'
+    <view class='oak-loading-v4 loader-color'
         style="border-top-color: {{color}};"></view>
 </view>

@@ -7,3 +7,10 @@
   color: #333;
   line-height: 70rpx;
   font-size: 24rpx; }
+
+.row {
+  margin: 10rpx;
+  line-height: 0; }
+
+oak-button {
+  margin-right: 20rpx; }

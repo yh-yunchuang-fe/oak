@@ -9,7 +9,7 @@ Component({
          // loading size
          size: {
             type: String,
-            value: 'normal', // normal, small, large
+            value: 'default', // default, small, large
             optionalTypes: [String],
         },
         // position
@@ -31,5 +31,5 @@ Component({
         test() {
             console.log(this)
         }
-    }
+    },
 })
