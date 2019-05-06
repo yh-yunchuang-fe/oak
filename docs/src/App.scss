@@ -1,16 +1,14 @@
 #root {}
 
 .layout {
-    height: 100vh;
-    width: 100vw;
+    position: relative;
     color: #333;
 }
 
 .header {
-    position: relative;
     padding: 0 50px;
     background: #fff;
-    // border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     display: flex;
     align-items: center;
     justify-content: center;
