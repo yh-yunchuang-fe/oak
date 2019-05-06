@@ -20,6 +20,8 @@
   .header a {
     display: block;
     color: inherit; }
+  .header .github {
+    width: 40px; }
 
 .doc-body {
   padding-top: 20px;
