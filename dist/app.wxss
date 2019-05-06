@@ -1,9 +1,7 @@
 /**app.wxss**/
 .container {
-    min-height: 100vh;
-}
+  min-height: 100vh; }
 
 .h3 {
-    padding: 20rpx;
-    font-size: 30rpx;
-}
+  padding: 20rpx;
+  font-size: 30rpx; }

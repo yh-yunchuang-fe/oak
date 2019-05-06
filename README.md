@@ -12,9 +12,21 @@ $ npm install
 $ npm start
 ```
 
+```code
+$ git clone git@github.com:yh-yunchuang-fe/oak.git
+$ cd oak
+$ npm install
+$ npm start
+
+// docs start
+ $ npm run docs:dev
+```
+
 ### build
 ```code
-npm run build
+$ npm run build // component build
+
+$ npm run docs // docs build & publish
 ```
 
 ### new
@@ -25,10 +37,10 @@ npm run new `ComponentName`
 ## TODO
 
 - [x] [Icon](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/icon/)
-- [ ] Button
+- [x] Button(https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/button/)
 - [ ] Text
 - [ ] Tips
-- [ ] Feeds 
+- [ ] Feeds
 - [ ] List
 - [ ] Avatar
 - [ ] From
@@ -36,7 +48,6 @@ npm run new `ComponentName`
 - [ ] Tabs
 - [x] [Loading](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/loading/)
 - [ ] Tags
-
 
 ## License
 MIT © YongHui

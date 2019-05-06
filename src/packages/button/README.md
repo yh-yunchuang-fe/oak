@@ -1,4 +1,4 @@
-# button
+# Button 按钮
 
 ### Usage
 
@@ -12,7 +12,7 @@ import in `page.json`:
 ```
 use in `page.wxml`
 ```html
-    <oak-button isShow />
+<oak-button isShow />
 ```
 
 ### APIS

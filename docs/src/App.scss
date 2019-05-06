@@ -1,0 +1,58 @@
+#root {}
+
+.layout {
+    height: 100vh;
+    width: 100vw;
+    color: #333;
+}
+
+.header {
+    position: relative;
+    padding: 0 50px;
+    background: #fff;
+    // border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 2px 8px #f0f1f2;
+    z-index: 1;
+
+    h2 {
+        margin: 0;
+        padding: 0;
+        flex: 1;
+    }
+
+    a {
+        display: block;
+        color: inherit;
+    }
+
+    .github {
+        width: 40px;
+    }
+}
+
+.doc-body {
+    padding-top: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.doc-content {
+    padding: 0 30px 30px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #0d1a26;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    background-color: #fff;
+    min-height: auto;
+
+    @import './markdown.scss';
+
+}

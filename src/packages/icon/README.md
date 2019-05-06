@@ -1,4 +1,4 @@
-# Icon
+# Icon 图标
 
 ### Usage
 
@@ -12,10 +12,10 @@ import in `page.json`:
 ```
 use in `page.wxml`
 ```html
-    <oak-icon name='wechat' />
-    <oak-icon name='https://xxxx.com/your/icon/name' />
-    <oak-icon name='wechat' size="60rpx" />
-    <oak-icon name='wechat' color="#000" />
+<oak-icon name='wechat' />
+<oak-icon name='https://xxxx.com/your/icon/name' />
+<oak-icon name='wechat' size="60rpx" />
+<oak-icon name='wechat' color="#000" />
 ```
 
 ### APIS

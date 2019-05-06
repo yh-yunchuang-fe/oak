@@ -2,6 +2,9 @@
 > A Wechat App UI Lib.
 <br/>
 
+
+<p>this is p<p>
+
 ## Development
 
 ### get start
@@ -24,18 +27,18 @@ npm run new `ComponentName`
 
 ## TODO
 
-- [x] Icon
-- [ ] Button
-- [ ] Text
-- [ ] Tips
-- [ ] Feeds
-- [ ] List
-- [ ] Avatar
-- [ ] From
-- [ ] SearchBar
-- [ ] Tabs
-- [ ] Loading
-- [ ] Tags
+- [x]  Icon
+- [ ]  Button
+- [ ]  Text
+- [ ]  Tips
+- [ ]  Feeds
+- [ ]  List
+- [ ]  Avatar
+- [ ]  From
+- [ ]  SearchBar
+- [ ]  Tabs
+- [ ]  Loading
+- [ ]  Tags
 
 
 ## License
