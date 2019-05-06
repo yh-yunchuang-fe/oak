@@ -15,5 +15,7 @@
 		"autoAudits": false
 	},
 	"appid": "wx8d9cb6e54efdbaa9",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {}
 }

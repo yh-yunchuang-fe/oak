@@ -1,23 +1,114 @@
 # Button 按钮
+用于承载用户的点击操作
 
-### Usage
+## 使用
 
-Here is a quick example to get you started, it's all you need:
+在页面 `json` 中引入按钮组件：
 
-import in `page.json`:
 ```json
+// import in `page.json`:
 "usingComponents": {
   "oak-button": "path/to/your/oakui/button/index"
 }
 ```
-use in `page.wxml`
+
+在页面使用
 ```html
-<oak-button isShow />
+<!-- use in `page.wxml` -->
+<oak-button />
+```
+
+
+## 代码演示
+### 按钮类型
+按钮类型有四种：主要按钮、普通按钮、危险按钮、信息按钮。默认为普通按钮
+```html
+<oak-button>Default</oak-button>
+<oak-button type="primary">Primary</oak-button>
+<oak-button type="danger">Danger</oak-button>
+<oak-button type="info">Info</oak-button>
+```
+### 按钮大小
+按钮大小有 大、中、小以及块状四种尺寸。块状按钮宽度为父元素100%。
+通过设置`size`属性来控制，默认为中(`Default`)。
+```html
+<oak-button size='block'
+            type="primary">Block</oak-button>
+<oak-button size='large'>Large</oak-button>
+<oak-button type="danger">Default</oak-button>
+<oak-button size='small'
+            type="info">Small</oak-button>
+```
+### 图标按钮
+在按钮中嵌入图标有两种方式：
+
+1. 设置 `icon` 属性，传入icon的名称。
+2. 直接使用 `<Icon />` 组件。
+```html
+ <oak-button icon="downloader"
+            type="primary"
+            size="large">Downloader</oak-button>
+<oak-button icon="search">Search</oak-button>
+<oak-button icon="wechat"
+            size='small'
+            type="info">Wechat</oak-button>
+<oak-button size="block"><Icon name='cart' /> 使用icon组件</oak-button>
+```
+
+### 按钮透明
+设置`plain`属性可以使按钮的内容反色，背景透明。
+```html
+<oak-button plain>Default</oak-button>
+<oak-button plain
+            type="primary">Primary</oak-button>
+<oak-button plain
+            type="danger">Danger</oak-button>
+<oak-button plain
+            type="info">Info</oak-button>
+```
+
+### 按钮不可用
+设置`disabled`属性使按钮变为不可用状态。
+```html
+<oak-button disabled>Default</oak-button>
+<oak-button disabled
+            type="primary">Primary</oak-button>
+<oak-button disabled
+            type="danger">Danger</oak-button>
+<oak-button disabled
+            type="info">Info</oak-button>
+```
+
+### 加载状态
+添加 `loading` 属性即可让按钮处于加载状态，loading 状态下按钮与`disabled`具有相同的属性。
+同时可以通过 `loaderColor` 控制loading的颜色。
+```html
+<oak-button loading
+            size='block'
+            loaderColor="#fff"
+            type="primary"> 加载中...</oak-button>
+<oak-button loading
+            size='large'> Loading</oak-button>
+<oak-button loading
+            loaderColor="#fff"
+            type="danger"> Loading</oak-button>
+<oak-button loading
+            size='small'
+            type="info"> Loading</oak-button>
+```
+
+### 按钮形状
+按钮形状有三种：圆角(`round`)、圆形(`circle`)、扁平(`square`)，不设置为默认样式。
+```html
+<oak-button>Default</oak-button>
+<oak-button shape='circle'>Circle</oak-button>
+<oak-button shape='round'>Round</oak-button>
+<oak-button shape='square'>Square</oak-button>
 ```
 
 ### APIS
 
-| Name | Description | Type | Default |
+| 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | demo | demo | `String` | `demo` |
 
