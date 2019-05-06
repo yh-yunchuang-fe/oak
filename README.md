@@ -19,14 +19,16 @@ $ npm install
 $ npm start
 
 // docs start
- $ npm run docs:dev
+$ npm run docs:dev
 ```
 
 ### build
 ```code
-$ npm run build // component build
+// component build
+$ npm run build 
 
-$ npm run docs // docs build & publish
+// docs build & publish
+$ npm run docs 
 ```
 
 ### new
@@ -37,7 +39,7 @@ npm run new `ComponentName`
 ## TODO
 
 - [x] [Icon](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/icon/)
-- [x] Button(https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/button/)
+- [x] [Button](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/packages/button/)
 - [ ] Text
 - [ ] Tips
 - [ ] Feeds
