@@ -1,6 +1,7 @@
 .layout {
   position: relative;
-  color: #333; }
+  color: #333;
+  background: #fff; }
 
 .header {
   padding: 0 50px;
@@ -434,18 +435,25 @@
     overflow: auto;
     width: 100%; }
   .doc-content table thead tr {
-    background-color: #f9f9f9; }
+    background-color: #f6f8fa; }
   .doc-content table th {
     font-weight: 600; }
   .doc-content table td,
   .doc-content table th {
     padding: 10px 13px;
     color: #333; }
+  .doc-content table td:first-child {
+    width: 20%;
+    color: #003a8c;
+    font-weight: 500; }
+  .doc-content table td:nth-child(3) {
+    width: 22%;
+    color: #c41d7f;
+    font-size: 13px;
+    word-break: break-all; }
   .doc-content table tr {
     background-color: #fff;
     border-bottom: 1px solid #dfe2e5; }
-  .doc-content table tr:nth-child(2n) {
-    background-color: #f6f8fa; }
   .doc-content img {
     background-color: #fff;
     box-sizing: content-box;
@@ -631,4 +639,10 @@
     padding-left: 112px !important; }
   .doc-content .pl-12 {
     padding-left: 128px !important; }
+
+.doc-footer {
+  margin-top: 40px;
+  background: #f8f8f8;
+  text-align: center;
+  color: #999; }
 
