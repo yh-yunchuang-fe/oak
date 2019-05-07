@@ -10,7 +10,7 @@ export default function asyncComponent(importComponent) {
             super(props);
 
             this.state = {
-                markdown: null
+                markdown: '# 加载中...'
             };
         }
 
