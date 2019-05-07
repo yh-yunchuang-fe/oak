@@ -17,7 +17,7 @@ module.exports = {
     output: {
         path: DIST,
         filename: '[name].[hash:8].js',
-        // chunkFilename: '[id].[hash:8].js',
+        chunkFilename: '[name].[hash:8].js',
         publicPath: isDev ? '/' : '//yh-yunchuang-fe.github.io/oak/',
     },
     devServer: {
@@ -32,22 +32,24 @@ module.exports = {
             chunks: 'all',
             automaticNameDelimiter: '.',
             cacheGroups: {
-                reactBase: {
-                    name: 'react.base',
+                base: {
+                    name: 'base',
                     test: (module) => {
-                        return /react|prop-types/.test(module.context);
+                        return /react|prop-types|antd|rc-/.test(module.context);
                     },
                     chunks: 'initial',
                     priority: 10,
                 },
-                common: {
-                    name: 'common',
+                babel: {
+                    name: 'babel',
+                    test: (module) => {
+                        return /babel|core-js/.test(module.context);
+                    },
                     chunks: 'initial',
-                    priority: 2,
-                    minChunks: 2,
+                    priority: 10,
                 },
-            }
-        }
+            },
+        },
     },
     module: {
         rules: [{
@@ -76,13 +78,7 @@ module.exports = {
             ],
         }, {
             test: /\.md$/,
-            use: ['raw-loader']
-        }, {
-            loader: 'webpack-ant-icon-loader',
-            enforce: 'pre',
-            include: [
-                path.resolve('node_modules/@ant-design/icons/lib/dist')
-            ]
+            use: ['raw-loader'],
         }],
     },
     plugins: [

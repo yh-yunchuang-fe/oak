@@ -16,8 +16,6 @@ class Navs extends Component {
                 width: '200px',
             }
         };
-
-        console.log(this);
     }
 
     componentDidMount() {
@@ -56,7 +54,6 @@ class Navs extends Component {
 
     render() {
         const { pathname } = this.props.location;
-        console.log('pathname', pathname);
         return (
             <Menu
                 mode="inline"

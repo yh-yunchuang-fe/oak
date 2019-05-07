@@ -35,7 +35,6 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
-    "antd": "^3.16.6",
     "babel-loader": "^8.0.5",
     "babel-plugin-import": "^1.11.0",
     "babel-preset-react-hmre": "^1.1.1",
@@ -81,6 +80,8 @@
   },
   "dependencies": {
     "@loadable/component": "^5.9.0",
+    "antd": "^3.8.2",
+    "core-js": "^2.6.5",
     "react-markdown": "^4.0.8",
     "react-router-dom": "^5.0.0"
   }

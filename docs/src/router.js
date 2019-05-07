@@ -1,9 +1,5 @@
-import React, {
-    Component
-} from 'react';
 import DocConfig from './doc.config';
-import ReactMarkdown from 'react-markdown/with-html';
-import CodeBlock from './CodeBlock';
+import asyncComponent from './AsyncComponent';
 
 const createRoutes = () => {
     const route = [];
@@ -26,26 +22,13 @@ const createRoutes = () => {
         } = page;
         if (path) {
             path = path.replace('/', '');
-            const component = (props) => {
-                const _source = !iscomponent ? require(`../markdown/${path}.md`) : require(`../../src/packages/${path}/README.md`);
 
-                return <ReactMarkdown source = {
-                    _source.default
-                }
-                escapeHtml = {
-                    false
-                }
-                renderers = {
-                    {
-                        code: CodeBlock,
-                    }
-                }
-                />;
+            let component = null;
+            if (!iscomponent) {
+                component = asyncComponent(() => import('../markdown/' + path + '.md'));
+            } else {
+                component = asyncComponent(() => import('../../src/packages/' + path + '/README.md'));
             }
-
-            // if (!component) {
-            //     return;
-            // }
             route.push({
                 ...page,
                 component,

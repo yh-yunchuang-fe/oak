@@ -1,6 +1,5 @@
-const path = require('path');
 const config = require('./webpack.site.dev.js');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 delete config.devServer;
 
