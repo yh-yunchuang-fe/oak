@@ -2,37 +2,40 @@ export default {
     navs: [{
             name: 'Oak UI',
             components: false,
-            path: '/intro'
+            path: '/intro',
         }, {
             name: '快速上手',
             components: false,
-            path: '/querystart'
+            path: '/querystart',
         },
         {
             name: '定制主题',
             components: false,
-            path: '/theme'
-        },{
+            path: '/theme',
+        }, {
             name: '更新日志',
             components: false,
-            path: '/changelog'
+            path: '/changelog',
         },
         {
             name: 'Components',
             components: true,
             list: [{
                 name: '基础',
-                groups: [
-                    {
+                groups: [{
                         name: 'Button 按钮',
-                        path: '/button'
+                        path: '/button',
                     },
                     {
                         name: 'Icon 图标',
-                        path: '/icon'
-                    }
-                ]
-            }]
-        }
-    ]
-}
+                        path: '/icon',
+                    },
+                    {
+                        name: 'Loading 加载',
+                        path: '/loading',
+                    },
+                ],
+            }],
+        },
+    ],
+};

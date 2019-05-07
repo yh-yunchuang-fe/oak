@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Menu from 'antd/lib/menu';
 import DocConfig from './doc.config';
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 import 'antd/lib/menu/style/css';
 
 const MenuItemGroup = Menu.ItemGroup;
 const SubMenu = Menu.SubMenu;
-export default class Navs extends Component {
+class Navs extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +16,8 @@ export default class Navs extends Component {
                 width: '200px',
             }
         };
+
+        console.log(this);
     }
 
     componentDidMount() {
@@ -45,17 +48,19 @@ export default class Navs extends Component {
     getSubMenu = (navs) => {
         return navs.map((navs, index) => {
             return <MenuItemGroup key={index} title={navs.name}>
-                {navs.groups.map(nav => <Menu.Item index={nav.path} key={nav.path}>
+                {navs.groups.map(nav => <Menu.Item index={nav.path} key={`/components${nav.path}`}>
                     <Link to={`/components${nav.path}`}>{nav.name}</Link></Menu.Item>)}
             </MenuItemGroup>
         })
     }
 
     render() {
+        const { pathname } = this.props.location;
+        console.log('pathname', pathname);
         return (
             <Menu
                 mode="inline"
-                defaultSelectedKeys={['/intro']}
+                defaultSelectedKeys={[`${pathname || '/intro'}`]}
                 defaultOpenKeys={['Components']}
                 style={this.state.style}
             >
@@ -72,3 +77,5 @@ export default class Navs extends Component {
         );
     }
 }
+
+export default  withRouter(Navs);

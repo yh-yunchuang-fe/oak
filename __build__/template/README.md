@@ -1,31 +1,48 @@
 # __component__
 
-### Usage
+## 使用
 
-Here is a quick example to get you started, it's all you need:
+在页面 `json` 中引入按钮组件：
 
-import in `page.json`:
 ```json
+// import in `page.json`:
 "usingComponents": {
   "oak-__component__": "path/to/your/oakui/__component__/index"
 }
 ```
-use in `page.wxml`
+
+在页面使用
 ```html
-    <oak-__component__ isShow />
+<!-- use in `page.wxml` -->
+<oak-__component__ />
 ```
 
-### APIS
+## 代码演示
+### 代码演示1
+代码演示1代码演示1代码演示1代码演示1
+```html
+<oak-__component__ />
+```
 
-| Name | Description | Type | Default |
+### 代码演示2
+代码演示2代码演示2代码演示2代码演示2
+```html
+<oak-__component__ />
+```
+
+
+## API
+API说明。
+
+| 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| demo | demo | `String` | `demo` |
+| 属性1 | 说明1 | `String` | `demo` |
 
 
-### External Classes
+## 外部样式类
 
-| Name | Description |
+| 样式名 | 说明 |
 |-----------|-----------|
-| custom-class | root class |
+| hover-class | 设置hover时的样式 |
 
 

@@ -3,6 +3,7 @@
 .layout {
     position: relative;
     color: #333;
+    background: #fff;
 }
 
 .header {
@@ -52,4 +53,11 @@
 
     @import './markdown.scss';
 
+}
+
+.doc-footer {
+    margin-top: 40px;
+    background: #f8f8f8;
+    text-align: center;
+    color: #999;
 }

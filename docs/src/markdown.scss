@@ -642,7 +642,7 @@ tr {
 }
 
 table thead tr {
-    background-color: #f9f9f9;
+    background-color: #f6f8fa;
 }
 
 table th {
@@ -655,14 +655,27 @@ table th {
     color: #333;
 }
 
+table td:first-child {
+    width: 20%;
+    color: #003a8c;
+    font-weight: 500;
+}
+
+table td:nth-child(3) {
+    width: 22%;
+    color: #c41d7f;
+    font-size: 13px;
+    word-break: break-all;
+}
+
 table tr {
     background-color: #fff;
     border-bottom: 1px solid #dfe2e5;
 }
 
-table tr:nth-child(2n) {
-    background-color: #f6f8fa;
-}
+// table tr:nth-child(2n) {
+//     background-color: #f6f8fa;
+// }
 
 img {
     background-color: #fff;

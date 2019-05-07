@@ -106,17 +106,28 @@
 <oak-button shape='square'>Square</oak-button>
 ```
 
-### APIS
+## API
+通过设置 Button 的属性来控制按钮不同样式。
+
+按钮的属性说明如下：
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| demo | demo | `String` | `demo` |
+| type | 按钮类型，可选值为 `primary`、`danger`、`info`, 或者不设 | String | `default` |
+| size | 按钮大小，可选值为 `large`、`small`、`block`, 或者不设| String | `default` |
+| plain | 背景透明，内容反色| Boolen | `false` |
+| icon | 图标名 | String | - |
+| disabled | 按钮不可用 | Boolen | `false` |
+| loading | 加载状态 | Boolen | `false` |
+| loaderColor | Loading 颜色| String | - |
+| shape | 按钮形状，可选值为 `circle`、`round`、`square`, 或者不设| String | - |
 
+> 其他属性与小程序 [button](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) 组件同步。
 
-### External Classes
+## 外部样式类
 
-| Name | Description |
+| 样式名 | 说明 |
 |-----------|-----------|
-| custom-class | root class |
+| hover-class | 设置按钮hover时的样式 |
 
 

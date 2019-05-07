@@ -24,7 +24,7 @@ class App extends Component {
                         <Sider style={{ background: '#fff'}}>
                             <Navs />
                         </Sider>
-                        <Layout>
+                        <Layout style={{backgroundColor: '#fff'}}>
                             <Content className='doc-content'>
                                 <Switch>
                                     {RouterConfig.map((route, index) => (
@@ -38,7 +38,7 @@ class App extends Component {
                                     <Redirect from="/" to="intro" />
                                 </Switch>
                             </Content>
-                            <Footer>Footer</Footer>
+                            <Footer className='doc-footer'>- © 2019 Code & Design by YHFE, All rights reserved -</Footer>
                         </Layout>
                     </Layout>
                 </Layout>
