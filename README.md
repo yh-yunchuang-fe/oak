@@ -32,6 +32,7 @@ $ npm run docs
 ```
 
 ### new
+请使用驼峰式命名
 ```code
 npm run new `ComponentName`
 ```

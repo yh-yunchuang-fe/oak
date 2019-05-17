@@ -1,9 +1,9 @@
 # project.config.json
 .DS_Store
-/node_modules
 coverage
 yarn.lock
 yarn-error.log
 .vscode
 .idea/
 docs/dist
+node_modules

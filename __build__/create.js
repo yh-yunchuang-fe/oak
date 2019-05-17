@@ -22,13 +22,15 @@ async function create() {
                     if (err) {
                       return console.log('\033[31m', '【ERROR】', err, ' \r\n');
                     }
-                    let result = data.replace(/__component__/g, dirName);
+
+                    const fileName = dirName.replace(/\B([A-Z])/g,"-$1").toLowerCase();
+                    let result = data.replace(/__component__/g, fileName);
 
                     if (!fs.pathExistsSync(pageDir)) {
                         fs.mkdirSync(pageDir);
                     }
 
-                    fs.writeFile(`${pageDir}/${file}`, result, 'utf8', function (err) {
+                    fs.writeFile(`${pageDir}/${fileName}`, result, 'utf8', function (err) {
                        if (err) return console.log(err);
                     });
                   });
