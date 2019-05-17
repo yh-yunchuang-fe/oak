@@ -8,7 +8,7 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-button": "path/to/your/oakui/button/index"
+  "oak-button": "path/to/your/oakui/Button/index"
 }
 ```
 
