@@ -1,0 +1,21 @@
+@import "Style/variable";
+@import "Style/icons";
+
+.oak-icon {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $font-size-icon;
+    color: $txt-default;
+
+    &.icon_image {
+        width: $font-size-icon;
+        height: $font-size-icon;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+}

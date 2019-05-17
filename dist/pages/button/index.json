@@ -1,8 +1,8 @@
 {
     "navigationBarTitleText": "Button",
     "usingComponents": {
-        "oak-icon": "/packages/icon/index",
-        "oak-loading": "/packages/loading/index",
-        "oak-button": "/packages/button/index"
+        "oak-icon": "/packages/Icon/icon",
+        "oak-loading": "/packages/Loading/loading",
+        "oak-button": "/packages/Button/button"
     }
 }
