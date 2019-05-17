@@ -24,15 +24,15 @@ export default {
                 name: '基础',
                 groups: [{
                         name: 'Button 按钮',
-                        path: '/button',
+                        path: '/Button',
                     },
                     {
                         name: 'Icon 图标',
-                        path: '/icon',
+                        path: '/Icon',
                     },
                     {
                         name: 'Loading 加载',
-                        path: '/loading',
+                        path: '/Loading',
                     },
                 ],
             }],
