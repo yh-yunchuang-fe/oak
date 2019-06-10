@@ -646,7 +646,7 @@ backgroundAudioManager.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb
     /** 图片的本地临时文件列表
      *
      * 最低基础库： `1.2.0` */
-    tempFiles: ImageFile;
+    tempFiles: ImageFile[];
   }
   interface ChooseInvoiceOption {
     /** 接口调用结束的回调函数（调用成功、失败都会执行） */

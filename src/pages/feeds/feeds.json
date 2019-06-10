@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Feeds信息流",
+    "usingComponents": {
+        "oak-feeds": "/packages/Feeds/feeds",
+        "oak-feeds-item": "/packages/FeedsItem/feeds-item"
+    }
+}

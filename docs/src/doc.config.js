@@ -35,6 +35,13 @@ export default {
                         path: '/Loading',
                     },
                 ],
+            }, {
+                name: '展示',
+                groups: [{
+                        name: 'Feeds 信息流',
+                        path: '/Feeds',
+                    },
+                ],
             }],
         },
     ],

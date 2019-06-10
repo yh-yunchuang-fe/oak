@@ -25,7 +25,7 @@ Component({
             optionalTypes: [String]
         }
     },
-    externalClasses: ['c-class'],
+    externalClasses: ['ext-class'],
     data: {},
     methods: {}
 });

@@ -3,7 +3,7 @@
 
 ## 使用
 
-在页面 `json` 中引入按钮组件：
+在页面 `json` 中引入组件：
 
 ```json
 // import in `page.json`:

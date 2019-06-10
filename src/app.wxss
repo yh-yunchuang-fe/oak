@@ -7,3 +7,8 @@
     padding: 20rpx;
     font-size: 30rpx;
 }
+
+.row {
+    margin: 10rpx;
+    line-height: 0;
+}

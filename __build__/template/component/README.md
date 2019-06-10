@@ -1,4 +1,4 @@
-# __component__
+# __component_name__
 
 ## 使用
 
@@ -7,7 +7,7 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-__component__": "path/to/your/oakui/__component__/index"
+  "oak-__component__": "path/to/your/oakui/__component_name__/__component__"
 }
 ```
 

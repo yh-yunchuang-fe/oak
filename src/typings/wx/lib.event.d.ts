@@ -125,4 +125,3 @@ declare namespace event {
       currentTarget: never;
   }
 }
-
