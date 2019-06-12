@@ -9,15 +9,15 @@ const isDev = process.env.NODE_ENV !== 'production';
 const DIST = path.join(__dirname, '../docs/dist');
 const sourcePath = [path.resolve(__dirname, '../docs/src'), path.resolve(__dirname, '../../src')];
 
-module.exports = {
+const config = {
     entry: {
         docs: './docs/src/App.jsx',
     },
     mode: 'development',
     output: {
         path: DIST,
-        filename: '[name].[hash:8].js',
-        chunkFilename: '[name].[hash:8].js',
+        filename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
+        chunkFilename: isDev ? '[name].js' : '[name].[chunkhash:8].js',
         publicPath: isDev ? '/' : '//static.yonghuivip.com/',
     },
     devServer: {
@@ -86,7 +86,6 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: [DIST],
         }),
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './docs/src/index.html',
             filename: 'index.html',
@@ -95,8 +94,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
-            filename: isDev ? '[name].css' : '[name].[hash:8].css',
+            filename: isDev ? '[name].css' : '[name].[contenthash:8].css',
             // chunkFilename: '[id].[hash:8].css',
         }),
-    ]
+    ],
 };
+
+isDev && config.plugins.push(new webpack.HotModuleReplacementPlugin());
+
+module.exports = config;

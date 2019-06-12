@@ -6,8 +6,8 @@ delete config.devServer;
 
 // config.plugins.push(new BundleAnalyzerPlugin());
 config.plugins.push(new UploadToQiniuWebpackPlugin({
-    qiniuAccessKey: 'rqLh8BpwLdcG************AYpE0sg-TaASlT',
-    qiniuSecretKey: 'UiUBP4KH0zbP************Pv2fO7r6qHu6olC',
+    qiniuAccessKey: 'rqLh8BpwLdc****************YpE0sg-TaASlT',
+    qiniuSecretKey: 'UiUBP4KH0zb****************2fO7r6qHu6olC',
     qiniuBucket: 'yhcms',
     qiniuZone: 'Zone_z0',
     uploadLogPath: __dirname,
