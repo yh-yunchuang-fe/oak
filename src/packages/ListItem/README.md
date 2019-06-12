@@ -1,4 +1,4 @@
-# __component_name__
+# ListItem
 
 ## 使用
 
@@ -7,27 +7,27 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-__component__": "path/to/your/oakui/__component_name__/__component__"
+  "oak-list-item": "path/to/your/oakui/ListItem/list-item"
 }
 ```
 
 在页面使用
 ```html
 <!-- use in `page.wxml` -->
-<oak-__component__ />
+<oak-list-item />
 ```
 
 ## 代码演示
 ### 代码演示1
 代码演示1代码演示1代码演示1代码演示1
 ```html
-<oak-__component__ />
+<oak-list-item />
 ```
 
 ### 代码演示2
 代码演示2代码演示2代码演示2代码演示2
 ```html
-<oak-__component__ />
+<oak-list-item />
 ```
 
 

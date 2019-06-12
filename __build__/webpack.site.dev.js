@@ -18,7 +18,7 @@ module.exports = {
         path: DIST,
         filename: '[name].[hash:8].js',
         chunkFilename: '[name].[hash:8].js',
-        publicPath: isDev ? '/' : '//yh-yunchuang-fe.github.io/oak/',
+        publicPath: isDev ? '/' : '//static.yonghuivip.com/',
     },
     devServer: {
         contentBase: DIST,

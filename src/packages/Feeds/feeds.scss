@@ -1,6 +1,5 @@
 @import "Style/variable";
 
-$height: 182rpx;
 
 @mixin border-right {
     border-right-width: 2rpx;
@@ -10,35 +9,34 @@ $height: 182rpx;
 @mixin single-feed($n) {
     &:last-child:nth-child(#{$n}) {
         width: 100%;
-        height: 200rpx;
+        height: $feeds-three-height;
     }
 }
 
 @mixin three {
     width: 33.333%;
-    height: 240rpx;
+    height: $feeds-single-height;
     border-bottom: none;
 }
 
 .oak-feeds {
     overflow: hidden;
 
-    .oak-feeds-item,
+    &-item,
     oak-feeds-item {
         width: 50%;
-        margin-bottom: 2rpx;
-        height: $height;
+        height: $feeds-height;
         display: block;
         float: left;
         overflow: hidden;
         box-sizing: border-box;
 
         &:first-child:not(:last-child) {
-            height: $height * 2;
+            height: $feeds-height * 2;
         }
 
         &:first-child:nth-last-child(2) {
-            height: $height !important;
+            height: $feeds-height !important;
         }
 
         @include single-feed(1);
@@ -53,7 +51,6 @@ $height: 182rpx;
         border-color: inherit;
 
         &:first-child:not(:last-child) {
-            height: $height * 2 + 2rpx;
             @include border-right();
         }
 

@@ -23,6 +23,11 @@ Component({
             type: String,
             value: 'icon',
             optionalTypes: [String]
+        },
+        rotate: {
+            type: Boolean,
+            value: false,
+            optionalTypes: [Boolean]
         }
     },
     externalClasses: ['ext-class'],

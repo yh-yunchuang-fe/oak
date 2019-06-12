@@ -8,7 +8,6 @@ $highligh-bg:           #FD7622;
 $danger-bg:             #FF4600;
 $active-bg:             #FEF1E8;
 
-
 $txt-default:           #333;
 $txt-info:              #999;
 $txt-muted:             #ccc;
@@ -16,7 +15,7 @@ $txt-warning:           #FF0500;
 $txt-highlight:         #FD7622;
 $txt-link:              #00a5e0;
 $txt-feeds:             #314c83;
-$txt-white:               #fff;
+$txt-white:             #fff;
 
 $icon-line-height:      1;
 $line-height-base:      1.5;
@@ -31,9 +30,10 @@ $font-size-btn-block:       36rpx;
 $font-size-btn-large:       30rpx;
 $font-size-btn-default:     26rpx;
 $font-size-btn-small:       22rpx;
-$font-size-title:           16px;
+$font-size-title:           32rpx;
+$font-size-subtitle:        28rpx;
 $font-size-h1:              18px;
-$font-size-title-lg:        17px;
+$font-size-title-lg:        34rpx;
 $font-size-info:            16px;
 $font-size-sub:             14px;
 $font-size-tips:            12px;
@@ -47,6 +47,8 @@ $btn-small-lr-padding:          20rpx;
 
 $wrap-link-padding:     30px;
 $wrap-link-padding-s:   25px;
+
+$wrap-list-padding-subtitle:    10rpx;
 
 $border-radius-base:    4rpx;
 $border-radius-lg:      8rpx;
@@ -63,7 +65,6 @@ $tab-height:                            40rpx;
 $tab-current-color:                     #FD7622;
 $tab-current-border:                    #FD7622;
 
-// Z-Indexes
 $z-index-placehold:                     -1;
 $z-index-img:                           1;
 $z-index-switch:                        2;
@@ -76,8 +77,11 @@ $z-index-head:                          100;
 $z-index-poptips:                       999;
 $z-index-overlay:                       9999;
 
-
 $button-block-height:                   80rpx;
 $button-large-height:                   70rpx;
 $button-default-height:                 56rpx;
 $button-small-height:                   40rpx;
+
+$feeds-height:                          182rpx;
+$feeds-single-height:                   200rpx;
+$feeds-three-height:                    240rpx;

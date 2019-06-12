@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // key加引号会报错 如：{ "a": 1, "b": 0}, 仅支持： { a: 1, b: 0}
 function classNames() {
     var classes = [],
@@ -44,7 +46,6 @@ function isUrl(url) {
 
     return url.match(regex);
 }
-
 
 module.exports = {
     classNames: classNames,

@@ -40,6 +40,9 @@ export default {
                 groups: [{
                         name: 'Feeds 信息流',
                         path: '/Feeds',
+                    },{
+                        name: 'List 列表',
+                        path: '/List',
                     },
                 ],
             }],
