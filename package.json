@@ -9,7 +9,8 @@
     "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style",
     "new": "node __build__/create",
     "docs": "cross-env NODE_ENV=production webpack --color --config __build__/webpack.site.prod.js && gh-pages -d docs/dist",
-    "docs:dev": "webpack-dev-server --config __build__/webpack.site.dev.js"
+    "docs:dev": "webpack-dev-server --config __build__/webpack.site.dev.js",
+    "release": "tar -zcf oak.tar.gz dist/* && zip -r oak.zip dist/*"
   },
   "repository": {
     "type": "git",
