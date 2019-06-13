@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es6",
+    "allowJs": false,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "removeComments": true,
+    "pretty": true,
+    "strictPropertyInitialization": true,
+    "esModuleInterop": true,
+    "lib": [ "es2015", "dom"],
+    "typeRoots": [
+      "typings",
+    ]
+  },
+  "include": [
+    "demo/src/**/*.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "miniprogram_dist",
+    "**/*.spec.ts"
+  ]
+}

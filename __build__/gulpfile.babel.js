@@ -11,14 +11,21 @@ import print from 'gulp-print';
 import changed from 'gulp-changed';
 import ts from 'gulp-typescript';
 
+const isProd = process.env.NODE_ENV === 'production';
+const tsProject = ts.createProject(path.resolve(__dirname, '../tsconfig.json'));
+
 // 匹配文件路径
 const paths = {
     sassPath: ['../src/**/*.scss', '../src/**/*.wxss'],
-    tsPath: ['../src/**/*.ts'],
+    tsPath: isProd ? ['../src/**/*.ts'] : ['../demo/src/**/*.ts', '../src/**/*.ts'],
     copy: ['../src/**/*.wxml', '../src/**/*.json', '../src/**/*.wxs'],
+    demoStyle: ['../demo/src/**/*.scss', '../demo/src/**/*.wxss', '!../demo/src/dist'],
+    democopy: ['../demo/src/**/*.wxml', '../demo/src/**/*.json', '../demo/src/**/*.wxs', '!../demo/src/dist'],
 };
 
-const DEST = '../dist';
+
+const DEST = isProd ? '../dist' : '../demo/dist/';
+const DemoDest = '../demo/dist/';
 
 function _join(dirname) {
     return path.join(__dirname, '../src', dirname);
@@ -34,60 +41,92 @@ const uglifyOpts = {
 // 路径别名配置
 const alisaConfig = {
     'Style': _join('style'),
-    'WXS': _join('/packages/wxs'),
-    'Mixins': _join('/packages/mixins'),
+    'WXS': _join('wxs'),
+    'Mixins': _join('mixins'),
 };
 
-const styles = () => gulp.src(paths.sassPath, {
-        base: '../src/',
+const styles = (src, dest, base) => gulp.src(src, {
+        base,
     })
-    .pipe(changed(DEST, {
+    .pipe(changed(dest, {
         extension: '.wxss',
     }))
     .pipe(print(filepath => `Build Scss: ${filepath}`))
     .pipe(alisa(alisaConfig))
     .pipe(sass())
-    .pipe(gulpif(process.env.NODE_ENV === 'production', csso({
-        comments: false,
-    })))
+    // .pipe(gulpif(isProd, csso({
+    //     comments: false,
+    // })))
     .pipe(rename({
         extname: '.wxss',
     }))
-    .pipe(gulp.dest(DEST));
+    .pipe(gulp.dest(dest));
 
-const scripts = () => gulp.src(paths.tsPath)
-    .pipe(changed(DEST))
+const scripts = (src, dest) => gulp.src(src)
+    .pipe(changed(dest))
     .pipe(print(filepath => `Build Js: ${filepath}`))
     .pipe(alisa(alisaConfig))
-    .pipe(ts())
-    .pipe(gulpif(process.env.NODE_ENV === 'production', uglify(uglifyOpts)))
-    .pipe(gulp.dest(DEST));
+    .pipe(tsProject())
+    // .pipe(gulpif(isProd, uglify(uglifyOpts)))
+    .pipe(gulp.dest(dest));
 
 
-const copy = () => gulp.src(paths.copy)
-    .pipe(changed(DEST))
+const copy = (src, dest) => gulp.src(src)
+    .pipe(changed(dest))
     .pipe(print(filepath => `Copy File: ${filepath}`))
     .pipe(alisa(alisaConfig))
-    .pipe(gulp.dest(DEST));
+    .pipe(gulp.dest(dest));
 
-const clean = () => del([DEST], {
+const clean = dest => del([dest], {
     force: true,
 });
 
+
+function srcStyle() {
+    return styles(paths.sassPath, DEST, '../src');
+}
+
+function taskScripts() {
+    return scripts(paths.tsPath, DEST);
+}
+
+function srcCopy() {
+    return copy(paths.copy, DEST);
+}
+
+function srcClean() {
+    return clean(DEST);
+}
+
+function demoStyle() {
+    return styles(paths.demoStyle, DemoDest, '../demo/src');
+}
+
+function demoCopy() {
+    return copy(paths.democopy, DemoDest);
+}
+
+function demoClean() {
+    return clean(DemoDest);
+}
+
 function watchFiles() {
-    gulp.watch(paths.copy, copy);
-    gulp.watch(paths.sassPath, styles);
-    gulp.watch(paths.tsPath, scripts);
+    gulp.watch(paths.sassPath, srcStyle);
+    gulp.watch(paths.tsPath, taskScripts);
+    gulp.watch(paths.copy, srcCopy);
+    gulp.watch(paths.democopy, demoCopy);
+    gulp.watch(paths.demoStyle, demoStyle);
 
     console.log('\r\nStart watch file...\r\n');
     // cb();
 }
 
 let build;
-if (process.env.NODE_ENV === 'production') {
-    build = gulp.series(clean, gulp.parallel(styles, scripts, copy));
+
+if (isProd) {
+    build = gulp.series(srcClean, gulp.parallel(srcStyle, taskScripts, srcCopy));
 } else {
-    build = gulp.series(clean, gulp.parallel(styles, scripts, copy), watchFiles);
+    build = gulp.series(srcClean, demoClean, gulp.parallel(srcStyle, taskScripts, srcCopy, demoCopy, demoStyle), watchFiles);
 }
 
 export default build;

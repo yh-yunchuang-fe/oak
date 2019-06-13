@@ -1,0 +1,56 @@
+.oak-loading {
+  display: inline-block;
+  position: relative;
+  width: 40rpx;
+  height: 40rpx;
+  box-sizing: border-box;
+  vertical-align: middle; }
+  .oak-loading.absolute, .oak-loading.fixed {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%); }
+  .oak-loading.fixed {
+    position: fixed;
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8rpx #979797; }
+  .oak-loading.absolute {
+    position: absolute;
+    z-index: 1; }
+  .oak-loading view {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 30rpx;
+    height: 30rpx;
+    margin: 4rpx;
+    border: 2rpx solid transparent;
+    border-radius: 50%;
+    animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-top-color: #FD7622; }
+  .oak-loading.small {
+    width: 30rpx;
+    height: 30rpx; }
+    .oak-loading.small view {
+      width: 20rpx;
+      height: 20rpx; }
+  .oak-loading.large {
+    width: 54rpx;
+    height: 54rpx; }
+    .oak-loading.large view {
+      width: 44rpx;
+      height: 44rpx;
+      border-width: 4rpx; }
+  .oak-loading .oak-loading-v1 {
+    animation-delay: -0.45s; }
+  .oak-loading .oak-loading-v2 {
+    animation-delay: -0.3s; }
+  .oak-loading .oak-loading-v3 {
+    animation-delay: -0.15s; }
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }

@@ -1,0 +1,25 @@
+<wxs src="../wxs/base.wxs"
+    module="Utils" />
+
+<button
+    class="oak-button oak-button-type_{{type}} oak-button-size_{{size}} oak-button-shape_{{shape}} {{Utils.classNames({plain: plain, disabled: disabled || loading })}}"
+    open-type="{{ openType }}"
+    lang="{{ lang }}"
+    hover-class="oak-button-active hover-class"
+    session-from="{{ sessionFrom }}"
+    send-message-title="{{ sendMessageTitle }}"
+    send-message-path="{{ sendMessagePath }}"
+    send-message-img="{{ sendMessageImg }}"
+    show-message-card="{{ showMessageCard }}"
+    app-parameter="{{ appParameter }}"
+    aria-label="{{ ariaLabel }}"
+    bindgetuserinfo="bindGetUserInfo"
+    bindcontact="bindContact"
+    bindgetphonenumber="bindGetPhoneNumber"
+    binderror="bindError"
+    bindlaunchapp="bindLaunchApp"
+    bindopensetting="bindOpenSetting">
+    <oak-loading wx:if="{{loading}}" size="{{loaderSize ? loaderSize : ( size === 'block' ? 'large' : size )}}" color="{{loaderColor}}" />
+    <oak-icon ext-class="button-icon" wx:if="{{icon}}" name='{{icon}}' />
+    <slot></slot>
+</button>

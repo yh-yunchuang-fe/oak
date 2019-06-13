@@ -1,0 +1,456 @@
+@font-face {
+  font-family: "iconfont";
+  src: url("https://static.yonghuivip.com/oak/oakicon_20190424.woff") format("woff"), url("https://static.yonghuivip.com/oak/oakicon_20190424.woff2") format("woff2"), url("https://static.yonghuivip.com/oak/oakicon_20190424.ttf") format("truetype"), url("https://static.yonghuivip.com/oak/oakicon_20190424.svg#iconfont") format("svg");
+  /* iOS 4.1- */ }
+
+.icon {
+  font-family: "iconfont" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  line-height: 1; }
+
+.icon-disable-check:before {
+  content: "\e61b"; }
+
+.icon-about:before {
+  content: "\e601"; }
+
+.icon-activity:before {
+  content: "\e602"; }
+
+.icon-add-to-shopping-cart:before {
+  content: "\e603"; }
+
+.icon-arrow-down:before {
+  content: "\e604"; }
+
+.icon-arrow-left:before {
+  content: "\e605"; }
+
+.icon-arrow-right:before {
+  content: "\e606"; }
+
+.icon-arrow-up:before {
+  content: "\e607"; }
+
+.icon-assortment-active:before {
+  content: "\e608"; }
+
+.icon-assortment-normal:before {
+  content: "\e60b"; }
+
+.icon-back:before {
+  content: "\e60c"; }
+
+.icon-bargain-failure:before {
+  content: "\e60d"; }
+
+.icon-basket-new:before {
+  content: "\e60e"; }
+
+.icon-buying-succeed:before {
+  content: "\e60f"; }
+
+.icon-card:before {
+  content: "\e610"; }
+
+.icon-cart-active:before {
+  content: "\e611"; }
+
+.icon-cart-normal:before {
+  content: "\e612"; }
+
+.icon-cart:before {
+  content: "\e613"; }
+
+.icon-check-circle:before {
+  content: "\e616"; }
+
+.icon-city-selected:before {
+  content: "\e617"; }
+
+.icon-classity-active:before {
+  content: "\e618"; }
+
+.icon-classity-big:before {
+  content: "\e619"; }
+
+.icon-classity-normal:before {
+  content: "\e61a"; }
+
+.icon-classity-small:before {
+  content: "\e61c"; }
+
+.icon-close-eye:before {
+  content: "\e61d"; }
+
+.icon-close:before {
+  content: "\e61e"; }
+
+.icon-completed:before {
+  content: "\e61f"; }
+
+.icon-coupon:before {
+  content: "\e620"; }
+
+.icon-cycle-close:before {
+  content: "\e621"; }
+
+.icon-delete:before {
+  content: "\e622"; }
+
+.icon-deliver:before {
+  content: "\e623"; }
+
+.icon-diancan-cart:before {
+  content: "\e624"; }
+
+.icon-diancan:before {
+  content: "\e625"; }
+
+.icon-dispatching:before {
+  content: "\e626"; }
+
+.icon-download-app:before {
+  content: "\e628"; }
+
+.icon-download:before {
+  content: "\e629"; }
+
+.icon-downloader:before {
+  content: "\e62a"; }
+
+.icon-face:before {
+  content: "\e62b"; }
+
+.icon-feedback:before {
+  content: "\e62c"; }
+
+.icon-gift-card:before {
+  content: "\e62d"; }
+
+.icon-gift-share:before {
+  content: "\e62e"; }
+
+.icon-gift:before {
+  content: "\e62f"; }
+
+.icon-global-close:before {
+  content: "\e630"; }
+
+.icon-goods:before {
+  content: "\e631"; }
+
+.icon-grab-over:before {
+  content: "\e632"; }
+
+.icon-group:before {
+  content: "\e633"; }
+
+.icon-help:before {
+  content: "\e634"; }
+
+.icon-home-active:before {
+  content: "\e635"; }
+
+.icon-home-normal:before {
+  content: "\e636"; }
+
+.icon-home:before {
+  content: "\e637"; }
+
+.icon-horn:before {
+  content: "\e638"; }
+
+.icon-index:before {
+  content: "\e639"; }
+
+.icon-inform:before {
+  content: "\e63a"; }
+
+.icon-invitation:before {
+  content: "\e63b"; }
+
+.icon-iphone:before {
+  content: "\e63c"; }
+
+.icon-loaction:before {
+  content: "\e63d"; }
+
+.icon-location-small:before {
+  content: "\e63e"; }
+
+.icon-logistics:before {
+  content: "\e63f"; }
+
+.icon-min:before {
+  content: "\e640"; }
+
+.icon-mine:before {
+  content: "\e641"; }
+
+.icon-minus-circle:before {
+  content: "\e642"; }
+
+.icon-minus-outline:before {
+  content: "\e643"; }
+
+.icon-minus:before {
+  content: "\e646"; }
+
+.icon-open-eye:before {
+  content: "\e648"; }
+
+.icon-order-scan:before {
+  content: "\e649"; }
+
+.icon-order:before {
+  content: "\e64a"; }
+
+.icon-password:before {
+  content: "\e64b"; }
+
+.icon-pay-wechat:before {
+  content: "\e64c"; }
+
+.icon-pay:before {
+  content: "\e64d"; }
+
+.icon-peisong:before {
+  content: "\e64e"; }
+
+.icon-pen:before {
+  content: "\e650"; }
+
+.icon-phone:before {
+  content: "\e651"; }
+
+.icon-pick:before {
+  content: "\e652"; }
+
+.icon-plus-circle:before {
+  content: "\e653"; }
+
+.icon-plus-outline:before {
+  content: "\e654"; }
+
+.icon-plus:before {
+  content: "\e655"; }
+
+.icon-position:before {
+  content: "\e656"; }
+
+.icon-pull-new-code:before {
+  content: "\e657"; }
+
+.icon-pull-new-user:before {
+  content: "\e658"; }
+
+.icon-pull-new:before {
+  content: "\e659"; }
+
+.icon-receive:before {
+  content: "\e65a"; }
+
+.icon-recommend:before {
+  content: "\e65b"; }
+
+.icon-refund:before {
+  content: "\e65c"; }
+
+.icon-reminder:before {
+  content: "\e65d"; }
+
+.icon-return-new:before {
+  content: "\e65e"; }
+
+.icon-rule:before {
+  content: "\e65f"; }
+
+.icon-santiaogang:before {
+  content: "\e660"; }
+
+.icon-scan-code:before {
+  content: "\e661"; }
+
+.icon-search:before {
+  content: "\e662"; }
+
+.icon-security-code:before {
+  content: "\e663"; }
+
+.icon-select-active-orange:before {
+  content: "\e664"; }
+
+.icon-select-disable:before {
+  content: "\e665"; }
+
+.icon-select-normal:before {
+  content: "\e666"; }
+
+.icon-Select-time:before {
+  content: "\e667"; }
+
+.icon-select:before {
+  content: "\e668"; }
+
+.icon-share-new:before {
+  content: "\e669"; }
+
+.icon-share:before {
+  content: "\e66a"; }
+
+.icon-shopping-basket:before {
+  content: "\e66b"; }
+
+.icon-shopping-cart:before {
+  content: "\e66c"; }
+
+.icon-spread:before {
+  content: "\e66d"; }
+
+.icon-store-big:before {
+  content: "\e66e"; }
+
+.icon-store:before {
+  content: "\e66f"; }
+
+.icon-stowing-rampl:before {
+  content: "\e670"; }
+
+.icon-switch:before {
+  content: "\e671"; }
+
+.icon-tag:before {
+  content: "\e672"; }
+
+.icon-telephone:before {
+  content: "\e673"; }
+
+.icon-time:before {
+  content: "\e674"; }
+
+.icon-top:before {
+  content: "\e675"; }
+
+.icon-truck:before {
+  content: "\e676"; }
+
+.icon-unpayment:before {
+  content: "\e677"; }
+
+.icon-unreceive:before {
+  content: "\e678"; }
+
+.icon-user-active:before {
+  content: "\e679"; }
+
+.icon-user-name:before {
+  content: "\e67a"; }
+
+.icon-user-normal:before {
+  content: "\e67b"; }
+
+.icon-user:before {
+  content: "\e67c"; }
+
+.icon-version-number:before {
+  content: "\e67d"; }
+
+.icon-waimai-cart:before {
+  content: "\e67e"; }
+
+.icon-waimai:before {
+  content: "\e67f"; }
+
+.icon-wallet:before {
+  content: "\e680"; }
+
+.icon-warning:before {
+  content: "\e681"; }
+
+.icon-warnning_full:before {
+  content: "\e682"; }
+
+.icon-wechat-pay:before {
+  content: "\e683"; }
+
+.icon-wechat:before {
+  content: "\e684"; }
+
+.icon-wifi:before {
+  content: "\e685"; }
+
+.icon-xaidan:before {
+  content: "\e686"; }
+
+.icon-xigou:before {
+  content: "\e687"; }
+
+.icon-ziti:before {
+  content: "\e688"; }
+
+.icon-crown:before {
+  content: "\e689"; }
+
+.icon-praise:before {
+  content: "\e68a"; }
+
+.icon-stamp:before {
+  content: "\e68b"; }
+
+.icon-happy:before {
+  content: "\e68c"; }
+
+.icon-normal:before {
+  content: "\e68d"; }
+
+.icon-angry:before {
+  content: "\e68e"; }
+
+.icon-Notreceivinggoods:before {
+  content: "\e68f"; }
+
+.icon-Tobepaid:before {
+  content: "\e690"; }
+
+.icon-un-evaluate:before {
+  content: "\e691"; }
+
+.icon-md-in-Choice:before {
+  content: "\e692"; }
+
+.icon-md-n-Choice:before {
+  content: "\e693"; }
+
+.icon-select-fill:before {
+  content: "\e694"; }
+
+.icon-select-line:before {
+  content: "\e695"; }
+
+.icon-chat:before {
+  content: "\e609"; }
+
+.icon-bag:before {
+  content: "\e60a"; }
+
+.icon-money:before {
+  content: "\e627"; }
+
+.oak-icon {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 32rpx;
+  color: #333; }
+  .oak-icon.icon_image {
+    width: 32rpx;
+    height: 32rpx; }
+  .oak-icon__image {
+    width: 100%;
+    height: 100%; }

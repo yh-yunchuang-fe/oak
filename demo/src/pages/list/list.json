@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "List 列表",
+    "usingComponents": {
+        "oak-list-item": "/ListItem/list-item",
+        "oak-list": "/List/list",
+        "oak-icon": "/Icon/icon",
+        "oak-button": "/Button/button"
+    }
+}

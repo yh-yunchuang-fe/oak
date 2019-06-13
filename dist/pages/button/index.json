@@ -1,8 +1,0 @@
-{
-    "navigationBarTitleText": "Button",
-    "usingComponents": {
-        "oak-icon": "/packages/Icon/icon",
-        "oak-loading": "/packages/Loading/loading",
-        "oak-button": "/packages/Button/button"
-    }
-}
