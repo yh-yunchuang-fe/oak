@@ -2,7 +2,7 @@
   "name": "oak",
   "version": "0.0.1-beta.0",
   "description": "A Wechat App UI Lib.",
-  "main": "index.js",
+  "miniprogram": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development gulp --gulpfile __build__/gulpfile.babel.js",
@@ -12,6 +12,9 @@
     "docs:dev": "webpack-dev-server --config __build__/webpack.site.dev.js",
     "release": "tar -zcf oak.tar.gz dist/* && zip -r oak.zip dist/*"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+git@github.com:yh-yunchuang-fe/oak.git"
@@ -21,7 +24,7 @@
     "weapp",
     "ui"
   ],
-  "author": "Mael.Lia",
+  "author": "YHFE",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yh-yunchuang-fe/oak/issues"
