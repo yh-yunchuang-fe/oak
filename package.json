@@ -1,6 +1,6 @@
 {
   "name": "oak",
-  "version": "0.0.1-canary.0",
+  "version": "0.0.1-beta.0",
   "description": "A Wechat App UI Lib.",
   "main": "index.js",
   "scripts": {
