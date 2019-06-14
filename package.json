@@ -1,5 +1,5 @@
 {
-  "name": "oak",
+  "name": "oak-weui",
   "version": "0.0.1-beta.0",
   "description": "A Wechat App UI Lib.",
   "miniprogram": "dist",

@@ -19,10 +19,10 @@ Oak 致力于为小程序开发者提供快速、高效、愉悦的开发体验�
 
 ```code
 # npm
-npm install --save oak
+npm install --save oak-weui
 
 # yarn
-yarn add oak --production
+yarn add oak-weui --production
 
 ```
 
