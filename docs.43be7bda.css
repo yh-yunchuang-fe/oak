@@ -1,3 +1,4 @@
+@import url(//at.alicdn.com/t/font_1245699_v79dgu22ut.css);
 .layout {
   position: relative;
   color: #333;
@@ -645,4 +646,23 @@
   background: #f8f8f8;
   text-align: center;
   color: #999; }
+
+.yh-oak-code-block {
+  position: relative; }
+  .yh-oak-code-block-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .3s ease-in-out; }
+  .yh-oak-code-block:hover .yh-oak-code-block-icon {
+    opacity: 1; }
+  .yh-oak-code-block .iconfont {
+    margin: 0 5px; }
+  .yh-oak-code-block a {
+    color: inherit; }
+    .yh-oak-code-block a:hover {
+      text-decoration: none;
+      color: inherit; }
 
