@@ -27,6 +27,7 @@
 ### 基本用法
 `ListItem` 可以单独使用，也可以结合`List`使用形成列表组。`List`提供列表标题和列表外边框设置。
 ```html
+<!--CodeLink: https://developers.weixin.qq.com/s/RJZpYbmq7O9w -->
 <oak-list-item
     title="单独使用"
     sub-title="副标题" />
@@ -51,6 +52,7 @@
 ### 箭头/下边框展示
 `arrow` 和 `border` 属性分别可以控制右侧箭头和下边框的展示。
 ```html
+<!--CodeLink: https://developers.weixin.qq.com/s/ANZGPbmd7Z9S -->
 <oak-list-item
     title="列表"
     content="显示箭头" />
@@ -67,6 +69,7 @@
 ### 图标展示
 `icon` 属性在控制左侧图标展示。
 ```html
+<!--CodeLink: https://developers.weixin.qq.com/s/Pl06Pcmw749U -->
 <oak-list-item
     icon="location-small"
     title="列表" />
@@ -81,6 +84,7 @@
 > **注意**⚠️：设置`image`属性后`icon`会失效。
 
 ```html
+<!--CodeLink: https://developers.weixin.qq.com/s/R20fDcmI789k -->
 <oak-list-item
     image="https://image.yonghuivip.com/wechatapp/wechat_app_default_img_oblong.png"
     title="右侧图片列表" />
@@ -99,6 +103,7 @@
 ### 列表+按钮
 使用`button`为列表项右侧添加按钮。
 ```html
+<!--CodeLink: https://developers.weixin.qq.com/s/Xm0lAcmV7d9x -->
 <oak-list-item
     button="Button"
     arrow="{{ false }}"
@@ -118,6 +123,7 @@
 ### 列表组
 与`List`配合使用实现列表分组
 ```html
+<!--CodeLink: https://developers.weixin.qq.com/s/CC0hqcm97j9b -->
 <oak-list title="列表组1">
     <oak-list-item title="列表1"
         content="右侧内容1" />
@@ -134,6 +140,7 @@
 ### 自定义
 `ListItem` 支持通过 `slots` 自定义显示内容。
 ```html
+<!--CodeLink: https://developers.weixin.qq.com/s/xQ0Zicmu7A9R -->
 <oak-list-item arrow="{{false}}">
     <view slot="title" class="oak-list-title">自定义标题</view>
     <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />

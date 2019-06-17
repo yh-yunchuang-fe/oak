@@ -1,4 +1,4 @@
-#root {}
+@import url('//at.alicdn.com/t/font_1245699_v79dgu22ut.css');
 
 .layout {
     position: relative;
@@ -60,4 +60,34 @@
     background: #f8f8f8;
     text-align: center;
     color: #999;
+}
+
+.yh-oak-code-block {
+    position: relative;
+
+    &-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+    }
+
+    &:hover &-icon {
+        opacity: 1;
+    }
+
+    .iconfont {
+        margin: 0 5px;
+    }
+
+    a {
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
 }

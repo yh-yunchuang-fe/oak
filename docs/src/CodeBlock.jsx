@@ -21,6 +21,15 @@ SyntaxHighlighter.registerLanguage('htmlbars', htmlbars);
 SyntaxHighlighter.registerLanguage('markdown', markdown);
 
 export default class CodeBlock extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            codeLink: '',
+            _value: '',
+        }
+    }
+
     static propTypes = {
         value: PropTypes.string.isRequired,
         language: PropTypes.string,
@@ -30,13 +39,61 @@ export default class CodeBlock extends Component {
         language: null,
     }
 
-    render() {
-        const { language, value } = this.props;
+    componentDidMount() {
+        const codeLinkReg = /<!--CodeLink:\s*(.*)\s*-->\n/g;
+        const { value } = this.props;
+        const isHasLink = codeLinkReg.test(value);
+        if (isHasLink) {
+            const link = codeLinkReg.exec(value.match(codeLinkReg));
+            this.setState({
+                codeLink: link[1],
+                _value: value.replace(value.match(codeLinkReg), '')
+            });
+        } else {
+            this.setState({
+                codeLink: '',
+                _value: value,
+            })
+        }
 
+    }
+
+    copy = () => {
+        this.copied = false
+        const textarea = document.createElement('textarea')
+
+        textarea.value = this.state._value;
+        textarea.setAttribute('readonly', '');
+
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+
+        document.body.appendChild(textarea);
+        textarea.select()
+
+        try {
+            this.copied = document.execCommand('copy');
+        } catch (err) {
+            this.copied = false
+        }
+        textarea.remove()
+
+        this.copied && alert('已复制');
+    }
+
+    render() {
+        const { language } = this.props;
+        const { _value, codeLink } = this.state;
         return (
-            <SyntaxHighlighter language={language} style={githubGist}>
-                {value}
-            </SyntaxHighlighter>
+            <div className="yh-oak-code-block">
+                <SyntaxHighlighter language={language} style={githubGist}>
+                    {_value}
+                </SyntaxHighlighter>
+                <div className="yh-oak-code-block-icon">
+                    <span className="iconfont icon-copy" title="复制代码" onClick={this.copy} ></span>
+                    {codeLink ? <a target='_blank' href={codeLink} className="iconfont icon-code" title="在开发者工具中打开"></a> : null}
+                </div>
+            </div>
         );
     }
 }
