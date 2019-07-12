@@ -30,6 +30,11 @@
     </view>
     <view class="h3">图标按钮</view>
     <view class="row">
+        <oak-button size='block'
+            icon="downloader"
+            type="primary">Block</oak-button>
+    </view>
+    <view class="row">
         <oak-button icon="downloader"
             type="primary"
             size="large">Downloader</oak-button>

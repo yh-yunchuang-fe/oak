@@ -24,7 +24,7 @@ Component({
     },
     data: {},
     methods: {
-        test: function () {
+        test() {
             console.log(this);
         }
     },

@@ -1,11 +1,6 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var basic_1 = __importDefault(require("../mixins/basic"));
+import BasicBehavior from '../mixins/basic';
 Component({
-    behaviors: [basic_1.default],
+    behaviors: [BasicBehavior],
     relations: {
         '../Feeds/feeds': {
             type: 'parent',

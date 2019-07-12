@@ -1,9 +1,4 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var basic_1 = __importDefault(require("../mixins/basic"));
+import BasicBehavior from '../mixins/basic';
 Component({
     properties: {
         radius: {
@@ -27,7 +22,7 @@ Component({
             optionalTypes: [String],
         },
     },
-    behaviors: [basic_1.default],
+    behaviors: [BasicBehavior],
     relations: {
         '../FeedsItem/feeds-item': {
             type: 'child',
@@ -38,15 +33,15 @@ Component({
     },
     externalClasses: ['ext-class'],
     methods: {
-        _getChildLength: function () {
-            var nodes = this.getRelationNodes('../FeedsItem/feeds-item');
+        _getChildLength() {
+            const nodes = this.getRelationNodes('../FeedsItem/feeds-item');
             this.setData({
                 childNum: nodes.length,
             });
         }
     },
     lifetimes: {
-        ready: function () {
+        ready() {
             this._getChildLength();
         },
     },

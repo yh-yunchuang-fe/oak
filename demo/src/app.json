@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/button/index",
     "pages/list/list",
     "pages/feeds/feeds",
-    "pages/button/index",
     "pages/index/index",
     "pages/icon/index"
   ],

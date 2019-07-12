@@ -6,8 +6,9 @@
     padding: 0;
     box-sizing: border-box;
     border-radius: $border-radius-base;
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    // vertical-align: middle;
     -webkit-appearance: none;
     -webkit-text-size-adjust: 100%;
 
@@ -17,14 +18,16 @@
         height: $button-block-height;
         font-size: $font-size-btn-block;
         line-height: $button-block-height - 2;
-        display: block;
+        display: flex;
+        justify-content: center;
     }
 
     &-size_large {
         padding: 0 $btn-large-lr-padding;
         height: $button-large-height;
         font-size: $font-size-btn-large;
-        line-height: $button-large-height - 2;
+        // line-height: $button-large-height - 2;
+        line-height: 0;
 
         &.oak-button-shape_circle {
             padding: 0;
@@ -37,7 +40,8 @@
         padding: 0 $btn-default-lr-padding;
         height: $button-default-height;
         font-size: $font-size-btn-default;
-        line-height: $button-default-height - 2;
+        // line-height: $button-default-height - 2;
+        line-height: 0;
 
         &.oak-button-shape_circle {
             padding: 0;
@@ -50,7 +54,8 @@
         padding: 0 $btn-small-lr-padding;
         height: $button-small-height;
         font-size: $font-size-btn-small;
-        line-height: $button-small-height - 2;
+        // line-height: $button-small-height - 2;
+        line-height: 0;
 
         &.oak-button-shape_circle {
             padding: 0;
@@ -98,6 +103,11 @@
 
     &-shape_round {
         border-radius: $border-radius-max;
+    }
+
+    .button-oak-icon {
+        display: inline-block;
+        vertical-align: middle;
     }
 
     .button-icon {

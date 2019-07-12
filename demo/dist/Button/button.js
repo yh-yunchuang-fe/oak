@@ -1,12 +1,7 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var basic_1 = __importDefault(require("../mixins/basic"));
-var open_type_1 = __importDefault(require("../mixins/open-type"));
+import BasicBehavior from '../mixins/basic';
+import openType from '../mixins/open-type';
 Component({
-    behaviors: [basic_1.default, open_type_1.default],
+    behaviors: [BasicBehavior, openType],
     properties: {
         size: {
             type: String,
@@ -40,8 +35,8 @@ Component({
     data: {
         someData: {}
     },
-    ready: function () {
+    ready() {
     },
     methods: {},
-    externalClasses: ['hover-class', 'loading-class'],
+    externalClasses: ['button-class', 'hover-class', 'loading-class'],
 });

@@ -3,8 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   border-radius: 4rpx;
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%; }
   .oak-button-size_block {
@@ -13,12 +13,13 @@
     height: 80rpx;
     font-size: 36rpx;
     line-height: 78rpx;
-    display: block; }
+    display: flex;
+    justify-content: center; }
   .oak-button-size_large {
     padding: 0 28rpx;
     height: 70rpx;
     font-size: 30rpx;
-    line-height: 68rpx; }
+    line-height: 0; }
     .oak-button-size_large.oak-button-shape_circle {
       padding: 0;
       width: 70rpx;
@@ -27,7 +28,7 @@
     padding: 0 24rpx;
     height: 56rpx;
     font-size: 26rpx;
-    line-height: 54rpx; }
+    line-height: 0; }
     .oak-button-size_default.oak-button-shape_circle {
       padding: 0;
       width: 56rpx;
@@ -36,7 +37,7 @@
     padding: 0 20rpx;
     height: 40rpx;
     font-size: 22rpx;
-    line-height: 38rpx; }
+    line-height: 0; }
     .oak-button-size_small.oak-button-shape_circle {
       padding: 0;
       width: 40rpx;
@@ -65,6 +66,9 @@
     border-radius: 0; }
   .oak-button-shape_round {
     border-radius: 200rpx; }
+  .oak-button .button-oak-icon {
+    display: inline-block;
+    vertical-align: middle; }
   .oak-button .button-icon {
     margin-right: 10rpx;
     font-size: inherit;

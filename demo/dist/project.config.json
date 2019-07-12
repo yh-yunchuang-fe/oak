@@ -5,7 +5,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
-	"projectname": "OAK",
+	"projectname": "YHWeUI",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -14,7 +14,7 @@
 		"newFeature": true,
 		"autoAudits": false
 	},
-	"appid": "wx1d7fb4ef81db6206",
+	"appid": "wx8d9cb6e54efdbaa9",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {}

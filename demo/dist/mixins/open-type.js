@@ -1,28 +1,26 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.openType = Behavior({
+export const openType = Behavior({
     properties: {
         openType: String
     },
     methods: {
-        bindGetUserInfo: function (event) {
+        bindGetUserInfo(event) {
             this.triggerEvent('bindgetuserinfo', event.detail);
         },
-        bindContact: function (event) {
+        bindContact(event) {
             this.triggerEvent('bindcontact', event.detail);
         },
-        bindGetPhoneNumber: function (event) {
+        bindGetPhoneNumber(event) {
             this.triggerEvent('bindgetphonenumber', event.detail);
         },
-        bindError: function (event) {
+        bindError(event) {
             this.triggerEvent('binderror', event.detail);
         },
-        bindLaunchApp: function (event) {
+        bindLaunchApp(event) {
             this.triggerEvent('bindlaunchapp', event.detail);
         },
-        bindOpenSetting: function (event) {
+        bindOpenSetting(event) {
             this.triggerEvent('bindopensetting', event.detail);
         },
     }
 });
-exports.default = exports.openType;
+export default openType;

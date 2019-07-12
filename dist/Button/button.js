@@ -38,5 +38,5 @@ Component({
     ready() {
     },
     methods: {},
-    externalClasses: ['hover-class', 'loading-class'],
+    externalClasses: ['button-class', 'hover-class', 'loading-class'],
 });

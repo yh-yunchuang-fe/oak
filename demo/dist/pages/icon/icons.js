@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var icons = [
+const icons = [
     {
         "unicode": "58919",
         "font_class": "money"
@@ -574,4 +572,4 @@ var icons = [
         "font_class": "disable-check"
     }
 ];
-exports.default = icons;
+export default icons;
