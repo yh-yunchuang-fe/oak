@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Model",
+    "usingComponents": {
+        "oak-model": "/Model/model",
+        "oak-button": "/Button/button"
+    }
+}

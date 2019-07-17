@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+    <oak-button bindtap="openDefault">默认弹窗</oak-button>
+    <oak-model isShow="{{showDefaultModel}}">默认弹窗</oak-model>
+
+    <oak-button bindtap="opentop">上弹窗上动画</oak-button>
+    <!-- <oak-model isShow="{{showTopModel}}" position="top" size="{{ {width: '80%', height: '400rpx'} }}" model-class="modelCenter">上弹窗</oak-model> -->
+    <oak-model isShow="{{showTModel}}" position="top" direction="top" size="{{ {width: '100%', height: '400rpx'} }}">上弹窗上动画</oak-model>
+    
+    <oak-button bindtap="openCenter">中弹窗无动画</oak-button>
+    <!-- <oak-model isShow="{{showTopModel}}" position="top" size="{{ {width: '80%', height: '400rpx'} }}" model-class="modelCenter">上弹窗</oak-model> -->
+    <oak-model isShow="{{showCModel}}" position="center" size="{{ {width: '80%', height: '400rpx'} }}">中弹窗无动画</oak-model>
+    
+    <oak-button bindtap="openbottom">下弹窗下动画</oak-button>
+    <oak-model isShow="{{showBModel}}" position="bottom" direction="bottom">下弹窗下动画</oak-model>
+</view>

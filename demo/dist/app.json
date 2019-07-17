@@ -1,16 +1,16 @@
 {
-  "pages": [
+  "pages":[
+    "pages/model/index",
     "pages/button/index",
     "pages/list/list",
     "pages/feeds/feeds",
     "pages/index/index",
     "pages/icon/index"
   ],
-  "window": {
-    "backgroundTextStyle": "light",
+  "window":{
+    "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json"
+    "navigationBarTextStyle":"black"
+  }
 }

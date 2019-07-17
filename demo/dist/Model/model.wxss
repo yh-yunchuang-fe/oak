@@ -1,0 +1,54 @@
+.oak-model {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+  .oak-model.opacity-30 {
+    background-color: rgba(0, 0, 0, 0.3); }
+  .oak-model.opacity-40 {
+    background-color: rgba(0, 0, 0, 0.4); }
+  .oak-model.opacity-50 {
+    background-color: rgba(0, 0, 0, 0.5); }
+  .oak-model.opacity-60 {
+    background-color: rgba(0, 0, 0, 0.6); }
+  .oak-model.opacity-70 {
+    background-color: rgba(0, 0, 0, 0.7); }
+  .oak-model.opacity-75 {
+    background-color: rgba(0, 0, 0, 0.4); }
+  .oak-model.opacity-80 {
+    background-color: rgba(0, 0, 0, 0.8); }
+  .oak-model.hide {
+    display: none; }
+  .oak-model-content {
+    background-color: #fff;
+    position: absolute;
+    transition: all ease-out 300ms; }
+  .oak-model-diretion-top {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%); }
+  .oak-model-diretion-left {
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%); }
+  .oak-model-diretion-right {
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%); }
+  .oak-model-diretion-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%); }
+  .oak-model-position-top {
+    top: 0;
+    left: 0; }
+  .oak-model-position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .oak-model-position-bottom {
+    bottom: 0;
+    left: 0; }

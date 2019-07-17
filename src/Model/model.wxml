@@ -1,0 +1,8 @@
+<wxs src="WXS/base.wxs"
+    module="Utils" />
+
+<view class="oak-model {{isShowClass}} opacity-{{opacity}}" bindtap='_maskClick' style="z-index: {{zIndex}}">
+    <view class="oak-model-content model-class oak-model-position-{{endClass}} oak-model-diretion-{{startClass}}" catchtap="true" style="width: {{size.width}}; height: {{size.height}};">
+        <slot></slot>
+    </view>
+</view>

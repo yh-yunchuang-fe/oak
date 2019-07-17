@@ -1,0 +1,73 @@
+@import "Style/variable";
+.oak-model {
+    background-color: rgba(0,0,0,.7);
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    &.opacity-30 {
+        background-color: rgba(0,0,0,.3);
+    }
+    &.opacity-40 {
+        background-color: rgba(0,0,0,.4);
+    }
+    &.opacity-50 {
+        background-color: rgba(0,0,0,.5);
+    }
+    &.opacity-60 {
+        background-color: rgba(0,0,0,.6);
+    }
+    &.opacity-70 {
+        background-color: rgba(0,0,0,.7);
+    }
+    &.opacity-75 {
+        background-color: rgba(0,0,0,.4);
+    }
+    &.opacity-80 {
+        background-color: rgba(0,0,0,.8);
+    }
+    
+    &.hide {
+        display: none;
+    }
+    &-content {
+        background-color: #fff;
+        position: absolute;
+        transition: all ease-out 300ms;
+    }
+    &-diretion-top {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%)
+    }
+    &-diretion-left {
+        top: 50%;
+        left: 0;
+        transform: translate(-100%, -50%)
+    }
+    &-diretion-right {
+        top: 50%;
+        right: 0;
+        transform: translate(100%, -50%)
+    }
+    &-diretion-bottom {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 100%)
+    }
+    &-position-top {
+        top: 0;
+        left: 0;
+    }
+    &-position-center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%)
+    }
+    &-position-bottom {
+        bottom: 0;
+        left: 0;
+    }
+}
