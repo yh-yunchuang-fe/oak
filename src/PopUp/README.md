@@ -8,14 +8,14 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-Model": "path/to/your/oakui/Model/model"
+  "oak-popup": "path/to/your/oakui/PopUp/popup"
 }
 ```
 
 在页面使用
 ```html
 <!-- use in `page.wxml` -->
-<oak-model />
+<oak-popup />
 ```
 
 

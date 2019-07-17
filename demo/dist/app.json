@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/model/index",
+    "pages/popup/index",
     "pages/button/index",
     "pages/list/list",
     "pages/feeds/feeds",
