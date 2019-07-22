@@ -1,6 +1,7 @@
 /**app.wxss**/
 .container {
-  min-height: 100vh; }
+  min-height: 100vh;
+  background-color: #f3f3f3; }
 
 .h3 {
   padding: 20rpx;

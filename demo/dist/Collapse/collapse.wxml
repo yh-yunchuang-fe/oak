@@ -1,0 +1,5 @@
+<wxs src="../wxs/base.wxs" module="Utils" />
+
+<view class="oak-collapse">
+    <slot />
+</view>

@@ -17,7 +17,7 @@ let target = args.c || args.p;
 target = target.split(',');
 // const isPage = args.p;
 
-const defaultDir = isComponent ? `${process.cwd()}/src/packages/` : `${process.cwd()}/src/pages/`;
+const defaultDir = isComponent ? `${process.cwd()}/src/` : `${process.cwd()}/demo/src/pages/`;
 const creatDir = args.d ? `${process.cwd()}/src/${args.d}/` : defaultDir;
 const templateDir = isComponent ? `${process.cwd()}/__build__/template/component` : `${process.cwd()}/__build__/template/page`;
 

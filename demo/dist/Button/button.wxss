@@ -5,6 +5,7 @@
   border-radius: 4rpx;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%; }
   .oak-button-size_block {

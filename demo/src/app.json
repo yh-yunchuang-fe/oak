@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/collapse/collapse",
     "pages/button/index",
     "pages/list/list",
     "pages/feeds/feeds",
