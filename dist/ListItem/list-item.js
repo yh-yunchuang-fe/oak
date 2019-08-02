@@ -102,6 +102,14 @@ Component({
             value: {},
             optionalTypes: [Object],
         },
+        url: {
+            type: String,
+            value: '',
+        },
+        openType: {
+            type: String,
+            value: 'navigate',
+        }
     },
     externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class'],
 });

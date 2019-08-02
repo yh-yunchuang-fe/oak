@@ -5,7 +5,8 @@ yarn.lock
 yarn-error.log
 .vscode
 .idea/
-dist
+docs/dist
+demo/dist
 node_modules
 oak.tar.gz
 oak.zip

@@ -60,8 +60,9 @@
 
     <oak-icon
         wx:if="{{arrow}}"
-        name="arrow-right"
+        name="next"
         color="{{arrowColor}}"
         size="{{arrowSize}}" />
     <slot wx:else name="icon-right" />
+    <navigator class="oak-list-item-nav" wx:if="{{url}}" url="{{url}}" open-type="{{openType}}"/>
 </view>
