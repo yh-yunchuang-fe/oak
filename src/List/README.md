@@ -152,7 +152,9 @@
 </oak-list-item>
 ```
 
-## List API
+##  API
+
+### List
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -160,7 +162,7 @@
 | botder | 列表外边框 | `Boolen` | `false` |
 
 
-## List 外部样式类
+### List 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|
@@ -168,7 +170,7 @@
 | title-class | 分组标题样式 |
 
 
-## ListItem API
+### ListItem
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -189,7 +191,7 @@
 | nowrap | 文本单行超出截断，对 `title`, `sub-title`, `content`生效 | `Boolen` | `false` |
 | couston-nowrap | 对 `title`, `sub-title`, `content`自定义截断行数, 如: `{title: 1, subTitle: 2, content: 1}`。不能与`nowrap`混用 | `Object` | `{}` |
 
-## ListItem Slot
+### ListItem Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
@@ -200,7 +202,7 @@
 | button | 自定义`button`显示内容，如果设置了`button`不生效 |
 | icon-right | 自定义右侧图标，默认是`arrow-right` |
 
-## ListItem 外部样式类
+### ListItem 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|

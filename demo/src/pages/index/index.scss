@@ -1,12 +1,39 @@
 @import "Style/variable";
 
-.link {
-    padding: 0 20rpx;
-    width: 100%;
-    height: 70rpx;
-    border: $border;
-    background-color: $stable-bg;
-    color: #333;
-    line-height: 70rpx;
-    font-size: $font-size-base;
+.container {
+    padding: $wrap-padding;
+
+    .title {
+        margin: 40rpx 20rpx 20rpx;
+        font-size: 40rpx;
+        font-weight: bold;
+    }
+
+    .subtitle {
+        color: $txt-info;
+        font-size: $font-size-subtitle;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .col-title {
+        font-size: $font-size-title;
+        font-weight: bold;
+    }
+
+    .item-title {
+        // color: $txt-info;
+    }
+
+    oak-collapse {
+        margin-top: 40rpx;
+        display: block;
+    }
+
+    oak-collapse-item {
+        margin-bottom: 40rpx;
+        display: block;
+    }
 }

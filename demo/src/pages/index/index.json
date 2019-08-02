@@ -1,8 +1,9 @@
 {
-    "navigationBarTitleText": "YHUI",
+    "navigationBarTitleText": "Oak UI",
     "usingComponents": {
         "oak-icon": "/Icon/icon",
-        "oak-loading": "/Loading/loading",
-        "oak-button": "/Button/button"
+        "oak-collapse": "/Collapse/collapse",
+        "oak-list-item": "/ListItem/list-item",
+        "oak-collapse-item": "/CollapseItem/collapse-item"
     }
 }

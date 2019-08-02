@@ -1,6 +1,63 @@
 @import "Style/variable";
 
+$title-height: 90rpx;
 
 .oak-collapse-item {
+    height: $title-height;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    background-color: $default-bg;
 
+    &.border {
+        border-bottom: $border;
+    }
+
+    &.disabled {
+        opacity: .8;
+    }
+
+    &-title {
+        display: flex;
+        padding: 0 $wrap-padding;
+        height: $title-height;
+        line-height: $title-height;
+        color: $txt-default;
+        font-size: $font-size-title;
+
+        .disabled & {
+            color: $txt-info;
+        }
+    }
+
+    &-title-text {
+        flex: 1;
+    }
+
+    &-titlle-icon {
+        margin-right: 10rpx;
+        transition: all .2s ease-in-out;
+        color: inherit;
+        font-size: inherit;
+
+        &.down {
+            transform: rotateZ(-180deg);
+        }
+    }
+
+    &-titlle-iconext {
+        color: inherit !important;
+        font-size: inherit !important;
+    }
+
+    &-content {
+        margin-left: $wrap-padding;
+        padding: $wrap-padding $wrap-padding $wrap-padding 0;
+        color: $txt-info;
+        font-size: $font-size-sub;
+        overflow: hidden;
+
+        &.show {
+            border-top: $border;
+        }
+    }
 }

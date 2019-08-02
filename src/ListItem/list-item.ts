@@ -1,9 +1,9 @@
-import BasicBehavior from 'Mixins/basic';
+import BasicBehavior from 'Mixins/basic'
 
 declare interface Icon {
-    name?: string,
-    color?: string,
-    size?: string,
+    name?: string;
+    color?: string;
+    size?: string;
 }
 
 Component({
@@ -36,7 +36,7 @@ Component({
             type: Boolean,
             value: true,
             optionalTypes: [Boolean, Object],
-            observer(arrow: Icon) {
+            observer(arrow: Icon): void {
                 if (typeof arrow === 'object') {
                     this.setData({
                         arrowColor: arrow.color || '#999',
@@ -59,7 +59,7 @@ Component({
             type: String,
             value: '',
             optionalTypes: [String, Object],
-            observer(icon: Icon) {
+            observer(icon: Icon): void {
                 if (typeof icon === 'object') {
                     this.setData({
                         _icon: icon.name,
@@ -109,6 +109,14 @@ Component({
             value: {},
             optionalTypes: [Object],
         },
+        url: {
+            type: String,
+            value: '',
+        },
+        openType: {
+            type: String,
+            value: 'navigate',
+        }
     },
     externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class'],
 })

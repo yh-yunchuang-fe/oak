@@ -1,24 +1,6 @@
 /*! *****************************************************************************
 Copyright (c) 2018 Tencent, Inc. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
-to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
-and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-***************************************************************************** */
-
-
-
-/* tslint:disable: no-unnecessary-generics jsdoc-format interface-name */
-
-/*! *****************************************************************************
-Copyright (c) 2018 Tencent, Inc. All rights reserved.
-
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -26,6 +8,15 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ***************************************************************************** */
 
+/*! *****************************************************************************
+Copyright (c) 2018 Tencent, Inc. All rights reserved. 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+***************************************************************************** */
 
 declare namespace Page {
   interface ICustomShareContent {
@@ -81,16 +72,16 @@ declare namespace Page {
     };
   }
 
-  interface PageInstance<D> {
+  interface PageInstanceBaseProps<D extends IAnyObject = any> {
     /** 页面的初始数据
-    *
-    * `data` 是页面第一次渲染使用的**初始数据**。
-    *
-    * 页面加载时，`data` 将会以`JSON`字符串的形式由逻辑层传至渲染层，因此`data`中的数据必须是可以转成`JSON`的类型：字符串，数字，布尔值，对象，数组。
-    *
-    * 渲染层可以通过 `WXML` 对数据进行绑定。
-    */
-    data: Readonly<D>;
+     *
+     * `data` 是页面第一次渲染使用的**初始数据**。
+     *
+     * 页面加载时，`data` 将会以`JSON`字符串的形式由逻辑层传至渲染层，因此`data`中的数据必须是可以转成`JSON`的类型：字符串，数字，布尔值，对象，数组。
+     *
+     * 渲染层可以通过 `WXML` 对数据进行绑定。
+     */
+    data?: D;
 
     /** `setData` 函数用于将数据从逻辑层发送到视图层（异步），同时改变对应的 `this.data` 的值（同步）。
      *
@@ -102,48 +93,33 @@ declare namespace Page {
      * 1. 请不要把 data 中任何一项的 value 设为 `undefined` ，否则这一项将不被设置并可能遗留一些潜在问题。
      */
 
-    setData(
+    setData?<K extends keyof D>(
       /** 这次要改变的数据
        *
        * 以 `key: value` 的形式表示，将 `this.data` 中的 `key` 对应的值改变成 `value`。
        *
        * 其中 `key` 可以以数据路径的形式给出，支持改变数组中的某一项或对象的某个属性，如 `array[2].message`，`a.b.c.d`，并且不需要在 this.data 中预先定义。
        */
-      data: Partial<D> & Record<string, NonUndefined<any>>,
+      data: D | Pick<D, K> | IAnyObject,
       /** setData引起的界面更新渲染完毕后的回调函数，最低基础库： `1.5.0` */
-      callback?: () => void
+      callback?: () => void,
     ): void;
 
     /** 到当前页面的路径，类型为`String`。最低基础库： `1.2.0` */
-    route: string;
-
-  /** 返回当前页面的 custom-tab-bar 的组件实例
-   *
-   * 注意: 在基础库 < 2.5.0 时该方法可能会不存在, 需要先判断 getTabBar 方法是否存在 */
-    getTabBar<TD = any, TM = any, TP = {}>(): WxComponent<TP, TD, TM> | null;
+    route?: string;
   }
 
-  interface PageOptions<
+  interface PageInstance<
     D extends IAnyObject = any,
-    // T extends IAnyObject = any
-    > {
-    /** 页面的初始数据
-      *
-      * `data` 是页面第一次渲染使用的**初始数据**。
-      *
-      * 页面加载时，`data` 将会以`JSON`字符串的形式由逻辑层传至渲染层，因此`data`中的数据必须是可以转成`JSON`的类型：字符串，数字，布尔值，对象，数组。
-      *
-      * 渲染层可以通过 `WXML` 对数据进行绑定。
-      */
-    data?: D;
-
+    T extends IAnyObject = any
+  > extends PageInstanceBaseProps<D> {
     /** 生命周期回调—监听页面加载
      *
      * 页面加载时触发。一个页面只会调用一次，可以在 onLoad 的参数中获取打开当前页面路径中的参数。
      */
     onLoad?(
       /** 打开当前页面路径中的参数 */
-      query?: { [queryKey: string]: string }
+      query?: { [queryKey: string]: string },
     ): void;
     /** 生命周期回调—监听页面显示
      *
@@ -151,10 +127,10 @@ declare namespace Page {
      */
     onShow?(): void;
     /** 生命周期回调—监听页面初次渲染完成
-     *
+     * 
      * 页面初次渲染完成时触发。一个页面只会调用一次，代表页面已经准备妥当，可以和视图层进行交互。
-     *
-
+     * 
+   
      * 注意：对界面内容进行设置的 API 如`wx.setNavigationBarTitle`，请在`onReady`之后进行。
     */
     onReady?(): void;
@@ -193,7 +169,7 @@ declare namespace Page {
      */
     onShareAppMessage?(
       /** 分享发起来源参数 */
-      options?: IShareAppMessageOption
+      options?: IShareAppMessageOption,
     ): ICustomShareContent;
     /** 页面滚动触发事件的处理函数
      *
@@ -201,13 +177,13 @@ declare namespace Page {
      */
     onPageScroll?(
       /** 页面滚动参数 */
-      options?: IPageScrollOption
+      options?: IPageScrollOption,
     ): void;
 
     /** 当前是 tab 页时，点击 tab 时触发，最低基础库： `1.9.0` */
     onTabItemTap?(
       /** tab 点击参数 */
-      options?: ITabItemTapOption
+      options?: ITabItemTapOption,
     ): void;
 
     /** 窗口尺寸改变时触发，最低基础库：`2.4.0` */
@@ -218,16 +194,16 @@ declare namespace Page {
   }
 
   interface PageConstructor {
-    <D extends IAnyObject, T extends IAnyObject & PageOptions>(
-      options: PageOptions<D> & T & ThisType<PageInstance<D> & T>
+    <D extends IAnyObject, T extends IAnyObject & PageInstance>(
+      options: PageInstance<D, T> & T,
     ): void;
   }
 
   interface GetCurrentPages {
-    <D extends IAnyObject = {}, T extends IAnyObject = {}>(): (PageOptions<
-      D
+    <D extends IAnyObject = {}, T extends IAnyObject = {}>(): (PageInstance<
+      D,
+      T
     > &
-      PageInstance<IAnyObject> &
       T)[];
   }
 }

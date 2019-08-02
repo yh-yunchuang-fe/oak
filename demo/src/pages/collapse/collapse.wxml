@@ -1,3 +1,58 @@
 <!--index.wxml-->
 <view class="container">
+    <view class="h3">基础用法</view>
+    <oak-collapse activeKey="{{ 0 }}"
+        border>
+        <oak-collapse-item title="折叠面板1"
+            key='1'>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+        <oak-collapse-item title="折叠面板2"
+            key='2'>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+        <oak-collapse-item title="折叠面板3"
+            key='3'>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+        <oak-collapse-item title="折叠面板4"
+            key='4'
+            disabled>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+    </oak-collapse>
+    <view class="h3">手风琴效果</view>
+    <oak-collapse activeKey="{{ 0 }}"
+        accordion
+        border>
+        <oak-collapse-item title="折叠面板1"
+            key='1'>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+        <oak-collapse-item title="折叠面板2"
+            key='2'>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+        <oak-collapse-item title="折叠面板3"
+            key='3'>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+        <oak-collapse-item title="折叠面板4"
+            key='4'
+            disabled>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+    </oak-collapse>
+    <view class="h3">自定义标题</view>
+    <oak-collapse border>
+        <oak-collapse-item >
+            <view class="oak-collapse-title"
+                slot="title">自定义标题加粗
+                <oak-icon name="night"
+                    color="#FD7622"
+                    size="40rpx" />
+            </view>
+            折叠面板内容折叠面板内容折叠面板内容折叠面板内容折叠面板内容折叠面板内容
+        </oak-collapse-item>
+    </oak-collapse>
 </view>
