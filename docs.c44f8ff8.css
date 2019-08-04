@@ -17,7 +17,12 @@
   .header h2 {
     margin: 0;
     padding: 0;
-    flex: 1; }
+    flex: 1;
+    display: flex;
+    align-items: center; }
+  .header .logo {
+    margin-right: 10px;
+    width: 40px; }
   .header a {
     display: block;
     color: inherit; }
@@ -30,7 +35,7 @@
   background-color: #fff; }
 
 .doc-content {
-  padding: 0 30px 30px;
+  padding: 0 50px 50px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: #314659;
@@ -194,7 +199,7 @@
     font-size: inherit;
     line-height: inherit; }
   .doc-content a {
-    color: #0366d6;
+    color: #1890ff;
     text-decoration: none; }
   .doc-content a:hover {
     text-decoration: underline; }
@@ -383,7 +388,7 @@
   .doc-content h4,
   .doc-content h5,
   .doc-content h6 {
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.25;
     margin-bottom: 16px;
     margin-top: 24px;
