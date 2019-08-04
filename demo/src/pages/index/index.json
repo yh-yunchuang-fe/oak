@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "Oak UI",
+    "navigationBarTitleText": "Oak Weui",
     "usingComponents": {
         "oak-icon": "/Icon/icon",
         "oak-collapse": "/Collapse/collapse",

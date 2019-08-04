@@ -5,7 +5,7 @@
 
     .title {
         margin: 40rpx 20rpx 20rpx;
-        font-size: 40rpx;
+        font-size: 50rpx;
         font-weight: bold;
     }
 
@@ -19,13 +19,19 @@
     }
 
     .col-title {
-        font-size: $font-size-title;
+        font-size: $font-size-btn-block;
         font-weight: bold;
     }
 
-    .item-title {
-        // color: $txt-info;
+    .logo {
+        margin-right: 20rpx;
+        width: 80rpx;
+        vertical-align: middle;
     }
+
+    // .item-title {
+    //     color: $txt-info;
+    // }
 
     oak-collapse {
         margin-top: 40rpx;

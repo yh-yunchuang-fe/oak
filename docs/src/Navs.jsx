@@ -57,7 +57,7 @@ class Navs extends Component {
         return (
             <Menu
                 mode="inline"
-                defaultSelectedKeys={[`${pathname || '/intro'}`]}
+                defaultSelectedKeys={[`${pathname === '/' ? '/intro' : pathname }`]}
                 defaultOpenKeys={['Components']}
                 style={this.state.style}
             >

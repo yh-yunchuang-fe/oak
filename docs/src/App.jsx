@@ -17,8 +17,8 @@ class App extends Component {
             <Router>
                 <Layout className='layout'>
                     <Header className='header'>
-                        <h2>Oak UI</h2>
-                        <a href="https://github.com/yh-yunchuang-fe/oak" rel="Oak"><img src="https://static.yonghuivip.com/oak/github.png" alt="" className="github" /></a>
+                        <h2><img src='https://static.yonghuivip.com/oak/images/logo.png' alt='Logo' className='logo'/> Oak Weui</h2>
+                        <a href='https://github.com/yh-yunchuang-fe/oak' rel='Oak'><img src='https://static.yonghuivip.com/oak/github.png' alt="" className="github" /></a>
                     </Header>
                     <Layout className='doc-body'>
                         <Sider style={{ background: '#fff'}}>

@@ -79,7 +79,16 @@ const config = {
         }, {
             test: /\.md$/,
             use: ['raw-loader'],
-        }],
+        }, {
+            test: /.(gif|jpg|png)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 8192,
+                    name: 'images/[name].[hash:8].[ext]'
+                }
+            }]
+        },],
     },
     plugins: [
         new CleanWebpackPlugin({

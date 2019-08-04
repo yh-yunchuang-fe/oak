@@ -5,7 +5,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.0",
-	"projectname": "YHWeUI",
+	"projectname": "Oak Weui",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -14,6 +14,6 @@
 		"newFeature": true,
 		"autoAudits": false
 	},
-	"appid": "wx8d9cb6e54efdbaa9",
+	"appid": "wxb459f8918da5b9dc",
 	"condition": {}
 }
