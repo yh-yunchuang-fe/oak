@@ -1,13 +1,13 @@
 const config = require('./webpack.site.dev.js');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const UploadToQiniuWebpackPlugin = require('upload-to-qiniu-webpack-plugin');
-
+const qiniu = require('./qiniu.js').default;
 delete config.devServer;
 
 // config.plugins.push(new BundleAnalyzerPlugin());
 config.plugins.push(new UploadToQiniuWebpackPlugin({
-    qiniuAccessKey: 'rqLh8BpwLdc****************YpE0sg-TaASlT',
-    qiniuSecretKey: 'UiUBP4KH0zb****************2fO7r6qHu6olC',
+    qiniuAccessKey: qiniu.ak,
+    qiniuSecretKey: qiniu.sk,
     qiniuBucket: 'yhcms',
     qiniuZone: 'Zone_z0',
     uploadLogPath: __dirname,

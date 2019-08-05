@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
     <view class="title">
-        Oak UI
+        <image mode="widthFix" src="../../images/logo.png" class="logo" /> Oak Weui
     </view>
     <view class="subtitle">
         一个快速、高效、愉悦的小程序UI组件库

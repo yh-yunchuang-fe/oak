@@ -1,6 +1,6 @@
 export default {
     navs: [{
-        name: 'Oak',
+        name: 'Oak Weui',
         components: false,
         path: '/intro',
     }, {
