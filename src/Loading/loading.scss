@@ -10,17 +10,18 @@
 
     &.absolute,
     &.fixed {
+        position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -40%);
-    }
-
-    &.fixed {
-        position: fixed;
+        transform: translate(-50%, -50%);
         z-index: 10;
         background-color: #fff;
         border-radius: 50%;
         box-shadow: 0 0 8rpx #979797;
+    }
+
+    &.fixed {
+        transform: translate(-50%, -60%);
     }
 
     &.absolute {

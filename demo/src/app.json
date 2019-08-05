@@ -5,6 +5,7 @@
     "pages/collapse/collapse",
     "pages/button/index",
     "pages/feeds/feeds",
+    "pages/loading/loading",
     "pages/icon/index"
   ],
   "window":{

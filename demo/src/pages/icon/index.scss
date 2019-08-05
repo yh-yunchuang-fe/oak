@@ -10,8 +10,9 @@
 }
 
 .icon {
+    padding-top: 20rpx;
     width: 25%;
-    height: 120rpx;
+    height: 140rpx;
     display: inline-block;
     text-align: center;
     box-sizing: border-box;
@@ -27,4 +28,11 @@ c-icon {
     font-size: $font-size-base;
     color: $txt-default;
     line-height: 1.2;
+}
+
+.tips {
+    margin-top: 40rpx;
+    text-align: center;
+    color: $txt-info;
+    font-size: $font-size-subtitle;
 }

@@ -21,7 +21,7 @@
                 url="/pages/icon/index" />
             <oak-list-item title="Loadding 加载"
                 title-class="item-title"
-                url="/pages/icon/index" />
+                url="/pages/loading/loading" />
         </oak-collapse-item>
 
         <oak-collapse-item title="展示组件"
