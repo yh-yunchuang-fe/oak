@@ -349,19 +349,14 @@ ul {
     margin-bottom: 0;
     margin-top: 0;
     padding-left: 0;
+    list-style-type: circle;
 }
 
 ol ol,
 ul ol {
-    list-style-type: lower-roman;
+    list-style-type: disc;
 }
 
-ol ol ol,
-ol ul ol,
-ul ol ol,
-ul ul ol {
-    list-style-type: lower-alpha;
-}
 
 dd {
     margin-left: 0;
@@ -556,8 +551,8 @@ h5,
 h6 {
     font-weight: 500;
     line-height: 1.25;
-    margin-bottom: 16px;
-    margin-top: 24px;
+    padding-bottom: 16px;
+    padding-top: 24px;
     color: #0d1a26;
 }
 
@@ -614,7 +609,7 @@ li>p {
 }
 
 li+li {
-    margin-top: .25em;
+    margin-top: .5em;
 }
 
 dl {
