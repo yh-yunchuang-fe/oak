@@ -1,4 +1,4 @@
-@import url(//at.alicdn.com/t/font_1245699_v79dgu22ut.css);
+@import url(//at.alicdn.com/t/font_1245699_pqftkcghe8n.css);
 .layout {
   position: relative;
   color: #333;
@@ -262,15 +262,11 @@
   .doc-content ul {
     margin-bottom: 0;
     margin-top: 0;
-    padding-left: 0; }
+    padding-left: 0;
+    list-style-type: circle; }
   .doc-content ol ol,
   .doc-content ul ol {
-    list-style-type: lower-roman; }
-  .doc-content ol ol ol,
-  .doc-content ol ul ol,
-  .doc-content ul ol ol,
-  .doc-content ul ul ol {
-    list-style-type: lower-alpha; }
+    list-style-type: disc; }
   .doc-content dd {
     margin-left: 0; }
   .doc-content code,
@@ -390,8 +386,8 @@
   .doc-content h6 {
     font-weight: 500;
     line-height: 1.25;
-    margin-bottom: 16px;
-    margin-top: 24px;
+    padding-bottom: 16px;
+    padding-top: 24px;
     color: #0d1a26; }
   .doc-content h1 {
     font-size: 2em; }
@@ -423,7 +419,7 @@
   .doc-content li > p {
     margin-top: 16px; }
   .doc-content li + li {
-    margin-top: .25em; }
+    margin-top: .5em; }
   .doc-content dl {
     padding: 0; }
   .doc-content dl dt {
