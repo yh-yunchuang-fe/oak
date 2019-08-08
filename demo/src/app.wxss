@@ -5,11 +5,12 @@
 }
 
 .h3 {
-    padding: 20rpx;
-    font-size: 30rpx;
+    padding: 20rpx 20rpx 30rpx;
+    font-size: 36rpx;
 }
 
 .row {
     margin: 10rpx;
     line-height: 0;
+    background-color: #fff;
 }

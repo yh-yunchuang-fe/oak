@@ -12,3 +12,7 @@
     -webkit-box-flex: $row;
     height: inherit;
 }
+
+@mixin tc {
+    text-align: center;
+}

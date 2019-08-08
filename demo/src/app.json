@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/avatar/avatar",
     "pages/index/index",
     "pages/list/list",
     "pages/collapse/collapse",

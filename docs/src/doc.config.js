@@ -16,8 +16,7 @@ export default {
         name: '更新日志',
         components: false,
         path: '/changelog',
-    },
-    {
+    }, {
         name: 'Components',
         components: true,
         list: [{
@@ -38,14 +37,17 @@ export default {
         }, {
             name: '展示',
             groups: [{
+                name: 'Avatar 头像',
+                path: '/Avatar',
+            }, {
+                name: 'Collapse 折叠面板',
+                path: '/Collapse',
+            }, {
                 name: 'Feeds 信息流',
                 path: '/Feeds',
             }, {
                 name: 'List 列表',
                 path: '/List',
-            }, {
-                name: 'Collapse 折叠面板',
-                path: '/Collapse',
             },],
         }],
     },
