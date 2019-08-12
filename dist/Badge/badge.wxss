@@ -1,0 +1,31 @@
+.oak-badge {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom; }
+  .oak-badge-sub {
+    padding: 0 15rpx;
+    height: 44rpx;
+    min-width: 44rpx;
+    display: inline-block;
+    background-color: #f5222d;
+    line-height: 42rpx;
+    font-size: 24rpx;
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 44rpx;
+    border: 1rpx solid transparent; }
+    .oak-badge-sub.absolute {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(50%, -50%); }
+    .oak-badge-sub.dot {
+      padding: 0;
+      height: 10rpx;
+      width: 10rpx;
+      border-radius: 10rpx;
+      text-indent: -9999px;
+      border: none;
+      overflow: hidden;
+      min-width: 0; }

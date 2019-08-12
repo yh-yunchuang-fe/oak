@@ -6,6 +6,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: top;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%; }
   .oak-button-size_block {
@@ -36,13 +37,13 @@
       border-radius: 56rpx; }
   .oak-button-size_small {
     padding: 0 20rpx;
-    height: 40rpx;
+    height: 44rpx;
     font-size: 22rpx;
     line-height: 0; }
     .oak-button-size_small.oak-button-shape_circle {
       padding: 0;
-      width: 40rpx;
-      border-radius: 40rpx; }
+      width: 44rpx;
+      border-radius: 44rpx; }
   .oak-button-type_default {
     background-color: #fff;
     border: 1rpx solid rgba(221, 221, 221, 0.8);

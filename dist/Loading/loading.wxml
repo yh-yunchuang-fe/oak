@@ -1,7 +1,7 @@
 <wxs src="../wxs/base.wxs"
     module="Utils" />
 
-<view class="{{ Utils.classNames('oak-loading', {small: size === 'small', large: size === 'large', fixed: position === 'fixed', absolute: position === 'absolute'} )}}">
+<view class="{{ Utils.classNames('oak-loading', {small: size === 'small', large: size === 'large', fixed: position === 'fixed', absolute: position === 'absolute'} )}}" wx:if="{{isShow}}">
     <view class='oak-loading-v1'
         style="border-top-color: {{color}};"></view>
     <view class='oak-loading-v2 loader-color'

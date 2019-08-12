@@ -1,7 +1,7 @@
 # Development(开发者说明)
 
 ### Folders
-
+```
 |
 |--- src          # oak weui source code
 |
@@ -12,7 +12,7 @@
 |--- __build__    # oak build script
 |
 |--- package.json
-
+```
 
 ## Local development
 

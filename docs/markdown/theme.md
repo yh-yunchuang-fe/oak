@@ -39,4 +39,4 @@ $border-color: rgba(221, 221, 221, .8); // 边框色
 
 
 ## 定制方式
-我们建议 clone [Oak 源码](https://github.com/yh-yunchuang-fe/oak)到本地，然后修改[变量文件](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/style/variable.scss)在本地重编译。项目运行请参考[Oak 开发文档](https://github.com/yh-yunchuang-fe/oak)。
+我们建议 clone [Oak 源码](https://github.com/yh-yunchuang-fe/oak)到本地，然后修改[变量文件](https://github.com/yh-yunchuang-fe/oak/blob/develop/src/style/variable.scss)在本地重编译。项目运行请参考[Oak 开发文档](https://github.com/yh-yunchuang-fe/oak/wiki/Development(%E5%BC%80%E5%8F%91%E8%80%85%E8%AF%B4%E6%98%8E))。
