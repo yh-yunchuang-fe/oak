@@ -12,5 +12,4 @@
 .row {
     margin: 10rpx;
     line-height: 0;
-    background-color: #fff;
 }

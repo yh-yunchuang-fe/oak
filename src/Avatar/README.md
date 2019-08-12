@@ -1,4 +1,4 @@
-# Avatar
+# Avatar 头像
 
 ## 使用
 

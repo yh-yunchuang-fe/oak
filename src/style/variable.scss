@@ -10,6 +10,7 @@ $highligh-bg: $theme-color;
 $danger-bg: #FF4600;
 $active-bg: #FEF1E8;
 $avatar-bg: #ccc;
+$badge-bg: #f5222d;
 
 $txt-default: #333;
 $txt-info: #999;
@@ -45,6 +46,7 @@ $btn-block-lr-padding: 34rpx;
 $btn-large-lr-padding: 28rpx;
 $btn-default-lr-padding: 24rpx;
 $btn-small-lr-padding: 20rpx;
+$badge-padding:15rpx;
 
 
 $wrap-list-padding-subtitle: 10rpx;
@@ -89,3 +91,6 @@ $feeds-three-height: 240rpx;
 $avatar-width: 108rpx;
 $avatar-small-width: 84rpx;
 $avatar-large-width: 160rpx;
+
+$badge-height: 44rpx;
+$badge-dot-height: 10rpx;

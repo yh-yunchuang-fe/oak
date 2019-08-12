@@ -1,12 +1,13 @@
 {
   "pages":[
-    "pages/avatar/avatar",
+    "pages/badge/badge",
     "pages/index/index",
     "pages/list/list",
     "pages/collapse/collapse",
     "pages/button/index",
     "pages/feeds/feeds",
     "pages/loading/loading",
+    "pages/avatar/avatar",
     "pages/icon/index"
   ],
   "window":{

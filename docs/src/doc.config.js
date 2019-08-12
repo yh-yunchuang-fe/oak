@@ -40,6 +40,9 @@ export default {
                 name: 'Avatar 头像',
                 path: '/Avatar',
             }, {
+                name: 'Badge 微标',
+                path: '/Badge',
+            },{
                 name: 'Collapse 折叠面板',
                 path: '/Collapse',
             }, {

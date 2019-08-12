@@ -39,6 +39,9 @@
             <oak-list-item title="Collapse 折叠面板"
                 title-class="item-title"
                 url="/pages/collapse/collapse" />
+            <oak-list-item title="Avatar 头像"
+                title-class="item-title"
+                url="/pages/avatar/avatar" />
         </oak-collapse-item>
     </oak-collapse>
 </view>
