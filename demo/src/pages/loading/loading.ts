@@ -25,5 +25,11 @@ Page({
                 })
             }, 2000)
         })
-    }
+    },
+    onShareAppMessage(): object {
+        return {
+            title: 'Oak Weui Loading 加载',
+            path: '/pages/loading/loading',
+        }
+    },
 })
