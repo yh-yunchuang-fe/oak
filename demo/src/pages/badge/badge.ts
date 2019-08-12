@@ -3,7 +3,4 @@
 Page({
     data: {
     },
-    onLoad() {
-        
-    },
 })
