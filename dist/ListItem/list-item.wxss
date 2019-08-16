@@ -43,7 +43,7 @@
     font-size: 32rpx;
     color: #999;
     display: inline-block;
-    visibility: middle; }
+    vertical-align: middle; }
     .oak-list-item-content.title {
       color: #333; }
   .oak-list-item-title.nowrap, .oak-list-item-subtitle.nowrap, .oak-list-item-content.nowrap {

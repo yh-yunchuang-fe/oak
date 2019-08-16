@@ -1,0 +1,51 @@
+@import "Style/variable";
+@import "Style/mixin";
+
+.oak-action-sheet {
+    &-mask {
+        @include mask;
+    }
+
+    &-body,
+    &-body-iphonex  {
+        @include tc;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        background-color: $default-bg;
+        font-size: $font-size-h1;
+    }
+    &-body-iphonex {
+        padding-bottom: $iphonex-padding;
+    }
+
+    &-item {
+        height: $action-sheet-height;
+        line-height: $action-sheet-height;
+        border: none;
+
+        .oak-botton:not(:first-child) & {
+            border-top: $border;
+        }
+
+    }
+
+    &-subtitle {
+        position: relative;
+        top: 6rpx;
+        margin-left: 10rpx;
+        font-size: $font-size-subtitle;
+        color: $txt-info;
+    }
+
+    &-cancle {
+        border-top: $wrap-margin-s solid $stable-bg;
+    }
+
+    &-cancle,
+    .oak-buttont {
+        display: block;
+    }
+}

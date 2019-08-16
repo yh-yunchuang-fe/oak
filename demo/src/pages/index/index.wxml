@@ -24,6 +24,9 @@
             <oak-list-item title="Loadding 加载"
                 title-class="item-title"
                 url="/pages/loading/loading" />
+            <oak-list-item title="Animation 动画"
+                title-class="item-title"
+                url="/pages/animation/animation" />
         </oak-collapse-item>
 
         <oak-collapse-item title="展示组件"
@@ -47,6 +50,16 @@
             <oak-list-item title="Collapse 折叠面板"
                 title-class="item-title"
                 url="/pages/collapse/collapse" />
+        </oak-collapse-item>
+        <oak-collapse-item title="反馈组件"
+            icon="select"
+            title-class="col-title"
+            icon-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item title="ActionSheet 菜单"
+                title-class="item-title"
+                url="/pages/actionSheet/actionSheet" />
         </oak-collapse-item>
     </oak-collapse>
 </view>

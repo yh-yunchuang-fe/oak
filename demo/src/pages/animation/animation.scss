@@ -1,0 +1,22 @@
+@import "Style/variable";
+
+.container {
+    padding: 20rpx 0;
+    oak-animation {
+        height: 80rpx;
+        margin: 240rpx 0 200rpx;
+        font-size: 80rpx;
+        text-align: center;
+        display: block;
+        color: $txt-highlight;
+        font-weight: bold;
+    }
+
+    .picker {
+        padding: 0 20rpx 0 60rpx;
+        background-color: #fff;
+        height: 80rpx;
+        line-height: 80rpx;
+        font-size: 40rpx;
+    }
+}

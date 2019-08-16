@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">
+        基本用法
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-type="base"
+            bindtap="onActionSheet"
+            data-cancleText='取消'
+        >点击弹出</oak-button>
+    </view>
+    <view class="h3">
+        选项定制
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-type="diy"
+            bindtap="onActionSheet"
+            data-cancleText='取消'
+        >点击弹出</oak-button>
+    </view>
+    <view class="h3">
+        选项类型
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-type="openType"
+            bindtap="onActionSheet"
+            data-cancleText='取消'
+        >点击弹出</oak-button>
+    </view>
+    <view class="h3">
+            不带取消按钮
+        </view>
+        <view class="row">
+            <oak-button size='block'
+                data-type="cancle"
+                data-cancleText=''
+                bindtap="onActionSheet"
+            >点击弹出</oak-button>
+        </view>
+    <oak-action-sheet isShow="{{showActionSheet}}"
+        maskShow
+        item-list="{{ itemList }}"
+        bind:onClose="onClose"
+        bind:onSelect="onSelect"
+        cancle-text="{{cancleTitle}}" />
+</view>
