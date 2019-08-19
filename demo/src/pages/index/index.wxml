@@ -12,10 +12,11 @@
     <oak-collapse>
         <oak-collapse-item title="基础组件"
             icon="manage"
+            icon-rotate="{{false}}"
             title-class="col-title"
             content-class="content"
             border="{{ false}}">
-            <oak-list-item title="Button 按钮"
+            <oak-list-item  title="Button 按钮"
                 title-class="item-title"
                 url="/pages/button/index" />
             <oak-list-item title="Icon 图标"
@@ -31,6 +32,7 @@
 
         <oak-collapse-item title="展示组件"
             icon="picture"
+            icon-rotate="{{false}}"
             title-class="col-title"
             icon-class="col-title"
             content-class="content"
@@ -53,6 +55,7 @@
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="select"
+            icon-rotate="{{false}}"
             title-class="col-title"
             icon-class="col-title"
             content-class="content"

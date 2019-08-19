@@ -24,6 +24,7 @@ Component({
             value: 'fadeIn',
             observer(newVal, oldVal): void {
                 this.preAnimationName = oldVal
+                console.log('name', newVal)
                 if (this.data.show !== null) return
                 if (newVal) {
                     this.setData({
@@ -47,9 +48,9 @@ Component({
                 this.triggerEvent('onAnimationEnd', { animationName: name })
                 this.setData({
                     _show: show,
-                    _animationName: '',
+                    // _animationName: '',
                 })
-            }, duration - 10)
+            }, duration)
         },
         _toggleShow(newVal): void {
             const { name } = this.data

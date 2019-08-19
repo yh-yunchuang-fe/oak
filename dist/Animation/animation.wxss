@@ -1,7 +1,8 @@
 .oak-animation {
   width: 100%;
   height: 100%;
-  display: none; }
+  display: none;
+  animation-fill-mode: both; }
   .oak-animation.display {
     display: inline-block;
     vertical-align: middle; }

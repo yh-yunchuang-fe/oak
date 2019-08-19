@@ -4,7 +4,7 @@
 <view class="{{ Utils.classNames('oak-collapse-item ', {border: border, disabled: disabled}) }} "
     style="height: {{itemHeight}}px;">
     <view class="oak-collapse-item-title title-class J-oak-collapse-item-title " bind:tap="onCollapseItemTap">
-        <oak-icon class="{{ Utils.classNames('oak-collapse-item-titlle-icon ', {down: isShowContent}) }}"
+        <oak-icon class="{{ Utils.classNames('oak-collapse-item-titlle-icon ', {down: isShowContent && iconRotate}) }}"
             ext-class="oak-collapse-item-titlle-iconext icon-class"
             wx:if="{{icon && iconPosition === 'left'}}"
             name='{{icon}}' />
@@ -13,7 +13,7 @@
             <slot wx:else
                 name="title"></slot>
         </view>
-        <oak-icon class="{{ Utils.classNames('oak-collapse-item-titlle-icon ', {down: isShowContent}) }} icon-class"
+        <oak-icon class="{{ Utils.classNames('oak-collapse-item-titlle-icon ', {down: isShowContent && iconRotate }) }} icon-class"
             ext-class="oak-collapse-item-titlle-iconext"
             wx:if="{{icon && iconPosition === 'right'}}"
             name='{{icon}}' />
