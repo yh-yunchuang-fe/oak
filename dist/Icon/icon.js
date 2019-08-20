@@ -3,7 +3,7 @@ Component({
     properties: {
         name: {
             type: String,
-            value: 'wechat',
+            value: '',
             optionalTypes: [String],
         },
         color: {
@@ -18,7 +18,7 @@ Component({
         },
         classPrefix: {
             type: String,
-            value: 'icon',
+            value: 'oak-icon',
             optionalTypes: [String],
         },
         rotate: {
