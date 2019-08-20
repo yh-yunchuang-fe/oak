@@ -2,7 +2,7 @@
 
 
 @mixin border-right {
-    border-right-width: 2rpx;
+    border-right-width: 1px;
     border-right-style: solid;
 }
 
@@ -37,6 +37,7 @@
 
         &:first-child:nth-last-child(2) {
             height: $feeds-height !important;
+            border-bottom: none !important;
         }
 
         @include single-feed(1);
@@ -55,7 +56,7 @@
         }
 
         &:not(:last-child) {
-            border-bottom-width: 2rpx;
+            border-bottom-width: 1px;
             border-bottom-style: solid;
         }
     }
@@ -110,8 +111,10 @@
 }
 
 .oak_feeds_border.oak-feeds-no3 {
-    .oak-feeds-item:first-child,
-    oak-feeds-item:first-child {
-        border-bottom: none;
+    .oak-feeds-item,
+    oak-feeds-item {
+        &:first-child {
+            border-bottom: none;
+        }
     }
 }

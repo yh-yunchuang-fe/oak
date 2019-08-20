@@ -1,4 +1,4 @@
-import BasicBehavior from 'Mixins/basic';
+import BasicBehavior from 'Mixins/basic'
 Component({
     properties: {
         radius: {
@@ -33,16 +33,16 @@ Component({
     },
     externalClasses: ['ext-class'],
     methods: {
-        _getChildLength() {
-            const nodes = this.getRelationNodes('../FeedsItem/feeds-item');
+        _getChildLength(): void {
+            const nodes = this.getRelationNodes('../FeedsItem/feeds-item')
             this.setData({
                 childNum: nodes.length,
-            });
+            })
         }
     },
     lifetimes: {
-        ready() {
-            this._getChildLength();
+        ready(): void {
+            this._getChildLength()
         },
     },
 })

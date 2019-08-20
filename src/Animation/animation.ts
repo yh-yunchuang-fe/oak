@@ -48,7 +48,7 @@ Component({
                 this.triggerEvent('onAnimationEnd', { animationName: name })
                 this.setData({
                     _show: show,
-                    // _animationName: '',
+                    _animationName: '',
                 })
             }, duration)
         },

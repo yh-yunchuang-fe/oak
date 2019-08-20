@@ -31,17 +31,17 @@
     <view class="h3">图标按钮</view>
     <view class="row">
         <oak-button size='block'
-            icon="downloader"
+            icon="nickname"
             type="primary">Block</oak-button>
     </view>
     <view class="row">
-        <oak-button icon="downloader"
+        <oak-button icon="nickname"
             type="primary"
-            size="large">Downloader</oak-button>
-        <oak-button icon="search">Search</oak-button>
-        <oak-button icon="wechat"
+            size="large">Nickname</oak-button>
+        <oak-button icon="night">Night</oak-button>
+        <oak-button icon="task"
             size='small'
-            type="info">Wechat</oak-button>
+            type="info">Task</oak-button>
     </view>
     <view class="h3">按钮不可用</view>
     <view class="row">

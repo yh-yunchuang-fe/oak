@@ -69,7 +69,7 @@
   .oak-button-shape_square {
     border-radius: 0; }
   .oak-button-shape_round {
-    border-radius: 200rpx; }
+    border-radius: 100px; }
   .oak-button .button-oak-icon {
     display: inline-block;
     vertical-align: middle; }
