@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development gulp --gulpfile __build__/gulpfile.babel.js",
-    "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style",
+    "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style && npm run release",
     "new": "node __build__/create",
     "docs": "cross-env NODE_ENV=production webpack --color --config __build__/webpack.site.prod.js && gh-pages -d docs/dist",
     "docs:dev": "webpack-dev-server --config __build__/webpack.site.dev.js",
