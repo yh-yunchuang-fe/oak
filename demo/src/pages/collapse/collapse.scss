@@ -1,0 +1,13 @@
+@import "Style/variable";
+
+.container {
+    padding: 30rpx 0;
+    oak-collapse {
+        display: block;
+        margin: 30rpx 0 40rpx;
+    }
+
+    .oak-collapse-title {
+        font-weight: bold;
+    }
+}

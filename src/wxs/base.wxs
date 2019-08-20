@@ -1,0 +1,53 @@
+/* eslint-disable */
+
+// key加引号会报错 如：{ "a": 1, "b": 0}, 仅支持： { a: 1, b: 0}
+function classNames() {
+    var classes = [],
+        hasOwn = {};
+
+
+    for (var i = 0; i < arguments.length; i++) {
+        var arg = arguments[i];
+        if (!arg) continue;
+
+        var argType = typeof arg;
+
+        if (argType === 'string' || argType === 'number') {
+            classes.push(arg);
+        } else if (("Array" === arg.constructor) && arg.length) {
+            var inner = classNames.apply(null, arg);
+            if (inner) {
+                classes.push(inner);
+            }
+        } else if (argType === 'object') {
+            var objStr = JSON.stringify(arg);
+            var dotReg = getRegExp("\"", "g");
+            objStr = objStr.replace("{", "").replace("}", "").split(",");
+
+            for (var i = 0; i < objStr.length; i++) {
+                var key = objStr[i].split(":")[0],
+                    _key = key.replace(dotReg, "");
+
+                if (!hasOwn[_key] && arg[_key]) {
+                    classes.push(_key);
+                    hasOwn[_key] = true;
+                }
+            }
+        }
+
+    }
+
+    return classes.join(' ');
+}
+
+function isUrl(url) {
+    var expression = 'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)',
+        regex = getRegExp(expression, 'g');
+
+    return url.match(regex);
+}
+
+module.exports = {
+    classNames: classNames,
+    isUrl: isUrl
+};

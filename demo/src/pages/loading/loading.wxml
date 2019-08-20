@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">Loading 大小</view>
+    <view class="row">
+        <oak-loading isShow
+            size='small' />
+        <oak-loading isShow />
+        <oak-loading isShow
+            size='large' />
+    </view>
+    <view class="h3">Loading 颜色</view>
+    <view class="row">
+        <oak-loading isShow
+            size='large'
+            color="#000" />
+        <oak-loading isShow
+            size='large'
+            color="#ccc" />
+        <oak-loading isShow
+            size='large'
+            color='#0076ff' />
+    </view>
+    <view class="h3">Loading 定位</view>
+    <view class="row absolute"
+        bind:tap="fixedTap">
+        fixed定位方式，点击显示。
+        <oak-loading isShow="{{fixedShow}}"
+            position='fixed'
+            size='large'
+            color="#0076ff" />
+    </view>
+    <view class="row absolute"
+        bind:tap="absoluteTap">
+        absolute定位方式，点击显示。
+        <oak-loading isShow="{{absoluteShow}}"
+            position='absolute'
+            size='large'
+            color="#0076ff" />
+    </view>
+</view>

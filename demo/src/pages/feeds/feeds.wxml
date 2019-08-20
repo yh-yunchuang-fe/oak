@@ -1,0 +1,224 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">单图展示</view>
+    <view class="row">
+        <oak-feeds >
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">两图展示</view>
+    <view class="row">
+        <oak-feeds >
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">三图展示</view>
+    <view class="row">
+        <oak-feeds>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">四图展示</view>
+    <view class="row">
+        <oak-feeds>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">五图展示</view>
+    <view class="row">
+        <oak-feeds>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">六图展示</view>
+    <view class="row">
+        <oak-feeds>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">七图展示</view>
+    <view class="row">
+        <oak-feeds>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">八图展示</view>
+    <view class="row">
+        <oak-feeds>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+    <view class="h3">九图展示</view>
+    <view class="row">
+        <oak-feeds>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+            <oak-feeds-item class="oak-feeds-item">
+                <view class="oak-feeds-item-test">
+                </view>
+            </oak-feeds-item>
+        </oak-feeds>
+    </view>
+</view>

@@ -1,0 +1,16 @@
+/**app.wxss**/
+.container {
+    min-height: 100vh;
+    background-color: #f3f3f3;
+}
+
+.h3 {
+    padding: 40rpx 20rpx 25rpx;
+    font-size: 32rpx;
+    color: #aaa;
+}
+
+.row {
+    margin: 10rpx;
+    line-height: 0;
+}

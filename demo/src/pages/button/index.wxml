@@ -1,0 +1,86 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">按钮类型</view>
+    <view class="row">
+        <oak-button>Default</oak-button>
+        <oak-button type="primary">Primary</oak-button>
+        <oak-button type="danger">Danger</oak-button>
+        <oak-button type="info">Info</oak-button>
+    </view>
+    <view class="h3">背景透明</view>
+    <view class="row">
+        <oak-button plain>Default</oak-button>
+        <oak-button plain
+            type="primary">Primary</oak-button>
+        <oak-button plain
+            type="danger">Danger</oak-button>
+        <oak-button plain
+            type="info">Info</oak-button>
+    </view>
+    <view class="h3">按钮大小</view>
+    <view class="row">
+        <oak-button size='block'
+            type="primary">Block</oak-button>
+    </view>
+    <view class="row">
+        <oak-button size='large'>Large</oak-button>
+        <oak-button type="danger">Default</oak-button>
+        <oak-button size='small'
+            type="info">Small</oak-button>
+    </view>
+    <view class="h3">图标按钮</view>
+    <view class="row">
+        <oak-button size='block'
+            icon="nickname"
+            type="primary">Block</oak-button>
+    </view>
+    <view class="row">
+        <oak-button icon="nickname"
+            type="primary"
+            size="large">Nickname</oak-button>
+        <oak-button icon="night">Night</oak-button>
+        <oak-button icon="task"
+            size='small'
+            type="info">Task</oak-button>
+    </view>
+    <view class="h3">按钮不可用</view>
+    <view class="row">
+        <oak-button disabled>Default</oak-button>
+        <oak-button disabled
+            type="primary">Primary</oak-button>
+        <oak-button disabled
+            type="danger">Danger</oak-button>
+        <oak-button disabled
+            type="info">Info</oak-button>
+    </view>
+    <view class="h3">加载状态</view>
+    <view class="row">
+        <oak-button loading
+            size='block'
+            loaderColor="#fff"
+            type="primary"> 加载中...</oak-button>
+    </view>
+    <view class="row">
+        <oak-button loading
+            size='large'> Loading</oak-button>
+        <oak-button loading
+            loaderColor="#fff"
+            type="danger"> Loading</oak-button>
+        <oak-button loading
+            size='small'
+            type="info"> Loading</oak-button>
+    </view>
+    <view class="h3">按钮形状</view>
+    <view class="row">
+        <oak-button>Default</oak-button>
+        <oak-button shape='circle'>Circle</oak-button>
+        <oak-button shape='round'>Round</oak-button>
+        <oak-button shape='square'>Square</oak-button>
+    </view>
+    <view class="row">
+        <oak-button type="primary" size="large">Default</oak-button>
+        <oak-button type="primary" shape='circle' size="large" loading loaderColor="#fff" ></oak-button>
+        <oak-button type="primary" shape='round' size="large">Round</oak-button>
+        <oak-button type="primary" shape='square' size="large">Square</oak-button>
+    </view>
+</view>

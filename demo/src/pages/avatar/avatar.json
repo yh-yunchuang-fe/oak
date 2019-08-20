@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Avatar 头像",
+    "usingComponents": {
+        "oak-avatar": "/Avatar/avatar"
+    }
+}

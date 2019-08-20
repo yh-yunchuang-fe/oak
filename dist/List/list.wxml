@@ -1,0 +1,6 @@
+<wxs src="../wxs/base.wxs" module="Utils" />
+
+<view class="{{ Utils.classNames('oak-list', {border: border}) }} ext-class">
+    <view class="oak-list-title title-class" wx:if="{{title}}" >{{title}}</view>
+    <slot />
+</view>

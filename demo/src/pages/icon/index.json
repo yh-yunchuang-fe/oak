@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Icon 图标",
+    "usingComponents": {
+        "oak-icon": "/Icon/icon"
+    }
+}

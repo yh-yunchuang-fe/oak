@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "Collapse 折叠面板",
+    "usingComponents": {
+        "oak-collapse": "/Collapse/collapse",
+        "oak-collapse-item": "/CollapseItem/collapse-item",
+        "oak-icon": "/Icon/icon"
+    }
+}

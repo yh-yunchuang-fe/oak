@@ -1,0 +1,27 @@
+@import "Style/variable";
+
+.container {
+    .box {
+        width: 100rpx;
+        height: 100rpx;
+        background-color: #fff;
+        border-radius: 4rpx;
+        overflow: hidden;
+    }
+    .text {
+        height: 40rpx;
+        line-height: 1;
+        color: #0AAAF0;
+    }
+
+    .row {
+        padding: 20rpx;
+    }
+
+
+    oak-badge {
+        margin: 10rpx 20rpx;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}

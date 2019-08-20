@@ -1,0 +1,25 @@
+<wxs src="../wxs/base.wxs"
+    module="Utils" />
+
+<view class="{{ Utils.classNames('oak-collapse-item ', {border: border, disabled: disabled}) }} "
+    style="height: {{itemHeight}}px;">
+    <view class="oak-collapse-item-title title-class J-oak-collapse-item-title " bind:tap="onCollapseItemTap">
+        <oak-icon class="{{ Utils.classNames('oak-collapse-item-titlle-icon ', {down: isShowContent && iconRotate}) }}"
+            ext-class="oak-collapse-item-titlle-iconext icon-class"
+            wx:if="{{icon && iconPosition === 'left'}}"
+            name='{{icon}}' />
+        <view class="oak-collapse-item-title-text">
+            <block wx:if="{{title}}">{{title}}</block>
+            <slot wx:else
+                name="title"></slot>
+        </view>
+        <oak-icon class="{{ Utils.classNames('oak-collapse-item-titlle-icon ', {down: isShowContent && iconRotate }) }} icon-class"
+            ext-class="oak-collapse-item-titlle-iconext"
+            wx:if="{{icon && iconPosition === 'right'}}"
+            name='{{icon}}' />
+    </view>
+    <view
+        class="{{ Utils.classNames('oak-collapse-item-content J-oak-collapse-item-content ', {show: isShowContent}) }} content-class">
+        <slot></slot>
+    </view>
+</view>

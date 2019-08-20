@@ -1,0 +1,68 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="title">
+        <image mode="widthFix"
+            src="../../images/logo.png"
+            class="logo" /> Oak Weui
+    </view>
+    <view class="subtitle">
+        一个快速、高效、愉悦的小程序UI组件库
+    </view>
+
+    <oak-collapse>
+        <oak-collapse-item title="基础组件"
+            icon="manage"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item  title="Button 按钮"
+                title-class="item-title"
+                url="/pages/button/index" />
+            <oak-list-item title="Icon 图标"
+                title-class="item-title"
+                url="/pages/icon/index" />
+            <oak-list-item title="Loadding 加载"
+                title-class="item-title"
+                url="/pages/loading/loading" />
+            <oak-list-item title="Animation 动画"
+                title-class="item-title"
+                url="/pages/animation/animation" />
+        </oak-collapse-item>
+
+        <oak-collapse-item title="展示组件"
+            icon="picture"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            icon-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item title="Avatar 头像"
+                title-class="item-title"
+                url="/pages/avatar/avatar" />
+            <oak-list-item title="Badge 微标"
+                title-class="item-title"
+                url="/pages/badge/badge" />
+            <oak-list-item title="Feeds 信息流"
+                title-class="item-title"
+                url="/pages/feeds/feeds" />
+            <oak-list-item title="List 列表"
+                title-class="item-title"
+                url="/pages/list/list" />
+            <oak-list-item title="Collapse 折叠面板"
+                title-class="item-title"
+                url="/pages/collapse/collapse" />
+        </oak-collapse-item>
+        <oak-collapse-item title="反馈组件"
+            icon="select"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            icon-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item title="ActionSheet 菜单"
+                title-class="item-title"
+                url="/pages/actionSheet/actionSheet" />
+        </oak-collapse-item>
+    </oak-collapse>
+</view>
