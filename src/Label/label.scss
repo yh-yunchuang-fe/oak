@@ -1,0 +1,48 @@
+@import "Style/variable";
+@import "Style/icons";
+
+$label-default-background-color: #F6F6F6;
+$label-checked-background-color: rgba(253, 118, 34, .08);
+
+.oak-label {
+    min-width: 48rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    display: inline-flex;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: $txt-body;
+    font-size: $font-size-label-default;
+    border: 1rpx solid $label-default-background-color;
+    border-radius: 200rpx;
+    background-color: $label-default-background-color;
+
+    &::before {
+        @extend .oak-iconfont;
+        font-size: $font-size-label-default * 1.2;
+        margin-right: 10rpx;
+    }
+
+    &-normal {
+        max-width: calc(100% - 48rpx);
+        padding: 0 24rpx;
+    }
+
+    &-checked {
+        font-size: $font-size-label-default;
+        color: $theme-color;
+        border: 1rpx solid $theme-color;
+        background-color: $label-checked-background-color;
+    }
+}
+
+.oak-label-content {
+    max-width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -2,6 +2,7 @@
     "navigationBarTitleText": "Oak Weui",
     "usingComponents": {
         "oak-icon": "/Icon/icon",
+        "oak-label": "/Label/label",
         "oak-collapse": "/Collapse/collapse",
         "oak-list-item": "/ListItem/list-item",
         "oak-collapse-item": "/CollapseItem/collapse-item"
