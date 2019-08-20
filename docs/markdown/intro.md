@@ -14,7 +14,7 @@
 - 提供ES5, ES6版本
 
 ## 版本
-- 测试版: [![](https://img.shields.io/badge/npm-v0.0.2--beta.0-blue)](https://www.npmjs.com/package/@yhyc/oak-weui)
+- 测试版: [![](https://img.shields.io/badge/npm-v0.0.2--beta.3-blue)](https://www.npmjs.com/package/@yhyc/oak-weui)
 - 稳定版:  暂无
 
 你可以订阅 [https://github.com/yh-yunchuang-fe/oak/releases.atom](https://github.com/yh-yunchuang-fe/oak/releases.atom)来获得版本发布的通知。
