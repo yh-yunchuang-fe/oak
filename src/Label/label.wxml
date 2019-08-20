@@ -1,0 +1,7 @@
+<view class="oak-label oak-label-{{ size }} {{ icon ? 'icon-' + icon : '' }} {{ checked ? 'oak-label-checked' : '' }} ext-class" style="{{ styles }}">
+    <block>
+        <view class="oak-label-content">
+            <slot></slot>
+        </view>
+    </block>
+</view>

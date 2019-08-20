@@ -33,6 +33,10 @@ export default {
                 name: 'Loading 加载',
                 path: '/Loading',
             },
+            {
+                name: 'Label 标签',
+                path: '/Label'
+            }
             ],
         }, {
             name: '展示',

@@ -24,6 +24,9 @@
             <oak-list-item title="Loadding 加载"
                 title-class="item-title"
                 url="/pages/loading/loading" />
+            <oak-list-item title="Label 标签"
+                title-class="item-title"
+                url="/pages/label/label" />
         </oak-collapse-item>
 
         <oak-collapse-item title="展示组件"

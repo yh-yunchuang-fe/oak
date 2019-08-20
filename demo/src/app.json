@@ -8,7 +8,8 @@
     "pages/loading/loading",
     "pages/avatar/avatar",
     "pages/badge/badge",
-    "pages/icon/index"
+    "pages/icon/index",
+    "pages/label/label"
   ],
   "window":{
     "backgroundTextStyle":"light",
