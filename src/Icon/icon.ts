@@ -4,7 +4,7 @@ Component({
         // icon name
         name: {
             type: String,
-            value: 'wechat',
+            value: '',
             optionalTypes: [String],
         },
         // icon color
@@ -22,7 +22,7 @@ Component({
         // icon classPrefix
         classPrefix: {
             type: String,
-            value: 'icon',
+            value: 'oak-icon',
             optionalTypes: [String],
         },
         rotate: {
