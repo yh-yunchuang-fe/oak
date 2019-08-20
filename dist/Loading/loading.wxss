@@ -1,8 +1,8 @@
 .oak-loading {
   display: inline-block;
   position: relative;
-  width: 40rpx;
-  height: 40rpx;
+  width: 38rpx;
+  height: 38rpx;
   box-sizing: border-box;
   vertical-align: middle; }
   .oak-loading.absolute, .oak-loading.fixed {

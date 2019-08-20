@@ -5,8 +5,9 @@
 }
 
 .h3 {
-    padding: 20rpx 20rpx 30rpx;
-    font-size: 36rpx;
+    padding: 40rpx 20rpx 25rpx;
+    font-size: 32rpx;
+    color: #aaa;
 }
 
 .row {

@@ -51,6 +51,7 @@
     "globals": {
         "wx": true,
         "Page": true,
+        "App": true,
         "getApp": true,
         "getCurrentPages": true,
         "Component": true,

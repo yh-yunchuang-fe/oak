@@ -27,3 +27,34 @@ type PartialOptional<T, K extends keyof T> = Partial<Pick<T, K>> & Pick<T, Exclu
 type Optional<T> = {
   [K in keyof T]+?: T[K]
 }
+
+declare type Target = {
+  id: string;
+  tagName: string;
+  dataset: {
+    [key: string]: any;
+  }
+}
+
+declare type event = {
+  /**
+   * 代表事件的类型。
+   */
+  type: string;
+  /**
+   * 页面打开到触发事件所经过的毫秒数。
+   */
+  timeStamp: number;
+  /**
+   * 触发事件的源组件。
+   */
+  target: Target;
+  /**
+   * 事件绑定的当前组件。
+   */
+  currentTarget: Target;
+  /**
+   * 	额外的信息
+   */
+  detail: any;
+}

@@ -49,13 +49,16 @@ $btn-large-lr-padding: 28rpx;
 $btn-default-lr-padding: 24rpx;
 $btn-small-lr-padding: 20rpx;
 $badge-padding:15rpx;
+$iphonex-padding: 40rpx;
 
+$warp-magin: 30rpx;
+$wrap-margin-s: 20rpx;
 
 $wrap-list-padding-subtitle: 10rpx;
 
 $border-radius-base: 4rpx;
 $border-radius-lg: 8rpx;
-$border-radius-max: 200rpx;
+$border-radius-max: 100px;
 
 $active-opacity: .5;
 $btn-disabled-opacity: .65;
@@ -86,9 +89,9 @@ $button-large-height: 70rpx;
 $button-default-height: 56rpx;
 $button-small-height: 44rpx;
 
-$feeds-height: 182rpx;
-$feeds-single-height: 200rpx;
-$feeds-three-height: 240rpx;
+$feeds-height: 91px;
+$feeds-single-height: 100px;
+$feeds-three-height: 120px;
 
 $avatar-width: 108rpx;
 $avatar-small-width: 84rpx;
@@ -96,3 +99,5 @@ $avatar-large-width: 160rpx;
 
 $badge-height: 44rpx;
 $badge-dot-height: 10rpx;
+
+$action-sheet-height: 100rpx;

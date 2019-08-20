@@ -72,8 +72,7 @@ API说明。
 | color | 设置字体/图标颜色 | `String` | `` |
 | background | 设置头像背景颜色 | `String` | - |
 | onError | 图片加载失败的事件 | `Function` | - |
-| icon | 设置头像的图标类型 | `String` | - |
-| icon | 设置头像的图标类型 | `String` | - |
+| icon | 设置头像的图标名 | `String` | - |
 
 
 ## 外部样式类

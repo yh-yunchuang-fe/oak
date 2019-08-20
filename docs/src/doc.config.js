@@ -24,20 +24,21 @@ export default {
             groups: [{
                 name: 'Button 按钮',
                 path: '/Button',
-            },
-            {
+            },{
                 name: 'Icon 图标',
                 path: '/Icon',
-            },
-            {
+            },{
                 name: 'Loading 加载',
                 path: '/Loading',
             },
             {
                 name: 'Label 标签',
                 path: '/Label'
-            }
-            ],
+            },
+            {
+                name: 'Animation 动画',
+                path: '/Animation',
+            }],
         }, {
             name: '展示',
             groups: [{
@@ -56,6 +57,12 @@ export default {
                 name: 'List 列表',
                 path: '/List',
             },],
+        }, {
+            name: '反馈',
+            groups: [{
+                name: 'ActionSheet 菜单',
+                path: '/ActionSheet',
+            }, ],
         }],
     },
     ],

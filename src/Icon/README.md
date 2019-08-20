@@ -44,7 +44,7 @@
 |-----------|-----------|-----------|-------------|
 | name | 图标名，或者图片链接 | `String` | - |
 | size | 图标大小  | `String` | `32rpx` |
-| classPrefix | 图标样式前缀 | `String` | `icon` |
+| classPrefix | 图标样式前缀 | `String` | `oak-icon` |
 | color | 颜色  | `String` | `#333` |
 
 

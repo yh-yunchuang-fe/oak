@@ -32,6 +32,10 @@ Component({
         border: {
             type: Boolean,
             value: true,
+        },
+        iconRotate: {
+            type: Boolean,
+            value: true,
         }
     },
     relations: {

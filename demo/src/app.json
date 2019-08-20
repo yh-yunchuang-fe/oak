@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/actionSheet/actionSheet",
+    "pages/animation/animation",
     "pages/list/list",
     "pages/collapse/collapse",
     "pages/button/index",

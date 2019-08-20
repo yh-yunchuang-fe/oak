@@ -5,8 +5,10 @@ $title-height: 90rpx;
 .oak-collapse-item {
     height: $title-height;
     overflow: hidden;
-    transition: all .2s ease-in-out;
+    transition: height 200ms ease-in-out;;
+    -webkit-transition: height 200ms ease-in-out;;
     background-color: $default-bg;
+    border-bottom: 1rpx solid transparent;
 
     &.border {
         border-bottom: $border;
@@ -20,9 +22,9 @@ $title-height: 90rpx;
         display: flex;
         padding: 0 $wrap-padding;
         height: $title-height;
-        line-height: $title-height;
         color: $txt-default;
         font-size: $font-size-title;
+        align-items: center;
 
         .disabled & {
             color: $txt-info;
@@ -35,7 +37,8 @@ $title-height: 90rpx;
 
     &-titlle-icon {
         margin-right: 10rpx;
-        transition: all .2s ease-in-out;
+        transform: rotateZ(0);
+        transition: transform 200ms ease-in-out;
         color: inherit;
         font-size: inherit;
 
