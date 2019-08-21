@@ -1,7 +1,8 @@
 import BasicBehavior from '../mixins/basic';
-import openType from '../mixins/open-type';
+import OpenTypeBehavior from '../mixins/open-type';
+import ButtonBehavior from '../mixins/open-type';
 Component({
-    behaviors: [BasicBehavior, openType],
+    behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
     properties: {
         size: {
             type: String,
@@ -13,30 +14,34 @@ Component({
             value: 'default',
             optionalTypes: [String],
         },
-        lang: {
+        shape: {
             type: String,
-            value: 'en',
-            optionalTypes: [String],
+            value: ''
         },
-        shape: String,
-        icon: String,
-        sessionFrom: String,
-        sendMessageTitle: String,
-        sendMessagePath: String,
-        sendMessageImg: String,
-        showMessageCard: Boolean,
-        appParameter: String,
-        plain: Boolean,
-        loading: Boolean,
-        loaderColor: String,
-        loaderSize: String,
-        disabled: Boolean,
+        icon: {
+            type: String,
+            value: ''
+        },
+        plain: {
+            type: Boolean,
+            value: false,
+        },
+        loading: {
+            type: Boolean,
+            value: false,
+        },
+        loaderColor: {
+            type: String,
+            value: ''
+        },
+        loaderSize: {
+            type: String,
+            value: ''
+        },
+        disabled: {
+            type: Boolean,
+            value: false,
+        },
     },
-    data: {
-        someData: {}
-    },
-    ready() {
-    },
-    methods: {},
     externalClasses: ['button-class', 'hover-class', 'loading-class'],
 });

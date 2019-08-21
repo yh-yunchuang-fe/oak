@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">基本用法</view>
+    <view class="row">
+        <oak-badge count="20">
+            <view class="box"></view>
+        </oak-badge>
+        <oak-badge count="0"
+            showZero>
+            <view class="box"></view>
+        </oak-badge>
+    </view>
+    <view class="h3">独立使用</view>
+    <view class="row">
+        <oak-badge count="20" />
+        <oak-badge count="9"
+            borderColor="#ccc"
+            background="#fff"
+            font-color="#333" />
+        <oak-badge count="999"
+            background="#09BB07" />
+    </view>
+    <view class="h3">封顶数字</view>
+    <view class="row">
+        <oak-badge count="20"
+            overflowCount="10">
+            <view class="box"></view>
+        </oak-badge>
+        <oak-badge count="99">
+            <view class="box"></view>
+        </oak-badge>
+        <oak-badge count="100">
+            <view class="box"></view>
+        </oak-badge>
+        <oak-badge count="9999"
+            overflowCount="999">
+            <view class="box"></view>
+        </oak-badge>
+    </view>
+    <view class="h3">小红点</view>
+    <view class="row">
+        <oak-badge count="20" dot>
+            <view class="box"></view>
+        </oak-badge>
+        <oak-badge count="99" dot>
+            <view class="text">Oak Weui very good</view>
+        </oak-badge>
+    </view>
+</view>

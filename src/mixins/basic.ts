@@ -1,23 +1,22 @@
 export const BasicBehavior = Behavior({
     methods: {
-        getRect(selector: string, all: boolean) {
-            return new Promise(resolve => {
+        getRect(selector: string, all?: boolean): Promise<object> {
+            return new Promise((resolve): void => {
                 wx.createSelectorQuery()
                     .in(this)[all ? 'selectAll' : 'select'](selector)
-                    .boundingClientRect((rect: object) => {
+                    .boundingClientRect((rect: object): void => {
                         if (all && Array.isArray(rect) && rect.length) {
-                            resolve(rect);
+                            resolve(rect)
                         }
-
                         if (!all && rect) {
-                            resolve(rect);
+                            resolve(rect)
                         }
                     })
-                    .exec();
-            });
+                    .exec()
+            })
         },
     }
-});
+})
 
 
-export default BasicBehavior;
+export default BasicBehavior

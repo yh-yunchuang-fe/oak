@@ -8,7 +8,6 @@ Page({
         showTopModel: false,
         showCModel: false,
         showBModel: false,
-        message: '',
     },
     onLoad() {
         

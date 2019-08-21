@@ -1,23 +1,24 @@
 .oak-loading {
   display: inline-block;
   position: relative;
-  width: 40rpx;
-  height: 40rpx;
+  width: 38rpx;
+  height: 38rpx;
   box-sizing: border-box;
   vertical-align: middle; }
   .oak-loading.absolute, .oak-loading.fixed {
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%); }
-  .oak-loading.fixed {
-    position: fixed;
     z-index: 10;
     background-color: #fff;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
     box-shadow: 0 0 8rpx #979797; }
+  .oak-loading.fixed {
+    position: fixed;
+    top: 38.2%; }
   .oak-loading.absolute {
     position: absolute;
-    z-index: 1; }
+    z-index: 1;
+    top: 50%; }
   .oak-loading view {
     box-sizing: border-box;
     display: block;

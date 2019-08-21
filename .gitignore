@@ -6,8 +6,11 @@ yarn-error.log
 .vscode
 .idea/
 docs/dist
+demo/dist
 node_modules
 oak.tar.gz
 oak.zip
 Source code.tar.gz
 Source code.zip
+qiniu.js
+package-lock.json

@@ -1,16 +1,22 @@
 {
-  "name": "oak-weui",
-  "version": "0.0.1-beta.0",
+  "name": "@yhyc/oak-weui",
+  "version": "0.0.2-beta.3",
   "description": "A Wechat App UI Lib.",
   "miniprogram": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development gulp --gulpfile __build__/gulpfile.babel.js",
-    "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style",
+    "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style && npm run release",
     "new": "node __build__/create",
     "docs": "cross-env NODE_ENV=production webpack --color --config __build__/webpack.site.prod.js && gh-pages -d docs/dist",
     "docs:dev": "webpack-dev-server --config __build__/webpack.site.dev.js",
     "release": "tar -zcf oak.tar.gz dist/* && zip -r oak.zip dist/*"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./__build__/pre-commit.sh",
+      "pre-push": "./__build__/pre-commit.sh"
+    }
   },
   "files": [
     "dist"
@@ -25,6 +31,7 @@
     "ui"
   ],
   "author": "YHFE",
+  "email": "oakui@outlook.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yh-yunchuang-fe/oak/issues"
@@ -40,6 +47,9 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.5",
     "babel-plugin-import": "^1.11.0",
     "babel-preset-react-hmre": "^1.1.1",
@@ -47,9 +57,11 @@
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "del": "^4.1.1",
-    "eslint": "^5.4.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-typescript": "^0.14.0",
     "express": "^4.16.4",
     "fs-extra": "^7.0.1",
     "gh-pages": "^2.0.1",
@@ -58,6 +70,7 @@
     "gulp-csso": "^3.0.1",
     "gulp-eslint": "^5.0.0",
     "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^6.0.0",
     "gulp-less": "^4.0.1",
     "gulp-print": "^5.0.0",
     "gulp-rename": "^1.4.0",
@@ -67,12 +80,14 @@
     "gulp-util": "^3.0.8",
     "gulp-wechat-weapp-src-alisa": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.2",
     "mini-css-extract-plugin": "^0.6.0",
     "miniprogram-api-typings": "^2.6.5-2",
     "postcss-loader": "^3.0.0",
     "raw-loader": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-scroll": "^1.7.13",
     "react-syntax-highlighter": "^10.2.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",

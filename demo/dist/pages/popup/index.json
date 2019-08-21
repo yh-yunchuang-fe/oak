@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "PopUp",
-    "usingComponents": {
-        "oak-popup": "/PopUp/popup",
-        "oak-button": "/Button/button"
-    }
-}

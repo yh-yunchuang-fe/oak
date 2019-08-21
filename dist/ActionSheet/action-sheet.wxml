@@ -1,0 +1,59 @@
+<wxs src="../wxs/base.wxs"
+    module="Utils" />
+
+<view class="oak-action-sheet"
+    style="z-index: {{zIndex}};"
+    hidden="{{ !_isShow }}">
+    <oak-animation name="{{_maskAnimate}}"
+        bind:tap="actionSheetCancle"
+        show="{{ _mask }}"
+        duration="{{_duration}}"
+        ext-class="oak-action-sheet-mask">
+    </oak-animation>
+    <oak-animation name="{{_actionAnimate}}"
+        show="{{ _actionShow }}"
+        duration="{{_duration}}"
+        bind:onAnimationEnd="animationEnd"
+        ext-class="{{ isIPhonex ? 'oak-action-sheet-body-iphonex' : 'oak-action-sheet-body' }}">
+        <oak-button class="oak-botton"
+            button-class="oak-action-sheet-item"
+            wx:if="{{ itemList.length }}"
+            wx:for="{{ itemList }}"
+            wx:for-item="action"
+            wx:key="{{index}}"
+            data-index="{{ index }}"
+            size='block'
+            disabled="{{ action.disabled }}"
+            open-type="{{ action.openType }}"
+            icon="{{ action.icon }}"
+            type="{{ action.type}}"
+            loading="{{ action.loading }}"
+            loader-color="{{ action.loaderColor }}"
+            plain
+            loader-size="default"
+            session-from="{{ action.sessionFrom }}"
+            send-message-title="{{ action.sendMessageTitle }}"
+            send-message-path="{{ action.sendMessagePath }}"
+            send-message-img="{{ action.sendMessageImg }}"
+            show-message-card="{{ action.showMessageCard }}"
+            app-parameter="{{ action.appParameter }}"
+            bind:tap="actionSheetItemClick"
+            bindgetuserinfo="bindGetUserInfo"
+            bindcontact="bindContact"
+            bindgetphonenumber="bindGetPhoneNumber"
+            binderror="bindError"
+            bindlaunchapp="bindLaunchApp"
+            bindopensetting="bindOpenSetting">
+            <text style="color: {{ action.color }};">{{ action.title }}</text>
+            <text style="color: {{ action.subcolor}};"
+                class="oak-action-sheet-subtitle"
+                wx:if="{{ action.subtitle}}">{{ action.subtitle}}</text>
+        </oak-button>
+
+        <oak-button class="oak-action-sheet-cancle"
+            button-class="oak-action-sheet-item"
+            bind:tap="actionSheetCancle"
+            size='block'
+            wx:if="{{ cancleText }}">{{ cancleText }}</oak-button>
+    </oak-animation>
+</view>

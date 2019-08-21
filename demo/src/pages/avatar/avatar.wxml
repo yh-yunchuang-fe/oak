@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">基本用法</view>
+    <view class="row">
+        <oak-avatar>Am</oak-avatar>
+    </view>
+    <view class="h3">头像尺寸</view>
+    <view class="row">
+        <oak-avatar size="small"
+            icon="nickname" />
+        <oak-avatar icon="nickname" />
+        <oak-avatar icon="nickname"
+            size="large" />
+        <oak-avatar icon="nickname"
+            size="100rpx" />
+    </view>
+    <view class="h3">头像形状</view>
+    <view class="row">
+        <oak-avatar icon="nickname"
+            shape="square" />
+        <oak-avatar icon="nickname" />
+    </view>
+    <view class="h3">头像类型</view>
+    <view class="row">
+        <oak-avatar>A</oak-avatar>
+        <oak-avatar icon="nickname" />
+        <oak-avatar
+            src="https://static.yonghuivip.com/0fe90feecdec371ac2fc4203a47e1f4b-3afa10a44030ebeb7948da1efc63c4fa.png?v=1510536110368" />
+    </view>
+    <view class="h3">自定义颜色</view>
+    <view class="row">
+        <oak-avatar color="#FF4600"
+            background="rgb(243, 216, 199)">B</oak-avatar>
+        <oak-avatar background="#00a5e0">C</oak-avatar>
+    </view>
+</view>

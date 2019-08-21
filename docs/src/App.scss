@@ -1,9 +1,33 @@
-@import url('//at.alicdn.com/t/font_1245699_v79dgu22ut.css');
+@import url('//at.alicdn.com/t/font_1245699_pqftkcghe8n.css');
 
 .layout {
     position: relative;
     color: #333;
     background: #fff;
+}
+
+.nav {
+    height: 100vh;
+    width: 200px;
+    padding-bottom: 60px;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 5px;
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: transparent;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(69, 90, 100, .3);
+    }
 }
 
 .header {
@@ -21,6 +45,13 @@
         margin: 0;
         padding: 0;
         flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 10px;
+        width: 40px;
     }
 
     a {
@@ -40,7 +71,7 @@
 }
 
 .doc-content {
-    padding: 0 30px 30px;
+    padding: 0 50px 50px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     color: #314659;

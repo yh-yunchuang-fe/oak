@@ -6,4 +6,5 @@
             <view class="name">{{item.font_class}}</view>
         </view>
     </view>
+    <view class="tips">更多 Icon 正在设计中...</view>
 </view>

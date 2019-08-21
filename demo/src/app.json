@@ -2,11 +2,18 @@
   "pages":[
     "pages/dialog/index",
     "pages/popup/index",
-    "pages/button/index",
-    "pages/list/list",
-    "pages/feeds/feeds",
     "pages/index/index",
-    "pages/icon/index"
+    "pages/actionSheet/actionSheet",
+    "pages/animation/animation",
+    "pages/list/list",
+    "pages/collapse/collapse",
+    "pages/button/index",
+    "pages/feeds/feeds",
+    "pages/loading/loading",
+    "pages/avatar/avatar",
+    "pages/badge/badge",
+    "pages/icon/index",
+    "pages/label/label"
   ],
   "window":{
     "backgroundTextStyle":"light",

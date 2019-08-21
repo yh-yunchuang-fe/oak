@@ -1,0 +1,44 @@
+<wxs src="WXS/base.wxs"
+    module="Utils" />
+<wxs module="Avatar">
+    function getStyle(size) {
+        var sizeNum = parseInt(size, 10);
+
+        if (!isNaN(sizeNum)) {
+            return 'width:' + size + ';' + 'height:' + size + ';' + 'line-height:' + size + ';'
+        }
+
+        return '';
+    }
+
+    function getIconSize(size) {
+        var sizeNum = parseInt(size, 10);
+        return !isNaN(sizeNum) ? size : null;
+    }
+
+    module.exports = {
+        getStyle: getStyle,
+        getIconSize: getIconSize
+    };
+</wxs>
+<view class="oak-avatar oak-avatar-{{shape}} oak-avatar-{{size}} ext-class"
+    style="color: {{color}}; background: {{background}};{{ Avatar.getStyle(size) }}">
+    <oak-icon class="icon"
+        ext-class="oak-avatar-icon"
+        size="{{Avatar.getIconSize(size)}}"
+        wx:if="{{ icon }}"
+        name="{{icon}}" />
+    <block wx:elif="{{ Utils.isUrl(src) }}">
+        <image wx:if="{{ !_alt }}"
+            src="{{ src }}"
+            mode='aspectFit'
+            binderror="onError"
+            class="oak-avatar-image" />
+        <view class="oak-avatar-name"
+            wx:else>{{_alt}}</view>
+    </block>
+    <view class="oak-avatar-name"
+        wx:else>
+        <slot></slot>
+    </view>
+</view>

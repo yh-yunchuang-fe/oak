@@ -9,7 +9,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    // vertical-align: middle;
+    vertical-align: top;
     -webkit-appearance: none;
     -webkit-text-size-adjust: 100%;
 
@@ -69,6 +69,10 @@
         background-color: $default-bg;
         border: $border;
         color: $txt-default;
+
+        &.disabled {
+            color: $txt-muted;
+        }
     }
 
     &-type_primary {

@@ -1,8 +1,13 @@
 //index.js
-import Icons from './icons';
+import Icons from './icons'
 Page({
     data: {
         icons: Icons,
     },
-    onLoad() {},
+    onShareAppMessage(): object {
+        return {
+            title: 'Oak Weui Icon 图标',
+            path: '/pages/icon/index',
+        }
+    },
 })

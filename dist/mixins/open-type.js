@@ -1,6 +1,9 @@
 export const openType = Behavior({
     properties: {
-        openType: String
+        openType: {
+            type: String,
+            value: '',
+        }
     },
     methods: {
         bindGetUserInfo(event) {

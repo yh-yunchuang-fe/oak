@@ -1,8 +1,9 @@
-import BasicBehavior from 'Mixins/basic';
-import openType from 'Mixins/open-type';
+import BasicBehavior from 'Mixins/basic'
+import OpenTypeBehavior from 'Mixins/open-type'
+import ButtonBehavior from 'Mixins/open-type'
 
 Component({
-    behaviors: [BasicBehavior, openType],
+    behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
     properties: {
         size: {
             type: String,
@@ -14,32 +15,34 @@ Component({
             value: 'default',
             optionalTypes: [String],
         },
-        lang: {
+        shape: {
             type: String,
-            value: 'en',
-            optionalTypes: [String],
+            value: ''
         },
-        shape: String,
-        icon: String,
-        sessionFrom: String,
-        sendMessageTitle: String,
-        sendMessagePath: String,
-        sendMessageImg: String,
-        showMessageCard: Boolean,
-        appParameter: String,
-        plain: Boolean,
-        loading: Boolean,
-        loaderColor: String,
-        loaderSize: String,
-        disabled: Boolean,
-    },
-    data: {
-        // 这里是一些组件内部数据
-        someData: {}
-    },
-    ready() {
-    },
-    methods: {
+        icon: {
+            type: String,
+            value: ''
+        },
+        plain: {
+            type: Boolean,
+            value: false,
+        },
+        loading: {
+            type: Boolean,
+            value: false,
+        },
+        loaderColor: {
+            type: String,
+            value: ''
+        },
+        loaderSize: {
+            type: String,
+            value: ''
+        },
+        disabled: {
+            type: Boolean,
+            value: false,
+        },
     },
     externalClasses: ['button-class', 'hover-class', 'loading-class'],
 })

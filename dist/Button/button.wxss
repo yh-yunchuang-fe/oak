@@ -6,6 +6,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: top;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%; }
   .oak-button-size_block {
@@ -36,17 +37,19 @@
       border-radius: 56rpx; }
   .oak-button-size_small {
     padding: 0 20rpx;
-    height: 40rpx;
+    height: 44rpx;
     font-size: 22rpx;
     line-height: 0; }
     .oak-button-size_small.oak-button-shape_circle {
       padding: 0;
-      width: 40rpx;
-      border-radius: 40rpx; }
+      width: 44rpx;
+      border-radius: 44rpx; }
   .oak-button-type_default {
     background-color: #fff;
     border: 1rpx solid rgba(221, 221, 221, 0.8);
     color: #333; }
+    .oak-button-type_default.disabled {
+      color: #ccc; }
   .oak-button-type_primary {
     background-color: #FD7622;
     border: 1rpx solid #FD7622;
@@ -66,7 +69,7 @@
   .oak-button-shape_square {
     border-radius: 0; }
   .oak-button-shape_round {
-    border-radius: 200rpx; }
+    border-radius: 100px; }
   .oak-button .button-oak-icon {
     display: inline-block;
     vertical-align: middle; }

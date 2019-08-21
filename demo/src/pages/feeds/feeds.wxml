@@ -11,7 +11,7 @@
     </view>
     <view class="h3">两图展示</view>
     <view class="row">
-        <oak-feeds border="{{false}}" >
+        <oak-feeds >
             <oak-feeds-item class="oak-feeds-item">
                 <view class="oak-feeds-item-test">
                 </view>

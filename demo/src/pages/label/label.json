@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Label标签",
+    "usingComponents": {
+        "oak-label": "/Label/label"
+    }
+}

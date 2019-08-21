@@ -3,29 +3,30 @@
 .oak-loading {
     display: inline-block;
     position: relative;
-    width: 40rpx;
-    height: 40rpx;
+    width: 38rpx;
+    height: 38rpx;
     box-sizing: border-box;
     vertical-align: middle;
 
     &.absolute,
     &.fixed {
-        top: 50%;
         left: 50%;
-        transform: translate(-50%, -40%);
+        z-index: 10;
+        background-color: #fff;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        box-shadow: 0 0 8rpx #979797;
     }
 
     &.fixed {
         position: fixed;
-        z-index: 10;
-        background-color: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 8rpx #979797;
+        top: 38.2%;
     }
 
     &.absolute {
         position: absolute;
         z-index: 1;
+        top: 50%;
     }
 
     view {

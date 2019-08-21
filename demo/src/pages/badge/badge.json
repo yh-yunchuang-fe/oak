@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Badge 微标",
+    "usingComponents": {
+        "oak-badge": "/Badge/badge"
+    }
+}

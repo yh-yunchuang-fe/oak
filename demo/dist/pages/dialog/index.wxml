@@ -9,7 +9,7 @@
     
     <oak-button bindtap="openCenter">中弹窗无动画</oak-button>
     <!-- <oak-model isShow="{{showTopModel}}" position="top" size="{{ {width: '80%', height: '400rpx'} }}" model-class="modelCenter">上弹窗</oak-model> -->
-    <oak-dialog isShow="{{showCModel}}" position="center" size="{{ {width: '80%', height: '400rpx'} }}">中弹窗无动画</oak-dialog>
+    <oak-dialog isShow="{{showCModel}}" position="center">中弹窗无动画</oak-dialog>
     
     <oak-button bindtap="openbottom">下弹窗下动画</oak-button>
     <oak-dialog isShow="{{showBModel}}" position="bottom" direction="bottom">下弹窗下动画</oak-dialog>

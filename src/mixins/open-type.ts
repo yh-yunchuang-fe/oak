@@ -1,33 +1,36 @@
 export const openType = Behavior({
     properties: {
-        openType: String
+        openType: {
+            type: String,
+            value: '',
+        }
     },
 
     methods: {
-        bindGetUserInfo(event: Partial<event.Base>) {
-            this.triggerEvent('bindgetuserinfo', event.detail);
+        bindGetUserInfo(event): void {
+            this.triggerEvent('bindgetuserinfo', event.detail)
         },
 
-        bindContact(event: Partial<event.Base>) {
-            this.triggerEvent('bindcontact', event.detail);
+        bindContact(event): void {
+            this.triggerEvent('bindcontact', event.detail)
         },
 
-        bindGetPhoneNumber(event: Partial<event.Base>) {
-            this.triggerEvent('bindgetphonenumber', event.detail);
+        bindGetPhoneNumber(event): void {
+            this.triggerEvent('bindgetphonenumber', event.detail)
         },
 
-        bindError(event: Partial<event.Base>) {
-            this.triggerEvent('binderror', event.detail);
+        bindError(event): void {
+            this.triggerEvent('binderror', event.detail)
         },
 
-        bindLaunchApp(event: Partial<event.Base>) {
-            this.triggerEvent('bindlaunchapp', event.detail);
+        bindLaunchApp(event): void {
+            this.triggerEvent('bindlaunchapp', event.detail)
         },
 
-        bindOpenSetting(event: Partial<event.Base>) {
-            this.triggerEvent('bindopensetting', event.detail);
+        bindOpenSetting(event): void {
+            this.triggerEvent('bindopensetting', event.detail)
         },
     }
-});
+})
 
-export default openType;
+export default openType

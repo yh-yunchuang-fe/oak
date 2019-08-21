@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "ActionSheet 上拉菜单",
+    "usingComponents": {
+        "oak-action-sheet": "/ActionSheet/action-sheet",
+        "oak-button": "/Button/button"
+    }
+}

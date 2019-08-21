@@ -1,43 +1,43 @@
-import DocConfig from './doc.config';
-import asyncComponent from './AsyncComponent';
+import DocConfig from './doc.config'
+import asyncComponent from './AsyncComponent'
 
 const createRoutes = () => {
-    const route = [];
+    const route = []
 
-    const navs = DocConfig.navs || [];
-
-    navs.forEach(nav => {
-        if (nav.components) {
-            nav.list.forEach(list => {
-                list.groups.forEach(page => addRoute(page, true));
-            });
-        } else {
-            addRoute(nav);
-        }
-    });
+    const navs = DocConfig.navs || []
 
     function addRoute(page, iscomponent = false) {
         let {
             path
-        } = page;
+        } = page
         if (path) {
-            path = path.replace('/', '');
+            path = path.replace('/', '')
 
-            let component = null;
+            let component = null
             if (!iscomponent) {
-                component = asyncComponent(() => import('../markdown/' + path + '.md'));
+                component = asyncComponent(() => import('../markdown/' + path + '.md'))
             } else {
-                component = asyncComponent(() => import('../../src/' + path + '/README.md'));
+                component = asyncComponent(() => import('../../src/' + path + '/README.md'))
             }
             route.push({
                 ...page,
                 component,
                 path: !iscomponent ? `/${path}` : `/components/${path}`,
-            });
+            })
         }
     }
 
-    return route;
-};
+    navs.forEach(nav => {
+        if (nav.components) {
+            nav.list.forEach(list => {
+                list.groups.forEach(page => addRoute(page, true))
+            })
+        } else {
+            addRoute(nav)
+        }
+    })
 
-export default createRoutes();
+    return route
+}
+
+export default createRoutes()

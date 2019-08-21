@@ -1,4 +1,4 @@
-import BasicBehavior from 'Mixins/basic';
+import BasicBehavior from 'Mixins/basic'
 Component({
     behaviors: [BasicBehavior],
     properties: {
@@ -14,7 +14,6 @@ Component({
         someData: {}
     },
     methods: {
-        // 这里是一个自定义方法
-        customMethod() { }
+
     }
 })

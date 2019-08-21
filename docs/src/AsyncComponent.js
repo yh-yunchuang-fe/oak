@@ -1,32 +1,32 @@
 import React, {
     Component
-} from 'react';
-import ReactMarkdown from 'react-markdown/with-html';
-import CodeBlock from './CodeBlock';
+} from 'react'
+import ReactMarkdown from 'react-markdown/with-html'
+import CodeBlock from './CodeBlock'
 
 export default function asyncComponent(importComponent) {
     class AsyncComponent extends Component {
         constructor(props) {
-            super(props);
+            super(props)
 
             this.state = {
                 markdown: '# 加载中...'
-            };
+            }
         }
 
         async componentDidMount() {
             const {
                 default: markdown
-            } = await importComponent();
+            } = await importComponent()
 
             this.setState({
                 markdown
-            });
+            })
         }
 
 
         render() {
-            const { markdown } = this.state;
+            const { markdown } = this.state
             return <ReactMarkdown source = {
                 markdown
             }
@@ -38,9 +38,9 @@ export default function asyncComponent(importComponent) {
                     code: CodeBlock,
                 }
             }
-            />;
+            />
         }
     }
 
-    return AsyncComponent;
-};
+    return AsyncComponent
+}

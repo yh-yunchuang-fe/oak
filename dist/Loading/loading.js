@@ -22,10 +22,4 @@ Component({
             optionalTypes: [String],
         },
     },
-    data: {},
-    methods: {
-        test() {
-            console.log(this);
-        }
-    },
 });

@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+    <oak-animation name="{{array[index]}}"
+        bind:onAnimationEnd="animationEnd"
+        duration='1000'
+        show="{{ show }}">
+        <view class="text">Animation</view>
+    </oak-animation>
+    <picker class="picker"
+        bindchange="bindPickerChange"
+        value="{{ index }}"
+        range="{{array}}">
+        <view class="picker">
+            动画效果：{{array[index]}}
+        </view>
+    </picker>
+</view>

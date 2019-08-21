@@ -1,0 +1,41 @@
+@import "Style/variable";
+@import "Style/mixin";
+
+.oak-badge {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+
+    &-sub {
+        padding: 0 $badge-padding;
+        height: $badge-height;
+        min-width: $badge-height;
+        display: inline-block;
+        background-color: $badge-bg;
+        line-height: $badge-height - 2;
+        font-size: $font-size-base;
+        color: $txt-white;
+        box-sizing: border-box;
+        text-align: center;
+        border-radius: $badge-height;
+        border: 1rpx solid transparent;
+
+        &.absolute {
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(50%, -50%);
+        }
+
+        &.dot {
+            padding: 0;
+            height: $badge-dot-height;
+            width: $badge-dot-height;
+            border-radius: $badge-dot-height;
+            text-indent: -9999px;
+            border: none;
+            overflow: hidden;
+            min-width: 0;
+        }
+    }
+}
