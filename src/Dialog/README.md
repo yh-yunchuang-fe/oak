@@ -8,14 +8,14 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-popup": "path/to/your/oakui/PopUp/popup"
+  "oak-dialog": "path/to/your/oakui/dialog/dialog"
 }
 ```
 
 在页面使用
 ```html
 <!-- use in `page.wxml` -->
-<oak-popup />
+<oak-dialog />
 ```
 
 
@@ -23,17 +23,17 @@
 ### 按钮类型
 弹窗属性有：size、opacity、position、direction、zIndex、isShow
 ```html
-<oak-popup>Default</oak-popup>
-<oak-popup size="{{ {width: 50%, height: '100px'} }}">自定义弹窗大小</oak-popup>
-<oak-popup opacity="30">弹窗蒙层透明度</oak-popup>
-<oak-popup position="top">弹窗位置
-</oak-popup>
-<oak-popup direction="top">动画支持</oak-popup>
-<oak-popup zIndex="100">设置弹窗层级</oak-popup>
-<oak-popup isShow="true">弹窗显示与否</oak-popup>
+<oak-dialog>Default</oak-dialog>
+<oak-dialog size="{{ {width: 50%, height: '100px'} }}">自定义弹窗大小</oak-dialog>
+<oak-dialog opacity="30">弹窗蒙层透明度</oak-dialog>
+<oak-dialog position="top">弹窗位置
+</oak-dialog>
+<oak-dialog direction="top">动画支持</oak-dialog>
+<oak-dialog zIndex="100">设置弹窗层级</oak-dialog>
+<oak-dialog isShow="true">弹窗显示与否</oak-dialog>
 ```
 ## API
-通过设置 popup 的属性来控制弹窗不同样式。
+通过设置 dialog 的属性来控制弹窗不同样式。
 
 按钮的属性说明如下：
 
@@ -46,12 +46,12 @@
 | zIndex | 弹窗层级 | Number | 默认10 |
 | isShow | 弹窗显示状态 | Boolen | 默认`false` |
 
-> 其他属性与小程序 [popup](https://developers.weixin.qq.com/miniprogram/dev/component/popup.html) 组件同步。
+> 其他属性与小程序 [dialog](https://developers.weixin.qq.com/miniprogram/dev/component/dialog.html) 组件同步。
 
 ## 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|
-| popup-class | 设置弹窗其他的样式 |
+| dialog-class | 设置弹窗其他的样式 |
 
 

@@ -1,4 +1,4 @@
-.oak-popup {
+.oak-dialog {
   background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   overflow: hidden;
@@ -6,49 +6,49 @@
   right: 0;
   top: 0;
   bottom: 0; }
-  .oak-popup.opacity-30 {
+  .oak-dialog.opacity-30 {
     background-color: rgba(0, 0, 0, 0.3); }
-  .oak-popup.opacity-40 {
+  .oak-dialog.opacity-40 {
     background-color: rgba(0, 0, 0, 0.4); }
-  .oak-popup.opacity-50 {
+  .oak-dialog.opacity-50 {
     background-color: rgba(0, 0, 0, 0.5); }
-  .oak-popup.opacity-60 {
+  .oak-dialog.opacity-60 {
     background-color: rgba(0, 0, 0, 0.6); }
-  .oak-popup.opacity-70 {
+  .oak-dialog.opacity-70 {
     background-color: rgba(0, 0, 0, 0.7); }
-  .oak-popup.opacity-75 {
+  .oak-dialog.opacity-75 {
     background-color: rgba(0, 0, 0, 0.4); }
-  .oak-popup.opacity-80 {
+  .oak-dialog.opacity-80 {
     background-color: rgba(0, 0, 0, 0.8); }
-  .oak-popup.hide {
+  .oak-dialog.hide {
     display: none; }
-  .oak-popup-content {
+  .oak-dialog-content {
     background-color: #fff;
     position: absolute;
     transition: all ease-out 200ms; }
-  .oak-popup-diretion-top {
+  .oak-dialog-diretion-top {
     top: 0;
     left: 0;
     transform: translateY(-100%); }
-  .oak-popup-diretion-left {
+  .oak-dialog-diretion-left {
     top: 50%;
     left: 0;
     transform: translate(-100%, -50%); }
-  .oak-popup-diretion-right {
+  .oak-dialog-diretion-right {
     top: 50%;
     right: 0;
     transform: translate(100%, -50%); }
-  .oak-popup-diretion-bottom {
+  .oak-dialog-diretion-bottom {
     bottom: 0;
     left: 0;
     transform: translateY(100%); }
-  .oak-popup-position-top {
+  .oak-dialog-position-top {
     top: 0;
     left: 0; }
-  .oak-popup-position-center {
+  .oak-dialog-position-center {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
-  .oak-popup-position-bottom {
+  .oak-dialog-position-bottom {
     bottom: 0;
     left: 0; }

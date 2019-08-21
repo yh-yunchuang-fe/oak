@@ -6,29 +6,39 @@ let closeTimer: number;
 Component({
     behaviors: [BasicBehavior, openType],
     properties: {
-        size: {
-            type: Object,
-            value: {width: '100%', height: '67%'},
+        style: {
+            type: String,
+            value: 'padding: 30rpx;',
         },
         //蒙层透明度
-        opacity: {
-            type: Number,
-            value: 70,
+        maskStyle: {
+            type: String,
+            value: 'background-color: rgba(0,0,0,.7)',
         },
         //弹窗位置
         position: {
             type: String,
-            value: 'bottom',
+            value: 'center',
         },
         // 支持动画
         direction: {
             type: String,
             value: 'none',
         },
-        // 弹窗层级
-        zIndex: {
+        // 新增 animationType
+        animationType: {
+            type: String,
+            value: 'none', // none | fade | slide-up | slide-down
+        },
+        // 新增 动画持续时间
+        duration: {
             type: Number,
-            value: 10,
+            value: 300, // 300ms
+        },
+        // 新增 点击蒙层是否关闭
+        maskClosable: {
+            type: Boolean,
+            value: true, // 300ms
         },
         isShow: {
             type: Boolean,
@@ -93,9 +103,10 @@ Component({
             }
         },
         _maskClick() {
+            if(!this.data.maskClosable) return
             this._hide();
             this.triggerEvent('onHide', {});
         },
     },
-    externalClasses: ['popup-class'],
+    externalClasses: ['dialog-class'],
 })

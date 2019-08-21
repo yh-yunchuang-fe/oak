@@ -1,0 +1,8 @@
+<wxs src="WXS/base.wxs"
+    module="Utils" />
+
+<view class="oak-dialog {{isShowClass}}" bindtap="_maskClick" style="{{maskStyle}}">
+    <view class="oak-dialog-content oak-dialog-position-{{endClass}} oak-dialog-diretion-{{startClass}} dialog-class" catchtap="true" style="{{style}}">
+        <slot></slot>
+    </view>
+</view>

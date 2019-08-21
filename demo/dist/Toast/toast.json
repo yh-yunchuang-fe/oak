@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "oak-dialog": "../Dialog/dialog"
+  },
+  "component": true
+}

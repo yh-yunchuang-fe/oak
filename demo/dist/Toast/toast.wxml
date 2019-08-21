@@ -1,0 +1,3 @@
+<oak-dialog isShow="{{isShow}}">
+    {{ message }}
+</oak-dialog>

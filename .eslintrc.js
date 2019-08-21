@@ -28,7 +28,8 @@ module.exports = {
             alias: {
                 map: [
                     ['Style', './src/style'],
-                    ['Mixins', './src/mixins']
+                    ['Mixins', './src/mixins'],
+                    ['Src', './src']
                 ],
             }
         }

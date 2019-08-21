@@ -7,7 +7,7 @@ Component({
     properties: {
         size: {
             type: Object,
-            value: { width: '100%', height: '70%' },
+            value: { width: '100%', height: '67%' },
         },
         opacity: {
             type: Number,
@@ -34,7 +34,6 @@ Component({
         },
     },
     data: {
-        someData: {},
         isShowClass: 'hide',
         startClass: '',
         endClass: '',
@@ -57,7 +56,7 @@ Component({
                         startClass: '',
                         endClass: this.data.position,
                     });
-                }, 30);
+                }, 100);
             }
             else {
                 this.setData({
@@ -78,7 +77,7 @@ Component({
                         isShowClass: 'hide',
                         isShow: false,
                     });
-                }, 30);
+                }, 300);
             }
             else {
                 this.setData({
@@ -94,5 +93,5 @@ Component({
             this.triggerEvent('onHide', {});
         },
     },
-    externalClasses: ['model-class'],
+    externalClasses: ['popup-class'],
 });

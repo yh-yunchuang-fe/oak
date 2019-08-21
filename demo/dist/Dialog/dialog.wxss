@@ -1,0 +1,41 @@
+.oak-dialog {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10; }
+  .oak-dialog.hide {
+    display: none; }
+  .oak-dialog-content {
+    position: absolute;
+    transition: all ease-out 200ms; }
+  .oak-dialog-diretion-top {
+    top: 0;
+    left: 0;
+    transform: translateY(-100%); }
+  .oak-dialog-diretion-left {
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%); }
+  .oak-dialog-diretion-right {
+    top: 50%;
+    right: 0;
+    transform: translate(100%, -50%); }
+  .oak-dialog-diretion-bottom {
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%); }
+  .oak-dialog-position-top {
+    top: 0;
+    left: 0; }
+  .oak-dialog-position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .oak-dialog-position-bottom {
+    bottom: 0;
+    left: 0; }

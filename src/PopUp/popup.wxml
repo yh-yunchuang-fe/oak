@@ -2,7 +2,7 @@
     module="Utils" />
 
 <view class="oak-popup {{isShowClass}} opacity-{{opacity}}" bindtap='_maskClick' style="z-index: {{zIndex}}">
-    <view class="oak-popup-content popup-class oak-popup-position-{{endClass}} oak-popup-diretion-{{startClass}}" catchtap="true" style="width: {{size.width}}; height: {{size.height}};">
+    <view class="oak-popup-content oak-popup-position-{{endClass}} oak-popup-diretion-{{startClass}} popup-class" catchtap="true" style="width: {{size.width}}; height: {{size.height}};">
         <slot></slot>
     </view>
 </view>

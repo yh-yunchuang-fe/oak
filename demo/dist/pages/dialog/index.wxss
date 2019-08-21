@@ -1,0 +1,3 @@
+.modelCenter {
+  left: 50% !important;
+  transform: translateX(-50%); }

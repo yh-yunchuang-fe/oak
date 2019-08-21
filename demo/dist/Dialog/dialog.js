@@ -1,45 +1,47 @@
-import BasicBehavior from 'Mixins/basic';
-import openType from 'Mixins/open-type';
-
-let showTimer: number;
-let closeTimer: number;
+import BasicBehavior from '../mixins/basic';
+import openType from '../mixins/open-type';
+let showTimer;
+let closeTimer;
 Component({
     behaviors: [BasicBehavior, openType],
     properties: {
-        size: {
-            type: Object,
-            value: {width: '100%', height: '67%'},
+        style: {
+            type: String,
+            value: 'padding: 30rpx;',
         },
-        //蒙层透明度
-        opacity: {
-            type: Number,
-            value: 70,
+        maskStyle: {
+            type: String,
+            value: 'background-color: rgba(0,0,0,.7)',
         },
-        //弹窗位置
         position: {
             type: String,
-            value: 'bottom',
+            value: 'center',
         },
-        // 支持动画
         direction: {
             type: String,
             value: 'none',
         },
-        // 弹窗层级
-        zIndex: {
+        animationType: {
+            type: String,
+            value: 'none',
+        },
+        duration: {
             type: Number,
-            value: 10,
+            value: 300,
+        },
+        maskClosable: {
+            type: Boolean,
+            value: true,
         },
         isShow: {
             type: Boolean,
             value: false,
-            observer(newVal:boolean) {
+            observer(newVal) {
                 newVal ? this._show() : this._hide();
             },
         },
     },
     data: {
-        // 这里是一些组件内部数据
         isShowClass: 'hide',
         startClass: '',
         endClass: '',
@@ -51,7 +53,7 @@ Component({
             this.setData({
                 isShowClass: '',
             });
-            if ( this.data.direction === 'left' || this.data.direction === 'right' || this.data.direction === 'top' || this.data.direction === 'bottom' ) {
+            if (this.data.direction === 'left' || this.data.direction === 'right' || this.data.direction === 'top' || this.data.direction === 'bottom') {
                 this.setData({
                     startClass: this.data.direction,
                     endClass: '',
@@ -63,7 +65,8 @@ Component({
                         endClass: this.data.position,
                     });
                 }, 100);
-            } else {
+            }
+            else {
                 this.setData({
                     startClass: '',
                     endClass: this.data.position,
@@ -71,19 +74,20 @@ Component({
             }
         },
         _hide() {
-            if ( this.data.direction === 'left' || this.data.direction === 'right' || this.data.direction === 'top' || this.data.direction === 'bottom' ) {
+            if (this.data.direction === 'left' || this.data.direction === 'right' || this.data.direction === 'top' || this.data.direction === 'bottom') {
                 this.setData({
                     startClass: this.data.direction,
                     endClass: '',
                 });
-                clearTimeout(closeTimer)
+                clearTimeout(closeTimer);
                 closeTimer = setTimeout(() => {
                     this.setData({
                         isShowClass: 'hide',
                         isShow: false,
                     });
                 }, 300);
-            } else {
+            }
+            else {
                 this.setData({
                     startClass: this.data.direction,
                     endClass: '',
@@ -93,9 +97,11 @@ Component({
             }
         },
         _maskClick() {
+            if (!this.data.maskClosable)
+                return;
             this._hide();
             this.triggerEvent('onHide', {});
         },
     },
-    externalClasses: ['popup-class'],
-})
+    externalClasses: ['dialog-class'],
+});
