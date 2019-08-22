@@ -1,8 +1,19 @@
 <wxs src="../wxs/base.wxs"
     module="Utils" />
 
-<view class="oak-dialog {{isShowClass}}" bindtap="_maskClick" style="{{maskStyle}}">
+<!-- <view class="oak-dialog {{isShowClass}}" bindtap="_maskClick" style="{{maskStyle}}">
     <view class="oak-dialog-content oak-dialog-position-{{endClass}} oak-dialog-diretion-{{startClass}} dialog-class" catchtap="true" style="{{style}}">
         <slot></slot>
     </view>
+</view> -->
+<view class="oak-dialog {{isShowClass}}" bindtap="_maskClick" style="{{maskStyle}}">
+    <oak-amimation
+        name="{{animationType}}"
+        duration="{{duration}}"
+        bind:onAnimationEnd="animationEnd"
+        show="{{isShow}}">
+        <view class="oak-dialog-content dialog-class" catchtap="true" style="{{dialogStyle}}">
+            <slot></slot>
+        </view>
+    </oak-amimation>
 </view>

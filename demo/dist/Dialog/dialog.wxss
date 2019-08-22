@@ -11,8 +11,7 @@
   .oak-dialog.hide {
     display: none; }
   .oak-dialog-content {
-    position: absolute;
-    transition: all ease-out 200ms; }
+    position: absolute; }
   .oak-dialog-diretion-top {
     top: 0;
     left: 0;

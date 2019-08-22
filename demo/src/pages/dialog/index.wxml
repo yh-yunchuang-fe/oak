@@ -4,13 +4,9 @@
     <oak-dialog isShow="{{showDefaultModel}}">默认弹窗</oak-dialog>
 
     <oak-button bindtap="opentop">点击蒙层不关闭</oak-button>
-    <!-- <oak-model isShow="{{showTopModel}}" position="top" size="{{ {width: '80%', height: '400rpx'} }}" model-class="modelCenter">上弹窗</oak-model> -->
     <oak-dialog isShow="{{showTModel}}" maskClosable="{{false}}">hehela</oak-dialog>
     
-    <oak-button bindtap="openCenter">中弹窗无动画</oak-button>
-    <!-- <oak-model isShow="{{showTopModel}}" position="top" size="{{ {width: '80%', height: '400rpx'} }}" model-class="modelCenter">上弹窗</oak-model> -->
-    <oak-dialog isShow="{{showCModel}}">中弹窗无动画</oak-dialog>
+    <oak-button bindtap="openCenter">自定义弹窗</oak-button>
+    <oak-dialog isShow="{{showCModel}}" duration="500" animationType="slideInRight" maskStyle="background-color: rgba(0, 0, 0, .3)" dialogStyle="background-color: #fff; top: 50%;left: 50%; transform: translate(-50%,-50%)">自定义弹窗</oak-dialog>
     
-    <oak-button bindtap="openbottom">下弹窗下动画</oak-button>
-    <oak-dialog isShow="{{showBModel}}">下弹窗下动画</oak-dialog>
 </view>

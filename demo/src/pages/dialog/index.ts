@@ -9,26 +9,29 @@ Page({
         showCModel: false,
         showBModel: false,
     },
-    onLoad() {
-        
+    onShareAppMessage(): object {
+        return {
+            title: 'Oak Weui dialog 图标',
+            path: '/pages/dialog/index',
+        }
     },
     openDefault() {
-        this.setData({
+        this.setData!({
             showDefaultModel: true
         })
     },
     opentop() {
-        this.setData({
+        this.setData!({
             showTModel: true,
         })
     },
     openbottom() {
-        this.setData({
+        this.setData!({
             showBModel: true
         })
     },
     openCenter() {
-        this.setData({
+        this.setData!({
             showCModel: true
         })
     }

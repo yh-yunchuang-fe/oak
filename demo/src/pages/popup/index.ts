@@ -12,22 +12,22 @@ Page({
         
     },
     openDefault() {
-        this.setData({
+        this.setData!({
             showDefaultModel: true
         })
     },
     opentop() {
-        this.setData({
+        this.setData!({
             showTModel: true
         })
     },
     openbottom() {
-        this.setData({
+        this.setData!({
             showBModel: true
         })
     },
     openCenter() {
-        this.setData({
+        this.setData!({
             showCModel: true
         })
     }
