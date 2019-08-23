@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/tag/tag",
     "pages/actionSheet/actionSheet",
     "pages/animation/animation",
     "pages/list/list",

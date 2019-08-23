@@ -1,0 +1,91 @@
+@import "Style/variable";
+@import "Style/mixin";
+
+@mixin colors($text, $background, $border) {
+    color: $text;
+    background-color: $background;
+    border: 1rpx solid $border;
+}
+
+$default: #333, #fafafa, #d9d9d9;
+$magenta: #eb2f96, #fff0f6, #ffadd2;
+$red: #f5222d, #fff1f0, #ffa39e;
+$volcano: #fa541c, #fff2e8, #ffbb96;
+$orange: #fd7622, #fff8f4, #ffd591;
+$gold: #faad14, #fffbe6, #ffe58f;
+$lime: #a0d911, #fcffe6, #eaff8f;
+$green: #52c41a, #f6ffed, #b7eb8f;
+$cyan: #13c2c2, #e6fffb, #87e8de;
+$blue: #1890ff, #e6f7ff, #91d5ff;
+$geekblue: #2f54eb, #f0f5ff, #adc6ff;
+$purple: #722ed1, #f9f0ff, #d3adf7;
+
+.oak-tag {
+    padding: 0 $tag-padding;
+    height: $tag-height;
+    line-height: $tag-height - 2;
+    font-size: $font-small;
+    border-radius: $border-radius-base;
+    @include inline-block();
+
+    &-default {
+        @include colors($default...);
+    }
+
+    &-magenta {
+        @include colors($magenta...);
+    }
+
+    &-red {
+        @include colors($red...);
+    }
+
+    &-volcano {
+        @include colors($volcano...);
+    }
+
+    &-orange {
+        @include colors($orange...);
+    }
+
+    &-gold {
+        @include colors($gold...);
+    }
+
+    &-lime {
+        @include colors($lime...);
+    }
+
+    &-green {
+        @include colors($green...);
+    }
+
+    &-cyan {
+        @include colors($cyan...);
+    }
+
+    &-blue {
+        @include colors($blue...);
+    }
+
+    &-geekblue {
+        @include colors($geekblue...);
+    }
+
+    &-purple {
+        @include colors($purple...);
+    }
+
+    &.plain {
+        background-color: transparent;
+    }
+
+    &-round {
+        padding: 0 $tag-round-padding;
+        border-radius: $border-radius-max;
+    }
+
+    &-square {
+        border-radius: 0;
+    }
+}

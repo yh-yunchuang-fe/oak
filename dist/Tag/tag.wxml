@@ -1,0 +1,5 @@
+<wxs src="../wxs/base.wxs" module="Utils" />
+
+<view class="{{ Utils.classNames('oak-tag', {plain: plain})}} oak-tag-{{color}} oak-tag-{{shape}}  custom-class" style="{{ _style }}">
+    <slot></slot>
+</view>

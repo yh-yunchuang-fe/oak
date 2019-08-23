@@ -56,6 +56,9 @@ export default {
             }, {
                 name: 'List 列表',
                 path: '/List',
+            }, {
+                name: 'Tag 标签',
+                path: '/Tag',
             },],
         }, {
             name: '反馈',
