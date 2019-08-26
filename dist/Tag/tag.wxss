@@ -5,7 +5,7 @@
   font-size: 20rpx;
   border-radius: 4rpx;
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: top; }
   .oak-tag-default {
     color: #333;
     background-color: #fafafa;

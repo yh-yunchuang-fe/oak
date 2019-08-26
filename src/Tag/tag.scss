@@ -26,7 +26,8 @@ $purple: #722ed1, #f9f0ff, #d3adf7;
     line-height: $tag-height - 2;
     font-size: $font-small;
     border-radius: $border-radius-base;
-    @include inline-block();
+    display: inline-block;
+    vertical-align: top;
 
     &-default {
         @include colors($default...);
