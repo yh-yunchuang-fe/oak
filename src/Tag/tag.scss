@@ -28,6 +28,7 @@ $purple: #722ed1, #f9f0ff, #d3adf7;
     border-radius: $border-radius-base;
     display: inline-block;
     vertical-align: top;
+    box-sizing: border-box;
 
     &-default {
         @include colors($default...);
