@@ -76,7 +76,7 @@
   content: "\e6a4"; }
 
 .oak-label {
-  min-width: 48rpx;
+  min-width: 12rpx;
   height: 56rpx;
   line-height: 56rpx;
   display: inline-flex;
