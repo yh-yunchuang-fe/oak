@@ -15,6 +15,10 @@ Component({
             value: false,
             optionalTypes: [String]
         },
+        iconPrefix: {
+            type: String,
+            value: 'oak-icon'
+        },
         icon: {
             type: String,
             value: ''
