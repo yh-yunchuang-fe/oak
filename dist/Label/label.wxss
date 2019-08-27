@@ -80,7 +80,7 @@
   font-family: "iconfont" !important; }
 
 .oak-label {
-  min-width: 12rpx;
+  min-width: 24rpx;
   height: 56rpx;
   line-height: 56rpx;
   display: inline-flex;
