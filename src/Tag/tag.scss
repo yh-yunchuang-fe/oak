@@ -29,6 +29,7 @@ $purple: #722ed1, #f9f0ff, #d3adf7;
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
+    font-weight: 500;
 
     &-default {
         @include colors($default...);
