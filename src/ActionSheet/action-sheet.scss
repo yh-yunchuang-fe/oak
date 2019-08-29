@@ -2,12 +2,13 @@
 @import "Style/mixin";
 
 .oak-action-sheet {
-    &-mask {
+    position: relative;
+    & &-mask {
         @include mask;
     }
 
-    &-body,
-    &-body-iphonex  {
+    & &-body,
+    & &-body-iphonex  {
         @include tc;
         position: fixed;
         left: 0;
@@ -15,24 +16,23 @@
         width: 100%;
         height: auto;
         background-color: $default-bg;
-        font-size: $font-size-h1;
     }
-    &-body-iphonex {
+    & &-body-iphonex {
         padding-bottom: $iphonex-padding;
     }
 
-    &-item {
+    & &-item {
         height: $action-sheet-height;
         line-height: $action-sheet-height;
+        font-size: $font-size-title;
         border: none;
-
-        .oak-botton:not(:first-child) & {
-            border-top: $border;
-        }
-
     }
 
-    &-subtitle {
+    .oak-botton:not(:first-child) .oak-action-sheet-item {
+        border-top: $border;
+    }
+
+    & &-subtitle {
         position: relative;
         top: 6rpx;
         margin-left: 10rpx;
@@ -40,11 +40,11 @@
         color: $txt-info;
     }
 
-    &-cancle {
+    & &-cancle {
         border-top: $wrap-margin-s solid $stable-bg;
     }
 
-    &-cancle,
+    & &-cancle,
     .oak-buttont {
         display: block;
     }
