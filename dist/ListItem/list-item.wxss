@@ -39,7 +39,6 @@
     .oak-list-item-body:not(:last-child) {
       margin-right: 20rpx; }
   .oak-list-item-content {
-    padding-right: 4rpx;
     font-size: 32rpx;
     color: #999;
     display: inline-block;
