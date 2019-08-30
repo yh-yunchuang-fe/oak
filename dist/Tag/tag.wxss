@@ -27,7 +27,7 @@
   .oak-tag-orange {
     color: #fd7622;
     background-color: #fff8f4;
-    border: 2rpx solid #ffd591; }
+    border: 2rpx solid #ffdeca; }
   .oak-tag-gold {
     color: #faad14;
     background-color: #fffbe6;
