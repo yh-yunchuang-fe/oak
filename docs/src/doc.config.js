@@ -38,6 +38,9 @@ export default {
             {
                 name: 'Animation 动画',
                 path: '/Animation',
+            }, {
+                name: 'Popup 弹出窗',
+                path: '/Popup',
             }],
         }, {
             name: '展示',

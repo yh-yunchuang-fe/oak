@@ -1,0 +1,82 @@
+@import "Style/variable";
+@import "Style/mixin";
+
+.oak-popup {
+    position: relative;
+
+    & &-mask {
+        @include mask;
+    }
+
+    & &-body,
+    & &-body-iphonex {
+        @include tc;
+        position: fixed;
+        background-color: $default-bg;
+        box-sizing: border-box;
+    }
+
+    &-center {
+        .oak-popup-body,
+        .oak-popup-body-iphonex {
+            width: auto;
+            height: auto;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+    }
+
+    &-bottom,
+    &-top {
+        .oak-popup-body,
+        .oak-popup-body-iphonex {
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &-bottom .oak-popup-body,
+    &-bottom .oak-popup-body-iphonex {
+        bottom: 0;
+    }
+
+    &-bottom .oak-popup-body-iphonex {
+        padding-bottom: $iphonex-padding;
+    }
+
+    &-top .oak-popup-body,
+    &-top .oak-popup-body-iphonex {
+        top: 0;
+    }
+
+    &-top .oak-popup-body-iphonex {
+        padding-top: $iphonex-padding;
+    }
+
+    &-left,
+    &-right {
+        .oak-popup-body,
+        .oak-popup-body-iphonex {
+            top: 0;
+            width: auto;
+            height: 100vh !important;
+        }
+
+        .oak-popup-body-iphonex {
+            padding: 0 $iphonex-padding;
+        }
+    }
+
+    &-right .oak-popup-body,
+    &-right .oak-popup-body-iphonex {
+        right: 0;
+    }
+
+    &-left .oak-popup-body,
+    &-left .oak-popup-body-iphonex {
+        left: 0;
+    }
+
+}

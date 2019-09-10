@@ -1,8 +1,9 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/tag/tag",
     "pages/actionSheet/actionSheet",
+    "pages/popup/popup",
+    "pages/tag/tag",
     "pages/animation/animation",
     "pages/list/list",
     "pages/collapse/collapse",

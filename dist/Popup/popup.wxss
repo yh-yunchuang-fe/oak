@@ -1,0 +1,52 @@
+.oak-popup {
+  position: relative; }
+  .oak-popup .oak-popup-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75); }
+  .oak-popup .oak-popup-body,
+  .oak-popup .oak-popup-body-iphonex {
+    text-align: center;
+    position: fixed;
+    background-color: #fff;
+    box-sizing: border-box; }
+  .oak-popup-center .oak-popup-body,
+  .oak-popup-center .oak-popup-body-iphonex {
+    width: auto;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  .oak-popup-bottom .oak-popup-body,
+  .oak-popup-bottom .oak-popup-body-iphonex, .oak-popup-top .oak-popup-body,
+  .oak-popup-top .oak-popup-body-iphonex {
+    left: 0;
+    width: 100%;
+    height: auto; }
+  .oak-popup-bottom .oak-popup-body,
+  .oak-popup-bottom .oak-popup-body-iphonex {
+    bottom: 0; }
+  .oak-popup-bottom .oak-popup-body-iphonex {
+    padding-bottom: 40rpx; }
+  .oak-popup-top .oak-popup-body,
+  .oak-popup-top .oak-popup-body-iphonex {
+    top: 0; }
+  .oak-popup-top .oak-popup-body-iphonex {
+    padding-top: 40rpx; }
+  .oak-popup-left .oak-popup-body,
+  .oak-popup-left .oak-popup-body-iphonex, .oak-popup-right .oak-popup-body,
+  .oak-popup-right .oak-popup-body-iphonex {
+    top: 0;
+    width: auto;
+    height: 100vh !important; }
+  .oak-popup-left .oak-popup-body-iphonex, .oak-popup-right .oak-popup-body-iphonex {
+    padding: 0 40rpx; }
+  .oak-popup-right .oak-popup-body,
+  .oak-popup-right .oak-popup-body-iphonex {
+    right: 0; }
+  .oak-popup-left .oak-popup-body,
+  .oak-popup-left .oak-popup-body-iphonex {
+    left: 0; }

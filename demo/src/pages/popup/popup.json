@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Popup 弹出窗",
+    "usingComponents": {
+        "oak-button": "/Button/button",
+        "oak-popup": "/Popup/popup"
+    }
+}

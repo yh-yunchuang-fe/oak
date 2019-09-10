@@ -23,7 +23,6 @@ Component({
             value: 'fadeIn',
             observer(newVal, oldVal) {
                 this.preAnimationName = oldVal;
-                console.log('name', newVal);
                 if (this.data.show !== null)
                     return;
                 if (newVal) {
