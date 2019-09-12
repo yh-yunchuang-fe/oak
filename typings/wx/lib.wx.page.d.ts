@@ -191,6 +191,8 @@ declare namespace Page {
       /** 窗口尺寸参数 */
       options?: IResizeOption,
     ): void;
+    /** 使用选择器选择组件实例节点，返回匹配到的第一个组件实例对象（会被 `wx://component-export` 影响） */
+  selectComponent?(selector: string): WxComponent;
   }
 
   interface PageConstructor {

@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">
+        基本用法
+    </view>
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: 'Oak 弹窗', content: '弹窗很6，非常6，对不对？', cancleText: '不对', confirmText: '对' } }}"
+            bindtap="showDialog"
+        >带标题</oak-button>
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {content: '弹窗很6，非常6，对不对？', cancleText: '不对', confirmText: '对' } }}"
+            bindtap="showDialog"
+        >不带标题</oak-button>
+    </view>
+    <view class="h3">
+        异步关闭
+    </view>
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: '异步关闭', content: ' 确认5秒后关闭弹窗', cancleText: '取消', confirmText: '确认', confirmAsync: true} }}"
+            bindtap="showDialog"
+        >点击调用</oak-button>
+    </view>
+    <view class="h3">
+        自定义内容
+    </view>
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: '自定义', cancleText: '取消', confirmText: '确认', diy: true} }}"
+            bindtap="showDialog"
+        >点击调用</oak-button>
+    </view>
+    <view class="h3">
+        实例调用
+    </view>
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            bindtap="dialogShow"
+        >点击调用</oak-button>
+    </view>
+    <oak-dialog
+        id="dialog"
+        show="{{ show }}"
+        title="{{ title }}"
+        bindonConfirm="onConfirm"
+        content="{{ content }}"
+        cancle-text="{{ cancleText }}"
+        confirm-text="{{ confirmText }}"
+        confirm-async="{{ confirmAsync }}">
+        <view class="diy-content" wx:if="{{diy}}">
+            <image mode="width" src="https://static.yonghuivip.com/oak/images/logo.png" alt="" />
+        </view>
+    </oak-dialog>
+</view>

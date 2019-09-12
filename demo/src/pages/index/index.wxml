@@ -22,12 +22,6 @@
             <oak-list-item title="Icon 图标"
                 title-class="item-title"
                 url="/pages/icon/index" />
-            <oak-list-item title="Loadding 加载"
-                title-class="item-title"
-                url="/pages/loading/loading" />
-            <oak-list-item title="Label 标签"
-                title-class="item-title"
-                url="/pages/label/label" />
             <oak-list-item title="Animation 动画"
                 title-class="item-title"
                 url="/pages/animation/animation" />
@@ -61,6 +55,9 @@
             <oak-list-item title="Tag 标签"
                 title-class="item-title"
                 url="/pages/tag/tag" />
+            <oak-list-item title="Label 操作标签"
+                title-class="item-title"
+                url="/pages/label/label" />
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="select"
@@ -72,6 +69,12 @@
             <oak-list-item title="ActionSheet 菜单"
                 title-class="item-title"
                 url="/pages/actionSheet/actionSheet" />
+            <oak-list-item title="Dialog 弹窗"
+                title-class="item-title"
+                url="/pages/dialog/dialog" />
+            <oak-list-item title="Loadding 加载"
+                title-class="item-title"
+                url="/pages/loading/loading" />
         </oak-collapse-item>
     </oak-collapse>
 </view>

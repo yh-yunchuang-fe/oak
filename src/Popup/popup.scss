@@ -12,8 +12,8 @@
     & &-body-iphonex {
         @include tc;
         position: fixed;
-        background-color: $default-bg;
         box-sizing: border-box;
+        background-color: inherit;
     }
 
     &-center {
@@ -23,7 +23,7 @@
             height: auto;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%)
+            transform: translate(-50%, -50%);
         }
     }
 

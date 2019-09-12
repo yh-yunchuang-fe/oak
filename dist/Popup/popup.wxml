@@ -11,6 +11,8 @@
         ext-class="oak-popup-mask">
     </oak-animation>
     <oak-animation name="{{_bodyAnimate}}"
+        class="body-class"
+        style="background: {{background}};"
         show="{{ _bodyShow }}"
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"

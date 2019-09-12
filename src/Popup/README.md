@@ -55,6 +55,7 @@ API说明。
 | position | 弹出层位置 | `Enum{ 'top', 'bottom', 'left', 'right', 'center' }` | `center` |
 | duration | 动画时间，单位毫秒 | `number` | `400` |
 | onPopupClose | 点击遮罩层的回调 | `function(e)` | - |
+| background | 内容区颜色 | `string` | `#fff` |
 
 ## 外部样式类
 

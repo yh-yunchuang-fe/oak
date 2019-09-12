@@ -1,5 +1,6 @@
 .oak-action-sheet {
-  position: relative; }
+  position: relative;
+  background-color: #fff; }
   .oak-action-sheet .oak-action-sheet-mask {
     position: fixed;
     top: 0;
@@ -23,7 +24,7 @@
     line-height: 100rpx;
     font-size: 32rpx;
     border: none; }
-  .oak-action-sheet .oak-botton:not(:first-child) .oak-action-sheet-item {
+  .oak-action-sheet .oak-button:not(:first-child) .oak-action-sheet-item {
     border-top: 1rpx solid rgba(221, 221, 221, 0.8); }
   .oak-action-sheet .oak-action-sheet-subtitle {
     position: relative;
@@ -34,5 +35,5 @@
   .oak-action-sheet .oak-action-sheet-cancle {
     border-top: 20rpx solid #f8f8f8; }
   .oak-action-sheet .oak-action-sheet-cancle,
-  .oak-action-sheet .oak-buttont {
+  .oak-action-sheet .oak-button {
     display: block; }

@@ -11,8 +11,8 @@
   .oak-popup .oak-popup-body-iphonex {
     text-align: center;
     position: fixed;
-    background-color: #fff;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    background-color: inherit; }
   .oak-popup-center .oak-popup-body,
   .oak-popup-center .oak-popup-body-iphonex {
     width: auto;

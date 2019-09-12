@@ -47,6 +47,7 @@
     </view>
     <oak-popup show="{{ showPopup }}"
         bind:onPopupClose="onPopupClose"
+        body-class="popup-body"
         position="{{position}}">
         <view class="popup"
             style="{{ style }}">

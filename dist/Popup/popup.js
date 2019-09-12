@@ -47,6 +47,10 @@ Component({
             type: Number,
             value: 400,
         },
+        background: {
+            type: String,
+            value: '#fff',
+        }
     },
     data: {
         _mask: false,
@@ -55,6 +59,7 @@ Component({
         _bodyAnimate: '',
         isIPhonex: /iPhone X/g.test(wx.getSystemInfoSync().model),
     },
+    externalClasses: ['ext-class', 'body-class'],
     methods: {
         popupClose() {
             this.triggerEvent('onPopupClose');

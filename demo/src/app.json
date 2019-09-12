@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/dialog/dialog",
     "pages/actionSheet/actionSheet",
     "pages/popup/popup",
     "pages/tag/tag",

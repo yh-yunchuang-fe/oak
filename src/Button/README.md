@@ -113,14 +113,15 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| type | 按钮类型，可选值为 `primary`、`danger`、`info`, 或者不设 | String | `default` |
-| size | 按钮大小，可选值为 `large`、`small`、`block`, 或者不设| String | `default` |
-| plain | 背景透明，内容反色| Boolen | `false` |
-| icon | 图标名 | String | - |
-| disabled | 按钮不可用 | Boolen | `false` |
-| loading | 加载状态 | Boolen | `false` |
-| loaderColor | Loading 颜色| String | - |
-| shape | 按钮形状，可选值为 `circle`、`round`、`square`, 或者不设| String | - |
+| type | 按钮类型，可选值为 `primary`、`danger`、`info`, 或者不设 | string | `default` |
+| size | 按钮大小，可选值为 `large`、`small`、`block`, 或者不设| string | `default` |
+| plain | 背景透明，内容反色| boolen | `false` |
+| icon | 图标名 | string | - |
+| disabled | 按钮不可用 | boolen | `false` |
+| loading | 加载状态 | boolen | `false` |
+| loader-color | Loading 颜色| string | - |
+| loader-size | Loading 大小， 参考 [Loading 组件](https://yh-yunchuang-fe.github.io/oak/#/components/Loading) | string | - |
+| shape | 按钮形状，可选值为 `circle`、`round`、`square`, 或者不设| string | - |
 
 > 其他属性与小程序 [button](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) 组件同步。
 

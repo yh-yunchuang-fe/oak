@@ -3,6 +3,7 @@
 
 .oak-action-sheet {
     position: relative;
+    background-color: $default-bg;
     & &-mask {
         @include mask;
     }
@@ -28,7 +29,7 @@
         border: none;
     }
 
-    .oak-botton:not(:first-child) .oak-action-sheet-item {
+    .oak-button:not(:first-child) .oak-action-sheet-item {
         border-top: $border;
     }
 
@@ -45,7 +46,7 @@
     }
 
     & &-cancle,
-    .oak-buttont {
+    .oak-button {
         display: block;
     }
 }
