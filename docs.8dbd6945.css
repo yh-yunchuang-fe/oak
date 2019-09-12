@@ -470,6 +470,9 @@
     color: #c41d7f;
     font-size: 13px;
     word-break: break-all; }
+  .doc-content table td:nth-child(4),
+  .doc-content table th:nth-child(4) {
+    text-align: center; }
   .doc-content table tr {
     background-color: #fff;
     border-bottom: 1px solid #dfe2e5; }
