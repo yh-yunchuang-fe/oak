@@ -25,7 +25,7 @@
             <oak-list-item title="Animation 动画"
                 title-class="item-title"
                 url="/pages/animation/animation" />
-            <oak-list-item title="Popup 弹出窗"
+            <oak-list-item title="Popup 弹出层"
                 title-class="item-title"
                 url="/pages/popup/popup" />
         </oak-collapse-item>
