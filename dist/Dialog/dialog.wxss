@@ -7,14 +7,14 @@
   overflow: hidden; }
   .oak-dialog-title {
     padding: 30rpx 0 10rpx 0;
-    font-size: 32rpx;
+    font-size: 28rpx;
     font-weight: bold;
     line-height: 1; }
   .oak-dialog-title_pd {
     padding: 50rpx 0; }
   .oak-dialog-content {
     padding: 20rpx 0 40rpx;
-    font-size: 28rpx;
+    font-size: 24rpx;
     line-height: 1.5; }
     .oak-dialog-content_pd {
       padding-top: 40rpx; }

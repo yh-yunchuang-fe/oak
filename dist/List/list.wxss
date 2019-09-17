@@ -2,7 +2,7 @@
   line-height: 1.5; }
   .oak-list-title {
     padding: 20rpx 30rpx;
-    font-size: 32rpx;
+    font-size: 28rpx;
     color: #999; }
   .oak-list.border {
     border: 1rpx solid rgba(221, 221, 221, 0.8); }

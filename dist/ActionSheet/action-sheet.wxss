@@ -22,7 +22,7 @@
   .oak-action-sheet .oak-action-sheet-item {
     height: 100rpx;
     line-height: 100rpx;
-    font-size: 32rpx;
+    font-size: 28rpx;
     border: none; }
   .oak-action-sheet .oak-button:not(:first-child) .oak-action-sheet-item {
     border-top: 1rpx solid rgba(221, 221, 221, 0.8); }
@@ -30,7 +30,7 @@
     position: relative;
     top: 6rpx;
     margin-left: 10rpx;
-    font-size: 28rpx;
+    font-size: 24rpx;
     color: #999; }
   .oak-action-sheet .oak-action-sheet-cancle {
     border-top: 20rpx solid #f8f8f8; }
