@@ -10,7 +10,6 @@
 
     & &-body,
     & &-body-iphonex {
-        @include tc;
         position: fixed;
         box-sizing: border-box;
         background-color: inherit;
