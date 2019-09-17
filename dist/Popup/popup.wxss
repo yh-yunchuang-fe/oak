@@ -9,7 +9,6 @@
     background: rgba(0, 0, 0, 0.75); }
   .oak-popup .oak-popup-body,
   .oak-popup .oak-popup-body-iphonex {
-    text-align: center;
     position: fixed;
     box-sizing: border-box;
     background-color: inherit; }
