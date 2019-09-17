@@ -56,12 +56,13 @@ API说明。
 | duration | 动画时间，单位毫秒 | `number` | `400` |
 | onPopupClose | 点击遮罩层的回调 | `function(e)` | - |
 | background | 内容区背景颜色 | `string` | `#fff` |
+| width | 内容区宽 | `string` | - |
+| height | 内容区高 | `string` | - |
 
 ## 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|
 | ext-class | 作用于根结点 |
-| body-class | 作用于内容区域 |
 
 

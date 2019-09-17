@@ -12,6 +12,7 @@
     </oak-animation>
     <oak-animation name="{{_bodyAnimate}}"
         class="oak-popup-body-wrap body-class"
+        style="width: {{width}};height: {{height}};"
         show="{{ _bodyShow }}"
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"

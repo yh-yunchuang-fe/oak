@@ -53,6 +53,14 @@ Component({
             type: String,
             value: '#fff',
         },
+        width: {
+            type: String,
+            value: null,
+        },
+        height: {
+            type: String,
+            value: null,
+        }
     },
     data: {
         _mask: false,
