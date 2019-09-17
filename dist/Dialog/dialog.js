@@ -17,6 +17,10 @@ Component({
                 }
             }
         },
+        duration: {
+            type: Number,
+            value: 500,
+        },
         maskClosable: {
             type: Boolean,
             value: true,
@@ -59,6 +63,8 @@ Component({
                 onCancel: () => { },
                 onConfirm: () => { },
                 onClose: () => { },
+                cancleText: '取消',
+                confirmText: '确认',
             };
             this.setData(Object.assign({ show: true }, defaultOptions, options));
         },
@@ -114,7 +120,7 @@ Component({
                     okLoading: false,
                     confirmAsync: false
                 });
-            }, 500);
+            }, this.data.duration);
         }
     },
     externalClasses: ['dialog-class',],

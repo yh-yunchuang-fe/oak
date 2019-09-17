@@ -2,6 +2,7 @@
     module="Utils" />
 
 <oak-popup show="{{ show }}"
+    duration="{{duration}}"
     background="transparent"
     bind:onPopupClose="_onPopupClose"
     mask="{{mask}}">
