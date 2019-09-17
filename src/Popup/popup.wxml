@@ -11,12 +11,13 @@
         ext-class="oak-popup-mask">
     </oak-animation>
     <oak-animation name="{{_bodyAnimate}}"
-        class="body-class"
-        style="background: {{background}};"
+        class="oak-popup-body-wrap body-class"
         show="{{ _bodyShow }}"
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"
-        ext-class="{{ isIPhonex ? 'oak-popup-body-iphonex' : 'oak-popup-body' }}">
-        <slot></slot>
+        >
+        <view class="{{ isIPhonex ? 'oak-popup-body-iphonex' : 'oak-popup-body' }}" style="background: {{background}};">
+            <slot></slot>
+        </view>
     </oak-animation>
 </view>

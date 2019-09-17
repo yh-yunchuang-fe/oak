@@ -50,7 +50,7 @@ Component({
         background: {
             type: String,
             value: '#fff',
-        }
+        },
     },
     data: {
         _mask: false,

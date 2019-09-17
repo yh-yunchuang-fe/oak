@@ -7,45 +7,38 @@
     bottom: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.75); }
-  .oak-popup .oak-popup-body,
-  .oak-popup .oak-popup-body-iphonex {
+  .oak-popup .oak-popup-body-wrap {
     position: fixed;
     box-sizing: border-box;
     background-color: inherit; }
-  .oak-popup-center .oak-popup-body,
-  .oak-popup-center .oak-popup-body-iphonex {
+  .oak-popup-body, .oak-popup-body-iphonex {
+    width: inherit;
+    height: inherit; }
+  .oak-popup-center .oak-popup-body-wrap {
     width: auto;
     height: auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
-  .oak-popup-bottom .oak-popup-body,
-  .oak-popup-bottom .oak-popup-body-iphonex, .oak-popup-top .oak-popup-body,
-  .oak-popup-top .oak-popup-body-iphonex {
+  .oak-popup-bottom .oak-popup-body-wrap, .oak-popup-top .oak-popup-body-wrap {
     left: 0;
     width: 100%;
     height: auto; }
-  .oak-popup-bottom .oak-popup-body,
-  .oak-popup-bottom .oak-popup-body-iphonex {
+  .oak-popup-bottom .oak-popup-body-wrap {
     bottom: 0; }
   .oak-popup-bottom .oak-popup-body-iphonex {
     padding-bottom: 40rpx; }
-  .oak-popup-top .oak-popup-body,
-  .oak-popup-top .oak-popup-body-iphonex {
+  .oak-popup-top .oak-popup-body-wrap {
     top: 0; }
   .oak-popup-top .oak-popup-body-iphonex {
     padding-top: 40rpx; }
-  .oak-popup-left .oak-popup-body,
-  .oak-popup-left .oak-popup-body-iphonex, .oak-popup-right .oak-popup-body,
-  .oak-popup-right .oak-popup-body-iphonex {
+  .oak-popup-left .oak-popup-body-wrap, .oak-popup-right .oak-popup-body-wrap {
     top: 0;
     width: auto;
     height: 100vh !important; }
   .oak-popup-left .oak-popup-body-iphonex, .oak-popup-right .oak-popup-body-iphonex {
     padding: 0 40rpx; }
-  .oak-popup-right .oak-popup-body,
-  .oak-popup-right .oak-popup-body-iphonex {
+  .oak-popup-right .oak-popup-body-wrap {
     right: 0; }
-  .oak-popup-left .oak-popup-body,
-  .oak-popup-left .oak-popup-body-iphonex {
+  .oak-popup-left .oak-popup-body-wrap {
     left: 0; }

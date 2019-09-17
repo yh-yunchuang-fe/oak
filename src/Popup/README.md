@@ -55,12 +55,13 @@ API说明。
 | position | 弹出层位置 | `Enum{ 'top', 'bottom', 'left', 'right', 'center' }` | `center` |
 | duration | 动画时间，单位毫秒 | `number` | `400` |
 | onPopupClose | 点击遮罩层的回调 | `function(e)` | - |
-| background | 内容区颜色 | `string` | `#fff` |
+| background | 内容区背景颜色 | `string` | `#fff` |
 
 ## 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|
 | ext-class | 作用于根结点 |
+| body-class | 作用于内容区域 |
 
 
