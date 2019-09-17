@@ -28,7 +28,7 @@
     border-top: 1rpx solid rgba(221, 221, 221, 0.8); }
   .oak-action-sheet .oak-action-sheet-subtitle {
     position: relative;
-    top: 6rpx;
+    top: 2rpx;
     margin-left: 10rpx;
     font-size: 24rpx;
     color: #999; }
