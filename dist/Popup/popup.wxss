@@ -13,7 +13,8 @@
     background-color: inherit; }
   .oak-popup-body, .oak-popup-body-iphonex {
     width: inherit;
-    height: inherit; }
+    height: inherit;
+    box-sizing: border-box; }
   .oak-popup-center .oak-popup-body-wrap {
     width: auto;
     height: auto;
