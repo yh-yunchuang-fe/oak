@@ -1,0 +1,24 @@
+<wxs src="WXS/base.wxs"
+    module="Utils" />
+
+<view class="oak-popup oak-popup-{{position}} ext-class"
+    style="z-index: {{zIndex}};"
+    hidden="{{ !_isShow }}">
+    <oak-animation name="{{_maskAnimate}}"
+        bind:tap="popupClose"
+        show="{{ _mask }}"
+        duration="{{duration}}"
+        ext-class="oak-popup-mask">
+    </oak-animation>
+    <oak-animation name="{{_bodyAnimate}}"
+        class="oak-popup-body-wrap body-class"
+        style="width: {{width}};height: {{height}};"
+        show="{{ _bodyShow }}"
+        duration="{{duration}}"
+        bind:onAnimationEnd="animationEnd"
+        >
+        <view class="{{ isIPhonex ? 'oak-popup-body-iphonex' : 'oak-popup-body' }}" style="background: {{background}};">
+            <slot></slot>
+        </view>
+    </oak-animation>
+</view>

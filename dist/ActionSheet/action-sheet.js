@@ -11,9 +11,6 @@ Component({
         isShow: {
             type: Boolean,
             value: false,
-            observer() {
-                this.toggleShow();
-            }
         },
         itemList: {
             type: Array,
@@ -28,14 +25,6 @@ Component({
             value: 9,
         }
     },
-    data: {
-        _mask: false,
-        _actionShow: false,
-        _maskAnimate: 'fadeIn',
-        _actionAnimate: 'slideInUp',
-        _duration: 400,
-        isIPhonex: /iPhone X/g.test(wx.getSystemInfoSync().model),
-    },
     methods: {
         actionSheetItemClick(e) {
             const { index } = e.currentTarget.dataset;
@@ -44,30 +33,5 @@ Component({
         actionSheetCancle() {
             this.triggerEvent('onClose');
         },
-        animationEnd(e) {
-            e.detail.animationName === 'slideOutDown' && this.setData({
-                _isShow: false,
-            });
-        },
-        toggleShow() {
-            const { isShow, mask } = this.data;
-            if (isShow) {
-                this.setData({
-                    _isShow: isShow,
-                    _mask: mask,
-                    _maskAnimate: 'fadeIn',
-                    _actionAnimate: 'slideInUp',
-                    _actionShow: true,
-                });
-            }
-            else {
-                this.setData({
-                    _maskAnimate: 'fadeOut',
-                    _actionAnimate: 'slideOutDown',
-                    _mask: false,
-                    _actionShow: false,
-                });
-            }
-        }
     }
 });

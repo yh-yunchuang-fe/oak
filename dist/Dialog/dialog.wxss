@@ -1,0 +1,29 @@
+.oak-dialog {
+  min-width: 500rpx;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+  border-radius: 30rpx;
+  overflow: hidden; }
+  .oak-dialog-title {
+    padding: 30rpx 0 10rpx 0;
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 1; }
+  .oak-dialog-title_pd {
+    padding: 50rpx 0; }
+  .oak-dialog-content {
+    padding: 20rpx 0 40rpx;
+    font-size: 24rpx;
+    line-height: 1.5; }
+    .oak-dialog-content_pd {
+      padding-top: 40rpx; }
+  .oak-dialog-button {
+    display: flex; }
+  .oak-dialog-btn {
+    border-top: 1rpx solid rgba(221, 221, 221, 0.8);
+    flex: 1; }
+    .oak-dialog-btn:first-child {
+      border-right: 1rpx solid rgba(221, 221, 221, 0.8); }
+  .oak-dialog-oakbtn {
+    border: none; }

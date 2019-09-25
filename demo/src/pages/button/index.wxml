@@ -45,7 +45,7 @@
     </view>
     <view class="h3">按钮不可用</view>
     <view class="row">
-        <oak-button disabled>Default</oak-button>
+        <oak-button disabled >Default</oak-button>
         <oak-button disabled
             type="primary">Primary</oak-button>
         <oak-button disabled

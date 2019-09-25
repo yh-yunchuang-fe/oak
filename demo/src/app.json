@@ -4,6 +4,7 @@
     "pages/dialog/index",
     "pages/popup/index",
     "pages/index/index",
+    "pages/dialog/dialog",
     "pages/actionSheet/actionSheet",
     "pages/list/list",
     "pages/collapse/collapse",

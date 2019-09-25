@@ -45,7 +45,7 @@
     }
 
     &-subtitle {
-        margin-top: $wrap-list-padding-subtitle;
+        margin-top: $list-padding-s;
         font-size: $font-size-subtitle;
         color: $txt-info;
     }
@@ -61,7 +61,7 @@
     }
 
     &-content {
-        padding-right: $wrap-padding-s;
+        // padding-right: $list-padding-s;
         font-size: $font-size-title;
         color: $txt-info;
         @include inline-block();

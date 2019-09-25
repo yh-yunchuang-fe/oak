@@ -27,17 +27,12 @@ export default {
             },{
                 name: 'Icon 图标',
                 path: '/Icon',
-            },{
-                name: 'Loading 加载',
-                path: '/Loading',
-            },
-            {
-                name: 'Label 标签',
-                path: '/Label'
-            },
-            {
+            }, {
                 name: 'Animation 动画',
                 path: '/Animation',
+            }, {
+                name: 'Popup 弹出层',
+                path: '/Popup',
             }],
         }, {
             name: '展示',
@@ -56,12 +51,24 @@ export default {
             }, {
                 name: 'List 列表',
                 path: '/List',
+            }, {
+                name: 'Tag 标签',
+                path: '/Tag',
+            },  {
+                name: 'Label 可操作标签',
+                path: '/Label'
             },],
         }, {
             name: '反馈',
             groups: [{
                 name: 'ActionSheet 菜单',
                 path: '/ActionSheet',
+            }, {
+                name: 'Loading 加载',
+                path: '/Loading',
+            }, {
+                name: 'Dialog 弹窗',
+                path: '/Dialog',
             }, ],
         }],
     },

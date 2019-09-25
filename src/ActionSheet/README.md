@@ -186,8 +186,8 @@ Page({
 | mask | 是否展示遮罩 | `boolen` | `true` |
 | cancle-text | 取消按钮文案， 为空时不显示 | `string` | `取消` |
 | z-index | 设置 `ActionSheet` 的 `z-index`	 | `number` | `9` |
-| onClose | 点击遮罩层或取消按钮的回调 | `function(e)` | - |
-| onSelect | 选中选项时触发 | `function(e)` | - |
+| onClose | 点击遮罩层或取消按钮的回调 | `function` | - |
+| onSelect | 选中选项时触发 | `function` | - |
 
 
 ## itemlist

@@ -14,7 +14,7 @@
     padding: 0 30rpx;
     height: 90rpx;
     color: #333;
-    font-size: 32rpx;
+    font-size: 28rpx;
     align-items: center; }
     .disabled .oak-collapse-item-title {
       color: #999; }

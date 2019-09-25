@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">
+        基本用法
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-position="center"
+            data-style="width: 300rpx;height: 300rpx;"
+            bindtap="onPopupShow">点击弹出</oak-button>
+    </view>
+    <view class="h3">
+        底部弹出
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-position="bottom"
+            data-style="height: 400rpx;"
+            bindtap="onPopupShow">点击弹出</oak-button>
+    </view>
+    <view class="h3">
+        上部弹出
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-position="top"
+            data-style="height: 400rpx;"
+            bindtap="onPopupShow">点击弹出</oak-button>
+    </view>
+    <view class="h3">
+        左侧弹出
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-position="left"
+            data-style="width: 300rpx;"
+            bindtap="onPopupShow">点击弹出</oak-button>
+    </view>
+    <view class="h3">
+        右侧弹出
+    </view>
+    <view class="row">
+        <oak-button size='block'
+            data-position="right"
+            data-style="width: 300rpx;"
+            bindtap="onPopupShow">点击弹出</oak-button>
+    </view>
+    <oak-popup show="{{ showPopup }}"
+        bind:onPopupClose="onPopupClose"
+        body-class="popup-body"
+        position="{{position}}">
+        <view class="popup"
+            style="{{ style }}">
+
+        </view>
+    </oak-popup>
+</view>

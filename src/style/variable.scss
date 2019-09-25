@@ -35,12 +35,13 @@ $font-size-btn-block: 36rpx;
 $font-size-btn-large: 30rpx;
 $font-size-btn-default: 26rpx;
 $font-size-btn-small: 22rpx;
-$font-size-title: 32rpx;
-$font-size-subtitle: 28rpx;
+$font-size-title:28rpx;
+$font-size-subtitle: 24rpx;
 $font-size-h1: 36rpx;
-$font-size-title-lg: 34rpx;
+$font-size-title-lg: 32rpx;
 $font-size-sub: 28rpx;
 $font-size-label-default: 24rpx;
+$font-small: 20rpx;
 
 $wrap-padding: 30rpx;
 $wrap-padding-s: 20rpx;
@@ -50,6 +51,9 @@ $btn-default-lr-padding: 24rpx;
 $btn-small-lr-padding: 20rpx;
 $badge-padding:15rpx;
 $iphonex-padding: 40rpx;
+$tag-padding:8rpx;
+$tag-round-padding:12rpx;
+$list-padding-s: 4rpx;
 
 $warp-magin: 30rpx;
 $wrap-margin-s: 20rpx;
@@ -58,7 +62,7 @@ $wrap-list-padding-subtitle: 10rpx;
 
 $border-radius-base: 4rpx;
 $border-radius-lg: 8rpx;
-$border-radius-max: 100px;
+$border-radius-max: 100rpx;
 
 $active-opacity: .5;
 $btn-disabled-opacity: .65;
@@ -101,3 +105,5 @@ $badge-height: 44rpx;
 $badge-dot-height: 10rpx;
 
 $action-sheet-height: 100rpx;
+
+$tag-height: 32rpx;

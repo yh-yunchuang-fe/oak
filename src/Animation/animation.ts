@@ -24,7 +24,6 @@ Component({
             value: 'fadeIn',
             observer(newVal, oldVal): void {
                 this.preAnimationName = oldVal
-                console.log('name', newVal)
                 if (this.data.show !== null) return
                 if (newVal) {
                     this.setData({
@@ -43,7 +42,6 @@ Component({
         _resetClass(): void {
             const { duration, name, show } = this.data
             this.resetClassTimeOut && clearTimeout(this.resetClassTimeOut)
-
             this.resetClassTimeOut = setTimeout((): void => {
                 this.triggerEvent('onAnimationEnd', { animationName: name })
                 this.setData({

@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">标签类型</view>
+    <view class="row">
+        <oak-tag>default</oak-tag>
+        <oak-tag color="magenta">magenta</oak-tag>
+        <oak-tag color="red">red</oak-tag>
+        <oak-tag color="volcano">volcano</oak-tag>
+        <oak-tag color="orange">orange</oak-tag>
+        <oak-tag color="gold">gold</oak-tag>
+        <oak-tag color="lime">lime</oak-tag>
+        <oak-tag color="cyan">cyan</oak-tag>
+        <oak-tag color="blue">blue</oak-tag>
+        <oak-tag color="geekblue">geekblue</oak-tag>
+        <oak-tag color="purple">purple</oak-tag>
+    </view>
+    <view class="h3">透明背景</view>
+    <view class="row">
+        <oak-tag plain>default</oak-tag>
+        <oak-tag plain
+            color="magenta">magenta</oak-tag>
+        <oak-tag plain
+            color="red">red</oak-tag>
+        <oak-tag plain
+            color="volcano">volcano</oak-tag>
+        <oak-tag plain
+            color="orange">orange</oak-tag>
+        <oak-tag plain
+            color="gold">gold</oak-tag>
+        <oak-tag plain
+            color="lime">lime</oak-tag>
+        <oak-tag plain
+            color="cyan">cyan</oak-tag>
+        <oak-tag plain
+            color="blue">blue</oak-tag>
+        <oak-tag plain
+            color="geekblue">geekblue</oak-tag>
+        <oak-tag plain
+            color="purple">purple</oak-tag>
+    </view>
+    <view class="h3">标签形状</view>
+    <view class="row">
+        <oak-tag shape="round"
+            color="orange">round</oak-tag>
+        <oak-tag shape="square"
+            color="orange">square</oak-tag>
+        <oak-tag
+            color="orange">default</oak-tag>
+    </view>
+    <view class="h3">自定义颜色</view>
+    <view class="row">
+        <oak-tag color="rgba(253,230,235,1)"
+            text-color="#FD7622"
+            border-color="rgba(252,7,59,0.15)">#FDE6EB</oak-tag>
+        <oak-tag color="#FC0738"
+            plain>#FC0738</oak-tag>
+        <oak-tag color="#ffb601,#ff7c02">渐变</oak-tag>
+    </view>
+</view>
