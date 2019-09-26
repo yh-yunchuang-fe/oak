@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Input 输入框",
+    "usingComponents": {
+        "oak-input": "/Input/input",
+        "oak-input-group": "/InputGroup/input-group"
+    }
+}
