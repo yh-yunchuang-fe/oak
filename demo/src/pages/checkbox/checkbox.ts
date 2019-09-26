@@ -5,6 +5,7 @@ Page({
     data: {
         checked: false,
         color: '#1989fa',
+        disabledColor: '#bdddfd',
         icon: {
             normal: 'https://img.yzcdn.cn/vant/user-inactive.png',
             active: 'https://img.yzcdn.cn/vant/user-active.png'

@@ -12,6 +12,9 @@
     <view class="row">
         <oak-checkbox value="{{checked}}" bind:change="onChange" color="{{color}}">自定义颜色</oak-checkbox>
     </view>
+    <view class="row">
+        <oak-checkbox value="{{true}}" bind:change="onChange" disabled="{{disabled}}" disabledColor="{{disabledColor}}">自定义禁用颜色</oak-checkbox>
+    </view>
     <view class="h3">自定义图标</view>
     <view class="row">
         <oak-checkbox value="{{checked}}" bind:change="onChange" icon="{{icon}}">自定义图标</oak-checkbox>

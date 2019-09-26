@@ -3,15 +3,11 @@
 <view 
     class="oak-checkbox ext-class" 
     bindtap="change">
+
     <oak-icon 
-        wx:if="{{value}}" 
-        name="{{icon.active || 'selected'}}" 
+        name="{{value ? icon.active || 'selected' : icon.normal || 'unselect'}}" 
         ext-class="oak-checkbox-icon"
-        color="{{disabled ? disabledColor : color}}" />
-    <oak-icon 
-        wx:else 
-        name="{{icon.normal || 'unselect'}}" 
-        ext-class="oak-checkbox-icon"
-        color="{{disabledColor}}" />
+        color="{{value ? disabled ? disabledColor : color : disabledColor}}" />
+
     <slot></slot>
 </view>
