@@ -5,9 +5,11 @@
     bindtap="change">
 
     <oak-icon 
-        name="{{value ? icon.active || 'selected' : icon.normal || 'unselect'}}" 
+        size="{{size}}"
         ext-class="oak-checkbox-icon"
-        color="{{value ? disabled ? disabledColor : color : disabledColor}}" />
+        name="{{value ? icon.active : disabled ? icon.disabled : icon.normal}}" 
+        color="{{value ? disabled ? disabledColor : color : disabledColor}}" 
+    />
 
     <slot></slot>
 </view>

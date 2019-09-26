@@ -10,11 +10,20 @@ Component({
     properties: {
         icon: {
             type: Object,
-            value: null
+            value: {
+                normal: 'unselect',
+                active: 'selected',
+                disabled: 'select-disable'
+            },
         },
         color: {
             type: String,
             value: '#FD7622'
+        },
+        size: {
+            type: String,
+            value: '',
+            optionalTypes: [String]
         },
         value: {
             type: Boolean,

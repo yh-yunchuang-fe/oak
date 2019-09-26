@@ -7,8 +7,8 @@ Page({
         color: '#1989fa',
         disabledColor: '#bdddfd',
         icon: {
-            normal: 'https://img.yzcdn.cn/vant/user-inactive.png',
-            active: 'https://img.yzcdn.cn/vant/user-active.png'
+            normal: 'http://pyfustolv.bkt.clouddn.com/account-multiple-outline.png',
+            active: 'http://pyfustolv.bkt.clouddn.com/account-multiple.png'
         },
         disabled: true,
         list: [

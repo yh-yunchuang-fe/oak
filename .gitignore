@@ -15,3 +15,5 @@ Source code.zip
 qiniu.js
 package-lock.json
 .prettierrc
+karma.conf.js
+test

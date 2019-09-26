@@ -22,3 +22,7 @@
 .g-fs-32 {
     font-size: 32rpx;
 }
+
+.g-fs-28 {
+    font-size: 28rpx;
+}
