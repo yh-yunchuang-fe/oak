@@ -14,3 +14,11 @@
     margin: 10rpx;
     line-height: 0;
 }
+
+.g-fc-3 {
+    color: #333;
+}
+
+.g-fs-32 {
+    font-size: 32rpx;
+}

@@ -39,7 +39,11 @@ const icons: object[] = [
         'font_class': 'next'
     }, {
         'font_class': 'return'
-    },
+    }, {
+        'font_class': 'selected'
+    }, {
+        'font_class': 'unselect'
+    }
 ]
 
 export default icons
