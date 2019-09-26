@@ -1,11 +1,6 @@
 Component({
-    properties: {
-        
-    },
+    properties: {},
     externalClasses: ['ext-class'],
-    data: {
-        
-    },
-    methods: {
-    }
+    data: {},
+    methods: {}
 })
