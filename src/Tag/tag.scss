@@ -4,7 +4,16 @@
 @mixin colors($text, $background, $border) {
     color: $text;
     background-color: $background;
-    border: 2rpx solid $border;
+    border-width: 2rpx;
+    border-style: solid;
+    border-color: $border;
+}
+
+@mixin sharpen($height, $weight, $size) {
+    height: $height;
+    line-height: $height;
+    font-weight: $weight;
+    font-size: $size;
 }
 
 $default: #333, #fafafa, #d9d9d9;
@@ -19,18 +28,21 @@ $cyan: #13c2c2, #e6fffb, #87e8de;
 $blue: #1890ff, #e6f7ff, #91d5ff;
 $geekblue: #2f54eb, #f0f5ff, #adc6ff;
 $purple: #722ed1, #f9f0ff, #d3adf7;
+$discount: #fc4916, #fff9f7, #feb6a2;
+$service: #7aba62, #f9fff6, #cae3c0;
+$address: #fd7622, rgba(253, 118, 34, .08), transparent;
+$coupon: #fd7622, #fff1e8, transparent;
+$wxcoupon: #24ab1a, #e4f6e0, transparent;
+$disable: #666666, #f9f9f9, #dddddd;
 
 .oak-tag {
     padding: 0 $tag-padding;
     height: $tag-height;
-    line-height: $tag-height - 2;
+    line-height: $tag-height;
     font-size: $font-small;
     border-radius: $border-radius-base;
     display: inline-block;
-    vertical-align: top;
-    box-sizing: border-box;
-    font-weight: 500;
-
+    box-sizing: content-box;
     &-default {
         @include colors($default...);
     }
@@ -77,6 +89,33 @@ $purple: #722ed1, #f9f0ff, #d3adf7;
 
     &-purple {
         @include colors($purple...);
+    }
+
+    &-discount {
+        @include colors($discount...);
+    }
+
+    &-service {
+        @include colors($service...);
+    }
+
+    &-address {
+        @include colors($address...);
+        @include sharpen($tag-height + 4, bold, 20rpx);
+    }
+
+    &-coupon {
+        @include colors($coupon...);
+        @include sharpen($tag-height + 4, normal, 22rpx);
+    }
+
+    &-wxcoupon {
+        @include colors($wxcoupon...);
+        @include sharpen($tag-height + 4, normal, 22rpx);
+    }
+
+    &-disable {
+        @include colors($disable...);
     }
 
     &.plain {
