@@ -46,8 +46,6 @@
 | selection-end | 光标结束位置，自动聚集时有效，需与 selection-start 搭配使用 | `Number` | `-1` |
 | adjust-position | 键盘弹起时，是否自动上推页面 | `Boolean` | `true` |
 | hold-keyboard | focus时，点击页面的时候不收起键盘 | `Boolean` | `false` |
-| selection-end | 光标结束位置，自动聚集时有效，需与 selection-start 搭配使用 | `Number` | `-1` |
-| placeholder-class | placeholder 的样式类 | `String` | - |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `140` |
 | autofocus | 自动获取焦点 | `Boolean` | `false` |
 | clearable | 是否可清空 | `Boolean` | `false` |
