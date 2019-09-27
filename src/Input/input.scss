@@ -1,0 +1,12 @@
+@import "Style/variable";
+
+.oak-input {
+    position: relative;
+    min-height: 90rpx;
+    padding: 0 $wrap-padding-s;
+    line-height: $line-height-base;
+    background: $default-bg;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}

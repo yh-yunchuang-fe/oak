@@ -1,6 +1,6 @@
 Component({
     properties: {
-        name: {
+        name: { // 作为 key 使用
             type: String,
             value: ''
         },
@@ -28,7 +28,7 @@ Component({
             type: Boolean,
             value: false
         },
-        autosize: {
+        autosize: { // 只对 textarea 生效
             type: Boolean,
             value: ''
         },
@@ -39,6 +39,10 @@ Component({
         placeholderClass: {
             type: String,
             value: ''
+        },
+        focus: {
+            type: Boolean,
+            value: false
         },
         confirmType: {
             type: String,
@@ -72,9 +76,9 @@ Component({
             type: Number,
             value: 140
         },
-        autofocus: {
-            type: Boolean,
-            value: false
+        cursorSpacing: {
+            type: Number,
+            value: 0
         },
         clearable: {
             type: Boolean,
@@ -91,5 +95,21 @@ Component({
     },
     externalClasses: ['ext-class'],
     data: {},
-    methods: {}
+    methods: {
+        change(e) {
+            this.triggerEvent('change', e)
+        },
+        focus(e) {
+            this.triggerEvent('focus', e)
+        },
+        blur(e) {
+            this.triggerEvent('blur', e)
+        },
+        confirm(e) {
+            this.triggerEvent('confirm', e)
+        },
+        keyboardheightchange(e) {
+            this.triggerEvent('keyboardheightchange', e)
+        }
+    }
 })

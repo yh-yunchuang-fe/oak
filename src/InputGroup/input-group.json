@@ -1,4 +1,7 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+      "oak-input": "/Input/input",
+      "oak-list": "/List/list"
+    },
     "component": true
   }

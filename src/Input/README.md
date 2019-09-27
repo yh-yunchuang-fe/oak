@@ -29,16 +29,18 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 名称 | `String` | - |
+| name | 名称，配合表单作为 `key` 使用 | `String` | - |
 | label | 输入框关联文字 | `String` | - |
 | value | 内容 | `String` | - |
 | type | 类型  | `String` | `text` |
 | icon | 图标 | `String` | `oak-icon` |
 | placeholder | placeholder | `String` | - |
 | disabled | 禁用输入 | `Boolean` | `false` |
-| autosize | 配合t extarea 高度自适应 | `Boolean` | `false` |
+| autosize | 配合 textarea 高度自适应 | `Boolean` | `false` |
+| fixed | 配合 textarea 使用，如果在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true | `Boolean` | `false` |
 | placeholder-style | placeholder 的样式 | `String` | - |
 | placeholder-class | placeholder 的样式类 | `String` | - |
+| focus | 是否焦点 | `Boolean` | `false` |
 | confirm-type | 右下角按钮文字，仅在 type='text' 时生效 | `String` | - |
 | confirm-hold | 点击键盘右下角按钮时是否保持键盘不收起 | `Boolean` | `false` |
 | cursor | 指定focus时的光标位置 | `Number` | - |
@@ -47,14 +49,14 @@
 | adjust-position | 键盘弹起时，是否自动上推页面 | `Boolean` | `true` |
 | hold-keyboard | focus时，点击页面的时候不收起键盘 | `Boolean` | `false` |
 | maxlength | 最大输入长度，设置为 -1 的时候不限制最大长度 | `Number` | `140` |
-| autofocus | 自动获取焦点 | `Boolean` | `false` |
+| cursor-spacing | 指定光标与键盘的距离，取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离 | `Number` | `0` |
 | clearable | 是否可清空 | `Boolean` | `false` |
 | error | 显示错误 | `Boolean` | `false` |
 | rules | 验证规则 | `Array` | - |
-| change | 键盘输入时触发  | `Event` | - |
-| focus | 获取焦点  | `Event` | - |
-| blur | 失去焦点  | `Event` | - |
-| confirm | 点击完成按钮时触发，event.detail = {value: value}  | `Event` | - |
+| bindchange | 键盘输入时触发  | `Event` | - |
+| bindfocus | 获取焦点  | `Event` | - |
+| bindblur | 失去焦点  | `Event` | - |
+| bindconfirm | 点击完成按钮时触发，event.detail = {value: value}  | `Event` | - |
 | bindkeyboardheightchange | 键盘高度发生变化的时候触发此事件，event.detail = {height: height, duration: duration} | `Event` | - |
 
 ## type 的合法值

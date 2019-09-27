@@ -1,1 +1,59 @@
-<input type="text" />
+<block wx:if="{{type === 'textarea'}}">
+    <view class="oak-input-textarea ext-class">
+        <textarea
+            value="{{value}}"
+            placeholder="{{placeholder}}"
+            placeholder-style="{{placeholderStyle}}"
+            placeholder-class="{{placeholderClass}}"
+            disabled="{{disabled}}"
+            maxlength="{{maxlength}}"
+            focus="{{focus}}"
+            auto-height="{{autosize}}"
+            fixed="{{fixed}}"
+            cursor-spacing="{{cursorSpacing}}"
+            cursor="{{cursor}}"
+            selection-start="{{selectionStart}}"
+            selection-end="{{selectionEnd}}"
+            adjust-position="{{adjustPosition}}"
+            hold-keyboard="{{holdKeyboard}}"
+            bindfocus="{{focus}}"
+            bindblur="{{blur}}"
+            bindinput="{{input}}"
+            bindconfirm="{{confirm}}"
+            bindkeyboardheightchange="{{keyboardheightchange}}"
+        ></textarea>
+    </view>
+</block>
+<block wx:else>
+    <view class="oak-input ext-class">
+        
+        <input 
+            value="{{value}}"
+            type="{{type === 'password' ? 'text' : type}}"
+            password="{{type === 'password'}}"
+            placeholder="{{placeholder}}"
+            disabled="{{disabled}}"
+            autosize="{{autosize}}"
+            placeholder-style="{{placeholderStyle}}"
+            placeholder-class="{{placeholderClass}}"
+            focus="{{focus}}"
+            confirm-type="{{confirmType}}"
+            confirm-hold="{{confirmHold}}"
+            cursor="{{cursor}}"
+            selection-start="{{selectionStart}}"
+            selection-end="{{selectionEnd}}"
+            adjust-position="{{adjustPosition}}"
+            hold-keyboard="{{holdkeyboard}}"
+            maxlength="{{maxlength}}"
+            cursor-spacing="{{cursorSpacing}}"
+            clearable="{{clearable}}"
+            error="{{error}}"
+            rules="{{rules}}"
+            bindinput="change"
+            bindfocus="focus"
+            bindblur="blur"
+            bindconfirm="confirm"
+            bindkeyboardheightchange="keyboardheightchange"
+        />
+    </view>
+</block>

@@ -1,6 +1,7 @@
 {
     "usingComponents": {
-        "oak-icon": "/Icon/icon"
+        "oak-icon": "/Icon/icon",
+        "oak-list-item": "/ListItem/list-item"
     },
     "component": true
 }

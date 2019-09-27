@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/switch/switch",
     "pages/index/index",
+    "pages/switch/switch",
     "pages/dialog/dialog",
     "pages/actionSheet/actionSheet",
     "pages/popup/popup",

@@ -1,4 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-    <oak-input></oak-input>
+    <oak-input 
+        type="text"
+    ></oak-input>
 </view>
