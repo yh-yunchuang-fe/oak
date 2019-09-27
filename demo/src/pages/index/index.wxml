@@ -76,6 +76,18 @@
                 title-class="item-title"
                 url="/pages/loading/loading" />
         </oak-collapse-item>
+        <oak-collapse-item title="表单组件"
+            icon="workbench"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            icon-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item title="Checkbox 复选框"
+                title-class="item-title"
+                url="/pages/checkbox/checkbox" />
+        </oak-collapse-item>
+        
     </oak-collapse>
     <view class="version">
         v0.0.2-beta.6
