@@ -1,0 +1,12 @@
+@import "Style/variable";
+
+.container {
+    padding-bottom: 50rpx;
+    .row {
+        line-height: inherit;
+        margin-left: 24rpx;
+    }
+    .checkbox {
+        margin-bottom: 15rpx;
+    }
+}
