@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/switch/switch",
     "pages/index/index",
     "pages/dialog/dialog",
     "pages/actionSheet/actionSheet",
