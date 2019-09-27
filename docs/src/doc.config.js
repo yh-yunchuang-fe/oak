@@ -37,6 +37,9 @@ export default {
         }, {
             name: '表单',
             groups: [{
+                name: 'Checkbox 多选框',
+                path: '/Checkbox',
+            }, {
                 name: 'Switch 开关',
                 path: '/Switch',
             }, ]
