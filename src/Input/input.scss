@@ -1,12 +1,95 @@
-@import "Style/variable";
+@import 'Style/variable';
 
 .oak-input {
+    display: flex;
+    font-size: $font-size-title;
+    color: $txt-default;
+    oak-list-item {
+        flex: 1;
+    }
+}
+
+.oak-input-textarea {
     position: relative;
-    min-height: 90rpx;
-    padding: 0 $wrap-padding-s;
-    line-height: $line-height-base;
+    display: flex;
+    font-size: $font-size-title;
+    color: $txt-default;
     background: $default-bg;
+    padding: 0 $wrap-padding-s;
+    overflow: hidden;
+    &.border::after {
+        position: absolute;
+        left: $wrap-padding-s;
+        bottom: 0;
+        width: 100%;
+        height: 1rpx;
+        content: '';
+        border-bottom: $border;
+        box-sizing: border-box;
+    }
+}
+
+.oak-input-textarea-label {
+    position: relative;
+    padding: $wrap-padding-s 0;
+    margin-right: $wrap-padding-s;
+}
+
+.oak-input-textarea-icon {
+    margin-right: $wrap-padding-s;
+}
+
+.oak-input-textarea-body {
+    position: relative;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    flex: 1;
+    width: 0%;
+}
+
+.oak-input-textarea-right {
+    display: flex;
+    align-items: center;
+    oak-icon {
+        padding-left: $wrap-padding-s;
+    }
+}
+
+.oak-input-content {
+    position: relative;
+    display: flex;
+    font-size: $font-size-title;
+    color: $txt-default;
+    align-items: center;
+    .oak-input-label {
+        min-width: 120rpx;
+        margin-right: $wrap-padding-s;
+        &.require::before {
+            content: '*';
+            position: absolute;
+            color: $badge-bg;
+            left: -$wrap-padding-s;
+            top: 0;
+        }
+    }
+    .oak-input-body {
+        position: relative;
+        flex: 1;
+        input {
+            flex: 1;
+            &.error {
+                color: $badge-bg;
+            }
+        }
+        .oak-input-err-msg {
+            position: absolute;
+            font-size: $font-small;
+            left: 0;
+            bottom: -$wrap-padding-s;
+            color: $badge-bg;
+        }
+    }
+    .oak-input-clear {
+        padding: 0 15rpx;
+    }
 }

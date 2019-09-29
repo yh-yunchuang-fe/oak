@@ -1,6 +1,10 @@
 Component({
+    options: {
+        multipleSlots: true
+    },
     properties: {
-        name: { // 作为 key 使用
+        name: {
+            // 配合 form 作为 key 使用
             type: String,
             value: ''
         },
@@ -20,6 +24,14 @@ Component({
             type: String,
             value: ''
         },
+        iconColor: {
+            type: String,
+            value: '#FD7622'
+        },
+        iconSize: {
+            type: String,
+            value: '36rpx'
+        },
         placeholder: {
             type: String,
             value: ''
@@ -28,7 +40,8 @@ Component({
             type: Boolean,
             value: false
         },
-        autosize: { // 只对 textarea 生效
+        autosize: {
+            // 只对 textarea 生效
             type: Boolean,
             value: ''
         },
@@ -88,21 +101,48 @@ Component({
             type: Boolean,
             value: false
         },
+        errorMessage: {
+            type: String,
+            value: ''
+        },
         rules: {
             type: Array,
             value: null
+        },
+        border: {
+            type: Boolean,
+            value: false
+        },
+        button: {
+            type: String,
+            value: null
+        },
+        require: {
+            type: Boolean,
+            value: false
         }
     },
-    externalClasses: ['ext-class'],
-    data: {},
+    externalClasses: ['ext-class', 'icon-class'],
+    data: {
+        focused: false
+    },
     methods: {
-        change(e) {
-            this.triggerEvent('change', e)
-        },
         focus(e) {
+            if (!this.data.focused) {
+                this.setData({ focused: true })
+            }
             this.triggerEvent('focus', e)
         },
+        change(e) {
+            let { value = '' } = e.detail || {}
+            this.setData({ value }, () => {
+                this.triggerEvent('change', e)
+            })
+        },
         blur(e) {
+            if (this.data.focused) {
+                this.setData({ focused: false })
+            }
             this.triggerEvent('blur', e)
         },
         confirm(e) {
@@ -110,6 +150,9 @@ Component({
         },
         keyboardheightchange(e) {
             this.triggerEvent('keyboardheightchange', e)
+        },
+        clear() {
+            this.setData({ value: '' })
         }
     }
 })

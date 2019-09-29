@@ -34,6 +34,10 @@
 | value | 内容 | `String` | - |
 | type | 类型  | `String` | `text` |
 | icon | 图标 | `String` | `oak-icon` |
+| icon-color | 图标颜色 | `String` | `#999` |
+| icon-size | 图标尺寸 | `String` | `32rpx` |
+| button | 右侧按钮 |  `String` | - |
+| border | 边框 | `Boolean` | `false` |
 | placeholder | placeholder | `String` | - |
 | disabled | 禁用输入 | `Boolean` | `false` |
 | autosize | 配合 textarea 高度自适应 | `Boolean` | `false` |
@@ -52,7 +56,7 @@
 | cursor-spacing | 指定光标与键盘的距离，取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离 | `Number` | `0` |
 | clearable | 是否可清空 | `Boolean` | `false` |
 | error | 显示错误 | `Boolean` | `false` |
-| rules | 验证规则 | `Array` | - |
+| error-message | 显示错误信息 | `String` | - |
 | bindchange | 键盘输入时触发  | `Event` | - |
 | bindfocus | 获取焦点  | `Event` | - |
 | bindblur | 失去焦点  | `Event` | - |
