@@ -122,7 +122,7 @@ Component({
             value: false
         }
     },
-    externalClasses: ['ext-class', 'icon-class'],
+    externalClasses: ['ext-class'],
     data: {
         focused: false
     },

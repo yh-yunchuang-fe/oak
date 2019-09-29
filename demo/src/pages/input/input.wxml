@@ -47,7 +47,7 @@
     >
     </oak-input>
 
-    <!-- 是否可以清除 -->
+    <!-- 可清除内容 -->
     <view class="h3">可清除内容</view>
     <oak-input 
         name="username"

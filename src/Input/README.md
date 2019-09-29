@@ -19,10 +19,119 @@
 ```
 
 ## 代码演示
-### 基本用法
-
-### --
+### 默认样式
+```html
+<oak-input 
+    name="default"
+    type="text"
+    label="默认样式："
+    placeholder="输入内容"
+></oak-input>
 ```
+
+### 禁用输入
+```html
+<oak-input 
+    name="default"
+    type="text"
+    label="默认样式："
+    placeholder="禁用输入"
+    disabled
+></oak-input>
+```
+
+### 基本用法
+```html
+<oak-input 
+    name="username"
+    type="text"
+    label="用户名："
+    placeholder="输入用户名"
+    icon="manage"
+    icon-color="#1989fa"
+    border
+    require
+></oak-input>
+<oak-input 
+    name="password"
+    type="password"
+    label="密码："
+    placeholder="输入密码"
+    icon="Privacy"
+    icon-color="#1989fa"
+    bind:focus="focus"
+    bind:change="change"
+    bind:blur="blur"
+    bind:confirm="confirm"
+    bind:keyboardheightchange="keyboardheightchange"
+    require
+>
+</oak-input>
+```
+
+### 可清除内容
+```html
+<oak-input 
+    name="username"
+    type="number"
+    label="手机号："
+    placeholder="输入手机号"
+    icon="brush"
+    icon-color="#1989fa"
+    clearable
+></oak-input>
+```
+
+### 自定义按钮
+```html
+<oak-input 
+    name="code"
+    type="number"
+    label="验证码："
+    placeholder="输入4位验证码"
+    icon="save"
+    icon-color="#1989fa"
+    maxlength="{{4}}"
+    clearable
+>
+    <oak-button 
+        slot="button"
+        plain
+        button-class="send-btn"
+        bindtap="sendCode"
+        disabled="{{disabled}}"
+    >{{sendText}}</oak-button>
+</oak-input>
+```
+
+### 自动换行
+```html
+<oak-input 
+    name="username"
+    type="textarea"
+    label="评论："
+    placeholder="输入评论"
+    icon="select"
+    icon-color="#1989fa"
+    border
+    autosize
+    clearable
+>
+</oak-input>
+```
+
+### 错误提示
+```html
+<oak-input 
+    name="default"
+    value="{{'示例：'+ errorMessage}}"
+    type="text"
+    label="错误提示："
+    placeholder="输入内容"
+    error="{{error}}"
+    error-message="{{errorMessage}}"
+    clearable
+></oak-input>
 ```
 
 ## APIS
@@ -83,6 +192,10 @@
 | next | 右下角按钮为“下一个” |
 | go | 右下角按钮为“前往”	|
 | done | 右下角按钮为“完成”	|
+
+## Input Slot
+|-----------|-----------|
+| button | 自定义 button 显示内容 |
 
 ## 外部样式类
 
