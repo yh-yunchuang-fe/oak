@@ -4,12 +4,12 @@ Component({
     behaviors: [BasicBehavior],
     relations: {
         '../Checkbox/checkbox': {
-            type: 'child'
-        }
+            type: 'child',
+        },
     },
     properties: {
         value: {
-            type: Object,
+            type: Array,
             value: []
         },
         disabled: {

@@ -4,7 +4,19 @@ Component({
     behaviors: [BasicBehavior],
     relations: {
         '../CheckboxGroup/checkbox-group': {
-            type: 'parent'
+            type: 'parent',
+            linked(target) {
+                let { name } = this.data
+
+                if (!target || !name) return
+
+                let { value } = target.data
+                let selected = value.filter(
+                    (item: any) => JSON.stringify(item) === JSON.stringify(name)
+                )
+
+                this.setData({ value: selected.length > 0 })
+            }
         }
     },
     properties: {
@@ -41,19 +53,6 @@ Component({
             type: String,
             value: '#d2d2d2'
         }
-    },
-    ready() {
-        let parent = this.getRelationNodes('../CheckboxGroup/checkbox-group')
-        let { name } = this.data
-
-        if (!parent || !parent[0] || !name) return
-
-        let { value } = parent[0].data
-        let selected = value.filter(
-            (item: any) => JSON.stringify(item) === JSON.stringify(name)
-        )
-
-        this.setData({ value: selected.length > 0 })
     },
     methods: {
         change() {

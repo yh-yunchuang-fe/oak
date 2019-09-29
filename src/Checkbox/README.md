@@ -45,7 +45,7 @@
 | value | 是否选中 | `Boolean` | `false` |
 | change | 事件绑定  | `Function` | - |
 | disabled | 是否禁用 | `Boolean` | `false` |
-| disabledColor | 禁用颜色 | `String` | `#333` |
+| disabled-color | 禁用颜色 | `String` | `#333` |
 | color | 颜色  | `String` | `#333` |
 | name | Item | `any` | - |
 

@@ -21,10 +21,10 @@
         <oak-checkbox size="48rpx" value="{{checked}}" bind:change="onChange" color="{{color}}">
             自定义颜色
         </oak-checkbox>
-        <oak-checkbox size="48rpx" value="{{true}}" bind:change="onChange" disabled="{{disabled}}" disabledColor="{{disabledColor}}">
+        <oak-checkbox size="48rpx" value="{{true}}" bind:change="onChange" disabled="{{disabled}}" disabled-color="{{disabledColor}}">
             自定义禁用颜色
         </oak-checkbox>
-        <oak-checkbox size="48rpx" value="{{false}}" bind:change="onChange" disabled="{{disabled}}" disabledColor="{{disabledColor}}">
+        <oak-checkbox size="48rpx" value="{{false}}" bind:change="onChange" disabled="{{disabled}}" disabled-color="{{disabledColor}}">
             自定义禁用颜色
         </oak-checkbox>
     </view>
