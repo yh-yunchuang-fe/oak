@@ -1,0 +1,4 @@
+.oak-checkbox .oak-checkbox-icon {
+  margin-right: 4rpx;
+  margin-top: -6rpx;
+  transition: all 200ms ease; }

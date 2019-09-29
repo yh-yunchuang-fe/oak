@@ -86,11 +86,13 @@
             <oak-list-item title="Checkbox 复选框"
                 title-class="item-title"
                 url="/pages/checkbox/checkbox" />
+            <oak-list-item title="Switch 开关"
+                title-class="item-title"
+                url="/pages/switch/switch" />
             <oak-list-item title="Input 输入框"
                 title-class="item-title"
                 url="/pages/input/input" />
         </oak-collapse-item>
-        
     </oak-collapse>
     <view class="version">
         v0.0.2-beta.6
