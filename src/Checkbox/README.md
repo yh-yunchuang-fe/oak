@@ -43,6 +43,8 @@
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | value | 是否选中 | `Boolean` | `false` |
+| icon | 自定义图标，见 `oak-icon`: `name` | `Object` | `{normal: 'unselect', active: 'selected', disabled: 'select-disable'}` |
+| size | 图片大小 | `String` | - |
 | change | 事件绑定  | `Function` | - |
 | disabled | 是否禁用 | `Boolean` | `false` |
 | disabled-color | 禁用颜色 | `String` | `#333` |
