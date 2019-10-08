@@ -9,93 +9,63 @@
   .oak-tag-default {
     color: #333;
     background-color: #fafafa;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #d9d9d9; }
+    border: 2rpx solid #d9d9d9; }
   .oak-tag-magenta {
     color: #fc0738;
     background-color: #fde6eb;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #fdc4d0; }
+    border: 2rpx solid #fdc4d0; }
   .oak-tag-red {
     color: #f5222d;
     background-color: #fff1f0;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #ffa39e; }
+    border: 2rpx solid #ffa39e; }
   .oak-tag-volcano {
     color: #fa541c;
     background-color: #fff2e8;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #ffbb96; }
+    border: 2rpx solid #ffbb96; }
   .oak-tag-orange {
     color: #fd7622;
     background-color: #fff8f4;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #ffdeca; }
+    border: 2rpx solid #ffdeca; }
   .oak-tag-gold {
     color: #faad14;
     background-color: #fffbe6;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #ffe58f; }
+    border: 2rpx solid #ffe58f; }
   .oak-tag-lime {
     color: #a0d911;
     background-color: #fcffe6;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #eaff8f; }
+    border: 2rpx solid #eaff8f; }
   .oak-tag-green {
     color: #52c41a;
     background-color: #f6ffed;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #b7eb8f; }
+    border: 2rpx solid #b7eb8f; }
   .oak-tag-cyan {
     color: #13c2c2;
     background-color: #e6fffb;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #87e8de; }
+    border: 2rpx solid #87e8de; }
   .oak-tag-blue {
     color: #1890ff;
     background-color: #e6f7ff;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #91d5ff; }
+    border: 2rpx solid #91d5ff; }
   .oak-tag-geekblue {
     color: #2f54eb;
     background-color: #f0f5ff;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #adc6ff; }
+    border: 2rpx solid #adc6ff; }
   .oak-tag-purple {
     color: #722ed1;
     background-color: #f9f0ff;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #d3adf7; }
+    border: 2rpx solid #d3adf7; }
   .oak-tag-discount {
     color: #fc4916;
     background-color: #fff9f7;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #feb6a2; }
+    border: 2rpx solid #feb6a2; }
   .oak-tag-service {
     color: #7aba62;
     background-color: #f9fff6;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #cae3c0; }
+    border: 2rpx solid #cae3c0; }
   .oak-tag-address {
     color: #fd7622;
     background-color: rgba(253, 118, 34, 0.08);
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: transparent;
+    border: 2rpx solid transparent;
     height: 30rpx;
     line-height: 30rpx;
     font-weight: bold;
@@ -103,9 +73,7 @@
   .oak-tag-coupon {
     color: #fd7622;
     background-color: #fff1e8;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: transparent;
+    border: 2rpx solid transparent;
     height: 30rpx;
     line-height: 30rpx;
     font-weight: normal;
@@ -113,9 +81,7 @@
   .oak-tag-wxcoupon {
     color: #24ab1a;
     background-color: #e4f6e0;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: transparent;
+    border: 2rpx solid transparent;
     height: 30rpx;
     line-height: 30rpx;
     font-weight: normal;
@@ -123,9 +89,7 @@
   .oak-tag-disable {
     color: #666666;
     background-color: #f9f9f9;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: #dddddd; }
+    border: 2rpx solid #dddddd; }
   .oak-tag.plain {
     background-color: transparent; }
   .oak-tag-round {

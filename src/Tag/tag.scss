@@ -4,9 +4,7 @@
 @mixin colors($text, $background, $border) {
     color: $text;
     background-color: $background;
-    border-width: 2rpx;
-    border-style: solid;
-    border-color: $border;
+    border: 2rpx solid $border;
 }
 
 @mixin sharpen($height, $weight, $size) {
