@@ -13,6 +13,18 @@
         <oak-tag color="blue">blue</oak-tag>
         <oak-tag color="geekblue">geekblue</oak-tag>
         <oak-tag color="purple">purple</oak-tag>
+        <oak-tag color="discount">discount</oak-tag>
+        <oak-tag color="discount">优惠标签</oak-tag>
+        <oak-tag color="service">service</oak-tag>
+        <oak-tag color="service">服务标签</oak-tag>
+        <oak-tag color="address">address</oak-tag>
+        <oak-tag color="address">地址标签</oak-tag>
+        <oak-tag color="coupon">coupon</oak-tag>
+        <oak-tag color="coupon">普通优惠券标签</oak-tag>
+        <oak-tag color="wxcoupon">wxcoupon</oak-tag>
+        <oak-tag color="wxcoupon">微信优惠券标签</oak-tag>
+        <oak-tag color="disable">disable</oak-tag>
+        <oak-tag color="disable">不可用标签</oak-tag>
     </view>
     <view class="h3">透明背景</view>
     <view class="row">
