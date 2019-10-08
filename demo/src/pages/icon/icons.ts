@@ -45,6 +45,8 @@ const icons: object[] = [
         'font_class': 'unselect'
     }, {
         'font_class': 'select-disable'
+    }, {
+        'font_class': 'close-fill'
     }
 ]
 

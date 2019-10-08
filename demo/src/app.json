@@ -16,7 +16,8 @@
     "pages/badge/badge",
     "pages/icon/index",
     "pages/label/label",
-    "pages/checkbox/checkbox"
+    "pages/checkbox/checkbox",
+    "pages/input/input"
   ],
   "window":{
     "backgroundTextStyle":"light",
