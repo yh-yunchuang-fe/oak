@@ -1,8 +1,8 @@
 @font-face {
   font-family: "oak-iconfont";
-  src: url("//at.alicdn.com/t/font_1159887_mawlclosrlg.eot?t=1569484939775");
+  src: url("//at.alicdn.com/t/font_1159887_rh0aqll2kk.eot?t=1569728715095");
   /* IE9 */
-  src: url("//at.alicdn.com/t/font_1159887_mawlclosrlg.eot?t=1569484939775#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_1159887_mawlclosrlg.woff?t=1569484939775") format("woff"), url("//at.alicdn.com/t/font_1159887_mawlclosrlg.ttf?t=1569484939775") format("truetype"), url("//at.alicdn.com/t/font_1159887_mawlclosrlg.svg?t=1569484939775#oak-iconfont") format("svg");
+  src: url("//at.alicdn.com/t/font_1159887_rh0aqll2kk.eot?t=1569728715095#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_1159887_rh0aqll2kk.woff?t=1569728715095") format("woff"), url("//at.alicdn.com/t/font_1159887_rh0aqll2kk.ttf?t=1569728715095") format("truetype"), url("//at.alicdn.com/t/font_1159887_rh0aqll2kk.svg?t=1569728715095#oak-iconfont") format("svg");
   /* iOS 4.1- */ }
 
 .oak-iconfont {
@@ -11,6 +11,9 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.oak-icon-close-fill:before {
+  content: "\e684"; }
 
 .oak-icon-menu:before {
   content: "\e60f"; }
