@@ -18,6 +18,10 @@
     color: #f5222d;
     background-color: #fff1f0;
     border: 2rpx solid #ffa39e; }
+  .oak-tag-white {
+    color: #fff;
+    background-color: #fd7622;
+    border: 2rpx solid #fff; }
   .oak-tag-volcano {
     color: #fa541c;
     background-color: #fff2e8;
@@ -77,7 +81,8 @@
     height: 30rpx;
     line-height: 30rpx;
     font-weight: normal;
-    font-size: 22rpx; }
+    font-size: 22rpx;
+    border-radius: 8rpx 0; }
   .oak-tag-wxcoupon {
     color: #24ab1a;
     background-color: #e4f6e0;
@@ -85,7 +90,8 @@
     height: 30rpx;
     line-height: 30rpx;
     font-weight: normal;
-    font-size: 22rpx; }
+    font-size: 22rpx;
+    border-radius: 8rpx 0; }
   .oak-tag-disable {
     color: #666666;
     background-color: #f9f9f9;

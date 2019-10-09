@@ -16,6 +16,7 @@
 
 $default: #333, #fafafa, #d9d9d9;
 $magenta: #fc0738, #fde6eb, #fdc4d0;
+$white: #fff, #fd7622, #fff;
 $red: #f5222d, #fff1f0, #ffa39e;
 $volcano: #fa541c, #fff2e8, #ffbb96;
 $orange: #fd7622, #fff8f4, #ffdeca;
@@ -51,6 +52,10 @@ $disable: #666666, #f9f9f9, #dddddd;
 
     &-red {
         @include colors($red...);
+    }
+
+    &-white {
+        @include colors($white...);
     }
 
     &-volcano {
@@ -105,11 +110,13 @@ $disable: #666666, #f9f9f9, #dddddd;
     &-coupon {
         @include colors($coupon...);
         @include sharpen($tag-height + 4, normal, 22rpx);
+        border-radius: 8rpx 0;
     }
 
     &-wxcoupon {
         @include colors($wxcoupon...);
         @include sharpen($tag-height + 4, normal, 22rpx);
+        border-radius: 8rpx 0;
     }
 
     &-disable {
