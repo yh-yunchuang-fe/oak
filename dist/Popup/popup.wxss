@@ -38,7 +38,7 @@
     width: auto;
     height: 100vh !important; }
   .oak-popup-left .oak-popup-body-iphonex, .oak-popup-right .oak-popup-body-iphonex {
-    padding: 0 40rpx; }
+    padding: 40rpx 0; }
   .oak-popup-right .oak-popup-body-wrap {
     right: 0; }
   .oak-popup-left .oak-popup-body-wrap {

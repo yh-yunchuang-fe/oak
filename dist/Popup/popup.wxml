@@ -17,7 +17,7 @@
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"
         >
-        <view class="{{ isIPhonex ? 'oak-popup-body-iphonex' : 'oak-popup-body' }}" style="background: {{background}};">
+        <view class="{{ isIPhonex && safeArea ? 'oak-popup-body-iphonex' : 'oak-popup-body' }}" style="background: {{background}};">
             <slot></slot>
         </view>
     </oak-animation>

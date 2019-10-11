@@ -28,6 +28,10 @@ Component({
             type: Boolean,
             value: true,
         },
+        safeArea: {
+            type: Boolean,
+            value: true,
+        },
         zIndex: {
             type: Number,
             value: 9,
