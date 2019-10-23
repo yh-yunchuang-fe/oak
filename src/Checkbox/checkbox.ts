@@ -11,9 +11,9 @@ Component({
         icon: {
             type: Object,
             value: {
-                normal: 'unselect',
-                active: 'selected',
-                disabled: 'select-disable'
+                normal: 'choice-facet',
+                active: 'choice-facet',
+                disabled: 'choice-facet'
             },
         },
         color: {

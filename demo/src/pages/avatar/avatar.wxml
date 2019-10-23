@@ -7,23 +7,23 @@
     <view class="h3">头像尺寸</view>
     <view class="row">
         <oak-avatar size="small"
-            icon="nickname" />
-        <oak-avatar icon="nickname" />
-        <oak-avatar icon="nickname"
+            icon="home" />
+        <oak-avatar icon="home" />
+        <oak-avatar icon="home"
             size="large" />
-        <oak-avatar icon="nickname"
+        <oak-avatar icon="home"
             size="100rpx" />
     </view>
     <view class="h3">头像形状</view>
     <view class="row">
-        <oak-avatar icon="nickname"
+        <oak-avatar icon="home"
             shape="square" />
-        <oak-avatar icon="nickname" />
+        <oak-avatar icon="home" />
     </view>
     <view class="h3">头像类型</view>
     <view class="row">
         <oak-avatar>A</oak-avatar>
-        <oak-avatar icon="nickname" />
+        <oak-avatar icon="home" />
         <oak-avatar
             src="https://static.yonghuivip.com/0fe90feecdec371ac2fc4203a47e1f4b-3afa10a44030ebeb7948da1efc63c4fa.png?v=1510536110368" />
     </view>

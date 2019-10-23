@@ -11,7 +11,7 @@
 
     <oak-collapse>
         <oak-collapse-item title="基础组件"
-            icon="manage"
+            icon="rocket"
             icon-rotate="{{false}}"
             title-class="col-title"
             content-class="content"
@@ -31,7 +31,7 @@
         </oak-collapse-item>
 
         <oak-collapse-item title="展示组件"
-            icon="picture"
+            icon="card"
             icon-rotate="{{false}}"
             title-class="col-title"
             icon-class="col-title"
@@ -60,7 +60,7 @@
                 url="/pages/label/label" />
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
-            icon="select"
+            icon="member-code"
             icon-rotate="{{false}}"
             title-class="col-title"
             icon-class="col-title"
@@ -77,7 +77,7 @@
                 url="/pages/loading/loading" />
         </oak-collapse-item>
         <oak-collapse-item title="表单组件"
-            icon="workbench"
+            icon="calendar"
             icon-rotate="{{false}}"
             title-class="col-title"
             icon-class="col-title"
