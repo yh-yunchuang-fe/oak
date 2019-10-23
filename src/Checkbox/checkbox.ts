@@ -11,9 +11,9 @@ Component({
         icon: {
             type: Object,
             value: {
-                normal: 'choice-facet',
+                normal: 'checkbox',
                 active: 'choice-facet',
-                disabled: 'choice-facet'
+                disabled: 'un-choose'
             },
         },
         color: {
