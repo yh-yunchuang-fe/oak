@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">基础用法</view>
+    <oak-slide-view>
+        <oak-list-item 
+            slot="left"
+            title="标题" 
+            icon="select"
+            border="{{false}}"
+            arrow="{{true}}" 
+        >
+            <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />
+        </oak-list-item>
+        <view slot="right" class="cancel">
+            删除
+        </view>
+    </oak-slide-view>
+</view>

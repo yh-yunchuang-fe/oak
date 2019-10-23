@@ -1,0 +1,19 @@
+<wxs src="WXS/base.wxs" module="Utils" />
+
+<view class="oak-slide-view">
+    <view 
+        class="slide" 
+        bind:touchstart="touchstart" 
+        bind:touchmove="touchmove" 
+        bind:touchcancel="touchcancel" 
+        bind:touchend="touchend"
+        style="transform:translateX({{offsetX}}px);{{transition}}"
+    >
+        <view class="left">
+            <slot name="left"/>
+        </view>
+        <view class="right">
+            <slot name="right"/>
+        </view>
+    </view>
+</view>
