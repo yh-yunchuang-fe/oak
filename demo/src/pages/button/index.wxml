@@ -31,11 +31,11 @@
     <view class="h3">图标按钮</view>
     <view class="row">
         <oak-button size='block'
-            icon="nickname"
+            icon="home"
             type="primary">Block</oak-button>
     </view>
     <view class="row">
-        <oak-button icon="nickname"
+        <oak-button icon="edit"
             type="primary"
             size="large">Nickname</oak-button>
         <oak-button icon="night">Night</oak-button>

@@ -48,7 +48,7 @@
         <oak-collapse-item >
             <view class="oak-collapse-title"
                 slot="title">自定义标题加粗
-                <oak-icon name="night"
+                <oak-icon name="location"
                     color="#FD7622"
                     size="40rpx" />
             </view>

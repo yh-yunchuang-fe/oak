@@ -7,7 +7,7 @@
     <view class="h3">单个文字</view>
     <oak-label>牛</oak-label>
     <view class="h3">带icon</view>
-    <oak-label icon="brush">评论</oak-label>
+    <oak-label icon="estimate-facet">评论</oak-label>
     <view class="h3">自定义 Style</view>
     <oak-label styles="color: red">我</oak-label>
     <view class="h3">超长文本</view>
