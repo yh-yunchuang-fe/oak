@@ -66,7 +66,7 @@ Component({
                 cancleText: '取消',
                 confirmText: '确认',
             };
-            this.setData(Object.assign({ show: true }, defaultOptions, options));
+            this.setData(Object.assign(Object.assign({ show: true }, defaultOptions), options));
         },
         _onPopupClose() {
             const { maskClosable, onClose } = this.data;
