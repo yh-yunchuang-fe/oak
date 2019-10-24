@@ -1,5 +1,5 @@
 import del from 'del'
-import gulp from 'gulp'
+import gulp, { src, dest, parallel, watch, series } from 'gulp'
 import sass from 'gulp-sass'
 import rename from 'gulp-rename'
 import path from 'path'
@@ -11,6 +11,7 @@ import imageMin from 'gulp-imagemin'
 import print from 'gulp-print'
 import changed from 'gulp-changed'
 import ts from 'gulp-typescript'
+import Qiniu from 'gulp-qiniu-utils'
 
 const isProd = process.env.NODE_ENV === 'production'
 const tsProject = ts.createProject(path.resolve(__dirname, '../tsconfig.json'))
@@ -36,6 +37,7 @@ function _join(dirname) {
 const uglifyOpts = {
     // mangle: false,
     compress: {
+        // eslint-disable-next-line @typescript-eslint/camelcase
         drop_console: true,
     },
 }
@@ -48,8 +50,8 @@ const alisaConfig = {
 }
 
 const styles = (src, dest, base) => gulp.src(src, {
-        base,
-    })
+    base,
+})
     .pipe(changed(dest, {
         extension: '.wxss',
     }))
@@ -131,6 +133,44 @@ function watchFiles() {
     console.log('\r\nStart watch file...\r\n')
     // cb();
 }
+
+// 图片压缩后再上传七牛, 上传后的URL为： https://static.yonghuivip.com/wechatapp/static/ + images或fonts/ + 文件名
+// 七牛相关配置
+const qiniuOptions = {
+    ak: 'rqLh8BpwLdcGV-176gGueGEK3EAYpE0sg-TaASlT',
+    sk: 'UiUBP4KH0zbPa2O15B5VM5RNbPv2fO7r6qHu6olC',
+    zone: 'Zone_z0', // 空间对应存储区域（华东：z0，华北：z1，华南：z2，北美：na0
+    bucket: 'yhcms', // 七牛对应空间
+    upload: {
+        dir: '../static/', // 上传本地目录
+        prefix: 'wechatapp/', // 上传时添加的前缀，可省略
+        except: /\.(html|js)$/, // 上传时不上传文件的正则匹配
+    },
+    remote: {
+        url: 'https://static.yonghuivip.com/', // 七牛空间域名
+        prefix: {
+            default: 'wechatapp/', // 七牛空间默认前缀，如果下面三个相同可省略
+        },
+    },
+}
+
+function uploadImageMini() {
+    return src('static/images/*.*')
+        .pipe(print(filepath => `Compress Image: ${filepath}`))
+        .pipe(imageMin())
+        .pipe(dest('static/images/'))
+}
+
+async function upload2Qiniu(cb) {
+
+    const qiniu = new Qiniu(qiniuOptions)
+    await qiniu.upload()
+
+    cb()
+}
+
+exports.uploadImageMini = uploadImageMini
+exports.upload2Qiniu = upload2Qiniu
 
 let build
 

@@ -10,7 +10,8 @@
     "new": "node __build__/create",
     "docs": "cross-env NODE_ENV=production webpack --color --config __build__/webpack.site.prod.js && gh-pages -d docs/dist",
     "docs:dev": "webpack-dev-server --config __build__/webpack.site.dev.js",
-    "release": "tar -zcf oak.tar.gz dist/* && zip -r oak.zip dist/*"
+    "release": "tar -zcf oak.tar.gz dist/* && zip -r oak.zip dist/*",
+    "upload_static": "gulp --gulpfile __build__/gulpfile.babel.js uploadImageMini && gulp --gulpfile __build__/gulpfile.babel.js upload2Qiniu"
   },
   "husky": {
     "hooks": {
@@ -73,6 +74,7 @@
     "gulp-imagemin": "^6.0.0",
     "gulp-less": "^4.0.1",
     "gulp-print": "^5.0.0",
+    "gulp-qiniu-utils": "2.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-typescript": "^5.0.1",
