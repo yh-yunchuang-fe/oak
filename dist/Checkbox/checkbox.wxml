@@ -1,0 +1,15 @@
+<wxs src="../wxs/base.wxs" module="Utils" />
+
+<view 
+    class="oak-checkbox ext-class" 
+    bindtap="change">
+
+    <oak-icon 
+        size="{{size}}"
+        ext-class="oak-checkbox-icon"
+        name="{{value ? icon.active : disabled ? icon.disabled : icon.normal}}" 
+        color="{{value ? disabled ? disabledColor : color : disabledColor}}" 
+    />
+
+    <slot></slot>
+</view>

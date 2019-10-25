@@ -11,7 +11,7 @@
 
     <oak-collapse>
         <oak-collapse-item title="基础组件"
-            icon="manage"
+            icon="rocket"
             icon-rotate="{{false}}"
             title-class="col-title"
             content-class="content"
@@ -31,7 +31,7 @@
         </oak-collapse-item>
 
         <oak-collapse-item title="展示组件"
-            icon="picture"
+            icon="card"
             icon-rotate="{{false}}"
             title-class="col-title"
             icon-class="col-title"
@@ -60,7 +60,7 @@
                 url="/pages/label/label" />
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
-            icon="select"
+            icon="member-code"
             icon-rotate="{{false}}"
             title-class="col-title"
             icon-class="col-title"
@@ -75,6 +75,23 @@
             <oak-list-item title="Loadding 加载"
                 title-class="item-title"
                 url="/pages/loading/loading" />
+        </oak-collapse-item>
+        <oak-collapse-item title="表单组件"
+            icon="calendar"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            icon-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item title="Checkbox 复选框"
+                title-class="item-title"
+                url="/pages/checkbox/checkbox" />
+            <oak-list-item title="Switch 开关"
+                title-class="item-title"
+                url="/pages/switch/switch" />
+            <oak-list-item title="Input 输入框"
+                title-class="item-title"
+                url="/pages/input/input" />
         </oak-collapse-item>
     </oak-collapse>
     <view class="version">

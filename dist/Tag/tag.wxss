@@ -5,6 +5,7 @@
   font-size: 20rpx;
   border-radius: 4rpx;
   display: inline-block;
+  vertical-align: top;
   box-sizing: content-box; }
   .oak-tag-default {
     color: #333;

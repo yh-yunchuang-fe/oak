@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">
+        基本用法
+    </view>
+    <view class="row">
+        <oak-switch bind:onChange="change" />
+    </view>
+    <view class="h3">
+        不可用/加载中
+    </view>
+    <view class="row">
+        <oak-switch bind:onChange="change"
+            disabled />
+        <oak-switch bind:onChange="change"
+            loading />
+    </view>
+    <view class="h3">
+        文字
+    </view>
+    <view class="row">
+        <oak-switch bind:onChange="change"
+            checked-text="开"
+            unchecked-text="关" />
+        <oak-switch bind:onChange="change"
+            checked-text="1"
+            unchecked-text="0" />
+    </view>
+    <view class="h3">
+        自定义大小
+    </view>
+    <view class="row">
+        <oak-switch bind:onChange="change"
+            size="50rpx" />
+        <oak-switch bind:onChange="change"
+            size="60rpx" />
+    </view>
+    <view class="h3">
+            自定义背景色
+    </view>
+    <view class="row">
+        <oak-switch bind:onChange="change"
+            checked-color="#00a5e0"
+            unchecked-color="#FF0500" />
+    </view>
+    <view class="h3">
+        手动控制状态
+    </view>
+    <view class="row">
+        <oak-switch bind:onChange="asyncFun"
+            auto-change="{{ false }}"
+            checked="{{ checked }}"
+            checked-color="#00a5e0"
+            unchecked-color="#FF0500" />
+    </view>
+</view>
+<oak-dialog id="dialog" />

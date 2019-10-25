@@ -4,6 +4,7 @@
 <oak-popup show="{{ show }}"
     duration="{{duration}}"
     background="transparent"
+    z-index="{{zIndex}}"
     bind:onPopupClose="_onPopupClose"
     mask="{{mask}}">
     <view class="oak-dialog dialog-class">

@@ -4,6 +4,7 @@
 <oak-popup position="bottom"
     show="{{isShow}}"
     mask="{{mask}}"
+    z-index="{{zIndex}}"
     bind:onPopupClose="actionSheetCancle">
     <view class="oak-action-sheet">
         <oak-button class="oak-button"

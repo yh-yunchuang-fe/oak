@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/switch/switch",
     "pages/dialog/dialog",
     "pages/actionSheet/actionSheet",
     "pages/popup/popup",
@@ -14,7 +15,9 @@
     "pages/avatar/avatar",
     "pages/badge/badge",
     "pages/icon/index",
-    "pages/label/label"
+    "pages/label/label",
+    "pages/checkbox/checkbox",
+    "pages/input/input"
   ],
   "window":{
     "backgroundTextStyle":"light",

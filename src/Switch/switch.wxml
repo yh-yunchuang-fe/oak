@@ -1,0 +1,8 @@
+<wxs src="WXS/base.wxs" module="Utils" />
+
+<view class="{{ Utils.classNames('oak-switch', { checked: checked, disabled: disabled || loading }) }} ext-class" bind:tap="onChange" style="font-size: {{size}};background-color: {{ checked ? checkedColor : uncheckedColor}};">
+    <view class="oak-switch-txt" wx:if="{{checkedText !== '' || uncheckedText !== ''}}"><text class="">{{checked ? checkedText : uncheckedText}}</text></view>
+    <view class="oak-switch-btn">
+            <oak-loading is-show="{{loading}}" color="#ccc" class="loading" size="{{loaderSize}}" />
+    </view>
+</view>

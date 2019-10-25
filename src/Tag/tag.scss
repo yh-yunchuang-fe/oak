@@ -41,6 +41,7 @@ $disable: #666666, #f9f9f9, #dddddd;
     font-size: $font-small;
     border-radius: $border-radius-base;
     display: inline-block;
+    vertical-align: top;
     box-sizing: content-box;
     &-default {
         @include colors($default...);
