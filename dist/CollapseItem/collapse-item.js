@@ -17,7 +17,7 @@ Component({
         },
         icon: {
             type: String,
-            value: 'down',
+            value: 'down-light',
             optionalTypes: [String],
         },
         iconPosition: {
