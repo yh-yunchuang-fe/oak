@@ -1,12 +1,14 @@
 .oak-tag {
+  min-width: 40rpx;
   padding: 0 4rpx;
   height: 26rpx;
   line-height: 26rpx;
   font-size: 20rpx;
   border-radius: 4rpx;
   display: inline-block;
-  vertical-align: top;
-  box-sizing: content-box; }
+  text-align: center;
+  box-sizing: content-box;
+  vertical-align: top; }
   .oak-tag-default {
     color: #333;
     background-color: #fafafa;
@@ -22,7 +24,8 @@
   .oak-tag-white {
     color: #fff;
     background-color: #fd7622;
-    border: 2rpx solid #fff; }
+    border: 2rpx solid #fff;
+    padding: 0 8rpx; }
   .oak-tag-volcano {
     color: #fa541c;
     background-color: #fff2e8;
@@ -71,27 +74,30 @@
     color: #fd7622;
     background-color: rgba(253, 118, 34, 0.08);
     border: 2rpx solid transparent;
-    height: 30rpx;
-    line-height: 30rpx;
+    height: 28rpx;
+    line-height: 28rpx;
     font-weight: bold;
-    font-size: 20rpx; }
+    font-size: 20rpx;
+    padding: 0 8rpx; }
   .oak-tag-coupon {
     color: #fd7622;
     background-color: #fff1e8;
     border: 2rpx solid transparent;
-    height: 30rpx;
-    line-height: 30rpx;
+    height: 28rpx;
+    line-height: 28rpx;
     font-weight: normal;
     font-size: 22rpx;
+    padding: 0 8rpx;
     border-radius: 8rpx 0; }
   .oak-tag-wxcoupon {
     color: #24ab1a;
     background-color: #e4f6e0;
     border: 2rpx solid transparent;
-    height: 30rpx;
-    line-height: 30rpx;
+    height: 28rpx;
+    line-height: 28rpx;
     font-weight: normal;
     font-size: 22rpx;
+    padding: 0 8rpx;
     border-radius: 8rpx 0; }
   .oak-tag-disable {
     color: #666666;
