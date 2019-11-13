@@ -16,6 +16,7 @@
 
 $default: #333, #fafafa, #d9d9d9;
 $magenta: #fc0738, #fde6eb, #fdc4d0;
+$white: #fff, #fd7622, #fff;
 $red: #f5222d, #fff1f0, #ffa39e;
 $volcano: #fa541c, #fff2e8, #ffbb96;
 $orange: #fd7622, #fff8f4, #ffdeca;
@@ -34,14 +35,16 @@ $wxcoupon: #24ab1a, #e4f6e0, transparent;
 $disable: #666666, #f9f9f9, #dddddd;
 
 .oak-tag {
+    min-width: 40rpx;
     padding: 0 $tag-padding;
     height: $tag-height;
     line-height: $tag-height;
     font-size: $font-small;
     border-radius: $border-radius-base;
     display: inline-block;
-    vertical-align: top;
+    text-align: center;
     box-sizing: content-box;
+    vertical-align: top;
     &-default {
         @include colors($default...);
     }
@@ -52,6 +55,11 @@ $disable: #666666, #f9f9f9, #dddddd;
 
     &-red {
         @include colors($red...);
+    }
+
+    &-white {
+        @include colors($white...);
+        padding: 0 8rpx;
     }
 
     &-volcano {
@@ -100,17 +108,22 @@ $disable: #666666, #f9f9f9, #dddddd;
 
     &-address {
         @include colors($address...);
-        @include sharpen($tag-height + 4, bold, 20rpx);
+        @include sharpen($tag-height + 2, bold, 20rpx);
+        padding: 0 8rpx;
     }
 
     &-coupon {
         @include colors($coupon...);
-        @include sharpen($tag-height + 4, normal, 22rpx);
+        @include sharpen($tag-height + 2, normal, 22rpx);
+        padding: 0 8rpx;
+        border-radius: 8rpx 0;
     }
 
     &-wxcoupon {
         @include colors($wxcoupon...);
-        @include sharpen($tag-height + 4, normal, 22rpx);
+        @include sharpen($tag-height + 2, normal, 22rpx);
+        padding: 0 8rpx;
+        border-radius: 8rpx 0;
     }
 
     &-disable {
