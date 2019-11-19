@@ -327,6 +327,14 @@ const icons: object[] = [
 
     {
         font_class: 'right-light'
+    },
+
+    {
+        font_class: 'wechat-pay'
+    },
+
+    {
+        font_class: 'wechat-pay-two'
     }
 ]
 
