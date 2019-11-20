@@ -645,14 +645,14 @@
     {
       "icon_id": "11435788",
       "name": "wechat-pay",
-      "font_class": "wechat-pay",
+      "font_class": "wechat-pay-full",
       "unicode": "e701",
       "unicode_decimal": 59137
     },
     {
       "icon_id": "11851532",
       "name": "wechat-pay-two",
-      "font_class": "wechat-pay-two",
+      "font_class": "wechat-pay",
       "unicode": "e702",
       "unicode_decimal": 59138
     }
