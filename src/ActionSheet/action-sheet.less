@@ -3,46 +3,46 @@
 
 .oak-action-sheet {
     position: relative;
-    background-color: $default-bg;
+    background-color: @default-bg;
     & &-mask {
-        @include mask;
+       .mask;
     }
 
     & &-body,
     & &-body-iphonex  {
-        @include tc;
+       .tc;
         position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
         height: auto;
-        background-color: $default-bg;
+        background-color: @default-bg;
     }
     & &-body-iphonex {
-        padding-bottom: $iphonex-padding;
+        padding-bottom: @iphonex-padding;
     }
 
     & &-item {
-        height: $action-sheet-height;
-        line-height: $action-sheet-height;
-        font-size: $font-size-title;
+        height: @action-sheet-height;
+        line-height: @action-sheet-height;
+        font-size: @font-size-title;
         border: none;
     }
 
     .oak-button:not(:first-child) .oak-action-sheet-item {
-        border-top: $border;
+        border-top: @border;
     }
 
     & &-subtitle {
         position: relative;
         top: 2rpx;
         margin-left: 10rpx;
-        font-size: $font-size-subtitle;
-        color: $txt-info;
+        font-size: @font-size-subtitle;
+        color: @txt-info;
     }
 
     & &-cancle {
-        border-top: $wrap-margin-s solid $stable-bg;
+        border-top: @wrap-margin-s solid @stable-bg;
     }
 
     & &-cancle,

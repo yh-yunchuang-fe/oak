@@ -5,7 +5,7 @@
     position: relative;
 
     & &-mask {
-        @include mask;
+       .mask;
     }
 
     & &-body-wrap {
@@ -45,7 +45,7 @@
     }
 
     &-bottom .oak-popup-body-iphonex {
-        padding-bottom: $iphonex-padding;
+        padding-bottom: @iphonex-padding;
     }
 
     &-top .oak-popup-body-wrap {
@@ -53,7 +53,7 @@
     }
 
     &-top .oak-popup-body-iphonex {
-        padding-top: $iphonex-padding;
+        padding-top: @iphonex-padding;
     }
 
     &-left,
@@ -65,7 +65,7 @@
         }
 
         .oak-popup-body-iphonex {
-            padding: $iphonex-padding 0;
+            padding: @iphonex-padding 0;
         }
     }
 

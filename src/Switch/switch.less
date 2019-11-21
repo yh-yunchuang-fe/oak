@@ -6,8 +6,8 @@
     min-width: 2em;
     height: 1em;
     line-height: .8em;
-    color: $txt-white;
-    background-color: $avatar-bg;
+    color: @txt-white;
+    background-color: @avatar-bg;
     border-radius: 1em;
     display: inline-block;
     vertical-align: middle;
@@ -21,8 +21,8 @@
         width: 1em;
         height: 1em;
         border-radius: 100%;
-        background-color: $default-bg;
-        z-index: $z-index-switch;
+        background-color: @default-bg;
+        z-index: @z-index-switch;
         box-shadow: 0 4rpx 8rpx 0 rgba(0, 35, 11, 0.2);
         transition: all .36s cubic-bezier(.78, .14, .15, .86);
 
@@ -54,7 +54,7 @@
     }
 
     &.checked {
-        background-color: $highligh-bg;
+        background-color: @highligh-bg;
 
         .oak-switch-btn {
             left: 100%;

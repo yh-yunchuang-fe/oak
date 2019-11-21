@@ -76,7 +76,6 @@
     "gulp-print": "^5.0.0",
     "gulp-qiniu-utils": "2.0.1",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
     "gulp-typescript": "^5.0.1",
     "gulp-uglify-es": "^1.0.4",
     "gulp-util": "^3.0.8",

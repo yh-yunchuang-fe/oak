@@ -1,24 +1,24 @@
 
-@mixin inline-block {
+.inline-block {
     display: inline-block;
     vertical-align: middle;
 }
 
-@mixin ellipsis($row: 1) {
+.ellipsis(@row: 1) {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: $row;
-    -webkit-box-flex: $row;
+    -webkit-line-clamp: @row;
+    -webkit-box-flex: @row;
     height: inherit;
 }
 
-@mixin tc {
+.tc {
     text-align: center;
 }
 
-@mixin mask {
+.mask {
     position: fixed;
     top: 0;
     left: 0;

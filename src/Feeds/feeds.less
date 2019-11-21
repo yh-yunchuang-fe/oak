@@ -1,21 +1,21 @@
 @import "Style/variable";
 
 
-@mixin border-right {
+.border-right {
     border-right-width: 1px;
     border-right-style: solid;
 }
 
-@mixin single-feed($n) {
-    &:last-child:nth-child(#{$n}) {
+.single-feed(@n) {
+    &:last-child:nth-child(@{n}) {
         width: 100%;
-        height: $feeds-three-height;
+        height: @feeds-three-height;
     }
 }
 
-@mixin three {
+.three {
     width: 33.333%;
-    height: $feeds-single-height;
+    height: @feeds-single-height;
     border-bottom: none;
 }
 
@@ -25,23 +25,23 @@
     &-item,
     oak-feeds-item {
         width: 50%;
-        height: $feeds-height;
+        height: @feeds-height;
         display: block;
         float: left;
         overflow: hidden;
         box-sizing: border-box;
 
         &:first-child:not(:last-child) {
-            height: $feeds-height * 2;
+            height: @feeds-height * 2;
         }
 
         &:first-child:nth-last-child(2) {
-            height: $feeds-height !important;
+            height: @feeds-height !important;
             border-bottom: none !important;
         }
 
-        @include single-feed(1);
-        @include single-feed(4);
+       .single-feed(1);
+       .single-feed(4);
     }
 
 }
@@ -52,7 +52,7 @@
         border-color: inherit;
 
         &:first-child:not(:last-child) {
-            @include border-right();
+           .border-right();
         }
 
         &:not(:last-child) {
@@ -70,10 +70,10 @@
     .oak-feeds-item,
     oak-feeds-item {
         &:nth-last-child(-n + 3) {
-            @include three();
+           .three();
 
             &:not(:last-child) {
-                @include border-right();
+               .border-right();
             }
         }
     }
@@ -85,7 +85,7 @@
     oak-feeds-item:nth-child(4),
     .oak-feeds-item:nth-child(6),
     oak-feeds-item:nth-child(6) {
-        @include border-right();
+       .border-right();
     }
 
     .oak-feeds-item:nth-child(6),
@@ -99,7 +99,7 @@
 
     .oak-feeds-item:nth-child(4),
     oak-feeds-item:nth-child(4) {
-        @include border-right();
+       .border-right();
     }
 }
 

@@ -4,70 +4,70 @@
 .oak-list-item {
     position: relative;
     min-height: 90rpx;
-    background-color: $default-bg;
-    padding: 0 $wrap-padding-s;
+    background-color: @default-bg;
+    padding: 0 @wrap-padding-s;
     display: flex;
     align-items: center;
-    line-height: $line-height-base;
+    line-height: @line-height-base;
     overflow: hidden;
 
     &-left {
-        margin-right: $wrap-padding-s;
+        margin-right: @wrap-padding-s;
     }
 
     &.border::after {
         position: absolute;
-        left: $wrap-padding-s;
+        left: @wrap-padding-s;
         bottom: 0;
         width: 100%;
         height: 1rpx;
         content: '';
-        border-bottom: $border;
+        border-bottom: @border;
         box-sizing: border-box;
     }
 
     &-title {
-        font-size: $font-size-title;
-        color: $txt-default;
+        font-size: @font-size-title;
+        color: @txt-default;
     }
 
-    $width: 80rpx;
-    $largeWidth: 120rpx;
+    @width: 80rpx;
+    @largeWidth: 120rpx;
     &-image {
-        width: $width;
-        height: $width;
+        width: @width;
+        height: @width;
         vertical-align: middle;
 
         &.large {
-            width: $largeWidth;
-            height: $largeWidth;
+            width: @largeWidth;
+            height: @largeWidth;
         }
     }
 
     &-subtitle {
-        margin-top: $list-padding-s;
-        font-size: $font-size-subtitle;
-        color: $txt-info;
+        margin-top: @list-padding-s;
+        font-size: @font-size-subtitle;
+        color: @txt-info;
     }
 
     &-body {
-        padding: $wrap-padding-s 0;
+        padding: @wrap-padding-s 0;
         flex: 1;
         width: 0%;
 
         &:not(:last-child) {
-            margin-right: $wrap-padding-s;
+            margin-right: @wrap-padding-s;
         }
     }
 
     &-content {
-        // padding-right: $list-padding-s;
-        font-size: $font-size-title;
-        color: $txt-info;
-        @include inline-block();
+        // padding-right: @list-padding-s;
+        font-size: @font-size-title;
+        color: @txt-info;
+       .inline-block();
 
         &.title {
-            color: $txt-default;
+            color: @txt-default;
         }
     }
 
@@ -75,7 +75,7 @@
     &-subtitle,
     &-content {
         &.nowrap {
-            @include ellipsis(1);
+           .ellipsis(1);
         }
     }
 
@@ -86,6 +86,6 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        z-index: $z-index-link;
+        z-index: @z-index-link;
     }
 }

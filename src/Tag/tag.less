@@ -1,0 +1,259 @@
+@import "Style/variable";
+@import "Style/mixin";
+
+.colors() {
+    color: @text;
+    background-color: @background;
+    border: 2rpx solid @border;
+}
+
+.sharpen(@height, @weight, @size) {
+    height: @height;
+    line-height: @height;
+    font-weight: @weight;
+    font-size: @size;
+}
+
+.default() {
+    @text: #333;
+    @background: #fafafa;
+    @border: #d9d9d9;
+}
+
+.magenta() {
+    @text: #fc0738;
+    @background: #fde6eb;
+    @border: #fdc4d0;
+}
+
+.white() {
+    @text: #fff;
+    @background: #fd7622;
+    @border: #fff;
+}
+
+.red() {
+    @text: #f5222d;
+    @background: #fff1f0;
+    @border: #ffa39e;
+}
+
+.volcano() {
+    @text: #fa541c;
+    @background: #fff2e8;
+    @border: #ffbb96;
+}
+
+.orange() {
+    @text: #fd7622;
+    @background: #fff8f4;
+    @border: #ffdeca;
+}
+
+.gold() {
+    @text: #faad14;
+    @background: #fffbe6;
+    @border: #ffe58f;
+}
+
+.lime() {
+    @text: #a0d911;
+    @background: #fcffe6;
+    @border: #eaff8f;
+}
+
+.green() {
+    @text: #52c41a;
+    @background: #f6ffed;
+    @border: #b7eb8f;
+}
+
+.cyan() {
+    @text: #13c2c2;
+    @background: #e6fffb;
+    @border: #87e8de;
+}
+
+.blue() {
+    @text: #1890ff;
+    @background: #e6f7ff;
+    @border: #91d5ff;
+}
+
+.geekblue() {
+    @text: #2f54eb;
+    @background: #f0f5ff;
+    @border: #adc6ff;
+}
+
+.purple() {
+    @text: #722ed1;
+    @background: #f9f0ff;
+    @border: #d3adf7;
+}
+
+.discount() {
+    @text: #fc4916;
+    @background: #fff9f7;
+    @border: #feb6a2;
+}
+
+.service() {
+    @text: #7aba62;
+    @background: #f9fff6;
+    @border: #cae3c0;
+}
+
+.address() {
+    @text: #fd7622;
+    @background: rgba(253, 118, 34, .08);
+    @border: transparent;
+}
+
+.coupon() {
+    @text: #fd7622;
+    @background: #fff1e8;
+    @border: transparent;
+}
+
+.wxcoupon() {
+    @text: #24ab1a;
+    @background: #e4f6e0;
+    @border: transparent;
+}
+
+.disable() {
+    @text: #666666;
+    @background: #f9f9f9;
+    @border: #dddddd;
+}
+
+.oak-tag {
+    min-width: 40rpx;
+    padding: 0 @tag-padding;
+    height: @tag-height;
+    line-height: @tag-height;
+    font-size: @font-small;
+    border-radius: @border-radius-base;
+    display: inline-block;
+    text-align: center;
+    box-sizing: content-box;
+    vertical-align: top;
+
+    &-default {
+        .default();
+        .colors();
+    }
+
+    &-magenta {
+        .magenta();
+        .colors();
+    }
+
+    &-red {
+        .red();
+        .colors();
+    }
+
+    &-white {
+        .white();
+        .colors();
+        padding: 0 8rpx;
+    }
+
+    &-volcano {
+        .volcano();
+        .colors();
+    }
+
+    &-orange {
+        .orange();
+        .colors();
+    }
+
+    &-gold {
+        .gold();
+        .colors();
+    }
+
+    &-lime {
+        .lime();
+        .colors();
+    }
+
+    &-green {
+        .green();
+        .colors();
+    }
+
+    &-cyan {
+        .cyan();
+        .colors();
+    }
+
+    &-blue {
+        .blue();
+        .colors();
+    }
+
+    &-geekblue {
+        .geekblue();
+        .colors();
+    }
+
+    &-purple {
+        .purple();
+        .colors();
+    }
+
+    &-discount {
+        .discount();
+        .colors();
+    }
+
+    &-service {
+        .service();
+        .colors();
+    }
+
+    &-address {
+        .address();
+        .colors();
+        .sharpen(@tag-height + 2, bold, 20rpx);
+        padding: 0 8rpx;
+    }
+
+    &-coupon {
+        .coupon();
+        .colors();
+        .sharpen(@tag-height + 2, normal, 22rpx);
+        padding: 0 8rpx;
+        border-radius: 8rpx 0;
+    }
+
+    &-wxcoupon {
+        .wxcoupon();
+        .colors();
+        .sharpen(@tag-height + 2, normal, 22rpx);
+        padding: 0 8rpx;
+        border-radius: 8rpx 0;
+    }
+
+    &-disable {
+        .disable();
+        .colors();
+    }
+
+    &.plain {
+        background-color: transparent;
+    }
+
+    &-round {
+        padding: 0 @tag-round-padding;
+        border-radius: @border-radius-max;
+    }
+
+    &-square {
+        border-radius: 0;
+    }
+}

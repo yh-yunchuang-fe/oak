@@ -3,15 +3,15 @@
 
 .oak-dialog {
     min-width: 500rpx;
-    background-color: $default-bg;
-    color: $txt-default;
+    background-color: @default-bg;
+    color: @txt-default;
     text-align: center;
     border-radius: 30rpx;
     overflow: hidden;
 
     &-title {
-        padding: $wrap-padding 0 10rpx 0;
-        font-size: $font-size-title;
+        padding: @wrap-padding 0 10rpx 0;
+        font-size: @font-size-title;
         font-weight: bold;
         line-height: 1;
     }
@@ -21,13 +21,13 @@
     }
 
     &-content {
-        padding: $wrap-padding-s 0 $wrap-padding-s * 2;
-        font-size: $font-size-subtitle;
-        line-height: $line-height-base;
+        padding: @wrap-padding-s 0 @wrap-padding-s * 2;
+        font-size: @font-size-subtitle;
+        line-height: @line-height-base;
 
 
         &_pd {
-            padding-top: $wrap-padding-s * 2;
+            padding-top: @wrap-padding-s * 2;
         }
     }
 
@@ -36,11 +36,11 @@
     }
 
     &-btn {
-        border-top: $border;
+        border-top: @border;
         flex: 1;
 
         &:first-child {
-            border-right: $border;
+            border-right: @border;
         }
     }
 

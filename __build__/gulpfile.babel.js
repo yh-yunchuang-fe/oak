@@ -1,6 +1,6 @@
 import del from 'del'
 import gulp, { src, dest, parallel, watch, series } from 'gulp'
-import sass from 'gulp-sass'
+import less from 'gulp-less'
 import rename from 'gulp-rename'
 import path from 'path'
 import csso from 'gulp-csso'
@@ -18,10 +18,10 @@ const tsProject = ts.createProject(path.resolve(__dirname, '../tsconfig.json'))
 
 // 匹配文件路径
 const paths = {
-    sassPath: ['../src/**/*.scss', '../src/**/*.wxss'],
+    lessPath: ['../src/**/*.less', '../src/**/*.wxss'],
     tsPath: isProd ? ['../src/**/*.ts'] : ['../demo/src/**/*.ts', '../src/**/*.ts'],
     copy: ['../src/**/*.wxml', '../src/**/*.json', '../src/**/*.wxs'],
-    demoStyle: ['../demo/src/**/*.scss', '../demo/src/**/*.wxss', '!../demo/src/dist'],
+    demoStyle: ['../demo/src/**/*.less', '../demo/src/**/*.wxss', '!../demo/src/dist'],
     democopy: ['../demo/src/**/*.wxml', '../demo/src/**/*.json', '../demo/src/**/*.wxs', '!../demo/src/dist'],
     demoimages: ['../demo/src/images/*.*'],
 }
@@ -55,9 +55,9 @@ const styles = (src, dest, base) => gulp.src(src, {
     .pipe(changed(dest, {
         extension: '.wxss',
     }))
-    .pipe(print(filepath => `Build Scss: ${filepath}`))
+    .pipe(print(filepath => `Build less: ${filepath}`))
     .pipe(alisa(alisaConfig))
-    .pipe(sass())
+    .pipe(less())
     // .pipe(gulpif(isProd, csso({
     //     comments: false,
     // })))
@@ -87,7 +87,7 @@ const clean = dest => del([dest], {
 
 
 function srcStyle() {
-    return styles(paths.sassPath, DEST, '../src')
+    return styles(paths.lessPath, DEST, '../src')
 }
 
 function taskScripts() {
@@ -123,7 +123,7 @@ function demoImagemin() {
 }
 
 function watchFiles() {
-    gulp.watch(paths.sassPath, srcStyle)
+    gulp.watch(paths.lessPath, srcStyle)
     gulp.watch(paths.tsPath, taskScripts)
     gulp.watch(paths.copy, srcCopy)
     gulp.watch(paths.democopy, demoCopy)

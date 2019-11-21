@@ -1,17 +1,17 @@
 @import "Style/variable";
 
-$title-height: 90rpx;
+@title-height: 90rpx;
 
 .oak-collapse-item {
-    height: $title-height;
+    height: @title-height;
     overflow: hidden;
     transition: height 200ms ease-in-out;;
     -webkit-transition: height 200ms ease-in-out;;
-    background-color: $default-bg;
+    background-color: @default-bg;
     border-bottom: 1rpx solid transparent;
 
     &.border {
-        border-bottom: $border;
+        border-bottom: @border;
     }
 
     &.disabled {
@@ -20,14 +20,14 @@ $title-height: 90rpx;
 
     &-title {
         display: flex;
-        padding: 0 $wrap-padding;
-        height: $title-height;
-        color: $txt-default;
-        font-size: $font-size-title;
+        padding: 0 @wrap-padding;
+        height: @title-height;
+        color: @txt-default;
+        font-size: @font-size-title;
         align-items: center;
 
         .disabled & {
-            color: $txt-info;
+            color: @txt-info;
         }
     }
 
@@ -53,14 +53,14 @@ $title-height: 90rpx;
     }
 
     &-content {
-        margin-left: $wrap-padding;
-        padding: $wrap-padding $wrap-padding $wrap-padding 0;
-        color: $txt-info;
-        font-size: $font-size-sub;
+        margin-left: @wrap-padding;
+        padding: @wrap-padding @wrap-padding @wrap-padding 0;
+        color: @txt-info;
+        font-size: @font-size-sub;
         overflow: hidden;
 
         &.show {
-            border-top: $border;
+            border-top: @border;
         }
     }
 }
