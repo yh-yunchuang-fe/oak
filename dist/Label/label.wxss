@@ -1,300 +1,301 @@
 @font-face {
   font-family: "oak-iconfont";
-  src: url("https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.eot?t=1571827018377");
+  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.eot?t=1571827018377');
   /* IE9 */
-  src: url("https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.eot?t=1571827018377#iefix") format("embedded-opentype"), url("https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.woff?t=1571827018377") format("woff"), url("https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.ttf?t=1571827018377") format("truetype"), url("https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.svg?t=1571827018377#oak-iconfont") format("svg");
-  /* iOS 4.1- */ }
-
-.oak-iconfont, .oak-label::before {
+  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.eot?t=1571827018377#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.woff?t=1571827018377') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.ttf?t=1571827018377') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.svg?t=1571827018377#oak-iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.oak-iconfont,
+.oak-label::before {
   font-family: "oak-iconfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
+  -moz-osx-font-smoothing: grayscale;
+}
 .oak-icon-home:before {
-  content: "\e6a3"; }
-
+  content: "\e6a3";
+}
 .oak-icon-classification:before {
-  content: "\e6a4"; }
-
+  content: "\e6a4";
+}
 .oak-icon-shopping-cart:before {
-  content: "\e6a5"; }
-
+  content: "\e6a5";
+}
 .oak-icon-member-center:before {
-  content: "\e6a6"; }
-
+  content: "\e6a6";
+}
 .oak-icon-search:before {
-  content: "\e6a7"; }
-
+  content: "\e6a7";
+}
 .oak-icon-trash:before {
-  content: "\e6a8"; }
-
+  content: "\e6a8";
+}
 .oak-icon-share:before {
-  content: "\e6a9"; }
-
+  content: "\e6a9";
+}
 .oak-icon-edit:before {
-  content: "\e6aa"; }
-
+  content: "\e6aa";
+}
 .oak-icon-address:before {
-  content: "\e6ab"; }
-
+  content: "\e6ab";
+}
 .oak-icon-camera:before {
-  content: "\e6ac"; }
-
+  content: "\e6ac";
+}
 .oak-icon-delivery:before {
-  content: "\e6ad"; }
-
+  content: "\e6ad";
+}
 .oak-icon-refund:before {
-  content: "\e6ae"; }
-
+  content: "\e6ae";
+}
 .oak-icon-goods:before {
-  content: "\e6af"; }
-
+  content: "\e6af";
+}
 .oak-icon-invoice:before {
-  content: "\e6b0"; }
-
+  content: "\e6b0";
+}
 .oak-icon-order:before {
-  content: "\e6b1"; }
-
+  content: "\e6b1";
+}
 .oak-icon-member:before {
-  content: "\e6b2"; }
-
+  content: "\e6b2";
+}
 .oak-icon-praise:before {
-  content: "\e6b3"; }
-
+  content: "\e6b3";
+}
 .oak-icon-trample:before {
-  content: "\e6b4"; }
-
+  content: "\e6b4";
+}
 .oak-icon-multiple-choice-line:before {
-  content: "\e6b5"; }
-
+  content: "\e6b5";
+}
 .oak-icon-phone:before {
-  content: "\e6b6"; }
-
+  content: "\e6b6";
+}
 .oak-icon-close:before {
-  content: "\e6b7"; }
-
+  content: "\e6b7";
+}
 .oak-icon-question:before {
-  content: "\e6b8"; }
-
+  content: "\e6b8";
+}
 .oak-icon-exclamation-point:before {
-  content: "\e6b9"; }
-
+  content: "\e6b9";
+}
 .oak-icon-plus-sign:before {
-  content: "\e6ba"; }
-
+  content: "\e6ba";
+}
 .oak-icon-minus:before {
-  content: "\e6bb"; }
-
+  content: "\e6bb";
+}
 .oak-icon-location:before {
-  content: "\e6bc"; }
-
+  content: "\e6bc";
+}
 .oak-icon-cyclic-left:before {
-  content: "\e6bd"; }
-
+  content: "\e6bd";
+}
 .oak-icon-cyclic-right:before {
-  content: "\e6be"; }
-
+  content: "\e6be";
+}
 .oak-icon-cyclic-up:before {
-  content: "\e6bf"; }
-
+  content: "\e6bf";
+}
 .oak-icon-cyclic-down:before {
-  content: "\e6c0"; }
-
+  content: "\e6c0";
+}
 .oak-icon-image:before {
-  content: "\e6c1"; }
-
+  content: "\e6c1";
+}
 .oak-icon-scan-code:before {
-  content: "\e6c2"; }
-
+  content: "\e6c2";
+}
 .oak-icon-member-code:before {
-  content: "\e6c3"; }
-
+  content: "\e6c3";
+}
 .oak-icon-recharge:before {
-  content: "\e6c4"; }
-
+  content: "\e6c4";
+}
 .oak-icon-meal:before {
-  content: "\e6c5"; }
-
+  content: "\e6c5";
+}
 .oak-icon-estimate-line:before {
-  content: "\e6c6"; }
-
+  content: "\e6c6";
+}
 .oak-icon-filtrate:before {
-  content: "\e6c7"; }
-
+  content: "\e6c7";
+}
 .oak-icon-trumpet:before {
-  content: "\e6c8"; }
-
+  content: "\e6c8";
+}
 .oak-icon-refresh:before {
-  content: "\e6c9"; }
-
+  content: "\e6c9";
+}
 .oak-icon-calendar:before {
-  content: "\e6ca"; }
-
+  content: "\e6ca";
+}
 .oak-icon-flashlight-line:before {
-  content: "\e6cb"; }
-
+  content: "\e6cb";
+}
 .oak-icon-left-light:before {
-  content: "\e6cc"; }
-
+  content: "\e6cc";
+}
 .oak-icon-down-light:before {
-  content: "\e6cd"; }
-
+  content: "\e6cd";
+}
 .oak-icon-up-light:before {
-  content: "\e6ce"; }
-
+  content: "\e6ce";
+}
 .oak-icon-left-bold:before {
-  content: "\e6cf"; }
-
+  content: "\e6cf";
+}
 .oak-icon-right-bold:before {
-  content: "\e6d0"; }
-
+  content: "\e6d0";
+}
 .oak-icon-down-bold:before {
-  content: "\e6d1"; }
-
+  content: "\e6d1";
+}
 .oak-icon-up-bold:before {
-  content: "\e6d2"; }
-
+  content: "\e6d2";
+}
 .oak-icon-pulldown-bold:before {
-  content: "\e6d3"; }
-
+  content: "\e6d3";
+}
 .oak-icon-choice:before {
-  content: "\e6d4"; }
-
+  content: "\e6d4";
+}
 .oak-icon-close-light:before {
-  content: "\e6d5"; }
-
+  content: "\e6d5";
+}
 .oak-icon-plus-sign1:before {
-  content: "\e6d6"; }
-
+  content: "\e6d6";
+}
 .oak-icon-minus1:before {
-  content: "\e6d7"; }
-
+  content: "\e6d7";
+}
 .oak-icon-more:before {
-  content: "\e6d8"; }
-
+  content: "\e6d8";
+}
 .oak-icon-home-facet:before {
-  content: "\e6d9"; }
-
+  content: "\e6d9";
+}
 .oak-icon-classification-facet:before {
-  content: "\e6da"; }
-
+  content: "\e6da";
+}
 .oak-icon-shopping-cart-facet:before {
-  content: "\e6db"; }
-
+  content: "\e6db";
+}
 .oak-icon-member-center-facet:before {
-  content: "\e6dc"; }
-
+  content: "\e6dc";
+}
 .oak-icon-praise-facet:before {
-  content: "\e6dd"; }
-
+  content: "\e6dd";
+}
 .oak-icon-trample-facet:before {
-  content: "\e6de"; }
-
+  content: "\e6de";
+}
 .oak-icon-choice-facet:before {
-  content: "\e6df"; }
-
+  content: "\e6df";
+}
 .oak-icon-plus-sign-facet:before {
-  content: "\e6e0"; }
-
+  content: "\e6e0";
+}
 .oak-icon-close-facet:before {
-  content: "\e6e1"; }
-
+  content: "\e6e1";
+}
 .oak-icon-left-facet:before {
-  content: "\e6e2"; }
-
+  content: "\e6e2";
+}
 .oak-icon-triangle-down:before {
-  content: "\e6e3"; }
-
+  content: "\e6e3";
+}
 .oak-icon-triangle-up:before {
-  content: "\e6e4"; }
-
+  content: "\e6e4";
+}
 .oak-icon-wallet:before {
-  content: "\e6e5"; }
-
+  content: "\e6e5";
+}
 .oak-icon-bag:before {
-  content: "\e6e6"; }
-
+  content: "\e6e6";
+}
 .oak-icon-estimate-facet:before {
-  content: "\e6e7"; }
-
+  content: "\e6e7";
+}
 .oak-icon-refund-facet:before {
-  content: "\e6e8"; }
-
+  content: "\e6e8";
+}
 .oak-icon-orders:before {
-  content: "\e6e9"; }
-
+  content: "\e6e9";
+}
 .oak-icon-rank:before {
-  content: "\e6ea"; }
-
+  content: "\e6ea";
+}
 .oak-icon-VIP:before {
-  content: "\e6eb"; }
-
+  content: "\e6eb";
+}
 .oak-icon-address-facet:before {
-  content: "\e6ec"; }
-
+  content: "\e6ec";
+}
 .oak-icon-flashlight-facet:before {
-  content: "\e6ed"; }
-
+  content: "\e6ed";
+}
 .oak-icon-filtrate-facet:before {
-  content: "\e6ee"; }
-
+  content: "\e6ee";
+}
 .oak-icon-gift:before {
-  content: "\e6ef"; }
-
+  content: "\e6ef";
+}
 .oak-icon-activity:before {
-  content: "\e6f0"; }
-
+  content: "\e6f0";
+}
 .oak-icon-new-species:before {
-  content: "\e6f1"; }
-
+  content: "\e6f1";
+}
 .oak-icon-address-management:before {
-  content: "\e6f2"; }
-
+  content: "\e6f2";
+}
 .oak-icon-feedback:before {
-  content: "\e6f3"; }
-
+  content: "\e6f3";
+}
 .oak-icon-shop:before {
-  content: "\e6f4"; }
-
+  content: "\e6f4";
+}
 .oak-icon-service:before {
-  content: "\e6f5"; }
-
+  content: "\e6f5";
+}
 .oak-icon-set:before {
-  content: "\e6f8"; }
-
+  content: "\e6f8";
+}
 .oak-icon-label:before {
-  content: "\e6f9"; }
-
+  content: "\e6f9";
+}
 .oak-icon-fire:before {
-  content: "\e6fa"; }
-
+  content: "\e6fa";
+}
 .oak-icon-rocket:before {
-  content: "\e6fb"; }
-
+  content: "\e6fb";
+}
 .oak-icon-card:before {
-  content: "\e6fc"; }
-
+  content: "\e6fc";
+}
 .oak-icon-right-light:before {
-  content: "\e6fe"; }
-
+  content: "\e6fe";
+}
 .oak-icon-checkbox:before {
-  content: "\e6ff"; }
-
+  content: "\e6ff";
+}
 .oak-icon-un-choose:before {
-  content: "\e700"; }
-
+  content: "\e700";
+}
 .oak-icon-wechat-pay-full:before {
-  content: "\e701"; }
-
+  content: "\e701";
+}
 .oak-icon-wechat-pay:before {
-  content: "\e702"; }
-
+  content: "\e702";
+}
 .oak-icon-huabi:before {
   content: "\e6bc";
-  font-family: "iconfont" !important; }
-
+  font-family: "iconfont" !important;
+}
 .oak-label {
   min-width: 24rpx;
   height: 56rpx;
@@ -307,24 +308,28 @@
   font-size: 24rpx;
   border: 1rpx solid #F6F6F6;
   border-radius: 200rpx;
-  background-color: #F6F6F6; }
-  .oak-label::before {
-    font-size: 24rpx;
-    margin-right: 10rpx; }
-  .oak-label-normal {
-    max-width: calc(100% - 48rpx);
-    padding: 0 24rpx; }
-  .oak-label-checked {
-    font-size: 24rpx;
-    color: #FD7622;
-    border: 1rpx solid #FD7622;
-    background-color: rgba(253, 118, 34, 0.08); }
-    .oak-label-checked::after {
-      content: "";
-      width: 1rpx;
-      height: 100%;
-      float: right; }
-
+  background-color: #F6F6F6;
+}
+.oak-label::before {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.oak-label-normal {
+  max-width: calc(100% - 48rpx);
+  padding: 0 24rpx;
+}
+.oak-label-checked {
+  font-size: 24rpx;
+  color: #FD7622;
+  border: 1rpx solid #FD7622;
+  background-color: rgba(253, 118, 34, 0.08);
+}
+.oak-label-checked::after {
+  content: "";
+  width: 1rpx;
+  height: 100%;
+  float: right;
+}
 .oak-label-content {
   max-width: 100%;
   margin: 0 auto;
@@ -332,4 +337,5 @@
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+}

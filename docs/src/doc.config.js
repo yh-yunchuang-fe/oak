@@ -42,7 +42,10 @@ export default {
             }, {
                 name: 'Switch 开关',
                 path: '/Switch',
-            }, ]
+            }, {
+                name: 'Input 输入框',
+                path: '/Input',
+            },]
         },{
             name: '展示',
             groups: [{

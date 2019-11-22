@@ -1,53 +1,77 @@
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+.tc {
+  text-align: center;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
 .oak-switch {
   position: relative;
   min-width: 2em;
   height: 1em;
-  line-height: .8em;
+  line-height: 0.8em;
   color: #fff;
   background-color: #ccc;
   border-radius: 1em;
   display: inline-block;
   vertical-align: middle;
-  transition: all .3s;
-  border: 1px solid transparent; }
-  .oak-switch-btn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1em;
-    height: 1em;
-    border-radius: 100%;
-    background-color: #fff;
-    z-index: 2;
-    box-shadow: 0 4rpx 8rpx 0 rgba(0, 35, 11, 0.2);
-    transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86); }
-    .oak-switch-btn .loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 40rpx;
-      height: 40rpx;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center; }
-  .oak-switch-txt {
-    margin: 0 8rpx 0 1em;
-    white-space: nowrap;
-    height: 100%;
-    text-align: center;
-    transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86);
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .oak-switch-txt text {
-      font-size: .5em; }
-  .oak-switch.checked {
-    background-color: #FD7622; }
-    .oak-switch.checked .oak-switch-btn {
-      left: 100%;
-      transform: translateX(-100%); }
-    .oak-switch.checked .oak-switch-txt {
-      padding: 0;
-      margin: 0 1em 0 8rpx; }
-  .oak-switch.disabled {
-    opacity: .4; }
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+.oak-switch-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 100%;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: 0 4rpx 8rpx 0 rgba(0, 35, 11, 0.2);
+  transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.oak-switch-btn .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+.oak-switch-txt {
+  margin: 0 8rpx 0 1em;
+  white-space: nowrap;
+  height: 100%;
+  text-align: center;
+  transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.oak-switch-txt text {
+  font-size: 0.5em;
+}
+.oak-switch.checked {
+  background-color: #FD7622;
+}
+.oak-switch.checked .oak-switch-btn {
+  left: 100%;
+  transform: translateX(-100%);
+}
+.oak-switch.checked .oak-switch-txt {
+  padding: 0;
+  margin: 0 1em 0 8rpx;
+}
+.oak-switch.disabled {
+  opacity: 0.4;
+}
