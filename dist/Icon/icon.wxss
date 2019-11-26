@@ -1,8 +1,8 @@
 @font-face {
   font-family: "oak-iconfont";
-  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.eot?t=1571827018377');
+  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20191125/iconfont.eot?t=1571827018377');
   /* IE9 */
-  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.eot?t=1571827018377#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.woff?t=1571827018377') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.ttf?t=1571827018377') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20191119/iconfont.svg?t=1571827018377#oak-iconfont') format('svg');
+  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20191125/iconfont.eot?t=1571827018377#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20191125/iconfont.woff?t=1571827018377') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20191125/iconfont.ttf?t=1571827018377') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20191125/iconfont.svg?t=1571827018377#oak-iconfont') format('svg');
   /* iOS 4.1- */
 }
 .oak-iconfont {
@@ -290,6 +290,21 @@
 }
 .oak-icon-wechat-pay:before {
   content: "\e702";
+}
+.oak-icon-offline-daodian:before {
+  content: "\e703";
+}
+.oak-icon-online-daodian:before {
+  content: "\e704";
+}
+.oak-icon-order-daodian:before {
+  content: "\e705";
+}
+.oak-icon-recharge-daodian:before {
+  content: "\e706";
+}
+.oak-icon-recharge-select-daodian:before {
+  content: "\e707";
 }
 .oak-icon {
   margin: 0;
