@@ -39,5 +39,5 @@ Component({
             });
         }
     },
-    externalClasses: ['ext-class'],
+    externalClasses: ['ext-class', 'img-class'],
 });

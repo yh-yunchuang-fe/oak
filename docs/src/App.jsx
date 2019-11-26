@@ -5,7 +5,7 @@ import Navs from './Navs.jsx';
 import RouterConfig from './router';
 import { HashRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import 'antd/lib/layout/style/css';
-import './App.scss';
+import './App.less';
 
 const {
     Header, Footer, Sider, Content,
