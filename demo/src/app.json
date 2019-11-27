@@ -17,7 +17,8 @@
     "pages/icon/index",
     "pages/label/label",
     "pages/checkbox/checkbox",
-    "pages/input/input"
+    "pages/input/input",
+    "pages/searchBar/searchBar"
   ],
   "window":{
     "backgroundTextStyle":"light",

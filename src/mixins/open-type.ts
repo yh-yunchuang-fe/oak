@@ -8,27 +8,27 @@ export const openType = Behavior({
 
     methods: {
         bindGetUserInfo(event): void {
-            this.triggerEvent('bindgetuserinfo', event.detail)
+            this.triggerEvent('getuserinfo', event.detail)
         },
 
         bindContact(event): void {
-            this.triggerEvent('bindcontact', event.detail)
+            this.triggerEvent('contact', event.detail)
         },
 
         bindGetPhoneNumber(event): void {
-            this.triggerEvent('bindgetphonenumber', event.detail)
+            this.triggerEvent('getphonenumber', event.detail)
         },
 
         bindError(event): void {
-            this.triggerEvent('binderror', event.detail)
+            this.triggerEvent('error', event.detail)
         },
 
         bindLaunchApp(event): void {
-            this.triggerEvent('bindlaunchapp', event.detail)
+            this.triggerEvent('launchapp', event.detail)
         },
 
         bindOpenSetting(event): void {
-            this.triggerEvent('bindopensetting', event.detail)
+            this.triggerEvent('opensetting', event.detail)
         },
     }
 })

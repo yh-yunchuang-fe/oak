@@ -59,7 +59,7 @@ const config = {
                 loader: 'babel-loader?cacheDirectory=true',
             }]
         }, {
-            test: /\.(sa|sc|c)ss$/,
+            test: /\.(le|c)ss$/,
             use: [{
                     loader: MiniCssExtractPlugin.loader,
                     options: {
@@ -74,7 +74,7 @@ const config = {
                     }
                 },
                 //   'postcss-loader',
-                'sass-loader',
+                'less-loader',
             ],
         }, {
             test: /\.md$/,
