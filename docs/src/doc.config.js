@@ -43,6 +43,9 @@ export default {
                 name: 'Switch 开关',
                 path: '/Switch',
             }, {
+                name: 'Search Bar 搜索框',
+                path: '/SearchBar',
+            }, {
                 name: 'Input 输入框',
                 path: '/Input',
             },]

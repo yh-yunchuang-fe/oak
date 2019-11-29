@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- default -->
+    <view class="h3">默认样式</view>
+    <oak-search-bar
+        placeholder="搜索"
+        bind:change="onChange"
+        bind:focus="onFocus"
+    ></oak-search-bar>
+
+    <view class="h3">显示取消</view>
+    <oak-search-bar
+        placeholder="搜索"
+        placeholderStyle="color: red;"
+        showCancel="{{ true }}"
+        bind:change="onChange"
+        bind:focus="onFocus"
+    ></oak-search-bar>
+    <view class="h3">自动聚焦</view>
+    <oak-search-bar
+        placeholder="搜索"
+        placeholderStyle="color: red;"
+        bind:change="onChange"
+        bind:focus="onFocus"
+        inputFocus="{{ true }}"
+    ></oak-search-bar>
+</view>
