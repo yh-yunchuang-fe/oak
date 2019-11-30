@@ -1,7 +1,34 @@
-<view class="oak-label oak-label-{{ size }} iconfont {{ icon ? iconPrefix + '-' + icon : '' }} {{ checked ? 'oak-label-checked' : '' }} ext-class" style="{{ styles }}">
-    <block>
-        <view class="oak-label-content">
-            <slot></slot>
-        </view>
-    </block>
+<view class="oak-stepper ext-class" style="opacity: {{disabled ? disabledOpacity : 1}}; {{styles}}">
+  <view
+    wx:if="{{ !(value <= min && !showMinus) }}"
+    data-type="minus"
+    style="opacity: {{!disabled && disabledMinus ? disabledOpacity : 1 }};height: {{height ? height : 'none'}}; width: {{height ? height : 'none'}}; {{minusStyle}}"
+    class="minus-class"
+    bind:tap="onTap"
+    bind:touchstart="onTouchStart"
+    bind:touchend="onTouchEnd"
+  >
+    <oak-icon name="minus1" color="{{disabled || disabledMinus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
+  </view>
+  <input
+    type="{{ integer ? 'number' : 'digit' }}"
+    class="input-class"
+    style="width: {{inputWidth}}px;{{ inputStyle }}"
+    value="{{ value }}"
+    focus="{{ focus }}"
+    disabled="{{ disabled || disableInput }}"
+    bindinput="onInput"
+    bind:blur="onBlur"
+  />
+  <view
+    wx:if="{{ !(value >= max && !showPlus) }}"
+    data-type="plus"
+    style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{height ? height : 'none'}}; width: {{height ? height : 'none'}}; {{plusStyle}}"
+    class="plus-class"
+    bind:tap="onTap"
+    bind:touchstart="onTouchStart"
+    bind:touchend="onTouchEnd"
+  >
+    <oak-icon name="plus-sign1" color="{{disabled || disabledPlus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
+  </view>
 </view>

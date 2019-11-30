@@ -1,15 +1,23 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="h3">默认展示</view>
-    <oak-label>我是选中状态</oak-label>
-    <view class="h3">选中状态</view>
-    <oak-label checked>选中状态</oak-label>
-    <view class="h3">单个文字</view>
-    <oak-label>牛</oak-label>
-    <view class="h3">带icon</view>
-    <oak-label icon="estimate-facet">评论</oak-label>
-    <view class="h3">自定义 Style</view>
-    <oak-label styles="color: red">我</oak-label>
-    <view class="h3">超长文本</view>
-    <oak-label>我是超长文本我是超长文本我是超长文本我是超长文本我是超长文本</oak-label>
+    <view class="h3">基础用法</view>
+    <oak-stepper value="{{ 1 }}" />
+    <view class="h3">步长设置</view>
+    <oak-stepper value="{{ 1 }}" step="2" />
+    <view class="h3">限制输入范围</view>
+    <oak-stepper value="{{ 6 }}" min="5" max="8" />
+    <view class="h3">限制输入整数</view>
+    <oak-stepper value="{{ 1 }}" integer />
+    <view class="h3">禁用状态</view>
+    <oak-stepper value="{{ 1 }}" disabled />
+    <view class="h3">固定小数位数</view>
+    <oak-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
+    <view class="h3">异步变更</view>
+    <oak-stepper
+        value="{{ value }}"
+        async-change
+    />
+    <view class="h3">自定义大小</view>
+    <oak-stepper value="{{ 1 }}" input-style="width: 60px;" button-size="32" />
+
 </view>
