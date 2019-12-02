@@ -92,5 +92,8 @@ Page({
             icon: 'none',
         })
         this.onClose()
+    },
+    bindgetuserinfo(event: wx.GetUserInfoCompleteCallback): void {
+        console.log(event)
     }
 })

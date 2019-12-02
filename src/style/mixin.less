@@ -1,0 +1,28 @@
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ellipsis(@row: 1) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @row;
+    -webkit-box-flex: @row;
+    height: inherit;
+}
+
+.tc {
+    text-align: center;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+}

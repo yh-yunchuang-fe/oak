@@ -43,6 +43,7 @@
     <oak-action-sheet isShow="{{showActionSheet}}"
         maskShow
         item-list="{{ itemList }}"
+        bindgetuserinfo="bindgetuserinfo"
         bind:onClose="onClose"
         bind:onSelect="onSelect"
         cancle-text="{{cancleTitle}}" />
