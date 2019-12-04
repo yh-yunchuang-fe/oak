@@ -5,8 +5,6 @@
     style="opacity: {{!disabled && disabledMinus ? disabledOpacity : 1 }};height: {{height ? height : 'none'}}; width: {{height ? height : 'none'}}; {{minusStyle}}"
     class="minus-class"
     bind:tap="onTap"
-    bind:touchstart="onTouchStart"
-    bind:touchend="onTouchEnd"
   >
     <oak-icon name="minus1" color="{{disabled || disabledMinus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
   </view>
@@ -26,8 +24,6 @@
     style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{height ? height : 'none'}}; width: {{height ? height : 'none'}}; {{plusStyle}}"
     class="plus-class"
     bind:tap="onTap"
-    bind:touchstart="onTouchStart"
-    bind:touchend="onTouchEnd"
   >
     <oak-icon name="plus-sign1" color="{{disabled || disabledPlus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
   </view>

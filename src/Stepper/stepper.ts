@@ -1,5 +1,3 @@
-const LONG_PRESS_START_TIME = 600
-const LONG_PRESS_INTERVAL = 200
 Component({
     properties: {
         value: {   // stepper 步进器 value
@@ -20,7 +18,7 @@ Component({
         },
         disableInput: { // 是否禁止输入
             type: Boolean,
-            value: false
+            value: true
         },
         disabledOpacity: { // 模块禁止灰度
             type: Number,
@@ -50,7 +48,7 @@ Component({
             type: Boolean,
             value: false
         },
-        decimalLength: {
+        decimalLength: { // 小数点长度
             type: Number,
             value: null
         },
@@ -97,7 +95,7 @@ Component({
         disabledMinus: false
     },
     methods: {
-        isDisabled(type) {
+        isDisabled(type): boolean {
             const {min, max, disabled, value} = this.data
             const disabledPlus = disabled || (typeof max === 'number' && value >= max)
             const disabledMinus = disabled || (typeof min === 'number' && value <= min)
@@ -118,14 +116,14 @@ Component({
             const cardinal = 10 ** 10
             return Math.round((num1 + num2) * cardinal) / cardinal
         },
-        onBlur() {
+        onBlur(): any {
             const value = this.range(this.data.value)
             this.setData({
                 value,
             })
         },
         // limit value range
-        range(value) {
+        range(value): number {
             value = String(value).replace(/[^0-9.-]/g, '')
             // format range
             value = value === '' ? 0 : +value
@@ -143,13 +141,13 @@ Component({
             }
             return value
         },
-        onInput(event) {
+        onInput(event): any {
             const { value } = event.detail || {}
             this.setData({
                 value,
             })
         },
-        onChange() {
+        onChange(): any {
             const { type } = this
             if (this.isDisabled(type)) {
                 return
@@ -160,54 +158,40 @@ Component({
                 value: this.range(value)
             })
         },
-        longPressStep() {
-            this.longPressTimer = setTimeout(() => {
-                this.onChange()
-                this.longPressStep()
-            }, LONG_PRESS_INTERVAL)
-        },
+        
         onTap(event) {
             const { type } = event.currentTarget.dataset
+            const {onPlus, onMinus} = this.data
             this.type = type
             this.onChange()
+            const returnInfo = this.returnInfo()
+            if(type === 'plus') {
+                if (typeof onPlus === 'function') {
+                    onPlus(returnInfo)
+                } else {
+                    this.triggerEvent('onPlus', returnInfo)
+                }
+                return
+            }
+
+            if (typeof onMinus === 'function') {
+                onMinus(returnInfo)
+            } else {
+                this.triggerEvent('onMinus', returnInfo)
+            }
         },
-        onTouchStart(event) {
-            clearTimeout(this.longPressTimer)
-            const { type } = event.currentTarget.dataset
-            this.type = type
-            this.isLongPress = false
-            this.longPressTimer = setTimeout(() => {
-                this.isLongPress = true
-                this.onChange()
-                this.longPressStep()
-            }, LONG_PRESS_START_TIME)
+
+        returnInfo() {
+            const {value, disabled, focus, min, max, step, integer, decimalLength, showMinus, showPlus } = this.data
+            return {
+                value, disabled, focus, min, max, step, integer, decimalLength, showMinus, showPlus
+            }
         },
-        onTouchEnd() {
-            clearTimeout(this.longPressTimer)
-        },
+       
         triggerInput(value) {
             this.setData({
                 value: this.data.asyncChange ? this.data.value : value
             })
-            // this.$emit('change', value)
         },
-        computeInputStyle() {
-            let style = ''
-            if (this.data.inputWidth) {
-                // style = `width: ${addUnit(this.data.inputWidth)}`
-            }
-            if (this.data.buttonSize) {
-                // style += `height: ${addUnit(this.data.buttonSize)}`
-            }
-            return style
-        },
-        computeButtonStyle() {
-            let style = ''
-            // const size = addUnit(this.data.buttonSize)
-            if (this.data.buttonSize) {
-                // style = `width: ${size}height: ${size}`
-            }
-            return style
-        }
     }
 })
