@@ -1,0 +1,37 @@
+<view class="wux-class oak-search-bar-wrap wrap-class">
+    <view class="oak-search-bar-form">
+        <view wx:if="{{ !disabled }}" class="oak-search-bar-box {{ inputFocus ? 'oak-search-bar--focus' : '' }}">
+            <icon class="oak-search-bar-search" type="search" color="#B2B2B2" size="12" />
+            <input
+            	type="text"
+            	class="oak-search-bar-input input-class"
+            	value="{{ inputValue }}"
+                placeholder="{{ placeholder }}"
+                placeholder-style="{{ placeholderStyle }}"
+                placeholder-class="{{ placeholderClass }}"
+                disabled="{{ disabled }}"
+                maxlength="{{ maxlength }}"
+                cursor-spacing="{{ cursorSpacing }}"
+                focus="{{ inputFocus }}"
+                confirm-type="{{ confirmType }}"
+                confirm-hold="{{ confirmHold }}"
+                cursor="{{ cursor }}"
+                selection-start="{{ selectionStart }}"
+                selection-end="{{ selectionEnd }}"
+                adjust-position="{{ adjustPosition }}"
+                hold-keyboard="{{ holdKeyboard }}"
+            	bindinput="onChange"
+            	bindfocus="onFocus"
+            	bindblur="onBlur"
+                bindconfirm="onConfirm"
+                bindkeyboardheightchange="onKeyboardheightchange"
+            />
+            <icon class="oak-search-bar-clear" type="clear" color="#B2B2B2" size="14" wx:if="{{ !disabled && inputValue && inputValue.length > 0 }}" bindtap="onClear" />
+        </view>
+        <label class="oak-search-bar-label {{ disabled ? 'oak-search-bar--disabled' : '' }}" wx:if="{{ !inputFocus && !inputValue }}" bindtap="onClick">
+            <icon class="oak-search-bar-icon" type="search" color="#B2B2B2" size="12" />
+            <text class="oak-search-bar-text">{{ placeholder }}</text>
+        </label>
+    </view>
+    <view class="oak-search-bar-cancel cancel-class" wx:if="{{ showCancel || inputFocus || (inputValue && inputValue.length > 0) }}" bindtap="onCancel">{{ cancelText }}</view>
+</view>
