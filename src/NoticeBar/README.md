@@ -15,6 +15,11 @@
 ```js
 data: {
     ...,
+    icon: {
+        name: 'trash',
+        size: '28rpx',
+        color: '#FD7622'
+    },
     content: [
         {
             ...
@@ -63,10 +68,10 @@ data: {
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| icon | 左侧icon | `String` | `notice 图片，base64格式` |
+| icon | 左侧icon | `Object` | `oak Icon 组件` |
 | content | 通告内容 | `Array<Object>` | `[]` |
 | mode | 右侧形式 | `String` | - |
-| action | 右侧展示 | `String` | `close 图片，base64格式` |
+| action | 右侧展示 | `String` | `oak Icon 组件` |
 | circular | 是否循环 | `Boolean` | `true` |
 | interval | 时间间隔 | `Number` | `2000` |
 | duration | 过度持续时间 | `Number` | `500` |

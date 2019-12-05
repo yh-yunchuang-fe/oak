@@ -3,6 +3,7 @@
     <!-- default -->
     <view class="h3">默认样式</view>
     <oak-notice-bar
+        icon="{{icon}}"
         circular="{{false}}"
         content="{{content}}">
     </oak-notice-bar>

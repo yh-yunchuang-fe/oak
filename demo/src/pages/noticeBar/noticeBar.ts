@@ -1,5 +1,10 @@
 Page({
     data: {
+        icon: {
+            name: 'trash',
+            size: '28rpx',
+            color: '#FD7622'
+        },
         content: [
             {
                 id: 1,
