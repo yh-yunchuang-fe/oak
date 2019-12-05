@@ -1,8 +1,19 @@
-<view class="oak-stepper ext-class" style="opacity: {{disabled ? disabledOpacity : 1}}; {{styles}}">
+<wxs module="Limit">
+  function limitDecimal(value, limit) {
+    return limit && value !== '' ? (value - 0).toFixed(limit) : value
+  }
+  function setSize(height) {
+    return height ? height + 'px' : 'none'
+  }
+  module.exports = {
+    limitDecimal: limitDecimal,
+    setSize: setSize,
+  }
+</wxs>
+<view class="oak-stepper ext-class" style="opacity: {{disabled ? disabledOpacity : 1}}; {{stepperStyle}}">
   <view
-    wx:if="{{ !(value <= min && !showMinus) }}"
     data-type="minus"
-    style="opacity: {{!disabled && disabledMinus ? disabledOpacity : 1 }};height: {{height ? height : 'none'}}; width: {{height ? height : 'none'}}; {{minusStyle}}"
+    style="opacity: {{!disabled && disabledMinus ? disabledOpacity : 1 }};height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{minusStyle}}"
     class="minus-class"
     bind:tap="onTap"
   >
@@ -11,17 +22,15 @@
   <input
     type="{{ integer ? 'number' : 'digit' }}"
     class="input-class"
-    style="width: {{inputWidth}}px;{{ inputStyle }}"
-    value="{{ value }}"
-    focus="{{ focus }}"
-    disabled="{{ disabled || disableInput }}"
+    style="width: 40px;{{ inputStyle }}"
+    value="{{ Limit.limitDecimal(_value, decimalLength) }}"
+    disabled="{{ disabled || !enableInput }}"
     bindinput="onInput"
     bind:blur="onBlur"
   />
   <view
-    wx:if="{{ !(value >= max && !showPlus) }}"
     data-type="plus"
-    style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{height ? height : 'none'}}; width: {{height ? height : 'none'}}; {{plusStyle}}"
+    style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{plusStyle}}"
     class="plus-class"
     bind:tap="onTap"
   >

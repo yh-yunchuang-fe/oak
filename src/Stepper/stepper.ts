@@ -1,48 +1,39 @@
 Component({
     properties: {
         value: {   // stepper 步进器 value
+            type: Number || String,
+            value: null,
+            observer(newValue) {
+                this.setData({_value: newValue})
+            },
+        },
+        min: {
             type: Number,
-            value: 5
+            value: null
+        },
+        max: {
+            type: Number,
+            value: null
+        },
+        step: {
+            type: Number,
+            value: 1
+        },
+        enableInput: { // 使能输入
+            type: Boolean,
+            value: false
+        },
+        integer: {
+            type: Boolean,  // 键盘是否包含小数点
+            value: false
         },
         disabled: { // 禁止整个模块点击
             type: Boolean,
             value: false
         },
-        focus: {
-            type: Boolean,  // 是否自动获取焦点
-            value: false
-        },
-        integer: {
-            type: Boolean,  // 输入框是否包含小数点
-            value: false
-        },
-        disableInput: { // 是否禁止输入
-            type: Boolean,
-            value: true
-        },
         disabledOpacity: { // 模块禁止灰度
             type: Number,
             value: 0.4
-        },
-        height: {  // 设置模块的height
-            type: Number,
-            value: 0
-        },
-        activeColor: {
-            type: String,
-            value: '#FD7622'
-        },
-        disableColor: {
-            type: String,
-            value: '#333'
-        },
-        iconSize: {
-            type: Number,
-            value: 14
-        },
-        inputWidth: {   // 设置输入框的宽
-            type: Number,
-            value: 40
         },
         asyncChange: {
             type: Boolean,
@@ -52,7 +43,23 @@ Component({
             type: Number,
             value: null
         },
-        styles: {   // 步进器样式
+        height: {  // 设置模块的height
+            type: Number,
+            value: null
+        },
+        activeColor: {
+            type: String,
+            value: '#FD7622'
+        },
+        disableColor: {
+            type: String,
+            value: '#333333'
+        },
+        iconSize: {
+            type: Number,
+            value: 14
+        },
+        stepperStyle: {   // 步进器样式
             type: String,
             value: ''
         },
@@ -67,38 +74,19 @@ Component({
         plusStyle: { // 设置plus样式
             type: String,
             value: ''
-        },
-        min: {
-            type: Number,
-            value: null
-        },
-        max: {
-            type: Number,
-            value: null
-        },
-        step: {
-            type: Number,
-            value: 1
-        },
-        showPlus: {
-            type: Boolean,
-            value: true
-        },
-        showMinus: {
-            type: Boolean,
-            value: true
         }
     },
     externalClasses: ['ext-class'],
     data: {
         disabledPlus: false,
-        disabledMinus: false
+        disabledMinus: false,
+        _value: ''
     },
     methods: {
         isDisabled(type): boolean {
-            const {min, max, disabled, value} = this.data
-            const disabledPlus = disabled || (typeof max === 'number' && value >= max)
-            const disabledMinus = disabled || (typeof min === 'number' && value <= min)
+            const {min, max, disabled, _value} = this.data
+            const disabledPlus = disabled || (typeof max === 'number' && _value >= max)
+            const disabledMinus = disabled || (typeof min === 'number' && _value <= min)
             disabledPlus !== this.data.disabledPlus && this.setData({
                 disabledPlus,
             })
@@ -117,34 +105,29 @@ Component({
             return Math.round((num1 + num2) * cardinal) / cardinal
         },
         onBlur(): any {
-            const value = this.range(this.data.value)
+            const _value = this.range(this.data._value)
             this.setData({
-                value,
+                _value,
             })
         },
-        // limit value range
-        range(value): number {
-            value = String(value).replace(/[^0-9.-]/g, '')
+        // limit _value range
+        range(_value): number {
+            _value = String(_value).replace(/[^0-9.-]/g, '')
             // format range
-            value = value === '' ? 0 : +value
+            _value = _value === '' ? 0 : + _value
             const {min, max} = this.data
-            // value = Math.max(Math.min(this.data.max, value), this.data.min)
-            if(typeof min === 'number' && value < min) {
-                value = min
+            if(typeof min === 'number' && _value < min) {
+                _value = min
             }
-            if(typeof max === 'number' && value > max) {
-                value = max
+            if(typeof max === 'number' && _value > max) {
+                _value = max
             }
-            // format decimal
-            if (this.data.decimalLength) {
-                value = value.toFixed(this.data.decimalLength)
-            }
-            return value
+            return _value
         },
         onInput(event): any {
             const { value } = event.detail || {}
             this.setData({
-                value,
+                _value: value,
             })
         },
         onChange(): any {
@@ -153,10 +136,8 @@ Component({
                 return
             }
             const diff = type === 'minus' ? -this.data.step : +this.data.step
-            const value = this.add(+this.data.value, diff)
-            this.setData({
-                value: this.range(value)
-            })
+            const _value = this.add(+this.data._value, diff)
+            this.changeValue(_value)
         },
         
         onTap(event) {
@@ -164,7 +145,7 @@ Component({
             const {onPlus, onMinus} = this.data
             this.type = type
             this.onChange()
-            const returnInfo = this.returnInfo()
+            const returnInfo = this.returnInfo(type)
             if(type === 'plus') {
                 if (typeof onPlus === 'function') {
                     onPlus(returnInfo)
@@ -181,16 +162,16 @@ Component({
             }
         },
 
-        returnInfo() {
-            const {value, disabled, focus, min, max, step, integer, decimalLength, showMinus, showPlus } = this.data
+        returnInfo(type) {
+            const {_value, disabled, min, max, step, decimalLength } = this.data
             return {
-                value, disabled, focus, min, max, step, integer, decimalLength, showMinus, showPlus
+                value: _value, disabled, min, max, step, decimalLength, type
             }
         },
        
-        triggerInput(value) {
+        changeValue(_value) {
             this.setData({
-                value: this.data.asyncChange ? this.data.value : value
+                _value: this.data.asyncChange ? this.data._value : _value
             })
         },
     }
