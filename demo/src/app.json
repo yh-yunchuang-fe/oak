@@ -18,7 +18,8 @@
     "pages/label/label",
     "pages/checkbox/checkbox",
     "pages/input/input",
-    "pages/searchBar/searchBar"
+    "pages/searchBar/searchBar",
+    "pages/noticeBar/noticeBar"
   ],
   "window":{
     "backgroundTextStyle":"light",

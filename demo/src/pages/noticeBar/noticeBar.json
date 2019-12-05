@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Notice Bar 通告栏",
+    "usingComponents": {
+        "oak-notice-bar": "/NoticeBar/notice-bar"
+    }
+    
+}
