@@ -84,6 +84,9 @@ export default {
             }, {
                 name: 'Dialog 弹窗',
                 path: '/Dialog',
+            }, {
+                name: 'NoticeBar 通告栏',
+                path: '/NoticeBar',
             }, ],
         }],
     },

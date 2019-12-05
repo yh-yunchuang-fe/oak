@@ -75,6 +75,9 @@
             <oak-list-item title="Loadding 加载"
                 title-class="item-title"
                 url="/pages/loading/loading" />
+            <oak-list-item title="NoticeBar 通告栏"
+                title-class="item-title"
+                url="/pages/noticeBar/noticeBar" />
         </oak-collapse-item>
         <oak-collapse-item title="表单组件"
             icon="calendar"
