@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Search Bar 搜索框",
+    "usingComponents": {
+        "oak-search-bar": "/SearchBar/search-bar"
+    }
+    
+}

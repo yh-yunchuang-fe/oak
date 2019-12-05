@@ -33,7 +33,7 @@
             src="{{ src }}"
             mode='aspectFit'
             binderror="onError"
-            class="oak-avatar-image" />
+            class="oak-avatar-image img-class" />
         <view class="oak-avatar-name"
             wx:else>{{_alt}}</view>
     </block>

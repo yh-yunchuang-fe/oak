@@ -7,22 +7,22 @@ export const openType = Behavior({
     },
     methods: {
         bindGetUserInfo(event) {
-            this.triggerEvent('bindgetuserinfo', event.detail);
+            this.triggerEvent('getuserinfo', event.detail);
         },
         bindContact(event) {
-            this.triggerEvent('bindcontact', event.detail);
+            this.triggerEvent('contact', event.detail);
         },
         bindGetPhoneNumber(event) {
-            this.triggerEvent('bindgetphonenumber', event.detail);
+            this.triggerEvent('getphonenumber', event.detail);
         },
         bindError(event) {
-            this.triggerEvent('binderror', event.detail);
+            this.triggerEvent('error', event.detail);
         },
         bindLaunchApp(event) {
-            this.triggerEvent('bindlaunchapp', event.detail);
+            this.triggerEvent('launchapp', event.detail);
         },
         bindOpenSetting(event) {
-            this.triggerEvent('bindopensetting', event.detail);
+            this.triggerEvent('opensetting', event.detail);
         },
     }
 });

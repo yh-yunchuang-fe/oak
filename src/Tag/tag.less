@@ -4,7 +4,7 @@
 .colors() {
     color: @text;
     background-color: @background;
-    border: 2rpx solid @border;
+    border: 2rpx solid @tagBorder;
 }
 
 .sharpen(@height, @weight, @size) {
@@ -17,115 +17,115 @@
 .default() {
     @text: #333;
     @background: #fafafa;
-    @border: #d9d9d9;
+    @tagBorder: #d9d9d9;
 }
 
 .magenta() {
     @text: #fc0738;
     @background: #fde6eb;
-    @border: #fdc4d0;
+    @tagBorder: #fdc4d0;
 }
 
 .white() {
     @text: #fff;
     @background: #fd7622;
-    @border: #fff;
+    @tagBorder: #fff;
 }
 
 .red() {
     @text: #f5222d;
     @background: #fff1f0;
-    @border: #ffa39e;
+    @tagBorder: #ffa39e;
 }
 
 .volcano() {
     @text: #fa541c;
     @background: #fff2e8;
-    @border: #ffbb96;
+    @tagBorder: #ffbb96;
 }
 
 .orange() {
     @text: #fd7622;
     @background: #fff8f4;
-    @border: #ffdeca;
+    @tagBorder: #ffdeca;
 }
 
 .gold() {
     @text: #faad14;
     @background: #fffbe6;
-    @border: #ffe58f;
+    @tagBorder: #ffe58f;
 }
 
 .lime() {
     @text: #a0d911;
     @background: #fcffe6;
-    @border: #eaff8f;
+    @tagBorder: #eaff8f;
 }
 
 .green() {
     @text: #52c41a;
     @background: #f6ffed;
-    @border: #b7eb8f;
+    @tagBorder: #b7eb8f;
 }
 
 .cyan() {
     @text: #13c2c2;
     @background: #e6fffb;
-    @border: #87e8de;
+    @tagBorder: #87e8de;
 }
 
 .blue() {
     @text: #1890ff;
     @background: #e6f7ff;
-    @border: #91d5ff;
+    @tagBorder: #91d5ff;
 }
 
 .geekblue() {
     @text: #2f54eb;
     @background: #f0f5ff;
-    @border: #adc6ff;
+    @tagBorder: #adc6ff;
 }
 
 .purple() {
     @text: #722ed1;
     @background: #f9f0ff;
-    @border: #d3adf7;
+    @tagBorder: #d3adf7;
 }
 
 .discount() {
     @text: #fc4916;
     @background: #fff9f7;
-    @border: #feb6a2;
+    @tagBorder: #feb6a2;
 }
 
 .service() {
     @text: #7aba62;
     @background: #f9fff6;
-    @border: #cae3c0;
+    @tagBorder: #cae3c0;
 }
 
 .address() {
     @text: #fd7622;
     @background: rgba(253, 118, 34, .08);
-    @border: transparent;
+    @tagBorder: transparent;
 }
 
 .coupon() {
     @text: #fd7622;
     @background: #fff1e8;
-    @border: transparent;
+    @tagBorder: transparent;
 }
 
 .wxcoupon() {
     @text: #24ab1a;
     @background: #e4f6e0;
-    @border: transparent;
+    @tagBorder: transparent;
 }
 
 .disable() {
     @text: #666666;
     @background: #f9f9f9;
-    @border: #dddddd;
+    @tagBorder: #dddddd;
 }
 
 .oak-tag {
@@ -138,7 +138,7 @@
     display: inline-block;
     text-align: center;
     box-sizing: content-box;
-    vertical-align: top;
+    vertical-align: middle;
 
     &-default {
         .default();

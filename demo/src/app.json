@@ -18,7 +18,9 @@
     "pages/label/label",
     "pages/checkbox/checkbox",
     "pages/input/input",
-    "pages/stepper/stepper"
+    "pages/stepper/stepper",
+    "pages/searchBar/searchBar",
+    "pages/noticeBar/noticeBar"
   ],
   "window":{
     "backgroundTextStyle":"light",

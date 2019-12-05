@@ -1,6 +1,6 @@
 {
   "name": "@yhyc/oak-weui",
-  "version": "0.0.2-beta.7",
+  "version": "0.0.2-beta.8",
   "description": "A Wechat App UI Lib.",
   "miniprogram": "dist",
   "scripts": {
@@ -82,6 +82,7 @@
     "gulp-wechat-weapp-src-alisa": "^1.0.2",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.9",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.6.0",
     "miniprogram-api-typings": "^2.9.0",
     "postcss-loader": "^3.0.0",
