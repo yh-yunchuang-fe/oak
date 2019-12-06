@@ -5,6 +5,7 @@
 
  - ❤️ 新增 SearchBar 搜索栏
  - ❤️ 新增 NoticeBar 通告栏
+ - ❤️ 新增 Stepper 进步组件
 
 ### 0.0.2-beta.8
  `2019年9月27日`

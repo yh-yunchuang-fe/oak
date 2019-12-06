@@ -1,0 +1,39 @@
+<wxs module="Limit">
+  function limitDecimal(value, limit) {
+    return limit && value !== '' ? (value - 0).toFixed(limit) : value
+  }
+  function setSize(height) {
+    return height ? height + 'px' : 'none'
+  }
+  module.exports = {
+    limitDecimal: limitDecimal,
+    setSize: setSize,
+  }
+</wxs>
+<view class="oak-stepper ext-class" style="opacity: {{disabled ? disabledOpacity : 1}}; {{stepperStyle}}">
+  <view
+    data-type="minus"
+    style="opacity: {{!disabled && disabledMinus ? disabledOpacity : 1 }};height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{minusStyle}}"
+    class="minus-class"
+    bind:tap="onTap"
+  >
+    <oak-icon name="minus1" color="{{disabled || disabledMinus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
+  </view>
+  <input
+    type="{{ integer ? 'number' : 'digit' }}"
+    class="input-class"
+    style="width: 40px;{{ inputStyle }}"
+    value="{{ Limit.limitDecimal(_value, decimalLength) }}"
+    disabled="{{ disabled || !enableInput }}"
+    bindinput="onInput"
+    bind:blur="onBlur"
+  />
+  <view
+    data-type="plus"
+    style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{plusStyle}}"
+    class="plus-class"
+    bind:tap="onTap"
+  >
+    <oak-icon name="plus-sign1" color="{{disabled || disabledPlus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
+  </view>
+</view>

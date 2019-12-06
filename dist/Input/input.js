@@ -116,7 +116,7 @@ Component({
             type: String,
             value: null
         },
-        require: {
+        required: {
             type: Boolean,
             value: false
         }

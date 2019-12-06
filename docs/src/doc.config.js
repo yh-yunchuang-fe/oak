@@ -72,6 +72,9 @@ export default {
             },  {
                 name: 'Label 可操作标签',
                 path: '/Label'
+            }, {
+                name: 'Stepper 进步组件',
+                path: '/Stepper'
             },],
         }, {
             name: '反馈',

@@ -9,19 +9,19 @@ Page({
             path: '/pages/label/label',
         }
     },
-    onPlus(info: any) {
-        this.asyncChange({type: 'plus', value: info.detail.value})
-       
+    onPlus(info: any): void {
+        this.asyncChange({ type: 'plus', value: info.detail.value })
+
     },
-    onMinus(info: any) {
-        this.asyncChange({type: 'minus', value: info.detail.value})
+    onMinus(info: any): void {
+        this.asyncChange({ type: 'minus', value: info.detail.value })
     },
-    asyncChange(info: object): any {
-        new Promise(resolve => {
-            setTimeout(() => {
+    asyncChange(info: any): void {
+        new Promise((resolve: any): void => {
+            setTimeout((): void => {
                 resolve(info.value)
             }, 2000)
-        }).then((res: any) => {
+        }).then((res: any):void => {
             this.setData!({
                 value: info.type === 'plus' ? res + 1 : res - 1
             })

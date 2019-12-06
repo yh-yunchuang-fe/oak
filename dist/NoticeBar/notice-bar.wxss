@@ -1,0 +1,58 @@
+.oak-notice-bar {
+  background-color: #fefcec;
+  height: 68rpx;
+  overflow: hidden;
+  font-size: 26rpx;
+  line-height: 68rpx;
+  color: #FD7622;
+  display: flex;
+  padding: 0 20rpx;
+}
+.oak-notice-bar-icon,
+.oak-notice-bar-action {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.oak-notice-bar-action {
+  margin-right: 0;
+}
+.oak-notice-bar-header {
+  display: flex;
+  align-items: center;
+}
+.oak-notice-bar-header oak-icon {
+  margin-right: 20rpx;
+}
+.oak-notice-bar-body {
+  flex: 1;
+  width: 100%;
+  width: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.oak-notice-bar-swiper {
+  height: 100%;
+  flex: 1;
+}
+.oak-notice-bar-swiper-item {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  -webkit-box-flex: 1;
+  height: inherit;
+  line-height: 68rpx;
+  box-sizing: border-box;
+}
+.oak-notice-bar-wrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.oak-notice-bar-footer {
+  display: flex;
+  align-items: center;
+}

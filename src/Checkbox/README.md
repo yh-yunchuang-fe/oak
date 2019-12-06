@@ -12,19 +12,19 @@
 ```
 
 ## 代码演示
-基本用法
+### 基本用法
 ```html
 <!-- use in `page.wxml` -->
 <oak-checkbox value="{{checked}}" bind:change="onChange">复选框</oak-checkbox>
 ```
 
-禁用状态
+### 禁用状态
 ```html
 <!-- use in `page.wxml` -->
 <oak-checkbox value="{{true}}" bind:change="onChange" disabled="{{disabled}}">复选框</oak-checkbox>
 ```
 
-自定义颜色
+### 自定义颜色
 ```html
 <!-- use in `page.wxml` -->
 <oak-checkbox value="{{checked}}" bind:change="onChange" color="{{color}}">自定义颜色</oak-checkbox>
@@ -32,7 +32,7 @@
 <oak-checkbox value="{{true}}" bind:change="onChange" disabled="{{disabled}}" disabledColor="{{disabledColor}}">自定义禁用颜色</oak-checkbox>
 ```
 
-自定义图标
+### 自定义图标
 ```html
 <!-- use in `page.wxml` -->
 <oak-checkbox value="{{checked}}" bind:change="onChange" icon="{{icon}}">自定义图标</oak-checkbox>
