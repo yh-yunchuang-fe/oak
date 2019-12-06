@@ -15,7 +15,7 @@
 在页面使用
 ```html
 <!-- use in `page.wxml` -->
-<oak-label value="{{3}}"/>
+<oak-stepper value="3"/>
 ```
 
 ## 代码演示
