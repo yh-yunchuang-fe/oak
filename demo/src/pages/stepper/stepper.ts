@@ -1,7 +1,7 @@
 //index.js
 Page({
     data: {
-        value: 5
+        value: 5,
     },
     onShareAppMessage(): object {
         return {
@@ -21,7 +21,7 @@ Page({
             setTimeout((): void => {
                 resolve(info.value)
             }, 2000)
-        }).then((res: any):void => {
+        }).then((res: any): void => {
             this.setData!({
                 value: info.type === 'plus' ? res + 1 : res - 1
             })

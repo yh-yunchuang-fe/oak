@@ -20,22 +20,48 @@
 
 ## 代码演示
 ### 基本用法
-可以设置步进器的值value，上限max，下限min，步进值step，模块禁止disabled，键盘是否包含小数点integer，使能输入enableInput，整个模块禁止点击灰度值disabledOpacity，可点击icon 颜色activeColor，禁止点击icon颜色disableColor，加减icon 值iconSize，加减操作异步改变value值 asyncChange，value小数点位decimalLength，步进器模块样式stepperStyle，减样式minusStyle，输入样式inputStyle，加样式plusStyle，可以直接设置height一步设置整个模块大小
 ```html
-  <oak-stepper value="{{ 1 }}" />
-  <oak-stepper value="{{ 1 }}" enableInput/>
-  <oak-stepper value="{{ 1 }}" step="2" />
-  <oak-stepper value="{{ 6 }}" min="5" max="8" />
-  <oak-stepper value="{{ 1 }}" integer enable-input/>
-  <oak-stepper value="{{ 1 }}" disabled disabledOpacity="0.3"/>
-  <oak-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
-  <oak-stepper
-      value="{{value}}"
-      async-change
-      bind:onPlus="onPlus"
-      bind:onMinus="onMinus"
-  />
-  <oak-stepper stepper-style="padding-left: 20px;" height="50" value="{{ 1 }}" icon-size="12" input-style="width: 60px;" minus-style="border-radius: 2px;" plus-style="border-radius: 2px;" button-size="32" />
+  <!-- 基础用法 -->
+    <oak-stepper value="1" />
+  <!-- 可以输入数值 -->
+    <oak-stepper value="1" enableInput/>
+  <!-- 步长设置 -->
+    <oak-stepper value="1" step="2" />
+  <!-- 固定小数位数 -->
+    <oak-stepper value="1" step="0.2" decimal-length="1" />
+  <!-- 限制输入范围 -->
+    <oak-stepper value="6" min="5" max="8" />
+  <!-- 限制输入整数 -->
+    <oak-stepper value="1" integer enable-input/>
+  <!-- 禁用状态 -->
+    <oak-stepper value="1" disabled/>
+  <!-- 禁用灰度设置 -->
+    <oak-stepper value="1" disabled disabledOpacity="0.6"/>
+  <!-- 异步变更值 -->
+    <oak-stepper
+        value="{{value}}"
+        async-change
+        bind:onPlus="onPlus"
+        bind:onMinus="onMinus"
+    />
+  <!-- 设置模块高度 -->
+    <oak-stepper height="40" value="1"/>
+  <!-- 自定义模块样式 -->
+    <oak-stepper stepper-style="padding-left: 20px;" value="5"/>
+  <!-- 自定义输入框样式 -->
+    <oak-stepper value="1" input-style="width: 60px;"/>
+  <!-- 自定义加减模块样式 -->
+    <oak-stepper
+        value="1"
+        icon-size="12"
+        minus-style="border-radius: 2px;"
+        plus-style="border-radius: 2px;"/>
+  <!-- 自定义icon颜色 -->
+    <oak-stepper
+        value="1"
+        active-color="#333"
+        disable-color="#999"
+        min="1"/>
 ```
 
 ## APIS

@@ -3,8 +3,9 @@ Component({
         value: {   // stepper 步进器 value
             type: Number || String,
             value: null,
-            observer(newValue) {
+            observer(newValue): void {
                 this.setData({_value: newValue})
+                this.isDisabled()
             },
         },
         min: {
@@ -104,7 +105,7 @@ Component({
             const cardinal = 10 ** 10
             return Math.round((num1 + num2) * cardinal) / cardinal
         },
-        onBlur(): any {
+        onBlur(): void {
             const _value = this.range(this.data._value)
             this.setData({
                 _value,
@@ -124,13 +125,13 @@ Component({
             }
             return _value
         },
-        onInput(event): any {
+        onInput(event): void {
             const { value } = event.detail || {}
             this.setData({
                 _value: value,
             })
         },
-        onChange(): any {
+        onChange(): void {
             const { type } = this
             if (this.isDisabled(type)) {
                 return
@@ -138,9 +139,10 @@ Component({
             const diff = type === 'minus' ? -this.data.step : +this.data.step
             const _value = this.add(+this.data._value, diff)
             this.changeValue(_value)
+            this.isDisabled()
         },
         
-        onTap(event) {
+        onTap(event): void {
             const { type } = event.currentTarget.dataset
             const {onPlus, onMinus} = this.data
             this.type = type
@@ -162,14 +164,14 @@ Component({
             }
         },
 
-        returnInfo(type) {
+        returnInfo(type): object {
             const {_value, disabled, min, max, step, decimalLength } = this.data
             return {
                 value: _value, disabled, min, max, step, decimalLength, type
             }
         },
        
-        changeValue(_value) {
+        changeValue(_value): void {
             this.setData({
                 _value: this.data.asyncChange ? this.data._value : _value
             })
