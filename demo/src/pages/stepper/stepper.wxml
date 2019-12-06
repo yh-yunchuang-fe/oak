@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">基础用法</view>
+    <oak-stepper value="{{ 1 }}" />
+    <view class="h3">可以输入数值</view>
+    <oak-stepper value="{{ 1 }}" enableInput/>
+    <view class="h3">步长设置</view>
+    <oak-stepper value="{{ 1 }}" step="2" />
+    <view class="h3">限制输入范围</view>
+    <oak-stepper value="{{ 6 }}" min="5" max="8" />
+    <view class="h3">限制输入整数</view>
+    <oak-stepper value="{{ 1 }}" integer enable-input/>
+    <view class="h3">禁用状态</view>
+    <oak-stepper value="{{ 1 }}" disabled disabledOpacity="0.3"/>
+    <view class="h3">固定小数位数</view>
+    <oak-stepper value="{{ 1 }}" step="0.2" decimal-length="{{ 1 }}" />
+    <view class="h3">异步变更</view>
+    <oak-stepper
+        value="{{value}}"
+        async-change
+        bind:onPlus="onPlus"
+        bind:onMinus="onMinus"
+    />
+    <view class="h3">自定义样式</view>
+    <oak-stepper stepper-style="padding-left: 20px;" height="50" value="{{ 1 }}" icon-size="12" input-style="width: 60px;" minus-style="border-radius: 2px;" plus-style="border-radius: 2px;" button-size="32" />
+</view>

@@ -58,6 +58,9 @@
             <oak-list-item title="Label 操作标签"
                 title-class="item-title"
                 url="/pages/label/label" />
+            <oak-list-item title="Stepper 步进组件"
+                title-class="item-title"
+                url="/pages/stepper/stepper" />
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
