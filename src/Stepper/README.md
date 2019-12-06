@@ -21,42 +21,42 @@
 ## 代码演示
 ### 基本用法
 ```html
-  基础用法
+  <!-- 基础用法 -->
     <oak-stepper value="1" />
-  可以输入数值
+  <!-- 可以输入数值 -->
     <oak-stepper value="1" enableInput/>
-  步长设置
+  <!-- 步长设置 -->
     <oak-stepper value="1" step="2" />
-  固定小数位数
+  <!-- 固定小数位数 -->
     <oak-stepper value="1" step="0.2" decimal-length="1" />
-  限制输入范围
+  <!-- 限制输入范围 -->
     <oak-stepper value="6" min="5" max="8" />
-  限制输入整数
+  <!-- 限制输入整数 -->
     <oak-stepper value="1" integer enable-input/>
-  禁用状态
+  <!-- 禁用状态 -->
     <oak-stepper value="1" disabled/>
-  禁用灰度设置
+  <!-- 禁用灰度设置 -->
     <oak-stepper value="1" disabled disabledOpacity="0.6"/>
-  异步变更值
+  <!-- 异步变更值 -->
     <oak-stepper
         value="{{value}}"
         async-change
         bind:onPlus="onPlus"
         bind:onMinus="onMinus"
     />
-  设置模块高度
+  <!-- 设置模块高度 -->
     <oak-stepper height="40" value="1"/>
-  自定义模块样式
+  <!-- 自定义模块样式 -->
     <oak-stepper stepper-style="padding-left: 20px;" value="5"/>
-  自定义输入框样式
+  <!-- 自定义输入框样式 -->
     <oak-stepper value="1" input-style="width: 60px;"/>
-  自定义加减模块样式
+  <!-- 自定义加减模块样式 -->
     <oak-stepper
         value="1"
         icon-size="12"
         minus-style="border-radius: 2px;"
         plus-style="border-radius: 2px;"/>
-  自定义icon颜色
+  <!-- 自定义icon颜色 -->
     <oak-stepper
         value="1"
         active-color="#333"
