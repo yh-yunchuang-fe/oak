@@ -133,3 +133,12 @@
 | button-class | 作用于按钮 |
 
 
+
+
+
+
+
+### 以下 Doc 配置
+
+<!--PreviewGifLink: https://static.yonghuivip.com/wechatapp/static/gif/button_1.gif -->
+<!--PreviewQrCodeLink: https://static.yonghuivip.com/wechatapp/static/images/pages_button_index.png -->
