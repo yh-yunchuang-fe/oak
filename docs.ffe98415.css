@@ -876,4 +876,41 @@
   text-decoration: none;
   color: inherit;
 }
+.oak-component-preview {
+  position: fixed;
+  top: 130px;
+  right: 52px;
+  width: 300px;
+  background-color: transparent;
+}
+.oak-component-preview img {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  background-color: transparent;
+}
+.oak-component-preview-content {
+  position: absolute;
+  top: 25px;
+  left: 23px;
+  width: 85%;
+  height: 92%;
+  overflow-y: auto;
+  z-index: 1;
+  overflow-x: hidden;
+}
+.oak-component-preview .preview-img {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  min-height: 100%;
+  display: block;
+}
+.oak-component-preview-code {
+  position: fixed;
+  top: 65%;
+  right: 95px;
+  width: 200px;
+  display: block;
+}
 
