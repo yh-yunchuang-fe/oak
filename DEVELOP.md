@@ -76,7 +76,6 @@ $ npm run upload_static //上传静态文件目录
 - 在组件 Markdown 中添加以下文档
 
 ```text
-### 以下 Doc 配置
 <!--PreviewGifLink: https://static.yonghuivip.com/wechatapp/static/gif/button_1.gif --> // 录屏GIF
 <!--PreviewQrCodeLink: https://static.yonghuivip.com/wechatapp/static/images/pages_button_index.png --> // 小程序码
 ```
