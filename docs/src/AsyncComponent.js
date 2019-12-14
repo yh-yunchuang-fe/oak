@@ -65,7 +65,7 @@ export default function asyncComponent(importComponent) {
                     }
                     />
                 </Content>
-                { gifLink ? <Sider style={{ background: 'transparent',}} width={350} >
+                { gifLink ? <Sider style={{ background: 'transparent',}} width={'30vh'} >
                     <div className="oak-component-preview">
                         <img src="https://static.yonghuivip.com/wechatapp/static/images/iphone-xs-max.png" alt=""/>
                         <div className="oak-component-preview-content">
