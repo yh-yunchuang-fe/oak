@@ -14,8 +14,13 @@ Component({
         },
         rightWidth: {
             type: Number,
-            value: 80,
+            value: 100,
             optionalTypes: [Number]
+        },
+        options: {
+            type: Object,
+            value: { share: true, edit: true, del: true },
+            optionalTypes: [Object]
         }
     },
     attached() {
