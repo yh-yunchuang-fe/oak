@@ -23,6 +23,7 @@
 }
 .oak-avatar-circle {
   border-radius: 100%;
+  overflow: hidden;
 }
 .oak-avatar-name,
 .oak-avatar .oak-avatar-icon {

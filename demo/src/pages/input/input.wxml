@@ -29,7 +29,7 @@
         icon="member-center"
         icon-color="#1989fa"
         border
-        require
+        required
     ></oak-input>
     <oak-input 
         name="password"
@@ -43,7 +43,7 @@
         bind:blur="blur"
         bind:confirm="confirm"
         bind:keyboardheightchange="keyboardheightchange"
-        require
+        required
     >
     </oak-input>
 

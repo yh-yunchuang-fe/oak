@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Stepper",
+    "usingComponents": {
+        "oak-stepper": "/Stepper/stepper"
+    }
+}

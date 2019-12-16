@@ -122,3 +122,45 @@
         }
     }
 }
+
+.oak-component-preview {
+    position: fixed;
+    top: 10vh;
+    right: 50px;
+    width: 29vh;
+    background-color: transparent;
+
+    img {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        background-color: transparent;
+    }
+
+    &-content {
+        position: absolute;
+        top: 4%;
+        left: 8%;
+        width: 85%;
+        height: 92%;
+        overflow-y: auto;
+        z-index: 1;
+        overflow-x: hidden;
+    }
+
+    .preview-img {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        min-height: 100%;
+        display: block;
+    }
+}
+
+.oak-component-preview-code {
+    position: fixed;
+    top: 73vh;
+    right: ~'calc(50px + 8.5vh)';
+    width: 12vh;
+    display: block;
+}

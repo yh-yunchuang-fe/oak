@@ -1,0 +1,68 @@
+@import "Style/variable";
+
+.oak-notice-bar {
+    background-color: #fefcec;
+    height: 68rpx;
+    overflow: hidden;
+    font-size: 26rpx;
+    line-height: 68rpx;
+    color: @theme-color;
+    display: flex;
+    padding: 0 20rpx;
+
+    &-icon, &-action {
+        width: 30rpx;
+        height: 30rpx;
+        margin-right: 20rpx;
+    }
+
+    &-action {
+        margin-right: 0;
+    }
+
+    &-header {
+        display: flex;
+        align-items: center;
+
+        oak-icon {
+            margin-right: 20rpx;
+        }
+    }
+
+    &-body {
+        flex: 1;
+        width: 100%;
+        width: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &-swiper {
+        height: 100%;
+        flex: 1;
+    }
+    
+    &-swiper-item {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        -webkit-box-flex: 1;
+        height: inherit;
+        line-height: 68rpx;
+        box-sizing: border-box;
+    }
+    
+    &-wrapper {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &-footer {
+        display: flex;
+        align-items: center;
+    }
+}

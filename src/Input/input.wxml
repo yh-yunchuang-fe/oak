@@ -64,7 +64,7 @@
                 class="oak-input-content"
                 slot="title"
             >
-                <view class="oak-input-label {{require ? 'require' : ''}}">{{label}}</view>
+                <view class="oak-input-label {{required ? 'required' : ''}}">{{label}}</view>
                 <view class="oak-input-body">
                     <input 
                         class="{{error ? 'error' : ''}}"
