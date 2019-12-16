@@ -11,8 +11,22 @@
         >
             <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />
         </oak-list-item>
-        <view slot="right" class="cancel">
-            删除
-        </view>
+        <view slot="delete" class="cancel" bind:tap="delete">删除</view>
     </oak-slide-view>
+    <view class="h3">多操作按钮</view>
+    <oak-slide-view rightWidth="240">
+        <oak-list-item 
+            slot="left"
+            title="标题" 
+            icon="select"
+            border="{{false}}"
+            arrow="{{true}}" 
+        >
+            <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />
+        </oak-list-item>
+        <view slot="share" class="cancel" bind:tap="share">分享</view>
+        <view slot="edit" class="cancel" bind:tap="edit">编辑</view>
+        <view slot="delete" class="cancel" bind:tap="delete">删除</view>
+    </oak-slide-view>
+    <view class="h3">图标按钮</view>
 </view>

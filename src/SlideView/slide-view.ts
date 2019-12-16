@@ -14,7 +14,7 @@ Component({
         },
         rightWidth: {
             type: Number,
-            value: 100,
+            value: 80,
             optionalTypes: [Number]
         }
     },
@@ -39,8 +39,7 @@ Component({
 
         this.draging = false
         this.position = 'Right' // 'Left'
-
-        console.log(this)
+        this.transition = 'transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);'
     },
 
     data: {
@@ -102,14 +101,20 @@ Component({
 
             // 设置偏移量
             let offsetX = this.x2 - this.x1
+            let { rightWidth } = this.data
+            if(this.position === 'Down' || this.position === 'Up') {
+                return
+            }
 
             if (this.position === 'Right') {
                 offsetX = offsetX > 0 ? 0 : offsetX
-                offsetX = offsetX < -100 ? -100 : offsetX
+                offsetX = offsetX < -rightWidth ? -rightWidth : offsetX
             } else {
-                offsetX = offsetX - 100 < 0 ? offsetX - 100 : offsetX
+                offsetX = offsetX - rightWidth < 0 ? offsetX - rightWidth : offsetX
                 offsetX = offsetX > 0 ? 0 : offsetX
             }
+
+            if(Math.abs(offsetX) > rightWidth) return
 
             this.setData({ offsetX })
         },
@@ -130,6 +135,7 @@ Component({
                 return
             }
             const now: number = new Date().getTime()
+            let { rightWidth } = this.data
             if (
                 Math.abs(this.x1 - this.x2) > 0 ||
                 Math.abs(this.y1 - this.y2) > 0
@@ -146,14 +152,14 @@ Component({
 
                 let { offsetX } = this.data
 
-                offsetX = direction === 'Left' ? -100 : 0
+                offsetX = direction === 'Left' ? -rightWidth : 0
 
                 this.position = direction
                 this.setData({
                     offsetX,
-                    transition: 'transition: all 300ms ease;'
+                    transition: this.transition
                 })
-            } else if (now - this.lastTouchTime > 100) {
+            } else if (now - this.lastTouchTime > rightWidth) {
                 // 延迟响应
                 this.touchDelay = setTimeout(() => {
                     this.isSingleTap()
@@ -191,6 +197,13 @@ Component({
             console.log(offset)
         },
 
-        _swipeLeave() {}
+        _swipeLeave() {},
+
+        cancel() {
+            this.setData({
+                offsetX: 0,
+                transition: this.transition
+            })
+        }
     }
 })

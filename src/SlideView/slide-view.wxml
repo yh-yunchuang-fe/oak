@@ -12,8 +12,10 @@
         <view class="left">
             <slot name="left"/>
         </view>
-        <view class="right">
-            <slot name="right"/>
+        <view class="right" style="width: {{rightWidth}}px">
+            <slot name="share" class="share" bind:tap="cancel" />
+            <slot name="edit" bind:tap="cancel" />
+            <slot name="delete" bind:tap="cancel" />
         </view>
     </view>
 </view>

@@ -5,17 +5,28 @@
     overflow: hidden;
     .slide {
         .right {
+            display: flex;
             position: absolute;
             top: 0;
             right: 0;
-            width: 100px;
             height: 100%;
-            font-size: 32rpx;
+            font-size: 28rpx;
             transform: translate3d(100%, 0, 0);
             text-align: center;
             line-height: 90rpx;
-            background: red;
             color: #fff;
+            view {
+                flex: 1;
+            }
+            .share {
+                background: green;
+            }
+            .edit {
+                background: blue;
+            }
+            .cancel {
+                background: #FA5151;
+            }
         }
     }
 }
