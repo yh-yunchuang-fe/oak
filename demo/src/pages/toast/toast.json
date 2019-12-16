@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "YHUI",
+    "usingComponents": {
+        "oak-toast": "/Toast/toast",
+        "oak-icon": "/Icon/icon",
+        "oak-button": "/Button/button"
+    }
+}

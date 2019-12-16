@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- default -->
+    <view class="h3">基本用法</view>
+    <oak-button size='block' class="oak-button" data-type="base" bindtap="toastFn1">点击弹出</oak-button>
+
+    <view class="h3">换行显示</view>
+    <oak-button size='block' class="oak-button" data-type="base" bindtap="toastFn2">点击弹出</oak-button>
+
+    <view class="h3">连续提示</view>
+    <oak-button size='block' class="oak-button" data-type="base" bindtap="toastFn3">点击弹出</oak-button>
+
+    <oak-toast options="{{options}}" />
+</view>
