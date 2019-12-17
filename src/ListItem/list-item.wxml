@@ -60,7 +60,7 @@
 
     <oak-icon
         wx:if="{{arrow}}"
-        name="next"
+        name="right-light"
         color="{{arrowColor}}"
         size="{{arrowSize}}" />
     <slot wx:else name="icon-right" />

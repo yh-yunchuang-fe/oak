@@ -42,7 +42,13 @@ export default {
             }, {
                 name: 'Switch 开关',
                 path: '/Switch',
-            }, ]
+            }, {
+                name: 'Search Bar 搜索框',
+                path: '/SearchBar',
+            }, {
+                name: 'Input 输入框',
+                path: '/Input',
+            },]
         },{
             name: '展示',
             groups: [{
@@ -66,6 +72,9 @@ export default {
             },  {
                 name: 'Label 可操作标签',
                 path: '/Label'
+            }, {
+                name: 'Stepper 进步组件',
+                path: '/Stepper'
             },],
         }, {
             name: '反馈',
@@ -78,6 +87,9 @@ export default {
             }, {
                 name: 'Dialog 弹窗',
                 path: '/Dialog',
+            }, {
+                name: 'NoticeBar 通告栏',
+                path: '/NoticeBar',
             }, ],
         }],
     },

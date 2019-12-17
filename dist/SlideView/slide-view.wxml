@@ -1,0 +1,26 @@
+<wxs src="../wxs/base.wxs" module="Utils" />
+
+<view class="oak-slide-view">
+    <view 
+        class="slide" 
+        bind:touchstart="touchstart" 
+        bind:touchmove="touchmove" 
+        bind:touchcancel="touchcancel" 
+        bind:touchend="touchend"
+        style="transform:translateX({{offsetX}}px);{{transition}}"
+    >
+        <view class="left">
+            <slot name="left"/>
+        </view>
+        <view class="right" style="width: {{width}}px">
+            <block wx:if="{{custom}}">
+                <slot name="right" />
+            </block>
+            <block wx:else>
+                <view class="share" wx:if="{{share}}" bind:tap="onShare">分享</view>
+                <view class="edit" wx:if="{{edit}}" bind:tap="onEdit">编辑</view>
+                <view class="delete" wx:if="{{del}}" bind:tap="onDelete">删除</view>
+            </block>
+        </view>
+    </view>
+</view>

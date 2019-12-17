@@ -65,3 +65,17 @@ $ npm run build
 $ npm run docs
 ```
 
+## 组件文档添加预览图
+
+- 生成组件对应页面的小程序码并上传七牛
+```s
+$ npm run qrcode pages/button/index //生成小程序码
+$ npm run upload_static //上传静态文件目录
+```
+
+- 在组件 Markdown 中添加以下文档
+
+```text
+<!--PreviewGifLink: https://static.yonghuivip.com/wechatapp/static/gif/button_1.gif --> // 录屏GIF
+<!--PreviewQrCodeLink: https://static.yonghuivip.com/wechatapp/static/images/pages_button_index.png --> // 小程序码
+```

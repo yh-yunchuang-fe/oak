@@ -1,0 +1,166 @@
+@import (css) url('//at.alicdn.com/t/font_1245699_pqftkcghe8n.css');
+
+.layout {
+    position: relative;
+    color: #333;
+    background: #fff;
+}
+
+.nav {
+    height: 100vh;
+    width: 200px;
+    padding-bottom: 60px;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        width: 5px;
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 8px;
+        background-color: transparent;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background-color: rgba(69, 90, 100, .3);
+    }
+}
+
+.header {
+    padding: 0 50px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 2px 8px #f0f1f2;
+    z-index: 1;
+
+    h2 {
+        margin: 0;
+        padding: 0;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: 10px;
+        width: 40px;
+    }
+
+    a {
+        display: block;
+        color: inherit;
+    }
+
+    .github {
+        width: 40px;
+    }
+}
+
+.doc-body {
+    padding-top: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.doc-content {
+    padding: 0 50px 50px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #314659;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    background-color: #fff;
+    min-height: auto;
+
+    @import './markdown.less';
+
+}
+
+.doc-footer {
+    margin-top: 40px;
+    background: #f8f8f8;
+    text-align: center;
+    color: #999;
+}
+
+.yh-oak-code-block {
+    position: relative;
+
+    &-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+    }
+
+    &:hover &-icon {
+        opacity: 1;
+    }
+
+    .iconfont {
+        margin: 0 5px;
+    }
+
+    a {
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}
+
+.oak-component-preview {
+    position: fixed;
+    top: 10vh;
+    right: 50px;
+    width: 29vh;
+    background-color: transparent;
+
+    img {
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        background-color: transparent;
+    }
+
+    &-content {
+        position: absolute;
+        top: 4%;
+        left: 8%;
+        width: 85%;
+        height: 92%;
+        overflow-y: auto;
+        z-index: 1;
+        overflow-x: hidden;
+    }
+
+    .preview-img {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        min-height: 100%;
+        display: block;
+    }
+}
+
+.oak-component-preview-code {
+    position: fixed;
+    top: 73vh;
+    right: ~'calc(50px + 8.5vh)';
+    width: 12vh;
+    display: block;
+}

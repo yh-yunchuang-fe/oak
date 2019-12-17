@@ -32,10 +32,15 @@ Component({
             value: false,
             optionalTypes: [Boolean]
         },
-        async: {
-            type: Boolean,
-            value: false,
-            optionalTypes: [Boolean]
+        // async: {
+        //     type: Boolean,
+        //     value: false,
+        //     optionalTypes: [Boolean]
+        // },
+        type: {
+            type: String,
+            value: 'text', // text、oak icon
+            optionalTypes: [String]
         }
     },
     attached() {
@@ -226,9 +231,6 @@ Component({
         _swipeLeave() {},
 
         _cancel() {
-            // if(this.data.async) {
-                
-            // }
             this.setData({
                 offsetX: 0,
                 transition: this.transition

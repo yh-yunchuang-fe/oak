@@ -1,3 +1,4 @@
 .oak-collapse.border {
   border-bottom: 1rpx solid rgba(221, 221, 221, 0.8);
-  border-top: 1rpx solid rgba(221, 221, 221, 0.8); }
+  border-top: 1rpx solid rgba(221, 221, 221, 0.8);
+}

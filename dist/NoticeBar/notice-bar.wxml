@@ -1,0 +1,38 @@
+<view class="oak-notice-bar basic-class" wx:if="{{ visible }}">
+    <view class="oak-notice-bar-header header-class">
+        <oak-icon name="{{ icon.name }}" color="{{ icon.color }}" size="{{ icon.size }}" wx:if="{{ icon }}" />
+        <block wx:else>
+            <slot name="header"></slot>
+        </block>
+    </view>
+    <view class="oak-notice-bar-body body-class">
+        <block wx:if="{{ content.length }}">
+            <swiper class="oak-notice-bar-swiper"
+                circular="{{ circular }}"
+                autoplay
+                vertical
+                easing-function="easeInOutCubic"
+                interval="{{ interval }}"
+                duration="{{ duration }}">
+                <swiper-item class="oak-notice-bar-swiper-item"
+                    bindtap="noticItemClick"
+                    data-index="{{ index }}"
+                    wx:for="{{ content }}"
+                    wx:key="index"
+                    wx:if="{{ item.value }}">
+                    <view class="oak-notice-bar-wrapper">
+                        <text class="oak-notice-bar-type" wx:if="{{ item.type }}">{{ item.type }}</text>
+                        {{ item.value }}
+                    </view>
+                </swiper-item>
+            </swiper>
+        </block>
+        <slot></slot>
+    </view>
+    <view class="oak-notice-bar-footer footer-class" catchtap="onAction" wx:if="{{ mode }}">
+        <oak-icon name="{{ action.name }}" size="{{ action.size }}" color="{{ action.color }}" wx:if="{{ action }}" />
+        <block wx:else>
+            <slot name="footer"></slot>
+        </block>
+    </view>
+</view>

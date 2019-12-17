@@ -1,0 +1,60 @@
+@import "Style/variable";
+
+.container {
+    position: relative;
+    padding: @wrap-padding;
+    padding-bottom: 80rpx;
+    box-sizing: border-box;
+
+    .title {
+        margin: 40rpx 20rpx 20rpx;
+        font-size: 50rpx;
+        font-weight: bold;
+    }
+
+    .subtitle {
+        color: @txt-info;
+        font-size: @font-size-subtitle;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .col-title {
+        font-size: @font-size-btn-block;
+        font-weight: bold;
+    }
+
+    .logo {
+        margin-right: 20rpx;
+        width: 80rpx;
+        vertical-align: middle;
+    }
+
+    // .item-title {
+    //     color: @txt-info;
+    // }
+
+    oak-collapse {
+        margin-top: 40rpx;
+        display: block;
+    }
+
+    oak-collapse-item {
+        margin-bottom: 40rpx;
+        display: block;
+    }
+
+    .version {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 10rpx 0;
+        width: 100%;
+        background-color: #f0f0f0;
+        text-align: center;
+        font-size: @font-small;
+        color: @txt-info;
+    }
+}

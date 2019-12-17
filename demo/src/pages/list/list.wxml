@@ -22,7 +22,7 @@
     </view>
     <view class="h3">左侧图标</view>
     <view class="row">
-        <oak-list-item icon="location-small"
+        <oak-list-item icon="home"
             title="列表" />
         <oak-list-item border="{{ false }}"
             icon="https://static.yonghuivip.com/0fe90feecdec371ac2fc4203a47e1f4b-3726c86359d4d738142342f3904409f6.png"
@@ -82,7 +82,7 @@
     <view class="row">
         <oak-list-item arrow="{{false}}">
             <view slot="title" class="oak-list-title">自定义标题</view>
-            <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />
+            <oak-icon name="praise" color="#FD7622" size="26rpx" slot="icon-right" />
         </oak-list-item>
         <oak-list-item arrow="{{false}}">
             <view slot="title" class="oak-list-title-1">自定义标题</view>
