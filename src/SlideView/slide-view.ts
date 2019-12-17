@@ -7,20 +7,35 @@ Component({
     behaviors: [BasicBehavior],
     properties: {
         // 这里定义了innerText属性，属性值可以在组件使用时指定
-        innerText: {
-            type: String,
-            value: 'default value',
-            optionalTypes: [String]
+        share: {
+            type: Boolean,
+            value: false,
+            optionalTypes: [Boolean]
+        },
+        edit: {
+            type: Boolean,
+            value: false,
+            optionalTypes: [Boolean]
+        },
+        del: {
+            type: Boolean,
+            value: true,
+            optionalTypes: [Boolean]
         },
         rightWidth: {
             type: Number,
-            value: 100,
+            value: 80,
             optionalTypes: [Number]
         },
-        options: {
-            type: Object,
-            value: { share: true, edit: true, del: true },
-            optionalTypes: [Object]
+        custom: {
+            type: Boolean,
+            value: false,
+            optionalTypes: [Boolean]
+        },
+        async: {
+            type: Boolean,
+            value: false,
+            optionalTypes: [Boolean]
         }
     },
     attached() {
@@ -44,14 +59,20 @@ Component({
 
         this.draging = false
         this.position = 'Right' // 'Left'
+        // 过渡效果
         this.transition = 'transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);'
+
+        // 初始化 right width
+        const { rightWidth, custom, share, edit, del } = this.data
+        const width = custom ? rightWidth : (share + edit + del) * 80
+        this.setData({width})
     },
 
     data: {
         // 这里是一些组件内部数据
-        someData: {},
         offsetX: 0,
-        transition: ''
+        transition: '',
+        width: 160
     },
 
     methods: {
@@ -106,7 +127,7 @@ Component({
 
             // 设置偏移量
             let offsetX = this.x2 - this.x1
-            let { rightWidth } = this.data
+            let { width: rightWidth } = this.data
             if(this.position === 'Down' || this.position === 'Up') {
                 return
             }
@@ -140,7 +161,7 @@ Component({
                 return
             }
             const now: number = new Date().getTime()
-            let { rightWidth } = this.data
+            let { width: rightWidth } = this.data
             if (
                 Math.abs(this.x1 - this.x2) > 0 ||
                 Math.abs(this.y1 - this.y2) > 0
@@ -204,11 +225,29 @@ Component({
 
         _swipeLeave() {},
 
-        cancel() {
+        _cancel() {
+            // if(this.data.async) {
+                
+            // }
             this.setData({
                 offsetX: 0,
                 transition: this.transition
             })
+        },
+
+        onShare() {
+            this._cancel()
+            this.triggerEvent('share')
+        },
+
+        onEdit() {
+            this._cancel()
+            this.triggerEvent('edit')
+        },
+
+        onDelete() {
+            this._cancel()
+            this.triggerEvent('delete')
         }
     }
 })

@@ -12,13 +12,15 @@
         <view class="left">
             <slot name="left"/>
         </view>
-        <view class="right" style="width: {{rightWidth}}px">
-            <!-- <slot name="share" class="share" bind:tap="cancel" />
-            <slot name="edit" bind:tap="cancel" />
-            <slot name="delete" bind:tap="cancel" /> -->
-            <view class="share" bind:tap="cancel">分享</view>
-            <view class="edit" bind:tap="cancel">编辑</view>
-            <view class="delete" bind:tap="cancel">删除</view>
+        <view class="right" style="width: {{width}}px">
+            <block wx:if="{{custom}}">
+                <slot name="right" />
+            </block>
+            <block wx:else>
+                <view class="share" wx:if="{{share}}" bind:tap="onShare">分享</view>
+                <view class="edit" wx:if="{{edit}}" bind:tap="onEdit">编辑</view>
+                <view class="delete" wx:if="{{del}}" bind:tap="onDelete">删除</view>
+            </block>
         </view>
     </view>
 </view>

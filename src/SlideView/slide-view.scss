@@ -15,8 +15,12 @@
             text-align: center;
             line-height: 90rpx;
             color: #fff;
-            view {
+            & > view {
+                display: flex;
                 flex: 1;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
             }
             .share {
                 background: #ddd;

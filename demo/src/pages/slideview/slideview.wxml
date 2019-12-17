@@ -3,14 +3,14 @@
 
     <!-- 基础用法 -->
     <view class="h3">基础用法</view>
-    <oak-slide-view delete="delete">
-        <oak-list-item slot="left" title="标题" border="{{false}}"></oak-list-item>
+    <oak-slide-view>
+        <oak-list-item slot="left" title="基础用法" border="{{false}}"></oak-list-item>
     </oak-slide-view>
 
     <!-- 自定义内容 -->
     <view class="h3">自定义内容</view>
     <oak-slide-view>
-        <oak-list-item  slot="left" title="标题" border="{{false}}" arrow="{{false}}" content="显示内容">
+        <oak-list-item slot="left" title="自定义内容" border="{{false}}" arrow="{{false}}" content="自定义内容">
             <oak-icon name="select" color="#FD7622" size="34rpx" slot="icon-right" style="margin-top: -4px" color="#999" />
         </oak-list-item>
     </oak-slide-view>
@@ -18,26 +18,43 @@
     <!-- 自定义图标 -->
     <view class="h3">自定义图标</view>
     <oak-slide-view>
-        <oak-list-item slot="left" title="标题" icon="select" border="{{false}}" arrow="{{true}}">
+        <oak-list-item slot="left" title="自定义图标" icon="select" border="{{false}}" arrow="{{true}}">
             <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />
         </oak-list-item>
-        <view slot="delete" class="cancel" bind:tap="delete">删除</view>
     </oak-slide-view>
 
     <!-- 多操作按钮 -->
     <view class="h3">多操作按钮</view>
-    <oak-slide-view rightWidth="240" options="{share: true, edit: true, del: true}">
-        <oak-list-item slot="left" title="标题" icon="select" border="{{false}}" arrow="{{true}}">
+    <oak-slide-view 
+        share="{{true}}"
+        edit="{{true}}"
+        del="{{true}}"
+        bind:share="share" 
+        bind:edit="edit" 
+        bind:delete="delete">
+        <oak-list-item slot="left" title="多操作按钮" icon="select" border="{{false}}" arrow="{{true}}">
             <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />
         </oak-list-item>
-        <view slot="share" class="cancel" bind:tap="share">分享</view>
-        <view slot="edit" class="cancel" bind:tap="edit">编辑</view>
-        <view slot="delete" class="cancel" bind:tap="delete">删除</view>
     </oak-slide-view>
 
     <!-- 图标按钮 -->
-    <view class="h3">图标按钮</view>
-
+    <view class="h3">自定义按钮</view>
+    <oak-slide-view custom="{{true}}" rightWidth="{{240}}">
+        <oak-list-item slot="left" title="自定义按钮" icon="select" border="{{false}}" arrow="{{true}}">
+            <oak-icon name="select" color="#FD7622" size="26rpx" slot="icon-right" />
+        </oak-list-item>
+        <view slot="right">
+            <view class="custom" bind:tap="share">
+                <oak-icon name="share" color="#FD7622" size="42rpx" slot="icon-right" ext-class="icon" />
+            </view>
+            <view class="custom" bind:tap="edit">
+                <oak-icon name="select" color="#FD7622" size="42rpx" slot="icon-right" ext-class="icon" />
+            </view>
+            <view class="custom" bind:tap="delete">
+                <oak-icon name="trash" color="#FD7622" size="42rpx" slot="icon-right" ext-class="icon" />
+            </view>
+        </view>
+    </oak-slide-view>
     <!-- Slideview 组合 -->
     <view class="h3">Slideview 组合</view>
 </view>
