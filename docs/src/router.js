@@ -17,7 +17,7 @@ const createRoutes = () => {
             if (!iscomponent) {
                 component = asyncComponent(() => import('../markdown/' + path + '.md'))
             } else {
-                component = asyncComponent(() => import('../../src/' + path + '/README.md'))
+                component = asyncComponent(() => import('../../packages/' + path + '/README.md'))
             }
             route.push({
                 ...page,

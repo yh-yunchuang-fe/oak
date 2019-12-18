@@ -19,9 +19,9 @@ const tsProject = ts.createProject(path.resolve(__dirname, '../tsconfig.json'))
 
 // 匹配文件路径
 const paths = {
-    lessPath: ['../src/**/*.less', '../src/**/*.wxss'],
-    tsPath: isProd ? ['../src/**/*.ts'] : ['../demo/src/**/*.ts', '../src/**/*.ts'],
-    copy: ['../src/**/*.wxml', '../src/**/*.json', '../src/**/*.wxs'],
+    lessPath: ['../packages/**/*.less', '../packages/**/*.wxss'],
+    tsPath: isProd ? ['../packages/**/*.ts'] : ['../demo/src/**/*.ts', '../packages/**/*.ts'],
+    copy: ['../packages/**/*.wxml', '../packages/**/*.json', '../packages/**/*.wxs'],
     demoStyle: ['../demo/src/**/*.less', '../demo/src/**/*.wxss', '!../demo/src/dist'],
     democopy: ['../demo/src/**/*.wxml', '../demo/src/**/*.json', '../demo/src/**/*.wxs', '!../demo/src/dist'],
     demoimages: ['../demo/src/images/*.*'],
@@ -32,7 +32,7 @@ const DEST = isProd ? '../dist' : '../demo/dist/'
 const DemoDest = '../demo/dist/'
 
 function _join(dirname) {
-    return path.join(__dirname, '../src', dirname)
+    return path.join(__dirname, '../packages', dirname)
 }
 
 const uglifyOpts = {
@@ -88,7 +88,7 @@ const clean = dest => del([dest], {
 
 
 function srcStyle() {
-    return styles(paths.lessPath, DEST, '../src')
+    return styles(paths.lessPath, DEST, '../packages')
 }
 
 function taskScripts() {

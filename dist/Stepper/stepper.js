@@ -6,6 +6,7 @@ Component({
             value: null,
             observer(newValue) {
                 this.setData({ _value: newValue });
+                this.isDisabled();
             },
         },
         min: {
@@ -135,6 +136,7 @@ Component({
             const diff = type === 'minus' ? -this.data.step : +this.data.step;
             const _value = this.add(+this.data._value, diff);
             this.changeValue(_value);
+            this.isDisabled();
         },
         onTap(event) {
             const { type } = event.currentTarget.dataset;
