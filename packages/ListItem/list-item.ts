@@ -1,4 +1,4 @@
-import BasicBehavior from 'Mixins/basic'
+import BasicBehavior from '../mixins/basic'
 
 declare interface Icon {
     name?: string;

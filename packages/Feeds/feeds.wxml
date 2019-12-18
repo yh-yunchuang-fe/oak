@@ -1,4 +1,4 @@
-<wxs src="WXS/base.wxs" module="Utils" />
+<wxs src="../wxs/base.wxs" module="Utils" />
 
 <view class="{{ Utils.classNames('oak-feeds', { oak_feeds_border: border}) }}  oak-feeds-no{{childNum}}" style="border-radius: {{radius}};margin: {{margin}};border-color: {{borderColor}};">
     <slot></slot>

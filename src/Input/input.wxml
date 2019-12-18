@@ -1,0 +1,113 @@
+<block wx:if="{{type === 'textarea'}}">
+    <!-- 自动换行 -->
+    <view class="oak-input-textarea ext-class {{border ? 'border' : ''}}">
+        <!-- left -->
+        <view class="oak-input-textarea-label">
+            <oak-icon 
+                ext-class="oak-input-textarea-icon"
+                name="{{icon}}" 
+                color="{{iconColor}}"
+                size="{{iconSize}}"
+            ></oak-icon>
+            <text>{{label}}</text>
+        </view>
+        <!-- body -->
+        <view class="oak-input-textarea-body">
+            <textarea
+                value="{{value}}"
+                placeholder="{{placeholder}}"
+                placeholder-style="{{placeholderStyle}}"
+                placeholder-class="{{placeholderClass}}"
+                disabled="{{disabled}}"
+                maxlength="{{maxlength}}"
+                focus="{{focus}}"
+                auto-height="{{autosize}}"
+                fixed="{{fixed}}"
+                cursor-spacing="{{cursorSpacing}}"
+                cursor="{{cursor}}"
+                selection-start="{{selectionStart}}"
+                selection-end="{{selectionEnd}}"
+                adjust-position="{{adjustPosition}}"
+                hold-keyboard="{{holdKeyboard}}"
+                bindfocus="focus"
+                bindblur="blur"
+                bindinput="change"
+                bindconfirm="confirm"
+                bindkeyboardheightchange="keyboardheightchange"
+            ></textarea>
+        </view>
+        <!-- right -->
+        <view class="oak-input-textarea-right">
+            <oak-icon 
+                wx:if="{{clearable&&focused&&value}}"
+                ext-class="oak-input-clear"
+                name="close-fill" 
+                color="#cdcdcd"
+                size="34rpx"
+                bindtap="clear" 
+            ></oak-icon>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <!-- input -->
+    <view class="oak-input ext-class">
+        <oak-list-item
+            icon="{{icon}}"
+            icon-color="{{iconColor}}"
+            icon-size="{{iconSize}}"
+            arrow="{{false}}"
+            border="{{border}}"
+            button="{{button}}"
+        >
+            <view
+                class="oak-input-content"
+                slot="title"
+            >
+                <view class="oak-input-label {{required ? 'required' : ''}}">{{label}}</view>
+                <view class="oak-input-body">
+                    <input 
+                        class="{{error ? 'error' : ''}}"
+                        value="{{value}}"
+                        type="{{type === 'password' ? 'text' : type}}"
+                        password="{{type === 'password'}}"
+                        placeholder="{{placeholder}}"
+                        disabled="{{disabled}}"
+                        autosize="{{autosize}}"
+                        placeholder-style="{{placeholderStyle}}"
+                        placeholder-class="{{placeholderClass}}"
+                        focus="{{focus}}"
+                        confirm-type="{{confirmType}}"
+                        confirm-hold="{{confirmHold}}"
+                        cursor="{{cursor}}"
+                        selection-start="{{selectionStart}}"
+                        selection-end="{{selectionEnd}}"
+                        adjust-position="{{adjustPosition}}"
+                        hold-keyboard="{{holdkeyboard}}"
+                        maxlength="{{maxlength}}"
+                        cursor-spacing="{{cursorSpacing}}"
+                        clearable="{{clearable}}"
+                        error="{{error}}"
+                        rules="{{rules}}"
+                        bindfocus="focus"
+                        bindinput="change"
+                        bindblur="blur"
+                        bindconfirm="confirm"
+                        bindkeyboardheightchange="keyboardheightchange"
+                    />
+                    <text wx:if="{{error&&value}}" class="oak-input-err-msg">{{errorMessage}}</text>
+                </view>
+                <oak-icon 
+                    wx:if="{{clearable&&focused&&value}}"
+                    ext-class="oak-input-clear"
+                    name="close-facet" 
+                    color="#cdcdcd"
+                    size="34rpx"
+                    bindtap="clear" 
+                ></oak-icon>
+            </view>
+
+            <slot slot="button" name="button"></slot>
+        </oak-list-item>
+    </view>
+</block>

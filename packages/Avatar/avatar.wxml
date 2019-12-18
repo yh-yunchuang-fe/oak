@@ -1,4 +1,4 @@
-<wxs src="WXS/base.wxs"
+<wxs src="../wxs/base.wxs"
     module="Utils" />
 <wxs module="Avatar">
     function getStyle(size) {

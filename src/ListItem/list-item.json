@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "oak-icon": "../Icon/icon",
+    "oak-button": "../Button/button"
+  },
+  "component": true
+}

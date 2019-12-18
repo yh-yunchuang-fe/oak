@@ -1,4 +1,4 @@
-<wxs src="WXS/base.wxs" module="Utils" />
+<wxs src="../wxs/base.wxs" module="Utils" />
 
 <view class="oak-checkbox-group ext-class">
     <slot></slot>

@@ -1,4 +1,4 @@
-import BasicBehavior from 'Mixins/basic'
+import BasicBehavior from '../mixins/basic'
 
 const animationMap: { [key: string]: { in: string; out: string } } = {
     left: {

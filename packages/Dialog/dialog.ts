@@ -1,6 +1,6 @@
-import BasicBehavior from 'Mixins/basic'
-import OpenTypeBehavior from 'Mixins/open-type'
-import ButtonBehavior from 'Mixins/open-type'
+import BasicBehavior from '../mixins/basic'
+import OpenTypeBehavior from '../mixins/open-type'
+import ButtonBehavior from '../mixins/open-type'
 
 Component({
     behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
