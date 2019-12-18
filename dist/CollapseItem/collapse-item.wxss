@@ -7,7 +7,7 @@
   border-bottom: 1rpx solid transparent;
 }
 .oak-collapse-item.border {
-  border-bottom: 1rpx solid rgba(221, 221, 221, 0.8);
+  border-bottom: 1px solid rgba(221, 221, 221, 0.8);
 }
 .oak-collapse-item.disabled {
   opacity: 0.8;
@@ -48,5 +48,5 @@
   overflow: hidden;
 }
 .oak-collapse-item-content.show {
-  border-top: 1rpx solid rgba(221, 221, 221, 0.8);
+  border-top: 1px solid rgba(221, 221, 221, 0.8);
 }

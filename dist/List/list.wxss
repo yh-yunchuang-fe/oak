@@ -7,5 +7,5 @@
   color: #999;
 }
 .oak-list.border {
-  border: 1rpx solid rgba(221, 221, 221, 0.8);
+  border: 1px solid rgba(221, 221, 221, 0.8);
 }

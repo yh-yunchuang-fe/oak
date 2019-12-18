@@ -45,7 +45,7 @@
   border: none;
 }
 .oak-action-sheet .oak-button:not(:first-child) .oak-action-sheet-item {
-  border-top: 1rpx solid rgba(221, 221, 221, 0.8);
+  border-top: 1px solid rgba(221, 221, 221, 0.8);
 }
 .oak-action-sheet .oak-action-sheet-subtitle {
   position: relative;
