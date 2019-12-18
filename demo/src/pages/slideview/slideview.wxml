@@ -4,7 +4,7 @@
     <!-- 基础用法 -->
     <view class="h3">基础用法</view>
     <oak-slide-view bind:delete="delete">
-        <oak-list-item slot="left" title="基础用法" border="{{false}}"></oak-list-item>
+        <view slot="left" class="item">滑动我</view>
     </oak-slide-view>
 
     <!-- 自定义内容 -->
@@ -23,6 +23,15 @@
     <view class="h3">图标按钮</view>
     <oak-slide-view type="icon" share="{{true}}" edit="{{true}}" bind:share="share" bind:edit="edit" bind:delete="delete">
         <oak-list-item slot="left" title="图标按钮" icon="home" border="{{false}}" arrow="{{true}}" />
+        <oak-icon slot="share"  name="share" color="#aaaaaa" size="32rpx" />
+        <oak-icon slot="edit"   name="edit"  color="#4facfe" size="32rpx" />
+        <oak-icon slot="delete" name="trash" color="#FA5151" size="32rpx" />
+    </oak-slide-view>
+
+    <!-- 自定义按钮样式 -->
+    <view class="h3">自定义按钮样式</view>
+    <oak-slide-view type="icon" share="{{true}}" edit="{{true}}" bind:share="share" bind:edit="edit" bind:delete="delete" icon-class="myicon">
+        <oak-list-item slot="left" title="自定义按钮样式" icon="home" border="{{false}}" arrow="{{true}}" />
         <oak-icon slot="share"  name="share" color="#aaaaaa" size="32rpx" />
         <oak-icon slot="edit"   name="edit"  color="#4facfe" size="32rpx" />
         <oak-icon slot="delete" name="trash" color="#FA5151" size="32rpx" />

@@ -45,15 +45,15 @@
     <block wx:elif="{{type === 'icon' && !custom}}">
         <view wx:if="{{share}}" class="item" catch:tap="onShare" 
             style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 0)}}px);{{transition}}">
-            <view class="icon"><slot name="share" /></view>
+            <view class="icon icon-class"><slot name="share" /></view>
         </view>
         <view wx:if="{{edit}}" class="item" catch:tap="onEdit" 
             style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 1)}}px);{{transition}}">
-            <view class="icon"><slot name="edit" /></view>
+            <view class="icon icon-class"><slot name="edit" /></view>
         </view>
         <view wx:if="{{del}}" class="item" catch:tap="onDelete" 
             style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 2)}}px);{{transition}}">
-            <view class="icon"><slot name="delete" /></view>
+            <view class="icon icon-class"><slot name="delete" /></view>
         </view>
     </block>
 </view>

@@ -79,7 +79,7 @@ Component({
         transition: '',
         width: 160
     },
-
+    externalClasses: ['icon-class'],
     methods: {
         // 这里是一个自定义方法
         touchstart(e) {
