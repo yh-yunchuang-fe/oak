@@ -1,0 +1,40 @@
+@import "Style/variable";
+
+.oak-steps {
+    padding: 30rpx;
+    background-color: #fff;
+    display: flex;
+    &-content-horizontal, &-tags-horizontal {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &-content-vertical {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+        .oak-steps-content-item {
+            margin-left: 20rpx;
+            padding: 20rpx 20rpx 20rpx 0;
+            border-top: 1rpx solid #ccc;
+        }
+        .oak-steps-content-item:last-child {
+            border-bottom: 1rpx solid #ccc;
+        }
+    }
+    &-tags-vertical {
+        display: flex;
+        flex-direction: column;
+        .oak-steps-tags-item {
+            flex: 1;
+            padding-top: 20rpx;
+        }
+    }
+    
+    &-content-item {
+        display: flex;
+        flex-direction: column;
+        
+    }
+}

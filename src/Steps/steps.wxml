@@ -1,0 +1,11 @@
+<view class="oak-steps ext-class" style="flex-direction: {{direction === 'vertical' ? 'row-reverse' : 'column'}}; {{stepsStyle}}">
+  <view class="oak-steps-content-{{direction}}">
+    <view class="oak-steps-content-item" wx:for="{{steps}}" wx:key="{{index}}">
+      <span >{{item.title}}</span>
+      <span>{{item.desc}}</span>
+    </view>
+  </view>
+  <view class="oak-steps-tags-{{direction}}">
+    <view class="oak-steps-tags-item" wx:for="{{steps}}" wx:key="{{index}}">🐩</view>
+  </view>
+</view>

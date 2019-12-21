@@ -19,6 +19,7 @@
     "pages/checkbox/checkbox",
     "pages/input/input",
     "pages/stepper/stepper",
+    "pages/steps/steps",
     "pages/searchBar/searchBar",
     "pages/noticeBar/noticeBar"
   ],
