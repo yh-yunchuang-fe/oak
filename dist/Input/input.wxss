@@ -83,10 +83,7 @@
   color: #f5222d;
 }
 .oak-input-content .oak-input-clear {
-  position: absolute;
-  right: -20rpx;
-  top: 50%;
-  transform: translate(0, -50%);
+  margin: -20rpx;
   padding: 20rpx;
   z-index: 0;
 }
