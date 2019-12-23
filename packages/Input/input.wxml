@@ -3,7 +3,7 @@
     <view class="oak-input-textarea ext-class {{border ? 'border' : ''}}">
         <!-- left -->
         <view class="oak-input-textarea-label" wx:if="{{label || icon}}">
-            <oak-icon 
+            <oak-icon
                 ext-class="oak-input-textarea-icon"
                 name="{{icon}}" 
                 color="{{iconColor}}"
@@ -14,6 +14,7 @@
         <!-- body -->
         <view class="oak-input-textarea-body">
             <textarea
+                class="input-class"
                 value="{{value}}"
                 placeholder="{{placeholder}}"
                 placeholder-style="{{placeholderStyle}}"
@@ -67,7 +68,7 @@
                 <view class="oak-input-label {{required ? 'required' : ''}}" wx:if="{{label}}">{{label}}</view>
                 <view class="oak-input-body">
                     <input 
-                        class="{{error ? 'error' : ''}}"
+                        class="input-class {{error ? 'error' : ''}}"
                         value="{{value}}"
                         type="{{type === 'password' ? 'text' : type}}"
                         password="{{type === 'password'}}"
