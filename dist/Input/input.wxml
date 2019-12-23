@@ -99,7 +99,7 @@
                 </view>
                 <oak-icon 
                     wx:if="{{clearable&&focused&&value}}"
-                    ext-class="oak-input-clear"
+                    class="oak-input-clear"
                     name="close-facet" 
                     color="#cdcdcd"
                     size="34rpx"
