@@ -1,0 +1,59 @@
+@import 'Style/variable';
+@import 'Style/mixin';
+
+.oak-slide-view {
+    position: relative;
+    overflow: hidden;
+    .slide {
+        .right {
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            font-size: 28rpx;
+            transform: translate3d(100%, 0, 0);
+            text-align: center;
+            line-height: 90rpx;
+            color: #fff;
+            & > view {
+                display: flex;
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .item {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        font-size: 28rpx;
+        width: 80px;
+        text-align: center;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        &.share {
+            background: #d2d2d2;
+        }
+        &.edit {
+            background: #4facfe;
+        }
+        &.delete {
+            background: #fa5151;
+        }
+        .icon {
+            width: 84rpx;
+            height: 84rpx;
+            line-height: 84rpx;
+            background: #fff;
+            border-radius: 50%;
+        }
+    }
+}

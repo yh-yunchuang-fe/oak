@@ -18,6 +18,7 @@
     "pages/label/label",
     "pages/checkbox/checkbox",
     "pages/input/input",
+    "pages/slideview/slideview",
     "pages/stepper/stepper",
     "pages/searchBar/searchBar",
     "pages/noticeBar/noticeBar"
