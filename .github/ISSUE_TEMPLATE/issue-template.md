@@ -1,13 +1,11 @@
 ---
 name: Issue Template
-about: Issue Template
+about: Before you create a issue, read this.
 title: ''
 labels: ''
 assignees: ''
 
 ---
-
-## Prerequisites
 
 Please answer the following questions for yourself before submitting an issue. **YOU MAY DELETE THE PREREQUISITES SECTION.**
 
