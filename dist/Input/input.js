@@ -96,6 +96,10 @@ Component({
             type: Boolean,
             value: false
         },
+        clearIconColor: {
+            type: String,
+            value: '#cdcdcd'
+        },
         error: {
             type: Boolean,
             value: false
@@ -151,7 +155,9 @@ Component({
             this.triggerEvent('keyboardheightchange', Object.assign({}, e));
         },
         clear() {
-            this.setData({ value: '' });
+            this.setData({ value: '' }, () => {
+                this.triggerEvent('clear');
+            });
         }
     }
 });

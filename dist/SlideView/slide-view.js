@@ -30,10 +30,10 @@ Component({
             value: false,
             optionalTypes: [Boolean]
         },
-        async: {
-            type: Boolean,
-            value: false,
-            optionalTypes: [Boolean]
+        type: {
+            type: String,
+            value: 'text',
+            optionalTypes: [String]
         }
     },
     attached() {
@@ -56,6 +56,7 @@ Component({
         transition: '',
         width: 160
     },
+    externalClasses: ['icon-class'],
     methods: {
         touchstart(e) {
             console.log('[Toucher.touchstart]', e.touches);
