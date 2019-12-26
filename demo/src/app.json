@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/treeSelect/treeSelect",
     "pages/index/index",
     "pages/switch/switch",
     "pages/dialog/dialog",
