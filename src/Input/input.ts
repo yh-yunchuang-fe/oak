@@ -1,4 +1,5 @@
 Component({
+    behaviors: ['wx://form-field'],
     options: {
         multipleSlots: true
     },
