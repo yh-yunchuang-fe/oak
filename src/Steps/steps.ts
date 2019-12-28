@@ -1,12 +1,15 @@
 Component({
+    options: {
+        multipleSlots: true // 在组件定义时的选项中启用多slot支持
+    },
     properties: {
         icon: {
             type: String,
-            value: 'checked'
+            value: 'checkbox'
         },
         color: {
             type: String,
-            value: '#ccc'
+            value: ''
         },
         activeIndex: {
             type: Number,
@@ -14,9 +17,17 @@ Component({
         },
         activeIcon: {
             type: String,
-            value: 'checked'
+            value: 'choice-facet'
         },
         activeColor: {
+            type: String,
+            value: '#FD7622'
+        },
+        inActiveIcon: {
+            type: String,
+            value: ''
+        },
+        inActiveColor: {
             type: String,
             value: ''
         },

@@ -1,5 +1,4 @@
-# Stepper 进步组件
-步进
+# Steps 步骤条
 
 ## 使用
 
@@ -8,85 +7,75 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-stepper": "path/to/your/oakui/Stepper/stepper"
+  "oak-steps": "path/to/your/oakui/Steps/steps"
 }
 ```
 
 在页面使用
 ```html
 <!-- use in `page.wxml` -->
-<oak-stepper value="3"/>
+<oak-steps steps="{{steps}}" activeIndex="{{steps.length}}"/>
 ```
 
 ## 代码演示
 ### 基本用法
 ```html
-  <!-- 基础用法 -->
-    <oak-stepper value="1" />
-  <!-- 可以输入数值 -->
-    <oak-stepper value="1" enableInput/>
-  <!-- 步长设置 -->
-    <oak-stepper value="1" step="2" />
-  <!-- 固定小数位数 -->
-    <oak-stepper value="1" step="0.2" decimal-length="1" />
-  <!-- 限制输入范围 -->
-    <oak-stepper value="6" min="5" max="8" />
-  <!-- 限制输入整数 -->
-    <oak-stepper value="1" integer enable-input/>
-  <!-- 禁用状态 -->
-    <oak-stepper value="1" disabled/>
-  <!-- 禁用灰度设置 -->
-    <oak-stepper value="1" disabled disabledOpacity="0.6"/>
-  <!-- 异步变更值 -->
-    <oak-stepper
-        value="{{value}}"
-        async-change
-        bind:onPlus="onPlus"
-        bind:onMinus="onMinus"
-    />
-  <!-- 设置模块高度 -->
-    <oak-stepper height="40" value="1"/>
-  <!-- 自定义模块样式 -->
-    <oak-stepper stepper-style="padding-left: 20px;" value="5"/>
-  <!-- 自定义输入框样式 -->
-    <oak-stepper value="1" input-style="width: 60px;"/>
-  <!-- 自定义加减模块样式 -->
-    <oak-stepper
-        value="1"
-        icon-size="12"
-        minus-style="border-radius: 2px;"
-        plus-style="border-radius: 2px;"/>
-  <!-- 自定义icon颜色 -->
-    <oak-stepper
-        value="1"
-        active-color="#333"
-        disable-color="#999"
-        min="1"/>
+  <!-- 基础用法 都是默认数据-->
+    <oak-steps />
+  <!-- 可以设置步骤条的方向 -->
+    <oak-steps direction="vertical"/>
+  <!-- 自定义step icon -->
+    <oak-steps icon="praise" activeIcon="praise"
+    inActiveIcon="trample"/>
+  <!-- 自定义step icon颜色 -->
+    <oak-steps color="#666" activeColor="#FFC343"
+    inActiveColor="#ddd"/>
+  <!-- 自定义内容 steps list 含有唯一标示slot属性-->
+    <oak-steps steps="{{steps}}" direction="vertical">
+      <view wx:for="{{steps}}" slot="{{item.slot}}" class="statusList">
+        <view class="statusTop">
+          <span class="status">{{item.status}}</span>
+          <span class="time">{{item.time}}</span>
+        </view>
+        <span class="desc">{{item.desc}}</span>
+      </view>
+    </oak-steps>
 ```
 
 ## APIS
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| value | 值 | `Number` | null |
-| min | 下限值  | `Number` | null |
-| max | 上线值 | `Number` | null |
-| step | 步值  | `Number` | 1 |
-| enableInput | 能否输入 | `Boolean` | false |
-| integer | 键盘能否包含小数点，默认包含 | `Boolean` | false |
-| disabled | 模块禁止 | `Boolean` | false |
-| disabledOpacity | 模块禁止灰度 | `Number` | 0.4 |
-| asyncChange | 异步修改value | `Boolean` | false |
-| decimalLength | value值小数点长度 | `Number` | null |
-| height | 模块大小 | `Number` | null |
-| activeColor | 可点击icon颜色 | `String` | `#FD7622` |
-| disableColor | 禁止点击icon颜色 | `String` | `#333333` |
-| iconSize | icon大小 | `Number` | 14 |
-| stepperStyle | 整个模块样式 | `String` | `` |
-| minusStyle | 减模块样式 | `String` | `` |
-| inputStyle | 输入模块样式 | `String` | `` |
-| plusStyle | 加模块样式 | `String` | `` |
+| direction | 步骤条方向 | `String` | `horizontal` |
+| steps | 步骤content | `Array` | `含有title，desc的数组` |
+| icon | 执行过的步骤标志icon  | `String` | `checkbox` |
+| color | 执行过的步骤颜色 | `String` | `默认与activeColor一致` |
+| activeIcon | 当前步骤icon  | `String` | `choice-facet` |
+| activeColor | 当前步骤颜色 | `String` | `#FD7622` |
+| inActiveIcon | 未完成步骤icon | `String` | `与icon一致` |
+| inActiveColor | 未完成步骤颜色 | `String` | `#ccc` |
+| activeIndex | 当前步骤下标 | `Number` | 2 |
+| stepsStyle | 模块样式 | `String` | `` |
 
+## 特别说明
+
+``` js
+  //默认 
+  const steps = [
+    {title: '步骤一', desc: '信息描述'},
+    {title: '步骤二', desc: '信息描述'},
+    {title: '步骤三', desc: '信息描述'},
+    {title: '步骤四', desc: '信息描述'},
+  ]
+  // 如果要自定义内容样式，必须含有唯一标示属性slot，用法如上(自定义内容)
+  const steps = [
+    {slot: '123455', status: '退款成功', time: '2019-12-24 11:13', desc: '退款'},
+    {slot: '223455', status: '退款成功', time: '2019-12-24 11:13', desc: '退款'},
+    {slot: '233455', status: '退款成功', time: '2019-12-24 11:13', desc: '退款'},
+    {slot: '323455', status: '退款成功', time: '2019-12-24 11:13', desc: '退款'},
+    {slot: '323453', status: '退款成功', time: '2019-12-24 11:13', desc: '退款'},
+  ]
+```
 
 ## 外部样式类
 
