@@ -20,6 +20,7 @@
     "pages/input/input",
     "pages/slideview/slideview",
     "pages/stepper/stepper",
+    "pages/steps/steps",
     "pages/searchBar/searchBar",
     "pages/noticeBar/noticeBar"
   ],

@@ -61,6 +61,9 @@
             <oak-list-item title="Stepper 步进组件"
                 title-class="item-title"
                 url="/pages/stepper/stepper" />
+            <oak-list-item title="Steps 步骤条"
+                title-class="item-title"
+                url="/pages/steps/steps"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
