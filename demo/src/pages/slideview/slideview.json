@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "Slideview 滑动操作",
+    "usingComponents": {
+        "oak-slide-view": "/SlideView/slide-view",
+        "oak-list-item": "/ListItem/list-item",
+        "oak-list": "/List/list",
+        "oak-button": "/Button/button",
+        "oak-icon": "/Icon/icon"
+    }
+}

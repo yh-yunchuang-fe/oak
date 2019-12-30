@@ -1,4 +1,5 @@
 Component({
+    behaviors: ['wx://form-field'],
     options: {
         multipleSlots: true
     },
@@ -97,6 +98,10 @@ Component({
             type: Boolean,
             value: false
         },
+        clearIconColor: {
+            type: String,
+            value: '#cdcdcd'
+        },
         error: {
             type: Boolean,
             value: false
@@ -122,37 +127,39 @@ Component({
             value: false
         }
     },
-    externalClasses: ['ext-class'],
+    externalClasses: ['ext-class', 'input-class'],
     data: {
         focused: false
     },
     methods: {
-        focus(e) {
+        focus(e): void {
             if (!this.data.focused) {
                 this.setData({ focused: true })
             }
-            this.triggerEvent('focus', e)
+            this.triggerEvent('focus', {...e})
         },
-        change(e) {
+        change(e): void {
             let { value = '' } = e.detail || {}
-            this.setData({ value }, () => {
-                this.triggerEvent('change', e)
+            this.setData({ value }, (): void => {
+                this.triggerEvent('change', {...e})
             })
         },
-        blur(e) {
+        blur(e): void {
             if (this.data.focused) {
                 this.setData({ focused: false })
             }
-            this.triggerEvent('blur', e)
+            this.triggerEvent('blur', {...e})
         },
-        confirm(e) {
-            this.triggerEvent('confirm', e)
+        confirm(e): void {
+            this.triggerEvent('confirm', {...e})
         },
-        keyboardheightchange(e) {
-            this.triggerEvent('keyboardheightchange', e)
+        keyboardheightchange(e): void {
+            this.triggerEvent('keyboardheightchange', {...e})
         },
-        clear() {
-            this.setData({ value: '' })
+        clear(): void {
+            this.setData({ value: '' }, (): void => {
+                this.triggerEvent('clear')
+            })
         }
     }
 })

@@ -1,0 +1,59 @@
+<wxs src="../wxs/base.wxs" module="Utils" />
+
+<wxs module="SlideUtil">
+    function offsetX(share, edit, del, offsetX, index) {
+        var buttons = [share, edit, del]
+        var idx = []
+        for(var i = 0; i < buttons.length; i++) {
+            if(buttons[i] === true) idx.push(i)
+        }
+        if(idx.length === 1) return offsetX + 80
+        if(idx.length === 2) {
+            if(idx[0] === index) return offsetX + 80
+            return offsetX / 2 + 80
+        }
+        if(idx.length === 3) {
+            if(idx[0] === index) return offsetX + 80
+            if(idx[1] === index) return offsetX / 3 * 2 + 80
+            return offsetX / 3 * 1 + 80
+        }
+    }
+    module.exports = { offsetX: offsetX }
+</wxs>
+
+<view class="oak-slide-view">
+    <view 
+        class="slide" 
+        bind:touchstart="touchstart"
+        bind:touchmove="touchmove"
+        bind:touchcancel="touchcancel"
+        bind:touchend="touchend"
+        style="transform:translateX({{offsetX}}px);{{transition}}">
+        <view class="left"><slot name="left"/></view>
+        <view wx:if="{{custom}}" class="right" style="width: {{rightWidth}}px">
+            <slot name="right" />
+        </view>
+    </view>
+    <block wx:if="{{type === 'text' && !custom}}">
+        <view class="item share" wx:if="{{share}}" catch:tap="onShare" 
+            style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 0)}}px);{{transition}}">分享</view>
+        <view class="item edit" wx:if="{{edit}}" catch:tap="onEdit" 
+            style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 1)}}px);{{transition}}">编辑</view>
+        <view class="item delete" wx:if="{{del}}" catch:tap="onDelete" 
+            style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 2)}}px);{{transition}}">删除</view>
+    </block>
+    <block wx:elif="{{type === 'icon' && !custom}}">
+        <view wx:if="{{share}}" class="item" catch:tap="onShare" 
+            style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 0)}}px);{{transition}}">
+            <view class="icon icon-class"><slot name="share" /></view>
+        </view>
+        <view wx:if="{{edit}}" class="item" catch:tap="onEdit" 
+            style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 1)}}px);{{transition}}">
+            <view class="icon icon-class"><slot name="edit" /></view>
+        </view>
+        <view wx:if="{{del}}" class="item" catch:tap="onDelete" 
+            style="transform:translateX({{SlideUtil.offsetX(share, edit, del, offsetX, 2)}}px);{{transition}}">
+            <view class="icon icon-class"><slot name="delete" /></view>
+        </view>
+    </block>
+</view>
