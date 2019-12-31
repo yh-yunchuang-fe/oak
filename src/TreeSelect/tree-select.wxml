@@ -1,5 +1,37 @@
-<wxs src="WXS/base.wxs" module="Utils" />
+<wxs src="WXS/base.wxs"
+    module="Utils" />
 
 <view class="oak-tree-select">
+    <scroll-view class="oak-tree-select-labels label-class"
+        scroll-y
+        style="width: {{labelWidth}};">
+        <veiw bind:tap="onLabelTap"
+            data-index="{{index}}"
+            class="oak-tree-select-label-item label-item-class {{ index === labelIndex ? 'oak-tree-select-label-item-active label-active-class' : ''}} {{ item.disabled ? 'label-disabled-class oak-tree-select-label-item-disabled' : ''}}"
+            wx:for="{{treeData}}"
+            wx:key="key">{{item.label}}</veiw>
+    </scroll-view>
+    <scroll-view class="oak-tree-select-content content-class"
+        scroll-y>
+        <slot />
 
+        <view bind:tap="onContentItemTap"
+            data-index="{{index}}"
+            data-data="{{item}}"
+            class="oak-tree-select-item"
+            wx:for="{{ treeData[labelIndex].children }}"
+            wx:key="key"
+        >
+            <view
+                class="item-class oak-tree-select-item-title {{ item.disabled ? 'item-disabled-class oak-tree-select-item-disabled' : ''}}">
+                {{item.label}}</view>
+            <oak-icon
+                class="oak-tree-select-item-icon"
+                wx:if="{{ !item.disabled }}"
+                name="choice-facet"
+                color="#FD7622"
+                size="32rpx"
+                slot="icon-right" />
+        </view>
+    </scroll-view>
 </view>

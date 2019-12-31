@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view class="container">
-    <oak-tree-select />
+    <oak-tree-select tree-data="{{treeData}}" item-class="" />
 </view>
