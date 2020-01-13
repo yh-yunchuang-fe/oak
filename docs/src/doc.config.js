@@ -93,6 +93,9 @@ export default {
             }, {
                 name: 'NoticeBar 通告栏',
                 path: '/NoticeBar',
+            }, {
+                name: 'SlideView 滑动单元',
+                path: '/SlideView',
             }, ],
         }],
     },

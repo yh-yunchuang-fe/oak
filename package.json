@@ -1,13 +1,13 @@
 {
   "name": "@yhyc/oak-weui",
-  "version": "0.0.2-beta.11",
+  "version": "0.0.2-beta.12",
   "description": "A Wechat App UI Lib.",
   "miniprogram": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cross-env NODE_ENV=development gulp --gulpfile __build__/gulpfile.babel.js",
     "packages": "cross-env NODE_ENV=development gulp packages --gulpfile __build__/gulpfile.babel.js",
-    "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style && npm run release &&  npm run packages",
+    "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style && npm run release &&  npm run packages && npm run docs",
     "new": "node __build__/create",
     "qrcode": "node __build__/weapp_qrcode",
     "docs": "cross-env NODE_ENV=production webpack --color --config __build__/webpack.site.prod.js && gh-pages -d docs/dist",
