@@ -46,7 +46,8 @@
         "no-extra-boolean-cast": "off",
         "no-useless-escape": "off",
         "@typescript-eslint/ban-types": "warn",
-        "@typescript-eslint/no-non-null-assertion": "warn"
+        "@typescript-eslint/no-non-null-assertion": "warn",
+        "@typescript-eslint/interface-name-prefix": 0
     },
     "globals": {
         "wx": true,

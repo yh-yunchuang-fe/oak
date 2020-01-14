@@ -1,7 +1,7 @@
 {
   "usingComponents": {
     "oak-icon": "/Icon/icon",
-    "toast": "./toast"
+    "toast": "./toast/index"
   },
   "component": true
 }

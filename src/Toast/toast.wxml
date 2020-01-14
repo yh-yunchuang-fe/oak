@@ -10,10 +10,7 @@
     }
 </wxs>
 
-<view class="oak-toast" wx:if="{{show}}">
-    <view animation="{{animation}}" class="oak-toast-title" style="{{width ? 'max-width:' + width + 'rpx' : ''}}">
-        <oak-icon wx:if="{{icon}}" name="{{icon}}" />
-        {{title}}
-    </view>
-    <view class="oak-toast-mask" wx:if="{{mask}}"></view>
+<view class="oak-toast" wx:if="{{toasts.length}}">
+    <toast class="oak-toast-wrap" wx:for="{{toasts}}" wx:key="id" options="{{item}}" bind:clearToast="clearToast" />
+    <view class="oak-toast-mask" wx:if="{{ToastUtil.isMask(toasts)}}"></view>
 </view>

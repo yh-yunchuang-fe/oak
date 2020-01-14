@@ -1,22 +1,6 @@
 <wxs src="WXS/base.wxs" module="Utils" />
 
-<wxs module="ToastUtil">
-    isMask = function(toasts) {
-        for(var i = 0; i < toasts.length; i++) {
-            if(toasts[i].mask) return true
-        }
-    }
-    module.exports = {
-        isMask: isMask,
-    }
-</wxs>
-
-<view class="oak-toast" wx:if="{{toasts.length}}">
-    <block wx:for="{{toasts}}">
-        <view class="oak-toast-title" style="max-width: {{item.maxWidth}}">
-            <oak-icon wx:if="{{item.icon}}" name="{{item.icon}}" />
-            {{item.title}}
-        </view>
-    </block>
-    <view class="oak-toast-mask" wx:if="{{mask}}"></view>
+<view animation="{{animation}}" class="oak-toast-title" style="max-width: {{maxWidth}}">
+    <oak-icon wx:if="{{icon}}" name="{{icon}}" />
+    {{title}}
 </view>
