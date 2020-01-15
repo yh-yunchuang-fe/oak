@@ -89,8 +89,8 @@ Component({
             this.eventMark = e
             this.x1 = e.touches[0].pageX
             this.y1 = e.touches[0].pageY
-            this.x2 = 0
-            this.y2 = 0
+            this.x2 = e.touches[0].pageX
+            this.y2 = e.touches[0].pageY
             this.isActive = true
             this.touchStartTime = new Date().getTime()
 
@@ -129,7 +129,7 @@ Component({
             this.y2 = e.touches[0].pageY
 
             clearTimeout(this.longTap)
-
+            
             // 设置偏移量
             let offsetX = this.x2 - this.x1
             let { width: rightWidth } = this.data

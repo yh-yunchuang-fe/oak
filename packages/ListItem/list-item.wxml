@@ -27,13 +27,14 @@
             style="{{ Fn.imgStyle(imgWidth, imgHeight) }}"
             wx:if="{{image}}"
             src="{{image}}" />
-        <oak-icon wx:elif="{{_icon || icon}}"
+        <oak-icon wx:else="{{_icon || icon}}"
             name="{{_icon || icon}}"
             color="{{iconColor}}"
             size="{{iconSize}}" />
-        <slot wx:else name="icon" />
     </view>
-    <view class="oak-list-item-body">
+    <slot wx:else name="icon" />
+
+    <view class="oak-list-item-body body-class">
         <view
             wx:if="{{title}}"
             class="{{ Utils.classNames('oak-list-item-title', {nowrap: nowrap || coustonNowrap.title}) }} title-class"
@@ -46,6 +47,8 @@
             style="{{Fn.nowrapLine(coustonNowrap.subTitle)}}"
             wx:if="{{subTitle}}">{{subTitle}}</view>
         <slot wx:else name="subTitle" />
+
+        <slot></slot>
     </view>
 
     <view
