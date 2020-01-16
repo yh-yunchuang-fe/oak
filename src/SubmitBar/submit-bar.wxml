@@ -1,0 +1,22 @@
+<wxs src="WXS/base.wxs"
+    module="Utils" />
+
+<view class="oak-submit-bar ext-class">
+    <view class="oak-submit-bar-body body-class">
+        <slot></slot>
+        <view class="oak-submit-bar-body-content">
+            <view class="oak-submit-bar-body-price-section">
+                <text class="oak-submit-bar-label">{{label}}</text>
+                <text></text>
+                <text></text>
+                <text></text>
+            </view>
+        </view>
+    </view>
+    <oak-button class="oak-submit-bar--button"
+        button-class="button-class"
+        type="{{buttonType}}"
+        size="large"
+        shape="{{buttonShape}}"
+        color="{{buttonColor}}">{{buttonText}}</oak-button>
+</view>

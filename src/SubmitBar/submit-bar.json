@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "oak-button": "../Button/button"
+  },
+  "component": true
+}

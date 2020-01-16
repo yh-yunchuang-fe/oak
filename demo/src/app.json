@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/submitBar/submitBar",
     "pages/index/index",
     "pages/switch/switch",
     "pages/dialog/dialog",

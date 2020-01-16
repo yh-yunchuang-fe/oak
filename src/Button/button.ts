@@ -43,6 +43,10 @@ Component({
             type: Boolean,
             value: false,
         },
+        color: {
+            type: String,
+            value: null,
+        }
     },
     externalClasses: ['button-class', 'hover-class', 'loading-class'],
 })

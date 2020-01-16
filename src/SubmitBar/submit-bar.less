@@ -1,0 +1,29 @@
+@import "Style/variable";
+@import "Style/mixin";
+
+.oak-submit-bar {
+    padding: @wrap-padding-s;
+    width: 100%;
+    height: @submit-bar-height;
+    background-color: @default-bg;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: @txt-default;
+
+    &-body {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        &-content {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+    }
+
+    &-label {
+        font-size: @font-size-sub;
+    }
+}
