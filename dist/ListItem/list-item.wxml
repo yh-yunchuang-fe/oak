@@ -22,12 +22,14 @@
 </wxs>
 
 <view class="{{ Utils.classNames('oak-list-item', {border: border}) }} ext-class">
-    <view class="oak-list-item-left" wx:if="{{icon || image}}">
+    <view class="oak-list-item-left label-class" wx:if="{{icon || image}}">
         <image class="{{ Utils.classNames('oak-list-item-image', {large: title && subTitle }) }}"
             style="{{ Fn.imgStyle(imgWidth, imgHeight) }}"
             wx:if="{{image}}"
             src="{{image}}" />
-        <oak-icon wx:else="{{_icon || icon}}"
+        <oak-icon
+            class="label-oak-icon"
+            wx:else="{{_icon || icon}}"
             name="{{_icon || icon}}"
             color="{{iconColor}}"
             size="{{iconSize}}" />

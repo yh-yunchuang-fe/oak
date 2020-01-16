@@ -111,5 +111,5 @@ Component({
             value: 'navigate',
         }
     },
-    externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class', 'body-class'],
+    externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class', 'body-class', 'label-class'],
 });
