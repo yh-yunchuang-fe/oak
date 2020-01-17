@@ -1,6 +1,9 @@
 import BasicBehavior from '../mixins/basic';
 Component({
     behaviors: [BasicBehavior],
+    options: {
+        multipleSlots: true,
+    },
     properties: {
         price: {
             type: Number,
@@ -73,7 +76,11 @@ Component({
         },
         tipColor: {
             type: Boolean,
-            value: ''
+            value: false
+        },
+        safeAreaInsetBottom: {
+            type: Boolean,
+            value: false
         }
     },
     data: {
