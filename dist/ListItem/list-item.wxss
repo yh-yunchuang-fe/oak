@@ -26,7 +26,8 @@
 .oak-list-item-left {
   margin-right: 20rpx;
 }
-.oak-list-item .label-oak-icon {
+.oak-list-item .label-oak-icon,
+.oak-list-item .arrow-oak-icon {
   display: flex;
   align-items: center;
 }

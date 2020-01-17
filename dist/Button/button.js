@@ -42,6 +42,18 @@ Component({
             type: Boolean,
             value: false,
         },
+        height: {
+            type: String,
+            value: null,
+        },
+        width: {
+            type: String,
+            value: null,
+        },
+        color: {
+            type: String,
+            value: null,
+        }
     },
     externalClasses: ['button-class', 'hover-class', 'loading-class'],
 });

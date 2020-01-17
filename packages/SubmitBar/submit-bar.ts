@@ -1,4 +1,4 @@
-import BasicBehavior from 'Mixins/basic'
+import BasicBehavior from '../mixins/basic'
 Component({
     behaviors: [BasicBehavior],
     properties: {

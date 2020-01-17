@@ -1,4 +1,4 @@
-<wxs src="WXS/base.wxs"
+<wxs src="../wxs/base.wxs"
     module="Utils" />
 
 <oak-list-item title="{{tip}}"

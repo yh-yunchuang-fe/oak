@@ -1,4 +1,4 @@
-import BasicBehavior from 'Mixins/basic'
+import BasicBehavior from '../mixins/basic';
 Component({
     behaviors: [BasicBehavior],
     properties: {
@@ -29,7 +29,7 @@ Component({
         },
         buttonColor: {
             type: String,
-            value: '' // linear-gradient(to right, #FFA133, #F76B1C);
+            value: ''
         },
         currency: {
             type: String,
@@ -75,14 +75,10 @@ Component({
             type: Boolean,
             value: ''
         }
-        // decimalLength: {}
     },
     data: {
-        // 这里是一些组件内部数据
         someData: {}
     },
-    methods: {
-
-    },
+    methods: {},
     externalClasses: ['bar-class', 'body-class', 'button-class', 'label-class', 'currency-class', 'price-class', 'sub-class'],
-})
+});

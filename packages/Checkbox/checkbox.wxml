@@ -6,6 +6,7 @@
 
     <oak-icon 
         size="{{size}}"
+        class="oak-icon"
         ext-class="oak-checkbox-icon"
         name="{{value ? icon.active : disabled ? icon.disabled : icon.normal}}" 
         color="{{value ? disabled ? disabledColor : color : disabledColor}}" 

@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/submitBar/submitBar",
     "pages/index/index",
     "pages/switch/switch",
     "pages/dialog/dialog",
@@ -22,6 +21,7 @@
     "pages/slideview/slideview",
     "pages/stepper/stepper",
     "pages/steps/steps",
+    "pages/submitBar/submitBar",
     "pages/searchBar/searchBar",
     "pages/noticeBar/noticeBar"
   ],

@@ -188,6 +188,7 @@
 | img-width | 图片宽度 | `String` | - |
 | img-height | 图片高度 | `String` | - |
 | button | 按钮名称 | `String` | - |
+| background-color | 背景颜色 | `String` | - |
 | nowrap | 文本单行超出截断，对 `title`, `sub-title`, `content`生效 | `Boolen` | `false` |
 | couston-nowrap | 对 `title`, `sub-title`, `content`自定义截断行数, 如: `{title: 1, subTitle: 2, content: 1}`。不能与`nowrap`混用 | `Object` | `{}` |
 

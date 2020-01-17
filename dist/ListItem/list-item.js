@@ -67,6 +67,14 @@ Component({
             value: '#999',
             optionalTypes: [String],
         },
+        titleColor: {
+            type: String,
+            value: '',
+        },
+        backgroundColor: {
+            type: String,
+            value: '',
+        },
         iconSize: {
             type: String,
             value: '32rpx',

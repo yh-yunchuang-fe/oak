@@ -1,6 +1,7 @@
 {
     "navigationBarTitleText": "SubmitBar 提交订单栏",
     "usingComponents": {
-        "oak-submit-bar": "/SubmitBar/submit-bar"
+        "oak-submit-bar": "/SubmitBar/submit-bar",
+        "oak-checkbox": "/Checkbox/checkbox"
     }
 }
