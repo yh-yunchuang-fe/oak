@@ -84,12 +84,10 @@ Component({
         }
         // decimalLength: {}
     },
-    data: {
-        // 这里是一些组件内部数据
-        someData: {}
-    },
     methods: {
-
+        onSubmitTap(e) {
+            this.triggerEvent('submit', e)
+        }
     },
     externalClasses: ['bar-class', 'body-class', 'button-class', 'label-class', 'currency-class', 'price-class', 'sub-class'],
 })

@@ -28,7 +28,9 @@
                     wx:if="{{subTitle}}">{{subTitle}}</view>
             </view>
         </view>
-        <oak-button class="oak-submit-bar-button"
+        <oak-button
+            bind:tap="onSubmitTap" 
+            class="oak-submit-bar-button"
             button-class="button-class"
             type="{{buttonType}}"
             size="large"

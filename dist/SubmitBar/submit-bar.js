@@ -83,9 +83,10 @@ Component({
             value: false
         }
     },
-    data: {
-        someData: {}
+    methods: {
+        onSubmitTap(e) {
+            this.triggerEvent('submit', e);
+        }
     },
-    methods: {},
     externalClasses: ['bar-class', 'body-class', 'button-class', 'label-class', 'currency-class', 'price-class', 'sub-class'],
 });
