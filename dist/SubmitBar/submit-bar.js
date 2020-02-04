@@ -85,6 +85,8 @@ Component({
     },
     methods: {
         onSubmitTap(e) {
+            if (this.data.loading || this.data.disabled)
+                return;
             this.triggerEvent('submit', e);
         }
     },

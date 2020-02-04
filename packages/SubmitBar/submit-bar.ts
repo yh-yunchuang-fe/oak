@@ -85,7 +85,8 @@ Component({
         // decimalLength: {}
     },
     methods: {
-        onSubmitTap(e) {
+        onSubmitTap(e): void {
+            if (this.data.loading || this.data.disabled) return
             this.triggerEvent('submit', e)
         }
     },
