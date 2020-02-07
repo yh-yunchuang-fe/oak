@@ -10,11 +10,21 @@ Component({
         },
         min: {
             type: Number,
-            value: null
+            value: null,
+            observer(nval, oval) {
+                if (nval !== oval) {
+                    this.isDisabled()
+                }
+            }
         },
         max: {
             type: Number,
-            value: null
+            value: null,
+            observer(nval, oval) {
+                if (nval !== oval) {
+                    this.isDisabled()
+                }
+            }
         },
         step: {
             type: Number,
