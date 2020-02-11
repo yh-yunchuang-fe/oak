@@ -24,7 +24,7 @@
   color: #333;
 }
 .oak-submit-bar.areabottom {
-  padding-bottom: 40rpx;
+  padding-bottom: 60rpx;
 }
 .oak-submit-bar-tip {
   line-height: 1;
