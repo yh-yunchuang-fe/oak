@@ -13,9 +13,6 @@
   right: 0;
   background: rgba(0, 0, 0, 0.75);
 }
-.areabottom {
-  padding-bottom: 40rpx;
-}
 .oak-submit-bar {
   padding: 20rpx;
   width: 100%;
@@ -25,6 +22,9 @@
   align-items: center;
   box-sizing: border-box;
   color: #333;
+}
+.oak-submit-bar.areabottom {
+  padding-bottom: 40rpx;
 }
 .oak-submit-bar-tip {
   line-height: 1;

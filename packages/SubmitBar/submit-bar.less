@@ -1,11 +1,6 @@
 @import "../style/variable";
 @import "../style/mixin";
 
-
-.areabottom {
-    padding-bottom: @iphonex-padding;
-}
-
 .oak-submit-bar {
     padding: @wrap-padding-s;
     width: 100%;
@@ -15,6 +10,10 @@
     align-items: center;
     box-sizing: border-box;
     color: @txt-default;
+
+    &.areabottom {
+        padding-bottom: @iphonex-padding;
+    }
 
     &-tip {
         line-height: 1;
