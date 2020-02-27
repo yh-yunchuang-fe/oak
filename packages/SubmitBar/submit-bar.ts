@@ -14,7 +14,7 @@ Component({
             type: String,
             value: '合计: '
         },
-        labelSuffix: {
+        suffixLabel: {
             type: String,
             value: ''
         },
@@ -75,8 +75,8 @@ Component({
             value: false
         },
         tipColor: {
-            type: Boolean,
-            value: false
+            type: String,
+            value: ''
         },
         safeAreaInsetBottom: {
             type: Boolean,
