@@ -14,11 +14,19 @@ Component({
             value: false,
             optionalTypes: [String]
         },
-        iconPrefix: {
+        iconPosition: {
             type: String,
-            value: 'oak-icon'
+            value: 'front', // front: 前置；rear: 后置
         },
         icon: {
+            type: String,
+            value: ''
+        },
+        iconSize: {
+            type: String,
+            value: ''
+        },
+        iconColor: {
             type: String,
             value: ''
         },
@@ -27,7 +35,7 @@ Component({
             value: ''
         }
     },
-    externalClasses: ['ext-class'],
+    externalClasses: ['ext-class', 'checked-class'],
     data: {
     }
 })

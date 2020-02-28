@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/label/label",
     "pages/index/index",
     "pages/switch/switch",
     "pages/dialog/dialog",
@@ -15,7 +16,6 @@
     "pages/avatar/avatar",
     "pages/badge/badge",
     "pages/icon/index",
-    "pages/label/label",
     "pages/checkbox/checkbox",
     "pages/input/input",
     "pages/slideview/slideview",

@@ -1,15 +1,29 @@
 <!--index.wxml-->
 <view class="container">
     <view class="h3">默认展示</view>
-    <oak-label>我是选中状态</oak-label>
+    <view class="row">
+        <oak-label>默认状态</oak-label>
+    </view>
     <view class="h3">选中状态</view>
-    <oak-label checked>选中状态</oak-label>
+    <view class="row">
+        <oak-label checked>选中状态</oak-label>
+        <oak-label checked checked-class="checked-diy" >自定义选中状态</oak-label>
+    </view>
     <view class="h3">单个文字</view>
-    <oak-label>牛</oak-label>
+    <view class="row">
+        <oak-label>牛</oak-label>
+    </view>
     <view class="h3">带icon</view>
-    <oak-label icon="estimate-facet">评论</oak-label>
+    <view class="row">
+        <oak-label icon="estimate-facet">评论</oak-label>
+        <oak-label icon="edit" icon-position="rear">修改</oak-label>
+    </view>
     <view class="h3">自定义 Style</view>
-    <oak-label styles="color: red">我</oak-label>
+    <view class="row">
+        <oak-label styles="color: red">我</oak-label>
+    </view>
     <view class="h3">超长文本</view>
-    <oak-label>我是超长文本我是超长文本我是超长文本我是超长文本我是超长文本</oak-label>
+    <view class="row">
+        <oak-label>我是超长文本我是超长文本我是超长文本我是超长文本我是超长文本</oak-label>
+    </view>
 </view>
