@@ -1,0 +1,67 @@
+@import "Style/variable";
+@import "Style/mixin";
+
+
+.areabottom {
+    padding-bottom: @iphonex-padding;
+}
+
+.oak-submit-bar {
+    padding: @wrap-padding-s;
+    width: 100%;
+    height: @submit-bar-height;
+    background-color: @default-bg;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: @txt-default;
+
+    &-tip {
+        line-height: 1;
+        min-height: auto;
+
+        &-title {
+            font-size: @font-size-base;
+            color: @txt-warning;
+        }
+    }
+
+    &-body {
+        display: flex;
+        align-items: center;
+        flex: 1;
+
+        &-content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+    }
+
+    &-label {
+        margin-right: 4rpx;
+        font-size: @font-size-sub;
+    }
+
+    &-currency,
+    &-price {
+        margin-right: 4rpx;
+        font-weight: bolder;
+        color: #FC4915;
+    }
+
+    &-currency {
+        font-size: @font-size-base;
+    }
+
+    &-sub-title {
+        // margin-top: @list-padding-s;
+        font-size: @font-size-subtitle;
+        color: @txt-info;
+    }
+
+    &-button {
+        min-width: 194rpx;
+        display: block;
+    }
+}

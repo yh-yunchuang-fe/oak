@@ -30,10 +30,10 @@ Component({
             value: false,
             optionalTypes: [Boolean]
         },
-        async: {
-            type: Boolean,
-            value: false,
-            optionalTypes: [Boolean]
+        type: {
+            type: String,
+            value: 'text',
+            optionalTypes: [String]
         }
     },
     attached() {
@@ -56,6 +56,7 @@ Component({
         transition: '',
         width: 160
     },
+    externalClasses: ['icon-class'],
     methods: {
         touchstart(e) {
             console.log('[Toucher.touchstart]', e.touches);
@@ -64,8 +65,8 @@ Component({
             this.eventMark = e;
             this.x1 = e.touches[0].pageX;
             this.y1 = e.touches[0].pageY;
-            this.x2 = 0;
-            this.y2 = 0;
+            this.x2 = e.touches[0].pageX;
+            this.y2 = e.touches[0].pageY;
             this.isActive = true;
             this.touchStartTime = new Date().getTime();
             this.triggerEvent('onSwipeStart', e);

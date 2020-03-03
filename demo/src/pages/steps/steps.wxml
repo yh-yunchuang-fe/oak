@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">基础用法</view>
+    <oak-steps/>
+    <view class="h3">垂直方向</view>
+    <oak-steps direction="vertical"/>
+    <view class="h3">自定义内容</view>
+    <oak-steps steps="{{steps}}" direction="vertical">
+        <view wx:for="{{steps}}" slot="{{item.slot}}" class="statusList">
+            <view class="statusTop">
+                <span class="status">{{item.status}}</span>
+                <span class="time">{{item.time}}</span>
+            </view>
+            <span class="desc">{{item.desc}}</span>
+        </view>
+    </oak-steps>
+    <view class="h3">自定义step icon</view>
+    <oak-steps icon="praise" activeIcon="praise" inActiveIcon="trample"/>
+    <view class="h3">自定义step icon颜色</view>
+    <oak-steps color="#666" activeColor="#FFC343" inActiveColor="#ddd"/>
+</view>

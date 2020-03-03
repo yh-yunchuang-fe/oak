@@ -43,7 +43,7 @@
                 wx:if="{{clearable && focused && value}}"
                 ext-class="oak-input-clear"
                 name="close-fill" 
-                color="#cdcdcd"
+                color="{{clearIconColor}}"
                 size="34rpx"
                 bindtap="clear" 
             ></oak-icon>
@@ -102,7 +102,7 @@
                     wx:if="{{clearable&&focused&&value}}"
                     class="oak-input-clear"
                     name="close-facet" 
-                    color="#cdcdcd"
+                    color="{{clearIconColor}}"
                     size="34rpx"
                     bindtap="clear" 
                 ></oak-icon>

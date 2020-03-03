@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">基础用法</view>
+    <oak-submit-bar price="{{1314}}"
+        sub-title="不含配送费" />
+    <view class="h3">禁用状态</view>
+    <oak-submit-bar price="{{1314}}"
+        disabled
+        tip="你的收获地址不在配送范围内"
+        tip-icon="exclamation-point"
+        tip-icon-color="#FF0500" />
+    <view class="h3">加载状态</view>
+    <oak-submit-bar price="{{1314}}"
+        loading />
+    <view class="h3">高级用法</view>
+    <oak-submit-bar price="{{1314}}" sub-title="不含配送费">
+        <oak-checkbox size="48rpx" value="{{true}}" bind:change="onChange" class="oak-checkbox" >全选</oak-checkbox>
+    </oak-submit-bar>
+</view>

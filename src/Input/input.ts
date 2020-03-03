@@ -1,4 +1,5 @@
 Component({
+    behaviors: ['wx://form-field'],
     options: {
         multipleSlots: true
     },
@@ -97,6 +98,10 @@ Component({
             type: Boolean,
             value: false
         },
+        clearIconColor: {
+            type: String,
+            value: '#cdcdcd'
+        },
         error: {
             type: Boolean,
             value: false
@@ -152,7 +157,9 @@ Component({
             this.triggerEvent('keyboardheightchange', {...e})
         },
         clear(): void {
-            this.setData({ value: '' })
+            this.setData({ value: '' }, (): void => {
+                this.triggerEvent('clear')
+            })
         }
     }
 })

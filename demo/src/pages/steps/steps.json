@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Steps",
+    "usingComponents": {
+        "oak-steps": "/Steps/steps"
+    }
+}

@@ -1,68 +1,79 @@
-<wxs src="WXS/base.wxs"
+<wxs src="../wxs/base.wxs"
     module="Utils" />
 
 <wxs module="Fn">
     function nowrapLine(line) {
-        return line ? '-webkit-line-clamp:' + line + ';-webkit-box-flex:' + line + ';' : '';
+    return line ? '-webkit-line-clamp:' + line + ';-webkit-box-flex:' + line + ';' : '';
     }
 
     function imgStyle(width, height) {
-        var style = '';
+    var style = '';
 
-        if (width) style = 'width:' + width + ';';
-        if (height) style += 'height:' + height + ';';
+    if (width) style = 'width:' + width + ';';
+    if (height) style += 'height:' + height + ';';
 
-        return style;
+    return style;
     }
 
     module.exports = {
-        nowrapLine: nowrapLine,
-        imgStyle: imgStyle
+    nowrapLine: nowrapLine,
+    imgStyle: imgStyle
     }
 </wxs>
 
-<view class="{{ Utils.classNames('oak-list-item', {border: border}) }} ext-class">
-    <view class="oak-list-item-left" wx:if="{{icon || image}}">
+<view class="{{ Utils.classNames('oak-list-item', {border: border}) }} ext-class"
+    style="{{ backgroundColor ? 'background:' + backgroundColor + ';' : ''}};">
+    <view class="oak-list-item-left label-class"
+        wx:if="{{icon || image}}">
         <image class="{{ Utils.classNames('oak-list-item-image', {large: title && subTitle }) }}"
             style="{{ Fn.imgStyle(imgWidth, imgHeight) }}"
             wx:if="{{image}}"
             src="{{image}}" />
-        <oak-icon wx:elif="{{_icon || icon}}"
+        <oak-icon class="label-oak-icon"
+            wx:else="{{_icon || icon}}"
             name="{{_icon || icon}}"
             color="{{iconColor}}"
             size="{{iconSize}}" />
-        <slot wx:else name="icon" />
     </view>
-    <view class="oak-list-item-body">
-        <view
-            wx:if="{{title}}"
-            class="{{ Utils.classNames('oak-list-item-title', {nowrap: nowrap || coustonNowrap.title}) }} title-class"
-            style="{{ Fn.nowrapLine(coustonNowrap.title) }}">{{title}}</view>
-        <slot wx:else name="title" />
+    <slot wx:else
+        name="icon" />
 
-        <view
-            wx:if="{{subTitle}}"
+    <view class="oak-list-item-body body-class">
+        <view wx:if="{{title}}"
+            class="{{ Utils.classNames('oak-list-item-title', {nowrap: nowrap || coustonNowrap.title}) }} title-class"
+            style="{{ Fn.nowrapLine(coustonNowrap.title) }};{{ titleColor ? 'color:' + titleColor + ';' : ''}}">{{title}}</view>
+        <slot wx:else
+            name="title" />
+
+        <view wx:if="{{subTitle}}"
             class="{{ Utils.classNames('oak-list-item-subtitle', {nowrap: nowrap || coustonNowrap.subTitle}) }} subtitle-class"
             style="{{Fn.nowrapLine(coustonNowrap.subTitle)}}"
             wx:if="{{subTitle}}">{{subTitle}}</view>
-        <slot wx:else name="subTitle" />
+        <slot wx:else
+            name="subTitle" />
+
+        <slot></slot>
     </view>
 
-    <view
-        class="{{ Utils.classNames('oak-list-item-content', {nowrap: nowrap || coustonNowrap.content}) }} cnt-class"
+    <view class="{{ Utils.classNames('oak-list-item-content', {nowrap: nowrap || coustonNowrap.content}) }} cnt-class"
         style="{{Fn.nowrapLine(coustonNowrap.content)}}"
         wx:if="{{content}}">{{content}}</view>
-    <slot wx:else name="content" />
-    <oak-button
-        plain
+    <slot wx:else
+        name="content" />
+    <oak-button plain
         wx:if="{{button}}">{{button}}</oak-button>
-    <slot wx:else name="button" />
+    <slot wx:else
+        name="button" />
 
-    <oak-icon
-        wx:if="{{arrow}}"
+    <oak-icon wx:if="{{arrow}}"
+        class="arrow-oak-icon"
         name="right-light"
         color="{{arrowColor}}"
         size="{{arrowSize}}" />
-    <slot wx:else name="icon-right" />
-    <navigator class="oak-list-item-nav" wx:if="{{url}}" url="{{url}}" open-type="{{openType}}"/>
+    <slot wx:else
+        name="icon-right" />
+    <navigator class="oak-list-item-nav"
+        wx:if="{{url}}"
+        url="{{url}}"
+        open-type="{{openType}}" />
 </view>

@@ -61,6 +61,9 @@
             <oak-list-item title="Stepper 步进组件"
                 title-class="item-title"
                 url="/pages/stepper/stepper" />
+            <oak-list-item title="Steps 步骤条"
+                title-class="item-title"
+                url="/pages/steps/steps"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
@@ -81,6 +84,9 @@
             <oak-list-item title="NoticeBar 通告栏"
                 title-class="item-title"
                 url="/pages/noticeBar/noticeBar" />
+            <oak-list-item title="SlideView 滑动操作"
+                title-class="item-title"
+                url="/pages/slideview/slideview" />
         </oak-collapse-item>
         <oak-collapse-item title="表单组件"
             icon="calendar"
@@ -98,15 +104,23 @@
             <oak-list-item title="Input 输入框"
                 title-class="item-title"
                 url="/pages/input/input" />
-            <oak-list-item title="Slideview 滑动操作"
-                title-class="item-title"
-                url="/pages/slideview/slideview" />
             <oak-list-item title="Search Bar 搜索框"
                 title-class="item-title"
                 url="/pages/searchBar/searchBar" />
         </oak-collapse-item>
+        <oak-collapse-item title="业务组件"
+            icon="more"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            icon-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item title="SubmitBar 提交订单栏"
+                title-class="item-title"
+                url="/pages/submitBar/submitBar" />
+        </oak-collapse-item>
     </oak-collapse>
     <view class="version">
-        v0.0.2-beta.9
+        v0.0.2-beta.13
     </view>
 </view>

@@ -67,6 +67,14 @@ Component({
             value: '#999',
             optionalTypes: [String],
         },
+        titleColor: {
+            type: String,
+            value: '',
+        },
+        backgroundColor: {
+            type: String,
+            value: '',
+        },
         iconSize: {
             type: String,
             value: '32rpx',
@@ -111,5 +119,5 @@ Component({
             value: 'navigate',
         }
     },
-    externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class'],
+    externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class', 'body-class', 'label-class'],
 });

@@ -21,6 +21,8 @@
     "pages/input/input",
     "pages/slideview/slideview",
     "pages/stepper/stepper",
+    "pages/steps/steps",
+    "pages/submitBar/submitBar",
     "pages/searchBar/searchBar",
     "pages/noticeBar/noticeBar"
   ],

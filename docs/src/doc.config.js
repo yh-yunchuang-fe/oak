@@ -75,7 +75,10 @@ export default {
             }, {
                 name: 'Stepper 进步组件',
                 path: '/Stepper'
-            },],
+            }, {
+                name: 'Steps 步骤条',
+                path: '/Steps'
+            }],
         }, {
             name: '反馈',
             groups: [{
@@ -90,6 +93,9 @@ export default {
             }, {
                 name: 'NoticeBar 通告栏',
                 path: '/NoticeBar',
+            }, {
+                name: 'SlideView 滑动单元',
+                path: '/SlideView',
             }, ],
         }],
     },
