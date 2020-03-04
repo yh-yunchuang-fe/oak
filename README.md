@@ -14,7 +14,7 @@
 - 提供ES5, ES6版本
 
 ## 版本
-- 测试版: [![](https://img.shields.io/badge/npm-v0.0.2--beta.3-blue)](https://www.npmjs.com/package/@yhyc/oak-weui)
+- 测试版: [![](https://img.shields.io/badge/npm-v0.0.2--beta.14-blue)](https://www.npmjs.com/package/@yhyc/oak-weui)
 - 稳定版:  暂无
 
 你可以订阅 [https://github.com/yh-yunchuang-fe/oak/releases.atom](https://github.com/yh-yunchuang-fe/oak/releases.atom)来获得版本发布的通知。
@@ -22,7 +22,7 @@
 ##  预览
 扫描下方小程序二维码，体验组件库示例：
 
-![](https://static.yonghuivip.com/oak/images/gh_f2ca1eee44b7_1280.jpg)
+<img src="https://static.yonghuivip.com/oak/images/gh_f2ca1eee44b7_1280.jpg" style="width: 250px;display: blok;margin-top: 20px;">
 
 ## 如何贡献
 如果你希望参与贡献，欢迎 [Pull Request](https://github.com/yh-yunchuang-fe/oak/pulls)，或给我们 [报告Bug](https://github.com/yh-yunchuang-fe/oak/issues)。
