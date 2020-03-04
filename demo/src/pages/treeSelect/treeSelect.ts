@@ -18,9 +18,9 @@ Page({
             }],
         }, {
             label: 'Node2',
-            value: '0-0',
+            value: '0-1',
             disabled: true,
-            key: '0-0',
+            key: '0-1',
             children: [{
                 label: 'Child 2 fadfadfsa',
                 value: '0-0-1',
@@ -32,8 +32,8 @@ Page({
             }],
         }, {
             label: 'Node3',
-            value: '0-0',
-            key: '0-0',
+            value: '0-2',
+            key: '0-2',
             children: [{
                 label: 'Child Node1 fadsfadsfdas',
                 value: '0-0-1',

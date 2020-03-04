@@ -41,8 +41,8 @@ Component({
     },
     ready(): void {
         this.setData({
-            labelIndex: this.data.defaultLabelActive || 0,
-            value: this.data.defaultValue
+            labelIndex: this.data && this.data.defaultLabelIndex !== null ? this.data.defaultLabelIndex : 0,
+            // value: this.data.defaultValue
         })
     },
     methods: {
