@@ -104,6 +104,10 @@ export default {
                         {
                             name: 'Steps 步骤条',
                             path: '/Steps'
+                        },
+                        {
+                            name: 'TreeSelect 树形选择',
+                            path: '/TreeSelect'
                         }
                     ]
                 },

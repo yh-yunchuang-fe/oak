@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "TreeSelect 树形选择",
+    "usingComponents": {
+        "oak-tree-select": "/TreeSelect/tree-select"
+    }
+}

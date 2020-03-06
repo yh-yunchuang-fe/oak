@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/label/label",
     "pages/index/index",
+    "pages/treeSelect/treeSelect",
+    "pages/label/label",
     "pages/switch/switch",
     "pages/dialog/dialog",
     "pages/actionSheet/actionSheet",

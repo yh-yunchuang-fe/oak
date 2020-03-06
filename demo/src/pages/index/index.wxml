@@ -85,6 +85,9 @@
             <oak-list-item title="Steps 步骤条"
                 title-class="item-title"
                 url="/pages/steps/steps"/>
+            <oak-list-item title="TreeSelect 树形选择"
+                title-class="item-title"
+                url="/pages/treeSelect/treeSelect"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
