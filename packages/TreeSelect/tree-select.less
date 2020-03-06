@@ -1,0 +1,72 @@
+@import "../style/variable";
+@import "../style/mixin";
+
+@tree-label-bg: #f2f2f2;
+@label-height: 92rpx;
+
+.oak-tree-select {
+    height: 100%;
+    width: 100%;
+    background-color: @default-bg;
+    display: flex;
+    line-height: @line-height-base;
+
+    &-labels {
+        height: 100%;
+        width: 220rpx;
+        background-color: @tree-label-bg;
+        flex-shrink: 0
+    }
+
+    &-content {
+        padding-left: 40rpx;
+        height: 100%;
+        flex: 1;
+        box-sizing: border-box;
+    }
+
+    &-label-item {
+        height: @label-height;
+        padding: @wrap-margin-s;
+        line-height: @label-height - 2 * @wrap-margin-s;
+        display: block;
+        box-sizing: border-box;
+        font-size: @font-size-title;
+        color: @txt-default;
+
+        &-active {
+            background-color: @default-bg;
+        }
+
+        &-disabled {
+            color: @txt-muted;
+        }
+    }
+
+    &-item {
+        padding: @wrap-padding @wrap-padding @wrap-padding 0;
+        display: flex;
+        align-items: center;
+        font-size: @font-size-title;
+
+        &:not(:first-child) {
+            border-top: @border;
+        }
+
+        &-title {
+            flex: 1;
+        }
+
+        &-disabled {
+            color: @txt-info;
+        }
+
+        &-icon {
+            line-height: 1;
+        }
+
+        &-active {
+            color: @txt-highlight;
+        }
+    }
+}

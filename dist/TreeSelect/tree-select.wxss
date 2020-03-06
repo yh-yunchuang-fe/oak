@@ -1,0 +1,70 @@
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+.tc {
+  text-align: center;
+}
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.75);
+}
+.oak-tree-select {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  line-height: 1.5;
+}
+.oak-tree-select-labels {
+  height: 100%;
+  width: 220rpx;
+  background-color: #f2f2f2;
+  flex-shrink: 0;
+}
+.oak-tree-select-content {
+  padding-left: 40rpx;
+  height: 100%;
+  flex: 1;
+  box-sizing: border-box;
+}
+.oak-tree-select-label-item {
+  height: 92rpx;
+  padding: 20rpx;
+  line-height: 52rpx;
+  display: block;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+.oak-tree-select-label-item-active {
+  background-color: #fff;
+}
+.oak-tree-select-label-item-disabled {
+  color: #ccc;
+}
+.oak-tree-select-item {
+  padding: 30rpx 30rpx 30rpx 0;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.oak-tree-select-item:not(:first-child) {
+  border-top: 1px solid rgba(221, 221, 221, 0.8);
+}
+.oak-tree-select-item-title {
+  flex: 1;
+}
+.oak-tree-select-item-disabled {
+  color: #999;
+}
+.oak-tree-select-item-icon {
+  line-height: 1;
+}
+.oak-tree-select-item-active {
+  color: #FD7622;
+}
