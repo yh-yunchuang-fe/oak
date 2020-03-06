@@ -4,7 +4,6 @@
 		"ignore": []
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.5",
 	"projectname": "Oak Weui",
 	"setting": {
 		"urlCheck": true,

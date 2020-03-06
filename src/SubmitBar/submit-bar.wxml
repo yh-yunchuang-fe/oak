@@ -1,7 +1,7 @@
 <wxs src="WXS/base.wxs"
     module="Utils" />
 
-<view class="{{Utils.className({areabottom: safeAreaInsetBottom}) }}">
+<view>
     <oak-list-item title="{{tip}}"
         ext-class="oak-submit-bar-tip"
         title-class="oak-submit-bar-tip-title"
@@ -14,7 +14,7 @@
         background-color="{{tipBg}}" />
     <slot name="tip"
         wx:else></slot>
-    <view class="oak-submit-bar bar-class">
+    <view class="{{Utils.classNames('oak-submit-bar', {areabottom: safeAreaInsetBottom}) }}  bar-class">
         <view class="oak-submit-bar-body body-class">
             <slot></slot>
             <view class="oak-submit-bar-body-content">
@@ -22,13 +22,15 @@
                     <text class="oak-submit-bar-label label-class" wx:if="{{label}}">{{label}}</text>
                     <text class="oak-submit-bar-currency currency-class" wx:if="{{currency}}">{{currency}}</text>
                     <text class="oak-submit-bar-price price-class">{{price/100}}</text>
-                    <text wx:if="{{labelSuffix}}">{{labelSuffix}}</text>
+                    <text wx:if="{{suffixLabel}}">{{suffixLabel}}</text>
                 </view>
                 <view class="oak-submit-bar-sub-title sub-class"
                     wx:if="{{subTitle}}">{{subTitle}}</view>
             </view>
         </view>
-        <oak-button class="oak-submit-bar-button"
+        <oak-button
+            bind:tap="onSubmitTap" 
+            class="oak-submit-bar-button"
             button-class="button-class"
             type="{{buttonType}}"
             size="large"

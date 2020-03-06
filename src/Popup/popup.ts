@@ -22,6 +22,7 @@ const animationMap: { [key: string]: { in: string; out: string } } = {
         out: 'fadeOut'
     }
 }
+
 Component({
     behaviors: [BasicBehavior],
     properties: {
@@ -71,7 +72,11 @@ Component({
         _bodyShow: false,
         _maskAnimate: 'fadeIn',
         _bodyAnimate: '',
-        isIPhonex: /iPhone X/g.test(wx.getSystemInfoSync().model),
+    },
+    attached() {
+        this.setData({
+            isIPhonex: this.isiPhoneXUp(),
+        })
     },
     externalClasses: ['ext-class', 'body-class'],
     methods: {

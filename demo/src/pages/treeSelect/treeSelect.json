@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "TreeSelect 分类选择",
+    "navigationBarTitleText": "TreeSelect 树形选择",
     "usingComponents": {
         "oak-tree-select": "/TreeSelect/tree-select"
     }

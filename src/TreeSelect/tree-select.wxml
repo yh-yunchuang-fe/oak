@@ -1,5 +1,7 @@
 <wxs src="WXS/base.wxs"
     module="Utils" />
+<wxs src="./tree-select.wxs"
+    module="TreeSelectWxs" />
 
 <view class="oak-tree-select">
     <scroll-view class="oak-tree-select-labels label-class"
@@ -9,29 +11,29 @@
             data-index="{{index}}"
             class="oak-tree-select-label-item label-item-class {{ index === labelIndex ? 'oak-tree-select-label-item-active label-active-class' : ''}} {{ item.disabled ? 'label-disabled-class oak-tree-select-label-item-disabled' : ''}}"
             wx:for="{{treeData}}"
-            wx:key="key">{{item.label}}</veiw>
+            wx:key="key">{{item.text}}</veiw>
     </scroll-view>
     <scroll-view class="oak-tree-select-content content-class"
         scroll-y>
         <slot />
-
-        <view bind:tap="onContentItemTap"
+        <view
+            bind:tap="onContentItemTap"
             data-index="{{index}}"
             data-data="{{item}}"
-            class="oak-tree-select-item"
+            class="oak-tree-select-item item-class {{ item.disabled ? 'item-disabled-class oak-tree-select-item-disabled' : ''}} {{ TreeSelectWxs.isItemSelected(item, activeId) ? 'oak-tree-select-item-active item-active-class' : ''}}"
             wx:for="{{ treeData[labelIndex].children }}"
-            wx:key="key"
+            wx:key="id"
         >
             <view
-                class="item-class oak-tree-select-item-title {{ item.disabled ? 'item-disabled-class oak-tree-select-item-disabled' : ''}}">
-                {{item.label}}</view>
+                class="oak-tree-select-item-title">
+                {{item.text}}</view>
             <oak-icon
                 class="oak-tree-select-item-icon"
-                wx:if="{{ !item.disabled }}"
-                name="choice-facet"
-                color="#FD7622"
-                size="32rpx"
-                slot="icon-right" />
+                wx:if="{{icon && TreeSelectWxs.isItemSelected(item, activeId)}}"
+                name="{{icon}}"
+                size='{{iconSize}}'
+                color='{{iconColor}}'
+            />
         </view>
     </scroll-view>
 </view>

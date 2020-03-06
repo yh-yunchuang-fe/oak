@@ -1,7 +1,8 @@
 {
   "pages":[
-    "pages/treeSelect/treeSelect",
     "pages/index/index",
+    "pages/treeSelect/treeSelect",
+    "pages/label/label",
     "pages/switch/switch",
     "pages/dialog/dialog",
     "pages/actionSheet/actionSheet",
@@ -16,7 +17,6 @@
     "pages/avatar/avatar",
     "pages/badge/badge",
     "pages/icon/index",
-    "pages/label/label",
     "pages/checkbox/checkbox",
     "pages/input/input",
     "pages/slideview/slideview",

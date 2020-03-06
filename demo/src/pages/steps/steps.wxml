@@ -5,8 +5,8 @@
     <view class="h3">垂直方向</view>
     <oak-steps direction="vertical"/>
     <view class="h3">自定义内容</view>
-    <oak-steps steps="{{steps}}" direction="vertical">
-        <view wx:for="{{steps}}" slot="{{item.slot}}" class="statusList">
+    <oak-steps steps="{{steps}}" direction="vertical" >
+        <view wx:for="{{steps}}" slot="{{item.slot}}" class="statusList" wx:key="index">
             <view class="statusTop">
                 <span class="status">{{item.status}}</span>
                 <span class="time">{{item.time}}</span>

@@ -12,7 +12,7 @@ Component({
         },
         defaultLabelIndex: {
             type: Number,
-            value: null,
+            value: 0,
             optionalTypes: [String]
         },
         labelIndex: {
@@ -20,29 +20,44 @@ Component({
             value: null,
             optionalTypes: [String]
         },
-        value: {
-            type: String,
-            value: null,
-            optionalTypes: [Array, Number]
+        activeId: {
+            type: null,
+            value: '',
         },
-        defaultValue: {
+        defaultActiveId: {
+            type: null,
+            value: '',
+        },
+        max: {
+            type: Number,
+            optionalTypes: [String],
+            value: Infinity,
+        },
+        icon: {
             type: String,
-            value: null,
-            optionalTypes: [Array, Number]
+            value: 'choice-facet',
+        },
+        iconSize: {
+            type: String,
+            value: '32rpx'
+        },
+        iconColor: {
+            type: String,
+            value: '#fd7622'
         },
     },
-    externalClasses: ['label-class', 'label-item-class', 'label-active-class', 'content-class', 'item-disabled-class', 'item-class'],
+    externalClasses: ['label-class', 'label-item-class', 'label-disabled-class', 'label-active-class', 'content-class', 'item-disabled-class', 'item-class', 'item-active-class'],
     data: {
         labelIndex: 0,
     },
     attached(): void {
         this.hasSetLabelIndex = this.data.labelIndex !== null
-        this.hasSetValue = this.data.labelIndex !== null
+        this.hasSetActiveId = !!this.data.activeId
     },
     ready(): void {
         this.setData({
-            labelIndex: this.data && this.data.defaultLabelIndex !== null ? this.data.defaultLabelIndex : 0,
-            // value: this.data.defaultValue
+            labelIndex: this.data.defaultLabelIndex || 0,
+            activeId: this.data.defaultActiveId,
         })
     },
     methods: {
@@ -61,18 +76,36 @@ Component({
             this.triggerEvent('labeltap', { index })
         },
         onContentItemTap(event: event): void {
-            console.log(event)
             const { index, data } = event.currentTarget.dataset
 
             if (data.disabled) return
 
-            if (!this.hasSetValue) {
-                this.setData({
-                    value: data.value
-                })
+            // 如果外部没有设定 `activeId` 则主动修改，否则等外部处理
+            if (!this.hasSetActiveId) {
+                this._changeSelectId(data)
             }
 
             this.triggerEvent('itemtap', { index, data })
+        },
+        _changeSelectId(item: { id: string | number }): void {
+            const { activeId, max } = this.data
+
+            if (Array.isArray(activeId)) {
+                const itemIndex = activeId.findIndex((id: string | number): boolean => id === item.id)
+
+                if ((activeId.length >= max) && (itemIndex === -1)) return
+
+                itemIndex === -1 ? activeId.push(item.id) : activeId.splice(itemIndex, 1)
+
+                this.setData({
+                    activeId
+                })
+
+            } else {
+                this.setData({
+                    activeId:  activeId === item.id ? null : item.id
+                })
+            }
         }
     }
 })

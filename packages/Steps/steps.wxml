@@ -16,14 +16,14 @@
 </wxs>
 <view class="oak-steps ext-class" style="flex-direction: {{direction === 'vertical' ? 'row-reverse' : 'column'}}; {{stepsStyle}}">
   <view class="oak-steps-content-{{direction}}">
-    <view class="oak-steps-content-item" wx:for="{{steps}}" wx:key="{{index}}">
+    <view class="oak-steps-content-item" wx:for="{{steps}}" wx:key="index">
       <span wx:if="{{!item.slot}}" class="title"  style="color: {{index !== activeIndex ? 'none' : activeColor}}">{{item.title}}</span>
       <span wx:if="{{!item.slot}}" class="desc"  style="color: {{index !== activeIndex ? 'none' : activeColor}}">{{item.desc}}</span>
       <slot name="{{item.slot}}"></slot>
     </view>
   </view>
   <view class="oak-steps-tags-{{direction}}">
-    <view class="oak-steps-tags-item" wx:for="{{steps}}" wx:key="{{index}}">
+    <view class="oak-steps-tags-item" wx:for="{{steps}}" wx:key="index">
       <oak-icon name="{{Utils.getIcon(index, activeIndex, icon, activeIcon, inActiveIcon)}}" size="{{ index !== activeIndex ? '20rpx' : '28rpx'}}" class="icon" color="{{Utils.getIconColor(index, activeIndex, color, activeColor, inActiveColor)}}"></oak-icon>
       <span wx:if="{{steps.length !== index + 1}}" class="line" style="background-color: {{Utils.getLineColor(index, activeIndex, color, activeColor, inActiveColor)}};" />
     </view>

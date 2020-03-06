@@ -30,6 +30,27 @@
                 url="/pages/popup/popup" />
         </oak-collapse-item>
 
+        <oak-collapse-item title="表单组件"
+            icon="calendar"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            icon-class="col-title"
+            content-class="content"
+            border="{{ false}}">
+            <oak-list-item title="Checkbox 复选框"
+                title-class="item-title"
+                url="/pages/checkbox/checkbox" />
+            <oak-list-item title="Switch 开关"
+                title-class="item-title"
+                url="/pages/switch/switch" />
+            <oak-list-item title="Search Bar 搜索框"
+                title-class="item-title"
+                url="/pages/searchBar/searchBar" />
+            <oak-list-item title="Input 输入框"
+                title-class="item-title"
+                url="/pages/input/input" />
+        </oak-collapse-item>
+
         <oak-collapse-item title="展示组件"
             icon="card"
             icon-rotate="{{false}}"
@@ -64,6 +85,9 @@
             <oak-list-item title="Steps 步骤条"
                 title-class="item-title"
                 url="/pages/steps/steps"/>
+            <oak-list-item title="TreeSelect 树形选择"
+                title-class="item-title"
+                url="/pages/treeSelect/treeSelect"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
@@ -88,26 +112,6 @@
                 title-class="item-title"
                 url="/pages/slideview/slideview" />
         </oak-collapse-item>
-        <oak-collapse-item title="表单组件"
-            icon="calendar"
-            icon-rotate="{{false}}"
-            title-class="col-title"
-            icon-class="col-title"
-            content-class="content"
-            border="{{ false}}">
-            <oak-list-item title="Checkbox 复选框"
-                title-class="item-title"
-                url="/pages/checkbox/checkbox" />
-            <oak-list-item title="Switch 开关"
-                title-class="item-title"
-                url="/pages/switch/switch" />
-            <oak-list-item title="Input 输入框"
-                title-class="item-title"
-                url="/pages/input/input" />
-            <oak-list-item title="Search Bar 搜索框"
-                title-class="item-title"
-                url="/pages/searchBar/searchBar" />
-        </oak-collapse-item>
         <oak-collapse-item title="业务组件"
             icon="more"
             icon-rotate="{{false}}"
@@ -121,6 +125,6 @@
         </oak-collapse-item>
     </oak-collapse>
     <view class="version">
-        v0.0.2-beta.13
+        v0.0.2-beta.14
     </view>
 </view>

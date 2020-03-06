@@ -1,4 +1,24 @@
 <!--index.wxml-->
 <view class="container">
-    <oak-tree-select tree-data="{{treeData}}" item-class="" />
+    <view class="h3">
+        单选模式
+    </view>
+    <view class="row">
+        <oak-tree-select tree-data="{{treeData}}" default-active-id="0-0-2" />
+    </view>
+
+    <view class="h3">
+        多选模式
+    </view>
+    <view class="row">
+        <oak-tree-select tree-data="{{treeData}}" max="2" default-active-id="{{ defaultIds }}" />
+    </view>
+    <view class="h3">
+        自定义内容
+    </view>
+    <view class="row">
+        <oak-tree-select tree-data="{{diy}}" >
+            <image src="https://static.yonghuivip.com/oak/images/logo.png" style="width:100%;"/>
+        </oak-tree-select>
+    </view>
 </view>

@@ -14,7 +14,7 @@ Component({
             type: String,
             value: '合计: '
         },
-        labelSuffix: {
+        suffixLabel: {
             type: String,
             value: ''
         },
@@ -75,8 +75,8 @@ Component({
             value: false
         },
         tipColor: {
-            type: Boolean,
-            value: false
+            type: String,
+            value: ''
         },
         safeAreaInsetBottom: {
             type: Boolean,
@@ -84,12 +84,11 @@ Component({
         }
         // decimalLength: {}
     },
-    data: {
-        // 这里是一些组件内部数据
-        someData: {}
-    },
     methods: {
-
+        onSubmitTap(e): void {
+            if (this.data.loading || this.data.disabled) return
+            this.triggerEvent('submit', e)
+        }
     },
     externalClasses: ['bar-class', 'body-class', 'button-class', 'label-class', 'currency-class', 'price-class', 'sub-class'],
 })

@@ -9,11 +9,13 @@
     width: 100%;
     background-color: @default-bg;
     display: flex;
+    line-height: @line-height-base;
 
     &-labels {
         height: 100%;
         width: 220rpx;
         background-color: @tree-label-bg;
+        flex-shrink: 0
     }
 
     &-content {
@@ -57,6 +59,14 @@
 
         &-disabled {
             color: @txt-info;
+        }
+
+        &-icon {
+            line-height: 1;
+        }
+
+        &-active {
+            color: @txt-highlight;
         }
     }
 }

@@ -158,8 +158,8 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| title | 分组标题 | `String` | - |
-| botder | 列表外边框 | `Boolen` | `false` |
+| title | 分组标题 | `string` | - |
+| botder | 列表外边框 | `boolen` | `false` |
 
 
 ### List 外部样式类
@@ -174,23 +174,25 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| title | 左侧标题 | `String` | - |
-| sub-title | 左侧副标题 | `String` | - |
-| content | 右侧内容 | `String` | - |
-| botder | 下边框 | `Boolen` | `true` |
-| arrow | 右侧箭头, 传入对象可同时设置颜色和大小 | `Boolen | Object<SDK2.6.5以上支持>` | `true|{color: '#999', size: '28rpx'}` |
-| arrow-color | 设置右侧箭头颜色 | `String` | `#999` |
-| arrow-size | 设置右侧箭头大小 | `String` | `28rpx` |
-| icon | 左侧图标, 也支持传入对象。属性与[Icon](https://yh-yunchuang-fe.github.io/oak/#/components/Icon)一致 | `String | Object<SDK2.6.5以上支持>` | - |
-| icon-color | 设置左侧图标颜色 | `String` | `#999` |
-| icon-size | 设置左侧图标大小 | `String` | `32rpx` |
-| image | 图片URL | `String` | - |
-| img-width | 图片宽度 | `String` | - |
-| img-height | 图片高度 | `String` | - |
-| button | 按钮名称 | `String` | - |
-| background-color | 背景颜色 | `String` | - |
-| nowrap | 文本单行超出截断，对 `title`, `sub-title`, `content`生效 | `Boolen` | `false` |
+| title | 左侧标题 | `string` | - |
+| sub-title | 左侧副标题 | `string` | - |
+| content | 右侧内容 | `string` | - |
+| botder | 下边框 | `boolen` | `true` |
+| arrow | 右侧箭头, 传入对象可同时设置颜色和大小 | `boolen | Object<SDK2.6.5以上支持>` | `true|{color: '#999', size: '28rpx'}` |
+| arrow-color | 设置右侧箭头颜色 | `string` | `#999` |
+| arrow-size | 设置右侧箭头大小 | `string` | `28rpx` |
+| icon | 左侧图标, 也支持传入对象。属性与[Icon](https://yh-yunchuang-fe.github.io/oak/#/components/Icon)一致 | `string | Object<SDK2.6.5以上支持>` | - |
+| icon-color | 设置左侧图标颜色 | `string` | `#999` |
+| icon-size | 设置左侧图标大小 | `string` | `32rpx` |
+| image | 图片URL | `string` | - |
+| img-width | 图片宽度 | `string` | - |
+| img-height | 图片高度 | `string` | - |
+| button | 按钮名称 | `string` | - |
+| background-color | 背景颜色 | `string` | - |
+| nowrap | 文本单行超出截断，对 `title`, `sub-title`, `content`生效 | `boolen` | `false` |
 | couston-nowrap | 对 `title`, `sub-title`, `content`自定义截断行数, 如: `{title: 1, subTitle: 2, content: 1}`。不能与`nowrap`混用 | `Object` | `{}` |
+| url | navigator 跳转URL | `string` | - |
+| open-type | 跳转方式，同[navigator](https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html) | `string` | `navigate` |
 
 ### ListItem Slot
 

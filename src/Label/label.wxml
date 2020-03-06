@@ -1,7 +1,26 @@
-<view class="oak-label oak-label-{{ size }} iconfont {{ icon ? iconPrefix + '-' + icon : '' }} {{ checked ? 'oak-label-checked' : '' }} ext-class" style="{{ styles }}">
-    <block>
-        <view class="oak-label-content">
-            <slot></slot>
-        </view>
-    </block>
+<wxs src='WXS/base.wxs' module='Utils' />
+
+<view
+    class="oak-label oak-label-{{ size }} {{ checked ? 'oak-label-checked checked-class' : '' }} ext-class"
+    style='{{ styles }}'
+>
+    <oak-icon
+        wx:if='{{icon && (iconPosition === "front") }}'
+        name='{{icon}}'
+        size='{{iconSize}}'
+        color='{{iconColor}}'
+        class='oak-icon icon-class'
+        ext-class='oak-icon-ext'
+    />
+    <view class='oak-label-content'>
+        <slot></slot>
+    </view>
+    <oak-icon
+        wx:if='{{icon && (iconPosition === "rear") }}'
+        name='{{icon}}'
+        size='{{iconSize}}'
+        color='{{iconColor}}'
+        class='oak-icon icon-class'
+        ext-class='oak-icon-ext'
+    />
 </view>

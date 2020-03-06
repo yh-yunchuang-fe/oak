@@ -1,5 +1,33 @@
 # 更新日志
 
+### 0.0.2-beta.15(未发布)
+
+- ❤️ 新增 TreeSelect 树形选择
+- 🌟 Label
+
+   + 新增 `checked-class` 样式类，支持自定义选中样式
+   + 新增 `icon-position` 属性，支持自定义图标位置
+   + 新增 `icon-size` 属性，支持自定义图标大小
+   + 新增 `icon-color` 属性，支持自定义图标颜色
+
+### 0.0.2-beta.14
+ `2020年02月27日`
+
+ - ❤️ 新增 SubmitBar 提交订单栏
+ - ❤️ 新增 Slideview 滑动操作
+ - ❤️ 新增 Steps 步骤条
+
+- 🌟 Button
+
+   + 新增 `width` 属性，支持自定义宽度
+   + 新增 `height` 属性，支持自定义高度
+   + 新增 `color` 属性，支持自定义背景色
+
+- 🌟 ListItem
+
+   + 新增 `url` 属性，支持[navigator](https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html)跳转
+   + 新增 `open-type` 属性，支持定义[navigator](https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html)跳转方式
+
 ### 0.0.2-beta.9
  `2019年12月5日`
 
