@@ -1,0 +1,16 @@
+<wxs src="WXS/base.wxs" module="Utils" />
+
+<view class="oak-dropdown">
+    <view class="oak-dropdown-title" bindtap="onIsShowDropdownList"> 
+    下拉菜单{{activeValue}}
+    <oak-icon name="down-light" 
+    class="{{ Utils.classNames('oak-dropdown-title-icon', {downRotate: isShowDropdownList }) }}" 
+    size="24rpx" color="1px solid rgba(221, 221, 221, 0.8)"></oak-icon>
+    </view>    
+    <view class="oak-dropdown-list" wx:if="{{isShowDropdownList}}">
+        <view class="oak-dropdown-list-item" id="0" value="item0" bind:tap="onClickItem(0,item0)">item0</view>
+        <view class="oak-dropdown-list-item" id="1" value="item1" bind:tap="onClickItem(1,item1)">item1</view>
+        <view class="oak-dropdown-list-item" id="2" value="item2" bind:tap="onClickItem(2,item2)">item2</view>
+        <view class="oak-dropdown-list-item" id="3" value="item3" bind:tap="onClickItem(3,item3)">item3</view>
+    </view>
+</view>

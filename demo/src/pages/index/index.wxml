@@ -64,6 +64,9 @@
             <oak-list-item title="Steps 步骤条"
                 title-class="item-title"
                 url="/pages/steps/steps"/>
+                 <oak-list-item title="Dropdown 下拉菜单"
+                title-class="item-title"
+                url="/pages/dropdown/index"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"

@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">没有默认值</view>
+    <view>
+        <oak-dropDown>
+        
+        </oak-dropDown>  
+    </view>
+</view>
