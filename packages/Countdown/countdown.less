@@ -1,6 +1,32 @@
-@import "../style/variable";
-@import "../style/mixin";
+@import '../style/variable';
+@import '../style/mixin';
 
 .oak-countdown {
-
+    display: flex;
+    text-align: center;
+    .time-num {
+        font-family: PingFangSC-Medium, PingFang SC;
+        min-width: 44rpx;
+        height: 44rpx;
+        background: rgba(51, 51, 51, 1);
+        border-radius: 4rpx;
+        font-size: 32rpx;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+        line-height: 44rpx;
+    }
+    .time-text {
+        font-family:PingFangSC-Regular,PingFang SC;
+        min-width: 8rpx;
+        height: 40rpx;
+        font-size: 28rpx;
+        margin: 0 10rpx;
+        font-weight: 400;
+        color: rgba(51, 51, 51, 1);
+        line-height: 40rpx;
+    }
+    .timer-status {
+        font-size: 28rpx;
+        color: #999;
+    }
 }

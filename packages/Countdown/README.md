@@ -18,31 +18,48 @@
 ```
 
 ## 代码演示
-### 代码演示1
-代码演示1代码演示1代码演示1代码演示1
+### 基础用法
 ```html
-<oak-countdown />
+ <oak-countdown endTimestamp="{{1635671692446}}" log="{{true}}" />
 ```
 
-### 代码演示2
-代码演示2代码演示2代码演示2代码演示2
+### Format
 ```html
-<oak-countdown />
+<oak-countdown endTimestamp="{{1635671692446}}" format="DDDD天HH时mm分ss" log="{{true}}" />
 ```
 
+### 后台执行
+```html
+<oak-countdown endTimestamp="{{1635671692446}}" format="DDDD天HH时mm分ss" log="{{true}}" silence="{{true}}" />
+```
+
+### 服务器时间
+```html
+<oak-countdown endTimestamp="{{1635675292446}}" nowTimestamp="{{1635671692446}}" format="DDDD天HH时mm分ss" log="{{true}}" />
+```
+
+### Callback
+```html
+<oak-countdown endTimestamp="{{1584690103160}}" format="DDDD天HH时mm分ss" bindcallback="onCallback" log="{{true}}" />
+```
 
 ## API
 API说明。
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| 属性1 | 说明1 | `String` | `demo` |
-
+| format | 格式 | `String` | `DDDD:HH:mm:ss` |
+| endTimestamp | 结束时间 | `Number` | `0` |
+| nowTimestamp | 服务器时间 | `Number` | `0` |
+| silence | 后台执行 | `Boolean` | `false` |
+| log | 日志 | `Boolean` | `false` |
 
 ## 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|
-| hover-class | 设置hover时的样式 |
+| ext-class | 设置根元素的样式 |
+| num-class | 设置数字样式 |
+| text-class | 设置文本样式 |
 
 
