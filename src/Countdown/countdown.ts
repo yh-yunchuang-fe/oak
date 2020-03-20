@@ -51,6 +51,7 @@ interface SelfComponent {
 
 let selfComponent: SelfComponent = {}
 
+/* eslint-disable */
 Component({
     behaviors: [BasicBehavior],
     properties: {
@@ -218,4 +219,4 @@ Component({
             this.setData({ _timer: null })
         }
     }
-})
+} as Countdown)
