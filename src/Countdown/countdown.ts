@@ -90,7 +90,10 @@ Component({
             this._init()
         },
         detached() {
-            this._clear()
+            Object.keys(selfComponent).map(k => {
+                selfComponent[k]._clear()
+            })
+            selfComponent = {}
         }
     },
     pageLifetimes: {
@@ -213,10 +216,11 @@ Component({
             return { ...o, ...t }
         },
         _clear() {
-            if (!this.data._timer) return
-            this._log('_clear', '#23a0ff')
-            clearInterval(this.data._timer)
-            this.setData({ _timer: null })
+            if (this.data._timer) {
+                this._log('_clear', '#23a0ff')
+                clearInterval(this.data._timer)
+                this.setData({ _timer: null })
+            }
         }
     }
 } as Countdown)

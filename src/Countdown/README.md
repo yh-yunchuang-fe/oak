@@ -49,10 +49,10 @@ API说明。
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | format | 格式 | `String` | `DDDD:HH:mm:ss` |
-| endTimestamp | 格式 | `Number` | `0` |
-| nowTimestamp | 格式 | `Number` | `0` |
-| silence | 格式 | `Boolean` | `false` |
-| log | 格式 | `Boolean` | `false` |
+| endTimestamp | 结束时间 | `Number` | `0` |
+| nowTimestamp | 服务器时间 | `Number` | `0` |
+| silence | 后台执行 | `Boolean` | `false` |
+| log | 日志 | `Boolean` | `false` |
 
 ## 外部样式类
 
