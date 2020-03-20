@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Countdown 倒计时",
+    "usingComponents": {
+        "oak-countdown": "/Countdown/countdown"
+    }
+}

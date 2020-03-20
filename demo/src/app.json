@@ -24,7 +24,8 @@
     "pages/steps/steps",
     "pages/submitBar/submitBar",
     "pages/searchBar/searchBar",
-    "pages/noticeBar/noticeBar"
+    "pages/noticeBar/noticeBar",
+    "pages/countdown/countdown"
   ],
   "window":{
     "backgroundTextStyle":"light",

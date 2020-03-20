@@ -1,0 +1,10 @@
+<view class="oak-countdown ext-class">
+    <view wx:if="{{WXML_FMT['D+'] > 0}}" class='time-num num-class'>{{WXML_FMT['D+']}}</view>
+    <view wx:if="{{WXML_FMT['D+'] > 0}}" class='time-text text-class'>{{WXML_FMT.DText}}</view>
+    <view class='time-num num-class'>{{WXML_FMT['H+']}}</view>
+    <view class='time-text text-class'>{{WXML_FMT.HText}}</view>
+    <view class='time-num num-class'>{{WXML_FMT['m+']}}</view>
+    <view class='time-text text-class'>{{WXML_FMT.mText}}</view>
+    <view class='time-num num-class'>{{WXML_FMT['s+']}}</view>
+    <view wx:if="{{WXML_FMT['S+']}}" class='time-text text-class'>{{WXML_FMT.sText}}</view>
+</view>
