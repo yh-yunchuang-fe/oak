@@ -180,14 +180,13 @@ Component({
 
             const [
                 ,
-                DText = ':',
-                HText = ':',
-                mText = ':',
-                sText = ':',
-                SText = ':'
+                DText = '',
+                HText = '',
+                mText = '',
+                sText = ''
             ] = match || []
 
-            return { DText, HText, mText, sText, SText }
+            return { DText, HText, mText, sText }
         },
         _getDate(timestamp: number) {
             return {
@@ -210,6 +209,10 @@ Component({
                     const flag = length === 1 || length > 2
                     const num = ('00' + d[k]).substr(('' + d[k]).length)
                     o[k] = flag ? d[k] : num
+                } else if(DateFormat.day === k) {
+                    d[DateFormat.hour] = d[k] * 24 + d[k]
+                } else if(DateFormat.hour === k) {
+                    d[DateFormat.minute] = d[k] * 60 + d[k]
                 }
             })
 

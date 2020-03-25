@@ -124,8 +124,8 @@ Component({
             if (!match) {
                 this._log('format error', 'red', format);
             }
-            const [, DText = ':', HText = ':', mText = ':', sText = ':', SText = ':'] = match || [];
-            return { DText, HText, mText, sText, SText };
+            const [, DText = '', HText = '', mText = '', sText = ''] = match || [];
+            return { DText, HText, mText, sText };
         },
         _getDate(timestamp) {
             return {
@@ -146,6 +146,12 @@ Component({
                     const flag = length === 1 || length > 2;
                     const num = ('00' + d[k]).substr(('' + d[k]).length);
                     o[k] = flag ? d[k] : num;
+                }
+                else if (DateFormat.day === k) {
+                    d[DateFormat.hour] = d[k] * 24 + d[k];
+                }
+                else if (DateFormat.hour === k) {
+                    d[DateFormat.minute] = d[k] * 60 + d[k];
                 }
             });
             return Object.assign(Object.assign({}, o), t);
