@@ -6,7 +6,7 @@
     </view>
     <view class="h3">Format</view>
     <view class="row">
-        <oak-countdown endTimestamp="{{1635671692446}}" format="DDDD天HH时mm分ss" log="{{true}}" />
+        <oak-countdown endTimestamp="{{1635671692446}}" format="H时m分s" log="{{true}}" />
     </view>
     <view class="h3">后台执行</view>
     <view class="row">
