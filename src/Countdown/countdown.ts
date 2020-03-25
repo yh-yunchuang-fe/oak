@@ -210,9 +210,9 @@ Component({
                     const num = ('00' + d[k]).substr(('' + d[k]).length)
                     o[k] = flag ? d[k] : num
                 } else if(DateFormat.day === k) {
-                    d[DateFormat.hour] = d[k] * 24 + d[k]
+                    d[DateFormat.hour] += d[k] * 24
                 } else if(DateFormat.hour === k) {
-                    d[DateFormat.minute] = d[k] * 60 + d[k]
+                    d[DateFormat.minute] += d[k] * 60
                 }
             })
 
