@@ -14,6 +14,7 @@
   background: rgba(0, 0, 0, 0.75);
 }
 .oak-label {
+  width: 100%;
   max-width: 100%;
   min-width: 24rpx;
   height: 56rpx;
@@ -39,7 +40,7 @@
   font-size: inherit;
 }
 .oak-label-normal {
-  padding: 0 24rpx;
+  padding: 0 20rpx;
 }
 .oak-label-checked {
   font-size: 24rpx;
@@ -59,4 +60,5 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: auto;
+  text-align: center;
 }

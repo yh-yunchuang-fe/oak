@@ -6,6 +6,7 @@
 
 
 .oak-label {
+    width: 100%;
     max-width: 100%;
     min-width: 24rpx;
     height: 56rpx;
@@ -34,7 +35,7 @@
     }
 
     &-normal {
-        padding: 0 24rpx;
+        padding: 0 @wrap-padding-s;
     }
 
     &-checked {
@@ -50,12 +51,13 @@
             float: right;
         }
     }
-}
 
-.oak-label-content {
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: auto;
+    &-content {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: auto;
+        text-align: center;
+    }
 }
