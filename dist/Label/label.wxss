@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: center;
   line-height: 1;
+  box-sizing: border-box;
 }
 .oak-label .oak-icon:first-child {
   margin-right: 10rpx;
@@ -37,7 +38,6 @@
   font-size: inherit;
 }
 .oak-label-normal {
-  max-width: calc(100% - 48rpx);
   padding: 0 24rpx;
 }
 .oak-label-checked {

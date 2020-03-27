@@ -3,6 +3,8 @@
     <view class="h3">默认展示</view>
     <view class="row">
         <oak-label>默认状态</oak-label>
+
+        <oak-label class="diy-label">Diy默认状态</oak-label>
     </view>
     <view class="h3">选中状态</view>
     <view class="row">
