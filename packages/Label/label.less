@@ -6,6 +6,7 @@
 
 
 .oak-label {
+    max-width: 100%;
     min-width: 24rpx;
     height: 56rpx;
     display: inline-flex;
@@ -22,6 +23,7 @@
     .oak-icon:first-child {
         margin-right: 10rpx;
     }
+
     .oak-icon:last-child {
         margin-left: 10rpx;
     }
@@ -40,7 +42,7 @@
         color: @theme-color;
         border: 1rpx solid @theme-color;
         background-color: @label-checked-background-color;
-        
+
         &::after {
             content: "";
             width: 1rpx;
@@ -51,6 +53,9 @@
 }
 
 .oak-label-content {
-    .ellipsis(1);
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     height: auto;
 }
