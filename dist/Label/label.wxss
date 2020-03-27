@@ -23,6 +23,7 @@
   border-radius: 200rpx;
   background-color: #F6F6F6;
   align-items: center;
+  justify-content: center;
   line-height: 1;
 }
 .oak-label .oak-icon:first-child {
