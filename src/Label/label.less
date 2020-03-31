@@ -6,6 +6,8 @@
 
 
 .oak-label {
+    width: 100%;
+    max-width: 100%;
     min-width: 24rpx;
     height: 56rpx;
     display: inline-flex;
@@ -15,11 +17,14 @@
     border-radius: 200rpx;
     background-color: @label-default-background-color;
     align-items: center;
+    justify-content: center;
     line-height: 1;
+    box-sizing: border-box;
 
     .oak-icon:first-child {
         margin-right: 10rpx;
     }
+
     .oak-icon:last-child {
         margin-left: 10rpx;
     }
@@ -30,8 +35,7 @@
     }
 
     &-normal {
-        max-width: calc(100% - 48rpx);
-        padding: 0 24rpx;
+        padding: 0 @wrap-padding-s;
     }
 
     &-checked {
@@ -39,7 +43,7 @@
         color: @theme-color;
         border: 1rpx solid @theme-color;
         background-color: @label-checked-background-color;
-        
+
         &::after {
             content: "";
             width: 1rpx;
@@ -47,9 +51,13 @@
             float: right;
         }
     }
-}
 
-.oak-label-content {
-    .ellipsis(1);
-    height: auto;
+    &-content {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: auto;
+        text-align: center;
+    }
 }
