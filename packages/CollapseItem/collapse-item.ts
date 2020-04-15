@@ -74,8 +74,14 @@ Component({
                 key: currentKey,
             })
         },
-        showCollapseItemContent(): void {
+        async showCollapseItemContent(): Promise<void> {
             const { isShowContent } = this.data
+            if (!this.titleHeight) {
+                await this.getRect('.J-oak-collapse-item-title')
+                    .then((titleDom: { height: number }): void => {
+                        this.titleHeight = titleDom.height
+                    })
+            }
             if (isShowContent) {
                 this.setData({
                     isShowContent: !isShowContent,
