@@ -17,9 +17,7 @@ export const BasicBehavior = Behavior({
         },
         isiPhoneXUp() {
             const model = wx.getSystemInfoSync().model;
-            return (/iphone\sx/i.test(model) ||
-                (/iphone/i.test(model) && /unknown/.test(model)) ||
-                /iphone\s11/i.test(model));
+            return !(/iPhone\s+{4|5|6|7|8}/g.test(model));
         }
     }
 });

@@ -21,7 +21,7 @@ Component({
         },
         key: {
             type: String,
-            value: '',
+            value: null,
             optionalTypes: [String],
         },
         icon: {
@@ -52,6 +52,13 @@ Component({
             type: 'parent',
             linked(target) {
                 this.parent = target;
+                this.indexForParent = target.children.indexOf(this);
+                this.toggleCollapseItemContent();
+                if (this.data.key === null) {
+                    this.setData({
+                        key: this.indexForParent
+                    });
+                }
             }
         },
     },
@@ -60,11 +67,9 @@ Component({
         itemHeight: null,
     },
     ready() {
-        this.indexForParent = this.parent.children.indexOf(this);
         this.getRect('.J-oak-collapse-item-title')
             .then((titleDom) => {
             this.titleHeight = titleDom.height;
-            this._initContent();
         });
     },
     methods: {
@@ -72,7 +77,7 @@ Component({
             if (this.data.disabled)
                 return;
             const { key } = this.data;
-            const currentKey = key ? key : this.indexForParent;
+            const currentKey = key !== null ? key : this.indexForParent;
             this.parent.switchCollapseItem({
                 index: this.indexForParent,
                 key: currentKey,
@@ -87,31 +92,29 @@ Component({
                         this.titleHeight = titleDom.height;
                     });
                 }
-                if (isShowContent) {
+                this.getRect('.J-oak-collapse-item-content')
+                    .then((contentDom) => {
                     this.setData({
                         isShowContent: !isShowContent,
-                        itemHeight: this.titleHeight,
+                        itemHeight: this.titleHeight + contentDom.height
                     });
-                }
-                else {
-                    this.getRect('.J-oak-collapse-item-content')
-                        .then((contentDom) => {
-                        this.setData({
-                            isShowContent: !isShowContent,
-                            itemHeight: this.titleHeight + contentDom.height
-                        });
-                    });
-                }
+                });
             });
         },
-        _initContent() {
+        hideCollapseItemContent() {
+            this.setData({
+                isShowContent: false,
+                itemHeight: this.titleHeight,
+            });
+        },
+        toggleCollapseItemContent() {
             const { activeKey } = this.parent.data;
             const { key } = this.properties;
-            if (activeKey instanceof Array) {
-                ((key && activeKey.indexOf(key) !== -1) || activeKey.indexOf(this.indexForParent) !== -1) && this.showCollapseItemContent();
+            if (Array.isArray(activeKey)) {
+                activeKey.indexOf(key) !== -1 ? this.showCollapseItemContent() : this.hideCollapseItemContent();
             }
-            else if (key === activeKey || this.indexForParent === activeKey) {
-                this.showCollapseItemContent();
+            else {
+                key === activeKey ? this.showCollapseItemContent() : this.hideCollapseItemContent();
             }
         }
     },

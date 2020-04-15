@@ -42,7 +42,7 @@ Component({
             value: '#d2d2d2'
         }
     },
-    ready() {
+    ready(): void {
         let parent = this.getRelationNodes('../CheckboxGroup/checkbox-group')
         let { name } = this.data
 
@@ -50,13 +50,13 @@ Component({
 
         let { value } = parent[0].data
         let selected = value.filter(
-            (item: any) => JSON.stringify(item) === JSON.stringify(name)
+            (item: string): boolean => JSON.stringify(item) === JSON.stringify(name)
         )
 
         this.setData({ value: selected.length > 0 })
     },
     methods: {
-        change() {
+        change(): void {
             let { disabled, value, name } = this.data
 
             if (disabled) return
@@ -64,7 +64,7 @@ Component({
             this.setParentValue(name)
             this.triggerEvent('change', value)
         },
-        setParentValue(name) {
+        setParentValue(name): void {
             let parent = this.getRelationNodes(
                 '../CheckboxGroup/checkbox-group'
             )
@@ -73,12 +73,12 @@ Component({
 
             let { value, max } = parent[0].data
             let arr = value.filter(
-                (item: any) => JSON.stringify(item) !== JSON.stringify(name)
+                (item: string): boolean => JSON.stringify(item) !== JSON.stringify(name)
             )
 
             if (arr.length !== value.length) {
                 this.setData({ value: false })
-            } 
+            }
             else if (max === null || max > arr.length) {
                 arr.push(name)
                 this.setData({ value: true })

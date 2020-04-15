@@ -4,14 +4,14 @@ Component({
             type: Number || String,
             value: null,
             observer(newValue): void {
-                this.setData({_value: newValue})
+                this.setData({ _value: newValue })
                 this.isDisabled()
             },
         },
         min: {
             type: Number,
             value: null,
-            observer(nval, oval) {
+            observer(nval, oval): void {
                 if (nval !== oval) {
                     this.isDisabled()
                 }
@@ -20,7 +20,7 @@ Component({
         max: {
             type: Number,
             value: null,
-            observer(nval, oval) {
+            observer(nval, oval): void {
                 if (nval !== oval) {
                     this.isDisabled()
                 }
@@ -95,7 +95,7 @@ Component({
     },
     methods: {
         isDisabled(type): boolean {
-            const {min, max, disabled, _value} = this.data
+            const { min, max, disabled, _value } = this.data
             const disabledPlus = disabled || (typeof max === 'number' && _value >= max)
             const disabledMinus = disabled || (typeof min === 'number' && _value <= min)
             disabledPlus !== this.data.disabledPlus && this.setData({
@@ -105,10 +105,10 @@ Component({
                 disabledMinus,
             })
             if (type === 'plus') {
-                
+
                 return disabledPlus
             }
-            
+
             return disabledMinus
         },
         add(num1: number, num2: number): number {
@@ -126,11 +126,11 @@ Component({
             _value = String(_value).replace(/[^0-9.-]/g, '')
             // format range
             _value = _value === '' ? 0 : + _value
-            const {min, max} = this.data
-            if(typeof min === 'number' && _value < min) {
+            const { min, max } = this.data
+            if (typeof min === 'number' && _value < min) {
                 _value = min
             }
-            if(typeof max === 'number' && _value > max) {
+            if (typeof max === 'number' && _value > max) {
                 _value = max
             }
             return _value
@@ -151,14 +151,14 @@ Component({
             this.changeValue(_value)
             this.isDisabled()
         },
-        
+
         onTap(event): void {
             const { type } = event.currentTarget.dataset
-            const {onPlus, onMinus} = this.data
+            const { onPlus, onMinus } = this.data
             this.type = type
             this.onChange()
             const returnInfo = this.returnInfo(type)
-            if(type === 'plus') {
+            if (type === 'plus') {
                 if (typeof onPlus === 'function') {
                     onPlus(returnInfo)
                 } else {
@@ -175,12 +175,12 @@ Component({
         },
 
         returnInfo(type): object {
-            const {_value, disabled, min, max, step, decimalLength } = this.data
+            const { _value, disabled, min, max, step, decimalLength } = this.data
             return {
                 value: _value, disabled, min, max, step, decimalLength, type
             }
         },
-       
+
         changeValue(_value): void {
             this.setData({
                 _value: this.data.asyncChange ? this.data._value : _value

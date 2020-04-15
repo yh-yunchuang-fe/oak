@@ -73,7 +73,7 @@ Component({
         _maskAnimate: 'fadeIn',
         _bodyAnimate: '',
     },
-    attached() {
+    attached(): void {
         this.setData({
             isIPhonex: this.isiPhoneXUp(),
         })

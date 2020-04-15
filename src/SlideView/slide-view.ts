@@ -43,7 +43,7 @@ Component({
             optionalTypes: [String]
         }
     },
-    attached() {
+    attached(): void {
         // 轻击开始时间
         this.touchStartTime = 0
 
@@ -70,7 +70,7 @@ Component({
         // 初始化 right width
         const { rightWidth, custom, share, edit, del } = this.data
         const width = custom ? rightWidth : (share + edit + del) * 80
-        this.setData({width})
+        this.setData({ width })
     },
 
     data: {
@@ -82,7 +82,7 @@ Component({
     externalClasses: ['icon-class'],
     methods: {
         // 这里是一个自定义方法
-        touchstart(e) {
+        touchstart(e): void {
             console.log('[Toucher.touchstart]', e.touches)
             if (!e.touches) return
             // 缓存事件
@@ -98,7 +98,7 @@ Component({
 
             clearTimeout(this.longTap)
 
-            this.longTap = setTimeout(() => {
+            this.longTap = setTimeout((): void => {
                 console.log('[Toucher.touchstart]', e.touches)
                 this._actionOver(e)
                 // 断定此次事件为长按事件
@@ -109,7 +109,7 @@ Component({
             this.setData({ transition: '' })
         },
 
-        touchmove(e) {
+        touchmove(e): void {
             if (!e.touches) return
             // 缓存事件
             // 在原生事件基础上记录初始位置（为swipe事件增加参数传递）
@@ -129,11 +129,11 @@ Component({
             this.y2 = e.touches[0].pageY
 
             clearTimeout(this.longTap)
-            
+
             // 设置偏移量
             let offsetX = this.x2 - this.x1
             let { width: rightWidth } = this.data
-            if(this.position === 'Down' || this.position === 'Up') {
+            if (this.position === 'Down' || this.position === 'Up') {
                 return
             }
 
@@ -145,12 +145,12 @@ Component({
                 offsetX = offsetX > 0 ? 0 : offsetX
             }
 
-            if(Math.abs(offsetX) > rightWidth) return
+            if (Math.abs(offsetX) > rightWidth) return
 
             this.setData({ offsetX })
         },
 
-        touchend(e) {
+        touchend(e): void {
             // touchend中，拿不到坐标位置信息，故使用全局保存下数据
             e.plugStartPosition = this.eventMark.plugStartPosition
             e.plugTouches = this.eventMark.touches
@@ -158,7 +158,7 @@ Component({
                 '[Toucher.touchend]',
                 e,
                 Math.abs(this.x1 - this.x2) > 5 ||
-                    Math.abs(this.y1 - this.y2) > 5,
+                Math.abs(this.y1 - this.y2) > 5,
                 this.isActive
             )
             this.triggerEvent('onSwipeEnd', e)
@@ -192,7 +192,7 @@ Component({
                 })
             } else if (now - this.lastTouchTime > rightWidth) {
                 // 延迟响应
-                this.touchDelay = setTimeout(() => {
+                this.touchDelay = setTimeout((): void => {
                     this.isSingleTap()
                 }, 190)
             } else {
@@ -207,47 +207,47 @@ Component({
             this.draging = false
         },
 
-        isSingleTap() {
+        isSingleTap(): void {
             this._actionOver()
             this.triggerEvent('onTap', this.eventMark)
         },
 
-        _actionOver() {
+        _actionOver(): void {
             this.isActive = false
             clearTimeout(this.touchDelay)
         },
 
-        _swipeDirection(x1, x2, y1, y2) {
+        _swipeDirection(x1, x2, y1, y2): string {
             // eslint-disable-next-line no-nested-ternary
             return Math.abs(x1 - x2) >= Math.abs(y1 - y2)
                 ? x1 - x2 > 0 ? 'Left' : 'Right'
                 : y1 - y2 > 0 ? 'Up' : 'Down'
         },
 
-        _swipeMove(offset: number = 0) {
+        _swipeMove(offset: number = 0): void {
             console.log(offset)
         },
 
-        _swipeLeave() {},
+        _swipeLeave(): void { },
 
-        _cancel() {
+        _cancel(): void {
             this.setData({
                 offsetX: 0,
                 transition: this.transition
             })
         },
 
-        onShare() {
+        onShare(): void {
             this._cancel()
             this.triggerEvent('share')
         },
 
-        onEdit() {
+        onEdit(): void {
             this._cancel()
             this.triggerEvent('edit')
         },
 
-        onDelete() {
+        onDelete(): void {
             this._cancel()
             this.triggerEvent('delete')
         }

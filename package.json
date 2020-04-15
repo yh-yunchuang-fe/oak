@@ -5,6 +5,7 @@
   "miniprogram": "dist",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint 'src/**/*.ts'",
     "start": "cross-env NODE_ENV=development gulp --gulpfile __build__/gulpfile.babel.js",
     "packages": "cross-env NODE_ENV=development gulp packages --gulpfile __build__/gulpfile.babel.js",
     "build": "cross-env NODE_ENV=production gulp --gulpfile __build__/gulpfile.babel.js && rm -rf dist/style && npm run release &&  npm run packages",

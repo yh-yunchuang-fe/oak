@@ -13,7 +13,7 @@ Component({
         },
         key: {
             type: String,
-            value: '',
+            value: null,
             optionalTypes: [String],
         },
         icon: {
@@ -44,6 +44,14 @@ Component({
             type: 'parent',
             linked(target): void {
                 this.parent = target
+                this.indexForParent = target.children.indexOf(this)
+                this.toggleCollapseItemContent()
+
+                if (this.data.key === null) {
+                    this.setData({
+                        key: this.indexForParent
+                    })
+                }
             }
         },
     },
@@ -53,12 +61,9 @@ Component({
         itemHeight: null,
     },
     ready(): void {
-        this.indexForParent = this.parent.children.indexOf(this)
-
         this.getRect('.J-oak-collapse-item-title')
             .then((titleDom: { height: number }): void => {
                 this.titleHeight = titleDom.height
-                this._initContent()
             })
     },
     methods: {
@@ -67,7 +72,7 @@ Component({
             if (this.data.disabled) return
 
             const { key } = this.data
-            const currentKey = key ? key : this.indexForParent
+            const currentKey = key !== null ? key : this.indexForParent
 
             this.parent.switchCollapseItem({
                 index: this.indexForParent,
@@ -82,29 +87,28 @@ Component({
                         this.titleHeight = titleDom.height
                     })
             }
-            if (isShowContent) {
-                this.setData({
-                    isShowContent: !isShowContent,
-                    itemHeight: this.titleHeight,
-                })
-            } else {
-                this.getRect('.J-oak-collapse-item-content')
-                    .then((contentDom: { height: number }): void => {
-                        this.setData({
-                            isShowContent: !isShowContent,
-                            itemHeight: this.titleHeight + contentDom.height
-                        })
+
+            this.getRect('.J-oak-collapse-item-content')
+                .then((contentDom: { height: number }): void => {
+                    this.setData({
+                        isShowContent: !isShowContent,
+                        itemHeight: this.titleHeight + contentDom.height
                     })
-            }
+                })
         },
-        _initContent(): void {
+        hideCollapseItemContent(): void {
+            this.setData({
+                isShowContent: false,
+                itemHeight: this.titleHeight,
+            })
+        },
+        toggleCollapseItemContent(): void {
             const { activeKey } = this.parent.data
             const { key } = this.properties
-
-            if (activeKey instanceof Array) {
-                ((key && activeKey.indexOf(key) !== -1) || activeKey.indexOf(this.indexForParent) !== -1) && this.showCollapseItemContent()
-            } else if (key === activeKey || this.indexForParent === activeKey) {
-                this.showCollapseItemContent()
+            if (Array.isArray(activeKey)) {
+                activeKey.indexOf(key) !== -1 ? this.showCollapseItemContent() : this.hideCollapseItemContent()
+            } else {
+                key === activeKey ? this.showCollapseItemContent() : this.hideCollapseItemContent()
             }
         }
     },

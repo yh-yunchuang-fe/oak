@@ -65,7 +65,7 @@ Component({
                 _style += `;border: 1rpx solid ${borderColor};`
             }
 
-            this.setData!({
+            this.setData({
                 _style,
             })
         }

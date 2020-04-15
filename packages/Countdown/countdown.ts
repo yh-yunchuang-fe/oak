@@ -1,27 +1,5 @@
 import BasicBehavior from '../mixins/basic'
 
-interface Countdown extends BaseComponent {
-    properties: {
-        /** 日期格式化 YYYY-MM-DDTHH:mm:ss.SSS */
-        format: any;
-        /** 结束时间 */
-        endTimestamp: any;
-        /** 服务器时间 */
-        nowTimestamp: any;
-        /** 后台执行 */
-        silence: any;
-        /** true: 打开 log; 默认 false */
-        log: any;
-    };
-    data: {
-        /** 与服务器时间差 */
-        _deltaTime: number;
-        /** 计时器 */
-        _timer: number | null;
-        WXML_FMT: WXMLFMT | null;
-    };
-}
-
 enum DateFormat {
     day = 'D+',
     hour = 'H+',
@@ -209,9 +187,9 @@ Component({
                     const flag = length === 1 || length > 2
                     const num = ('00' + d[k]).substr(('' + d[k]).length)
                     o[k] = flag ? d[k] : num
-                } else if(DateFormat.day === k) {
+                } else if (DateFormat.day === k) {
                     d[DateFormat.hour] += d[k] * 24
-                } else if(DateFormat.hour === k) {
+                } else if (DateFormat.hour === k) {
                     d[DateFormat.minute] += d[k] * 60
                 }
             })
@@ -226,4 +204,4 @@ Component({
             }
         }
     }
-} as Countdown)
+})

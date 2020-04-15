@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
     <view class="h3">基础用法</view>
-    <oak-collapse activeKey="{{ 0 }}"
+    <oak-collapse activeKey="{{ '2' }}"
         border>
         <oak-collapse-item title="折叠面板1"
             key='1'>
@@ -22,7 +22,7 @@
         </oak-collapse-item>
     </oak-collapse>
     <view class="h3">手风琴效果</view>
-    <oak-collapse activeKey="{{ 0 }}"
+    <oak-collapse activeKey="{{ '1' }}"
         accordion
         border>
         <oak-collapse-item title="折叠面板1"

@@ -50,7 +50,7 @@ Component({
         onChange(): void {
             const { loading, disabled, checked, autoChange } = this.data
             if (!loading && !disabled && autoChange) {
-                this.setData!({
+                this.setData({
                     checked: !checked,
                 })
             }
