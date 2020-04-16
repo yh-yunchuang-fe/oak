@@ -57,7 +57,10 @@ Component({
     data: {
         // 这里是一些组件内部数据
         isShowContent: false,
-        itemHeight: null,
+        itemHeight: 0,
+    },
+    created(): void {
+        this.titleHeight = this.rpxToPx('90rpx')
     },
     ready(): void {
         this.getRect('.J-oak-collapse-item-title')

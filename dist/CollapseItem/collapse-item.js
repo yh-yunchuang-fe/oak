@@ -64,7 +64,10 @@ Component({
     },
     data: {
         isShowContent: false,
-        itemHeight: null,
+        itemHeight: 0,
+    },
+    created() {
+        this.titleHeight = this.rpxToPx('90rpx');
     },
     ready() {
         this.getRect('.J-oak-collapse-item-title')
