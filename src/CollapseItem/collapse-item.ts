@@ -45,12 +45,11 @@ Component({
             linked(target): void {
                 this.parent = target
                 this.indexForParent = target.children.indexOf(this)
-                this.toggleCollapseItemContent()
-
                 if (this.data.key === null) {
                     this.setData({
                         key: this.indexForParent
                     })
+                    this.toggleCollapseItemContent()
                 }
             }
         },
@@ -103,12 +102,12 @@ Component({
             })
         },
         toggleCollapseItemContent(): void {
-            const { activeKey } = this.parent.data
+            const { _activeKey } = this.parent.data
             const { key } = this.properties
-            if (Array.isArray(activeKey)) {
-                activeKey.indexOf(key) !== -1 ? this.showCollapseItemContent() : this.hideCollapseItemContent()
+            if (Array.isArray(_activeKey)) {
+                _activeKey.indexOf(key) !== -1 ? this.showCollapseItemContent() : this.hideCollapseItemContent()
             } else {
-                key === activeKey ? this.showCollapseItemContent() : this.hideCollapseItemContent()
+                key === _activeKey ? this.showCollapseItemContent() : this.hideCollapseItemContent()
             }
         }
     },

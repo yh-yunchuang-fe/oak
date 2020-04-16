@@ -9,7 +9,7 @@
         一个快速、高效、愉悦的小程序UI组件库
     </view>
 
-    <oak-collapse>
+    <oak-collapse activeKey="{{activeKey}}" >
         <oak-collapse-item title="基础组件"
             icon="rocket"
             icon-rotate="{{false}}"

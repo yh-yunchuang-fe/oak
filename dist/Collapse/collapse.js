@@ -10,16 +10,14 @@ Component({
             type: null,
             value: '',
             optionalTypes: [String, Number, Array],
-            observer(newKey) {
+            observer(newKey, oldKey) {
                 if (this.data.accordion && Array.isArray(newKey)) {
                     return console.error('[Collapse] Type ERROR!! accordion is `true`, activeKey can only be String or Number!');
                 }
-                if (newKey !== '') {
-                    this.setData({
-                        _activeKey: newKey
-                    });
-                }
-                if (newKey !== this.data._activeKey && this.isReady) {
+                this.setData({
+                    _activeKey: newKey
+                });
+                if (newKey !== oldKey && this.isReady) {
                     this.children.length && this.children.map((child) => {
                         child.toggleCollapseItemContent();
                     });
