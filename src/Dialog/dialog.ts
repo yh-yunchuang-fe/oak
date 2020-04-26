@@ -60,10 +60,10 @@ Component({
     },
     methods: {
         confirm(options: {}): void {
-            let defaultOptions = {
-                onCancel: (): void => { },
-                onConfirm: (): void => { },
-                onClose: (): void => { },
+            const defaultOptions = {
+                onCancel: Function,
+                onConfirm: Function,
+                onClose: Function,
                 cancleText: '取消',
                 confirmText: '确认',
             }

@@ -228,8 +228,6 @@ Component({
             console.log(offset)
         },
 
-        _swipeLeave(): void { },
-
         _cancel(): void {
             this.setData({
                 offsetX: 0,
