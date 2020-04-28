@@ -17,7 +17,7 @@
     <view class="{{Utils.classNames('oak-submit-bar', {areabottom: safeAreaInsetBottom}) }}  bar-class">
         <view class="oak-submit-bar-body body-class">
             <slot></slot>
-            <view class="oak-submit-bar-body-content">
+            <view class="oak-submit-bar-body-content" bindtap="onContentClick">
                 <view class="oak-submit-bar-body-price-section">
                     <text class="oak-submit-bar-label label-class" wx:if="{{label}}">{{label}}</text>
                     <text class="oak-submit-bar-currency currency-class" wx:if="{{currency}}">{{currency}}</text>

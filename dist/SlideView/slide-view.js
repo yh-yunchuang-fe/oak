@@ -95,7 +95,7 @@ Component({
             this.y2 = e.touches[0].pageY;
             clearTimeout(this.longTap);
             let offsetX = this.x2 - this.x1;
-            let { width: rightWidth } = this.data;
+            const { width: rightWidth } = this.data;
             if (this.position === 'Down' || this.position === 'Up') {
                 return;
             }
@@ -164,7 +164,6 @@ Component({
         _swipeMove(offset = 0) {
             console.log(offset);
         },
-        _swipeLeave() { },
         _cancel() {
             this.setData({
                 offsetX: 0,

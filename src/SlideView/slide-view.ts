@@ -132,7 +132,7 @@ Component({
 
             // 设置偏移量
             let offsetX = this.x2 - this.x1
-            let { width: rightWidth } = this.data
+            const { width: rightWidth } = this.data
             if (this.position === 'Down' || this.position === 'Up') {
                 return
             }

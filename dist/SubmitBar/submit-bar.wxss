@@ -41,7 +41,6 @@
 }
 .oak-submit-bar-body-content {
   display: flex;
-  flex: 1;
   flex-direction: column;
 }
 .oak-submit-bar-label {

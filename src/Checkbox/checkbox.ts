@@ -43,13 +43,13 @@ Component({
         }
     },
     ready(): void {
-        let parent = this.getRelationNodes('../CheckboxGroup/checkbox-group')
-        let { name } = this.data
+        const parent = this.getRelationNodes('../CheckboxGroup/checkbox-group')
+        const { name } = this.data
 
         if (!parent || !parent[0] || !name) return
 
-        let { value } = parent[0].data
-        let selected = value.filter(
+        const { value } = parent[0].data
+        const selected = value.filter(
             (item: string): boolean => JSON.stringify(item) === JSON.stringify(name)
         )
 
@@ -57,7 +57,7 @@ Component({
     },
     methods: {
         change(): void {
-            let { disabled, value, name } = this.data
+            const { disabled, value, name } = this.data
 
             if (disabled) return
 
@@ -65,14 +65,14 @@ Component({
             this.triggerEvent('change', value)
         },
         setParentValue(name): void {
-            let parent = this.getRelationNodes(
+            const parent = this.getRelationNodes(
                 '../CheckboxGroup/checkbox-group'
             )
 
             if (!parent || !parent[0]) return
 
-            let { value, max } = parent[0].data
-            let arr = value.filter(
+            const { value, max } = parent[0].data
+            const arr = value.filter(
                 (item: string): boolean => JSON.stringify(item) !== JSON.stringify(name)
             )
 

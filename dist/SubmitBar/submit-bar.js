@@ -88,6 +88,9 @@ Component({
             if (this.data.loading || this.data.disabled)
                 return;
             this.triggerEvent('submit', e);
+        },
+        onContentClick() {
+            this.triggerEvent('onContentClick');
         }
     },
     externalClasses: ['bar-class', 'body-class', 'button-class', 'label-class', 'currency-class', 'price-class', 'sub-class'],

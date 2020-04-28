@@ -42,28 +42,28 @@ Component({
         }
     },
     ready() {
-        let parent = this.getRelationNodes('../CheckboxGroup/checkbox-group');
-        let { name } = this.data;
+        const parent = this.getRelationNodes('../CheckboxGroup/checkbox-group');
+        const { name } = this.data;
         if (!parent || !parent[0] || !name)
             return;
-        let { value } = parent[0].data;
-        let selected = value.filter((item) => JSON.stringify(item) === JSON.stringify(name));
+        const { value } = parent[0].data;
+        const selected = value.filter((item) => JSON.stringify(item) === JSON.stringify(name));
         this.setData({ value: selected.length > 0 });
     },
     methods: {
         change() {
-            let { disabled, value, name } = this.data;
+            const { disabled, value, name } = this.data;
             if (disabled)
                 return;
             this.setParentValue(name);
             this.triggerEvent('change', value);
         },
         setParentValue(name) {
-            let parent = this.getRelationNodes('../CheckboxGroup/checkbox-group');
+            const parent = this.getRelationNodes('../CheckboxGroup/checkbox-group');
             if (!parent || !parent[0])
                 return;
-            let { value, max } = parent[0].data;
-            let arr = value.filter((item) => JSON.stringify(item) !== JSON.stringify(name));
+            const { value, max } = parent[0].data;
+            const arr = value.filter((item) => JSON.stringify(item) !== JSON.stringify(name));
             if (arr.length !== value.length) {
                 this.setData({ value: false });
             }
