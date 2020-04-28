@@ -37,7 +37,7 @@ Component({
             optionalTypes: [Boolean]
         }
     },
-    externalClasses: ['ext-class', 'num-class, text-class'],
+    externalClasses: ['ext-class', 'num-class', 'text-class'],
     lifetimes: {
         attached() {
             const { __wxExparserNodeId__: id } = this;
@@ -120,7 +120,7 @@ Component({
             }, 1000);
         },
         _getText(format) {
-            const match = format.match(/(?:D+([^H]))?H+([^H])m+([^m])s+(.*)/);
+            const match = format.match(/(?:D+([^H]))?(?:H+([^m]))?m+([^m])s+(.*)/);
             if (!match) {
                 this._log('format error', 'red', format);
             }

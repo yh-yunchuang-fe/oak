@@ -61,7 +61,7 @@ Component({
             optionalTypes: [Boolean]
         }
     },
-    externalClasses: ['ext-class', 'num-class, text-class'],
+    externalClasses: ['ext-class', 'num-class', 'text-class'],
     lifetimes: {
         attached() {
             const { __wxExparserNodeId__: id } = this
@@ -151,7 +151,7 @@ Component({
         },
         _getText(format: string): any {
             const match: string[] | null = format.match(
-                /(?:D+([^H]))?H+([^H])m+([^m])s+(.*)/
+                /(?:D+([^H]))?(?:H+([^m]))?m+([^m])s+(.*)/
             )
 
             if (!match) {
