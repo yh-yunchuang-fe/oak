@@ -139,7 +139,7 @@ Component({
             this.triggerEvent('focus', {...e})
         },
         change(e): void {
-            let { value = '' } = e.detail || {}
+            const { value = '' } = e.detail || {}
             this.setData({ value }, (): void => {
                 this.triggerEvent('change', {...e})
             })

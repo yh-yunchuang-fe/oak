@@ -53,7 +53,7 @@ Component({
         switchCollapseItem(children) {
             const { accordion, _activeKey } = this.data;
             if (accordion) {
-                let activeIndex = this.children.findIndex((child) => {
+                const activeIndex = this.children.findIndex((child) => {
                     return child.data.key === _activeKey || child.indexForParent === _activeKey;
                 });
                 if (activeIndex !== children.index) {

@@ -12,7 +12,7 @@
             wx:if="{{ itemList.length }}"
             wx:for="{{ itemList }}"
             wx:for-item="action"
-            wx:key="{{index}}"
+            wx:key="index"
             data-index="{{ index }}"
             size='block'
             disabled="{{ action.disabled }}"

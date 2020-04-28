@@ -1,5 +1,6 @@
 import BasicBehavior from 'Mixins/basic'
 
+/* eslint-disable */
 enum DateFormat {
     day = 'D+',
     hour = 'H+',
@@ -7,6 +8,7 @@ enum DateFormat {
     second = 's+',
     millisecond = 'S+'
 }
+/* eslint-enable */
 
 interface WXMLFMT {
     'D+': string | null;

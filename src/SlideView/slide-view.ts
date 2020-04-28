@@ -132,7 +132,7 @@ Component({
 
             // 设置偏移量
             let offsetX = this.x2 - this.x1
-            let { width: rightWidth } = this.data
+            const { width: rightWidth } = this.data
             if (this.position === 'Down' || this.position === 'Up') {
                 return
             }
@@ -227,8 +227,6 @@ Component({
         _swipeMove(offset: number = 0): void {
             console.log(offset)
         },
-
-        _swipeLeave(): void { },
 
         _cancel(): void {
             this.setData({

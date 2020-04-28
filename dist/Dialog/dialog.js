@@ -59,10 +59,10 @@ Component({
     },
     methods: {
         confirm(options) {
-            let defaultOptions = {
-                onCancel: () => { },
-                onConfirm: () => { },
-                onClose: () => { },
+            const defaultOptions = {
+                onCancel: Function,
+                onConfirm: Function,
+                onClose: Function,
                 cancleText: '取消',
                 confirmText: '确认',
             };

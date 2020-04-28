@@ -138,7 +138,7 @@ Component({
             this.triggerEvent('focus', Object.assign({}, e));
         },
         change(e) {
-            let { value = '' } = e.detail || {};
+            const { value = '' } = e.detail || {};
             this.setData({ value }, () => {
                 this.triggerEvent('change', Object.assign({}, e));
             });
