@@ -1,8 +1,9 @@
 # 更新日志
 
-### 0.0.2-beta.15(未发布)
+### 0.0.2-beta.15
 
 - ❤️ 新增 TreeSelect 树形选择
+- ❤️ 新增 Countdown 倒计时
 - 🌟 Label
 
    + 新增 `checked-class` 样式类，支持自定义选中样式

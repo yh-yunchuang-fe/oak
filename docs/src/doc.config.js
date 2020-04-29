@@ -82,6 +82,10 @@ export default {
                             path: '/Collapse'
                         },
                         {
+                            name: 'Countdown 倒计时',
+                            path: '/Countdown'
+                        },
+                        {
                             name: 'Feeds 信息流',
                             path: '/Feeds'
                         },
