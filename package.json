@@ -41,7 +41,7 @@
   "bugs": {
     "url": "https://github.com/yh-yunchuang-fe/oak/issues"
   },
-  "homepage": "https://github.com/yh-yunchuang-fe/oak#readme",
+  "homepage": "https://yh-yunchuang-fe.github.io/oak",
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
