@@ -18,7 +18,7 @@
     </view>
     <view class="h3">Callback</view>
     <view class="row">
-        <oak-countdown endTimestamp="{{1584690103160}}" format="DDDD天HH时mm分ss" bindcallback="onCallback" log="{{true}}" />
+        <oak-countdown num-class="number" endTimestamp="{{1584690103160}}" format="mm分ss" bindcallback="onCallback" log="{{true}}" />
         <view wx:if="{{text}}" class="callback">{{text}}</view>
     </view>
 </view>
