@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'oak-iconfont';
-  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20200331/iconfont.eot');
+  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20200511/iconfont.eot');
   /* IE9 */
-  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20200331/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20200331/iconfont.woff') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20200331/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20200331/iconfont.svg#oak-iconfont') format('svg');
+  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20200511/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20200511/iconfont.woff') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20200511/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20200511/iconfont.svg#oak-iconfont') format('svg');
   /* iOS 4.1- */
 }
 .oak-iconfont {
@@ -12,8 +12,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.oak-icon-choice_fill:before {
+  content: '\e710';
+}
+.oak-icon-stick:before {
+  content: '\e70e';
+}
 .oak-icon-delivery1:before {
-  content: "\e70d";
+  content: '\e70d';
 }
 .oak-icon-community:before {
   content: '\e70a';
@@ -317,9 +323,6 @@
 }
 .oak-icon-minus:before {
   content: '\e6bb';
-}
-.oak-icon-scan-code:before {
-  content: "\e6c2";
 }
 .oak-icon {
   margin: 0;
