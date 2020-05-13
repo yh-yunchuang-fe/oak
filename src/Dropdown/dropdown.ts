@@ -8,34 +8,48 @@ Component({
             value: 'default value',
             optionalTypes: [String],
         },
+        isNoHaveList: {
+            type: Boolean,
+            value: false
+        },
         dropDownList: {
             type: Array,
             value: [],
         },
+        activeValue: {
+            type: String,
+            value: '排序方式',
+        },
+        styles: {
+            type: Object,
+            value: {},
+        }
     },
     data: {
         // 这里是一些组件内部数据
         isShowDropdownList:false,
         activeIndex:'',
-        activeValue: ''
     },
     methods: {
         onIsShowDropdownList(): void {
-            const { isShowDropdownList } = this.data
+            const { isShowDropdownList, isNoHaveList } = this.data
             this.setData({
                 isShowDropdownList: !isShowDropdownList
             })
+            if(isNoHaveList){
+                console.log('执行升序或降序')
+            }
         },
         onClickItem(e): void {
-            console.log('value>>>', e)
-            const { id, value=''} = e.target.dataset
-
+            console.log(' onClickItem e>>>', e)
+            const { index} = e.target.dataset
             this.setData({
-                activeIndex: id,
-                activeValue: value
+                isShowDropdownList: false,
+                activeIndex: index,
             })
-            this.triggerEvent('onSelect', { id, value})
+            this.triggerEvent('onSelect', { index})
+            this.triggerEvent('onHrefSelect', { index})
+            
         }
-
     }
 })

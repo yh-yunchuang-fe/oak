@@ -1,18 +1,20 @@
 <wxs src="WXS/base.wxs" module="Utils" />
 
 <view class="oak-dropdown">
-    <view class="oak-dropdown-title" bindtap="onIsShowDropdownList"> 
-    下拉菜单{{activeValue}}
+    <view class="oak-dropdown-title" style="width: {{ styles.width }}; height: {{styles.height}}" bindtap="onIsShowDropdownList"> 
+    {{activeValue}}
     <oak-icon name="down-light" 
     class="{{ Utils.classNames('oak-dropdown-title-icon', {downRotate: isShowDropdownList }) }}" 
     size="24rpx" color="1px solid rgba(221, 221, 221, 0.8)"></oak-icon>
     </view>    
-    <view class="oak-dropdown-list" wx:if="{{isShowDropdownList}}">         
-        <view class="oak-dropdown-list-item" 
-        data-id="{{item.id}}" 
-        data-value="{{item.value}}" 
+    <view class="oak-dropdown-list" 
+        style="width: {{ styles.width }};"
+        wx:if="{{isShowDropdownList}}" >         
+        <view class="{{Utils.classNames('oak-dropdown-list-item', {activeItem: activeIndex === index })}}"
+        data-index="{{index}}"
+        data-value="{{item.value}}"
         wx:for="{{dropDownList}}"
-        wx:key="{{item.id}}" 
+        wx:key="{{item.id}}"
         bind:tap="onClickItem">{{item.value}}</view>
     </view>
 </view>
