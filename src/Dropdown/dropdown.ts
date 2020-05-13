@@ -22,8 +22,9 @@ Component({
                 isShowDropdownList: !isShowDropdownList
             })
         },
-        onClickItem(id,value): void {
-            console.log('value>>>', value)
+        onClickItem(e): void {
+            console.log('value>>>', e)
+            const { id, value=''} = e.target
             this.setData({
                 activeIndex: id,
                 activeValue: value

@@ -6,4 +6,10 @@
         
         </oak-dropDown>  
     </view>
+      <view class="h3">有默认值</view>
+    <view>
+        <oak-dropDown dropDownList="{{dropDownList}}">
+        
+        </oak-dropDown>  
+    </view>
 </view>
