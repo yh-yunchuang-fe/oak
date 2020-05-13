@@ -7,7 +7,11 @@ Component({
             type: String,
             value: 'default value',
             optionalTypes: [String],
-        }
+        },
+        dropDownList: {
+            type: Array,
+            value: [],
+        },
     },
     data: {
         // 这里是一些组件内部数据
@@ -24,11 +28,13 @@ Component({
         },
         onClickItem(e): void {
             console.log('value>>>', e)
-            const { id, value=''} = e.target
+            const { id, value=''} = e.target.dataset
+
             this.setData({
                 activeIndex: id,
                 activeValue: value
             })
+            this.triggerEvent('onSelect', { id, value})
         }
 
     }

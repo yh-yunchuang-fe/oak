@@ -8,7 +8,10 @@
     </view>
       <view class="h3">有默认值</view>
     <view>
-        <oak-dropDown dropDownList="{{dropDownList}}">
+        <oak-dropDown 
+        drop-downList="{{dropDownList}}"
+        bind:onSelect="onSelect"
+        >
         
         </oak-dropDown>  
     </view>
