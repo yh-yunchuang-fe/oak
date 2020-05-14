@@ -6,6 +6,7 @@
     color: @txt-default;
     font-size: @font-size-title;
     padding:0 @wrap-padding;
+    position: relative;
     &-title{
         width:200rpx;
         height:60rpx;
@@ -21,8 +22,11 @@
             float: right;
             font-size: @font-size-sub;
         }
-        .downRotate{
-            transform: rotate(180deg);
+        // .downRotate{
+        //     transform: rotate(180deg);
+        // }
+        .rightArrow{
+            transform: rotate(-90deg);
         }
     }
     &-list{
@@ -30,6 +34,11 @@
         padding: 0 30rpx;
         font-size: @font-size-sub;
         color:#333;
+        &.fixRight{
+            position: absolute;
+            left: 258rpx;
+            top: 0;
+        }
         &-item{
             background:#eee;
             width:100%;
@@ -43,6 +52,7 @@
             }
         }
     }
+    
 
 }
 

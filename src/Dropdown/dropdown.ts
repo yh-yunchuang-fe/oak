@@ -12,6 +12,10 @@ Component({
             type: Boolean,
             value: false
         },
+        isFixedRight: {
+        type: Boolean,
+        value: false
+        },
         dropDownList: {
             type: Array,
             value: [],

@@ -7,7 +7,7 @@
         >
         </oak-dropDown>  
     </view>
-      <view class="h3">有默认值</view>
+    <view class="h3">有默认值</view>
     <view>
         <oak-dropDown 
         drop-downList="{{dropDownList}}"
@@ -15,7 +15,7 @@
         bind:onSelect="onSelect"
         ></oak-dropDown>  
     </view>
-     <view class="h3">自定义宽高</view>
+    <view class="h3">自定义宽高</view>
     <view>
         <oak-dropDown 
         drop-downList="{{dropDownList}}"
@@ -24,5 +24,14 @@
         styles="{{ {width: '300rpx', height: '100rpx', activeBgColor: '#24A8E8'} }}"
         >
         </oak-dropDown>  
+    </view>
+    <view class="h3">下拉框在右边</view>
+    <view>
+        <oak-dropDown 
+        is-fixed-right="true"
+        drop-downList="{{dropDownList}}"
+        active-value="{{activeValue}}"
+        bind:onSelect="onSelect"
+        ></oak-dropDown>  
     </view>
 </view>

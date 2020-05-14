@@ -4,10 +4,10 @@
     <view class="oak-dropdown-title" style="width: {{ styles.width }}; height: {{styles.height}}" bindtap="onIsShowDropdownList"> 
     {{activeValue}}
     <oak-icon name="down-light" 
-    class="{{ Utils.classNames('oak-dropdown-title-icon', {downRotate: isShowDropdownList }) }}" 
+    class="{{ Utils.classNames('oak-dropdown-title-icon', {downRotate: isShowDropdownList && !isFixedRight, rightArrow: isFixedRight }) }}" 
     size="24rpx" color="1px solid rgba(221, 221, 221, 0.8)"></oak-icon>
     </view>    
-    <view class="oak-dropdown-list" 
+    <view class=" {{ Utils.classNames('oak-dropdown-list', {fixRight: isFixedRight }) }}" 
         style="width: {{ styles.width }};"
         wx:if="{{isShowDropdownList}}" >         
         <view class="{{Utils.classNames('oak-dropdown-list-item', {activeItem: activeIndex === index })}}"
