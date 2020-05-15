@@ -40,7 +40,7 @@ Component({
             let _style = '';
             const colorRegx = /^(#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}|(?:rgba?|hsla?)\((?:\d+%?(?:deg|rad|grad|turn)?(?:,|\s)+){2,3}[\s\/]*[\d\.]+%?\))/i;
             if (plain) {
-                _style = `;border: 1rpx solid ${color};`;
+                _style = `;border: 2rpx solid ${color};`;
                 !textColor && (_style += `;color: ${color};`);
             }
             else if (colorRegx.test(color)) {
@@ -58,7 +58,7 @@ Component({
                 _style += `;color: ${textColor};`;
             }
             if (borderColor) {
-                _style += `;border: 1rpx solid ${borderColor};`;
+                _style += `;border: 2rpx solid ${borderColor};`;
             }
             this.setData({
                 _style,
