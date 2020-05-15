@@ -29,82 +29,98 @@
   color: #333;
   background-color: #fafafa;
   border: 2rpx solid #d9d9d9;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-magenta {
   color: #fc0738;
   background-color: #fde6eb;
   border: 2rpx solid #fdc4d0;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-red {
   color: #f5222d;
   background-color: #fff1f0;
   border: 2rpx solid #ffa39e;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-white {
   color: #fff;
   background-color: #fd7622;
   border: 2rpx solid #fff;
+  font-family: PingFangSC-Regular, PingFang SC;
   padding: 0 8rpx;
 }
 .oak-tag-volcano {
   color: #fa541c;
   background-color: #fff2e8;
   border: 2rpx solid #ffbb96;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-orange {
   color: #fd7622;
   background-color: #fff8f4;
   border: 2rpx solid #ffdeca;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-gold {
   color: #faad14;
   background-color: #fffbe6;
   border: 2rpx solid #ffe58f;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-lime {
   color: #a0d911;
   background-color: #fcffe6;
   border: 2rpx solid #eaff8f;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-green {
   color: #52c41a;
   background-color: #f6ffed;
   border: 2rpx solid #b7eb8f;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-cyan {
   color: #13c2c2;
   background-color: #e6fffb;
   border: 2rpx solid #87e8de;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-blue {
   color: #1890ff;
   background-color: #e6f7ff;
   border: 2rpx solid #91d5ff;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-geekblue {
   color: #2f54eb;
   background-color: #f0f5ff;
   border: 2rpx solid #adc6ff;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-purple {
   color: #722ed1;
   background-color: #f9f0ff;
   border: 2rpx solid #d3adf7;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-discount {
   color: #fc4916;
   background-color: #fff9f7;
   border: 2rpx solid #feb6a2;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-service {
   color: #7aba62;
   background-color: #f9fff6;
   border: 2rpx solid #cae3c0;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag-address {
   color: #fd7622;
   background-color: rgba(253, 118, 34, 0.08);
   border: 2rpx solid transparent;
+  font-family: PingFangSC-Regular, PingFang SC;
   height: 28rpx;
   line-height: 28rpx;
   font-weight: bold;
@@ -115,6 +131,7 @@
   color: #fd7622;
   background-color: #fff1e8;
   border: 2rpx solid transparent;
+  font-family: PingFangSC-Regular, PingFang SC;
   height: 28rpx;
   line-height: 28rpx;
   font-weight: normal;
@@ -126,6 +143,7 @@
   color: #24ab1a;
   background-color: #e4f6e0;
   border: 2rpx solid transparent;
+  font-family: PingFangSC-Regular, PingFang SC;
   height: 28rpx;
   line-height: 28rpx;
   font-weight: normal;
@@ -137,6 +155,7 @@
   color: #666666;
   background-color: #f9f9f9;
   border: 2rpx solid #dddddd;
+  font-family: PingFangSC-Regular, PingFang SC;
 }
 .oak-tag.plain {
   background-color: transparent;
