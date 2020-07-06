@@ -62,6 +62,14 @@ Component({
             type: String,
             value: '#FD7622'
         },
+        minusActiveColor: {
+            type: String,
+            value: '#FD7622'
+        },
+        plusActiveColor: {
+            type: String,
+            value: '#FD7622'
+        },
         disableColor: {
             type: String,
             value: '#333333'
