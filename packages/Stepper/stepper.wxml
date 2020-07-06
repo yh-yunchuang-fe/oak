@@ -17,7 +17,7 @@
     class="minus-class"
     bind:tap="onTap"
   >
-    <oak-icon name="minus1" color="{{disabled || disabledMinus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
+    <oak-icon name="minus1" color="{{disabled || disabledMinus ? disableColor : minusActiveColor || activeColor }}" size="{{iconSize}}px"></oak-icon>
   </view>
   <input
     type="{{ integer ? 'number' : 'digit' }}"
@@ -34,6 +34,6 @@
     class="plus-class"
     bind:tap="onTap"
   >
-    <oak-icon name="plus-sign1" color="{{disabled || disabledPlus ? disableColor : activeColor }}" size="{{iconSize}}px"></oak-icon>
+    <oak-icon name="plus-sign1" color="{{disabled || disabledPlus ? disableColor : plusActiveColor || activeColor }}" size="{{iconSize}}px"></oak-icon>
   </view>
 </view>
