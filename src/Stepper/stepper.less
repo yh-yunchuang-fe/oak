@@ -6,13 +6,26 @@
     align-items: center;
     .minus-class,
     .plus-class {
+        position: relative;
         width: 25px;
         height: 25px;
-        border: 1rpx solid #eee;
-        border-radius: 50%;
+        // border: 1rpx solid #eee;
+        // border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+        &:before {
+            content: "";
+            position: absolute;
+            left: -1rpx;
+            top: -1rpx;
+            width: 200%;
+            height: 200%;
+            border-radius: 50%;
+            border: 1px solid #eee;
+            transform: scale(0.5);
+            transform-origin: left top;
+        }
     }
     .input-class {
         font-size: 14px;
