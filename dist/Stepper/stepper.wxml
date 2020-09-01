@@ -14,14 +14,14 @@
   <view
     data-type="minus"
     style="opacity: {{!disabled && disabledMinus ? disabledOpacity : 1 }};height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{minusStyle}}"
-    class="minus-class"
+    class="minus minus-class"
     bind:tap="onTap"
   >
     <oak-icon name="minus1" color="{{disabled || disabledMinus ? disableColor : minusActiveColor || activeColor }}" size="{{iconSize}}px"></oak-icon>
   </view>
   <input
     type="{{ integer ? 'number' : 'digit' }}"
-    class="input-class"
+    class="input input-class"
     style="width: 40px;{{ inputStyle }}"
     value="{{ Limit.limitDecimal(_value, decimalLength) }}"
     disabled="{{ disabled || !enableInput }}"
@@ -31,7 +31,7 @@
   <view
     data-type="plus"
     style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{plusStyle}}"
-    class="plus-class"
+    class="plus plus-class"
     bind:tap="onTap"
   >
     <oak-icon name="plus-sign1" color="{{disabled || disabledPlus ? disableColor : plusActiveColor || activeColor }}" size="{{iconSize}}px"></oak-icon>

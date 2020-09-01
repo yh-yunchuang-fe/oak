@@ -96,7 +96,7 @@ Component({
             value: ''
         }
     },
-    externalClasses: ['ext-class'],
+    externalClasses: ['ext-class', 'minus-class', 'plus-class'],
     data: {
         disabledPlus: false,
         disabledMinus: false,

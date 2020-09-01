@@ -3,17 +3,18 @@
   display: flex;
   align-items: center;
 }
-.oak-stepper .minus-class,
-.oak-stepper .plus-class {
+.oak-stepper .minus,
+.oak-stepper .plus {
   position: relative;
   width: 25px;
   height: 25px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.oak-stepper .minus-class:before,
-.oak-stepper .plus-class:before {
+.oak-stepper .minus:before,
+.oak-stepper .plus:before {
   content: "";
   position: absolute;
   left: -1rpx;
@@ -25,7 +26,7 @@
   transform: scale(0.5);
   transform-origin: left top;
 }
-.oak-stepper .input-class {
+.oak-stepper .input {
   font-size: 14px;
   text-align: center;
   margin: 0 5px;
