@@ -5,8 +5,8 @@
   src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20201112/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20201112/iconfont.woff') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20201112/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('https://static.yonghuivip.com/wechatapp/static/fonts/20201112/iconfont.svg#oak-iconfont') format('svg');
   /* iOS 4.1- */
 }
-.iconfont {
-  font-family: "iconfont" !important;
+.oak-iconfont {
+  font-family: "oak-iconfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
