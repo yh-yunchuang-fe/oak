@@ -52,7 +52,7 @@
         </view>
     </view>
 </block>
-<block wx:elif="{{type === 'input'}}">
+<block wx:elif="{{name === 'input'}}">
     <input 
         wx:if="{{visiable}}"
         class="input-class {{error ? 'error' : ''}}"

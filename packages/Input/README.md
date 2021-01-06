@@ -18,6 +18,14 @@
 ```
 
 ## 代码演示
+### 无样式输入框
+```html
+    <oak-input 
+        name="input"
+        input-class="input-class"
+        placeholder="输入内容"
+    ></oak-input>
+```
 ### 默认样式
 ```html
 <oak-input 
