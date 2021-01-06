@@ -4,7 +4,7 @@
     <!-- none -->
     <view class="h3">无样式输入框</view>
     <oak-input 
-        type="input"
+        name="input"
         input-class="input-class"
         placeholder="输入内容"
     ></oak-input>
