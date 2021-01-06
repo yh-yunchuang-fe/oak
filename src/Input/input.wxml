@@ -1,3 +1,5 @@
+<wxs src="WXS/base.wxs" module="Utils" />
+
 <block wx:if="{{type === 'textarea'}}">
     <!-- 自动换行 -->
     <view class="oak-input-textarea ext-class {{border ? 'border' : ''}}">
@@ -50,6 +52,45 @@
         </view>
     </view>
 </block>
+<block wx:elif="{{type === 'input'}}">
+    <input 
+        wx:if="{{visiable}}"
+        class="input-class {{error ? 'error' : ''}}"
+        value="{{value}}"
+        type="{{type === 'password' ? 'text' : type}}"
+        password="{{type === 'password'}}"
+        placeholder="{{placeholder}}"
+        disabled="{{disabled}}"
+        autosize="{{autosize}}"
+        placeholder-style="{{placeholderStyle}}"
+        placeholder-class="{{placeholderClass}}"
+        focus="{{focus}}"
+        confirm-type="{{confirmType}}"
+        confirm-hold="{{confirmHold}}"
+        cursor="{{cursor}}"
+        selection-start="{{selectionStart}}"
+        selection-end="{{selectionEnd}}"
+        adjust-position="{{adjustPosition}}"
+        hold-keyboard="{{holdkeyboard}}"
+        maxlength="{{maxlength}}"
+        cursor-spacing="{{cursorSpacing}}"
+        clearable="{{clearable}}"
+        error="{{error}}"
+        rules="{{rules}}"
+        bindfocus="focus"
+        bindinput="change"
+        bindblur="blur"
+        bindconfirm="confirm"
+        bindkeyboardheightchange="keyboardheightchange"
+    />
+    <view
+        wx:else
+        class="input-class oak-input-reset {{error ? 'error' : ''}} {{!value ? placeholderClass : ''}}"
+        style="{{!value ? placeholderStyle : ''}}"
+    >
+        {{value ? value : placeholder}}
+    </view>
+</block>
 <block wx:else>
     <!-- input -->
     <view class="oak-input ext-class">
@@ -68,6 +109,7 @@
                 <view class="oak-input-label {{required ? 'required' : ''}}" wx:if="{{label}}">{{label}}</view>
                 <view class="oak-input-body">
                     <input 
+                        wx:if="{{visiable}}"
                         class="input-class {{error ? 'error' : ''}}"
                         value="{{value}}"
                         type="{{type === 'password' ? 'text' : type}}"
@@ -96,6 +138,13 @@
                         bindconfirm="confirm"
                         bindkeyboardheightchange="keyboardheightchange"
                     />
+                    <view
+                        wx:else
+                        class="input-class oak-input-reset {{error ? 'error' : ''}} {{!value ? placeholderClass : ''}}"
+                        style="{{!value ? placeholderStyle : ''}}"
+                    >
+                        {{value ? value : placeholder}}
+                    </view>
                     <text wx:if="{{error&&value}}" class="oak-input-err-msg">{{errorMessage}}</text>
                 </view>
                 <oak-icon 
