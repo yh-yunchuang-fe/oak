@@ -47,7 +47,7 @@ Component({
         },
         placeholderStyle: {
             type: String,
-            value: ''
+            value: 'color: #888'
         },
         placeholderClass: {
             type: String,
@@ -128,7 +128,30 @@ Component({
     },
     externalClasses: ['ext-class', 'input-class'],
     data: {
-        focused: false
+        focused: false,
+        visiable: true,
+    },
+    lifetimes: {
+        attached() {
+        },
+        moved() { },
+        detached() {
+            if (this.data.visiable) {
+                this.setData({ visiable: false });
+            }
+        },
+    },
+    pageLifetimes: {
+        show() {
+            if (!this.data.visiable) {
+                this.setData({ visiable: true });
+            }
+        },
+        hide() {
+            if (this.data.visiable) {
+                this.setData({ visiable: false });
+            }
+        },
     },
     methods: {
         focus(e) {

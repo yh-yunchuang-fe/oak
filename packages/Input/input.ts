@@ -48,7 +48,7 @@ Component({
         },
         placeholderStyle: {
             type: String,
-            value: ''
+            value: 'color: #888'
         },
         placeholderClass: {
             type: String,
@@ -129,7 +129,31 @@ Component({
     },
     externalClasses: ['ext-class', 'input-class'],
     data: {
-        focused: false
+        focused: false,
+        visiable: true, // 是否显示输入框
+    },
+    lifetimes: {
+        attached() {
+
+        },
+        moved() {},
+        detached() {
+            if(this.data.visiable) {
+                this.setData({visiable: false})
+            }
+        },
+    },
+    pageLifetimes: {
+        show() {
+            if(!this.data.visiable) {
+                this.setData!({visiable: true})
+            }
+        },
+        hide() {
+            if(this.data.visiable) {
+                this.setData!({visiable: false})
+            }
+        },
     },
     methods: {
         focus(e): void {
