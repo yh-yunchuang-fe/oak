@@ -162,25 +162,26 @@ Component({
             if (!this.data.focused) {
                 this.setData({ focused: true });
             }
-            this.triggerEvent('focus', Object.assign({}, e));
+            this.triggerEvent('focus', Object.assign({}, e.detail));
         },
         change(e) {
             const { value = '' } = e.detail || {};
             this.setData({ value }, () => {
-                this.triggerEvent('change', Object.assign({}, e));
+                this.triggerEvent('change', Object.assign({}, e.detail));
+                this.triggerEvent('input', Object.assign({}, e.detail));
             });
         },
         blur(e) {
             if (this.data.focused) {
                 this.setData({ focused: false });
             }
-            this.triggerEvent('blur', Object.assign({}, e));
+            this.triggerEvent('blur', Object.assign({}, e.detail));
         },
         confirm(e) {
-            this.triggerEvent('confirm', Object.assign({}, e));
+            this.triggerEvent('confirm', Object.assign({}, e.detail));
         },
         keyboardheightchange(e) {
-            this.triggerEvent('keyboardheightchange', Object.assign({}, e));
+            this.triggerEvent('keyboardheightchange', Object.assign({}, e.detail));
         },
         clear() {
             this.setData({ value: '' }, () => {

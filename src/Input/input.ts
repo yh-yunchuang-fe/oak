@@ -164,25 +164,26 @@ Component({
             if (!this.data.focused) {
                 this.setData({ focused: true })
             }
-            this.triggerEvent('focus', {...e})
+            this.triggerEvent('focus', {...e.detail})
         },
         change(e): void {
             const { value = '' } = e.detail || {}
             this.setData({ value }, (): void => {
-                this.triggerEvent('change', {...e})
+                this.triggerEvent('change', {...e.detail})
+                this.triggerEvent('input', {...e.detail})
             })
         },
         blur(e): void {
             if (this.data.focused) {
                 this.setData({ focused: false })
             }
-            this.triggerEvent('blur', {...e})
+            this.triggerEvent('blur', {...e.detail})
         },
         confirm(e): void {
-            this.triggerEvent('confirm', {...e})
+            this.triggerEvent('confirm', {...e.detail})
         },
         keyboardheightchange(e): void {
-            this.triggerEvent('keyboardheightchange', {...e})
+            this.triggerEvent('keyboardheightchange', {...e.detail})
         },
         clear(): void {
             this.setData({ value: '' }, (): void => {
