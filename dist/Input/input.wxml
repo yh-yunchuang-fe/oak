@@ -52,9 +52,9 @@
         </view>
     </view>
 </block>
-<block wx:elif="{{name === 'input'}}">
+<block wx:elif="{{singleInput}}">
     <input 
-        wx:if="{{visiable}}"
+        wx:if="{{!visiable}}"
         class="input-class {{error ? 'error' : ''}}"
         value="{{value}}"
         type="{{type === 'password' ? 'text' : type}}"

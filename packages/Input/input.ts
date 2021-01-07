@@ -46,6 +46,10 @@ Component({
             type: Boolean,
             value: ''
         },
+        singleInput: {
+            type: Boolean,
+            value: false
+        },
         placeholderStyle: {
             type: String,
             value: 'color: #888'
