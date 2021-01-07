@@ -54,7 +54,7 @@
 </block>
 <block wx:elif="{{singleInput}}">
     <input 
-        wx:if="{{!visiable}}"
+        wx:if="{{visiable}}"
         class="input-class {{error ? 'error' : ''}}"
         value="{{value}}"
         type="{{type === 'password' ? 'text' : type}}"
