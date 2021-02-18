@@ -65,6 +65,14 @@ Component({
         height: {
             type: String,
             value: null,
+        },
+        top: {
+            type: String,
+            value: null,
+        },
+        bottom: {
+            type: String,
+            value: null,
         }
     },
     data: {
