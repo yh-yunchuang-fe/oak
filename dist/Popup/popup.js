@@ -83,7 +83,7 @@ Component({
             isIPhonex: this.isiPhoneXUp(),
         });
     },
-    externalClasses: ['ext-class', 'body-class'],
+    externalClasses: ['ext-class', 'body-class', 'content-class'],
     methods: {
         popupClose() {
             this.triggerEvent('onPopupClose');
