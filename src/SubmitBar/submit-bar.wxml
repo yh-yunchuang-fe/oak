@@ -25,7 +25,9 @@
                     <text wx:if="{{suffixLabel}}">{{suffixLabel}}</text>
                 </view>
                 <view class="oak-submit-bar-sub-title sub-class"
-                    wx:if="{{subTitle}}">{{subTitle}}</view>
+                    wx:if="{{subTitle}}">{{subTitle}}
+                    <slot name="subTitle-sub"></slot>
+                </view>
             </view>
         </view>
         <oak-button
