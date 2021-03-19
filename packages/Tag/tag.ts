@@ -11,6 +11,10 @@ Component({
                 color && this._setStyle()
             }
         },
+        rotate: {
+            type: Number,
+            value: 90
+        },
         plain: {
             type: Boolean,
             value: false,
@@ -33,6 +37,14 @@ Component({
             observer(color): void {
                 color && this._setStyle()
             }
+        },
+        beforeImage: {
+            type: String,
+            value: null,
+        },
+        afterImage: {
+            type: String,
+            value: null,
         }
     },
     methods: {
@@ -49,7 +61,7 @@ Component({
 
                 if (regx.test(color)) {
                     const colorArray: string[] = color.split(',')
-                    _style += colorArray.length === 2 ? `;background:linear-gradient(to right, ${colorArray[0]}, ${colorArray[1]});` : `;background:${colorArray[0]};`
+                    _style += colorArray.length === 2 ? `;background:linear-gradient(${this.data.rotate}deg, ${colorArray[0]}, ${colorArray[1]});` : `;background:${colorArray[0]};`
                 } else {
                     _style += `;background:${color};`
                 }

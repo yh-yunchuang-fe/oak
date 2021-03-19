@@ -67,5 +67,16 @@
         <oak-tag color="#FC0738"
             plain>#FC0738</oak-tag>
         <oak-tag color="#ffb601,#ff7c02">渐变</oak-tag>
+        <oak-tag color="#ffb601,#ff7c02" rotate="180deg">渐变方向</oak-tag>
     </view>
+
+    <view class="h3">图片</view>
+    <view class="row">
+        <oak-tag 
+            color="magenta" 
+            beforeImage="https://image.yonghuivip.com/tool.png" 
+            afterImage="http://image.yonghuivip.com/image/1606817732310c307e3c9ef9531808c9c2c43dde0edd02e721ab4.png"
+        >图片</oak-tag>
+    </view>
+
 </view>
