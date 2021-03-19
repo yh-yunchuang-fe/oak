@@ -91,6 +91,9 @@
             <oak-list-item title="Countdown 倒计时"
                 title-class="item-title"
                 url="/pages/countdown/countdown"/>
+            <oak-list-item title="Image 图片"
+                title-class="item-title"
+                url="/pages/image/index"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
