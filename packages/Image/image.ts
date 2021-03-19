@@ -1,6 +1,49 @@
+import BasicBehavior from '../mixins/basic'
+
 Component({
-    properties: {},
+    behaviors: [BasicBehavior],
+    properties: {
+        src: {
+            type: String,
+            value: null
+        },
+        width: {
+            type: String,
+            value: null
+        },
+        height: {
+            type: String,
+            value: null
+        },
+        radius: {
+            type: Array,
+            value: [0, 0, 0, 0]
+        },
+        mode: {
+            type: String,
+            value: 'aspectFill'
+        },
+        webp: {
+            type: Boolean,
+            value: true
+        },
+        lazyLoad: {
+            type: Boolean,
+            value: true
+        },
+        showMenuByLongpress: {
+            type: Boolean,
+            value: false
+        }
+    },
     externalClasses: ['ext-class'],
     data: {},
-    methods: {}
+    methods: {
+        onLoad() {
+            this.triggerEvent('onLoad', { ...this.data })
+        },
+        onLoadError(e) {
+            this.triggerEvent('onLoadError', e)
+        }
+    }
 })
