@@ -173,3 +173,9 @@
   width: 28rpx;
   height: 28rpx;
 }
+.oak-tag .image:first-child {
+  margin-left: -4rpx;
+}
+.oak-tag .image:last-child {
+  margin-right: -4rpx;
+}
