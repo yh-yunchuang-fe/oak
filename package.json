@@ -1,6 +1,6 @@
 {
     "name": "@yhyc/oak-weui",
-    "version": "0.0.2-beta.41",
+    "version": "0.0.2-beta.42",
     "description": "A Wechat App UI Lib.",
     "miniprogram": "dist",
     "scripts": {
