@@ -77,5 +77,5 @@ Component({
             });
         }
     },
-    externalClasses: ['custom-class'],
+    externalClasses: ['custom-class', 'before-class', 'after-class'],
 });
