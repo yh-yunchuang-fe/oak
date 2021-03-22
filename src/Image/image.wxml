@@ -58,10 +58,13 @@
             }
         }
 
-        return "width: " + (width || "auto")
-            + ";height: " + (height || "auto")
-            + ";border-radius: " + (_radius || "auto")
-            + ";"
+        var w = '', h = '', r = ''
+        
+        if(width) w = ";width:" + width
+        if(height) h = ";height:" + height
+        if(_radius) r = ";border-radius: " + _radius
+
+        return w + h + r + ";"
     }
 
     module.exports = {
