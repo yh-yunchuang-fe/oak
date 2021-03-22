@@ -58,8 +58,8 @@
             }
         }
 
-        return "width: " + width || "100%"
-            + ";height: " + height || "100%"
+        return "width: " + (width || "100%")
+            + ";height: " + (height || "100%")
             + ";border-radius: " + _radius || "auto"
             + ";"
     }
