@@ -161,7 +161,7 @@ Component({
             const { onPlus, onMinus } = this.data;
             this.type = type;
             this.onChange();
-            const returnInfo = this.returnInfo(type);
+            const returnInfo = this.returnInfo(type, event.touches);
             if (type === 'plus') {
                 if (typeof onPlus === 'function') {
                     onPlus(returnInfo);
@@ -178,10 +178,10 @@ Component({
                 this.triggerEvent('onMinus', returnInfo);
             }
         },
-        returnInfo(type) {
+        returnInfo(type, touches) {
             const { _value, disabled, min, max, step, decimalLength } = this.data;
             return {
-                value: _value, disabled, min, max, step, decimalLength, type
+                value: _value, disabled, min, max, step, decimalLength, type, touches
             };
         },
         changeValue(_value) {
