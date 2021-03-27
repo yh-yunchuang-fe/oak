@@ -1,19 +1,27 @@
 .oak-image {
     width: 100%;
     height: 100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: all .2s;
-    background-color: #f0f0f0;
-    background-image: url(https://static.yonghuivip.com/wechatapp/static/images/wechat_app_default_img_square.png?imageMogr2/auto-orient/thumbnail/320x/strip/format/jpg/interlace/1);
     overflow: hidden;
+
     .image {
         width: 100%;
         height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: all .2s;
+        background-color: #f0f0f0;
+        background-image: url(https://static.yonghuivip.com/wechatapp/static/images/wechat_app_default_img_square.png?imageMogr2/auto-orient/thumbnail/320x/strip/format/jpg/interlace/1);
+
+        &.loaded {
+            background-image: none;
+            background-color: transparent;
+        }
 
         &.hidden {
             display: none;
         }
     }
+
+
 }

@@ -38,9 +38,6 @@ Component({
     externalClasses: ['ext-class'],
     data: {},
     methods: {
-        onLoad() {
-            this.triggerEvent('onLoad', Object.assign({}, this.data));
-        },
         onLoadError(e) {
             this.triggerEvent('onLoadError', e);
         }

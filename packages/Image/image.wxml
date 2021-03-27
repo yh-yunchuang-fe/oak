@@ -67,9 +67,16 @@
         return w + h + r + ";"
     }
 
+    var onLoad = function(event) {
+        if (event && event.instance && event.instance.addClass) {
+            event.instance.addClass('loaded')
+        }
+    }
+
     module.exports = {
         getSrc: getSrc,
-        getStyle: getStyle
+        getStyle: getStyle,
+        onLoad: onLoad
     }
 </wxs>
 
@@ -83,6 +90,6 @@
         webp="{{ webp }}"
         src="{{ urlFix.getSrc(src, useWebp, pixelRatio, width)}}" 
         binderror="onLoadError" 
-        bindload="onLoad"
+        bindload="{{urlFix.onLoad}}"
     />
 </view>
