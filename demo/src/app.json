@@ -26,7 +26,8 @@
     "pages/searchBar/searchBar",
     "pages/noticeBar/noticeBar",
     "pages/countdown/countdown",
-    "pages/image/index"
+    "pages/image/index",
+    "pages/progress/progress"
   ],
   "window":{
     "backgroundTextStyle":"light",

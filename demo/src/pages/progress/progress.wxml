@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+    <oak-progress bgColor="{{ 'rgba(255, 56, 25, .3)' }}" activeColor="{{ 'rgba(255, 56, 25, 1)' }}" bordeRadiu="{{ 12 }}" strokeWidth="{{ progress }}"></oak-progress>
+</view>

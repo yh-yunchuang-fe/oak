@@ -1,0 +1,7 @@
+
+<view class="progress {{disabled ? 'disabled-class' : 'ext-class'}}"
+    style="background: {{bgColor}};border-radius: {{bordeRadiu}}rpx;">
+    <view class="active-progress active-class"
+         style="background: {{activeColor}};border-radius: {{bordeRadiu}}rpx;transform: translateX({{strokeWidth - 100}}%)">
+    </view>
+</view>
