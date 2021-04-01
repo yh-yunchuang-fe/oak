@@ -29,7 +29,7 @@ API说明。
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | bgColor | 背景色 | `String` | `` |
-| activeColor | 选择的颜色 | `Number` | `0` |
+| activeColor | 选择的颜色 | `String` | `` |
 | bordeRadiu | 进度条设置按钮 | `Number` | `0` |
 | strokeWidth | 进度条百分比 | `Number` | `0` |
 
