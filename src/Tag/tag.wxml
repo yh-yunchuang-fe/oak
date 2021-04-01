@@ -1,7 +1,8 @@
 <wxs src="WXS/base.wxs" module="Utils" />
 
-<view class="{{ Utils.classNames('oak-tag', {plain: plain})}} oak-tag-{{color}} oak-tag-{{shape}} custom-class" style="{{ _style }}">
-    <image wx:if="{{beforeImage}}" mode="aspectFill" class="image before-class" src="{{beforeImage}}" />
+<view class="{{ Utils.classNames('oak-tag', {plain: plain})}} oak-tag-{{color}} oak-tag-{{shape}} custom-class" 
+    style="{{ _style }} {{beforeImage ? 'padding-left:0;' : ''}} {{afterImage ? 'padding-right:0;' : ''}}">
+    <image wx:if="{{beforeImage}}" mode="heightFix" class="image before-class" src="{{beforeImage}}" />
     <slot></slot>
-    <image wx:if="{{afterImage}}" mode="aspectFill" class="image after-class" src="{{afterImage}}" />
+    <image wx:if="{{afterImage}}" mode="heightFix" class="image after-class" src="{{afterImage}}" />
 </view>

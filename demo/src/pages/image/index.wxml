@@ -3,7 +3,7 @@
     <view class="h3">基本用法</view>
     <view class="row">
         <oak-image 
-            src="http://image.yonghuivip.com/product/1001999/152579504691006f19ff2f1fa94dc2c442a60cb5edc1785defa53" 
+            src="http://image.yonghuivip.com/product/B-485899/14939771354894ea188f73a5c7e7bfb29553c2aa4ef0f4493f282" 
             width="240rpx"
             height="240rpx"
             radius="{{[20, 20, 0, 0]}}"
