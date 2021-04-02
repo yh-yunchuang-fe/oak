@@ -1,4 +1,13 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="container">
-    <oak-progress bgColor="{{ 'rgba(255, 56, 25, .3)' }}" activeColor="{{ 'rgba(255, 56, 25, 1)' }}" bordeRadiu="{{ 12 }}" strokeWidth="{{ progress }}"></oak-progress>
+    <view class="h3">基本用法</view>
+    <oak-progress strokeWidth="{{ progress }}" />
+    <view class="h3">禁用</view>
+    <oak-progress strokeWidth="{{ progress }}" disabled />
+    <view class="h3">禁用 - 自定义</view>
+    <oak-progress strokeWidth="{{ progress }}" disabledColor="#97ceff" disabledBgColor="#c8eaff" disabled />
+    <view class="h3">渐变色</view>
+    <oak-progress color="yellow,#FF3819" radiu="{{ 12 }}" strokeWidth="{{ progress }}" />
+    <view class="h3">自定义</view>
+    <oak-progress radiu="{{ 12 }}" strokeWidth="{{ progress }}" bg-class="bg" color-class="color" />
 </view>
