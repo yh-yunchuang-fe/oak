@@ -9,7 +9,7 @@ Page({
     onShow() {
         setTimeout(() => {
             // @ts-ignore
-            this.setData({ progress: 80})
+            this.setData({ progress: 50})
         }, 200)
     }
 })

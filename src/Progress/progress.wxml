@@ -6,7 +6,7 @@
         var colors = color.split(',')
 
         if(colors && colors.length === 1) {
-            return ';background:' + colors[0]
+            return ';background:' + colors[0] + ';'
         }
 
         return ';background:linear-gradient(' + rotate + 'deg,' + colors[0] + ',' + colors[1] + ');'
@@ -18,8 +18,8 @@
 </wxs>
 
 <view class="ext-class bg-class {{Utils.classNames('progress', {disabled: disabled})}}" 
-    style="background: {{disabled ? disabledBgColor : bgColor}};border-radius: {{radiu}}rpx;">
+    style="background: {{disabled ? disabledBgColor : bgColor}};border-radius: {{radiu}}rpx;width:{{width}};height:{{height}};">
     <view class="color-class {{Utils.classNames('active-progress', {disabled: disabled})}}"
-         style="{{Style.setStyle(disabled ? disabledColor : color, rotate)}};border-radius: {{radiu}}rpx;transform: translateX({{strokeWidth - 100}}%)">
+         style="{{Style.setStyle(disabled ? disabledColor : color, rotate)}};border-radius:{{radiu}}rpx;transform: translateX({{strokeWidth - 100}}%);height:{{height}};">
     </view>
 </view>

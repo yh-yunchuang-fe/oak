@@ -14,7 +14,7 @@ Component({
             value: '#ff38194d'
         },
         strokeWidth: {
-            type: String,
+            type: Number,
             value: 0
         },
         disabledColor: {
@@ -33,8 +33,16 @@ Component({
             type: Number,
             value: 90
         },
+        width: {
+            type: String,
+            value: '200rpx'
+        },
+        height: {
+            type: String,
+            value: '24rpx'
+        }
     },
-    externalClasses: ['ext-class', 'bg-class', 'color-class', 'disabled-bg-class', 'disabled-color-class'],
+    externalClasses: ['ext-class', 'bg-class', 'color-class'],
     data: {},
     methods: {}
 });
