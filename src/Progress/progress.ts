@@ -38,7 +38,7 @@ Component({
             value: 90
         },
     },
-    externalClasses: ['ext-class', 'bg-class', 'color-class', 'disabled-bg-class', 'disabled-color-class'],
+    externalClasses: ['ext-class', 'bg-class', 'color-class'],
     data: {},
     methods: {}
 })
