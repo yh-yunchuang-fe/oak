@@ -149,6 +149,9 @@ Component({
                 _value: value,
             })
         },
+        onFocus(event): void {
+            this.triggerEvent('onFocus', event)
+        },
         onChange(): void {
             const { type } = this
             if (this.isDisabled(type)) {

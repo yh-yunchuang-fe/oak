@@ -27,6 +27,7 @@
     disabled="{{ disabled || !enableInput }}"
     bindinput="onInput"
     bind:blur="onBlur"
+    bindfocus="onFocus"
   />
   <view
     data-type="plus"
