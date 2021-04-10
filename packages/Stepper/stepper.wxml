@@ -28,6 +28,7 @@
     bindinput="onInput"
     bind:blur="onBlur"
     bindfocus="onFocus"
+    bindtap="onInputClick"
   />
   <view
     data-type="plus"

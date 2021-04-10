@@ -149,6 +149,9 @@ Component({
         onFocus(event) {
             this.triggerEvent('onFocus', event);
         },
+        onInputClick(event) {
+            this.triggerEvent('onInputClick', event);
+        },
         onChange() {
             const { type } = this;
             if (this.isDisabled(type)) {
