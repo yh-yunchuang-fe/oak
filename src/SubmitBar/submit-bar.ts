@@ -94,5 +94,5 @@ Component({
         }
 
     },
-    externalClasses: ['bar-class', 'body-class', 'button-class', 'label-class', 'currency-class', 'price-class', 'sub-class'],
+    externalClasses: ['bar-class', 'body-class', 'button-class', 'label-class', 'currency-class', 'price-class', 'sub-class', 'suffix-class'],
 })

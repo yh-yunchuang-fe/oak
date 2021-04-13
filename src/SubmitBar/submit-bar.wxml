@@ -22,7 +22,7 @@
                     <text class="oak-submit-bar-label label-class" wx:if="{{label}}">{{label}}</text>
                     <text class="oak-submit-bar-currency currency-class" wx:if="{{currency}}">{{currency}}</text>
                     <text class="oak-submit-bar-price price-class">{{price/100}}</text>
-                    <text wx:if="{{suffixLabel}}">{{suffixLabel}}</text>
+                    <text wx:if="{{suffixLabel}}" class="suffix-class">{{suffixLabel}}</text>
                 </view>
                 <view class="oak-submit-bar-sub-title sub-class"
                     wx:if="{{subTitle}}">{{subTitle}}
