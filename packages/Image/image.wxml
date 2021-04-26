@@ -84,7 +84,7 @@
     class="oak-image ext-class"
     style="{{urlFix.getStyle(width, height, radius)}}">
     <image 
-        class="{{Utils.classNames('image', {hidden: !src})}}" 
+        class="image" 
         lazy-load="{{ lazyLoad }}" 
         mode="{{ mode }}" 
         webp="{{ webp }}"
