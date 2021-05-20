@@ -1,22 +1,9 @@
-/**
- *
- *
- */
 @font-face {
-    font-family: 'oak-iconfont';
-    src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20210520/iconfont.eot'); /* IE9 */
-    src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20210520/iconfont.eot#iefix')
-            format('embedded-opentype'),
-        /* IE6-IE8 */
-            url('https://static.yonghuivip.com/wechatapp/static/fonts/20210520/iconfont.woff')
-            format('woff'),
-        url('https://static.yonghuivip.com/wechatapp/static/fonts/20210520/iconfont.ttf')
-            format('truetype'),
-        /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-            url('https://static.yonghuivip.com/wechatapp/static/fonts/20210520/iconfont.svg#oak-iconfont')
-            format('svg'); /* iOS 4.1- */
+  font-family: "oak-iconfont"; /* Project id 1449420 */
+  src: url('iconfont.woff2?t=1621479879152') format('woff2'),
+       url('iconfont.woff?t=1621479879152') format('woff'),
+       url('iconfont.ttf?t=1621479879152') format('truetype');
 }
-
 
 .oak-iconfont {
   font-family: "oak-iconfont" !important;
