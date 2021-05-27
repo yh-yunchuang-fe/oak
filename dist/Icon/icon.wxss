@@ -4,7 +4,7 @@
  */
 @font-face {
   font-family: 'oak-iconfont';
-  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20210527/iconfont.woff2?t=1621479879152') format('woff2'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20210527/iconfont.woff?t=1621479879152') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20210527/iconfont.ttf?t=1621479879152') format('truetype');
+  src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20210527-1/iconfont.woff2?t=1621479879152') format('woff2'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20210527-1/iconfont.woff?t=1621479879152') format('woff'), url('https://static.yonghuivip.com/wechatapp/static/fonts/20210527-1/iconfont.ttf?t=1621479879152') format('truetype');
 }
 .oak-iconfont {
   font-family: "oak-iconfont" !important;
@@ -79,7 +79,7 @@
 .oak-icon-openeyes:before {
   content: "\e71d";
 }
-.oak-icon-card1:before {
+.oak-icon-shopcard:before {
   content: "\e71e";
 }
 .oak-icon-xuanfengtou:before {
@@ -136,7 +136,7 @@
 .oak-icon-stick:before {
   content: "\e70e";
 }
-.oak-icon-delivery1:before {
+.oak-icon-delivery-man:before {
   content: "\e70d";
 }
 .oak-icon-community:before {
@@ -202,10 +202,10 @@
 .oak-icon-close-light:before {
   content: "\e6d5";
 }
-.oak-icon-plus-sign1:before {
+.oak-icon-plus-sign:before {
   content: "\e6d6";
 }
-.oak-icon-minus1:before {
+.oak-icon-minus:before {
   content: "\e6d7";
 }
 .oak-icon-more:before {
@@ -436,10 +436,10 @@
 .oak-icon-exclamation-point:before {
   content: "\e6b9";
 }
-.oak-icon-plus-sign:before {
+.oak-icon-cyclic-plus-sign:before {
   content: "\e6ba";
 }
-.oak-icon-minus:before {
+.oak-icon-cyclic-minus:before {
   content: "\e6bb";
 }
 .oak-icon {
