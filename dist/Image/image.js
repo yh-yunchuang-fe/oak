@@ -35,7 +35,7 @@ Component({
             value: false
         }
     },
-    externalClasses: ['ext-class'],
+    externalClasses: ['ext-class', 'img-class'],
     data: {},
     methods: {
         onLoadError(e) {
