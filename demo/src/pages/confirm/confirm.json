@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "confirm反馈弹窗",
+    "usingComponents": {
+        "oak-icon": "/Icon/icon",
+        "oak-confirm": "/Confirm/confirm"
+    }
+}
