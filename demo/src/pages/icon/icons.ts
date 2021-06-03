@@ -174,14 +174,14 @@ const icons: object[] = [
     {
         icon_id: '11088611',
         name: 'plus-sign',
-        font_class: 'plus-sign1',
+        font_class: 'plus-sign',
         unicode: 'e6d6',
         unicode_decimal: 59094,
     },
     {
         icon_id: '11088620',
         name: 'minus',
-        font_class: 'minus1',
+        font_class: 'minus',
         unicode: 'e6d7',
         unicode_decimal: 59095,
     },

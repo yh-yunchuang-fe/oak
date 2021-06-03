@@ -14,13 +14,16 @@
   background: rgba(0, 0, 0, 0.75);
 }
 .oak-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
   min-width: 40rpx;
   padding: 0 4rpx;
   height: 26rpx;
   line-height: 26rpx;
   font-size: 20rpx;
   border-radius: 4rpx;
-  display: inline-block;
   text-align: center;
   box-sizing: content-box;
   vertical-align: middle;
@@ -166,4 +169,7 @@
 }
 .oak-tag-square {
   border-radius: 0;
+}
+.oak-tag .image {
+  height: 100%;
 }

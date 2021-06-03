@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Oak Weui",
+    "usingComponents": {
+        "oak-image": "/Image/image"
+    }
+}

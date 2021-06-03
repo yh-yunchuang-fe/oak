@@ -95,7 +95,7 @@ Component({
             value: ''
         }
     },
-    externalClasses: ['ext-class', 'minus-class', 'plus-class'],
+    externalClasses: ['ext-class', 'minus-class', 'plus-class', 'input-class'],
     data: {
         disabledPlus: false,
         disabledMinus: false,
@@ -149,6 +149,12 @@ Component({
                 _value: value,
             })
         },
+        onFocus(event): void {
+            this.triggerEvent('onFocus', event)
+        },
+        onInputClick(event): void {
+            this.triggerEvent('onInputClick', event)
+        },
         onChange(): void {
             const { type } = this
             if (this.isDisabled(type)) {
@@ -165,7 +171,7 @@ Component({
             const { onPlus, onMinus } = this.data
             this.type = type
             this.onChange()
-            const returnInfo = this.returnInfo(type)
+            const returnInfo = this.returnInfo(type, event.touches)
             if (type === 'plus') {
                 if (typeof onPlus === 'function') {
                     onPlus(returnInfo)
@@ -182,10 +188,10 @@ Component({
             }
         },
 
-        returnInfo(type): object {
+        returnInfo(type, touches): object {
             const { _value, disabled, min, max, step, decimalLength } = this.data
             return {
-                value: _value, disabled, min, max, step, decimalLength, type
+                value: _value, disabled, min, max, step, decimalLength, type, touches
             }
         },
 

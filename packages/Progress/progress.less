@@ -1,0 +1,16 @@
+@import '../style/variable';
+@import '../style/mixin';
+
+
+.progress {
+    width: 100%;
+    height: 24rpx;
+    overflow: hidden;
+
+    .active-progress {
+        height: 100%;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: all 0.3s ease-in-out;
+    }
+}
