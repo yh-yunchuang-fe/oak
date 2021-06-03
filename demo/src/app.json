@@ -25,7 +25,10 @@
     "pages/submitBar/submitBar",
     "pages/searchBar/searchBar",
     "pages/noticeBar/noticeBar",
-    "pages/countdown/countdown"
+    "pages/countdown/countdown",
+    "pages/image/index",
+    "pages/progress/progress",
+    "pages/confirm/confirm"
   ],
   "window":{
     "backgroundTextStyle":"light",

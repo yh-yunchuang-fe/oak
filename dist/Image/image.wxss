@@ -1,0 +1,23 @@
+.oak-image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+  background-image: url(https://static.yonghuivip.com/wechatapp/static/images/product/default_light@3x.png?imageMogr2/auto-orient/thumbnail/320x/strip/format/jpg/interlace/1);
+  overflow: hidden;
+}
+.oak-image .image {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.oak-image .image.loaded {
+  opacity: 1;
+  background: #fff;
+}
+.oak-image .image.hidden {
+  display: none;
+}

@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">
+        基本用法1
+    </view>   
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: 'Oak 弹窗1', content: '这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案', cancelText: '取消', confirmText: '删除', showCancel: false } }}"
+            bindtap="show"
+        >带内容</oak-button>
+    </view>
+    <view class="h3">
+        基本用法2
+    </view>
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: 'Oak 弹窗2', content: '', cancelText: '', confirmText: '知道了', showCancel: false } }}"
+            bindtap="show"
+        >不带内容</oak-button>
+    </view>
+    <view class="h3">
+        基本用法3
+    </view>   
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: 'Oak 弹窗3', content: '这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案', cancelText: '取消', confirmText: '删除', showCancel: true } }}"
+            bindtap="show"
+        >带左上角关闭按钮</oak-button>
+    </view>
+    <view class="h3">
+        基本用法4
+    </view>   
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: 'Oak 弹窗4', content: '这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案', cancelText: '', confirmText: '知道了', showCancel: false } }}"
+            bindtap="show"
+        >只有一个主按钮</oak-button>
+    </view>
+    <view class="h3">
+        基本用法5
+    </view>   
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: 'Oak 弹窗5', content: '这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案', cancelText: '', confirmText: '知道了', showCancel: false } }}"
+            bindtap="show"
+        >多行文案内部滚动</oak-button>
+    </view>
+    <oak-confirm
+        isConfirmShow="{{isConfirmShow}}"
+        showCancel="{{showCancel}}"
+        confirmText="{{confirmText}}"
+        cancelText="{{cancelText}}"
+        content="{{content}}"
+        title="{{title}}"
+        bind:onModalConfirm="onModalConfirm"
+        bind:onModalCancel="onModalCancel">    
+    </oak-confirm>
+</view>
