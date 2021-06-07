@@ -1,3 +1,4 @@
+
 /**
  * compareVersion('1.11.0', '1.9.9') // => 1 // 1表示 1.11.0比1.9.9要新
  * compareVersion('1.11.0', '1.11.0') // => 0 // 0表示1.11.0和1.11.0是同一个版本
@@ -6,7 +7,13 @@
  * @param v1 
  * @param v2 
  */
-function compareVersion(v1: any, v2: any) {
+export function compareVersion(v1: any, v2: any) {
+    // 不传入v2，自动获取当前版本
+    if (!v2) {
+        const systemInfo = wx.getSystemInfoSync()
+        v2 = v1
+        v1 = systemInfo.SDKVersion
+    }
     v1 = v1.split('.')
     v2 = v2.split('.')
     const len = Math.max(v1.length, v2.length)
