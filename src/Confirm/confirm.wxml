@@ -11,7 +11,7 @@
             </oak-icon>
 
             <view class="title {{!content ? 'main-title' : ''}}" wx:if="{{title}}">{{title}}</view>
-            <view class="content" wx:if="{{content}}">
+            <view class="content {{!title ? 'main-content': ''}}" wx:if="{{content}}">
                 <view>{{content}}</view>
             </view>
             <view class="button-area">
