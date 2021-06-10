@@ -1,6 +1,5 @@
 import { compareVersion } from 'Mixins/basic'
-
-const systemInfo = wx.getSystemInfoSync()
+import systemInfo from 'Mixins/toy-system-info'
 
 Component({
     properties: {

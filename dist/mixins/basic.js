@@ -1,6 +1,6 @@
+import systemInfo from './toy-system-info';
 export function compareVersion(v1, v2) {
     if (!v2) {
-        const systemInfo = wx.getSystemInfoSync();
         v2 = v1;
         v1 = systemInfo.SDKVersion;
     }
@@ -26,14 +26,13 @@ export function compareVersion(v1, v2) {
     return 0;
 }
 function useWebp() {
-    const info = wx.getSystemInfoSync();
-    const SDKVersion = info.SDKVersion;
+    const SDKVersion = systemInfo.SDKVersion;
     return compareVersion(SDKVersion, '2.9.0') >= 0;
 }
 export const BasicBehavior = Behavior({
     data: {
         useWebp: useWebp(),
-        pixelRatio: wx.getSystemInfoSync().pixelRatio
+        pixelRatio: systemInfo.pixelRatio
     },
     methods: {
         getRect(selector, all) {
@@ -52,12 +51,11 @@ export const BasicBehavior = Behavior({
             });
         },
         isiPhoneXUp() {
-            const model = wx.getSystemInfoSync().model;
+            const model = systemInfo.model;
             return !(/iPhone\s+{4|5|6|7|8}/g.test(model));
         },
         rpxToPx(str, minus) {
             let reg;
-            const systemInfo = wx.getSystemInfoSync();
             const screenK = systemInfo.screenWidth / 750;
             if (minus) {
                 reg = /^-?[0-9]+([.]{1}[0-9]+){0,1}(rpx|px)$/g;

@@ -1,4 +1,6 @@
 
+import systemInfo from './toy-system-info'
+
 /**
  * compareVersion('1.11.0', '1.9.9') // => 1 // 1表示 1.11.0比1.9.9要新
  * compareVersion('1.11.0', '1.11.0') // => 0 // 0表示1.11.0和1.11.0是同一个版本
@@ -7,10 +9,9 @@
  * @param v1 
  * @param v2 
  */
-export function compareVersion(v1: any, v2: any) {
+export function compareVersion(v1: any, v2: any): number {
     // 不传入v2，自动获取当前版本
     if (!v2) {
-        const systemInfo = wx.getSystemInfoSync()
         v2 = v1
         v1 = systemInfo.SDKVersion
     }
@@ -38,18 +39,15 @@ export function compareVersion(v1: any, v2: any) {
     
     return 0
 }
-function useWebp() {
-    const info = wx.getSystemInfoSync()
-    
-    const SDKVersion = info.SDKVersion
-
+function useWebp(): boolean {
+    const SDKVersion = systemInfo.SDKVersion
     return compareVersion(SDKVersion, '2.9.0') >= 0
 }
 
 export const BasicBehavior = Behavior({
     data: {
         useWebp: useWebp(),
-        pixelRatio: wx.getSystemInfoSync().pixelRatio
+        pixelRatio: systemInfo.pixelRatio
     },
     methods: {
         getRect(selector: string, all?: boolean): Promise<object> {
@@ -68,12 +66,11 @@ export const BasicBehavior = Behavior({
             })
         },
         isiPhoneXUp(): boolean {
-            const model = wx.getSystemInfoSync().model
+            const model = systemInfo.model
             return !(/iPhone\s+{4|5|6|7|8}/g.test(model))
         },
         rpxToPx(str: string, minus?: boolean): number {
             let reg
-            const systemInfo = wx.getSystemInfoSync()
             const screenK = systemInfo.screenWidth / 750
             if (minus) {
                 reg = /^-?[0-9]+([.]{1}[0-9]+){0,1}(rpx|px)$/g
