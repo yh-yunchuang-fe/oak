@@ -56,6 +56,13 @@
   font-weight: 500;
   margin-top: 48rpx;
   margin-bottom: 36rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -webkit-box-flex: 2;
+  height: inherit;
 }
 .oak-confirm .yh-confirm-body .main-title {
   margin-top: 60rpx;
