@@ -8,6 +8,7 @@ yarn-error.log
 __build__/*.config.*
 docs/dist
 demo/dist
+dist
 node_modules
 oak.tar.gz
 oak.zip
