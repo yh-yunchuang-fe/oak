@@ -75,6 +75,9 @@
   max-height: 200rpx;
   overflow-y: scroll;
 }
+.oak-confirm .yh-confirm-body .main-content {
+  margin-top: 80rpx;
+}
 .oak-confirm .yh-confirm-body .button-area {
   display: flex;
   justify-content: space-between;
