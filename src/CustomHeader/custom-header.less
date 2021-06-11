@@ -1,0 +1,41 @@
+.comp-header {
+  width: 100%;
+  z-index: 99999999;
+  position:fixed;
+  &-title {
+    font-size: 17px;
+    padding-left: 24rpx;
+  }
+  &.isiPhone {
+    .comp-header-main{
+        justify-content: center;
+      }
+    .comp-header-title {
+      padding-left: 0px;
+    }
+  }
+  &-main {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    }
+  }
+
+.comp-subindex-header-main {
+  position: relative;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20rpx;
+  image {
+    width: 210rpx;
+    height: 40rpx;
+  }
+  .back-icon {
+    position:absolute;
+    padding: 10rpx;
+    top:8rpx;
+    left: 5rpx;
+  }
+}

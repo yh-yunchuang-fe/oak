@@ -1,54 +1,63 @@
-<wxs src="../wxs/base.wxs" module="Utils" />
-
+<!--components/business/Image/image.wxml-->
 <wxs module='urlFix'>
-    var getSrc = function (src, useWebp, pixelRatio, width) {
-
-        if(!src) return ''
-
+    var getSrc = function (src, useWebp, width, pixelRatio) {
         var _format = _getExt(src, useWebp)
         var _width = ""
         var _script = ""
         var _unit = ""
-
         if(width) {
+            width = width  + ''
             _width = width.match("\d+", "g")
             _unit = width.match("[a-z|A-Z]+", "g")
 
-            if(_unit && _unit[0] && _unit[0].toLowerCase() === "px") {
-                _width = pixelRatio >= 2 ? width * 2 : width * pixelRatio
+            if((_unit && _unit[0] && _unit[0].toLowerCase() === "px") || !_unit) {
+                _width = pixelRatio >= 2 ? _width * 2 : _width * pixelRatio
             }
-
             _script = "thumbnail/" + _width + "x/"
         }
-
         return src
-            .replace('image.yonghuivip.com//', 'image.yonghuivip.com/')
-            .split('?')[0]
+            .replace(
+                'image.yonghuivip.com//', 
+                'image.yonghuivip.com/'
+            ).split('?')[0]
             + "?imageMogr2/auto-orient/" 
             + _script 
             + "strip/format/" 
             + _format 
             + "/interlace/1/quality/100/size-limit/300k!"
     }
+    var getLength = function(value) {
+        if(!value) return ""
+        value = (value || '') + ''
+        var _length = ""
+        var _unit = ""
+        _length = value.match("\d+", "g")
+        _unit = value.match("[a-z|A-Z]+", "g")
 
+        if((_unit && _unit[0] && _unit[0].toLowerCase() === "px") || !_unit) {
+            _length = _length * 2
+        }
+        return _length
+    }
     var _getExt = function(src, useWebp) {
-
         var fileUrl = src.split('?')[0]
         var splitUlr = fileUrl.split('/')
         var filepath = splitUlr[splitUlr.length - 1]
-
         var format = filepath.split('.')[1] || 'jpg'
 
         if(format === 'gif') {
             return format
         }
-
         return 'webp'
     }
 
-    var getStyle = function(width, height, radius) {
+    var getStyle = function(bgImg, width, height, style, radius) {
         var _radius = ""
-
+        var b = bgImg ? "background-image: url('" + bgImg + "');" : ''
+        var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
+        var h = height ? 'height:' + getLength(height) + 'rpx;' : 'min-height:1px;'
+        var s = style + ';'
+        var _s = ''
         if(radius && radius.length === 1) {
             _radius = radius[0] + 'rpx'
         }
@@ -57,39 +66,33 @@
                 _radius += radius[i] + "rpx "
             }
         }
-
-        var w = '', h = '', r = ''
-        
-        if(width) w = ";width:" + width
-        if(height) h = ";height:" + height
         if(_radius) r = ";border-radius: " + _radius
-
-        return w + h + r + ";"
+        return b + w + h + _s + s + r + ';'
     }
 
-    var onLoad = function(event) {
-        if (event && event.instance && event.instance.addClass) {
-            event.instance.addClass('loaded')
-        }
+    var getClass = function(hideMini) {
+        return hideMini ? 'oak-image-load' : ''
     }
 
     module.exports = {
         getSrc: getSrc,
         getStyle: getStyle,
-        onLoad: onLoad
+        getClass: getClass,
     }
 </wxs>
-
 <view 
-    class="oak-image ext-class"
-    style="{{urlFix.getStyle(width, height, radius)}}">
+    class="oak-image class ext-class {{urlFix.getClass(hideMini)}}" 
+    style="{{urlFix.getStyle(bgImg, width, height, style, radius)}}">
     <image 
-        class="image img-class" 
+        wx:if="{{src}}"
+        class="origin-image img-class" 
         lazy-load="{{ lazyLoad }}" 
         mode="{{ mode }}" 
         webp="{{ webp }}"
-        src="{{ urlFix.getSrc(src, useWebp, pixelRatio, width)}}" 
+        src="{{ urlFix.getSrc(src, useWebp, width, pixelRatio)}}" 
         binderror="onLoadError" 
-        bindload="{{urlFix.onLoad}}"
-    />
+        bindload="onLoad"
+        bindtap="clickImg"
+        style="border-radius:{{imgRadius ? imgRadius : ''}}"
+    ></image>
 </view>

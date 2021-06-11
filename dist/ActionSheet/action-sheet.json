@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "oak-animation": "../Animation/animation",
-    "oak-button": "../Button/button",
-    "oak-popup": "../Popup/popup"
-  },
-  "component": true
-}

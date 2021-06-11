@@ -16,7 +16,7 @@
     <view class="row">
         <oak-button class="oak-button"
             size='block'
-            data-options="{{ {title: 'Oak 弹窗2', content: '', cancelText: '', confirmText: '知道了', showCancel: false } }}"
+            data-options="{{ {title: 'Oak 弹窗2 Oak 弹窗2 Oak 弹窗2 Oak 弹窗2 Oak 弹窗2 Oak 弹窗2', content: '', cancelText: '', confirmText: '知道了', showCancel: false } }}"
             bindtap="show"
         >不带内容</oak-button>
     </view>
@@ -49,6 +49,16 @@
             data-options="{{ {title: 'Oak 弹窗5', content: '这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案', cancelText: '', confirmText: '知道了', showCancel: false } }}"
             bindtap="show"
         >多行文案内部滚动</oak-button>
+    </view>
+    <view class="h3">
+        基本用法6
+    </view>   
+    <view class="row">
+        <oak-button class="oak-button"
+            size='block'
+            data-options="{{ {title: '', content: '这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案这里是详细的描述文案', cancelText: '', confirmText: '知道了', showCancel: false } }}"
+            bindtap="show"
+        >无标题, 只有内容</oak-button>
     </view>
     <oak-confirm
         isConfirmShow="{{isConfirmShow}}"
