@@ -1,0 +1,5 @@
+  <view class="empty {{position}}" style="position: {{position}}; {{styleConf}}">
+    <c-image class="icon" mode="widthFix" src="{{icon}}" width="128"/>
+    <text class="desc" wx:if="{{desc}}">{{desc}}</text>
+    <slot></slot>
+  </view>
