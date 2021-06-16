@@ -90,7 +90,7 @@ Component({
          * */
         init(): void {
             if (!/^(http|https)./g.test(this.data.src)) {
-                console.error(
+                console.warn(
                     `[Image Component] ${this.data.src} 图片路径有误！本地图片请使用原生 <image> 组件`
                 )
             }
@@ -101,7 +101,8 @@ Component({
             this.triggerEvent('load')
         },
         onLoadError(e): void {
-            console.error(this.data.src, e)
+            console.warn(this.data.src, e)
+            this.setData({ hideMini: false })
         },
         clickImg(): void {
             this.triggerEvent('clickImage', {
