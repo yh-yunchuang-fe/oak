@@ -102,7 +102,7 @@ Component({
         },
         onLoadError(e): void {
             console.warn(this.data.src, e)
-            // this.setData({ hideMini: false })
+            this.setData({ hideMini: false })
         },
         clickImg(): void {
             this.triggerEvent('clickImage', {
