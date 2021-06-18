@@ -2,6 +2,7 @@
 Component({
     externalClasses: ['custom-class'],
     options: {
+        // @ts-ignore
         styleIsolation: 'isolated'
     },
     properties: {

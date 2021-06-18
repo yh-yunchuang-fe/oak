@@ -20,9 +20,8 @@
     "strictPropertyInitialization": true,
     "esModuleInterop": true,
     "lib": [ "es2015", "dom"],
-    "types": [
-      "wechat-miniprogram",
-      "./typings"
+    "typeRoots": [
+      "typings",
     ]
   },
   "include": [
