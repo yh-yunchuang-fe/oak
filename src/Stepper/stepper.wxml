@@ -19,17 +19,11 @@
   >
     <oak-icon name="minus" color="{{disabled || disabledMinus ? disableColor : minusActiveColor || activeColor }}" size="{{iconSize}}px"></oak-icon>
   </view>
-  <input
-    type="{{ integer ? 'number' : 'digit' }}"
+  <view
     class="input input-class"
     style="width: 40px;{{ inputStyle }}"
-    value="{{ Limit.limitDecimal(_value, decimalLength) }}"
-    disabled="{{ disabled || !enableInput }}"
-    bindinput="onInput"
-    bind:blur="onBlur"
-    bindfocus="onFocus"
     bindtap="onInputClick"
-  />
+  >{{ Limit.limitDecimal(_value, decimalLength) }}</view>
   <view
     data-type="plus"
     style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{plusStyle}}"
