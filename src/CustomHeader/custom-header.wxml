@@ -1,0 +1,19 @@
+<view class="comp-header {{(!pageStatusObj.isSubIndex && isiPhone) ? 'isiPhone' : ''}}" wx:if="{{show}}" style="background: {{bgColor}}">
+    <view class="comp-header-statusbar" style="width:100%;height:{{statusBarHeight}}px;background-color:{{pageStatusObj.isSubIndex ? pageStatusObj.headerBgColor : 'transparent'}}"></view>
+    <block wx:if="{{!pageStatusObj.isSubIndex}}">
+        <view class="comp-header-main">
+            <view class="comp-header-title">{{title}}</view>
+        </view>
+    </block>
+    <block wx:else>
+        <view class="comp-subindex-header-main" style="background-color: {{pageStatusObj.headerBgColor}};">
+            <view class="back-icon" bindtap="toHomePage">
+                <oak-icon name="left-bold" size="30rpx" color="#fff"></oak-icon>
+            </view>
+            <view class="title-img">
+                <image src="{{pageStatusObj.headBarImg}}" mode="widthFix" lazy-load="false" />
+            </view>
+            <view class="block"></view>
+        </view>
+    </block>
+</view>

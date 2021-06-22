@@ -1,0 +1,23 @@
+<view class="oak-confirm" hidden="{{!isConfirmShow}}" catchtouchmove="move">
+    <view class="yh-confirm-mask" />
+    <view class="animated bounceIn">
+        <view class="yh-confirm-body">
+            <oak-icon class="close-icon" 
+                wx:if="{{showCancel}}" 
+                name="close-light" 
+                size="32rpx" 
+                color="#222"
+                bindtap="onModalClose">
+            </oak-icon>
+
+            <view class="title {{!content ? 'main-title' : ''}}" wx:if="{{title}}">{{title}}</view>
+            <view class="content {{!title ? 'main-content': ''}}" wx:if="{{content}}">
+                <view>{{content}}</view>
+            </view>
+            <view class="button-area">
+                <view class="cancel-btn" wx:if="{{cancelText}}" bindtap="onModalCancel">{{cancelText}}</view>
+                <view class="confirm-btn {{!cancelText ? 'one-btn' : ''}} confirm-btn-class" bindtap="onModalConfirm">{{confirmText}}</view>
+            </view>
+        </view>
+    </view>
+</view>

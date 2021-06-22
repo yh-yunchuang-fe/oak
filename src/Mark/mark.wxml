@@ -1,0 +1,4 @@
+<view class="container" style="{{extStyle}}">
+    <view class="main">{{text}}</view>
+    <image class="footer" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAAPCAYAAABHsImTAAAAAXNSR0IArs4c6QAAAUJJREFUWAnt1r9KA0EQBvD5QppYmkJBCHKISPIYeYbkEWzsE4KNXbC3sLM3b5D3MGiQQFLZpLARjJf93DtYi+U2OeL909w1y81yOzM/dpfDuudRyscpUHHOlBOhQAm0ZSNUt8xnMg1gQmBUoYyChArSAdkh2cykgA1JkNcd9IMCecTwdRJVIwdnTUXp5omVKVAclCioIJYXVupAv0EpAlYqQGmg5IUF1fP0MRe4CogbzxLFVVPSx1CjEKrvzUlpuJJuihcBxVVfEliATLHue3dCuXIlsuNFRrFrNe+7Y+EeHFzUqVZPehcdmQXt8S+i2D2Y97hY+ni94aDWCu8eXp+f0Pcf9CJtDRX+Xf8nFINjj1FYwb0jwBjCS9zOFiGQ+ZA3rUNZfZ4Kq3MMn5cmvg+j7v1YPr4aAv9Fw7zvQ8+J9PgNmvLS5aDZw9gAAAAASUVORK5CYII=" />
+</view>
