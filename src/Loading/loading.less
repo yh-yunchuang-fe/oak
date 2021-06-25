@@ -47,10 +47,26 @@
         height: 30rpx;
         view {
             width: 20rpx;
-            height: 20rpx;
+            height: 20rpx;          
         }
+
     }
 
+   
+	&.mid {
+		width: 46rpx;
+        height: 46rpx;
+        view {
+            width: 36rpx;
+            height: 36rpx;
+            border-width: 4rpx;
+            &.shadow {
+                position: absolute;
+                border-color: #ddd;
+            } 
+        }
+	}
+    
     &.large {
         width: 54rpx;
         height: 54rpx;
@@ -58,6 +74,10 @@
             width: 44rpx;
             height: 44rpx;
             border-width: 4rpx;
+            &.shadow {
+                position: absolute;
+                border-color: #ddd;
+            }             
         }
     }
 

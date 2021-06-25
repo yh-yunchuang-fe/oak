@@ -1,4 +1,5 @@
 Component({
+    externalClasses: ['ext-class'],
     properties: {
         isShow: {
             type: Boolean,
@@ -20,5 +21,10 @@ Component({
             value: '#FD7622',
             optionalTypes: [String],
         },
+        shadow: {
+            type: Boolean,
+            value: true,
+            optionalTypes: [Boolean]
+        }
     },
 })
