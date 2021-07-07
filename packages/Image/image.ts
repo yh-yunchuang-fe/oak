@@ -39,12 +39,12 @@ Component({
         },
         /** px */
         width: {
-            type: Number,
-            value: 0
+            type: String,
+            value: ""
         },
         height: {
-            type: Number,
-            value: 0
+            type: String,
+            value: ""
         },
         lazyLoad: {
             type: Boolean,
