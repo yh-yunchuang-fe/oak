@@ -24,7 +24,7 @@
             + _script 
             + "strip/format/" 
             + _format 
-            + "/interlace/1/quality/100/size-limit/300k!"
+            + "/interlace/1/quality/95/size-limit/300k!"
     }
     var getLength = function(value) {
         if(!value) return ""
