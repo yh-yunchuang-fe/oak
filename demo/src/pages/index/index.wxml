@@ -97,6 +97,9 @@
             <oak-list-item title="Image 图片"
                 title-class="item-title"
                 url="/pages/image/index"/>
+            <oak-list-item title="分页组件"
+                title-class="item-title"
+                url="/pages/scroll/index"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
