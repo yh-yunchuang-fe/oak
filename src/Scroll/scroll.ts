@@ -1,6 +1,4 @@
-/* eslint-disable */
-//@ts-nocheck
-Component({
+Component(<BaseComponent>{
     externalClasses: ['ext-class'],
     options: {
         pureDataPattern: /^_/,
@@ -10,11 +8,13 @@ Component({
     relations: {
         './scroll-item': {
             type: 'child', // 关联的目标节点应为子节点
-            linked(target) {}
+            linked(target) {
+                console.log(target)
+            }
         }
     },
     observers: {
-        '_list, _pageSize': function(_list, _pageSize) {
+        '_list, _pageSize': function(_list: any[], _pageSize: number) {
             if (_list?.length > 0) {
                 this.init(_list, _pageSize)
             }
