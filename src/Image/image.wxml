@@ -21,8 +21,8 @@
             }
             _script = "thumbnail/" + _width + "x/"
         }
-        return src
-            .replace(
+        if(src.indexOf('/service') === -1){
+            src = src.replace(
                 'image.yonghuivip.com//', 
                 'image.yonghuivip.com/'
             ).split('?')[0]
@@ -31,6 +31,8 @@
             + "strip/format/" 
             + _format 
             + "/interlace/1/quality/100/size-limit/300k!"
+        }
+        return src
     }
     var getLength = function(value) {
         if(!value) return ""
