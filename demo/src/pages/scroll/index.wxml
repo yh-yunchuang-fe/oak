@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">基本用法</view>
+    <view class="row">
+        <oak-scroll batch="{{batch}}">
+            <oak-scroll-item>
+                <view class="item">
+                    111
+                </view>
+            </oak-scroll-item>
+        </oak-scroll>
+    </view>
+</view>

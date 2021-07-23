@@ -28,7 +28,8 @@
     "pages/countdown/countdown",
     "pages/image/index",
     "pages/progress/progress",
-    "pages/confirm/confirm"
+    "pages/confirm/confirm",
+    "pages/scroll/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
