@@ -33,10 +33,6 @@ Component({
             value: 'scaleToFill'
         },
 
-        style: {
-            type: String,
-            value: ''
-        },
         /** px */
         width: {
             type: String,
