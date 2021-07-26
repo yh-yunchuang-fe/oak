@@ -40,11 +40,11 @@ Component({
         /** px */
         width: {
             type: String,
-            value: ""
+            value: ''
         },
         height: {
             type: String,
-            value: ""
+            value: ''
         },
         lazyLoad: {
             type: Boolean,
