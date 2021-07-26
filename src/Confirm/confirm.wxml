@@ -1,4 +1,4 @@
-<view class="oak-confirm" hidden="{{!isConfirmShow}}" catchtouchmove="move">
+<view class="oak-confirm" wx:if="{{isConfirmShow}}" catchtouchmove="move">
     <view class="yh-confirm-mask" />
     <view class="animated bounceIn">
         <view class="yh-confirm-body">
