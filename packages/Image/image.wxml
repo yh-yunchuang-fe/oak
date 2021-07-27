@@ -70,7 +70,7 @@
             }
         }
         if(_radius) r = ";border-radius: " + _radius
-        return b + w + h + _s + s + r + ';'
+        return b + w + h + _s + r + ';'
     }
 
     var getClass = function(hideMini) {
