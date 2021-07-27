@@ -55,12 +55,11 @@
         return 'webp'
     }
 
-    var getStyle = function(bgImg, width, height, style, radius) {
+    var getStyle = function(bgImg, width, height, radius) {
         var _radius = ""
         var b = bgImg ? "background-image: url('" + bgImg + "');" : ''
         var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
         var h = height ? 'height:' + getLength(height) + 'rpx;' : 'min-height:1px;'
-        var s = style + ';'
         var _s = ''
         if(radius && radius.length === 1) {
             _radius = radius[0] + 'rpx'
@@ -86,7 +85,7 @@
 </wxs>
 <view 
     class="oak-image class ext-class {{urlFix.getClass(hideMini)}}" 
-    style="{{urlFix.getStyle(bgImg, width, height, style, radius)}}">
+    style="{{urlFix.getStyle(bgImg, width, height, radius)}}">
     <image 
         wx:if="{{src}}"
         class="origin-image img-class" 
