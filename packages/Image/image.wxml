@@ -3,20 +3,26 @@
     var getSrc = function (src, useWebp, width, pixelRatio) {
         var _format = _getExt(src, useWebp)
         var _width = ""
-        var _script = ""
+        var _service_w = ""
         var _unit = ""
+        var _script = ""
+        _service_w = ((src.split('w=')[1]) || '').split('&h=')[0] || ''
+        if(_service_w) {
+            _script = "thumbnail/" + _service_w + "x/"
+        }
         if(width) {
             width = width  + ''
             _width = width.match("\d+", "g")
             _unit = width.match("[a-z|A-Z]+", "g")
-
             if((_unit && _unit[0] && _unit[0].toLowerCase() === "px") || !_unit) {
                 _width = pixelRatio >= 2 ? _width * 2 : _width * pixelRatio
+                _width = (_service_w && _service_w < _width) ? _service_w : _width
+
             }
             _script = "thumbnail/" + _width + "x/"
         }
-        return src
-            .replace(
+        if(src.indexOf('/service') === -1){
+            src = src.replace(
                 'image.yonghuivip.com//', 
                 'image.yonghuivip.com/'
             ).split('?')[0]
@@ -24,7 +30,9 @@
             + _script 
             + "strip/format/" 
             + _format 
-            + "/interlace/1/quality/100/size-limit/300k!"
+            + "/interlace/1/quality/95/size-limit/300k!"
+        }
+        return src
     }
     var getLength = function(value) {
         if(!value) return ""
@@ -44,19 +52,14 @@
         var splitUlr = fileUrl.split('/')
         var filepath = splitUlr[splitUlr.length - 1]
         var format = filepath.split('.')[1] || 'jpg'
-
-        if(format === 'gif') {
-            return format
-        }
         return 'webp'
     }
 
-    var getStyle = function(bgImg, width, height, style, radius) {
+    var getStyle = function(bgImg, width, height, radius) {
         var _radius = ""
         var b = bgImg ? "background-image: url('" + bgImg + "');" : ''
         var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
         var h = height ? 'height:' + getLength(height) + 'rpx;' : 'min-height:1px;'
-        var s = style + ';'
         var _s = ''
         if(radius && radius.length === 1) {
             _radius = radius[0] + 'rpx'
@@ -67,7 +70,7 @@
             }
         }
         if(_radius) r = ";border-radius: " + _radius
-        return b + w + h + _s + s + r + ';'
+        return b + w + h + _s + r + ';'
     }
 
     var getClass = function(hideMini) {
@@ -82,7 +85,7 @@
 </wxs>
 <view 
     class="oak-image class ext-class {{urlFix.getClass(hideMini)}}" 
-    style="{{urlFix.getStyle(bgImg, width, height, style, radius)}}">
+    style="{{urlFix.getStyle(bgImg, width, height, radius)}}">
     <image 
         wx:if="{{src}}"
         class="origin-image img-class" 

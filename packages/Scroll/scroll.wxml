@@ -1,0 +1,14 @@
+<scroll-view
+    class="oak-scroll ext-class"
+    style=''
+    scroll-x="{{scrollX}}" 
+    scroll-y="{{scrollY}}" 
+    upper-threshold="{{upperThreshold}}" 
+    lower-threshold="{{lowerThreshold}}" 
+    enable-back-to-top="true"
+    throttle="true"
+>
+    <slot name="before"></slot>
+    <slot></slot>
+    <slot name="after"></slot>
+</scroll-view>

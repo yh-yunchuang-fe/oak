@@ -33,18 +33,14 @@ Component({
             value: 'scaleToFill'
         },
 
-        style: {
-            type: String,
-            value: ''
-        },
         /** px */
         width: {
             type: String,
-            value: ""
+            value: ''
         },
         height: {
             type: String,
-            value: ""
+            value: ''
         },
         lazyLoad: {
             type: Boolean,
