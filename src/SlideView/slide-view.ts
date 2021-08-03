@@ -183,7 +183,7 @@ Component({
 
                 let { offsetX } = this.data
 
-                offsetX = direction === 'Left' ? -rightWidth : 0
+                offsetX = direction === 'Left' && (this.x1 - this.x2) > 60 ? -rightWidth : 0
 
                 this.position = direction
                 this.setData({
