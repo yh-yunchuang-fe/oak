@@ -1,6 +1,6 @@
 <!--components/business/Image/image.wxml-->
 <wxs module='urlFix'>
-    var getSrc = function (src, useWebp, width, pixelRatio) {
+    var getSrc = function (src, useWebp, width, pixelRatio, quality) {
         var _format = _getExt(src, useWebp)
         var _width = ""
         var _service_w = ""
@@ -30,7 +30,7 @@
             + _script 
             + "strip/format/" 
             + _format 
-            + "/interlace/1/quality/95/size-limit/300k!"
+            + "/interlace/1/quality/"+ quality +"/size-limit/300k!"
         }
         return src
     }
@@ -85,14 +85,14 @@
 </wxs>
 <view 
     class="oak-image class ext-class {{urlFix.getClass(hideMini)}}" 
-    style="{{urlFix.getStyle(bgImg, width, height, radius)}}">
+    style="{{urlFix.getStyle(bgImg, width, height, radius)}}; {{ noBgImg ? 'background-image: none': '' }}">
     <image 
         wx:if="{{src}}"
         class="origin-image img-class" 
         lazy-load="{{ lazyLoad }}" 
         mode="{{ mode }}" 
         webp="{{ webp }}"
-        src="{{ urlFix.getSrc(src, useWebp, width, pixelRatio)}}" 
+        src="{{ urlFix.getSrc(src, useWebp, width, pixelRatio, quality)}}" 
         binderror="onLoadError" 
         bindload="onLoad"
         bindtap="clickImg"
