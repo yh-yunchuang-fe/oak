@@ -1,7 +1,7 @@
 <wxs src='WXS/base.wxs' module='Utils' />
 
 <view
-    class="oak-label oak-label-{{ size }} {{ checked ? 'oak-label-checked checked-class' : '' }} ext-class"
+    class="oak-label oak-label-{{ size }} {{ checked ? 'oak-label-checked checked-class' : '' }} {{ lineBreak ? 'line-break': '' }} ext-class"
     style='{{ styles }}'
 >
     <oak-icon
