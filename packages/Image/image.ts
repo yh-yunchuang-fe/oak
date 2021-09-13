@@ -60,6 +60,16 @@ Component({
             type: Boolean,
             value: true
         },
+        // 设置请求图片的质量登记(0, 100]
+        quality: {
+            type: Number,
+            value: 95
+        },
+        // 是否设定背景图
+        noBgImg: {
+            type: Boolean,
+            value: false,
+        }
     },
     /**
      * 组件的初始数据
