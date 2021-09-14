@@ -1,101 +1,135 @@
-<!--components/business/Image/image.wxml-->
-<wxs module='urlFix'>
-    var getSrc = function (src, useWebp, width, pixelRatio, quality) {
-        var _format = _getExt(src, useWebp)
-        var _width = ""
-        var _service_w = ""
-        var _unit = ""
-        var _script = ""
-        _service_w = ((src.split('w=')[1]) || '').split('&h=')[0] || ''
-        if(_service_w) {
-            _script = "thumbnail/" + _service_w + "x/"
-        }
-        if(width) {
-            width = width  + ''
-            _width = width.match("\d+", "g")
-            _unit = width.match("[a-z|A-Z]+", "g")
-            if((_unit && _unit[0] && _unit[0].toLowerCase() === "px") || !_unit) {
-                _width = pixelRatio >= 2 ? _width * 2 : _width * pixelRatio
-                _width = (_service_w && _service_w < _width) ? _service_w : _width
+<wxs module='ws'>
+    function getSrc (src, useWebp, width, pixelRatio, quality, imgRadius) {
+        src = src.replace('image.yonghuivip.com//', 'image.yonghuivip.com/')
 
-            }
-            _script = "thumbnail/" + _width + "x/"
+        if (src.indexOf('/service') > -1) return src
+
+        width = width ? width + '' : width
+
+        var _width = width.match("\d+", "g") || ""
+            , format = _getExt(src, useWebp)
+            , service_w = ((src.split("w=")[1]) || "").split('&h=')[0] || ""
+            , script = service_w ? "thumbnail/" + service_w + "x/" : ""
+
+        if (hasUnit(width.toLowerCase(), 'px')) {
+            _width = pixelRatio >= 2 ? _width * 2 : _width * pixelRatio
+            _width = (service_w && service_w < _width) ? service_w : _width
         }
-        if(src.indexOf('/service') === -1){
-            src = src.replace(
-                'image.yonghuivip.com//', 
-                'image.yonghuivip.com/'
-            ).split('?')[0]
-            + "?imageMogr2/auto-orient/" 
-            + _script 
+
+        if (width) script = "thumbnail/" + _width + "x/"
+
+        var baseUrl = src.split('?')[0]
+        var query = "imageMogr2/auto-orient/" 
+            + script 
             + "strip/format/" 
-            + _format 
+            + format 
             + "/interlace/1/quality/"+ quality +"/size-limit/300k!"
-        }
-        return src
-    }
-    var getLength = function(value) {
-        if(!value) return ""
-        value = (value || '') + ''
-        var _length = ""
-        var _unit = ""
-        _length = value.match("\d+", "g")
-        _unit = value.match("[a-z|A-Z]+", "g")
 
-        if((_unit && _unit[0] && _unit[0].toLowerCase() === "px") || !_unit) {
-            _length = _length * 2
+        if (imgRadius && imgRadius.split(" ").length === 1) {
+            var radius = imgRadius.match("\d+", "g")
+
+            if (hasUnit(imgRadius.toLowerCase(), 'rpx')) radius = radius / 2
+
+            return baseUrl + "?roundPic/radius/" + radius + "|" + query
         }
-        return _length
+
+        return baseUrl + "?" + query
     }
-    var _getExt = function(src, useWebp) {
+
+    function hasUnit(length, unit) {
+        if (!length) return false
+        
+        if (!length.match("[a-z|A-Z]+", "g") && unit === "px") return true
+
+        return getRegExp("^\d+" + unit + "+$", 'g').test(length.toLowerCase())
+    }
+
+    function getLength(value) {
+        if (!value) return ""
+        
+        value = value + ''
+
+        var length = value.match("\d+", "g")
+
+        if (hasUnit(value.toLowerCase(), 'px')) length = length * 2
+
+        return length
+    }
+
+    function _getExt(src, useWebp) {
         var fileUrl = src.split('?')[0]
         var splitUlr = fileUrl.split('/')
         var filepath = splitUlr[splitUlr.length - 1]
         var format = filepath.split('.')[1] || 'jpg'
+
         return 'webp'
     }
 
-    var getStyle = function(bgImg, width, height, radius) {
+    function getStyle(bgImg, width, height, radius) {
         var _radius = ""
         var b = bgImg ? "background-image: url('" + bgImg + "');" : ''
         var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
         var h = height ? 'height:' + getLength(height) + 'rpx;' : 'min-height:1px;'
         var _s = ''
+        
         if(radius && radius.length === 1) {
             _radius = radius[0] + 'rpx'
         }
+        
         if(radius && radius.length === 4) {
             for(var i = 0; i < radius.length; i++) {
                 _radius += radius[i] + "rpx "
             }
         }
+        
         if(_radius) r = ";border-radius: " + _radius
+
         return b + w + h + _s + r + ';'
     }
 
-    var getClass = function(hideMini) {
-        return hideMini ? 'oak-image-load' : ''
+    function split(str, separator, howmany) {
+        return (str && str.split(separator, howmany)) || []
+    }
+
+    function onLoad(e, ownerInstance) {
+        var instance = ownerInstance.selectComponent('#image-wrap')
+        instance && instance.addClass('oak-image-load')
+        ownerInstance.triggerEvent('load')
+    }
+    
+    function onError(e, ownerInstance) {
+        var instance = ownerInstance.selectComponent('#image-wrap')
+        instance && instance.removeClass('oak-image-load')
+    }
+
+    function clickImg(e) {
+        var src = e.target.dataset.src
+        ownerInstance.triggerEvent('clickImage', { src })
     }
 
     module.exports = {
         getSrc: getSrc,
         getStyle: getStyle,
-        getClass: getClass,
+        split: split,
+        onLoad: onLoad,
+        onError: onError,
+        clickImg: clickImg,
     }
 </wxs>
-<view 
-    class="oak-image class ext-class {{urlFix.getClass(hideMini)}}" 
-    style="{{urlFix.getStyle(bgImg, width, height, radius)}}; {{ noBgImg ? 'background-image: none': '' }}">
-    <image 
-        wx:if="{{src}}"
-        class="origin-image img-class" 
-        lazy-load="{{ lazyLoad }}" 
-        mode="{{ mode }}" 
-        webp="{{ webp }}"
-        src="{{ urlFix.getSrc(src, useWebp, width, pixelRatio, quality)}}" 
-        binderror="onLoadError" 
-        bindload="onLoad"
-        bindtap="clickImg"
-        style="border-radius:{{imgRadius ? imgRadius : ''}}"
-    ></image>
+
+<view id="image-wrap" class="oak-image class ext-class" 
+    style="{{ws.getStyle(bgImg, width, height, radius)}};{{noBgImg ? 'background-image:none': ''}}"
+>
+    <image wx:if="{{src}}"
+        class="origin-image img-class"
+        src="{{ws.getSrc(src, useWebp, width, pixelRatio, quality, imgRadius)}}" 
+        style="{{ws.split(imgRadius, ' ').length > 1 ? 'border-radius:' + imgRadius : ''}}"
+        data-src="{{src}}"
+        mode="{{mode}}"
+        webp="{{webp}}"
+        lazy-load="{{lazyLoad}}"
+        bindload="{{ws.onLoad}}"
+        bindtap="{{ws.clickImg}}"
+        binderror="{{ws.onLoadError}}"
+    />
 </view>
