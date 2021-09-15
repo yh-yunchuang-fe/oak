@@ -13,12 +13,12 @@
 
         var baseUrl = src
             .replace('image.yonghuivip.com//', 'image.yonghuivip.com/')
-            .split('?')[0]
+            .split('?')[0] + '?'
             
         var thumbnail = width.match("\d+", "g") || ""
             , format = _getExt(src, useWebp)
             , service_w = (src.match("w=(\d+)") || [])[1] || ''
-            , widthScript = "?imageMogr2/format/png|imageMogr2/auto-orient"
+            , widthScript = "imageMogr2/auto-orient"
             , qualityScript = "/interlace/1/quality/" + quality + "/size-limit/300k!"
             , radiusScript = "|roundPic/radius/"
             , formatScript = "|imageMogr2/format/" + format
@@ -45,7 +45,11 @@
 
         radiusScript += radius
 
-        return baseUrl + widthScript + qualityScript + radiusScript + formatScript
+        return baseUrl + 'imageMogr2/format/png|'
+            + widthScript 
+            + qualityScript 
+            + radiusScript 
+            + formatScript
     }
 
     function hasUnit(size, unit) {
