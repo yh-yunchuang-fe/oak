@@ -1,47 +1,47 @@
 <wxs module='ws'>
     function getSrc (src, useWebp, width, pixelRatio, quality, imgRadius) {
-        src = src.replace('image.yonghuivip.com//', 'image.yonghuivip.com/')
-
         if (src.indexOf('/service') > -1) return src
 
         width = width ? width + '' : width
 
-        var _width = width.match("\d+", "g") || ""
+        var baseUrl = src
+            .replace('image.yonghuivip.com//', 'image.yonghuivip.com/')
+            .split('?')[0]
+            
+        var thumbnail = width.match("\d+", "g") || ""
             , format = _getExt(src, useWebp)
             , service_w = ((src.split("w=")[1]) || "").split('&h=')[0] || ""
             , script = service_w ? "thumbnail/" + service_w + "x/" : ""
+            ;
 
         if (hasUnit(width.toLowerCase(), 'px')) {
-            _width = pixelRatio >= 2 ? _width * 2 : _width * pixelRatio
-            _width = (service_w && service_w < _width) ? service_w : _width
+            thumbnail = pixelRatio >= 2 ? thumbnail * 2 : thumbnail * pixelRatio
+            thumbnail = (service_w && service_w < thumbnail) ? service_w : thumbnail
         }
 
-        if (width) script = "thumbnail/" + _width + "x/"
-
-        var baseUrl = src.split('?')[0]
+        if (width) script = "thumbnail/" + thumbnail + "x/"
         var query = "imageMogr2/auto-orient/" 
             + script 
             + "strip/format/" 
             + format 
             + "/interlace/1/quality/"+ quality +"/size-limit/300k!"
+            ;
 
-        if (imgRadius && imgRadius.split(" ").length === 1) {
-            var radius = imgRadius.match("\d+", "g")
+        if (!imgRadius || imgRadius.split(" ").length !== 1) return baseUrl + "?" + query
 
-            if (hasUnit(imgRadius.toLowerCase(), 'rpx')) radius = radius / 2
+        var radius = imgRadius.match("\d+", "g")
+        if (hasUnit(imgRadius.toLowerCase(), 'rpx')) radius = radius / 2
 
-            return baseUrl + "?roundPic/radius/" + radius + "|" + query
-        }
+        radius = radius * pixelRatio
 
-        return baseUrl + "?" + query
+        return baseUrl + "?roundPic/radius/" + radius + "|" + query
     }
 
-    function hasUnit(length, unit) {
-        if (!length) return false
-        
-        if (!length.match("[a-z|A-Z]+", "g") && unit === "px") return true
+    function hasUnit(size, unit) {
+        if (!size) return false
+        if (!size.match("[a-z|A-Z]+", "g") && unit === "px") return true
 
-        return getRegExp("^\d+" + unit + "+$", 'g').test(length.toLowerCase())
+        return getRegExp("^\d+" + unit + "+$", 'g').test(size.toLowerCase())
     }
 
     function getLength(value) {
@@ -65,26 +65,22 @@
         return 'webp'
     }
 
-    function getStyle(bgImg, width, height, radius) {
-        var _radius = ""
-        var b = bgImg ? "background-image: url('" + bgImg + "');" : ''
+    function getStyle(bgImg, width, height, radius, imgRadius, noBgImg) {
+        var r = ""
+        var b = bgImg && !noBgImg ? "background-image: url('" + bgImg + "');" : ''
         var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
         var h = height ? 'height:' + getLength(height) + 'rpx;' : 'min-height:1px;'
-        var _s = ''
         
-        if(radius && radius.length === 1) {
-            _radius = radius[0] + 'rpx'
-        }
-        
-        if(radius && radius.length === 4) {
+        if (radius && radius.length === 1) r = radius[0] + 'rpx'
+        if (radius && radius.length === 4) {
             for(var i = 0; i < radius.length; i++) {
-                _radius += radius[i] + "rpx "
+                r += radius[i] + "rpx "
             }
         }
-        
-        if(_radius) r = ";border-radius: " + _radius
+        if (r) r = ";border-radius: " + r
+        if (imgRadius && imgRadius.split(" ").length === 1) r = ""
 
-        return b + w + h + _s + r + ';'
+        return b + w + h + r + ';'
     }
 
     function split(str, separator, howmany) {
@@ -117,17 +113,18 @@
     }
 </wxs>
 
-<view id="image-wrap" class="oak-image class ext-class" 
-    style="{{ws.getStyle(bgImg, width, height, radius)}};{{noBgImg ? 'background-image:none': ''}}"
+<view id="image-wrap" 
+    class="oak-image class ext-class" 
+    style="{{ws.getStyle(bgImg, width, height, radius, imgRadius, noBgImg)}}"
 >
     <image wx:if="{{src}}"
         class="origin-image img-class"
         src="{{ws.getSrc(src, useWebp, width, pixelRatio, quality, imgRadius)}}" 
         style="{{ws.split(imgRadius, ' ').length > 1 ? 'border-radius:' + imgRadius : ''}}"
-        data-src="{{src}}"
         mode="{{mode}}"
         webp="{{webp}}"
         lazy-load="{{lazyLoad}}"
+        data-src="{{src}}"
         bindload="{{ws.onLoad}}"
         bindtap="{{ws.clickImg}}"
         binderror="{{ws.onError}}"
