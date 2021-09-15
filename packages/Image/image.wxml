@@ -130,6 +130,6 @@
         lazy-load="{{lazyLoad}}"
         bindload="{{ws.onLoad}}"
         bindtap="{{ws.clickImg}}"
-        binderror="{{ws.onLoadError}}"
+        binderror="{{ws.onError}}"
     />
 </view>
