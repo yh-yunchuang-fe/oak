@@ -60,4 +60,17 @@
         height: auto;
         text-align: center;
     }
+
+    // 需要换行的场景
+    &.line-break {
+        height: auto;
+        min-height: 56rpx;
+        line-height: 1.2;
+        .oak-label-content {
+            white-space: initial;
+            text-align: left;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+    }
 }

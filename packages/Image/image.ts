@@ -49,9 +49,8 @@ Component({
         // 四个角
         imgRadius:{
             type: String,
-            value: false
+            value: ''
         },
-
         radius: {
             type: Array,
             value: [0, 0, 0, 0]
@@ -60,6 +59,16 @@ Component({
             type: Boolean,
             value: true
         },
+        // 设置请求图片的质量登记(0, 100]
+        quality: {
+            type: Number,
+            value: 95
+        },
+        // 是否设定背景图
+        noBgImg: {
+            type: Boolean,
+            value: false,
+        }
     },
     /**
      * 组件的初始数据
@@ -90,20 +99,6 @@ Component({
                     `[Image Component] ${this.data.src} 图片路径有误！本地图片请使用原生 <image> 组件`
                 )
             }
-        },
-        onLoad(): void {
-            // 原图加载完成
-            this.setData({ hideMini: true })
-            this.triggerEvent('load')
-        },
-        onLoadError(e): void {
-            console.warn(this.data.src, e)
-            this.setData({ hideMini: false })
-        },
-        clickImg(): void {
-            this.triggerEvent('clickImage', {
-                src: this.data.src
-            })
         }
     }
 })

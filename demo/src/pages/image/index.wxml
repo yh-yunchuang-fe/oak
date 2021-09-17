@@ -9,4 +9,12 @@
             radius="{{[20, 20, 0, 0]}}"
         />
     </view>
+    <view class="row">
+        <oak-image 
+            src="http://image.yonghuivip.com/image/1611065950314d94a1d0d95e1a6e27b7423a44412fc5bba80fae8" 
+            width="240rpx"
+            height="240rpx"
+            imgRadius="200rpx"
+        />
+    </view>
 </view>

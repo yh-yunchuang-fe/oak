@@ -33,6 +33,11 @@ Component({
         styles: {
             type: String,
             value: ''
+        },
+        // 是否允许换行
+        lineBreak: {
+            type: Boolean,
+            value: false,
         }
     },
     externalClasses: ['ext-class', 'checked-class'],

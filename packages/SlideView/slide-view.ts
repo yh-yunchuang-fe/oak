@@ -65,7 +65,7 @@ Component({
         this.draging = false
         this.position = 'Right' // 'Left'
         // 过渡效果
-        this.transition = 'transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);'
+        this.transition = 'transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
 
         // 初始化 right width
         const { rightWidth, custom, share, edit, del } = this.data
@@ -83,14 +83,13 @@ Component({
     methods: {
         // 这里是一个自定义方法
         touchstart(e): void {
-            console.log('[Toucher.touchstart]', e.touches)
             if (!e.touches) return
             // 缓存事件
             this.eventMark = e
             this.x1 = e.touches[0].pageX
-            this.y1 = e.touches[0].pageY
+            this.y1 = e.touches[0].clientY
             this.x2 = e.touches[0].pageX
-            this.y2 = e.touches[0].pageY
+            this.y2 = e.touches[0].clientY
             this.isActive = true
             this.touchStartTime = new Date().getTime()
 
@@ -99,7 +98,6 @@ Component({
             clearTimeout(this.longTap)
 
             this.longTap = setTimeout((): void => {
-                console.log('[Toucher.touchstart]', e.touches)
                 this._actionOver(e)
                 // 断定此次事件为长按事件
                 this.triggerEvent('onLongTap', e)
@@ -126,18 +124,20 @@ Component({
                 return
             }
             this.x2 = e.touches[0].pageX
-            this.y2 = e.touches[0].pageY
+            this.y2 = e.touches[0].clientY
 
             clearTimeout(this.longTap)
 
             // 设置偏移量
             let offsetX = this.x2 - this.x1
             const { width: rightWidth } = this.data
-            if (this.position === 'Down' || this.position === 'Up') {
+            const direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2)
+
+            if (direction === 'Down' || direction === 'Up') {
                 return
             }
 
-            if (this.position === 'Right') {
+            if (direction === 'Right') {
                 offsetX = offsetX > 0 ? 0 : offsetX
                 offsetX = offsetX < -rightWidth ? -rightWidth : offsetX
             } else {
@@ -154,13 +154,6 @@ Component({
             // touchend中，拿不到坐标位置信息，故使用全局保存下数据
             e.plugStartPosition = this.eventMark.plugStartPosition
             e.plugTouches = this.eventMark.touches
-            console.log(
-                '[Toucher.touchend]',
-                e,
-                Math.abs(this.x1 - this.x2) > 5 ||
-                Math.abs(this.y1 - this.y2) > 5,
-                this.isActive
-            )
             this.triggerEvent('onSwipeEnd', e)
             if (!this.isActive) {
                 return
@@ -183,7 +176,7 @@ Component({
 
                 let { offsetX } = this.data
 
-                offsetX = direction === 'Left' ? -rightWidth : 0
+                offsetX = direction === 'Left' && (this.x1 - this.x2) > 60 ? -rightWidth : 0
 
                 this.position = direction
                 this.setData({

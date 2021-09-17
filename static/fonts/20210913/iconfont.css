@@ -1,14 +1,9 @@
-/**
- *
- *
- */
 @font-face {
-    font-family: 'oak-iconfont';
-    src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20210917/iconfont.woff2?t=1621479879152') format('woff2'),
-      url('https://static.yonghuivip.com/wechatapp/static/fonts/20210917/iconfont.woff?t=1621479879152') format('woff'),
-      url('https://static.yonghuivip.com/wechatapp/static/fonts/20210917/iconfont.ttf?t=1621479879152') format('truetype');
+  font-family: "oak-iconfont"; /* Project id 1449420 */
+  src: url('iconfont.woff2?t=1631528429446') format('woff2'),
+       url('iconfont.woff?t=1631528429446') format('woff'),
+       url('iconfont.ttf?t=1631528429446') format('truetype');
 }
-
 
 .oak-iconfont {
   font-family: "oak-iconfont" !important;
@@ -636,13 +631,5 @@
 
 .oak-icon-cyclic-minus:before {
   content: "\e6bb";
-}
-
-.oak-icon-slide-up:before {
-    content: "\e70f";
-}
-
-.oak-icon-slide-down:before {
-    content: "\e718";
 }
 

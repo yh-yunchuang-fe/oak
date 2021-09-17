@@ -49,12 +49,11 @@ Component({
         // 四个角
         imgRadius:{
             type: String,
-            value: false
+            value: ''
         },
-
         radius: {
             type: Array,
-            value: [0, 0, 0, 0]
+            value: []
         },
         webp: {
             type: Boolean,
@@ -100,20 +99,6 @@ Component({
                     `[Image Component] ${this.data.src} 图片路径有误！本地图片请使用原生 <image> 组件`
                 )
             }
-        },
-        onLoad(): void {
-            // 原图加载完成
-            this.setData({ hideMini: true })
-            this.triggerEvent('load')
-        },
-        onLoadError(e): void {
-            console.warn(this.data.src, e)
-            this.setData({ hideMini: false })
-        },
-        clickImg(): void {
-            this.triggerEvent('clickImage', {
-                src: this.data.src
-            })
         }
     }
 })
