@@ -1,14 +1,9 @@
-/**
- *
- *
- */
 @font-face {
-    font-family: 'oak-iconfont';
-    src: url('https://static.yonghuivip.com/wechatapp/static/fonts/20210917/iconfont.woff2?t=1621479879152') format('woff2'),
-      url('https://static.yonghuivip.com/wechatapp/static/fonts/20210917/iconfont.woff?t=1621479879152') format('woff'),
-      url('https://static.yonghuivip.com/wechatapp/static/fonts/20210917/iconfont.ttf?t=1621479879152') format('truetype');
+  font-family: "oak-iconfont"; /* Project id 1449420 */
+  src: url('iconfont.woff2?t=1631853591241') format('woff2'),
+       url('iconfont.woff?t=1631853591241') format('woff'),
+       url('iconfont.ttf?t=1631853591241') format('truetype');
 }
-
 
 .oak-iconfont {
   font-family: "oak-iconfont" !important;
@@ -16,6 +11,54 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.oak-icon-shoudanfan880yuanquan:before {
+  content: "\e634";
+}
+
+.oak-icon-zhuanxiangshangpin:before {
+  content: "\e635";
+}
+
+.oak-icon-dalibao:before {
+  content: "\e633";
+}
+
+.oak-icon-shanghua:before {
+  content: "\e70f";
+}
+
+.oak-icon-xiahua:before {
+  content: "\e718";
+}
+
+.oak-icon-shezhi:before {
+  content: "\e648";
+}
+
+.oak-icon-quanping:before {
+  content: "\e60b";
+}
+
+.oak-icon-zanting:before {
+  content: "\e60c";
+}
+
+.oak-icon-tuichuquanping:before {
+  content: "\e60d";
+}
+
+.oak-icon-shengyinkai:before {
+  content: "\e60e";
+}
+
+.oak-icon-bofang:before {
+  content: "\e60f";
+}
+
+.oak-icon-shengyinguan:before {
+  content: "\e610";
 }
 
 .oak-icon-chakanwuliu:before {
@@ -588,13 +631,5 @@
 
 .oak-icon-cyclic-minus:before {
   content: "\e6bb";
-}
-
-.oak-icon-slide-up:before {
-    content: "\e70f";
-}
-
-.oak-icon-slide-down:before {
-    content: "\e718";
 }
 
