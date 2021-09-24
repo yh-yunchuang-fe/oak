@@ -53,7 +53,7 @@ Component({
         },
         radius: {
             type: Array,
-            value: [0, 0, 0, 0]
+            value: []
         },
         webp: {
             type: Boolean,

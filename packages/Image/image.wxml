@@ -113,7 +113,7 @@
         instance && instance.removeClass('oak-image-load')
     }
 
-    function clickImg(e) {
+    function clickImg(e, ownerInstance) {
         var src = e.target.dataset.src
         ownerInstance.triggerEvent('clickImage', { src })
     }
