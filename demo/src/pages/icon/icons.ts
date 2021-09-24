@@ -731,6 +731,20 @@ const icons: object[] = [
         unicode: 'e6bb',
         unicode_decimal: 59067,
     },
+    {
+        icon_id: '24166005',
+        name: 'slide-up',
+        font_class: 'slide-up',
+        unicode: 'e70f',
+        unicode_decimal: 59151,
+    },
+    {
+        icon_id: '24166006',
+        name: 'slide-down',
+        font_class: 'slide-down',
+        unicode: 'e718',
+        unicode_decimal: 59160,
+    },
 ]
 
 export default icons
