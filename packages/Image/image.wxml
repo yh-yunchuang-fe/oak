@@ -114,18 +114,12 @@
         instance && instance.removeClass('oak-image-load')
     }
 
-    function clickImg(e, ownerInstance) {
-        var src = e.target.dataset.src
-        ownerInstance.triggerEvent('clickImage', { src })
-    }
-
     module.exports = {
         getSrc: getSrc,
         getStyle: getStyle,
         split: split,
         onLoad: onLoad,
-        onError: onError,
-        clickImg: clickImg,
+        onError: onError
     }
 </wxs>
 
@@ -142,7 +136,6 @@
         lazy-load="{{lazyLoad}}"
         data-src="{{src}}"
         bindload="{{ws.onLoad}}"
-        bindtap="{{ws.clickImg}}"
         binderror="{{ws.onError}}"
     />
 </view>
