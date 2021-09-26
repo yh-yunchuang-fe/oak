@@ -12,6 +12,7 @@
         width = width ? width + '' : width
 
         var baseUrl = src
+            .replace('http://image.yonghuivip.com', 'https://image.yonghuivip.com')
             .replace('image.yonghuivip.com//', 'image.yonghuivip.com/')
             .split('?')[0] + '?'
             
