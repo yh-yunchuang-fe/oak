@@ -81,7 +81,7 @@
         return 'webp'
     }
 
-    function getStyle(bgImg, width, height, radius, imgRadius, noBgImg) {
+    function getStyle(bgImg, width, height, radius, imgRadius, noBgImg, isFullWidth) {
         var r = ""
         var b = bgImg && !noBgImg ? "background-image: url('" + bgImg + "');" : ''
         var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
@@ -95,7 +95,7 @@
         }
         if (r) r = ";border-radius: " + r
         if (imgRadius && imgRadius.split(" ").length === 1) r = ""
-
+        if (isFullWidth) w = 'width: 100%;'
         return b + w + h + r + ';'
     }
 
@@ -125,7 +125,7 @@
 
 <view id="image-wrap" 
     class="oak-image class ext-class" 
-    style="{{ws.getStyle(bgImg, width, height, radius, imgRadius, noBgImg)}}"
+    style="{{ws.getStyle(bgImg, width, height, radius, imgRadius, noBgImg, isFullWidth)}}"
 >
     <image wx:if="{{src}}"
         class="origin-image img-class"

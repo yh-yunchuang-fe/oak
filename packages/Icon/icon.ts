@@ -30,6 +30,10 @@ Component({
             value: false,
             optionalTypes: [Boolean],
         },
+        uuid: {
+            type: String,
+            value: ''
+        }
     },
     externalClasses: ['ext-class'],
     data: {
