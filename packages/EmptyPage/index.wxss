@@ -21,3 +21,7 @@
     color: #999999;
     text-align: center;
 }
+.empty.fixed,.empty-pro {
+    top: 60%;
+    z-index: 9;
+}
