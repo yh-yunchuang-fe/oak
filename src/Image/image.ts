@@ -68,6 +68,11 @@ Component({
         noBgImg: {
             type: Boolean,
             value: false,
+        },
+        // 是否为100%宽度
+        isFullWidth: {
+            type: Boolean,
+            value: false,
         }
     },
     /**
