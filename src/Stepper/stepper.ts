@@ -214,25 +214,7 @@ Component({
                     this.triggerEvent('onMinus', returnInfo)
                 }
             })
-
-            // const returnInfo = this.returnInfo(type, event.touches)
-            // if (type === 'plus') {
-            //     if (typeof onPlus === 'function') {
-            //         onPlus(returnInfo)
-            //     } else {
-            //         this.triggerEvent('onPlus', returnInfo)
-            //     }
-            //     return
-            // }
-
-            // if (typeof onMinus === 'function') {
-            //     onMinus(returnInfo)
-            // } else {
-            //     this.triggerEvent('onMinus', returnInfo)
-            // }
         },
-
-        // returnInfo(type, touches): object {
         returnInfo(type, event): object {
             const { _value, disabled, min, max, step, decimalLength } = this.data
             const { touches, centerPoint } = event 
