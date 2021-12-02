@@ -25,6 +25,7 @@
     bindtap="onInputClick"
   >{{ Limit.limitDecimal(_value, decimalLength) }}</view>
   <view
+    id="{{plusId}}"
     data-type="plus"
     style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{plusStyle}}"
     class="plus plus-class"
