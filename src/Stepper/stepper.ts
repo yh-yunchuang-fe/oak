@@ -76,7 +76,11 @@ Component({
         },
         iconSize: {
             type: Number,
-            value: 14
+            value: 20
+        },
+        border: {
+            type: Boolean,
+            value: true
         },
         stepperStyle: {   // 步进器样式
             type: String,
