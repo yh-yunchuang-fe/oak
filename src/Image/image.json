@@ -1,4 +1,6 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "oak-loading": "../Loading/loading"
+    },
     "component": true
 }

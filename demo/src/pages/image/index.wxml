@@ -1,20 +1,217 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="h3">基本用法</view>
+    <view class="h3">形状</view>
     <view class="row">
         <oak-image 
-            src="http://image.yonghuivip.com/product/B-485899/14939771354894ea188f73a5c7e7bfb29553c2aa4ef0f4493f282" 
-            width="240rpx"
-            height="240rpx"
-            radius="{{[20, 20, 0, 0]}}"
+            src="{{img1}}" 
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img1}}" 
+            width="200rpx"
+            height="200rpx"
+            radius="20rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img1}}" 
+            width="200rpx"
+            height="200rpx"
+            radius="150rpx"
+            bgColor="#f3f3ff3"
+        />
+    </view>
+    <view class="h3">缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。</view>
+    <view class="row">
+        <oak-image 
+            src="{{img1}}" 
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
         />
     </view>
     <view class="row">
         <oak-image 
-            src="http://image.yonghuivip.com/image/1611065950314d94a1d0d95e1a6e27b7423a44412fc5bba80fae8" 
-            width="240rpx"
-            height="240rpx"
-            imgRadius="200rpx"
+            src="{{img1}}" 
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+    </view>
+    <view class="h3">缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。</view>
+    <view class="row">
+        <oak-image 
+            src="{{img1}}" 
+            mode="aspectFill"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            mode="aspectFill"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            mode="aspectFill"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+    </view>
+    <view class="row">
+        <oak-image 
+            src="{{img1}}" 
+            mode="aspectFill"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            mode="aspectFill"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            mode="aspectFill"
+            width="200rpx"
+            height="300rpx"
+        />
+    </view>
+    <view class="h3">缩放模式，宽度不变，高度自动变化，保持原图宽高比不变	</view>
+    <view class="row">
+        <oak-image 
+            src="{{img1}}" 
+            mode="widthFix"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            mode="widthFix"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            mode="widthFix"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+    </view>
+    <view class="row">
+        <oak-image 
+            src="{{img1}}" 
+            mode="widthFix"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            mode="widthFix"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            mode="widthFix"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+    </view>
+    <view class="h3">缩放模式，高度不变，宽度自动变化，保持原图宽高比不变</view>
+    <view class="row">
+        <oak-image 
+            src="{{img1}}" 
+            mode="heightFix"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            mode="heightFix"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            mode="heightFix"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
+        />
+    </view>
+    <view class="row">
+        <oak-image 
+            src="{{img1}}" 
+            mode="heightFix"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img2}}" 
+            mode="heightFix"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+        <oak-image 
+            src="{{img3}}" 
+            mode="heightFix"
+            width="200rpx"
+            height="300rpx"
+            bgColor="#f3f3ff3"
+        />
+    </view>
+    <view class="h3">加载失败</view>
+    <view class="row">
+        <oak-image 
+            src="{{errImg}}" 
+            mode="heightFix"
+            width="200rpx"
+            height="200rpx"
+            bgColor="#f3f3ff3"
         />
     </view>
 </view>

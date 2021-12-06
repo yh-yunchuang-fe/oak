@@ -60,7 +60,7 @@
                 title-class="item-title"
                 url="/pages/input/input" />
         </oak-collapse-item>
-
+        -->
         <oak-collapse-item title="展示组件"
             icon="card"
             icon-rotate="{{false}}"
@@ -68,7 +68,7 @@
             icon-class="col-title"
             content-class="content"
             border="{{ false}}">
-            <oak-list-item title="Avatar 头像"
+            <!-- <oak-list-item title="Avatar 头像"
                 title-class="item-title"
                 url="/pages/avatar/avatar" />
             <oak-list-item title="Badge 微标"
@@ -100,14 +100,15 @@
                 url="/pages/treeSelect/treeSelect"/>
             <oak-list-item title="Countdown 倒计时"
                 title-class="item-title"
-                url="/pages/countdown/countdown"/>
+                url="/pages/countdown/countdown"/> -->
             <oak-list-item title="Image 图片"
                 title-class="item-title"
                 url="/pages/image/index"/>
-            <oak-list-item title="分页组件"
+            <!-- <oak-list-item title="分页组件"
                 title-class="item-title"
-                url="/pages/scroll/index"/>
+                url="/pages/scroll/index"/> -->
         </oak-collapse-item>
+        <!--
         <oak-collapse-item title="反馈组件"
             icon="member-code"
             icon-rotate="{{false}}"

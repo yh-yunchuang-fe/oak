@@ -4,9 +4,9 @@
     |roundPic/radius/24
     |imageMogr2/format/webp
 -->
-
+<wxs src="../wxs/base.wxs" module="Utils" />
 <wxs module='ws'>
-    function getSrc (src, useWebp, width, pixelRatio, quality, imgRadius) {
+    function getSrc (src, useWebp, width, pixelRatio, quality, radius) {
         if (src.indexOf('/service') > -1) return src
 
         width = width ? width + '' : width
@@ -34,7 +34,8 @@
             widthScript += "/thumbnail/" + (width ? thumbnail : service_w) + "x"
         }
 
-        if (!imgRadius || imgRadius.split(" ").length !== 1) {
+        var imgRadius = getImgRadius(radius)
+        if (!imgRadius) {
             return baseUrl + widthScript + qualityScript + formatScript
         }
 
@@ -43,6 +44,9 @@
         if (hasUnit(imgRadius.toLowerCase(), 'rpx')) radius = radius / 2
 
         radius = pixelRatio >= 2 ? radius * 2 : radius * pixelRatio
+        if(!radius) {
+            return baseUrl + widthScript + qualityScript + formatScript
+        }
 
         radiusScript += radius
 
@@ -52,6 +56,31 @@
             + radiusScript 
             + formatScript
     }
+
+    function getRadius(radius){
+        if(!radius) return ''
+        radius = "Array" === radius.constructor ? radius : radius.split(' ')
+        radius =  radius.reduce(function(acc,item){
+            item = (item + '').trim();
+            if(item){
+                if(item.indexOf('px') === -1){
+                    item += 'rpx'
+                }
+                acc.push(item)
+            }
+            return acc
+        },[])
+        return radius.join(' ')
+    }
+
+    function getImgRadius(imgRadius) {
+        imgRadius = getRadius(imgRadius)
+        if(imgRadius.split(' ').length !== 1){
+            return ''
+        }
+        return imgRadius
+    }
+
 
     function hasUnit(size, unit) {
         if (!size) return false
@@ -81,61 +110,54 @@
         return 'webp'
     }
 
-    function getStyle(bgImg, width, height, radius, imgRadius, noBgImg, isFullWidth) {
-        var r = ""
+    function getSize(size){
+        if(!size) return ''
+
+        if(hasUnit(size, '%')) return size + ';'
+
+        return getLength(size) + 'rpx;'
+    }
+
+    function getStyle(bgImg, width, height, radius, noBgImg, bgColor) {
         var b = bgImg && !noBgImg ? "background-image: url('" + bgImg + "');" : ''
-        var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
-        var h = height ? 'height:' + getLength(height) + 'rpx;' : 'min-height:1px;'
+        var w = width ? 'width:' + getSize(width) : ''
+        var h = height ? 'height:' + getSize(height) : 'min-height:1px;'
+        var bgColor = bgColor ? 'background-color:' + bgColor + ';' : ''
         
-        if (radius && radius.length === 1) r = radius[0] + 'rpx'
-        if (radius && radius.length === 4) {
-            for(var i = 0; i < radius.length; i++) {
-                r += radius[i] + "rpx "
-            }
-        }
-        if (r) r = ";border-radius: " + r
-        if (imgRadius && imgRadius.split(" ").length === 1) r = ""
-        if (isFullWidth) w = 'width: 100%;'
-        return b + w + h + r + ';'
+        var r =  getRadius(radius)
+        if (r) r = ";border-radius: " + r + ';'
+        return b + w + h + r + bgColor
     }
 
     function split(str, separator, howmany) {
         return (str && str.split(separator, howmany)) || []
     }
 
-    function onLoad(e, ownerInstance) {
-        var instance = ownerInstance.selectComponent('#image-wrap')
-        instance && instance.addClass('oak-image-load')
-        ownerInstance.triggerEvent('load')
-    }
-    
-    function onError(e, ownerInstance) {
-        var instance = ownerInstance.selectComponent('#image-wrap')
-        instance && instance.removeClass('oak-image-load')
-    }
-
     module.exports = {
         getSrc: getSrc,
         getStyle: getStyle,
+        getImgRadius: getImgRadius,
         split: split,
-        onLoad: onLoad,
-        onError: onError
     }
 </wxs>
 
 <view id="image-wrap" 
-    class="oak-image class ext-class" 
-    style="{{ws.getStyle(bgImg, width, height, radius, imgRadius, noBgImg, isFullWidth)}}"
+    class="oak-image class ext-class {{Utils.classNames({noBgCOlor: !bgColor, loaded: status == 1, error: status == 2})}} " 
+    style="{{ws.getStyle(bgImg, width, height, radius, noBgImg, bgColor)}}"
 >
+    <oak-loading is-show="{{!status}}"
+        loader-class="loader"
+        position="absolute"
+    />
     <image wx:if="{{src}}"
         class="origin-image img-class"
         src="{{ws.getSrc(src, useWebp, width, pixelRatio, quality, imgRadius)}}" 
-        style="{{ws.split(imgRadius, ' ').length > 1 ? 'border-radius:' + imgRadius : ''}}"
+        style="{{ws.getImgRadius(imgRadius)? 'border-radius:' + ws.getImgRadius(imgRadius) : ''}}"
         mode="{{mode}}"
         webp="{{webp}}"
         lazy-load="{{lazyLoad}}"
         data-src="{{src}}"
-        bindload="{{ws.onLoad}}"
-        binderror="{{ws.onError}}"
+        bindload="onLoad"
+        binderror="onError"
     />
 </view>
