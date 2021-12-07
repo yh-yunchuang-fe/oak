@@ -1,0 +1,6 @@
+<!--components/ui/Mask/index.wxml-->
+<view  catch:touchmove="{{true}}" class="oak-overlay {{position}} {{type}} ext-class" bindtap="onMaskClick" wx:if="{{isShow}}">
+    <view class="oak-overlay-wrap wrap-class" catchtap="{{true}}">
+        <slot></slot>
+    </view>
+</view>

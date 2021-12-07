@@ -160,4 +160,5 @@
         bindload="onLoad"
         binderror="onError"
     />
+    <slot></slot>
 </view>

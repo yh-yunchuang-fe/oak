@@ -29,6 +29,9 @@
      <oak-list-item title="Icon 图标"
         title-class="item-title"
         url="/pages/icon/index" />
+     <oak-list-item title="Overlay 遮罩层"
+        title-class="item-title"
+        url="/pages/overlay/index" />
        <!--       <oak-list-item title="Animation 动画"
                 title-class="item-title"
                 url="/pages/animation/animation" />
