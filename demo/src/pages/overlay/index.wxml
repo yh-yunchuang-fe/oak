@@ -18,6 +18,6 @@
         </oak-image>
     </view>
 </view>
-<oak-overlay wrap-class="overlay-warp" is-show="{{show1}}" auto-close>
+<oak-overlay show="{{show1}}" auto-close>
     <view class="overlay-content">页面遮罩</view>
 </oak-overlay>

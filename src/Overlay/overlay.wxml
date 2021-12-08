@@ -1,6 +1,12 @@
-<!--components/ui/Mask/index.wxml-->
-<view  catch:touchmove="{{true}}" class="oak-overlay {{position}} {{type}} ext-class" bindtap="onMaskClick" wx:if="{{isShow}}">
-    <view class="oak-overlay-wrap wrap-class" catchtap="{{true}}">
-        <slot></slot>
-    </view>
-</view>
+<wxs src="WXS/base.wxs" module="Utils" />
+
+<oak-animation wx:if="{{_show}}"
+    show="{{show}}"
+    name="{{_animate}}"
+    duration="{{_duration}}"
+    ext-class="oak-overlay {{type}}"
+    bind:onAnimationEnd="animationEnd"
+    bind:tap="onMaskClick"
+>
+    <slot catch:tap="{{Utils.stopPropagation}}"></slot>
+</oak-animation>

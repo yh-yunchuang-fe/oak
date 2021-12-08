@@ -8,7 +8,7 @@ Component({
     /**
      * 组件的属性列表
      */
-    externalClasses:['ext-class','wrap-class'],
+    externalClasses: ['ext-class'],
     properties: {
         // 是否点击遮罩，自动隐藏
         autoClose: {
@@ -16,37 +16,66 @@ Component({
             value: false
         },
         // mask是否显示
-        isShow: {
+        show: {
             type: Boolean,
-            value: true
+            value: true,
+            observer(): void {
+                this.toggleShow()
+            }
         },
-        position: {
-            type: String,
-            value: 'fixed', // fixed, absolute
-        },
-        type:{
+        type: {
             type: String,
             value: 'page', // page, card
-        }
+        },
+        animate: {
+            type: Boolean,
+            value: true,
+        },
+    },
+    data: {
+        _show: false,
+        _animate: '',
+        _duration: 200
+    },
+    lifetimes: {
+        attached(): void {
+            this.toggleShow()
+        },
     },
     /**
      * 组件的方法列表
      */
     methods: {
-        // 显示mask
-        show(): void{
-            this.setData({
-                isShow: true
-            })
+        toggleShow(): void {
+            const { show, animate } = this.data
+            if (show) {
+                this.setData({
+                    show,
+                    _show: show,
+                    _animate: animate ? 'fadeIn' : '',
+                })
+            } else {
+                this.hide()
+            }
         },
-        // 隐藏mask
-        hide(): void{
+        // 隐藏
+        hide(): void {
+            const { animate } = this.data
             this.setData({
-                isShow: false
+                show: false,
+                _animate: animate ? 'fadeOut' : '',
+            })
+            this.triggerEvent('hide')
+        },
+
+        animationEnd(e: event): void {
+            e.detail.animationName === 'fadeOut' && this.setData({
+                _show: false,
+                _animate: '',
             })
         },
         // 点击mask调用
-        onMaskClick(): void{
+        onMaskClick(): void {
             this.triggerEvent('onMaskClick')
             this.data.autoClose && this.hide()
         }
