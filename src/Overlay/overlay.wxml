@@ -4,6 +4,7 @@
     show="{{show}}"
     name="{{_animate}}"
     duration="{{_duration}}"
+    background="{{background}}"
     ext-class="oak-overlay {{type}}"
     bind:onAnimationEnd="animationEnd"
     bind:tap="onMaskClick"

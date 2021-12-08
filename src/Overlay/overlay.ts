@@ -31,6 +31,10 @@ Component({
             type: Boolean,
             value: true,
         },
+        background: {
+            type: String,
+            value: '',
+        }
     },
     data: {
         _show: false,

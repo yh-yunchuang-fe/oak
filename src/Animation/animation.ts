@@ -19,6 +19,10 @@ Component({
             type: String,
             value: 'ease'
         },
+        background: {
+            type: String,
+            value: '',
+        },
         name: {
             type: String,
             value: 'fadeIn',

@@ -1,27 +1,30 @@
-<wxs src="WXS/base.wxs"
-    module="Utils" />
-
-<view class="oak-popup oak-popup-{{position}} ext-class"
-    style="z-index: {{zIndex}};"
-    hidden="{{ !_isShow }}">
-    <oak-animation name="{{_maskAnimate}}"
-        bind:tap="popupClose"
-        show="{{ _mask }}"
-        duration="{{duration}}"
-        ext-class="oak-popup-mask">
-    </oak-animation>
-    <oak-animation name="{{_bodyAnimate}}"
-        class="oak-popup-body-wrap body-class"
-        style="width: {{width}};height: {{height}};top: {{top}};bottom: {{bottom}}"
-        show="{{ _bodyShow }}"
+<wxs src="WXS/base.wxs" module="Utils" />
+<wxs module="ws">
+    var getStyle = function(width, height, top, bottom,background){
+        var styles = []
+        if(width) styles.push('width:' + width)
+        if(height) styles.push('height:' + height)
+        if(top) styles.push('top:' + top)
+        if(bottom) styles.push('bottom:' + bottom)
+        if(background) styles.push('background:' + background)
+        return styles.join(';')
+    }
+    module.exports = {
+        getStyle: getStyle,
+    };
+</wxs>
+<oak-overlay
+    show="{{ _maskShow }}"
+    autoClose="{{closeClickMask}}"
+    background="{{!mask ? 'transparent' : ''}}"
+    bind:onMaskClick="maskClick"
+>
+    <oak-animation name="{{_animate}}"
+        ext-class="oak-popup-body {{position}} {{ Utils.classNames({iphonex: isIPhonex}) }} body-class"
+        show="{{_bodyShow}}"
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"
-        >
-        <view 
-            class="{{ isIPhonex && safeArea ? 'oak-popup-body-iphonex content-class' : 'oak-popup-body content-class' }}" 
-            style="background: {{background}};"
-        >
-            <slot></slot>
-        </view>
+    >
+        <slot></slot>
     </oak-animation>
-</view>
+</oak-overlay>
