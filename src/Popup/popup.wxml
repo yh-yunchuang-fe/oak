@@ -1,8 +1,8 @@
 <wxs src="WXS/base.wxs" module="Utils" />
 <wxs module="ws">
-    function showTitle(show, position){
-        if(['top','bottom'].indexOf(position) === -1) return false
-        return show
+    function showTitle(position, closable, title, subTitle){
+        if(['bottom'].indexOf(position) === -1) return false
+        return closable || title || (subTitle && (subTitle.name || subTitle.icon))
     }
     module.exports = {
         showTitle: showTitle,
@@ -10,16 +10,31 @@
 </wxs>
 <oak-overlay
     show="{{ _maskShow }}"
-    autoClose="{{closeClickMask}}"
-    background="{{!mask ? 'transparent' : ''}}"
-    bind:onMaskClick="maskClick"
+    autoClose="{{maskClosable}}"
+    bind:maskClick="maskClick"
 >
     <oak-animation name="{{_animate}}"
         ext-class="oak-popup-body {{position}} {{ Utils.classNames({iphonex: isIPhonex, showRadius: showRadius}) }} {{sizeInNine ? 'size-' + sizeInNine : ''}} body-class"
         show="{{_bodyShow}}"
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"
-    >
+    >        
+        <view wx:if="{{ws.showTitle(position, closable, title, subTitle)}}"
+            class="oak-popup-header header-class"
+        >
+            <oak-icon  wx:if="{{closable}}"
+                ext-class="close" 
+                name="close-light"
+                catch:tap="popupClose"
+            />
+            <view class="main" style="{{titleStyle}}">{{title}}</view>
+            <view class="sub"
+                wx:if="{{subTitle}}"
+                style="{{subTitle.style}}"
+                catch:tap="onSubTitleClick"
+            >{{subTitle.name}}<oak-icon wx:if="{{!subTitle.name && subTitle.icon}}" name="{{subTitle.icon}}"/></view>
+        </view>
+
         <slot></slot>
     </oak-animation>
 </oak-overlay>

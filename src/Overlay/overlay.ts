@@ -66,7 +66,7 @@ Component({
         hide(): void {
             const { animate } = this.data
             this.setData({
-                show: false,
+                _show: false,
                 _animate: animate ? 'fadeOut' : '',
             })
             this.triggerEvent('hide')
@@ -74,13 +74,13 @@ Component({
 
         animationEnd(e: event): void {
             e.detail.animationName === 'fadeOut' && this.setData({
-                _show: false,
+                show: false,
                 _animate: '',
             })
         },
         // 点击mask调用
         onMaskClick(): void {
-            this.triggerEvent('onMaskClick')
+            this.triggerEvent('maskClick')
             this.data.autoClose && this.hide()
         }
     }

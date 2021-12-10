@@ -1,16 +1,54 @@
 @import "./variable";
 @import "Style/mixin";
 
+@popup-header-height: 104rpx;
 
-
+.clip(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
 .oak-popup {
     position: relative;
 
-    &-title {
-        height: @popup-title-height;
-        line-height: @popup-title-height;
-        font-size: @popup-title-size;
-        color: @popup-title-color;
+    &-header {
+        height: @popup-header-height;
+        line-height: @popup-header-height;
+        text-align: center;
+        position: relative;
+        vertical-align: middle;
+
+
+        .close {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            font-size: @popup-icon-size;
+            color: @popup-icon-color;
+            padding: 0 @popup-margin-base;
+        }
+
+        .main {
+            display: inline-block;
+            font-size: @popup-title-size;
+            color: @popup-title-color;
+            box-sizing: border-box;
+            max-width: 12em;
+            .clip()
+        }
+
+        .sub {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            font-size: @popup-textbtn-size;
+            color: @popup-textbtn-color-base;
+            margin: 0 @popup-margin-base;
+            max-width: 4em;
+            .clip()
+        }
     }
 
     &-body {
@@ -19,8 +57,6 @@
         box-sizing: border-box;
         position: fixed;
         overflow: hidden;
-        padding-left: @popup-margin-base;
-        padding-right: @popup-margin-base;
 
         &.center {
             width: auto;

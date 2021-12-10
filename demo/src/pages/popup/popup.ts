@@ -4,8 +4,16 @@ Page({
     data: {
         showPopup1: false,
         showPopup2: false,
-        positon: '',
-        size:'',
+        showPopup3: false,
+        closable: false,
+        position: '',
+        size: '',
+        titleStyle:'',
+        subTitle: {
+            name: '关闭',
+            icon: 'close-light',
+            style:''
+        }
     },
     onShareAppMessage(): object {
         return {
@@ -13,7 +21,7 @@ Page({
             path: '/pages/popup/popup',
         }
     },
-    onPopupShow(e: event ): void {
+    onPopupShow(e: event): void {
         const { position, style } = e.currentTarget.dataset
         this.setData!({
             position,
@@ -26,12 +34,12 @@ Page({
             showPopup1: false,
         })
     },
-    onPopupShow2(e: event ): void {
-        const { position, size,style } = e.currentTarget.dataset
+    onPopupShow2(e: event): void {
+        const { position, size, style } = e.currentTarget.dataset
         this.setData!({
             position,
             size,
-            style:style?style:'',
+            style: style ? style : '',
             showPopup2: true,
         })
     },
@@ -39,5 +47,27 @@ Page({
         this.setData!({
             showPopup2: false,
         })
-    }
+    },
+    subTitleClick(): void {
+        console.log('subTitleClick')
+        this.setData!({
+            showPopup3: false,
+        })
+    },
+    onPopupShow3(e: event): void {
+        const { position, closable = false, title = '', titlestyle = '', subicon = '', subname = '', substyle = '' } = e.currentTarget.dataset
+        console.log(e.currentTarget.dataset)
+        this.setData!({
+            position,
+            closable,
+            title,
+            titleStyle:titlestyle,
+            subTitle: {
+                name: subname,
+                icon: subicon,
+                style: substyle
+            },
+            showPopup3: true,
+        })
+    },
 })
