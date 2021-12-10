@@ -2,8 +2,10 @@
 //获取应用实例
 Page({
     data: {
-        showPopup: false,
-        positon: ''
+        showPopup1: false,
+        showPopup2: false,
+        positon: '',
+        size:'',
     },
     onShareAppMessage(): object {
         return {
@@ -16,12 +18,26 @@ Page({
         this.setData!({
             position,
             style,
-            showPopup: true,
+            showPopup1: true,
         })
     },
     onPopupClose(): void {
         this.setData!({
-            showPopup: false,
+            showPopup1: false,
+        })
+    },
+    onPopupShow2(e: event ): void {
+        const { position, size,style } = e.currentTarget.dataset
+        this.setData!({
+            position,
+            size,
+            style:style?style:'',
+            showPopup2: true,
+        })
+    },
+    onPopupClose2(): void {
+        this.setData!({
+            showPopup2: false,
         })
     }
 })

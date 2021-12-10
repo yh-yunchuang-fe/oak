@@ -19,7 +19,7 @@ Component({
             type: String,
             value: 'ease'
         },
-        background: {
+        extStyle: {
             type: String,
             value: '',
         },

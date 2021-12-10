@@ -48,12 +48,28 @@ Component({
         // 弹窗位置
         position: {
             type: String,
-            value: 'center',// center top bottom
+            value: 'center',// center top bottom left right
         },
+        // 动画时长 ms
         duration: {
             type: Number,
-            value: 200,
+            value: 200
         },
+        // 显示尺寸：占宽高比的7/9 6/9 5/9 4/9 3/9，不传为自适应尺寸（根据内容自适应）
+        sizeInNine:{
+            type: String,
+            value: '',// 2 3 4 5 6 7
+        },
+        // 显示圆角：仅上下浮层
+        showRadius:{
+            type: Boolean,
+            value: true,
+        },
+        // 显示标题：仅上下浮层
+        showTitle:{
+            type: Boolean,
+            value: true,
+        }
     },
     data: {
         _maskShow: false,
@@ -100,5 +116,5 @@ Component({
             }
         }
     },
-    externalClasses: ['ext-class', 'body-class'],
+    externalClasses: ['root-class', 'body-class', 'title-class'],
 })

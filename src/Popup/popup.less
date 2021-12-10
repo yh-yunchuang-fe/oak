@@ -1,14 +1,26 @@
-@import "Style/variable";
+@import "./variable";
 @import "Style/mixin";
+
+
 
 .oak-popup {
     position: relative;
+
+    &-title {
+        height: @popup-title-height;
+        line-height: @popup-title-height;
+        font-size: @popup-title-size;
+        color: @popup-title-color;
+    }
 
     &-body {
         width: inherit;
         height: inherit;
         box-sizing: border-box;
         position: fixed;
+        overflow: hidden;
+        padding-left: @popup-margin-base;
+        padding-right: @popup-margin-base;
 
         &.center {
             width: auto;
@@ -23,6 +35,18 @@
             left: 0;
             right: 0;
             height: auto;
+
+            &.showRadius {
+                border-radius: 0 0 @popup-down-radius @popup-down-radius;
+            }
+
+            &.size-2 {
+                height: @popup-down-height-min;
+            }
+
+            &.size-6 {
+                height: @popup-down-height-max;
+            }
         }
 
         &.bottom {
@@ -33,6 +57,30 @@
 
             &.iphonex {
                 padding-bottom: @iphonex-padding;
+            }
+
+            &.showRadius {
+                border-radius: @popup-up-radius @popup-up-radius 0 0;
+            }
+
+            &.size-3 {
+                height: @popup-up-height-min;
+            }
+
+            &.size-4 {
+                height: @popup-up-height-1;
+            }
+
+            &.size-5 {
+                height: @popup-up-height-2;
+            }
+
+            &.size-6 {
+                height: @popup-up-height-3;
+            }
+
+            &.size-7 {
+                height: @popup-up-height-max;
             }
         }
 

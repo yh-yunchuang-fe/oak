@@ -1,5 +1,6 @@
 {
     "navigationBarTitleText": "Popup 弹出层",
+    "navigationStyle": "custom",
     "usingComponents": {
         "oak-button": "/Button/button",
         "oak-popup": "/Popup/popup"
