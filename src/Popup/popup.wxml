@@ -12,6 +12,7 @@
     show="{{ _maskShow }}"
     autoClose="{{maskClosable}}"
     bind:maskClick="maskClick"
+    background="{{!mask ? 'transparent' : ''}}"
     zIndex="{{zIndex}}"
 >
     <oak-animation name="{{_animate}}"

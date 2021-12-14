@@ -5,34 +5,88 @@
     </view>
     <view class="row">
         <oak-button class="oak-button"
-            size='block'
-            data-options="{{ {title: 'Oak 弹窗', content: '弹窗很6，非常6，对不对？', cancleText: '不对', confirmText: '对' } }}"
-            bindtap="showDialog"
-        >带标题</oak-button>
+            data-options="{{ {title: '这里是提示信息的标题', content: '这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案', buttonBlock:true, buttons:[{text:'确认',type:'confirm'}], closable: true} }}"
+            bind:click="showDialog"
+        >左上角关闭</oak-button>
         <oak-button class="oak-button"
-            size='block'
-            data-options="{{ {content: '弹窗很6，非常6，对不对？', cancleText: '不对', confirmText: '对' } }}"
-            bindtap="showDialog"
-        >不带标题</oak-button>
+            data-options="{{ {title: '这里是提示信息的标题', content: '这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案这里是提示信息的详细描述文案', buttonBlock:true, buttons:[{text:'确认',type:'confirm'}], closable: false} }}"
+            bind:click="showDialog"
+        >左上角不可关闭</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '标题', content: '蒙层不可点击关闭，默认可点击关闭， maskClosable: false', buttonBlock:true, buttons:[{text:'确认',type:'confirm'}], closable: false, maskClosable: false} }}"
+            bind:click="showDialog"
+        >蒙层不可点击关闭</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '标题', content: '蒙层可点击关闭', buttonBlock:true, buttons:[{text:'确认',type:'confirm'}], closable: false, maskClosable: true} }}"
+            bind:click="showDialog"
+        >蒙层可点击关闭</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {content: '弹窗很6，非常6，对不对？',buttons: [{text:'不对', type:'cancel'},{text:'对',type:'confirm'}], buttonBlock: false} }}"
+            bind:click="showDialog"
+        >仅内容</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '标题', buttons:[{text:'不对', type:'cancel'},{text:'对',type:'confirm'}], buttonBlock: false} }}"
+            bind:click="showDialog"
+        >仅标题</oak-button>
     </view>
     <view class="h3">
-        异步关闭
+        按钮用法
     </view>
     <view class="row">
         <oak-button class="oak-button"
-            size='block'
-            data-options="{{ {title: '异步关闭', content: ' 确认5秒后关闭弹窗', cancleText: '取消', confirmText: '确认', confirmAsync: true} }}"
-            bindtap="showDialog"
-        >点击调用</oak-button>
+            data-options="{{ {title: '按钮用法', content: '一个按钮', buttons:[{text:'主按钮',type:'confirm'}], buttonBlock: true} }}"
+            bind:click="showDialog"
+        >一个按钮</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '按钮用法', content: '两个按钮,左右布局', buttons:[{text:'次按钮',type:'cancel'},{text:'主按钮',type:'confirm'}], buttonBlock: false} }}"
+            bind:click="showDialog"
+        >两个按钮</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '按钮用法', content: '两个按钮,左右布局', buttons:[{text:'主按钮',type:'confirm'},{text:'次按钮',type:'cancel'}], buttonBlock: false} }}"
+            bind:click="showDialog"
+        >切换位置</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '按钮用法', content: '两个按钮,上下布局', buttons:[{text:'主按钮',type:'confirm'}, {text:'次按钮',type:'cancel'}], buttonBlock: true} }}"
+            bind:click="showDialog"
+        >上下布局</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '按钮用法', content: '两个按钮,弱化次按钮', buttons:[{text:'主按钮',type:'confirm'}, {text: '次按钮',type: 'cancel', fill: 'none'}], buttonBlock: true} }}"
+            bind:click="showDialog"
+        >弱化次按钮</oak-button>
+    </view>
+    <view class="h3">
+        弹窗类型
+    </view>
+    <view class="row">
+        <oak-button class="oak-button"
+            data-options="{{ {title: '弹窗类型', content: '默认类型,type:default', type:'default', buttons:[{text:'取消', type:'cancel'},{text:'确认',type:'confirm'}], buttonBlock: false, confirmAsync: true} }}"
+            bind:click="showDialog"
+        >默认</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ {title: '弹窗类型', content: '默认类型,type:bottom-close', type: 'bottom-close', diy: true} }}"
+            bind:click="showDialog"
+        >底部关闭按钮</oak-button>
     </view>
     <view class="h3">
         自定义内容
     </view>
     <view class="row">
         <oak-button class="oak-button"
-            size='block'
-            data-options="{{ {title: '自定义', cancleText: '取消', confirmText: '确认', diy: true} }}"
-            bindtap="showDialog"
+            data-options="{{ { diy: true , type: 'default', buttons:[{text:'主按钮',type:'confirm'}], buttonBlock: true} }}"
+            bind:click="showDialog"
+        >自定义内容1</oak-button>
+        <oak-button class="oak-button"
+            data-options="{{ { diy: true ,type: 'bottom-close'} }}"
+            bind:click="showDialog"
+        >自定义内容2</oak-button>
+    </view>
+    <view class="h3">
+        异步关闭
+    </view>
+    <view class="row">
+        <oak-button class="oak-button"
+            data-options="{{ {title: '异步关闭', content: ' 确认5秒后关闭弹窗', buttons:[{text:'取消', type:'cancel'},{text:'确认',type:'confirm'}], buttonBlock: false, confirmAsync: true} }}"
+            bind:click="showDialog"
         >点击调用</oak-button>
     </view>
     <view class="h3">
@@ -40,8 +94,7 @@
     </view>
     <view class="row">
         <oak-button class="oak-button"
-            size='block'
-            bindtap="dialogShow"
+            bind:click="dialogShow"
         >点击调用</oak-button>
     </view>
     <oak-dialog
@@ -50,11 +103,16 @@
         title="{{ title }}"
         bindonConfirm="onConfirm"
         content="{{ content }}"
-        cancle-text="{{ cancleText }}"
-        confirm-text="{{ confirmText }}"
-        confirm-async="{{ confirmAsync }}">
+        buttons="{{ buttons }}"
+        buttonBlock="{{ buttonBlock }}"
+        closable="{{ closable }}"
+        maskClosable="{{ maskClosable }}"
+        confirm-async="{{ confirmAsync }}"
+        type="{{ type }}"
+        bind:onClose="onClose"
+    >
         <view class="diy-content" wx:if="{{diy}}">
-            <image mode="width" src="https://static.yonghuivip.com/oak/images/logo.png" alt="" />
+            <oak-image width='200' height='200' mode="width" src="https://static.yonghuivip.com/oak/images/logo.png" alt="" />
         </view>
     </oak-dialog>
 </view>

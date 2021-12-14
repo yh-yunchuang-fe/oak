@@ -111,7 +111,6 @@
                 title-class="item-title"
                 url="/pages/scroll/index"/> -->
         </oak-collapse-item>
-        <!--
         <oak-collapse-item title="反馈组件"
             icon="member-code"
             icon-rotate="{{false}}"
@@ -119,13 +118,13 @@
             icon-class="col-title"
             content-class="content"
             border="{{ false}}">
-            <oak-list-item title="ActionSheet 菜单"
+            <!-- <oak-list-item title="ActionSheet 菜单"
                 title-class="item-title"
-                url="/pages/actionSheet/actionSheet" />
+                url="/pages/actionSheet/actionSheet" /> -->
             <oak-list-item title="Dialog 弹窗"
                 title-class="item-title"
                 url="/pages/dialog/dialog" />
-            <oak-list-item title="Loadding 加载"
+            <!-- <oak-list-item title="Loadding 加载"
                 title-class="item-title"
                 url="/pages/loading/loading" />
             <oak-list-item title="NoticeBar 通告栏"
@@ -133,8 +132,10 @@
                 url="/pages/noticeBar/noticeBar" />
             <oak-list-item title="SlideView 滑动操作"
                 title-class="item-title"
-                url="/pages/slideview/slideview" />
+                url="/pages/slideview/slideview" /> -->
         </oak-collapse-item>
+
+        <!--
         <oak-collapse-item title="业务组件"
             icon="more"
             icon-rotate="{{false}}"

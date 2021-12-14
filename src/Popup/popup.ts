@@ -102,6 +102,7 @@ Component({
     },
     methods: {
         maskClick(): void {
+            this.triggerEvent('onMaskClick')
             if (this.data.maskClosable) {
                 this.popupClose()
             }
