@@ -34,6 +34,10 @@ Component({
         background: {
             type: String,
             value: '',
+        },
+        zIndex: {
+            type: Number,
+            value: 10,
         }
     },
     data: {

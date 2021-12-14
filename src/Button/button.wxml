@@ -26,6 +26,7 @@
   bindlaunchapp="bindLaunchApp"
   style="{{width ? 'width:' + width + ';' : ''}};{{height ? 'height:' + height + ';' : ''}}"
   bindopensetting="bindOpenSetting"
+  bind:tap="onTap"
 >
   <block wx:if="{{loading}}">
     <oak-loading

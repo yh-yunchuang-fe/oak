@@ -1,6 +1,6 @@
 import BasicBehavior from '../mixins/basic'
 import OpenTypeBehavior from '../mixins/open-type'
-import ButtonBehavior from './button-mixin'
+import ButtonBehavior from 'Mixins/button-mixin'
 
 Component({
     behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
@@ -76,6 +76,10 @@ Component({
     },
     methods: {
         setLoadingColor(): void {
+        },
+        onTap(e: event): void {
+            if (this.data.disabled) return
+            this.triggerEvent('click', e)
         }
     },
     externalClasses: ['button-class', 'hover-class', 'loading-class'],

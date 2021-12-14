@@ -12,6 +12,7 @@
     show="{{ _maskShow }}"
     autoClose="{{maskClosable}}"
     bind:maskClick="maskClick"
+    zIndex="{{zIndex}}"
 >
     <oak-animation name="{{_animate}}"
         ext-class="oak-popup-body {{position}} {{ Utils.classNames({iphonex: isIPhonex, showRadius: showRadius}) }} {{sizeInNine ? 'size-' + sizeInNine : ''}} body-class"

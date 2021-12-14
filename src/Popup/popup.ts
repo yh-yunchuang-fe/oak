@@ -43,7 +43,7 @@ Component({
         },
         zIndex: {
             type: Number,
-            value: 9,
+            value: 10,
         },
         // 弹窗位置
         position: {

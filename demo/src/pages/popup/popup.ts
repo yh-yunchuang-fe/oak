@@ -48,7 +48,7 @@ Page({
             showPopup2: false,
         })
     },
-    subTitleClick(): void {
+    onPopupClose3(): void {
         console.log('subTitleClick')
         this.setData!({
             showPopup3: false,
