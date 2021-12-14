@@ -21,5 +21,9 @@ Component({
             type: String,
             value: 'fixed',
         },
+        isPromotion: {
+            type: Boolean,
+            value: false,
+        },
     }
 })
