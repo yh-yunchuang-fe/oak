@@ -23,5 +23,4 @@
 }
 .empty.fixed,.empty-pro {
     top: 60%;
-    z-index: 9;
 }
