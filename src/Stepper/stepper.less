@@ -88,7 +88,7 @@
 
             &.minus[disabled] {
                 color: @stepper-disabled-color;
-                border-color: @primary-color;
+                border-color: @stepper-disabled-color;
                 background-color: transparent;
             }
 
@@ -150,10 +150,11 @@
 .disabledStyle() {
     &.type_primary {
         .minus {
-            border-color: @stepper-disabled-color !important;
+            border-color: @stepper-disabled-color  !important;
         }
-        .input.size_large{
-            border-color: @stepper-disabled-color !important;
+
+        .input.size_large {
+            border-color: @stepper-disabled-color  !important;
         }
     }
 }
