@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/icon/index",
-    "pages/dialog/dialog"
+    "pages/dialog/dialog",
+    "pages/stepper/stepper"
   ],
   "window":{
     "backgroundTextStyle":"light",

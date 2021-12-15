@@ -91,11 +91,11 @@
                 url="/pages/tag/tag" />
             <oak-list-item title="Label 操作标签"
                 title-class="item-title"
-                url="/pages/label/label" />
+                url="/pages/label/label" />-->
             <oak-list-item title="Stepper 步进组件"
                 title-class="item-title"
                 url="/pages/stepper/stepper" />
-            <oak-list-item title="Steps 步骤条"
+            <!-- <oak-list-item title="Steps 步骤条"
                 title-class="item-title"
                 url="/pages/steps/steps"/>
             <oak-list-item title="TreeSelect 树形选择"

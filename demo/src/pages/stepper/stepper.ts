@@ -11,7 +11,6 @@ Page({
     },
     onPlus(info: any): void {
         this.asyncChange({ type: 'plus', value: info.detail.value })
-
     },
     onMinus(info: any): void {
         this.asyncChange({ type: 'minus', value: info.detail.value })
@@ -20,10 +19,12 @@ Page({
         new Promise((resolve: any): void => {
             setTimeout((): void => {
                 resolve(info.value)
-            }, 2000)
+            }, 200)
         }).then((res: any): void => {
+            //@ts-ignore
+            const value = { plus: res + 1, minus: res - 1, input: res }[info.type]
             this.setData!({
-                value: info.type === 'plus' ? res + 1 : res - 1
+                value
             })
         })
     }

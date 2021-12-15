@@ -1,35 +1,159 @@
-@import "Style/variable";
+@import "./variable";
+
 
 .oak-stepper {
+    height: @content-height;
+    line-height: @content-height;
     font-size: 0;
     display: flex;
     align-items: center;
-    .minus,
-    .plus {
-        position: relative;
-        width: 25px;
-        height: 25px;
-        // border: 1rpx solid #eee;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        &:before {
-            content: "";
-            position: absolute;
-            left: -1rpx;
-            top: -1rpx;
-            width: 200%;
-            height: 200%;
+    box-sizing: border-box;
+    text-align: center;
+
+    &.size_large {
+        height: @stepper-large-height;
+    }
+
+    .btn {
+        .btnStyle();
+    }
+
+    .input {
+        .inputStyle();
+    }
+
+    &.disabled {
+        .disabledStyle();
+    }
+}
+
+
+.btnStyle() {
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border-width: 2rpx;
+    border-style: solid;
+
+    &::after {
+        display: none;
+    }
+
+    &.size {
+        &_small {
+            font-size: 12px;
+            width: @stepper-btn-width;
+            height: @stepper-btn-width;
+            line-height: @stepper-btn-width;
             border-radius: 50%;
-            border: 1px solid #eee;
-            transform: scale(0.5);
-            transform-origin: left top;
+
+            &.type_default {
+                border: none;
+            }
+        }
+
+        &_large {
+            @R: @stepper-large-height/2;
+            height: 100%;
+            line-height: @stepper-large-height;
+            width: @stepper-large-btn-width;
+            font-size: @stepper-large-icon-size;
+
+            &.minus {
+                border-radius: @R 0 0 @R;
+            }
+
+            &.plus {
+                border-radius: 0 @R @R 0;
+            }
         }
     }
-    .input {
-        font-size: 14px;
-        text-align: center;
-        margin: 0 5px;
+
+    &.type {
+        &_default {
+            color: #333;
+            border-color: @stepper-large-border-default-color;
+
+            &[disabled] {
+                color: @stepper-disabled-color;
+                background-color: transparent;
+            }
+        }
+
+        &_primary {
+            color: @primary-color;
+            border-color: @primary-color;
+
+            &.minus[disabled] {
+                color: @stepper-disabled-color;
+                border-color: @primary-color;
+                background-color: transparent;
+            }
+
+            &.plus {
+                color: #fff;
+                background-color: @primary-color;
+
+                &[disabled] {
+                    border-color: @stepper-disabled-color;
+                    background-color: @stepper-disabled-color;
+                }
+            }
+        }
+    }
+}
+
+
+.inputStyle() {
+    height: 100%;
+    color: @stepper-input-font-color;
+    text-align: center;
+    box-sizing: border-box;
+    border-width: 2rpx;
+    border-style: solid;
+    border-color: transparent;
+
+    &.size {
+        &_small {
+            width: @stepper-default-input-width;
+            margin: 0 @stepper-input-spacing;
+            font-size: 28rpx;
+
+            &.type_default {
+                background: @stepper-fill-none-input-bg;
+                border-radius: @stepper-fill-none-input-radius;
+            }
+        }
+
+        &_large {
+            border-left: none;
+            border-right: none;
+            width: @stepper-large-input-width;
+            margin: 0;
+            font-size: 32rpx;
+
+            &.type {
+                &_default {
+                    border-color: @stepper-large-border-default-color;
+                }
+
+                &_primary {
+                    border-color: @primary-color;
+                }
+            }
+        }
+    }
+}
+
+.disabledStyle() {
+    &.type_primary {
+        .minus {
+            border-color: @stepper-disabled-color !important;
+        }
+        .input.size_large{
+            border-color: @stepper-disabled-color !important;
+        }
     }
 }
