@@ -2,6 +2,8 @@
 <view class="container">
     <view class="h3">基础用法</view>
     <oak-stepper value="1" />
+    <view class="h3">无边框</view>
+    <oak-stepper value="1" border="{{false}}" />
     <view class="h3">可以输入数值</view>
     <oak-stepper value="1" enableInput/>
     <view class="h3">步长设置</view>

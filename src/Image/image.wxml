@@ -7,7 +7,7 @@
 
 <wxs module='ws'>
     function getSrc (src, useWebp, width, pixelRatio, quality, imgRadius) {
-        if (src.indexOf('/service') > -1) return src
+        if (src.indexOf('/service') > -1 || src.indexOf('/server') > -1) return src
 
         width = width ? width + '' : width
 

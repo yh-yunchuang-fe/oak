@@ -21,3 +21,6 @@
     color: #999999;
     text-align: center;
 }
+.empty.fixed,.empty-pro {
+    top: 60%;
+}
