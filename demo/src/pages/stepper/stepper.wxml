@@ -1,13 +1,13 @@
 <!--index.wxml-->
 <view class="container">
     <view class="h3">size:small type:primary </view>
-    <oak-stepper value="1" size="small" type="primary"/>
+    <oak-stepper value="1" min="0" max="10" size="small" type="primary"/>
     <view class="h3">size:small type:default </view>
-    <oak-stepper value="1" size="small" type="default"/>
+    <oak-stepper value="1" min="0" max="10" size="small" type="default"/>
     <view class="h3">size:large type:primary </view>
-    <oak-stepper value="1" size="large" type="primary"/>
+    <oak-stepper value="1" min="0" max="10" size="large" type="primary"/>
     <view class="h3">size:large type:default </view>
-    <oak-stepper value="1" size="large" type="default"/>
+    <oak-stepper value="1" min="0" max="10" size="large" type="default"/>
 
     <view class="h3">可以输入数值</view>
     <oak-stepper value="1" enable-input/>

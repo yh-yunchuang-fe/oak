@@ -90,6 +90,9 @@
                 color: @stepper-disabled-color;
                 border-color: @stepper-disabled-color;
                 background-color: transparent;
+                &.size_large{
+                    border-color: @primary-color;
+                }
             }
 
             &.plus {
@@ -149,7 +152,7 @@
 
 .disabledStyle() {
     &.type_primary {
-        .minus {
+        .minus.size_small {
             border-color: @stepper-disabled-color  !important;
         }
 
