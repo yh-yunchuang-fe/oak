@@ -14,9 +14,19 @@
     if(disabled) return true
     return !enableInput
   }
+  function iconName(type, size, icons, postion) {
+    var baseIcons = ['minus', 'plus-sign']
+    if(type === 'primary' && size === 'small') {
+      baseIcons = ['cyclic-minus','plus-sign-facet']
+    }
+    var hasCustomIcon = icons && icons.length === 2
+    icons = hasCustomIcon ? icons : baseIcons
+    return postion === 'minus' ? icons[0] : icons[1]
+  }
   module.exports = {
     disabled: disabled,
     inputDisabled: inputDisabled,
+    iconName: iconName,
   }
 </wxs>
 <view class="oak-stepper size_{{size}} type_{{type}} {{Utils.classNames({disabled: disabled})}} ext-class">
@@ -24,7 +34,7 @@
       disabled="{{ws.disabled(disabled,_value,'minus', min)}}"
       bind:tap="onMinus"
     >
-        <oak-icon name="minus"/>
+        <oak-icon name="{{ws.iconName(type, size, icons, 'minus')}}"/>
     </button>
 
     <input class="input size_{{size}} type_{{type}} input-class"
@@ -40,6 +50,6 @@
       disabled="{{ws.disabled(disabled,_value,'plus', max)}}"
       bind:tap="onPlus"
     >
-        <oak-icon name="plus-sign"/>
+        <oak-icon name="{{ws.iconName(type, size, icons, 'plus')}}"/>
     </button>
 </view>

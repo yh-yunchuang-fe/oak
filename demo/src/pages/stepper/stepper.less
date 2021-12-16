@@ -1,7 +1,7 @@
 .container {
     background-color: #ffffff;
     padding: 0 30rpx;
-    padding-bottom:30rpx;
+    padding-bottom: 30rpx;
 
     .h3 {
         margin-top: 30rpx;
@@ -14,4 +14,16 @@
     // oak-stepper {
     //     display: inline-block;
     // }
+
+
+    //自定义样式
+    .input-class,.plus-class,.minus-class {
+        border-color: #000 !important;
+    }
+    .plus-class {
+        background-color: #000 !important;
+        &[disabled]{
+            background-color: #666 !important;
+        }
+    }
 }

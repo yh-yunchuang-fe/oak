@@ -36,21 +36,44 @@
     background-color: transparent;
     border-width: 2rpx;
     border-style: solid;
+    color: #333;
 
     &::after {
         display: none;
     }
 
+    &[disabled] {
+        background-color: transparent;
+        color: @stepper-disabled-color;
+    }
+
+    &.type_primary:not([disabled]) {
+        color: @primary-color;
+    }
+
+    &.type_primary.size_large.plus {
+        color: #fff;
+        background-color: @primary-color;
+
+        &[disabled] {
+            border-color: @stepper-disabled-color;
+            background-color: @stepper-disabled-color;
+        }
+    }
+
     &.size {
         &_small {
-            font-size: 12px;
             width: @stepper-btn-width;
             height: @stepper-btn-width;
             line-height: @stepper-btn-width;
-            border-radius: 50%;
+            border: none;
 
             &.type_default {
-                border: none;
+                font-size: 12px;
+            }
+
+            &.type_primary {
+                font-size: @stepper-btn-width;
             }
         }
 
@@ -60,6 +83,11 @@
             line-height: @stepper-large-height;
             width: @stepper-large-btn-width;
             font-size: @stepper-large-icon-size;
+            border-color: @stepper-large-border-default-color;
+
+            &.type_primary {
+                border-color: @primary-color;
+            }
 
             &.minus {
                 border-radius: @R 0 0 @R;
@@ -67,42 +95,6 @@
 
             &.plus {
                 border-radius: 0 @R @R 0;
-            }
-        }
-    }
-
-    &.type {
-        &_default {
-            color: #333;
-            border-color: @stepper-large-border-default-color;
-
-            &[disabled] {
-                color: @stepper-disabled-color;
-                background-color: transparent;
-            }
-        }
-
-        &_primary {
-            color: @primary-color;
-            border-color: @primary-color;
-
-            &.minus[disabled] {
-                color: @stepper-disabled-color;
-                border-color: @stepper-disabled-color;
-                background-color: transparent;
-                &.size_large{
-                    border-color: @primary-color;
-                }
-            }
-
-            &.plus {
-                color: #fff;
-                background-color: @primary-color;
-
-                &[disabled] {
-                    border-color: @stepper-disabled-color;
-                    background-color: @stepper-disabled-color;
-                }
             }
         }
     }
@@ -152,7 +144,7 @@
 
 .disabledStyle() {
     &.type_primary {
-        .minus.size_small {
+        .minus {
             border-color: @stepper-disabled-color  !important;
         }
 

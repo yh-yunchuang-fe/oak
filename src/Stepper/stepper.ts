@@ -41,18 +41,25 @@ Component({
             type: Boolean,
             value: false
         },
+        // 是否禁用
         disabled: {
             type: Boolean,
             value: false
         },
+        // 异步修改
         asyncChange: {
             type: Boolean,
             value: false
         },
         // 小数点长度
-        decimalLength: { 
+        decimalLength: {
             type: Number,
             value: null
+        },
+        // 自定义icon
+        icons: {
+            type: Array,
+            value: []
         },
     },
     externalClasses: ['ext-class', 'minus-class', 'plus-class', 'input-class'],
@@ -96,7 +103,7 @@ Component({
             if (typeof max === 'number' && _value > max) {
                 _value = max
             }
-            _value =  decimalLength ? (_value).toFixed(decimalLength) : _value
+            _value = decimalLength ? (_value).toFixed(decimalLength) : _value
             return _value
         },
         onInput(event): void {
