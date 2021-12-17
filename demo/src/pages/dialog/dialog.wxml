@@ -85,7 +85,7 @@
     </view>
     <view class="row">
         <oak-button class="oak-button"
-            data-options="{{ {title: '异步关闭', content: ' 确认5秒后关闭弹窗', buttons:[{text:'取消', type:'cancel'},{text:'确认',type:'confirm'}], buttonBlock: false, confirmAsync: true} }}"
+            data-options="{{ {title: '异步关闭', content: ' 确认5秒后关闭弹窗', buttons:[{text:'取消', type:'cancel'},{text:'确认',type:'confirm'}],maskClosable:false,  buttonBlock: false, confirmAsync: true} }}"
             bind:click="showDialog"
         >点击调用</oak-button>
     </view>

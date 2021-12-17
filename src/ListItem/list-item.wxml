@@ -1,79 +1,47 @@
 <wxs src="../wxs/base.wxs"
     module="Utils" />
 
-<wxs module="Fn">
-    function nowrapLine(line) {
-    return line ? '-webkit-line-clamp:' + line + ';-webkit-box-flex:' + line + ';' : '';
-    }
-
+<wxs module="ws">
     function imgStyle(width, height) {
-    var style = '';
-
-    if (width) style = 'width:' + width + ';';
-    if (height) style += 'height:' + height + ';';
-
-    return style;
+        var style = '';
+        if (width) style = 'width:' + width + ';';
+        if (height) style += 'height:' + height + ';';
+        return style;
     }
 
     module.exports = {
-    nowrapLine: nowrapLine,
-    imgStyle: imgStyle
+        imgStyle: imgStyle
     }
 </wxs>
 
-<view class="{{ Utils.classNames('oak-list-item', {border: border}) }} ext-class"
-    style="{{ backgroundColor ? 'background:' + backgroundColor + ';' : ''}};">
-    <view class="oak-list-item-left label-class"
-        wx:if="{{icon || image}}">
-        <image class="{{ Utils.classNames('oak-list-item-image', {large: title && subTitle }) }}"
-            style="{{ Fn.imgStyle(imgWidth, imgHeight) }}"
+<view class="oak-list-item {{ Utils.classNames({border: border}) }} ext-class">
+    <view class="left">
+        <slot name="left"/>
+        <oak-image class="left-image"
             wx:if="{{image}}"
-            src="{{image}}" />
-        <oak-icon class="label-oak-icon"
-            wx:else="{{_icon || icon}}"
-            name="{{_icon || icon}}"
-            color="{{iconColor}}"
-            size="{{iconSize}}" />
+            src="{{image}}"
+            width="{{imgWidth}}"
+            height="{{imgHeight}}"
+            style="{{ws.imgStyle(imgWidth,imgHeight)}}"
+        />
+        <view class="left-title {{titleDirection}}"
+            wx:if="{{title || subTitle}}"
+        >
+            <view class="main" wx:if="{{title}}">{{title}}</view>
+            <view class="sub" wx:if="{{subTitle}}">{{subTitle}}</view>
+        </view>
     </view>
-    <slot wx:else
-        name="icon" />
-
-    <view class="oak-list-item-body body-class">
-        <view wx:if="{{title}}"
-            class="{{ Utils.classNames('oak-list-item-title', {nowrap: nowrap || coustonNowrap.title}) }} title-class"
-            style="{{ Fn.nowrapLine(coustonNowrap.title) }};{{ titleColor ? 'color:' + titleColor + ';' : ''}}">{{title}}</view>
-        <slot wx:else
-            name="title" />
-
-        <view wx:if="{{subTitle}}"
-            class="{{ Utils.classNames('oak-list-item-subtitle', {nowrap: nowrap || coustonNowrap.subTitle}) }} subtitle-class"
-            style="{{Fn.nowrapLine(coustonNowrap.subTitle)}}"
-            wx:if="{{subTitle}}">{{subTitle}}</view>
-        <slot wx:else
-            name="subTitle" />
-
-        <slot></slot>
+    <view class="right">
+        <view class="right-text" wx:if="{{content}}">{{content}}</view>
+        <oak-icon class="right-icon"
+            wx:if="{{showIcon}}"
+            size="{{iconSize}}"
+            name="{{icon}}"
+        />
+        <slot name="right"/>
     </view>
-
-    <view class="{{ Utils.classNames('oak-list-item-content', {nowrap: nowrap || coustonNowrap.content}) }} cnt-class"
-        style="{{Fn.nowrapLine(coustonNowrap.content)}}"
-        wx:if="{{content}}">{{content}}</view>
-    <slot wx:else
-        name="content" />
-    <oak-button plain
-        wx:if="{{button}}">{{button}}</oak-button>
-    <slot wx:else
-        name="button" />
-
-    <oak-icon wx:if="{{arrow}}"
-        class="arrow-oak-icon"
-        name="right-light"
-        color="{{arrowColor}}"
-        size="{{arrowSize}}" />
-    <slot wx:else
-        name="icon-right" />
-    <navigator class="oak-list-item-nav"
-        wx:if="{{url}}"
-        url="{{url}}"
-        open-type="{{openType}}" />
+    <navigator class="navigate"
+        wx:if="{{navigate}}"
+        url="{{navigate}}"
+        open-type="navigate" />
 </view>

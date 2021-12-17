@@ -37,7 +37,7 @@ Component({
         },
         checkedColor: {
             type: String,
-            value: '#FD7622',
+            value: '#FF1A34',
         },
         uncheckedColor: {
             type: String,

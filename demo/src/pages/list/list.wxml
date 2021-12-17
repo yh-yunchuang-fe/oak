@@ -15,15 +15,16 @@
     <view class="row">
         <oak-list-item title="列表"
             content="显示箭头" />
-        <oak-list-item arrow="{{ false }}"
+        <oak-list-item showIcon="{{ false }}"
             border="{{ false }}"
             title="列表"
             content="隐藏箭头" />
     </view>
     <view class="h3">左侧图标</view>
     <view class="row">
-        <oak-list-item icon="home"
-            title="列表" />
+        <oak-list-item icon="down-bold"
+            icon-size="30rpx"
+            title="自定义Icon和大小" />
         <oak-list-item border="{{ false }}"
             icon="https://static.yonghuivip.com/0fe90feecdec371ac2fc4203a47e1f4b-3726c86359d4d738142342f3904409f6.png"
             title="图片图标" />
@@ -35,29 +36,51 @@
         <oak-list-item image="https://image.yonghuivip.com/wechatapp/wechat_app_default_img_oblong.png"
             title="双行图文列表"
             sub-title="副标题" />
-        <oak-list-item border="{{ false }}"
-            img-width="200rpx"
-            img-height="120rpx"
+        <oak-list-item img-width="100rpx"
+            img-height="100rpx"
             image="https://image.yonghuivip.com/wechatapp/wechat_app_default_img_square.png"
             title="自定义图片大小"
             sub-title="副标题" />
+        <oak-list-item border="{{ false }}"
+            img-width="100rpx"
+            img-height="100rpx"
+            image="https://image.yonghuivip.com/wechatapp/wechat_app_default_img_square.png"
+        />
     </view>
-    <view class="h3">列表+按钮</view>
+    <view class="h3">列表+自定义右侧</view>
     <view class="row">
-        <oak-list-item button="Button"
-            arrow="{{ false }}"
-            title="列表" />
-        <oak-list-item
-            arrow="{{ false }}"
-            button="Button"
-            title="自定义图片大小"
-            sub-title="副标题" />
+        <oak-list-item showIcon="{{ false }}" title="开关">
+            <oak-switch slot="right" size="30rpx"></oak-switch>
+        </oak-list-item>
+        <oak-list-item showIcon="{{ false }}"
+            title="复选框"
+            sub-title="副标题">
+            <oak-checkbox slot="right" size="40rpx" value="{{checked1}}" bind:change="onCheckbox1"></oak-checkbox>
+        </oak-list-item>
+        <oak-list-item image="https://image.yonghuivip.com/wechatapp/wechat_app_default_img_oblong.png"
+            title="双行图文列表"
+            showIcon="{{ false }}"
+            sub-title="复选框">
+            <oak-checkbox slot="right" size="40rpx" value="{{checked2}}" bind:change="onCheckbox2"></oak-checkbox>
+        </oak-list-item>
         <oak-list-item border="{{ false }}"
             image="https://image.yonghuivip.com/wechatapp/wechat_app_default_img_oblong.png"
             title="双行图文列表"
-            button="Button"
-            arrow="{{ false }}"
-            sub-title="副标题" />
+            showIcon="{{ false }}"
+            sub-title="按钮">
+            <oak-button slot="right" >确认</oak-button>
+        </oak-list-item>
+    </view>
+    <view class="h3">列表+自定义左侧</view>
+    <view class="row">
+        <oak-list-item>
+            <view slot="left" >
+                <view class="oak-list-title-1">自定义左侧</view>
+            </view>
+        </oak-list-item>
+        <oak-list-item >
+            <oak-icon slot="left" name="dingdantiaoma" size="40rpx" color="#FF1A34"></oak-icon>
+        </oak-list-item>
     </view>
     <view class="h3">列表组</view>
     <view class="row">
@@ -77,17 +100,5 @@
                 title="列表3"
                 content="右侧内容3" />
         </oak-list>
-    </view>
-    <view class="h3">自定义</view>
-    <view class="row">
-        <oak-list-item arrow="{{false}}">
-            <view slot="title" class="oak-list-title">自定义标题</view>
-            <oak-icon name="praise" color="#FD7622" size="26rpx" slot="icon-right" />
-        </oak-list-item>
-        <oak-list-item arrow="{{false}}">
-            <view slot="title" class="oak-list-title-1">自定义标题</view>
-            <view slot="subTitle" class="oak-list-subtitle">自定义副标题</view>
-            <oak-button slot="button" shape='round' type="primary" >自定义按钮</oak-button>
-        </oak-list-item>
     </view>
 </view>
