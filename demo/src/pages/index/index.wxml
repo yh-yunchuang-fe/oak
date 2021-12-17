@@ -83,12 +83,12 @@
             <oak-list-item title="List 列表"
                 title-class="item-title"
                 navigate="/pages/list/list" />
-             <!--<oak-list-item title="Collapse 折叠面板"
-                title-class="item-title"
-                navigate="/pages/collapse/collapse" />
             <oak-list-item title="Tag 标签"
                 title-class="item-title"
                 navigate="/pages/tag/tag" />
+             <!--<oak-list-item title="Collapse 折叠面板"
+                title-class="item-title"
+                navigate="/pages/collapse/collapse" />
             <oak-list-item title="Label 操作标签"
                 title-class="item-title"
                 navigate="/pages/label/label" />-->

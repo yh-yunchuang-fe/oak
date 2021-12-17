@@ -3,48 +3,50 @@ import BasicBehavior from 'Mixins/basic'
 Component({
     behaviors: [BasicBehavior],
     properties: {
+        //字体颜色
         color: {
             type: String,
-            value: 'default',
-            optionalTypes: [String],
-            observer(color): void {
-                color && this._setStyle()
-            }
+            value: '#fff',
         },
-        rotate: {
-            type: Number,
-            value: 90
+        // 背景色 支持渐变
+        background: {
+            type: String,
+            value: '#FF1A34',
         },
+        // 边框颜色 默认不显示
+        borderColor: {
+            type: String,
+            value: '#FF1A34',
+        },
+        // 是否空心
         plain: {
             type: Boolean,
             value: false,
-            optionalTypes: [String],
         },
-        shape: {
-            type: String,
-            value: '',
-        },
-        textColor: {
-            type: String,
-            value: '',
-            observer(color): void {
-                color && this._setStyle()
-            }
-        },
-        borderColor: {
-            type: String,
-            value: '',
-            observer(color): void {
-                color && this._setStyle()
-            }
-        },
-        beforeImage: {
+        // 前后图标 支持图片
+        icon: {
             type: String,
             value: null,
         },
-        afterImage: {
+        //图标 位置
+        iconPosition: {
             type: String,
-            value: null,
+            value: 'left', // left | right
+        },
+        //图标 样式
+        iconStyle: {
+            type: String,
+            value: '', 
+        },
+        // 圆角
+        radius: {
+            type: String,
+            value: '',
+        },
+
+        disabled:{
+            type: Boolean,
+            value: false,
         }
     },
     methods: {
@@ -55,7 +57,7 @@ Component({
 
             if (plain) {
                 _style = `;border: 2rpx solid ${color};`
-                !textColor && ( _style += `;color: ${color};`)
+                !textColor && (_style += `;color: ${color};`)
             } else if (colorRegx.test(color)) {
                 const regx = /^#(?:[0-9a-f]{2}){2,4}|#[0-9a-f]{3}/i
 
@@ -66,7 +68,7 @@ Component({
                     _style += `;background:${color};`
                 }
 
-                !textColor && ( _style += ';color: #fff;')
+                !textColor && (_style += ';color: #fff;')
             }
 
             if (textColor) {
