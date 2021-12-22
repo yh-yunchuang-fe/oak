@@ -97,6 +97,10 @@ Component({
         plusStyle: { // 设置plus样式
             type: String,
             value: ''
+        },
+        plusId: {
+            type: String,
+            value: ''
         }
     },
     externalClasses: ['ext-class', 'minus-class', 'plus-class', 'input-class'],
@@ -170,32 +174,56 @@ Component({
             this.isDisabled()
         },
 
+        getElementCenterPoint(selector: string, event: Record<string, any>, callback: Function): void {
+            if (!selector) {
+                if (callback) { callback(event) }
+                return
+            }
+            const query = this.createSelectorQuery()
+            query.select(selector).boundingClientRect()
+            query.exec((res: any): void => {
+                const ele = res && res[0]
+                if (ele) {
+                    /* eslint-disable-next-line */
+                    event.centerPoint = {
+                        x: ele.left + ((ele.width || 0) / 2),
+                        y: ele.top + ((ele.height || 0) / 2),
+                    }    
+                }
+                if (callback) callback(event)
+            })
+            return 
+        },
         onTap(event): void {
             const { type } = event.currentTarget.dataset
             const { onPlus, onMinus } = this.data
             this.type = type
             this.onChange()
-            const returnInfo = this.returnInfo(type, event.touches)
-            if (type === 'plus') {
-                if (typeof onPlus === 'function') {
-                    onPlus(returnInfo)
-                } else {
-                    this.triggerEvent('onPlus', returnInfo)
+            const selector = event && event.currentTarget && `#${event.currentTarget.id}`            
+            
+            this.getElementCenterPoint(selector, event, (event: Record<string, any>): void=> {
+                const returnInfo = this.returnInfo(type, event)
+                if (type === 'plus') {
+                    if (typeof onPlus === 'function') {
+                        onPlus(returnInfo)
+                    } else {
+                        this.triggerEvent('onPlus', returnInfo)
+                    }
+                    return
                 }
-                return
-            }
 
-            if (typeof onMinus === 'function') {
-                onMinus(returnInfo)
-            } else {
-                this.triggerEvent('onMinus', returnInfo)
-            }
+                if (typeof onMinus === 'function') {
+                    onMinus(returnInfo)
+                } else {
+                    this.triggerEvent('onMinus', returnInfo)
+                }
+            })
         },
-
-        returnInfo(type, touches): object {
+        returnInfo(type, event): object {
             const { _value, disabled, min, max, step, decimalLength } = this.data
+            const { touches, centerPoint } = event 
             return {
-                value: _value, disabled, min, max, step, decimalLength, type, touches
+                value: _value, disabled, min, max, step, decimalLength, type, touches, centerPoint
             }
         },
 
