@@ -54,7 +54,7 @@
             color="#FFF"
             background="linear-gradient(90deg, #FF644D, #FF3819)"
             icon="http://image.yonghuivip.com/sku/card/icon/seckill@3x-2.png"
-            iconPosition="right"
+            iconPosition="after"
             iconStyle="background: transparent;"
             radius="6rpx 0 0 6rpx"
         >秒杀</oak-tag>
@@ -62,14 +62,14 @@
             color="#000"
             background="linear-gradient(90deg, #FFCE8C,#FFEEC2)"
             icon="https://static.yonghuivip.com/wechatapp/static/images/product/vip@2x.png"
-            iconPosition="right"
+            iconPosition="after"
             iconStyle="background: transparent;"
         >￥208</oak-tag>
         <oak-tag
             color="#FFEDBF"
             background="linear-gradient(90deg, #403A41,#17161C)"
             icon="https://static.yonghuivip.com/wechatapp/static/images/app-exclusive-price-2x.png"
-            iconPosition="right"
+            iconPosition="after"
             radius="6rpx"
             iconStyle="background: transparent;"
         >￥208</oak-tag>

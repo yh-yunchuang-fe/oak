@@ -17,7 +17,7 @@
         if (borderColor) style += 'border-color:' + borderColor + ';';
 
         if (icon) {
-            if(iconPosition === 'left'){
+            if(iconPosition === 'before'){
                 style += 'padding-left:0; border-left:none; border-top-left-radius: 0; border-bottom-left-radius: 0;';
             }else{
                 style += 'padding-right:0; border-right:none; border-top-right-radius: 0; border-bottom-right-radius: 0;';
@@ -34,8 +34,8 @@
 <view class="tag {{Utils.classNames({disabled: disabled})}}" 
     style="{{ws.rootStyle(color, background, radius, disabled)}}"
 >
-    <block wx:if="{{ icon && iconPosition === 'left'}}">
-        <image wx:if="{{Utils.isUrl(icon)}}" mode="heightFix" class="tag-image icon-class" src="{{icon}}" style="{{iconStyle}}"/>
+    <block wx:if="{{ icon && iconPosition === 'before'}}">
+        <image wx:if="{{Utils.isUrl(icon)}}" mode="heightFix" class="tag-image icon-class before-class" src="{{icon}}" style="{{iconStyle}}"/>
         <oak-icon wx:else mode="heightFix" class="tag-icon icon-class" size="20rpx" name="{{icon}}"  style="{{iconStyle}}"/>
     </block>
 
@@ -45,8 +45,8 @@
         <slot></slot>
     </view>
 
-    <block wx:if="{{ icon && iconPosition === 'right'}}">
-        <image wx:if="{{Utils.isUrl(icon)}}" mode="heightFix" class="tag-image icon-class" src="{{icon}}" style="{{iconStyle}}" />
+    <block wx:if="{{ icon && iconPosition === 'after'}}">
+        <image wx:if="{{Utils.isUrl(icon)}}" mode="heightFix" class="tag-image icon-class after-class" src="{{icon}}" style="{{iconStyle}}" />
         <oak-icon wx:else mode="heightFix" class="tag-icon icon-class" size="20rpx" name="{{icon}}"  style="{{iconStyle}}"/>
     </block>
 </view>
