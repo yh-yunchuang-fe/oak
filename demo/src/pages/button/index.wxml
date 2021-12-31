@@ -5,12 +5,6 @@
     <oak-button>Default</oak-button>
     <oak-button color="primary">Primary</oak-button>
   </view>
-  <view class="h3">填充模式</view>
-  <view class="row">
-    <oak-button color="primary" fill="solid">solid(默认)</oak-button>
-    <oak-button color="primary" fill="outline">outline</oak-button>
-    <oak-button color="primary" fill="none">none</oak-button>
-  </view>
   <view class="h3">按钮大小</view>
   <view class="row">
     <oak-button block>Block</oak-button>
@@ -32,6 +26,12 @@
     <oak-button color="primary" size="middle">Middle</oak-button>
     <oak-button color="primary" size='small'>Small</oak-button>
     <oak-button color="primary" size='mini'>Mini</oak-button>
+  </view>
+  <view class="h3">填充模式</view>
+  <view class="row">
+    <oak-button color="primary" fill="solid">solid</oak-button>
+    <oak-button color="primary" fill="outline">outline</oak-button>
+    <oak-button color="primary" fill="none">none</oak-button>
   </view>
   <view class="h3">按钮形状</view>
   <view class="row">
@@ -86,4 +86,3 @@
     <oak-button icon="down-bold" color="primary" size="small" fill="none">分类</oak-button>
   </view>
 </view>
-
