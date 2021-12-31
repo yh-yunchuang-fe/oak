@@ -36,6 +36,10 @@ export default {
                             path: '/Icon'
                         },
                         {
+                            name: 'Overlay 遮罩层',
+                            path: '/Overlay'
+                        },
+                        {
                             name: 'Animation 动画',
                             path: '/Animation'
                         },
