@@ -12,7 +12,7 @@ import print from 'gulp-print'
 import changed from 'gulp-changed'
 import ts from 'gulp-typescript'
 import Qiniu from 'gulp-qiniu-utils'
-import QiniuConfig from './qiniu.config'
+// import QiniuConfig from './qiniu.config'
 
 const isProd = process.env.NODE_ENV === 'production'
 const tsProject = ts.createProject(path.resolve(__dirname, '../tsconfig.json'))
@@ -138,8 +138,8 @@ function watchFiles() {
 // 图片压缩后再上传七牛, 上传后的URL为： https://static.yonghuivip.com/wechatapp/static/ + images或fonts/ + 文件名
 // 七牛相关配置
 const qiniuOptions = {
-    ak: QiniuConfig.ak,
-    sk: QiniuConfig.sk,
+    // ak: QiniuConfig.ak,
+    // sk: QiniuConfig.sk,
     zone: 'Zone_z0', // 空间对应存储区域（华东：z0，华北：z1，华南：z2，北美：na0
     bucket: 'yhcms', // 七牛对应空间
     upload: {

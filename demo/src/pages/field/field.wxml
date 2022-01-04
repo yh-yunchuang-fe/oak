@@ -1,0 +1,119 @@
+<!--index.wxml-->
+<view class="container">
+    <!-- default -->
+    <view class="h3">基础样式</view>
+    <oak-field 
+        name="default"
+        type="text"
+        label="标题标题"
+        placeholder="请输入文本"
+        clearable
+    ></oak-field>
+    <!-- none -->
+    <view class="h3">无样式输入框</view>
+    <oak-field 
+        name="input"
+        input-class="input-class"
+        placeholder="输入内容"
+    ></oak-field>
+
+    <!-- 禁用输入 -->
+    <view class="h3">禁用输入</view>
+    <oak-field 
+        name="default"
+        type="text"
+        label="默认样式："
+        placeholder="禁用输入"
+        disabled
+    ></oak-field>
+
+    <!-- 基础用法 -->
+    <view class="h3">基础用法</view>
+    <oak-field 
+        name="username"
+        type="text"
+        label="用户名："
+        placeholder="输入用户名"
+        icon="member-center"
+        icon-color="#1989fa"
+        border
+        required
+    ></oak-field>
+    <oak-field 
+        name="password"
+        type="password"
+        label="密码："
+        placeholder="输入密码"
+        icon="calendar"
+        icon-color="#1989fa"
+        bind:focus="focus"
+        bind:change="change"
+        bind:blur="blur"
+        bind:confirm="confirm"
+        bind:keyboardheightchange="keyboardheightchange"
+        required
+    >
+    </oak-field>
+
+    <!-- 可清除内容 -->
+    <view class="h3">可清除内容</view>
+    <oak-field 
+        name="username"
+        type="number"
+        label="手机号："
+        placeholder="输入手机号"
+        icon="order"
+        icon-color="#1989fa"
+        clearable
+    ></oak-field>
+
+    <!-- 自定义按钮 -->
+    <view class="h3">自定义按钮</view>
+    <oak-field 
+        name="code"
+        type="number"
+        label="验证码："
+        placeholder="输入4位验证码"
+        icon="icon-member"
+        icon-color="#1989fa"
+        maxlength="{{4}}"
+        clearable
+    >
+        <oak-button 
+            slot="button"
+            plain
+            button-class="send-btn"
+            bindtap="sendCode"
+            disabled="{{disabled}}"
+        >{{sendText}}</oak-button>
+    </oak-field>
+
+    <!-- 自动换行 -->
+    <view class="h3">自动换行</view>
+    <oak-field 
+        name="username"
+        type="textarea"
+        label="评论："
+        placeholder="输入评论"
+        icon="estimate-facet"
+        icon-color="#1989fa"
+        border
+        autosize
+        clearable
+    >
+    </oak-field>
+
+    <!-- 错误提示 -->
+    <view class="h3">错误提示</view>
+    <oak-field 
+        name="default"
+        value="{{'示例：'+ errorMessage}}"
+        type="text"
+        label="错误提示："
+        placeholder="输入内容"
+        error="{{error}}"
+        error-message="{{errorMessage}}"
+        clearable
+    ></oak-field>
+
+</view>
