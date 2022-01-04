@@ -18,7 +18,7 @@ Component({
         },
         color: {
             type: String,
-            value: '#FD7622'
+            value: '#FF1A34'
         },
         size: {
             type: String,

@@ -1,21 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="h3">基础用法</view>
-    <oak-stepper value="1" />
+    <view class="h3">size:small type:primary </view>
+    <oak-stepper value="1" min="0" max="10" size="small" type="primary"/>
+    <view class="h3">size:small type:default </view>
+    <oak-stepper value="1" min="0" max="10" size="small" type="default"/>
+    <view class="h3">size:large type:primary </view>
+    <oak-stepper value="1" min="0" max="10" size="large" type="primary"/>
+    <view class="h3">size:large type:default </view>
+    <oak-stepper value="1" min="0" max="10" size="large" type="default"/>
+
     <view class="h3">可以输入数值</view>
-    <oak-stepper value="1" enableInput/>
+    <oak-stepper value="1" enable-input/>
     <view class="h3">步长设置</view>
     <oak-stepper value="1" step="2" />
     <view class="h3">固定小数位数</view>
-    <oak-stepper value="1" step="0.2" decimal-length="1" />
+    <oak-stepper value="1" step="0.02" decimal-length="2" />
     <view class="h3">限制输入范围</view>
     <oak-stepper value="6" min="5" max="8" />
-    <view class="h3">限制输入整数</view>
-    <oak-stepper value="1" integer enable-input/>
     <view class="h3">禁用状态</view>
     <oak-stepper value="1" disabled/>
-    <view class="h3">禁用灰度设置</view>
-    <oak-stepper value="1" disabled disabledOpacity="0.6"/>
+    <oak-stepper value="1" size="large" disabled/>
     <view class="h3">异步变更值</view>
     <oak-stepper
         value="{{value}}"
@@ -23,22 +27,20 @@
         bind:onPlus="onPlus"
         bind:onMinus="onMinus"
     />
-    <view class="h3">设置模块高度</view>
-    <oak-stepper height="40" value="1"/>
-    <view class="h3">自定义模块样式</view>
-    <oak-stepper stepper-style="padding-left: 20px;" value="5"/>
-    <view class="h3">自定义输入框样式</view>
-    <oak-stepper value="1" input-style="width: 60px;"/>
-    <view class="h3">自定义加减模块样式</view>
+    <view class="h3">自定义icon</view>
+    <oak-stepper value="1" min="0" max="10" icons="{{ ['cyclic-minus','cyclic-plus-sign'] }}" type="default" />
+    <oak-stepper value="1" min="0" max="10" icons="{{ ['trample','praise'] }}"/>
+    <oak-stepper value="1" min="0" max="10" icons="{{ ['left-light','right-light'] }}" size="large" type="default" />
+    <oak-stepper value="1" min="0" max="10" icons="{{ ['left-light','right-light'] }}" size="large"/>
+    <view class="h3">自定义样式，通过class实现</view>
     <oak-stepper
         value="1"
-        icon-size="12"
-        minus-style="border-radius: 2px;"
-        plus-style="border-radius: 2px;"/>
-    <view class="h3">自定义icon颜色</view>
-    <oak-stepper
-        value="1"
-        active-color="#333"
-        disable-color="#999"
-        min="1"/>
+        min="0"
+        max="10"
+        icons="{{ ['left-light','right-light'] }}"
+        size="large"
+        input-class="input-class"
+        minus-class="minus-class"
+        plus-class="plus-class"
+    />
 </view>

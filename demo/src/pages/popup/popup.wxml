@@ -4,10 +4,10 @@
         基本用法
     </view>
     <view class="row">
-        <oak-button block
+        <!-- <oak-button block
             data-position="center"
             data-style="width: 400rpx;height: 400rpx;"
-            bindtap="onPopupShow">居中弹出</oak-button>
+            bindtap="onPopupShow">居中弹出</oak-button> -->
         <oak-button block
             data-position="top"
             data-style="height: 400rpx;"
@@ -16,14 +16,14 @@
             data-position="bottom"
             data-style="height: 400rpx;"
             bindtap="onPopupShow">底部弹出</oak-button>
-        <oak-button block
+        <!-- <oak-button block
             data-position="left"
             data-style="width: 300rpx;height:100%"
             bindtap="onPopupShow">左侧弹出</oak-button>
         <oak-button block
             data-position="right"
             data-style="width: 300rpx;height:100%"
-            bindtap="onPopupShow">右侧弹出</oak-button>
+            bindtap="onPopupShow">右侧弹出</oak-button> -->
     </view>
     <oak-popup show="{{ showPopup1 }}"
         bind:onPopupClose="onPopupClose"
@@ -31,6 +31,7 @@
         position="{{position}}">
         <view class="popup"
             style="{{ style }}">
+            基本用法
         </view>
     </oak-popup>
     <view class="h3">
@@ -75,11 +76,71 @@
         bind:onPopupClose="onPopupClose2"
         body-class="popup-body"
         sizeInNine="{{size}}"
-        position="{{position}}">
-        <view class="popup2"
+        position="{{position}}"
+        title="标题"
+    >
+        <view class="popup"
             style="{{ style }}"
         >
-            内容
+            设置尺寸
+        </view>
+    </oak-popup>
+    <view class="h3">
+        设置头部
+    </view>
+    <view class="row">
+        <oak-button block
+            data-position="bottom"
+            bindtap="onPopupShow3">不显示标题</oak-button>
+        <oak-button block
+            data-position="bottom"
+            data-title="无关闭Icon"
+            data-closable="{{false}}"
+            bindtap="onPopupShow3">无关闭Icon</oak-button>
+        <oak-button block
+            data-position="bottom"
+            data-title="有关闭Icon"
+            data-closable="{{true}}"
+            bindtap="onPopupShow3">有关闭Icon</oak-button>
+        <oak-button block
+            data-position="bottom"
+            data-title="副标题是文字"
+            data-closable="{{true}}"
+            data-subName="副标题"
+            bindtap="onPopupShow3">副标题是文字</oak-button>
+        <oak-button block
+            data-position="bottom"
+            data-title="副标题是icon"
+            data-subIcon="close-light"
+            bindtap="onPopupShow3">副标题是icon</oak-button>
+        <oak-button block
+            data-position="bottom"
+            data-closable="{{true}}"
+            data-title="自定义标题样式"
+            data-titleStyle="color:red"
+            bindtap="onPopupShow3">自定义标题样式</oak-button>
+        <oak-button block
+            data-position="bottom"
+            data-closable="{{true}}"
+            data-title="自定义副标题样式"
+            data-subName="副标题"
+            data-subStyle="color:red"
+            bindtap="onPopupShow3">自定义副标题样式</oak-button>
+    </view>
+    <oak-popup show="{{ showPopup3 }}"
+        bind:onPopupClose="onPopupClose3"
+        title="标题"
+        closable="{{closable}}"
+        title="{{title}}"
+        titleStyle="{{titleStyle}}"
+        subTitle="{{subTitle}}"
+        body-class="popup-body"
+        sizeInNine="5"
+        position="{{position}}"
+        bind:subTitleClick="onPopupClose3"
+    >
+        <view class="popup">
+            设置头部-{{title}}
         </view>
     </oak-popup>
 </view>

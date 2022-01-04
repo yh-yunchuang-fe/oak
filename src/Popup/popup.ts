@@ -37,18 +37,18 @@ Component({
             type: Boolean,
             value: true,
         },
-        closeClickMask: {
+        maskClosable: {
             type: Boolean,
             value: true,
         },
         zIndex: {
             type: Number,
-            value: 9,
+            value: 10,
         },
         // 弹窗位置
         position: {
             type: String,
-            value: 'center',// center top bottom left right
+            value: 'bottom',// center top bottom left right
         },
         // 动画时长 ms
         duration: {
@@ -56,20 +56,39 @@ Component({
             value: 200
         },
         // 显示尺寸：占宽高比的7/9 6/9 5/9 4/9 3/9，不传为自适应尺寸（根据内容自适应）
-        sizeInNine:{
+        sizeInNine: {
             type: String,
             value: '',// 2 3 4 5 6 7
         },
         // 显示圆角：仅上下浮层
-        showRadius:{
+        showRadius: {
             type: Boolean,
             value: true,
         },
-        // 显示标题：仅上下浮层
-        showTitle:{
+        //是否显示左上角的关闭按钮
+        closable: {
             type: Boolean,
             value: true,
-        }
+        },
+        // 标题：中间
+        title: {
+            type: String,
+            value: '',
+        },
+        // 标题样式
+        titleStyle: {
+            type: String,
+            value: '',
+        },
+        // 次标题：右侧
+        subTitle: {
+            type: Object,
+            value: {
+                name: '',   // 文字 优先与icon
+                icon: '',   // icon 
+                style: '',  // 样式
+            },
+        },
     },
     data: {
         _maskShow: false,
@@ -83,11 +102,15 @@ Component({
     },
     methods: {
         maskClick(): void {
-            if (this.data.closeClickMask) {
+            this.triggerEvent('onMaskClick')
+            if (this.data.maskClosable) {
                 this.popupClose()
             }
         },
         popupClose(): void {
+            this.setData({
+                show: false,
+            })
             this.triggerEvent('onPopupClose')
         },
         animationEnd(e: event): void {
@@ -114,7 +137,10 @@ Component({
                     _animate: animation.out || '',
                 })
             }
+        },
+        onSubTitleClick(e: event): void {
+            this.triggerEvent('subTitleClick', e)
         }
     },
-    externalClasses: ['root-class', 'body-class', 'title-class'],
+    externalClasses: ['root-class', 'body-class', 'header-class'],
 })

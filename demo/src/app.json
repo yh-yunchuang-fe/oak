@@ -1,7 +1,11 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/icon/index"
+    "pages/icon/index",
+    "pages/dialog/dialog",
+    "pages/stepper/stepper",
+    "pages/list/list",
+    "pages/tag/tag"
   ],
   "window":{
     "backgroundTextStyle":"light",

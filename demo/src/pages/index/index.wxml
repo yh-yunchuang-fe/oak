@@ -24,23 +24,23 @@
         <oak-list-item
             title="Button 按钮"
             title-class="item-title"
-            url="/pages/button/index"
+            navigate="/pages/button/index"
         />
         <oak-list-item title="Icon 图标"
             title-class="item-title"
-            url="/pages/icon/index" />
+            navigate="/pages/icon/index" />
         <oak-list-item title="Overlay 遮罩层"
             title-class="item-title"
-            url="/pages/overlay/index" />
+            navigate="/pages/overlay/index" />
         <oak-list-item title="Popup 弹出层"
         title-class="item-title"
-        url="/pages/popup/popup" />
+        navigate="/pages/popup/popup" />
        <!--       <oak-list-item title="Animation 动画"
                 title-class="item-title"
-                url="/pages/animation/animation" />
+                navigate="/pages/animation/animation" />
             <oak-list-item title="Progress 进度条"
                 title-class="item-title"
-                url="/pages/progress/progress"/> -->
+                navigate="/pages/progress/progress"/> -->
     </oak-collapse-item>
 
     <oak-collapse-item title="表单组件"
@@ -52,19 +52,19 @@
             border="{{ false}}">
             <!-- <oak-list-item title="Checkbox 复选框"
                 title-class="item-title"
-                url="/pages/checkbox/checkbox" />
+                navigate="/pages/checkbox/checkbox" />
             <oak-list-item title="Switch 开关"
                 title-class="item-title"
-                url="/pages/switch/switch" />
+                navigate="/pages/switch/switch" />
             <oak-list-item title="Search Bar 搜索框"
                 title-class="item-title"
-                url="/pages/searchBar/searchBar" />
+                navigate="/pages/searchBar/searchBar" />
             <oak-list-item title="Input 输入框"
                 title-class="item-title"
-                url="/pages/input/input" /> -->
+                navigate="/pages/input/input" /> -->
             <oak-list-item title="Field 输入框"
                 title-class="item-title"
-                url="/pages/field/field" />
+                navigate="/pages/field/field" />
         </oak-collapse-item>
        
         <oak-collapse-item title="展示组件"
@@ -76,45 +76,44 @@
             border="{{ false}}">
             <!-- <oak-list-item title="Avatar 头像"
                 title-class="item-title"
-                url="/pages/avatar/avatar" />
+                navigate="/pages/avatar/avatar" />
             <oak-list-item title="Badge 微标"
                 title-class="item-title"
-                url="/pages/badge/badge" />
+                navigate="/pages/badge/badge" />
             <oak-list-item title="Feeds 信息流"
                 title-class="item-title"
-                url="/pages/feeds/feeds" />
+                navigate="/pages/feeds/feeds" />-->
             <oak-list-item title="List 列表"
                 title-class="item-title"
-                url="/pages/list/list" />
-            <oak-list-item title="Collapse 折叠面板"
-                title-class="item-title"
-                url="/pages/collapse/collapse" />
+                navigate="/pages/list/list" />
             <oak-list-item title="Tag 标签"
                 title-class="item-title"
-                url="/pages/tag/tag" />
+                navigate="/pages/tag/tag" />
+             <!--<oak-list-item title="Collapse 折叠面板"
+                title-class="item-title"
+                navigate="/pages/collapse/collapse" />
             <oak-list-item title="Label 操作标签"
                 title-class="item-title"
-                url="/pages/label/label" />
+                navigate="/pages/label/label" />-->
             <oak-list-item title="Stepper 步进组件"
                 title-class="item-title"
-                url="/pages/stepper/stepper" />
-            <oak-list-item title="Steps 步骤条"
+                navigate="/pages/stepper/stepper" />
+            <!-- <oak-list-item title="Steps 步骤条"
                 title-class="item-title"
-                url="/pages/steps/steps"/>
+                navigate="/pages/steps/steps"/>
             <oak-list-item title="TreeSelect 树形选择"
                 title-class="item-title"
-                url="/pages/treeSelect/treeSelect"/>
+                navigate="/pages/treeSelect/treeSelect"/>
             <oak-list-item title="Countdown 倒计时"
                 title-class="item-title"
-                url="/pages/countdown/countdown"/> -->
+                navigate="/pages/countdown/countdown"/> -->
             <oak-list-item title="Image 图片"
                 title-class="item-title"
-                url="/pages/image/index"/>
+                navigate="/pages/image/index"/>
             <!-- <oak-list-item title="分页组件"
                 title-class="item-title"
-                url="/pages/scroll/index"/> -->
+                navigate="/pages/scroll/index"/> -->
         </oak-collapse-item>
-        <!--
         <oak-collapse-item title="反馈组件"
             icon="member-code"
             icon-rotate="{{false}}"
@@ -122,22 +121,24 @@
             icon-class="col-title"
             content-class="content"
             border="{{ false}}">
-            <oak-list-item title="ActionSheet 菜单"
+            <!-- <oak-list-item title="ActionSheet 菜单"
                 title-class="item-title"
-                url="/pages/actionSheet/actionSheet" />
+                navigate="/pages/actionSheet/actionSheet" /> -->
             <oak-list-item title="Dialog 弹窗"
                 title-class="item-title"
-                url="/pages/dialog/dialog" />
-            <oak-list-item title="Loadding 加载"
+                navigate="/pages/dialog/dialog" />
+            <!-- <oak-list-item title="Loadding 加载"
                 title-class="item-title"
-                url="/pages/loading/loading" />
+                navigate="/pages/loading/loading" />
             <oak-list-item title="NoticeBar 通告栏"
                 title-class="item-title"
-                url="/pages/noticeBar/noticeBar" />
+                navigate="/pages/noticeBar/noticeBar" />
             <oak-list-item title="SlideView 滑动操作"
                 title-class="item-title"
-                url="/pages/slideview/slideview" />
+                navigate="/pages/slideview/slideview" /> -->
         </oak-collapse-item>
+
+        <!--
         <oak-collapse-item title="业务组件"
             icon="more"
             icon-rotate="{{false}}"
@@ -147,7 +148,7 @@
             border="{{ false}}">
             <oak-list-item title="SubmitBar 提交订单栏"
                 title-class="item-title"
-                url="/pages/submitBar/submitBar" />
+                navigate="/pages/submitBar/submitBar" />
         </oak-collapse-item> -->
   </oak-collapse>
   <view class="version">

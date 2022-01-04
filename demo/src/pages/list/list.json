@@ -4,6 +4,8 @@
         "oak-list-item": "/ListItem/list-item",
         "oak-list": "/List/list",
         "oak-icon": "/Icon/icon",
+        "oak-switch": "/Switch/switch",
+        "oak-checkbox": "/Checkbox/checkbox",
         "oak-button": "/Button/button"
     }
 }

@@ -1,10 +1,10 @@
 <wxs src="WXS/base.wxs" module="Utils" />
 
-<oak-animation wx:if="{{_show}}"
-    show="{{show}}"
+<oak-animation
+    show="{{_show}}"
     name="{{_animate}}"
     duration="{{_duration}}"
-    extStyle="{{background?'background:'+background+';':''}}"
+    extStyle="{{background?'background:'+background+';':''}} z-index:{{zIndex}}"
     ext-class="oak-overlay {{type}}"
     bind:onAnimationEnd="animationEnd"
     bind:tap="onMaskClick"

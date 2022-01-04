@@ -1,7 +1,8 @@
 {
   "usingComponents": {
       "oak-animation": "../Animation/animation",
-      "oak-overlay": "../Overlay/overlay"
+      "oak-overlay": "../Overlay/overlay",
+      "oak-icon": "../Icon/icon"
   },
   "component": true
 }

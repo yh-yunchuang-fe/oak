@@ -1,35 +1,55 @@
-<wxs module="Limit">
-  function limitDecimal(value, limit) {
-    return limit && value !== '' ? (value - 0).toFixed(limit) : value
+<wxs src="WXS/base.wxs" module="Utils" />
+<wxs module="ws">
+  function disabled(disabled,value,type,limit) {
+    if(disabled) return true
+    if(type === 'minus'){
+      return value <= limit
+    }
+    if(type === 'plus'){
+      return value >= limit
+    }
+    return false
   }
-  function setSize(height) {
-    return height ? height + 'px' : 'none'
+  function inputDisabled(disabled,enableInput) {
+    if(disabled) return true
+    return !enableInput
+  }
+  function iconName(type, size, icons, postion) {
+    var baseIcons = ['minus', 'plus-sign']
+    if(type === 'primary' && size === 'small') {
+      baseIcons = ['cyclic-minus','plus-sign-facet']
+    }
+    var hasCustomIcon = icons && icons.length === 2
+    icons = hasCustomIcon ? icons : baseIcons
+    return postion === 'minus' ? icons[0] : icons[1]
   }
   module.exports = {
-    limitDecimal: limitDecimal,
-    setSize: setSize,
+    disabled: disabled,
+    inputDisabled: inputDisabled,
+    iconName: iconName,
   }
 </wxs>
-<view class="oak-stepper ext-class" style="opacity: {{disabled ? disabledOpacity : 1}}; {{stepperStyle}}">
-  <view
-    data-type="minus"
-    style="opacity: {{!disabled && disabledMinus ? disabledOpacity : 1 }};height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{minusStyle}}"
-    class="minus minus-class"
-    bind:tap="onTap"
-  >
-    <oak-icon name="minus" color="{{disabled || disabledMinus ? disableColor : minusActiveColor || activeColor }}" size="{{iconSize}}px"></oak-icon>
-  </view>
-  <view
-    class="input input-class"
-    style="width: 40px;{{ inputStyle }}"
-    bindtap="onInputClick"
-  >{{ Limit.limitDecimal(_value, decimalLength) }}</view>
-  <view
-    data-type="plus"
-    style="opacity: {{!disabled && disabledPlus ? disabledOpacity : 1}}; height: {{Limit.setSize(height)}}; width: {{Limit.setSize(height)}}; {{plusStyle}}"
-    class="plus plus-class"
-    bind:tap="onTap"
-  >
-    <oak-icon name="plus-sign" color="{{disabled || disabledPlus ? disableColor : plusActiveColor || activeColor }}" size="{{iconSize}}px"></oak-icon>
-  </view>
+<view class="oak-stepper size_{{size}} type_{{type}} {{Utils.classNames({disabled: disabled})}} ext-class">
+    <button class="btn minus size_{{size}} type_{{type}} minus-class"
+      disabled="{{ws.disabled(disabled,_value,'minus', min)}}"
+      bind:tap="onMinus"
+    >
+        <oak-icon name="{{ws.iconName(type, size, icons, 'minus')}}"/>
+    </button>
+
+    <input class="input size_{{size}} type_{{type}} input-class"
+      disabled="{{ ws.inputDisabled(disabled, enableInput) }}"
+      bind:input="onInput"
+      bind:focus="onFocus"
+      bind:blur="onBlur"
+      bind:confirm="onConfirm"
+      value="{{_value}}"
+    />
+
+    <button class="btn plus size_{{size}} type_{{type}} plus-class"
+      disabled="{{ws.disabled(disabled,_value,'plus', max)}}"
+      bind:tap="onPlus"
+    >
+        <oak-icon name="{{ws.iconName(type, size, icons, 'plus')}}"/>
+    </button>
 </view>

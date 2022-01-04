@@ -1,17 +1,21 @@
 import del from 'del'
-import gulp, { src, dest, parallel, watch, series } from 'gulp'
+import gulp, {
+    src,
+    dest,
+    parallel,
+    watch,
+    series
+} from 'gulp'
 import less from 'gulp-less'
 import rename from 'gulp-rename'
 import path from 'path'
-import csso from 'gulp-csso'
-import gulpif from 'gulp-if'
 import alisa from 'gulp-wechat-weapp-src-alisa'
-import uglify from 'gulp-uglify-es'
 import imageMin from 'gulp-imagemin'
 import print from 'gulp-print'
 import changed from 'gulp-changed'
 import ts from 'gulp-typescript'
 import Qiniu from 'gulp-qiniu-utils'
+import fs from 'fs'
 // import QiniuConfig from './qiniu.config'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -25,6 +29,8 @@ const paths = {
     demoStyle: ['../demo/src/**/*.less', '../demo/src/**/*.wxss', '!../demo/src/dist'],
     democopy: ['../demo/src/**/*.wxml', '../demo/src/**/*.json', '../demo/src/**/*.wxs', '!../demo/src/dist'],
     demoimages: ['../demo/src/images/*.*'],
+    demoIcon: ['../demo/src/pages/icon/icons.ts'],
+    iconPath: ['../src/style/icons.less'],
 }
 
 
@@ -123,6 +129,25 @@ function demoImagemin() {
         .pipe(gulp.dest(`${DemoDest}/images/`))
 }
 
+/**
+ * 读取icon.less 生成icon名称
+ */
+function demoIcon() {
+    const file = fs.readFileSync(paths.iconPath[0]).toString()
+    const classNames = file.split('}')
+    const icons = classNames.reduce((acc, icon) => {
+        if (icon.includes(':before')) {
+            const className = icon.split('.oak-icon-')[1].split(':')[0]
+            acc.push(className)
+        }
+        return acc
+    }, [])
+
+    const content = `const icons: string[] = [${icons.map(icon=>`'${icon}'`)}]\n\nexport default icons`
+    fs.writeFileSync(paths.demoIcon[0], content)
+    console.log('生成icon名称成功')
+}
+
 function watchFiles() {
     gulp.watch(paths.lessPath, srcStyle)
     gulp.watch(paths.tsPath, taskScripts)
@@ -130,6 +155,7 @@ function watchFiles() {
     gulp.watch(paths.democopy, demoCopy)
     gulp.watch(paths.demoStyle, demoStyle)
     gulp.watch(paths.demoimages, demoImagemin)
+    gulp.watch(paths.iconPath, demoIcon)
 
     console.log('\r\nStart watch file...\r\n')
     // cb();

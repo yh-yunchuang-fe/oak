@@ -26,11 +26,12 @@
   bindlaunchapp="bindLaunchApp"
   style="{{width ? 'width:' + width + ';' : ''}};{{height ? 'height:' + height + ';' : ''}}"
   bindopensetting="bindOpenSetting"
+  bind:tap="onTap"
 >
   <block wx:if="{{loading}}">
     <oak-loading
       loader-class="loader"
-      ext-class="loading-icon"
+      ext-class="loading-icon loading-class"
       isShow="{{loading}}"
       size="{{ws.loadingSize(size)}}"
     />
@@ -39,4 +40,3 @@
   <slot></slot>
   <oak-icon wx:if="{{icon}}" class="icon" name='{{icon}}' />
 </button>
-
