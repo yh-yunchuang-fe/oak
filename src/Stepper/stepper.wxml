@@ -2,6 +2,7 @@
 <wxs module="ws">
   function disabled(disabled,value,type,limit) {
     if(disabled) return true
+    if(!limit) return false
     if(type === 'minus'){
       return value <= limit
     }
