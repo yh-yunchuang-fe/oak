@@ -3,7 +3,7 @@
 
 Page({
     data: {
-        activeKey: '0',
+        activeKey: '1',
     },
     onShareAppMessage(): object {
         return {
