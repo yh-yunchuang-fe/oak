@@ -69,5 +69,5 @@ Component({
             value: '',
         }
     },
-    externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class', 'body-class', 'label-class'],
+    externalClasses: ['ext-class', 'title-class', 'subtitle-class', 'cnt-class'],
 })

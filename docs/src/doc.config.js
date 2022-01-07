@@ -101,6 +101,10 @@ export default {
                             name: 'Tag 标签',
                             path: '/Tag'
                         },
+                        {
+                            name: 'Default 缺省状态',
+                            path: '/Default'
+                        },
                         // {
                         //     name: 'Label 可操作标签',
                         //     path: '/Label'

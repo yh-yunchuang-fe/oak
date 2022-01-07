@@ -27,12 +27,12 @@
         <view class="left-title {{titleDirection}}"
             wx:if="{{title || subTitle}}"
         >
-            <view class="main" wx:if="{{title}}">{{title}}</view>
-            <view class="sub" wx:if="{{subTitle}}">{{subTitle}}</view>
+            <view class="main title-class" wx:if="{{title}}">{{title}}</view>
+            <view class="sub subtitle-class" wx:if="{{subTitle}}">{{subTitle}}</view>
         </view>
     </view>
     <view class="right">
-        <view class="right-text" wx:if="{{content}}">{{content}}</view>
+        <view class="right-text cnt-class" wx:if="{{content}}">{{content}}</view>
         <oak-icon class="right-icon"
             wx:if="{{showIcon}}"
             size="{{iconSize}}"
