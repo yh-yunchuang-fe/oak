@@ -105,5 +105,5 @@
 | ----------- | ------------ |
 | ext-class   | 作用于根节点 |
 | input-class | 作用于输入框 |
-| minus-class | 作用于加按钮 |
-| plus-class  | 作用于减按钮 |
+| minus-class | 作用于减按钮 |
+| plus-class  | 作用于加按钮 |

@@ -2,7 +2,13 @@
 <view class="container">
     <view class="h3">渐变填充类</view>
     <view class="row">
-        <oak-tag background="linear-gradient(90deg, #4EE639, #2BCC14)" >云超商城</oak-tag>
+        <oak-tag>默认</oak-tag>
+        <oak-tag preset="red">red</oak-tag>
+        <oak-tag preset="green">green</oak-tag>
+        <oak-tag preset="blue">blue</oak-tag>
+        <oak-tag preset="orange">orange</oak-tag>
+        <oak-tag preset="purple">purple</oak-tag>
+        <oak-tag preset="gray">gray</oak-tag>
         <oak-tag background="linear-gradient(90deg, #8840FF, #711AFF)" >全球潮物</oak-tag>
         <oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷藏</oak-tag>
         <oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷鲜</oak-tag>
@@ -10,46 +16,37 @@
     </view>
     <view class="h3">描边类</view>
     <view class="row">
+        <oak-tag plain >默认</oak-tag>
+        <oak-tag plain preset="red">red</oak-tag>
+        <oak-tag plain preset="green">green</oak-tag>
+        <oak-tag plain preset="blue">blue</oak-tag>
+        <oak-tag plain preset="orange">orange</oak-tag>
+        <oak-tag plain preset="purple">purple</oak-tag>
+        <oak-tag plain preset="gray">gray</oak-tag>
         <oak-tag plain color="#FF1A34" border-color="#FF1A34">商品/订单促销标签</oak-tag>
         <oak-tag plain color="#2BCC14" border-color="#2BCC14">商品/订单促销标签</oak-tag>
         <oak-tag plain color="#19BAFF" border-color="#19BAFF">次日达履约标签</oak-tag>
         <oak-tag plain color="#2BCC14" border-color="#2BCC14">一件代发履约标签</oak-tag>
     </view>
-    <view class="h3">不可用</view>
-    <view class="row">
-        <oak-tag disabled>不可用券</oak-tag>
-        <oak-tag plain disabled>不可用券</oak-tag>
-    </view>
     <view class="h3">支持Icon</view>
     <view class="row">
-        <oak-tag icon="home-facet" 
-            background="linear-gradient(90deg, #4DC9FF, #19BAFF)"
-        >冷藏</oak-tag>
-        <oak-tag icon="fire"  
-            background="linear-gradient(90deg, #FF644D, #FF3819)"
-        >热卖</oak-tag>
-        <oak-tag icon="gift_line"  
-            background="linear-gradient(90deg, #FF644D, #FF3819)"
-        >大礼包</oak-tag>
-        <oak-tag icon="dunpai"  
-            background="linear-gradient(90deg, #4EE639, #2BCC14)"
-        >安全</oak-tag>
-        <oak-tag icon="cook"  
-            background="linear-gradient(90deg, #4EE639, #2BCC14)"
-        >有机</oak-tag>
-        <oak-tag icon="chakanwuliu"  
-            background="linear-gradient(90deg, #4EE639, #2BCC14)"
-        >新鲜</oak-tag>
+        <oak-tag icon="home-facet" preset="green">冷藏</oak-tag>
+        <oak-tag icon="fire">热卖</oak-tag>
+        <oak-tag icon="gift_line" preset="orange">大礼包</oak-tag>
+        <oak-tag icon="dunpai" preset="green">安全</oak-tag>
+        <oak-tag icon="cook" preset="green">有机</oak-tag>
+        <oak-tag icon="chakanwuliu" preset="blue">新鲜</oak-tag>
     </view>
     <view class="h3">支持图片</view>
     <view class="row">
-        <oak-tag color="#fff"
-            icon="https://image.yonghuivip.com/tool.png" 
-        >左侧图片</oak-tag>
         <oak-tag plain
             color="#FF1A34"
             icon="https://image.yonghuivip.com/tool.png" 
         >左侧图片</oak-tag>
+        <oak-tag color="#fff"
+            icon="https://image.yonghuivip.com/tool.png" 
+            iconPosition="after"
+        >右侧图片</oak-tag>
         <oak-tag
             color="#FFF"
             background="linear-gradient(90deg, #FF644D, #FF3819)"
