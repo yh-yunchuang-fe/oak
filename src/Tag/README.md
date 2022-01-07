@@ -20,68 +20,87 @@
 
 ## 代码演示
 
-### 标签类型
-`Tag` 提供了多种预设色彩的标签样式，用作不同场景使用。可以通过 `color` 指定，默认为灰白。
+### 标签预设样式
+`Tag` 提供了多种预设标签样式，用作不同场景使用。可以通过 `preset` 指定，默认为灰白。
 ```html
 <oak-tag>default</oak-tag>
-<oak-tag color="magenta">magenta</oak-tag>
-<oak-tag color="red">red</oak-tag>
-<oak-tag color="volcano">volcano</oak-tag>
-<oak-tag color="orange">orange</oak-tag>
-<oak-tag color="gold">gold</oak-tag>
-<oak-tag color="lime">lime</oak-tag>
-<oak-tag color="cyan">cyan</oak-tag>
-<oak-tag color="blue">blue</oak-tag>
-<oak-tag color="geekblue">geekblue</oak-tag>
-<oak-tag color="purple">purple</oak-tag>
+<oak-tag preset="red">red</oak-tag>
+<oak-tag preset="green">green</oak-tag>
+<oak-tag preset="blue">blue</oak-tag>
+<oak-tag preset="orange">orange</oak-tag>
+<oak-tag preset="purple">purple</oak-tag>
+<oak-tag preset="gray">gray</oak-tag>
 ```
 
 ### 透明背景
 `plain` 设置透明背景。
 ```html
-<oak-tag plain>default</oak-tag>
-<oak-tag plain
-    color="magenta">magenta</oak-tag>
-<oak-tag plain
-    color="red">red</oak-tag>
-<oak-tag plain
-    color="volcano">volcano</oak-tag>
-<oak-tag plain
-    color="orange">orange</oak-tag>
-<oak-tag plain
-    color="gold">gold</oak-tag>
-<oak-tag plain
-    color="lime">lime</oak-tag>
-<oak-tag plain
-    color="cyan">cyan</oak-tag>
-<oak-tag plain
-    color="blue">blue</oak-tag>
-<oak-tag plain
-    color="geekblue">geekblue</oak-tag>
-<oak-tag plain
-    color="purple">purple</oak-tag>
+<oak-tag plain >默认</oak-tag>
+<oak-tag plain preset="red">red</oak-tag>
+<oak-tag plain preset="green">green</oak-tag>
+<oak-tag plain preset="blue">blue</oak-tag>
+<oak-tag plain preset="orange">orange</oak-tag>
+<oak-tag plain preset="purple">purple</oak-tag>
+<oak-tag plain preset="gray">gray</oak-tag>
 ```
 
-### 标签形状
+### 支持Icon
+```html
+<oak-tag icon="home-facet" preset="green">冷藏</oak-tag>
+<oak-tag icon="fire">热卖</oak-tag>
+<oak-tag icon="gift_line" preset="orange">大礼包</oak-tag>
+<oak-tag icon="dunpai" preset="green">安全</oak-tag>
+<oak-tag icon="cook" preset="green">有机</oak-tag>
+<oak-tag icon="chakanwuliu" preset="blue">新鲜</oak-tag>
+```
+### 支持图片
 标签支持 `round`、`square`以及 默认 3种形状。
 ```html
-<oak-tag shape="round"
-    color="orange">round</oak-tag>
-<oak-tag shape="square"
-    color="orange">square</oak-tag>
+<oak-tag plain
+    color="#FF1A34"
+    icon="https://image.yonghuivip.com/tool.png" 
+>左侧图片</oak-tag>
+<oak-tag color="#fff"
+    icon="https://image.yonghuivip.com/tool.png" 
+    iconPosition="after"
+>右侧图片</oak-tag>
 <oak-tag
-    color="orange">default</oak-tag>
+    color="#FFF"
+    background="linear-gradient(90deg, #FF644D, #FF3819)"
+    icon="http://image.yonghuivip.com/sku/card/icon/seckill@3x-2.png"
+    iconPosition="after"
+    iconStyle="background: transparent;"
+    radius="6rpx 0 0 6rpx"
+>秒杀</oak-tag>
+<oak-tag
+    color="#000"
+    background="linear-gradient(90deg, #FFCE8C,#FFEEC2)"
+    icon="https://static.yonghuivip.com/wechatapp/static/images/product/vip@2x.png"
+    iconPosition="after"
+    iconStyle="background: transparent;"
+>￥208</oak-tag>
+<oak-tag
+    color="#FFEDBF"
+    background="linear-gradient(90deg, #403A41,#17161C)"
+    icon="https://static.yonghuivip.com/wechatapp/static/images/app-exclusive-price-2x.png"
+    iconPosition="after"
+    radius="6rpx"
+    iconStyle="background: transparent;"
+>￥208</oak-tag>
 ```
 
-### 自定义颜色
-标签支持自定义样式。
+### 自定义背景色，支持渐变
 ```html
-<oak-tag color="rgba(253,230,235,1)"
-    text-color="#FD7622"
-    border-color="rgba(252,7,59,0.15)">#FDE6EB</oak-tag>
-<oak-tag color="#FC0738"
-    plain>#FC0738</oak-tag>
-<oak-tag color="#ffb601,#ff7c02">渐变</oak-tag>
+<oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷藏</oak-tag>
+<oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷鲜</oak-tag>
+<oak-tag background="linear-gradient(90deg, #FF644D, #FF3819)" >预售</oak-tag>
+```
+### 自定义字体色与边框色
+```html
+<oak-tag plain color="#FF1A34" border-color="#FF1A34">商品/订单促销标签</oak-tag>
+<oak-tag plain color="#2BCC14" border-color="#2BCC14">商品/订单促销标签</oak-tag>
+<oak-tag plain color="#19BAFF" border-color="#19BAFF">次日达履约标签</oak-tag>
+<oak-tag plain color="#2BCC14" border-color="#2BCC14">一件代发履约标签</oak-tag>
 ```
 
 ## API

@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="h3">渐变填充类</view>
+    <view class="h3">标签预设样式，默认为 red</view>
     <view class="row">
         <oak-tag>默认</oak-tag>
         <oak-tag preset="red">red</oak-tag>
@@ -9,10 +9,6 @@
         <oak-tag preset="orange">orange</oak-tag>
         <oak-tag preset="purple">purple</oak-tag>
         <oak-tag preset="gray">gray</oak-tag>
-        <oak-tag background="linear-gradient(90deg, #8840FF, #711AFF)" >全球潮物</oak-tag>
-        <oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷藏</oak-tag>
-        <oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷鲜</oak-tag>
-        <oak-tag background="linear-gradient(90deg, #FF644D, #FF3819)" >预售</oak-tag>
     </view>
     <view class="h3">描边类</view>
     <view class="row">
@@ -23,10 +19,6 @@
         <oak-tag plain preset="orange">orange</oak-tag>
         <oak-tag plain preset="purple">purple</oak-tag>
         <oak-tag plain preset="gray">gray</oak-tag>
-        <oak-tag plain color="#FF1A34" border-color="#FF1A34">商品/订单促销标签</oak-tag>
-        <oak-tag plain color="#2BCC14" border-color="#2BCC14">商品/订单促销标签</oak-tag>
-        <oak-tag plain color="#19BAFF" border-color="#19BAFF">次日达履约标签</oak-tag>
-        <oak-tag plain color="#2BCC14" border-color="#2BCC14">一件代发履约标签</oak-tag>
     </view>
     <view class="h3">支持Icon</view>
     <view class="row">
@@ -72,4 +64,17 @@
         >￥208</oak-tag>
     </view>
 
+    <view class="h3">自定义背景色，支持渐变</view>
+    <view class="row">
+        <oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷藏</oak-tag>
+        <oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷鲜</oak-tag>
+        <oak-tag background="linear-gradient(90deg, #FF644D, #FF3819)" >预售</oak-tag>
+    </view>
+    <view class="h3">自定义字体色与边框色</view>
+    <view class="row">
+        <oak-tag plain color="#FF1A34" border-color="#FF1A34">商品/订单促销标签</oak-tag>
+        <oak-tag plain color="#2BCC14" border-color="#2BCC14">商品/订单促销标签</oak-tag>
+        <oak-tag plain color="#19BAFF" border-color="#19BAFF">次日达履约标签</oak-tag>
+        <oak-tag plain color="#2BCC14" border-color="#2BCC14">一件代发履约标签</oak-tag>
+    </view>
 </view>
