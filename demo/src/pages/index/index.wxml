@@ -110,6 +110,9 @@
             <!-- <oak-list-item title="分页组件"
                 title-class="item-title"
                 navigate="/pages/scroll/index"/> -->
+            <oak-list-item title="Default 默认页面"
+                title-class="item-title"
+                navigate="/pages/default/index"/>
         </oak-collapse-item>
         <oak-collapse-item title="反馈组件"
             icon="member-code"
