@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"./docs/markdown/changelog.md":function(n,o,a){"use strict";a.r(o),o.default="# 更新日志\n\n### 0.0.1-alpha.0\n\n- ❤️ 新增基础组件 Button、Icon、Overlay、Popup\n- ❤️ 新增展示组件 List、Tag、Stepper、Image\n- ❤️ 新增反馈组件 Dialog"}}]);
