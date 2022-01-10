@@ -154,5 +154,5 @@ Component({
             })
         },
     },
-    externalClasses: ['dialog-class',],
+    externalClasses: ['dialog-class','title-class','content-class',],
 })
