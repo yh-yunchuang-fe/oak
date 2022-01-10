@@ -29,6 +29,11 @@
         <oak-tag icon="cook" preset="green">有机</oak-tag>
         <oak-tag icon="chakanwuliu" preset="blue">新鲜</oak-tag>
     </view>
+    <view class="h3">支持设置Icon位置</view>
+    <view class="row">
+        <oak-tag icon="home-facet" preset="green">icon在前</oak-tag>
+        <oak-tag icon="fire" iconPosition="after" >icon在后</oak-tag>
+    </view>
     <view class="h3">支持图片</view>
     <view class="row">
         <oak-tag plain

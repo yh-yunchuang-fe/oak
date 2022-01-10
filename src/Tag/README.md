@@ -53,8 +53,13 @@
 <oak-tag icon="cook" preset="green">有机</oak-tag>
 <oak-tag icon="chakanwuliu" preset="blue">新鲜</oak-tag>
 ```
+### 支持设置Icon位置
+`iconPosition`设置Icon位置
+```html
+<oak-tag icon="home-facet" preset="green">icon在前</oak-tag>
+<oak-tag icon="fire" iconPosition="after" >icon在后</oak-tag>
+```
 ### 支持图片
-标签支持 `round`、`square`以及 默认 3种形状。
 ```html
 <oak-tag plain
     color="#FF1A34"
@@ -107,17 +112,22 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| color | 标签色， 以 `,` 分隔传入两个色值（如：`#ffb601,#ff7c02` ）可实现渐变。(目前仅支持从左到右渐变) | `string` | - |
-| plain | 背景是否透明 | `boolen` | `false` |
-| shape | 标签形状 | `string` | - |
-| text-color | 文字颜色 | `string` | - |
+| preset | 预设值，有：`red`, `green`, `blue`, `orange`, `purple`,`gray` | `string` | `red` |
+| plain | 背景是否透明 | `boolean` | `false` |
+| color | 文字颜色 | `string` | - |
+| background | 背景颜色 | `string` | - |
 | border-color | 边框颜色 | `string` | - |
+| icon | 前后图标 支持图片 | `string` | - |
+| iconPosition | 图标 位置，可选值有`before`,`after` | `string` | `before` |
+| iconStyle | 图标 样式 | `string` | - |
+| radius | 圆角 | `string` | - |
+| disabled | 是否禁用 | `boolean` | `false` |
 
 
 ## 外部样式类
 
 | 类名 | 说明 |
 |-----------|-----------|
-| custom-class | 根结点样式 |
-
-
+| ext-class | 根结点样式 |
+| before-class | 左侧样式 |
+| after-class | 右侧样式 |

@@ -31,7 +31,7 @@
         textStyle: textStyle,
     }
 </wxs>
-<view class="tag {{Utils.classNames({disabled: disabled})}} {{preset?'preset_'+preset:''}}" 
+<view class="tag {{Utils.classNames({disabled: disabled})}} {{preset?'preset_'+preset:''}} ext-class" 
     style="{{ws.rootStyle(color, background, radius, disabled)}}"
 >
     <block wx:if="{{ icon && iconPosition === 'before'}}">
