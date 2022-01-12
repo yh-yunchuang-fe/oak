@@ -49,27 +49,31 @@ export default {
                         }
                     ]
                 },
-                // {
-                //     name: '表单',
-                //     groups: [
-                //         {
-                //             name: 'Checkbox 多选框',
-                //             path: '/Checkbox'
-                //         },
-                //         {
-                //             name: 'Switch 开关',
-                //             path: '/Switch'
-                //         },
-                //         {
-                //             name: 'Search Bar 搜索框',
-                //             path: '/SearchBar'
-                //         },
-                //         {
-                //             name: 'Input 输入框',
-                //             path: '/Input'
-                //         }
-                //     ]
-                // },
+                {
+                    name: '表单',
+                    groups: [
+                        {
+                            name: 'Checkbox',
+                            path: '/Checkbox'
+                        },
+                        {
+                            name: 'CheckboxGroup',
+                            path: '/CheckboxGroup'
+                        },
+                        // {
+                        //     name: 'Switch 开关',
+                        //     path: '/Switch'
+                        // },
+                        // {
+                        //     name: 'Search Bar 搜索框',
+                        //     path: '/SearchBar'
+                        // },
+                        // {
+                        //     name: 'Input 输入框',
+                        //     path: '/Input'
+                        // }
+                    ]
+                },
                 {
                     name: '展示',
                     groups: [

@@ -43,7 +43,7 @@
                 navigate="/pages/progress/progress"/> -->
     </oak-collapse-item>
 
-    <!-- <oak-collapse-item title="表单组件"
+    <oak-collapse-item title="表单组件"
             icon="calendar"
             icon-rotate="{{false}}"
             title-class="col-title"
@@ -53,7 +53,7 @@
             <oak-list-item title="Checkbox 复选框"
                 title-class="item-title"
                 navigate="/pages/checkbox/checkbox" />
-            <oak-list-item title="Switch 开关"
+            <!-- <oak-list-item title="Switch 开关"
                 title-class="item-title"
                 navigate="/pages/switch/switch" />
             <oak-list-item title="Search Bar 搜索框"
@@ -61,9 +61,9 @@
                 navigate="/pages/searchBar/searchBar" />
             <oak-list-item title="Input 输入框"
                 title-class="item-title"
-                navigate="/pages/input/input" />
+                navigate="/pages/input/input" /> -->
         </oak-collapse-item>
-        -->
+       
         <oak-collapse-item title="展示组件"
             icon="card"
             icon-rotate="{{false}}"
@@ -155,4 +155,3 @@
     v0.0.2-beta.14
   </view>
 </view>
-

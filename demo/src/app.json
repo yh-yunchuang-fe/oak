@@ -6,7 +6,8 @@
     "pages/dialog/dialog",
     "pages/stepper/stepper",
     "pages/list/list",
-    "pages/tag/tag"
+    "pages/tag/tag",
+    "pages/checkbox/checkbox"
   ],
   "window":{
     "backgroundTextStyle":"light",
