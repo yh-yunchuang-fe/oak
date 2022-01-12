@@ -26,11 +26,11 @@ Component({
         },
         min: {
             type: Number,
-            value: 0,
+            value: null,
         },
         max: {
             type: Number,
-            value: 999,
+            value: null,
         },
         step: {
             type: Number,

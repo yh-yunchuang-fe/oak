@@ -130,20 +130,29 @@ Dialog 内容区域可以自定义。
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
+| show | 是否显示  | `boolean` | `false` |
 | title | 弹窗标题，可为空  | `string` | - |
 | content | 弹窗内容，可为空  | `string` | - |
-| cancle-text(cancleText) | 取消按钮文案，不需要显示时设置为空  | `string` | `取消` |
-| confirm-text(confirmText) | 确认按钮文案  | `string` | `确认` |
-| mask | 是否显示遮罩层  | `boolen` | `true` |
-| mask-closable(maskClosable) | 点击遮罩层是否关闭  | `boolen` | `true` |
-| show | 是否显示  | `boolen` | `false` |
-| z-index(zIndex) | z-index 层级  | `number` | `9` |
-| confirm-async(confirmAsync) | 是否异步关闭弹窗，开启后需要手动关闭弹窗  | `boolen` | `false` |
-| confirm-type(confirmType) | 确认按钮支持微信开放能力，参考小程序 `<button />` 组件的[open-type](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) | `string` | - |
+| closable | 是否关闭(左上角)  | `boolean` | `false` |
+| mask-closable(maskClosable) | 点击遮罩层是否关闭  | `boolean` | `true` |
+| duration | 动画时长，ms  | `number` | `200` |
+| z-index(zIndex) | z-index 层级  | `number` | `` |
+| buttons | 按钮数组,type值有`confirm | cancel`，支持[Button](https://yh-yunchuang-fe.github.io/oak/#/components/Button)属性  | `Array` | `[{ text: '确认', type: 'confirm', }]` |
+| buttonBlock | 按钮是否是块级  | `boolean` | `true` |
+| is-agreement(isAgreement) | 是否有协议  | `boolean` | `false` |
+| confirm-async(confirmAsync) | 是否异步关闭弹窗，开启后需要手动关闭弹窗  | `boolean` | `false` |
+| open-type(openType) | 确认按钮支持微信开放能力，参考小程序 `<button />` 组件的[open-type](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) | `string` | - |
 | onClose | 点击遮罩层回调 | `function` | - |
-| onCancle | 点击取消按钮的回调 | `function` | - |
+| onCancel | 点击取消按钮的回调 | `function` | - |
 | onConfirm | 点击确认按钮的回调，实例调用时参数为一个关闭弹窗 `hide()` | `function|function(hide)` | - |
 
+
+### Slots
+
+| 名称 | 说明 |
+|-----------|-----------|
+| default | 自定义弹窗内容，可不指定slot名称 |
+| agreement | 自定义协议内容，在按钮区上方 |
 
 
 

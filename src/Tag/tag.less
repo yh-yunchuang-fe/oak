@@ -12,6 +12,7 @@
     border-radius: @tag-bg-radius;
     font-size: @tag-font-size;
     border: none;
+    color: #fff;
 
     &-text {
         display: inline-block;
@@ -52,6 +53,52 @@
             background: #fff;
             border-color: @tag-disabled-bg;
             color: @tag-disabled-color;
+        }
+    }
+
+    // 预设样式
+    &.preset {
+        &_gray {
+            background: @tag-bg-color-gradient-deepgray;
+            .tag-text.plain {
+                color: @tag-font-color-gray;
+                border-color: @tag-border-color-gray;
+            }
+        }
+        &_red {
+            background: @tag-bg-color-gradient-red;
+            .tag-text.plain {
+                color: @tag-font-color-red;
+                border-color: @tag-border-color-red;
+            }
+        }
+        &_green {
+            background: @tag-bg-color-gradient-green;
+            .tag-text.plain {
+                color: @tag-font-color-green;
+                border-color: @tag-border-color-green;
+            }
+        }
+        &_blue {
+            background: @tag-bg-color-gradient-lightblue;
+            .tag-text.plain {
+                color: @tag-font-color-blue;
+                border-color: @tag-border-color-lightblue;
+            }
+        }
+        &_orange {
+            background: @tag-bg-color-gradient-orange;
+            .tag-text.plain {
+                color: @tag-font-color-orange;
+                // border-color: @tag-border-color-purple;
+            }
+        }
+        &_purple {
+            background: @tag-bg-color-gradient-purple;
+            .tag-text.plain {
+                color: @tag-font-color-purple;
+                // border-color: @tag-border-color-purple;
+            }
         }
     }
 

@@ -6,17 +6,22 @@ Component({
         //字体颜色
         color: {
             type: String,
-            value: '#fff',
+            value: '',
+        },
+        // 预设值
+        preset: {
+            type: String,
+            value: 'red',
         },
         // 背景色 支持渐变
         background: {
             type: String,
-            value: '#FF1A34',
+            value: '',
         },
         // 边框颜色 默认不显示
         borderColor: {
             type: String,
-            value: '#FF1A34',
+            value: '',
         },
         // 是否空心
         plain: {

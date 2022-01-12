@@ -39,60 +39,60 @@ export default {
                             name: 'Overlay 遮罩层',
                             path: '/Overlay'
                         },
-                        {
-                            name: 'Animation 动画',
-                            path: '/Animation'
-                        },
+                        // {
+                        //     name: 'Animation 动画',
+                        //     path: '/Animation'
+                        // },
                         {
                             name: 'Popup 弹出层',
                             path: '/Popup'
                         }
                     ]
                 },
-                {
-                    name: '表单',
-                    groups: [
-                        {
-                            name: 'Checkbox 多选框',
-                            path: '/Checkbox'
-                        },
-                        {
-                            name: 'Switch 开关',
-                            path: '/Switch'
-                        },
-                        {
-                            name: 'Search Bar 搜索框',
-                            path: '/SearchBar'
-                        },
-                        {
-                            name: 'Input 输入框',
-                            path: '/Input'
-                        }
-                    ]
-                },
+                // {
+                //     name: '表单',
+                //     groups: [
+                //         {
+                //             name: 'Checkbox 多选框',
+                //             path: '/Checkbox'
+                //         },
+                //         {
+                //             name: 'Switch 开关',
+                //             path: '/Switch'
+                //         },
+                //         {
+                //             name: 'Search Bar 搜索框',
+                //             path: '/SearchBar'
+                //         },
+                //         {
+                //             name: 'Input 输入框',
+                //             path: '/Input'
+                //         }
+                //     ]
+                // },
                 {
                     name: '展示',
                     groups: [
-                        {
-                            name: 'Avatar 头像',
-                            path: '/Avatar'
-                        },
-                        {
-                            name: 'Badge 微标',
-                            path: '/Badge'
-                        },
-                        {
-                            name: 'Collapse 折叠面板',
-                            path: '/Collapse'
-                        },
-                        {
-                            name: 'Countdown 倒计时',
-                            path: '/Countdown'
-                        },
-                        {
-                            name: 'Feeds 信息流',
-                            path: '/Feeds'
-                        },
+                        // {
+                        //     name: 'Avatar 头像',
+                        //     path: '/Avatar'
+                        // },
+                        // {
+                        //     name: 'Badge 微标',
+                        //     path: '/Badge'
+                        // },
+                        // {
+                        //     name: 'Collapse 折叠面板',
+                        //     path: '/Collapse'
+                        // },
+                        // {
+                        //     name: 'Countdown 倒计时',
+                        //     path: '/Countdown'
+                        // },
+                        // {
+                        //     name: 'Feeds 信息流',
+                        //     path: '/Feeds'
+                        // },
                         {
                             name: 'List 列表',
                             path: '/List'
@@ -102,55 +102,63 @@ export default {
                             path: '/Tag'
                         },
                         {
-                            name: 'Label 可操作标签',
-                            path: '/Label'
+                            name: 'Default 缺省状态',
+                            path: '/Default'
                         },
+                        // {
+                        //     name: 'Label 可操作标签',
+                        //     path: '/Label'
+                        // },
                         {
                             name: 'Stepper 进步组件',
                             path: '/Stepper'
                         },
                         {
-                            name: 'Steps 步骤条',
-                            path: '/Steps'
+                            name: 'Image 图片组件',
+                            path: '/Image'
                         },
-                        {
-                            name: 'TreeSelect 树形选择',
-                            path: '/TreeSelect'
-                        }
+                        // {
+                        //     name: 'Steps 步骤条',
+                        //     path: '/Steps'
+                        // },
+                        // {
+                        //     name: 'TreeSelect 树形选择',
+                        //     path: '/TreeSelect'
+                        // }
                     ]
                 },
                 {
                     name: '反馈',
                     groups: [
-                        {
-                            name: 'ActionSheet 菜单',
-                            path: '/ActionSheet'
-                        },
-                        {
-                            name: 'Loading 加载',
-                            path: '/Loading'
-                        },
+                        // {
+                        //     name: 'ActionSheet 菜单',
+                        //     path: '/ActionSheet'
+                        // },
+                        // {
+                        //     name: 'Loading 加载',
+                        //     path: '/Loading'
+                        // },
                         {
                             name: 'Dialog 弹窗',
                             path: '/Dialog'
                         },
-                        {
-                            name: 'NoticeBar 通告栏',
-                            path: '/NoticeBar'
-                        },
-                        {
-                            name: 'SlideView 滑动单元',
-                            path: '/SlideView'
-                        }
+                        // {
+                        //     name: 'NoticeBar 通告栏',
+                        //     path: '/NoticeBar'
+                        // },
+                        // {
+                        //     name: 'SlideView 滑动单元',
+                        //     path: '/SlideView'
+                        // }
                     ]
-                },
-                {
-                    name: '业务组件',
-                    groups: [{
-                        name: 'SubmitBar 提交订单栏',
-                        path: '/SubmitBar',
-                    }],
                 }
+                // {
+                //     name: '业务组件',
+                //     groups: [{
+                //         name: 'SubmitBar 提交订单栏',
+                //         path: '/SubmitBar',
+                //     }],
+                // }
             ]
         }
     ]
