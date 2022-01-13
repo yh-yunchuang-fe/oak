@@ -1,49 +1,46 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="title">
-    <image
-      mode="widthFix"
-      src="../../images/logo.png"
-      class="logo"
-    />
-    Oak Weui
-  </view>
-  <view class="subtitle">
-    一个快速、高效、愉悦的小程序UI组件库
-  </view>
-
-  <oak-collapse activeKey="{{activeKey}}">
-    <oak-collapse-item
-      title="基础组件"
-      icon="rocket"
-      icon-rotate="{{false}}"
-      title-class="col-title"
-      content-class="content"
-      border="{{ false}}"
-    >
-        <oak-list-item
-            title="Button 按钮"
-            title-class="item-title"
-            navigate="/pages/button/index"
+    <view class="title">
+        <image mode="widthFix"
+            src="../../images/logo.png"
+            class="logo"
         />
-        <oak-list-item title="Icon 图标"
-            title-class="item-title"
-            navigate="/pages/icon/index" />
-        <oak-list-item title="Overlay 遮罩层"
-            title-class="item-title"
-            navigate="/pages/overlay/index" />
-        <oak-list-item title="Popup 弹出层"
-        title-class="item-title"
-        navigate="/pages/popup/popup" />
-       <!--       <oak-list-item title="Animation 动画"
+        Oak Weui
+    </view>
+    <view class="subtitle">
+        一个快速、高效、愉悦的小程序UI组件库
+    </view>
+    <oak-collapse activeKey="{{activeKey}}">
+        <oak-collapse-item title="基础组件"
+            icon="rocket"
+            icon-rotate="{{false}}"
+            title-class="col-title"
+            content-class="content"
+            border="{{ false}}"
+        >
+            <oak-list-item
+                title="Button 按钮"
                 title-class="item-title"
-                navigate="/pages/animation/animation" />
-            <oak-list-item title="Progress 进度条"
+                navigate="/pages/button/index"
+            />
+            <oak-list-item title="Icon 图标"
                 title-class="item-title"
-                navigate="/pages/progress/progress"/> -->
-    </oak-collapse-item>
+                navigate="/pages/icon/index" />
+            <oak-list-item title="Overlay 遮罩层"
+                title-class="item-title"
+                navigate="/pages/overlay/index" />
+            <oak-list-item title="Popup 弹出层"
+            title-class="item-title"
+            navigate="/pages/popup/popup" />
+        <!--       <oak-list-item title="Animation 动画"
+                    title-class="item-title"
+                    navigate="/pages/animation/animation" />
+                <oak-list-item title="Progress 进度条"
+                    title-class="item-title"
+                    navigate="/pages/progress/progress"/> -->
+        </oak-collapse-item>
 
-    <oak-collapse-item title="表单组件"
+        <oak-collapse-item title="表单组件"
             icon="calendar"
             icon-rotate="{{false}}"
             title-class="col-title"
@@ -66,7 +63,6 @@
                 title-class="item-title"
                 navigate="/pages/field/field" />
         </oak-collapse-item>
-       
         <oak-collapse-item title="展示组件"
             icon="card"
             icon-rotate="{{false}}"
@@ -140,7 +136,6 @@
                 title-class="item-title"
                 navigate="/pages/slideview/slideview" /> -->
         </oak-collapse-item>
-
         <!--
         <oak-collapse-item title="业务组件"
             icon="more"
@@ -158,4 +153,3 @@
     v0.0.2-beta.14
   </view>
 </view>
-

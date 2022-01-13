@@ -19,8 +19,7 @@
                 class="input-class"
                 value="{{value}}"
                 placeholder="{{placeholder}}"
-                placeholder-style="{{placeholderStyle}}"
-                placeholder-class="{{placeholderClass}}"
+                placeholder-class="placeholder-class"
                 disabled="{{disabled}}"
                 maxlength="{{maxlength}}"
                 focus="{{focus}}"
@@ -52,114 +51,45 @@
         </view>
     </view>
 </block>
-<block wx:elif="{{singleInput}}">
-    <input 
-        wx:if="{{visiable}}"
-        class="input-class {{error ? 'error' : ''}}"
-        value="{{value}}"
-        type="{{type === 'password' ? 'text' : type}}"
-        password="{{type === 'password'}}"
-        placeholder="{{placeholder}}"
-        disabled="{{disabled}}"
-        autosize="{{autosize}}"
-        placeholder-style="{{placeholderStyle}}"
-        placeholder-class="input-placeholder {{placeholderClass}}"
-        focus="{{focus}}"
-        confirm-type="{{confirmType}}"
-        confirm-hold="{{confirmHold}}"
-        cursor="{{cursor}}"
-        selection-start="{{selectionStart}}"
-        selection-end="{{selectionEnd}}"
-        adjust-position="{{adjustPosition}}"
-        hold-keyboard="{{holdkeyboard}}"
-        maxlength="{{maxlength}}"
-        cursor-spacing="{{cursorSpacing}}"
-        clearable="{{clearable}}"
-        error="{{error}}"
-        rules="{{rules}}"
-        bindfocus="focus"
-        bindinput="change"
-        bindblur="blur"
-        bindconfirm="confirm"
-        bindkeyboardheightchange="keyboardheightchange"
-    />
-    <view
-        wx:else
-        class="input-class oak-field-reset {{error ? 'error' : ''}} {{!value ? placeholderClass : ''}}"
-        style="{{!value ? placeholderStyle : ''}}"
-    >
-        {{value ? value : placeholder}}
-    </view>
-</block>
 <block wx:else>
     <!-- input -->
     <view class="oak-field ext-class">
-        <oak-list-item
-            icon="{{icon}}"
-            icon-color="{{iconColor}}"
-            icon-size="{{iconSize}}"
-            arrow="{{false}}"
-            border="{{border}}"
-            button="{{button}}"
-            ext-class="oak-list-item"
-            body-class="field-body"
-        >
-            <view
-                class="oak-field-content"
-                slot="title"
-            >
-                <view class="oak-field-label {{required ? 'required' : ''}}" wx:if="{{label}}">{{label}}</view>
-                <view class="oak-field-body">
-                    <input 
-                        wx:if="{{visiable}}"
-                        class="input-class {{error ? 'error' : ''}}"
-                        value="{{value}}"
-                        type="{{type === 'password' ? 'text' : type}}"
-                        password="{{type === 'password'}}"
-                        placeholder="{{placeholder}}"
-                        disabled="{{disabled}}"
-                        autosize="{{autosize}}"
-                        placeholder-style="{{placeholderStyle}}"
-                        placeholder-class="input-placeholder {{placeholderClass}}"
-                        focus="{{focus}}"
-                        confirm-type="{{confirmType}}"
-                        confirm-hold="{{confirmHold}}"
-                        cursor="{{cursor}}"
-                        selection-start="{{selectionStart}}"
-                        selection-end="{{selectionEnd}}"
-                        adjust-position="{{adjustPosition}}"
-                        hold-keyboard="{{holdkeyboard}}"
-                        maxlength="{{maxlength}}"
-                        cursor-spacing="{{cursorSpacing}}"
-                        clearable="{{clearable}}"
-                        error="{{error}}"
-                        rules="{{rules}}"
-                        bindfocus="focus"
-                        bindinput="change"
-                        bindblur="blur"
-                        bindconfirm="confirm"
-                        bindkeyboardheightchange="keyboardheightchange"
-                    />
-                    <view
-                        wx:else
-                        class="input-class oak-field-reset {{error ? 'error' : ''}} {{!value ? placeholderClass : ''}}"
-                        style="{{!value ? placeholderStyle : ''}}"
-                    >
-                        {{value ? value : placeholder}}
-                    </view>
-                    <text wx:if="{{error&&value}}" class="oak-field-err-msg">{{errorMessage}}</text>
-                </view>
-                <oak-icon 
-                    wx:if="{{clearable&&focused&&value}}"
-                    class="oak-field-clear"
-                    name="close-facet" 
-                    color="{{clearIconColor}}"
-                    size="34rpx"
-                    bindtap="clear" 
-                ></oak-icon>
-            </view>
-
-            <slot slot="button" name="button"></slot>
-        </oak-list-item>
+        <view class="title" wx:if="{{}}">{{label}}</view>
+        <input wx:if="{{visiable}}"
+            class="input-class {{error ? 'error' : ''}}"
+            value="{{value}}"
+            type="{{type === 'password' ? 'text' : type}}"
+            password="{{type === 'password'}}"
+            placeholder="{{placeholder}}"
+            disabled="{{disabled}}"
+            autosize="{{autosize}}"
+            placeholder-class="input-placeholder placeholder-class"
+            focus="{{focus}}"
+            confirm-type="{{confirmType}}"
+            confirm-hold="{{confirmHold}}"
+            cursor="{{cursor}}"
+            selection-start="{{selectionStart}}"
+            selection-end="{{selectionEnd}}"
+            adjust-position="{{adjustPosition}}"
+            hold-keyboard="{{holdkeyboard}}"
+            maxlength="{{maxlength}}"
+            cursor-spacing="{{cursorSpacing}}"
+            clearable="{{clearable}}"
+            error="{{error}}"
+            rules="{{rules}}"
+            bindfocus="focus"
+            bindinput="change"
+            bindblur="blur"
+            bindconfirm="confirm"
+            bindkeyboardheightchange="keyboardheightchange"
+        />
+        <oak-icon 
+            wx:if="{{clearable&&focused&&value}}"
+            class="oak-field-clear"
+            name="close-facet" 
+            color="{{clearIconColor}}"
+            size="34rpx"
+            bindtap="clear" 
+        ></oak-icon>
     </view>
 </block>

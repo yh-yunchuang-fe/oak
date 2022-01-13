@@ -2,16 +2,30 @@
 
 .oak-field {
     display: flex;
+    position: relative;
     font-size: @font-size-title;
     color: @txt-default;
-    oak-list-item {
+    background-color: #fff;
+    padding: 30rpx;
+    line-height: 44rpx;
+    font-size: 32rpx;
+    .title {
+        color: @gray-2;
+        margin-right: 30rpx;
+    }
+    .content {
         flex: 1;
+        color: @gray-1;
     }
-    .oak-list-item {
-        padding: 0 30rpx;
+    .input-placeholder {
+        font-size: 32rpx;
+        color: #ccc;
     }
-    .field-body {
-        padding: 30rpx 0;
+    .oak-field-clear {
+        position: absolute;
+        padding: 30rpx;
+        right: 0;
+        top: 0;
     }
 }
 
@@ -71,10 +85,6 @@
         padding-left: @wrap-padding-s;
     }
 }
-.input-placeholder {
-    font-size: 32rpx;
-    color: #ccc;
-}
 .oak-field-content {
     position: relative;
     display: flex;
@@ -110,10 +120,5 @@
             bottom: -@wrap-padding-s;
             color: @badge-bg;
         }
-    }
-    .oak-field-clear {
-        margin: -@wrap-padding-s;
-        padding: @wrap-padding-s;
-        z-index: 0;
     }
 }

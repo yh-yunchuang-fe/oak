@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "Input 输入框",
+    "navigationBarTitleText": "Field 输入框",
     "usingComponents": {
         "oak-field": "/Field/field",
         "oak-button": "/Button/button",

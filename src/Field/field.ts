@@ -131,7 +131,6 @@ Component({
             value: false
         }
     },
-    externalClasses: ['ext-class', 'input-class'],
     data: {
         focused: false,
         visiable: true, // 是否显示输入框
@@ -190,5 +189,6 @@ Component({
                 this.triggerEvent('clear')
             })
         }
-    }
+    },
+    externalClasses: ['ext-class', 'input-class', 'placeholder-class'],
 })
