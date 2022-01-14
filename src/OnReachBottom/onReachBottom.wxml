@@ -1,0 +1,6 @@
+<view id="yh-on-reach-bottom" class="bottom-bg">
+    <view class="yh-life-nomore-bottom-tip end-img" wx:if="{{showImg}}">
+        <image mode="aspectFill" src="https://static.yonghuivip.com/onreachbottom.png" />
+    </view>
+    <view class="yh-lift-home-nomore tips-class" style="{{fontColor ? 'color: ' + fontColor + ';' :''}}" wx:else>{{tips || '没有更多了'}}</view>
+</view>
