@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">默认展示文字</view>
+    <view class="row">
+        <oak-on-reach-bottom />
+    </view>
+    <view class="h3">默认展示图片</view>
+    <view class="row">
+        <oak-on-reach-bottom showImg="true"/>
+    </view>
+    <view class="h3">设置文字颜色</view>
+    <view class="row">
+        <oak-on-reach-bottom fontColor="#eee"/>
+    </view>
+    <view class="h3">设置其它文字</view>
+    <view class="row">
+        <oak-on-reach-bottom fontColor="#eee" tips="有底线，走正道！！"/>
+    </view>
+    <view class="h3">通过扩展出去的class设置最外层</view>
+    <view class="row">
+        <oak-on-reach-bottom bottom-bg="bottom-bg"/>
+    </view>
+    <view class="h3">通过扩展出去的class设置具体文字</view>
+    <view class="row">
+        <oak-on-reach-bottom tips-class="tips-class"/>
+    </view>
+    <view class="h3">通过扩展出去的class具体设置图片</view>
+    <view class="row">
+        <oak-on-reach-bottom showImg="true" end-img="end-img"/>
+    </view>
+    <button style="margin-top: 40rpx;color: red;background-color: #000;" bind:tap="toThing">去看触底事件示例</button>
+</view>

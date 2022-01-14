@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+    <ul>
+        <li wx:for="{{array}}" wx:key="index">{{item}}</li>
+        <!-- ancestors用于页面祖先元素选择器，小程序这默认是.exposure-wraper，控制不传ancestors取得就是.exposure-wraper -->
+        <oak-on-reach-bottom bind:onReachBottom="onReachBottom" ancestors=".container"/>
+    </ul>
+</view>
+        <!-- <oak-on-reach-bottom bind:onReachBottom="onReachBottom" ancestors=".container" bottom="-400"/> -->
+

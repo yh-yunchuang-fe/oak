@@ -95,6 +95,9 @@
             <oak-list-item title="Stepper 步进组件"
                 title-class="item-title"
                 navigate="/pages/stepper/stepper" />
+            <oak-list-item title="onReachBottom 触底组件"
+                title-class="item-title"
+                navigate="/pages/onReachBottom/onReachBottom" />
             <!-- <oak-list-item title="Steps 步骤条"
                 title-class="item-title"
                 navigate="/pages/steps/steps"/>
