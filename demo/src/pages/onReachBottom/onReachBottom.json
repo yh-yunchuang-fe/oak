@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "onReachBottom 触底组件",
+  "usingComponents": {
+      "oak-on-reach-bottom": "/OnReachBottom/onReachBottom"
+  }
+}

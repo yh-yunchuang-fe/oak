@@ -118,6 +118,10 @@ export default {
                             path: '/Stepper'
                         },
                         {
+                            name: 'OnReachBottom 触底组件',
+                            path: '/OnReachBottom'
+                        },
+                        {
                             name: 'Image 图片组件',
                             path: '/Image'
                         },

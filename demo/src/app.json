@@ -7,6 +7,8 @@
     "pages/stepper/stepper",
     "pages/list/list",
     "pages/tag/tag",
+    "pages/onReachBottom/onReachBottom",
+    "pages/onReachBottomDemo/onReachBottomDemo",
     "pages/checkbox/checkbox",
     "pages/tab/tab"
   ],
