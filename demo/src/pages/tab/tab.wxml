@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="h3">标签预设样式，默认为 red</view>
+    <view class="row">
+        <oak-tab></oak-tab>
+        <oak-tab type="combination"></oak-tab>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+<wxs src="WXS/base.wxs" module="Utils" />
+<wxs module="ws">
+    function rootStyle(color, background, radius, disabled) {
+    }
+
+    module.exports = {
+        rootStyle: rootStyle,
+    }
+</wxs>
+<scroll-view scroll-x 
+    scroll-left="{{scrollLeft}}"
+    scroll-with-animation
+>
+    <view class="tab type_{{type}} ext-class">
+        <block wx:for="{{ [1,2,3] }}">
+            <view class="tab-item tab-item_{{index}} {{Utils.classNames({active: index === active})}}"  bind:tap="onClick" data-index="{{index}}">
+                <view class="title">标题{{item}}</view>
+                <view class="subtitle" wx:if="{{type == 'combination'}}">副标题{{item}}</view>
+            </view>
+        </block>
+    </view>
+</scroll-view>
+  
