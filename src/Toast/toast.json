@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "oak-icon": "../Icon/icon"
+  }
 }
