@@ -35,6 +35,9 @@
         <oak-list-item title="Popup 弹出层"
         title-class="item-title"
         navigate="/pages/popup/popup" />
+        <oak-list-item title="toast 轻提示"
+        title-class="item-title"
+        navigate="/pages/toast/toast" />
        <!--       <oak-list-item title="Animation 动画"
                 title-class="item-title"
                 navigate="/pages/animation/animation" />

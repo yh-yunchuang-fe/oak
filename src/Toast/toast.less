@@ -1,21 +1,29 @@
+@import url('./variable.less');
+
 .content {
-  background: rgba(0,0,0,0.6);
+  background: @toast-bg;
   color:#FFF;
   text-align: center;
+  max-width: @toast-horizontal-maxlength;
   font-size:24rpx;
-  line-height: 48rpx;
-  padding: 20rpx 20rpx;
-  border-radius: 10rpx;
-  box-sizing: border-box;
-}
-.toast-wraper {
   position:fixed;
+  z-index: 9999999999;
   left: 50%;
   top: 50%;
-  width: 80%;
   transform: translate(-50%, -50%);
+  line-height: 30rpx;
+  padding: @toast-horizontal-margin-vertical @toast-horizontal-margin-horizontal;
+  border-radius: @toast-radius;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+  flex-direction: row;
+  .text_content{
+    text-align: left;
+    display: inline-block;
+  }
+  .oak-icon-ext {
+    color: inherit;
+    font-size: 30rpx;
+    margin-right: @toast-vertical-icon-spacing;
+  }
 }

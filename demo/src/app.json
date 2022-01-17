@@ -10,7 +10,8 @@
     "pages/onReachBottom/onReachBottom",
     "pages/onReachBottomDemo/onReachBottomDemo",
     "pages/checkbox/checkbox",
-    "pages/tab/tab"
+    "pages/tab/tab",
+    "pages/toast/toast"
   ],
   "window":{
     "backgroundTextStyle":"light",
