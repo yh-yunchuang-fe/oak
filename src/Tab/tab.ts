@@ -2,6 +2,7 @@ import BasicBehavior from 'Mixins/basic'
 import systemInfo from 'Mixins/toy-system-info'
 
 enum Sort {
+    Default = 'default',
     Asc = 'asc',
     Desc = 'desc',
 }
@@ -20,7 +21,7 @@ Component({
         // 类型 默认 default ｜ 组合 combination ｜ 按钮胶囊 button ｜ 带图片 img
         type: {
             type: String,
-            value: 'default'
+            value: Sort.Default
         },
         // 标签列表
         tabs: {
@@ -33,7 +34,7 @@ Component({
             value: false
         },
         // 激活tab的index
-        active:{
+        active: {
             type: Number,
             value: 0
         }
@@ -62,14 +63,14 @@ Component({
             const { dataset } = e.currentTarget
             const { index } = dataset || {}
             const tab = this.data.tabs[index] || {}
-            const sort = tab.sort || 'default'
+            const sort = tab.sort || Sort.Default
             const SORTS = ['default', 'asc', 'desc']
             let nextSortIndex = SORTS.indexOf(sort) + 1
             nextSortIndex = nextSortIndex >= SORTS.length ? 0 : nextSortIndex
             this.setData({
                 [`tabs.[${index}].sort`]: SORTS[nextSortIndex]
-            }, () => {
-                const sortList = (this.data.tabs || []).map((tab: Tab) => (tab.sort || 'default'))
+            }, (): void => {
+                const sortList: Sort[] = (this.data.tabs || []).map((tab: Tab): Sort => (tab.sort || Sort.Default))
                 this.triggerEvent('sortChange', sortList)
             })
         }
