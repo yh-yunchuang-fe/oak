@@ -6,8 +6,7 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-input": "path/to/your/oakui/SlideView/slide-view",
-  "oak-list-item": "path/to/your/oakui/ListItem/list-item",
+  "oak-slide-view": "path/to/your/oakui/SlideView/slide-view",
 }
 ```
 
@@ -63,7 +62,7 @@
 
 ### 自定义按钮
 ```html
-<oak-slide-view custom="{{true}}" rightWidth="{{160}}">
+<oak-slide-view custom="{{true}}" singleWidth="{{160}}">
     <oak-list-item slot="left" title="自定义按钮" icon="home" border="{{false}}" arrow="{{true}}" />
     <view slot="right">
         <view class="custom" bind:tap="edit"><oak-icon name="edit" color="#4facfe" size="32rpx" ext-class="icon" /></view>
@@ -77,10 +76,15 @@ API说明。
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| share | 分享 | `Boolean` | `false` |
-| edit | 编辑 | `Boolean` | `false` |
-| del | 删除 | `Boolean` | `true` |
-| rightWidth | 右侧按钮位宽度（自定义按钮时生效） | `Number` | `80` |
+| share | 是否显示分享 | `Boolean` | `false` |
+| shareText | 分享 | `String` | `分享` |
+| edit | 是否显示编辑 | `Boolean` | `false` |
+| editText | 编辑 | `String` | `编辑` |
+| collect | 是否显示收藏 | `Boolean` | `false` |
+| collectText | 收藏 | `String` | `移入我的收藏` |
+| del | 是否显示删除 | `Boolean` | `true` |
+| delText | 删除 | `String` | `删除` |
+| singleWidth | 右侧按钮位宽度（自定义按钮时生效） | `Number` | `80` |
 | custom | 启用自定义按钮 | `Boolean` | `false` |
 | type | 右侧按钮位类型（text \| icon） | `String` | `text` |
 
@@ -88,13 +92,19 @@ API说明。
 
 | 类名 | 说明 |
 |-----------|-----------|
+| ext-class | 作用于 总 节点时生效 |
 | icon-class | 作用于 icon 节点（type='icon'）时生效 |
+| share-class | 作用于 share 节点（type='text'）时生效 |
+| edit-class | 作用于 edit 节点（type='text'）时生效 |
+| collect-class | 作用于 collect 节点（type='text'）时生效 |
+| delete-class | 作用于 delete 节点（type='text'）时生效 |
 
 ## Slideview Slot
 | slot | 说明 |
 |-----------|-----------|
 | left | 自定义 左侧 显示内容 |
-| right | 自定义 右侧 按钮区域（需要和 rightWidth 同时使用） |
+| right | 自定义 右侧 按钮区域（需要和 singleWidth 同时使用） |
 | share | 自定义分享 icon（type='icon'）同时使用 |
 | edit | 自定义编辑 icon（type='icon'）同时使用 |
+| collect | 自定义收藏 icon（type='icon'）同时使用 |
 | delete | 自定义删除 icon（type='icon'）同时使用 |
