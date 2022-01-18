@@ -3,7 +3,7 @@
 
     <!-- 基础用法 -->
     <view class="h3">基础用法</view>
-    <oak-slide-view bind:delete="delete">
+    <oak-slide-view del singleWidth="40" bind:delete="delete">
         <view slot="left" class="item">滑动我</view>
     </oak-slide-view>
 
@@ -15,13 +15,13 @@
 
     <!-- 多操作按钮 -->
     <view class="h3">多操作按钮</view>
-    <oak-slide-view share="{{true}}" edit="{{true}}" del="{{true}}" bind:share="share" bind:edit="edit" bind:delete="delete">
+    <oak-slide-view singleWidth="40" share="{{true}}" edit="{{true}}" collect="{{true}}" del="{{true}}" bind:share="share" bind:edit="edit" bind:collect="collect" bind:delete="delete">
         <oak-list-item slot="left" title="多操作按钮" icon="home" border="{{false}}" arrow="{{true}}" />
     </oak-slide-view>
 
     <!-- 图标按钮 -->
     <view class="h3">图标按钮</view>
-    <oak-slide-view type="icon" share="{{true}}" edit="{{true}}" bind:share="share" bind:edit="edit" bind:delete="delete">
+    <oak-slide-view type="icon" singleWidth="40" share="{{true}}" edit="{{true}}" bind:share="share" bind:edit="edit" bind:delete="delete">
         <oak-list-item slot="left" title="图标按钮" icon="home" border="{{false}}" arrow="{{true}}" />
         <oak-icon slot="share"  name="share" color="#aaaaaa" size="32rpx" />
         <oak-icon slot="edit"   name="edit"  color="#4facfe" size="32rpx" />
@@ -39,7 +39,7 @@
 
     <!-- 自定义按钮 -->
     <view class="h3">自定义按钮</view>
-    <oak-slide-view custom="{{true}}" rightWidth="{{160}}">
+    <oak-slide-view custom="{{true}}" singleWidth="{{160}}">
         <oak-list-item slot="left" title="自定义按钮" icon="home" border="{{false}}" arrow="{{true}}" />
         <view slot="right">
             <view class="custom" bind:tap="edit"><oak-icon name="edit" color="#4facfe" size="32rpx" ext-class="icon" /></view>
