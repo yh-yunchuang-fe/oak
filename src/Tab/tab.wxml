@@ -7,15 +7,34 @@
         rootStyle: rootStyle,
     }
 </wxs>
-<scroll-view scroll-x 
+<scroll-view scroll-x
+    wx:if="{{tabs && tabs.length > 0}}"
     scroll-left="{{scrollLeft}}"
     scroll-with-animation
 >
     <view class="tab type_{{type}} ext-class">
-        <block wx:for="{{ [1,2,3] }}">
-            <view class="tab-item tab-item_{{index}} {{Utils.classNames({active: index === active})}}"  bind:tap="onClick" data-index="{{index}}">
-                <view class="title">标题{{item}}</view>
-                <view class="subtitle" wx:if="{{type == 'combination'}}">副标题{{item}}</view>
+        <block wx:for="{{ tabs }}" 
+            wx:key="key" 
+            wx:for-item="tab"
+        >
+            <view class="tab-item tab-item_{{index}} {{Utils.classNames({active: index === active})}} item-class"
+                bind:tap="onClick" 
+                data-index="{{index}}"
+            >
+                <oak-icon class="icon" 
+                    wx:if="{{type === 'img'}}"
+                    name="address-management"
+                />
+                <view class="title">{{tab.title}}</view>
+                <view class="subtitle" wx:if="{{type == 'combination'}}">{{tab.subtitle}}</view>
+                <view class="sort {{tab.sort}}" 
+                    data-index="{{index}}"
+                    wx:if="{{type === 'img' && sort }}"
+                    catch:tap="handleSort"
+                >
+                    <oak-icon class="icon-up" name="triangle-up"/>
+                    <oak-icon class="icon-down" name="triangle-down"/>
+                </view>
             </view>
         </block>
     </view>

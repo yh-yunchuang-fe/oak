@@ -159,6 +159,13 @@ export default {
                         //     path: '/SlideView'
                         // }
                     ]
+                },
+                {
+                    name: '导航组件',
+                    groups: [{
+                        name: 'Tab 标签页',
+                        path: '/Tab',
+                    }],
                 }
                 // {
                 //     name: '业务组件',

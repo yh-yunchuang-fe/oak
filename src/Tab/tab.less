@@ -18,25 +18,7 @@
 
         // 默认类型
         &_default {
-            background: @tab-normal-view-color;
-            box-sizing: border-box;
-
-            .tab-item {
-                padding: @tab-normal-font-margin-vertical-default-l @tab-normal-font-margin-horizontal-min;
-                font-size: @tab-normal-font-default-size-l;
-                font-weight: @tab-normal-font-default-weight-l;
-                line-height: @tab-normal-font-default-height-l;
-                color: @tab-normal-font-color-default;
-
-                &.active {
-                    font-size: @tab-normal-font-selected-size-l;
-                    font-weight: @tab-normal-font-selected-weight-l;
-                    line-height: @tab-normal-font-selected-height-l;
-                    color: @tab-normal-font-color-selected;
-                }
-
-                .lineAnimation();
-            }
+            .default(true);
         }
 
         // 组合类型
@@ -45,7 +27,7 @@
             box-sizing: border-box;
 
             .tab-item {
-                padding: @tab-tag-btn-title-margin-vertical-l 0 @tab-tag-btn-text-margin-vertical-l;
+                padding: @tab-tag-btn-title-margin-vertical-l @tab-tag-btn-margin-left-l @tab-tag-btn-text-margin-vertical-l @tab-tag-btn-margin-right-l;
                 display: flex;
                 flex-direction: column;
                 position: relative;
@@ -97,6 +79,119 @@
                 }
 
             }
+        }
+
+        // 按钮类型
+        &_button {
+            padding: @tab-tag-btn-vertical-m 0;
+            justify-content: flex-start;
+            background: #fff;
+
+            .tab-item {
+                flex: none;
+                padding: 0 @tab-tag-btn-spacing-m/2;
+                &:first-child{
+                    padding-left: 24rpx;
+                }
+                &:last-child{
+                    padding-right: 24rpx;
+                }
+
+                .title {
+                    box-sizing: border-box;
+                    border-radius: @tab-tag-btn-radius-m;
+                    border-style: solid;
+                    border-width: @tab-tag-btn-border-selected-m;
+                    border-color: @tab-tag-bgcolor-default-m;
+                    padding: @tab-tag-btn-margin-vertical-up-m @tab-tag-btn-margin-horizontal-m @tab-tag-btn-margin-vertical-down-m;
+                    background: @tab-tag-bgcolor-default-m;
+                    color: @tab-tag-font-color-default-m;
+                    font-size: @tab-tag-font-default-size-m;
+                    font-weight: @tab-tag-font-default-weight-m;
+                    line-height: @tab-tag-font-default-height-m;
+
+                    
+                }
+                &.active .title {
+                    background: @tab-tag-bgcolor-selected-m;
+                    border-color: @tab-tag-bordercolor-selected-m;
+                    color: @tab-tag-font-color-selected-m;
+                    font-size: @tab-tag-font-selected-size-m;
+                    font-weight: @tab-tag-font-selected-weight-m;
+                    line-height: @tab-tag-font-selected-height-m;
+                }
+            }
+        }
+
+        // 图片类型
+        &_img {
+            .default(false);
+
+            .tab-item {
+                display: flex;
+                justify-content: center;
+
+                .icon {
+                    font-size: @tab-normal-icon-size;
+                    margin-right: @tab-normal-icon-gap;
+                }
+
+                .sort {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    line-height: 1em;
+                    margin-left: @tab-normal-sort-gap;
+                    font-size: @tab-normal-font-default-size-l/2;
+                    color: #CCCCCC;
+
+                    .icon-up {
+                        margin-bottom: -2rpx;
+                    }
+
+                    .icon-down {
+                        margin-top: -2rpx;
+                    }
+
+                    &.asc {
+                        .icon-up {
+                            color: #aaa;
+                        }
+                    }
+
+                    &.desc {
+                        .icon-down {
+                            color: #aaa;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// 默认样式
+.default(@line) {
+    background: @tab-normal-view-color;
+    box-sizing: border-box;
+
+    .tab-item {
+        padding: @tab-normal-font-margin-vertical-default-l @tab-normal-font-margin-horizontal-min;
+        font-size: @tab-normal-font-default-size-l;
+        font-weight: @tab-normal-font-default-weight-l;
+        line-height: @tab-normal-font-default-height-l;
+        color: @tab-normal-font-color-default;
+
+        &.active {
+            font-size: @tab-normal-font-selected-size-l;
+            font-weight: @tab-normal-font-selected-weight-l;
+            line-height: @tab-normal-font-selected-height-l;
+            color: @tab-normal-font-color-selected;
+        }
+
+        & when(@line) {
+            .lineAnimation();
         }
     }
 }

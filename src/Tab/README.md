@@ -1,5 +1,4 @@
-# Tag 标签
-进行标记和分类的小标签。
+# Tab 标签页
 
 ## 使用
 
@@ -8,126 +7,120 @@
 ```json
 // import in `page.json`:
 "usingComponents": {
-  "oak-tag": "path/to/your/oakui/Tag/tag"
+  "oak-tab": "path/to/your/oakui/Tab/tab"
 }
 ```
 
 在页面使用
 ```html
 <!-- use in `page.wxml` -->
-<oak-tag >Tag</oak-tag>
+<oak-tab tabs="{{ [{title:'标题1'},{title:'标题2'},{title:'标题3'}] }}"></oak-tab>，
 ```
 
 ## 代码演示
 
-### 标签预设样式
-`Tag` 提供了多种预设标签样式，用作不同场景使用。可以通过 `preset` 指定，默认为灰白。
+### 标签类型
+`Tab` 提供了多种类型样式，可以通过 `type` 指定，默认为下横线。
 ```html
-<oak-tag>default</oak-tag>
-<oak-tag preset="red">red</oak-tag>
-<oak-tag preset="green">green</oak-tag>
-<oak-tag preset="blue">blue</oak-tag>
-<oak-tag preset="orange">orange</oak-tag>
-<oak-tag preset="purple">purple</oak-tag>
-<oak-tag preset="gray">gray</oak-tag>
+<!-- default 基础样式 -->
+<oak-tab tabs="{{ tabs }}" ></oak-tab>
+<!-- combination 组合样式 -->
+<oak-tab tabs="{{ combinationTabs }}" type="combination" ></oak-tab>
+<!-- button 胶囊样式 -->
+<oak-tab tabs="{{ tabs }}" type="button" ></oak-tab>
+<!-- img 图片样式 -->
+<oak-tab tabs="{{ tabs }}" type="img" ></oak-tab>
+<!-- img 支持排序，仅支持图片样式 -->
+<oak-tab tabs="{{ tabs }}" type="img" sort></oak-tab>
+```
+```ts
+Page({
+    data:{
+        tabs: [
+            { title: '超级热卖' },
+            { title: '为你推荐' },
+            { title: '新鲜水果' },
+        ],
+        combinationTabs: [
+            { title: '猜你喜欢',subtitle:'精选好物' },
+            { title: '品质鲜果' ,subtitle:'健康安心'},
+            { title: '时令商品' ,subtitle:'应季鲜货'} ,
+            { title: '熟食卤味' ,subtitle:'懒人即食'},
+        ],
+    }
+})
 ```
 
-### 透明背景
-`plain` 设置透明背景。
+### 超出支持侧滑
+当tabs超出屏幕宽度时，支持侧滑
 ```html
-<oak-tag plain >默认</oak-tag>
-<oak-tag plain preset="red">red</oak-tag>
-<oak-tag plain preset="green">green</oak-tag>
-<oak-tag plain preset="blue">blue</oak-tag>
-<oak-tag plain preset="orange">orange</oak-tag>
-<oak-tag plain preset="purple">purple</oak-tag>
-<oak-tag plain preset="gray">gray</oak-tag>
+<!-- default 基础样式 -->
+<oak-tab tabs="{{ moreTabs }}" ></oak-tab>
+<!-- combination 组合样式 -->
+<oak-tab tabs="{{ combinationTabs }}" type="combination" ></oak-tab>
+<!-- button 胶囊样式 -->
+<oak-tab tabs="{{ moreTabs }}" type="button" ></oak-tab>
+<!-- img 图片样式 -->
+<oak-tab tabs="{{ moreTabs }}" type="img" ></oak-tab>
+<!-- img 支持排序，仅支持图片样式 -->
+<oak-tab tabs="{{ moreTabs }}" type="img" sort></oak-tab>
+```
+```ts
+Page({
+    data:{
+        combinationTabs: [
+            { title: '猜你喜欢',subtitle:'精选好物' },
+            { title: '品质鲜果' ,subtitle:'健康安心'},
+            { title: '时令商品' ,subtitle:'应季鲜货'} ,
+            { title: '熟食卤味' ,subtitle:'懒人即食'},
+            { title: '熟食卤味' ,subtitle:'懒人即食'},
+        ],
+        moreTabs: [
+            { title: '超级热卖' },
+            { title: '为你推荐' },
+            { title: '新鲜水果' },
+            { title: '品质蔬菜' },
+            { title: '海鲜水产' },
+        ]
+    }
+})
 ```
 
-### 支持Icon
-```html
-<oak-tag icon="home-facet" preset="green">冷藏</oak-tag>
-<oak-tag icon="fire">热卖</oak-tag>
-<oak-tag icon="gift_line" preset="orange">大礼包</oak-tag>
-<oak-tag icon="dunpai" preset="green">安全</oak-tag>
-<oak-tag icon="cook" preset="green">有机</oak-tag>
-<oak-tag icon="chakanwuliu" preset="blue">新鲜</oak-tag>
-```
-### 支持设置Icon位置
-`iconPosition`设置Icon位置
-```html
-<oak-tag icon="home-facet" preset="green">icon在前</oak-tag>
-<oak-tag icon="fire" iconPosition="after" >icon在后</oak-tag>
-```
-### 支持图片
-```html
-<oak-tag plain
-    color="#FF1A34"
-    icon="https://image.yonghuivip.com/tool.png" 
->左侧图片</oak-tag>
-<oak-tag color="#fff"
-    icon="https://image.yonghuivip.com/tool.png" 
-    iconPosition="after"
->右侧图片</oak-tag>
-<oak-tag
-    color="#FFF"
-    background="linear-gradient(90deg, #FF644D, #FF3819)"
-    icon="http://image.yonghuivip.com/sku/card/icon/seckill@3x-2.png"
-    iconPosition="after"
-    iconStyle="background: transparent;"
-    radius="6rpx 0 0 6rpx"
->秒杀</oak-tag>
-<oak-tag
-    color="#000"
-    background="linear-gradient(90deg, #FFCE8C,#FFEEC2)"
-    icon="https://static.yonghuivip.com/wechatapp/static/images/product/vip@2x.png"
-    iconPosition="after"
-    iconStyle="background: transparent;"
->￥208</oak-tag>
-<oak-tag
-    color="#FFEDBF"
-    background="linear-gradient(90deg, #403A41,#17161C)"
-    icon="https://static.yonghuivip.com/wechatapp/static/images/app-exclusive-price-2x.png"
-    iconPosition="after"
-    radius="6rpx"
-    iconStyle="background: transparent;"
->￥208</oak-tag>
-```
-
-### 自定义背景色，支持渐变
-```html
-<oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷藏</oak-tag>
-<oak-tag background="linear-gradient(90deg, #4DC9FF, #19BAFF)" >冷鲜</oak-tag>
-<oak-tag background="linear-gradient(90deg, #FF644D, #FF3819)" >预售</oak-tag>
-```
-### 自定义字体色与边框色
-```html
-<oak-tag plain color="#FF1A34" border-color="#FF1A34">商品/订单促销标签</oak-tag>
-<oak-tag plain color="#2BCC14" border-color="#2BCC14">商品/订单促销标签</oak-tag>
-<oak-tag plain color="#19BAFF" border-color="#19BAFF">次日达履约标签</oak-tag>
-<oak-tag plain color="#2BCC14" border-color="#2BCC14">一件代发履约标签</oak-tag>
-```
 
 ## API
 
-| 属性 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| preset | 预设值，有：`red`, `green`, `blue`, `orange`, `purple`,`gray` | `string` | `red` |
-| plain | 背景是否透明 | `boolean` | `false` |
-| color | 文字颜色 | `string` | - |
-| background | 背景颜色 | `string` | - |
-| border-color | 边框颜色 | `string` | - |
-| icon | 前后图标 支持图片 | `string` | - |
-| iconPosition | 图标 位置，可选值有`before`,`after` | `string` | `before` |
-| iconStyle | 图标 样式 | `string` | - |
-| radius | 圆角 | `string` | - |
-| disabled | 是否禁用 | `boolean` | `false` |
+| 属性       | 说明                                                  | 类型       | 默认值    |
+| ---------- | ----------------------------------------------------- | ---------- | --------- |
+| type       | 预设值，有：`default`, `combination`, `button`, `img` | `string`   | `default` |
+| tabs       | 标签列表,必填                                         | `Tab[]`    | -         |
+| sort       | 是否支持排序, 仅在img类型下支持                       | `boolean`  | false     |
+| active     | 激活tab的index，默认激活第一个                        | `number`   | 0         |
+| change     | 激活tab的回调，入参为激活的tab项数据 `Tab[]`          | `Function()` | -         |
+| sortChange | 所有tabs的排序数组，入参`string[]`                    | `Function` | -         |
+
+## typescript
+```ts
+//  排序枚举
+enum Sort {
+    Default = 'default',
+    Asc = 'asc',
+    Desc = 'desc',
+}
+
+// Tab项
+interface Tab {
+    key: string;
+    title: string;
+    subtitle?: string;
+    icon?: string;
+    sort?: Sort;
+}
+```
 
 
 ## 外部样式类
 
-| 类名 | 说明 |
-|-----------|-----------|
-| ext-class | 根结点样式 |
-| before-class | 左侧样式 |
-| after-class | 右侧样式 |
+| 类名       | 说明          |
+| ---------- | ------------- |
+| ext-class  | 根结点样式    |
+| item-class | 某一项tab样式 |
