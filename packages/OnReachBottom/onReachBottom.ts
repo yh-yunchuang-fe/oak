@@ -50,7 +50,7 @@ Component({
             this.intersection = wx.createIntersectionObserver() // 不要传参
             this.intersection
                 .relativeToViewport({ 
-                    bottom,
+                    bottom: bottom ? bottom : 48,
                 })
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 .observe(`${this.data.ancestors} >>> #yh-on-reach-bottom`, (res: any): void => {
