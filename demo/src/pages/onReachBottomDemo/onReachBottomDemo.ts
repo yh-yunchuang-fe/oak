@@ -7,12 +7,11 @@ Page({
     },
     onReachBottom(): void {
         if(this.data.controll > 8) return
-        console.log('resqq',this.data.controll)
         this.data.controll++
         this.setData!({
             array: [
                 ...this.data.array,
-                10,20,30,40,50,60
+                10,20,30,40
             ]
         })
     }
