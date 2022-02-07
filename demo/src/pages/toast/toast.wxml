@@ -1,0 +1,78 @@
+<view class="container">
+    <view class="h3">
+        纯文字
+    </view>
+    <view class="row">
+        <oak-button size='large'
+            data-position="top"
+            bindtap="toastShow1">纯文字toast</oak-button>
+    <oak-toast isShow="{{ Show1}}">我是纯文字不换行</oak-toast>
+    </view>
+    <view class="row">
+        <oak-button size='large'
+            data-position="center"
+            bindtap="toastShow2">纯文字toast（换行）</oak-button>
+    <oak-toast isShow="{{ Show2 }}">我是纯文字但我太长了需要换行😭</oak-toast>
+    </view>
+
+    <view class="h3">
+        icon
+    </view>
+    <view class="row">
+    <oak-button size='large'
+        data-position="center"
+        bindtap="toastShow3">自定义icon-toast</oak-button>
+    <oak-toast icon="edit" isShow="{{ Show3 }}">icon可以自定义</oak-toast>
+    </view>
+    <view class="row">
+    <oak-button size='large'
+            data-position="center"
+            bindtap="toastShow4">icon-toast（换行）</oak-button>
+    <oak-toast icon="edit" isShow="{{ Show4}}">我是带icon，文字太多还是需要换行</oak-toast>
+    </view>
+      
+
+    <view class="h3">
+        成功
+    </view>
+    <view class="row">
+    <oak-button size='large'
+        data-position="center"
+        bindtap="toastShow5">成功toast</oak-button>
+    <oak-toast success isShow="{{ Show5 }}">success 😄</oak-toast>
+    </view>
+
+    <view class="h3">
+        警告
+    </view>
+    <view class="row">
+    <oak-button size='large'
+        data-position="center"
+        bindtap="toastShow6">警告toast</oak-button>
+    <oak-toast warn isShow="{{ Show6 }}">warn ⚠️</oak-toast>
+    </view>
+    
+    <view class="h3">
+        其它自定义属性
+    </view>
+    <view class="row">
+    <oak-button size='large'
+        data-position="center"
+        bindtap="toastShow7">控制持续时长</oak-button>
+    <oak-toast duration="5000" isShow="{{ Show7 }}">5秒后我就消失</oak-toast>
+    </view>
+    <view class="row">
+    <oak-button size='large'
+        data-position="center"
+        bindtap="toastShow8">控制icon尺寸</oak-button>
+    <oak-toast icon="edit" icon-size="50rpx" isShow="{{ Show8 }}">我超级大</oak-toast>
+    </view>
+    <view class="row">
+    <oak-button size='large'
+        data-position="center"
+        bindtap="toastShow9">控制icon颜色</oak-button>
+    <oak-toast icon="member-center-facet" icon-color="#00FF00" isShow="{{ Show9 }}">我不喜欢绿色</oak-toast>
+    </view>
+
+</view>
+

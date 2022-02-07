@@ -32,7 +32,19 @@
             <oak-list-item title="Popup 弹出层"
             title-class="item-title"
             navigate="/pages/popup/popup" />
-        <!--       <oak-list-item title="Animation 动画"
+            <oak-list-item title="toast 轻提示"
+            title-class="item-title"
+            navigate="/pages/toast/toast" />
+       <!--       <oak-list-item title="Animation 动画"
+                title-class="item-title"
+                navigate="/pages/icon/index" />
+            <oak-list-item title="Overlay 遮罩层"
+                title-class="item-title"
+                navigate="/pages/overlay/index" />
+            <oak-list-item title="Popup 弹出层"
+            title-class="item-title"
+            navigate="/pages/popup/popup" />
+             <oak-list-item title="Animation 动画"
                     title-class="item-title"
                     navigate="/pages/animation/animation" />
                 <oak-list-item title="Progress 进度条"
@@ -94,6 +106,9 @@
             <oak-list-item title="Stepper 步进组件"
                 title-class="item-title"
                 navigate="/pages/stepper/stepper" />
+            <oak-list-item title="onReachBottom 触底组件"
+                title-class="item-title"
+                navigate="/pages/onReachBottom/onReachBottom" />
             <!-- <oak-list-item title="Steps 步骤条"
                 title-class="item-title"
                 navigate="/pages/steps/steps"/>
@@ -148,8 +163,8 @@
                 title-class="item-title"
                 navigate="/pages/submitBar/submitBar" />
         </oak-collapse-item> -->
-  </oak-collapse>
-  <view class="version">
-    v0.0.2-beta.14
-  </view>
+    </oak-collapse>
+    <view class="version">
+        v0.0.2-beta.14
+    </view>
 </view>

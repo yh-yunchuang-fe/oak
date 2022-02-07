@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+    <block  wx:for="{{ rows }}">
+        <view class="h3">{{item.title}}</view>
+        <view class="row">
+            <oak-tab type="{{item.type}}" 
+                tabs="{{ item.tabs }}" 
+                sort="{{ item.sort }}" 
+                bind:change="change"
+                bind:sortChange="sortChange"
+            ></oak-tab>
+        </view>
+    </block>
+    <view class="h3">超出支持侧滑</view>
+    <view class="row"  wx:for="{{ rows1 }}">
+        <oak-tab type="{{item.type}}" 
+            tabs="{{ item.tabs }}" 
+            sort="{{ item.sort }}" 
+            bind:change="change"
+            bind:sortChange="sortChange"
+        ></oak-tab>
+    </view>Î
+</view>

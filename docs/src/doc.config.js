@@ -49,27 +49,31 @@ export default {
                         }
                     ]
                 },
-                // {
-                //     name: '表单',
-                //     groups: [
-                //         {
-                //             name: 'Checkbox 多选框',
-                //             path: '/Checkbox'
-                //         },
-                //         {
-                //             name: 'Switch 开关',
-                //             path: '/Switch'
-                //         },
-                //         {
-                //             name: 'Search Bar 搜索框',
-                //             path: '/SearchBar'
-                //         },
-                //         {
-                //             name: 'Input 输入框',
-                //             path: '/Input'
-                //         }
-                //     ]
-                // },
+                {
+                    name: '表单',
+                    groups: [
+                        {
+                            name: 'Checkbox',
+                            path: '/Checkbox'
+                        },
+                        {
+                            name: 'CheckboxGroup',
+                            path: '/CheckboxGroup'
+                        },
+                        // {
+                        //     name: 'Switch 开关',
+                        //     path: '/Switch'
+                        // },
+                        // {
+                        //     name: 'Search Bar 搜索框',
+                        //     path: '/SearchBar'
+                        // },
+                        // {
+                        //     name: 'Input 输入框',
+                        //     path: '/Input'
+                        // }
+                    ]
+                },
                 {
                     name: '展示',
                     groups: [
@@ -114,6 +118,10 @@ export default {
                             path: '/Stepper'
                         },
                         {
+                            name: 'OnReachBottom 触底组件',
+                            path: '/OnReachBottom'
+                        },
+                        {
                             name: 'Image 图片组件',
                             path: '/Image'
                         },
@@ -151,6 +159,13 @@ export default {
                         //     path: '/SlideView'
                         // }
                     ]
+                },
+                {
+                    name: '导航组件',
+                    groups: [{
+                        name: 'Tab 标签页',
+                        path: '/Tab',
+                    }],
                 }
                 // {
                 //     name: '业务组件',

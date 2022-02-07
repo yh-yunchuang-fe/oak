@@ -22,7 +22,7 @@
         wx:for="{{list}}" 
         wx:key="{{item.id}}"
         ext-class="checkbox" 
-        name="{{item}}"
+        value="{{item}}"
     >复选框 {{item.value}}</oak-checkbox>
 </oak-checkbox-group>
 ```
@@ -35,7 +35,7 @@
         wx:for="{{list}}" 
         wx:key="{{item.id}}"
         ext-class="checkbox" 
-        name="{{item}}"
+        value="{{item}}"
     >复选框 {{item.value}}</oak-checkbox>
 </oak-checkbox-group>
 ```
@@ -44,12 +44,6 @@
 
 | 属性 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| value | 选中项 | `Object` |  - |
-| change | 事件绑定  | `Function` | - |
+| value | 选中项 | `Array` |  - |
 | max | 最大N项 | `Number` | - |
-
-## 外部样式类
-
-| 类名 | 说明 |
-|-----------|-----------|
-| ext-class | 作用于根节点 |
+| change | 事件绑定，checkbox-group中选中项发生改变时触发 change 事件，value为选中的checkbox的value的数组 | `Function` | - |

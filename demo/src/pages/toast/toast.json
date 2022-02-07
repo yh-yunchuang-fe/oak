@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "Toast",
+    "usingComponents": {
+        "oak-toast": "/Toast/toast",
+        "oak-button": "/Button/button"
+    }
+}

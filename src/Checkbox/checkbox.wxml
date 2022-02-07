@@ -1,16 +1,27 @@
 <wxs src="WXS/base.wxs" module="Utils" />
-
-<view 
-    class="oak-checkbox ext-class" 
-    bindtap="change">
-
-    <oak-icon 
-        size="{{size}}"
-        class="oak-icon"
-        ext-class="oak-checkbox-icon"
-        name="{{value ? icon.active : disabled ? icon.disabled : icon.normal}}" 
-        color="{{value ? disabled ? disabledColor : color : disabledColor}}" 
+<wxs module="ws">
+    function iconColor(checked,disabled,color,disabledColor){
+        if(disabled && disabledColor){
+            return disabledColor
+        }
+        if(checked && color){
+            return color
+        } 
+        return ''
+    }
+    module.exports = {
+        iconColor: iconColor,
+    };
+</wxs>
+<view class="oak-checkbox type_{{type}} {{ Utils.classNames({checked: checked,disabled: disabled,block: block}) }} ext-class" 
+    bindtap="change"
+>
+    <oak-icon wx:if="{{type !== 'button'}}"
+        class="oak-checkbox-icon {{ Utils.classNames({checked:checked,disabled:disabled}) }}"
+        ext-class="oak-icon" name="{{checked ? _icon.active : (disabled ? _icon.disabled : _icon.normal)}}"
+        color="{{ws.iconColor(checked, disabled, color, disabledColor)}}" 
     />
-
-    <slot></slot>
+    <view class="oak-checkbox-text">
+        <slot></slot>
+    </view>
 </view>

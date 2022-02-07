@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Tab 标签",
+    "usingComponents": {
+        "oak-tab": "/Tab/tab"
+    }
+}

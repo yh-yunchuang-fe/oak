@@ -7,8 +7,8 @@ Page({
         color: '#1989fa',
         disabledColor: '#bdddfd',
         icon: {
-            normal: 'http://pyfustolv.bkt.clouddn.com/account-multiple-outline.png',
-            active: 'http://pyfustolv.bkt.clouddn.com/account-multiple.png'
+            normal: 'dunpai',
+            active: 'dunpai'
         },
         disabled: true,
         list: [

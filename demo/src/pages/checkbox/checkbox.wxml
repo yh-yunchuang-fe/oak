@@ -3,35 +3,71 @@
     <!-- 基础用法 -->
     <view class="h3">基础用法</view>
     <view class="row">
-        <oak-checkbox size="48rpx" value="{{checked}}" bind:change="onChange"> 复选框</oak-checkbox>
+        <oak-checkbox model:checked="{{checked}}">复选框</oak-checkbox>
+        <oak-checkbox model:checked="{{checked}}">
+            <oak-image 
+                src="https://image.yonghuivip.com/image/1638171083730b3ecb3b5f0885edd7f5a7b5310c89568a9253633.jpg" 
+                width="160rpx"
+                height="80rpx"
+                radius="20rpx"
+                bgColor="#f3f3ff3"
+            >
+            </oak-image>
+        </oak-checkbox>
+    </view>
+    <view class="h3">块级元素</view>
+    <view class="row">
+        <oak-checkbox block class="block">块级元素A</oak-checkbox>
+        <oak-checkbox block class="block">块级元素B</oak-checkbox>
+    </view>
+    <view class="h3">类型：default 默认打勾  </view>
+    <view class="row">
+        <oak-checkbox checked>选中</oak-checkbox>
+        <oak-checkbox type="default">未选中</oak-checkbox>
+        <oak-checkbox disabled>禁用</oak-checkbox>
+    </view>
+    <view class="h3">类型：point 点</view>
+    <view class="row">
+        <oak-checkbox type="point" checked>选中</oak-checkbox>
+        <oak-checkbox type="point" >未选中</oak-checkbox>
+        <oak-checkbox type="point" disabled>禁用</oak-checkbox>
+    </view>
+    <view class="h3">类型：button 按钮</view>
+    <view class="row">
+        <oak-checkbox type="button" checked>选中</oak-checkbox>
+        <oak-checkbox type="button" >未选中</oak-checkbox>
+        <oak-checkbox type="button" disabled>禁用</oak-checkbox>
     </view>
     <!-- 禁用状态 -->
     <view class="h3">禁用状态</view>
     <view class="row">
-        <oak-checkbox size="48rpx" value="{{true}}" bind:change="onChange" disabled="{{disabled}}">
+        <oak-checkbox  model:checked="{{true}}" disabled="{{disabled}}">
             选中
         </oak-checkbox>
-        <oak-checkbox size="48rpx" value="{{false}}" bind:change="onChange" disabled="{{disabled}}">
+        <oak-checkbox model:checked="{{false}}" disabled="{{disabled}}">
             未选中
         </oak-checkbox>
     </view>
     <!-- 自定义颜色 -->
     <view class="h3">自定义颜色</view>
     <view class="row">
-        <oak-checkbox size="48rpx" value="{{checked}}" bind:change="onChange" color="{{color}}">
-            自定义颜色
+        <oak-checkbox color="{{color}}">
+            未选中
         </oak-checkbox>
-        <oak-checkbox size="48rpx" value="{{true}}" bind:change="onChange" disabled="{{disabled}}" disabledColor="{{disabledColor}}">
-            自定义禁用颜色
+        <oak-checkbox model:checked="{{true}}" disabled="{{disabled}}" disabledColor="{{disabledColor}}">
+            选中禁用颜色
         </oak-checkbox>
-        <oak-checkbox size="48rpx" value="{{false}}" bind:change="onChange" disabled="{{disabled}}" disabledColor="{{disabledColor}}">
-            自定义禁用颜色
+        <oak-checkbox model:checked="{{false}}" disabled="{{disabled}}" disabledColor="{{disabledColor}}">
+            未选中禁用颜色
         </oak-checkbox>
     </view>
     <!-- 自定义图标 -->
     <view class="h3">自定义图标</view>
     <view class="row">
-        <oak-checkbox size="42rpx" value="{{checked}}" bind:change="onChange" icon="{{icon}}">
+        <oak-checkbox size="42rpx" checked icon="{{ {active:'multiple-choice-line'} }}">
+            自定义图标
+        </oak-checkbox>
+        <oak-checkbox size="42rpx" icon="{{icon}}">
             自定义图标
         </oak-checkbox>
     </view>
@@ -39,7 +75,7 @@
     <view class="h3">复选框</view>
     <view class="row">
         <oak-checkbox-group value="{{selected}}" bind:change="onChangeGroup">
-            <oak-checkbox size="48rpx" wx:for="{{list}}" wx:key="{{item.id}}" ext-class="checkbox" name="{{item}}">
+            <oak-checkbox wx:for="{{list}}" wx:key="index" ext-class="checkbox" name="{{item}}">
                 复选框 {{item.value}}
             </oak-checkbox>
         </oak-checkbox-group>
@@ -48,7 +84,7 @@
     <view class="h3">设置最多选 N 项</view>
     <view class="row">
         <oak-checkbox-group value="{{maxSelected}}" bind:change="onChangeMax" max="{{2}}">
-            <oak-checkbox size="48rpx" wx:for="{{list}}" wx:key="{{item.id}}" ext-class="checkbox" name="{{item}}">
+            <oak-checkbox wx:for="{{list}}" wx:key="index" ext-class="checkbox" name="{{item}}">
                 复选框 {{item.value}}
             </oak-checkbox>
         </oak-checkbox-group>
