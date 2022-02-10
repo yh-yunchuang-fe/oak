@@ -1,4 +1,4 @@
-@import "Style/variable";
+@import "./variable.less";
 
 .oak-loading {
     display: inline-block;
@@ -12,10 +12,10 @@
     &.fixed {
         left: 50%;
         z-index: 10;
-        background-color: #fff;
+        background-color: @loading-bg-color;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        box-shadow: 0 0 8rpx #979797;
+        box-shadow: @loading-shadow;
     }
 
     &.fixed {
@@ -33,55 +33,55 @@
         box-sizing: border-box;
         display: block;
         position: absolute;
-        width: 30rpx;
-        height: 30rpx;
-        margin: 4rpx;
+        width: @loading-item-size-default;
+        height: @loading-item-size-default;
+        margin: @loading-item-mg-default;
         border: 2rpx solid transparent;
         border-radius: 50%;
         animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-top-color: #FD7622;
+        border-top-color: @loading-default-color;
     }
 
     &.small {
-        width: 30rpx;
-        height: 30rpx;
+        width: @loading-size-sm;
+        height: @loading-size-sm;
 
         .item {
-            width: 20rpx;
-            height: 20rpx;
+            width: @loading-item-size-sm;
+            height: @loading-item-size-sm;
         }
 
     }
 
 
     &.mid {
-        width: 46rpx;
-        height: 46rpx;
+        width: @loading-size-md;
+        height: @loading-size-md;
 
         .item {
-            width: 36rpx;
-            height: 36rpx;
+            width: @loading-item-size-md;
+            height: @loading-item-size-md;
             border-width: 4rpx;
 
             &.shadow {
                 position: absolute;
-                border-color: #ddd;
+                border-color: @loading-item-shadow;
             }
         }
     }
 
     &.large {
-        width: 54rpx;
-        height: 54rpx;
+        width: @loading-size-lg;
+        height: @loading-size-lg;
 
         .item {
-            width: 44rpx;
-            height: 44rpx;
+            width: @loading-item-size-lg;
+            height: @loading-item-size-lg;
             border-width: 4rpx;
 
             &.shadow {
                 position: absolute;
-                border-color: #ddd;
+                border-color: @loading-item-shadow;
             }
         }
     }
@@ -127,10 +127,10 @@
     left: calc(50% - 45px);
     right: 50%;
     top: calc(50% - 45px);
-    width: 90px;
-    height: 90px;
-    border-radius: 12px;
-    background-color: rgba(238, 238, 238, 0.75);  
+    width: @loading-size-global;
+    height: @loading-size-global;
+    border-radius: @loading-radius-global;
+    background-color: @loading-global-bg-color;  
     text-align: center;
     z-index: 20;
     box-sizing: border-box;
@@ -138,7 +138,7 @@
     .img-item {
       display: inline-block;
       width: 0;
-      height: 30px;
+      height: @loading-item-size-global;
       position: absolute;
       top: 10px;
     }
@@ -149,7 +149,6 @@
       width: 0;
       animation: 3s infinite movepx ease-in;
       transform-origin: center;
-      // animation-delay: 1s;
       animation-fill-mode : forwards; 
     }
     
@@ -172,13 +171,12 @@
     .shadow {
       width: 16rpx;
       height: 6rpx;
-      background: #ddd;
+      background: @loading-item-shadow;
       position: absolute;
       bottom: 12px;
       left: calc(50% - 8rpx);
       animation: 1s infinite shadowscale ease-in;
       animation-fill-mode : forwards; 
-  
       border-top-left-radius: 8rpx 3rpx;
       border-top-right-radius: 8rpx 3rpx;
       border-bottom-right-radius: 8rpx 3rpx;
@@ -236,12 +234,6 @@
       width: 0;
       transform: translateY(0) rotateZ(0deg);
     }
-    // 编译为wxss之后的格式是.01%, 微信小程序不能识别
-    // 暂时从1%恢复原大小，然后下降，这样在(0 - 0.33s*0.01)s 内有一个0到20px放大效果，和ui有点不一致，目前这样先兼容
-    // 0.01%{ 
-    //   width: 20px;
-    //   transform: translateY(0) rotateZ(0deg);
-    // }
     1%{ 
       width: 20px;
       transform: translateY(0) rotateZ(0deg);
@@ -271,10 +263,6 @@
       width: 0;
       transform: translateY(0) rotateZ(0deg);
     }
-    // 0.01%{ 
-    //   width: 30px;
-    //   transform: translateY(0) rotateZ(0deg);
-    // }
     1%{ 
       width: 30px;
       transform: translateY(0) rotateZ(0deg);

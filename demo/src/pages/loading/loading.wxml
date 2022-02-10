@@ -45,20 +45,11 @@
     </view>
     <view class="title">全局加载</view>
     <view class="button" bind:tap="globalTap">
-        允许点击穿透
+        全局loading
         <oak-icon class="icon" 
             name="right-light" 
             size="20rpx" 
             color="#999" />
-        <oak-loading isShow="{{globalShow}}" type='global'/>
-    </view>
-    <view class="button" bind:tap="globalTap">
-        禁止点击穿透
-        <oak-icon class="icon" 
-            name="right-light" 
-            size="20rpx" 
-            color="#999" 
-            mask="true" />
         <oak-loading isShow="{{globalShow}}" type='global'/>
     </view>
 </view>
