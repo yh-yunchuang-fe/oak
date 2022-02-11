@@ -4,8 +4,7 @@ Component({
         multipleSlots: true
     },
     properties: {
-        name: {
-            // 配合 form 作为 key 使用
+        type: {
             type: String,
             value: ''
         },
@@ -14,10 +13,6 @@ Component({
             value: ''
         },
         value: {
-            type: String,
-            value: ''
-        },
-        type: {
             type: String,
             value: ''
         },
@@ -52,7 +47,7 @@ Component({
         },
         placeholderStyle: {
             type: String,
-            value: 'color: #888'
+            value: 'color: #ccc;'
         },
         placeholderClass: {
             type: String,
@@ -106,6 +101,14 @@ Component({
             type: String,
             value: '#cdcdcd'
         },
+        passwordIconColor: {
+            type: String,
+            value: '#cdcdcd'
+        },
+        selectPasswordVisiable: {
+            type: Boolean,
+            value: false
+        },
         error: {
             type: Boolean,
             value: false
@@ -129,11 +132,17 @@ Component({
         required: {
             type: Boolean,
             value: false
+        },
+        countDownNum: {
+            type: Number,
+            value: 60
         }
     },
     data: {
         focused: false,
         visiable: true, // 是否显示输入框
+        seePasswordType: 0, // 0 密文，1 明文
+        countDownTime: 0,
     },
     lifetimes: {
         attached() {
@@ -188,7 +197,35 @@ Component({
             this.setData({ value: '' }, (): void => {
                 this.triggerEvent('clear')
             })
+        },
+        // 切换密文明文方式
+        selectSeePasswordType(): void {
+            const { seePasswordType } = this.data
+            this.setData({
+                seePasswordType: seePasswordType ? 0 : 1,
+            })
+        },
+        // 获取验证码
+        getCaptcha(): void {
+            if(this.getCaptchaing) return
+            this.getCaptchaing = true
+            const { countDownNum } = this.data
+            let countDownTime = countDownNum || 60
+            this.setData({
+                countDownTime,
+            })
+            this.timer = setInterval((): void => {
+                countDownTime--
+                this.setData({
+                    countDownTime,
+                })
+                if(countDownTime < 1) {
+                    clearInterval(this.timer)
+                    this.getCaptchaing = false
+                }
+            }, 1000)
+            this.triggerEvent('captcha')
         }
     },
-    externalClasses: ['ext-class', 'input-class', 'placeholder-class'],
+    externalClasses: ['ext-class', 'input-class',],
 })

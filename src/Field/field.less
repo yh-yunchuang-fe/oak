@@ -1,7 +1,9 @@
 @import 'Style/variable';
+@import "../style/mixin";
 
 .oak-field {
     display: flex;
+    align-items: center;
     position: relative;
     font-size: @font-size-title;
     color: @txt-default;
@@ -13,22 +15,41 @@
         color: @gray-2;
         margin-right: 30rpx;
     }
-    .content {
+    .input {
         flex: 1;
-        color: @gray-1;
-    }
-    .input-placeholder {
-        font-size: 32rpx;
-        color: #ccc;
+        margin-right: 30rpx;
+        .ellipsis(1);
     }
     .oak-field-clear {
         position: absolute;
+        z-index: 10;
         padding: 30rpx;
         right: 0;
         top: 0;
     }
+    .captcha {
+        color: #999;
+        &.active {
+            color:#FF1A34;
+        }
+    }
 }
-
+.field-captcha-b {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #fff;
+    .captcha-b-input {
+        letter-spacing: 114rpx;
+        line-height: 60rpx;
+        height: 60rpx;
+        font-size: 44rpx;
+    }
+}
+.input-placeholder {
+    font-size: 32rpx;
+    color: #ccc;
+}
 .oak-field-reset {
     cursor: auto;
     display: block;

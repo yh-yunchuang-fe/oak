@@ -1,5 +1,17 @@
 <wxs src="WXS/base.wxs" module="Utils" />
-
+<wxs module="Handles">
+    function hanfleValue(isPlaintext, value) {
+        console.log('hha', value)
+        if(isPlaintext) {
+            var dotReg = getRegExp("[\s\S]", "g");
+            return value.replace(dotReg, '*')
+        }
+        return value
+    }
+    module.exports = {
+        hanfleValue: hanfleValue,
+    }
+</wxs>
 <block wx:if="{{type === 'textarea'}}">
     <!-- 自动换行 -->
     <view class="oak-field-textarea ext-class {{border ? 'border' : ''}}">
@@ -19,7 +31,6 @@
                 class="input-class"
                 value="{{value}}"
                 placeholder="{{placeholder}}"
-                placeholder-class="placeholder-class"
                 disabled="{{disabled}}"
                 maxlength="{{maxlength}}"
                 focus="{{focus}}"
@@ -51,19 +62,18 @@
         </view>
     </view>
 </block>
-<block wx:else>
+<block wx:elif="{{type === 'captcha-b'}}">
     <!-- input -->
-    <view class="oak-field ext-class">
-        <view class="title" wx:if="{{}}">{{label}}</view>
-        <input wx:if="{{visiable}}"
-            class="input-class {{error ? 'error' : ''}}"
+    <view class="field-captcha-b ext-class">
+        <input class="captcha-b-input input-class {{error ? 'error' : ''}}"
             value="{{value}}"
             type="{{type === 'password' ? 'text' : type}}"
-            password="{{type === 'password'}}"
             placeholder="{{placeholder}}"
             disabled="{{disabled}}"
             autosize="{{autosize}}"
-            placeholder-class="input-placeholder placeholder-class"
+            password="{{type === 'password' && seePasswordType === 0}}"
+            placeholder-style="{{placeholderStyle}}"
+            placeholder-class="input-placeholder"
             focus="{{focus}}"
             confirm-type="{{confirmType}}"
             confirm-hold="{{confirmHold}}"
@@ -83,6 +93,53 @@
             bindconfirm="confirm"
             bindkeyboardheightchange="keyboardheightchange"
         />
+        <view class="captcha-line">
+            <text wx:for="{{[0,1,2,3,4,5]}}" class="line active"/>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <!-- input -->
+    <view class="oak-field ext-class">
+        <view class="title" wx:if="{{label}}">{{label}}</view>
+        <input class="input-class input {{error ? 'error' : ''}}"
+            value="{{value}}"
+            type="{{type === 'password' ? 'text' : type}}"
+            placeholder="{{placeholder}}"
+            disabled="{{disabled}}"
+            autosize="{{autosize}}"
+            password="{{type === 'password' && seePasswordType === 0}}"
+            placeholder-style="{{placeholderStyle}}"
+            placeholder-class="input-placeholder"
+            focus="{{focus}}"
+            confirm-type="{{confirmType}}"
+            confirm-hold="{{confirmHold}}"
+            cursor="{{cursor}}"
+            selection-start="{{selectionStart}}"
+            selection-end="{{selectionEnd}}"
+            adjust-position="{{adjustPosition}}"
+            hold-keyboard="{{holdkeyboard}}"
+            maxlength="{{maxlength}}"
+            cursor-spacing="{{cursorSpacing}}"
+            clearable="{{clearable}}"
+            error="{{error}}"
+            rules="{{rules}}"
+            bindfocus="focus"
+            bindinput="change"
+            bindblur="blur"
+            bindconfirm="confirm"
+            bindkeyboardheightchange="keyboardheightchange"
+        />
+        <!-- 密码切换明文密文icon -->
+        <oak-icon 
+            wx:if="{{type === 'password' && selectPasswordVisiable}}"
+            class="oak-field-clear"
+            name="{{seePasswordType ? 'openeyes' : 'closeeyes'}}" 
+            color="{{passwordIconColor}}"
+            size="34rpx"
+            bindtap="selectSeePasswordType" 
+        ></oak-icon>
+        <!-- 清空icon -->
         <oak-icon 
             wx:if="{{clearable&&focused&&value}}"
             class="oak-field-clear"
@@ -91,5 +148,7 @@
             size="34rpx"
             bindtap="clear" 
         ></oak-icon>
+        <view wx:if="{{type === 'captcha-a'}}" class="captcha {{countDownTime < 1 ? 'active' : ''}} captcha-class" catchtap="getCaptcha">{{countDownTime > 0 ? '重新发送(' + countDownTime + ')' : '发送验证码'}}</view>
+        <slot />
     </view>
 </block>

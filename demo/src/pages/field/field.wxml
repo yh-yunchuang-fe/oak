@@ -3,11 +3,48 @@
     <!-- default -->
     <view class="h3">基础样式</view>
     <oak-field 
-        name="default"
         type="text"
         label="标题标题"
         placeholder="请输入文本"
-        visiable
         clearable
+    ></oak-field>
+    <view class="h3">行内输入框</view>
+    <oak-field 
+        type="text"
+        placeholder="请输入文本"
+        placeholderStyle="color: #333;"
+        clearable
+    ></oak-field>
+    <view class="h3">手机号输入框</view>
+    <oak-field 
+        type="number"
+        maxlength="11"
+        placeholder="请输入手机号码"
+        clearable
+    ></oak-field>
+    <view class="h3">密码输入框</view>
+    <oak-field 
+        type="password"
+        maxlength="11"
+        passwordIconColor="#000"
+        placeholder="请输入您的密码"
+        selectPasswordVisiable
+    ></oak-field>
+    <view class="h3">插入按钮样式</view>
+    <oak-field 
+        label="标题标题"
+        placeholder="请输入文本"
+    >
+        <oak-button color="primary">选择</oak-button>
+    </oak-field>
+    <view class="h3">验证码输入样式a</view>
+    <oak-field 
+        type="captcha-a"
+        countDownNum="50"
+        placeholder="请输入验证码"
+    ></oak-field>
+    <view class="h3">验证码输入样式b</view>
+    <oak-field 
+        type="captcha-b"
     ></oak-field>
 </view>
