@@ -12,10 +12,10 @@
     &.fixed {
         left: 50%;
         z-index: 10;
-        background-color: @loading-bg-color;
+        background-color: #FFF;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        box-shadow: @loading-shadow;
+        box-shadow: #979797;
     }
 
     &.fixed {
@@ -33,55 +33,55 @@
         box-sizing: border-box;
         display: block;
         position: absolute;
-        width: @loading-item-size-default;
-        height: @loading-item-size-default;
-        margin: @loading-item-mg-default;
+        width: 30rpx;
+        height: 30rpx;
+        margin: 4rpx;
         border: 2rpx solid transparent;
         border-radius: 50%;
         animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-top-color: @loading-default-color;
+        border-top-color: #FD7622;
     }
 
     &.small {
-        width: @loading-size-sm;
-        height: @loading-size-sm;
+        width: 30rpx;
+        height: 30rpx;
 
         .item {
-            width: @loading-item-size-sm;
-            height: @loading-item-size-sm;
+            width: 20rpx;
+            height: 20rpx;
         }
 
     }
 
 
     &.mid {
-        width: @loading-size-md;
-        height: @loading-size-md;
+        width: 46rpx;
+        height: 46rpx;
 
         .item {
-            width: @loading-item-size-md;
-            height: @loading-item-size-md;
+            width: 36rpx;
+            height: 36rpx;
             border-width: 4rpx;
 
             &.shadow {
                 position: absolute;
-                border-color: @loading-item-shadow;
+                border-color: #DDD;
             }
         }
     }
 
     &.large {
-        width: @loading-size-lg;
-        height: @loading-size-lg;
+        width: 54rpx;
+        height: 54rpx;
 
         .item {
-            width: @loading-item-size-lg;
-            height: @loading-item-size-lg;
+            width: 44rpx;
+            height: 44rpx;
             border-width: 4rpx;
 
             &.shadow {
                 position: absolute;
-                border-color: @loading-item-shadow;
+                border-color: #DDD;
             }
         }
     }
@@ -127,10 +127,10 @@
     left: calc(50% - 45px);
     right: 50%;
     top: calc(50% - 45px);
-    width: @loading-size-global;
-    height: @loading-size-global;
-    border-radius: @loading-radius-global;
-    background-color: @loading-global-bg-color;  
+    width: @loading-anima-width;
+    height: @loading-anima-height;
+    border-radius: @loading-anima-bg-radius;
+    background-color: @loading-anima-bg-color;  
     text-align: center;
     z-index: 20;
     box-sizing: border-box;
@@ -138,7 +138,7 @@
     .img-item {
       display: inline-block;
       width: 0;
-      height: @loading-item-size-global;
+      height: 60rpx;
       position: absolute;
       top: 10px;
     }
@@ -171,7 +171,7 @@
     .shadow {
       width: 16rpx;
       height: 6rpx;
-      background: @loading-item-shadow;
+      background: #DDD;
       position: absolute;
       bottom: 12px;
       left: calc(50% - 8rpx);
