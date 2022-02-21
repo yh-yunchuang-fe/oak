@@ -94,7 +94,9 @@
             }
         }
         if (r) r = ";border-radius: " + r
-        if (imgRadius && imgRadius.split(" ").length === 1) r = ""
+        if (imgRadius && imgRadius.split(" ").length === 1) {
+            r = ";border-radius:" + imgRadius
+        }
         if (isFullWidth) w = 'width: 100%;'
         return b + w + h + r + ';'
     }

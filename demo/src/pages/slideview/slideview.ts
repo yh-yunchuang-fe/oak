@@ -3,22 +3,26 @@
 Page({
     data: {
         buttons: {
-            share: function() { this.share() },
-            edit: function() { this.edit() },
-            delete: function() { this.delete() },
+            share: function(): void { this.share() },
+            edit: function(): void { this.edit() },
+            delete: function(): void { this.delete() },
         }
     },
-    delete() {
+    delete(): void {
         console.log('delete')
         wx.showToast({ title: '删除成功', icon: 'none', duration: 1000 })
     },
-    edit() {
+    edit(): void {
         console.log('edit')
         wx.showToast({ title: '正在编辑', icon: 'none', duration: 1000 })
     },
-    share() {
+    share(): void {
         console.log('share')
         wx.showToast({ title: '分享成功', icon: 'none', duration: 1000 })
+    },
+    collect(): void {
+        console.log('collect')
+        wx.showToast({ title: '收藏成功', icon: 'none', duration: 1000 })
     },
     onShareAppMessage(): object {
         return {

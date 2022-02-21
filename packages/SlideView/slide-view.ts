@@ -12,19 +12,44 @@ Component({
             value: false,
             optionalTypes: [Boolean]
         },
+        shareText: {
+            type: String,
+            value: '分享', // text、oak icon
+            optionalTypes: [String]
+        },
         edit: {
             type: Boolean,
             value: false,
             optionalTypes: [Boolean]
+        },
+        editText: {
+            type: String,
+            value: '编辑', // text、oak icon
+            optionalTypes: [String]
+        },
+        collect: {
+            type: Boolean,
+            value: false,
+            optionalTypes: [Boolean]
+        },
+        collectText: {
+            type: String,
+            value: '移入我的收藏', // text、oak icon
+            optionalTypes: [String]
         },
         del: {
             type: Boolean,
             value: true,
             optionalTypes: [Boolean]
         },
-        rightWidth: {
+        delText: {
+            type: String,
+            value: '删除', // text、oak icon
+            optionalTypes: [String]
+        },
+        singleWidth: { // 右边单个按钮或操作快的宽度
             type: Number,
-            value: 80,
+            value: 60,
             optionalTypes: [Number]
         },
         custom: {
@@ -32,11 +57,6 @@ Component({
             value: false,
             optionalTypes: [Boolean]
         },
-        // async: {
-        //     type: Boolean,
-        //     value: false,
-        //     optionalTypes: [Boolean]
-        // },
         type: {
             type: String,
             value: 'text', // text、oak icon
@@ -68,8 +88,8 @@ Component({
         this.transition = 'transition: all 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94)'
 
         // 初始化 right width
-        const { rightWidth, custom, share, edit, del } = this.data
-        const width = custom ? rightWidth : (share + edit + del) * 80
+        const { singleWidth, custom, share, edit, collect, del } = this.data
+        const width = custom ? singleWidth : (share + edit + collect + del) * singleWidth
         this.setData({ width })
     },
 
@@ -79,7 +99,6 @@ Component({
         transition: '',
         width: 160
     },
-    externalClasses: ['icon-class'],
     methods: {
         // 这里是一个自定义方法
         touchstart(e): void {
@@ -175,9 +194,7 @@ Component({
                 this._actionOver(e)
 
                 let { offsetX } = this.data
-
                 offsetX = direction === 'Left' && (this.x1 - this.x2) > 60 ? -rightWidth : 0
-
                 this.position = direction
                 this.setData({
                     offsetX,
@@ -237,10 +254,14 @@ Component({
             this._cancel()
             this.triggerEvent('edit')
         },
-
+        onCollect(): void {
+            this._cancel()
+            this.triggerEvent('collect')
+        },
         onDelete(): void {
             this._cancel()
             this.triggerEvent('delete')
         }
-    }
+    },
+    externalClasses: ['ext-class', 'icon-class', 'share-class', 'edit-class', 'collect-class', 'delete-class'],
 })
