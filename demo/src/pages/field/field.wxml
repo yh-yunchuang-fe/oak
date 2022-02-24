@@ -4,35 +4,34 @@
     <view class="h3">基础样式</view>
     <oak-field 
         type="text"
-        label="标题标题"
         placeholder="请输入文本"
         clearable
-    ></oak-field>
-    <view class="h3">行内输入框</view>
+    />
+    <view class="h3">设置提示语样式</view>
     <oak-field 
         type="text"
         placeholder="请输入文本"
         placeholderStyle="color: #333;"
         clearable
-    ></oak-field>
+    />
     <view class="h3">手机号输入框</view>
     <oak-field 
         type="number"
         maxlength="11"
         placeholder="请输入手机号码"
         clearable
-    ></oak-field>
+    />
     <view class="h3">密码输入框</view>
     <oak-field 
         type="password"
         maxlength="11"
+        clearable
         passwordIconColor="#000"
         placeholder="请输入您的密码"
         selectPasswordVisiable
-    ></oak-field>
+    />
     <view class="h3">插入按钮样式</view>
     <oak-field 
-        label="标题标题"
         placeholder="请输入文本"
     >
         <oak-button color="primary">选择</oak-button>
@@ -41,10 +40,22 @@
     <oak-field 
         type="captcha-a"
         countDownNum="50"
+        maxlength="6"
+        bind:captcha="getCaptcha"
         placeholder="请输入验证码"
-    ></oak-field>
+    />
     <view class="h3">验证码输入样式b</view>
     <oak-field 
         type="captcha-b"
-    ></oak-field>
+        maxlength="6"
+        autoFocus
+        bind
+    />
+    <view class="h3">文本域</view>
+    <oak-field 
+        type="textarea"
+        maxlength="200"
+        input-class="textarea-height"
+        placeholder="请输入"
+    />
 </view>

@@ -8,25 +8,9 @@ Component({
             type: String,
             value: ''
         },
-        label: {
-            type: String,
-            value: ''
-        },
         value: {
             type: String,
             value: ''
-        },
-        icon: {
-            type: String,
-            value: ''
-        },
-        iconColor: {
-            type: String,
-            value: '#FD7622'
-        },
-        iconSize: {
-            type: String,
-            value: '36rpx'
         },
         placeholder: {
             type: String,
@@ -36,22 +20,13 @@ Component({
             type: Boolean,
             value: false
         },
-        autosize: {
-            // 只对 textarea 生效
+        ellipsis: {
             type: Boolean,
-            value: ''
-        },
-        singleInput: {
-            type: Boolean,
-            value: false
+            value: true
         },
         placeholderStyle: {
             type: String,
             value: 'color: #ccc;'
-        },
-        placeholderClass: {
-            type: String,
-            value: ''
         },
         focus: {
             type: Boolean,
@@ -87,7 +62,7 @@ Component({
         },
         maxlength: {
             type: Number,
-            value: 140
+            value: -1
         },
         cursorSpacing: {
             type: Number,
@@ -109,63 +84,19 @@ Component({
             type: Boolean,
             value: false
         },
-        error: {
-            type: Boolean,
-            value: false
-        },
-        errorMessage: {
-            type: String,
-            value: ''
-        },
-        rules: {
-            type: Array,
-            value: null
-        },
-        border: {
-            type: Boolean,
-            value: false
-        },
-        button: {
-            type: String,
-            value: null
-        },
-        required: {
-            type: Boolean,
-            value: false
-        },
         countDownNum: {
             type: Number,
             value: 60
-        }
+        },
+        autoHeight: {
+            type: Boolean,
+            value: false
+        },
     },
     data: {
         focused: false,
-        visiable: true, // 是否显示输入框
         seePasswordType: 0, // 0 密文，1 明文
         countDownTime: 0,
-    },
-    lifetimes: {
-        attached() {
-
-        },
-        moved() {},
-        detached() {
-            if(this.data.visiable) {
-                this.setData({visiable: false})
-            }
-        },
-    },
-    pageLifetimes: {
-        show() {
-            if(!this.data.visiable) {
-                this.setData!({visiable: true})
-            }
-        },
-        hide() {
-            if(this.data.visiable) {
-                this.setData!({visiable: false})
-            }
-        },
     },
     methods: {
         focus(e): void {
