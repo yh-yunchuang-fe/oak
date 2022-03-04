@@ -1,47 +1,120 @@
 <wxs src="../wxs/base.wxs"
     module="Utils" />
+<wxs module="ws">  
+    var onlySlot = function(title,content,isAgreement){
+        return !title && !content && !isAgreement
+    }
+    var isBottomClose = function(type){
+        return type === 'bottom-close'
+    }
+    module.exports = {
+        onlySlot: onlySlot,
+        isBottomClose: isBottomClose,
+    };
+</wxs>
 
 <oak-popup show="{{ show }}"
+    position="center"
     duration="{{duration}}"
-    background="transparent"
+    maskClosable="{{maskClosable}}"
     z-index="{{zIndex}}"
-    bind:onPopupClose="_onPopupClose"
-    mask="{{mask}}">
-    <view class="oak-dialog dialog-class">
-        <view class="oak-dialog-title {{!content ? 'oak-dialog-title_pd' : ''}} title-class"
-            wx:if="{{title}}">{{title}}</view>
-        <view class="oak-dialog-content {{!title ? 'oak-dialog-content_pd' : ''}} content-class"
-            wx:if="{{content}}">{{content}}</view>
-        <slot></slot>
-        <view class="oak-dialog-button">
-            <oak-button class='oak-dialog-btn'
-                button-class="oak-dialog-oakbtn"
-                plain
-                size='block'
-                wx:if="{{cancleText}}"
-                bindtap="_dialogCancle">{{cancleText}}</oak-button>
-            <oak-button class='oak-dialog-btn'
-                button-class="oak-dialog-oakbtn"
-                plain
-                size='block'
-                type='primary'
-                open-type="{{ confirmType }}"
-                loading="{{ okLoading }}"
-                loaderColor="#999"
-                loader-size="default"
-                session-from="{{ sessionFrom }}"
-                send-message-title="{{ sendMessageTitle }}"
-                send-message-path="{{ sendMessagePath }}"
-                send-message-img="{{ sendMessageImg }}"
-                show-message-card="{{ showMessageCard }}"
-                app-parameter="{{ appParameter }}"
-                bindgetuserinfo="bindGetUserInfo"
-                bindcontact="bindContact"
-                bindgetphonenumber="bindGetPhoneNumber"
-                binderror="bindError"
-                bindlaunchapp="bindLaunchApp"
-                bindopensetting="bindOpenSetting"
-                bindtap="_dialogConfirm"><block wx:if="{{!okLoading}}">{{confirmText || '确认'}}</block></oak-button>
-        </view>
+    mask
+    bind:onPopupClose="close"
+>
+    <view class="oak-dialog {{Utils.classNames({onlySlot: ws.onlySlot(title, content, isAgreement), bottomClose: ws.isBottomClose(type)})}} dialog-class">
+        <block wx:if="{{!ws.isBottomClose(type)}}">
+            <!-- 关闭图标 -->
+            <oak-icon wx:if="{{closable}}"
+                ext-class="oak-dialog-close" 
+                name="close-light"
+                catch:tap="close"
+            />
+
+            <!-- 标题 -->
+            <view wx:if="{{title}}"
+                class="oak-dialog-title title-class" 
+            >
+                {{title}}
+            </view>
+
+            <!-- 内容 -->
+            <view wx:if="{{content}}"
+                class="oak-dialog-content content-class"
+            >
+                {{content}}
+            </view>
+        </block>
+
+        <!-- 自定义内容 -->
+        <view class="oak-dialog-slot"><slot></slot></view>
+
+        <block wx:if="{{!ws.isBottomClose(type)}}">
+            <!-- 协议区 -->
+            <view wx:if="{{isAgreement}}"
+                class="oak-dialog-agreement"
+                bind:tap="_changeAgreement"
+            >
+                <oak-checkbox 
+                    ext-class="checkbox"
+                    name="agreement"
+                    value="{{agreement}}"
+                    bind:change="_changeAgreement"
+                />
+                <view class="text">
+                    <slot name="agreement"></slot>
+                </view>
+            </view>
+
+            <!-- 按钮区 -->
+            <view wx:if="{{buttons && buttons.length > 0}}"
+                class="oak-dialog-button {{buttonBlock ? 'block' : ''}}" 
+            >
+                <block wx:for="{{buttons}}" wx:for-item="btn" wx:key="index">
+                    <oak-button class='oak-button'
+                        wx:if="{{btn.type === 'confirm'}}"
+                        size='large'
+                        color="primary"
+                        openType="{{ openType }}"
+                        fill="{{ btn.fill || 'solid' }}"
+                        block
+                        loading="{{okLoading}}"
+                        disabled="{{ isAgreement && !agreement }}"
+                        session-from="{{ sessionFrom }}"
+                        send-message-title="{{ sendMessageTitle }}"
+                        send-message-path="{{ sendMessagePath }}"
+                        send-message-img="{{ sendMessageImg }}"
+                        show-message-card="{{ showMessageCard }}"
+                        app-parameter="{{ appParameter }}"
+                        bind:getuserinfo="bindGetUserInfo"
+                        bind:contact="bindContact"
+                        bind:getphonenumber="bindGetPhoneNumber"
+                        bind:error="bindError"
+                        bind:launchapp="bindLaunchApp"
+                        bind:opensetting="bindOpenSetting"
+                        bind:click="_dialogConfirm"
+                    >
+                        {{btn.text}}
+                    </oak-button>
+                    <oak-button class='oak-button'
+                        wx:else
+                        size='large'
+                        color="{{ btn.color || 'default' }}"
+                        fill="{{ btn.fill || 'solid' }}"
+                        disabled="{{okLoading}}"
+                        block
+                        bind:click="_dialogCancel"
+                    >
+                        {{btn.text}}
+                    </oak-button>
+                </block>
+            </view>
+        </block>
+
+        <!-- 底部关闭按钮区 -->
+        <oak-icon wx:if="{{ws.isBottomClose(type)}}"
+            class="oak-dialog-close_bottom" 
+            name="close" 
+            catch:tap="close"
+        />
     </view>
 </oak-popup>
