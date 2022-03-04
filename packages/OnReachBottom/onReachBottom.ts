@@ -45,7 +45,7 @@ Component({
      */
     methods: {
         _init(): void {
-            const { bottom } = this.data // 一般传负值，负号可以理解为可观察区域加多（网上没搜到很好解释，个人理解这样）
+            const { bottom } = this.data 
             // @ts-ignore
             this.intersection = wx.createIntersectionObserver() // 不要传参
             this.intersection
@@ -55,7 +55,7 @@ Component({
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 .observe(`${this.data.ancestors} >>> #yh-on-reach-bottom`, (res: any): void => {
                     const { intersectionRatio } = res
-                    if (intersectionRatio > 0) {    
+                    if (intersectionRatio > 0) {   
                         this.triggerEvent('onReachBottom')
                     } else {
                         this.triggerEvent('unReachBottom')
