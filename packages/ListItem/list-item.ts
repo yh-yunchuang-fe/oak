@@ -22,6 +22,10 @@ Component({
             value: '',
             optionalTypes: [String],
         },
+        titleDirection:{
+            type: String,
+            value: 'vertical',// horizontal vertical
+        },
         content: {
             type: String,
             value: '',
@@ -32,61 +36,7 @@ Component({
             value: true,
             optionalTypes: [Boolean],
         },
-        arrow: {
-            type: Boolean,
-            value: true,
-            optionalTypes: [Boolean, Object],
-            observer(arrow: Icon): void {
-                if (typeof arrow === 'object') {
-                    this.setData({
-                        arrowColor: arrow.color || '#999',
-                        arrowSize: arrow.size || '28rpx',
-                    })
-                }
-            }
-        },
-        arrowColor: {
-            type: String,
-            value: '#999',
-            optionalTypes: [String],
-        },
-        arrowSize: {
-            type: String,
-            value: '28rpx',
-            optionalTypes: [String],
-        },
-        icon: {
-            type: String,
-            value: '',
-            optionalTypes: [String, Object],
-            observer(icon: Icon): void {
-                if (typeof icon === 'object') {
-                    this.setData({
-                        _icon: icon.name,
-                        iconColor: icon.color,
-                        iconSize: icon.size,
-                    })
-                }
-            }
-        },
-        iconColor: {
-            type: String,
-            value: '#999',
-            optionalTypes: [String],
-        },
-        titleColor: {
-            type: String,
-            value: '',
-        },
-        backgroundColor: {
-            type: String,
-            value: '',
-        },
-        iconSize: {
-            type: String,
-            value: '32rpx',
-            optionalTypes: [String],
-        },
+        
         image: {
             type: String,
             value: '',
@@ -102,29 +52,22 @@ Component({
             value: '',
             optionalTypes: [String],
         },
-        button: {
+        icon: {
+            type: String,
+            value: 'right-light',
+        },
+        iconSize:{
             type: String,
             value: '',
-            optionalTypes: [String, Object],
         },
-        nowrap: {
+        showIcon:{
             type: Boolean,
-            value: false,
-            optionalTypes: [Boolean],
+            value: true,
         },
-        coustonNowrap: {
-            type: Object,
-            value: {},
-            optionalTypes: [Object],
-        },
-        url: {
+        navigate:{
             type: String,
             value: '',
-        },
-        openType: {
-            type: String,
-            value: 'navigate',
         }
     },
-    externalClasses: ['title-class', 'ext-class', 'subtitle-class', 'cnt-class', 'body-class', 'label-class'],
+    externalClasses: ['ext-class', 'title-class', 'subtitle-class', 'cnt-class'],
 })
