@@ -1,7 +1,22 @@
-<!--components/ui/Toast/index.js.wxml-->
-<view class='toast-wraper custom-class'>    
-    <view class="content" hidden="{{!isShow}}" style="{{contenStyle}}">
-        <view wx:for="{{_content}}" wx:key="index">{{item}}</view>
-    </view>
+<view class="content" hidden="{{!isShow}}"  style="{{contenStyle}}">
+        <oak-icon
+            wx:if='{{icon}}'
+            name='{{icon}}'
+            size='{{iconSize}}'
+            color='{{iconColor}}'
+            class='oak-icon icon-class'
+            ext-class='oak-icon-ext'
+        />
+        <oak-icon
+            wx:if='{{ (success || warn) && !icon}}'
+            name='{{success ? "multiple-choice-line" : "exclamation-point"}}'
+            size='{{iconSize}}'
+            color='{{iconColor}}'
+            class='oak-icon icon-class'
+            ext-class='oak-icon-ext'
+        />
+        <view class="text_content">
+            <slot></slot>
+        </view>
 </view>
 
