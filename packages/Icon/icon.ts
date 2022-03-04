@@ -36,8 +36,8 @@ Component({
         }
     },
     externalClasses: ['ext-class'],
-    data: {
-    },
-    methods: {
-    }
+    options: {
+        //@ts-ignore
+        styleIsolation: 'apply-shared',
+    },  
 })
