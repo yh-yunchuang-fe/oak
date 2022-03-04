@@ -1,5 +1,7 @@
 <wxs src="../wxs/base.wxs" module="Utils" />
 
-<view class="{{ Utils.classNames('oak-animation', { display: _show}) }}  {{_animationName}}  ext-class" style="animation-duration: {{duration}}ms;animation-timing-function: {{timingFunction}};">
+<view class="{{ Utils.classNames('oak-animation', { display: _show}) }}  {{_animationName}}  ext-class" 
+    style="animation-duration: {{duration}}ms;animation-timing-function: {{timingFunction}}; {{extStyle}}"
+>
     <slot></slot>
 </view>
