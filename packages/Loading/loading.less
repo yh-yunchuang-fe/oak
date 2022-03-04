@@ -1,4 +1,4 @@
-@import "../style/variable";
+@import "./variable.less";
 
 .oak-loading {
     display: inline-block;
@@ -12,10 +12,10 @@
     &.fixed {
         left: 50%;
         z-index: 10;
-        background-color: #fff;
+        background-color: #FFF;
         transform: translate(-50%, -50%);
         border-radius: 50%;
-        box-shadow: 0 0 8rpx #979797;
+        box-shadow: #979797;
     }
 
     &.fixed {
@@ -29,7 +29,7 @@
         top: 50%;
     }
 
-    view {
+    .item {
         box-sizing: border-box;
         display: block;
         position: absolute;
@@ -45,52 +45,59 @@
     &.small {
         width: 30rpx;
         height: 30rpx;
-        view {
+
+        .item {
             width: 20rpx;
-            height: 20rpx;          
+            height: 20rpx;
         }
 
     }
 
-   
-	&.mid {
-		width: 46rpx;
+
+    &.mid {
+        width: 46rpx;
         height: 46rpx;
-        view {
+
+        .item {
             width: 36rpx;
             height: 36rpx;
             border-width: 4rpx;
+
             &.shadow {
                 position: absolute;
-                border-color: #ddd;
-            } 
+                border-color: #DDD;
+            }
         }
-	}
-    
+    }
+
     &.large {
         width: 54rpx;
         height: 54rpx;
-        view {
+
+        .item {
             width: 44rpx;
             height: 44rpx;
             border-width: 4rpx;
+
             &.shadow {
                 position: absolute;
-                border-color: #ddd;
-            }             
+                border-color: #DDD;
+            }
         }
     }
 
-    .oak-loading-v1 {
-        animation-delay: -0.45s;
-    }
+    & .loader {
+        &:nth-child(1) {
+            animation-delay: -0.45s;
+        }
 
-    .oak-loading-v2 {
-        animation-delay: -0.3s;
-    }
+        &:nth-child(2) {
+            animation-delay: -0.3s;
+        }
 
-    .oak-loading-v3 {
-        animation-delay: -0.15s;
+        &:nth-child(3) {
+            animation-delay: -0.15s;
+        }
     }
 
     @keyframes loading {
@@ -102,4 +109,181 @@
             transform: rotate(360deg);
         }
     }
+}
+
+.oak-global-loading{
+  .loading-mask {
+    position: fixed;
+    z-index: 19;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  
+  .loading-wrapper {
+    position: fixed;
+    left: calc(50% - 45px);
+    right: 50%;
+    top: calc(50% - 45px);
+    width: @loading-anima-width;
+    height: @loading-anima-height;
+    border-radius: @loading-anima-bg-radius;
+    background-color: @loading-anima-bg-color;  
+    text-align: center;
+    z-index: 20;
+    box-sizing: border-box;
+    padding-top: 10px;
+    .img-item {
+      display: inline-block;
+      width: 0;
+      height: 60rpx;
+      position: absolute;
+      top: 10px;
+    }
+  
+  
+    .img-item-crab {
+      left: calc(50% - 15px);
+      width: 0;
+      animation: 3s infinite movepx ease-in;
+      transform-origin: center;
+      animation-fill-mode : forwards; 
+    }
+    
+    .img-item-cabbage {
+      left: calc(50% - 10px);
+      animation: 3s infinite moveli ease-in;
+      transform-origin: center;
+      animation-delay: 1s;
+      animation-fill-mode : forwards; 
+    }
+    .img-item-orange {
+      left: calc(50% - 10px);
+      animation: 3s infinite  moveli ease-in;
+      transform-origin: center;
+      animation-delay: 2s;
+      animation-fill-mode : forwards; 
+    }
+  
+  
+    .shadow {
+      width: 16rpx;
+      height: 6rpx;
+      background: #DDD;
+      position: absolute;
+      bottom: 12px;
+      left: calc(50% - 8rpx);
+      animation: 1s infinite shadowscale ease-in;
+      animation-fill-mode : forwards; 
+      border-top-left-radius: 8rpx 3rpx;
+      border-top-right-radius: 8rpx 3rpx;
+      border-bottom-right-radius: 8rpx 3rpx;
+      border-bottom-left-radius: 8rpx 3rpx;
+      transform-origin: center;
+  
+    }
+  
+  
+  }
+  
+  @keyframes shadowscale {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform-origin: center;
+      width: 20rpx;
+      height: 8rpx;
+      border-top-left-radius: 10rpx 4rpx;
+      border-top-right-radius: 10rpx 4rpx;
+      border-bottom-right-radius: 10rpx 4rpx;
+      border-bottom-left-radius: 10rpx 4rpx; 
+      left: calc(50% - 10rpx);
+    }
+    50% {
+      transform-origin: center;
+      width: 26rpx;
+      height: 10rpx;
+      border-top-left-radius: 13rpx 5rpx;
+      border-top-right-radius: 13rpx 5rpx;
+      border-bottom-right-radius: 13rpx 5rpx;
+      border-bottom-left-radius: 13rpx 5rpx; 
+      left: calc(50% - 13rpx);
+    }
+    75% {
+      transform-origin: center;
+      width: 20rpx;
+      height: 8rpx;
+      border-top-left-radius: 10rpx 4rpx;
+      border-top-right-radius: 10rpx 4rpx;
+      border-bottom-right-radius: 10rpx 4rpx;
+      border-bottom-left-radius: 10rpx 4rpx; 
+      left: calc(50% - 10rpx);
+    }
+    100% {
+      transform: scale(1);
+    }
+  
+  }
+  
+  
+  @keyframes moveli{
+    0.00% { 
+      width: 0;
+      transform: translateY(0) rotateZ(0deg);
+    }
+    1%{ 
+      width: 20px;
+      transform: translateY(0) rotateZ(0deg);
+    }  
+    16.66%{
+      width: 20px;
+      transform: translateY(32px) rotateZ(180deg);
+    }
+    33.32% {
+      transform: translateY(0) rotateZ(360deg);  
+      width: 20px;
+    }
+    33.33% {
+      transform: translateY(0) rotateZ(360deg);  
+      width: 0;
+    }
+    100%{ 
+      transform: translateY(0) rotateZ(360deg);   
+      width: 0;
+    }
+    
+  }
+  
+  
+  @keyframes movepx{
+    0.00%{ 
+      width: 0;
+      transform: translateY(0) rotateZ(0deg);
+    }
+    1%{ 
+      width: 30px;
+      transform: translateY(0) rotateZ(0deg);
+    }  
+    16.66%{
+      width: 30px;
+      transform: translateY(32px) rotateZ(180deg);
+    }
+    33.32%{
+      transform: translateY(0) rotateZ(360deg);  
+      width: 30px;
+    }
+    33.33%{
+      transform: translateY(0) rotateZ(360deg);  
+      width: 0;
+    }
+    100%{ 
+      transform: translateY(0) rotateZ(360deg);   
+      width: 0;
+    }
+  }
+  
+  
 }

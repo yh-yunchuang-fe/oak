@@ -1,10 +1,18 @@
 Component({
-    externalClasses: ['ext-class'],
+    externalClasses: ['ext-class', 'loader-class', 'custom-class'],
+    options: {
+        // @ts-ignore
+        styleIsolation: 'isolated'
+    },
     properties: {
         isShow: {
             type: Boolean,
             value: false,
             optionalTypes: [Boolean],
+        },
+        type: {
+            type: String,
+            value: 'default',
         },
         size: {
             type: String,
@@ -25,6 +33,14 @@ Component({
             type: Boolean,
             value: true,
             optionalTypes: [Boolean]
+        },
+        text: {
+            type: String,
+            value: ''
+        },
+        mask: {
+            type: Boolean,
+            value: false,
         }
     },
 })
