@@ -1,268 +1,105 @@
-@import "../style/variable";
-@import "../style/mixin";
+@import "./variable";
 
-.colors() {
-    color: @text;
-    background-color: @background;
-    border: 2rpx solid @tagBorder;
-    font-family: PingFangSC-Regular,PingFang SC;
-}
-
-.sharpen(@height, @weight, @size) {
-    height: @height;
-    line-height: @height;
-    font-weight: @weight;
-    font-size: @size;
-}
-
-.default() {
-    @text: #333;
-    @background: #fafafa;
-    @tagBorder: #d9d9d9;
-}
-
-.magenta() {
-    @text: #fc0738;
-    @background: #fde6eb;
-    @tagBorder: #fdc4d0;
-}
-
-.white() {
-    @text: #fff;
-    @background: #fd7622;
-    @tagBorder: #fff;
-}
-
-.red() {
-    @text: #f5222d;
-    @background: #fff1f0;
-    @tagBorder: #ffa39e;
-}
-
-.volcano() {
-    @text: #fa541c;
-    @background: #fff2e8;
-    @tagBorder: #ffbb96;
-}
-
-.orange() {
-    @text: #fd7622;
-    @background: #fff8f4;
-    @tagBorder: #ffdeca;
-}
-
-.gold() {
-    @text: #faad14;
-    @background: #fffbe6;
-    @tagBorder: #ffe58f;
-}
-
-.lime() {
-    @text: #a0d911;
-    @background: #fcffe6;
-    @tagBorder: #eaff8f;
-}
-
-.green() {
-    @text: #52c41a;
-    @background: #f6ffed;
-    @tagBorder: #b7eb8f;
-}
-
-.cyan() {
-    @text: #13c2c2;
-    @background: #e6fffb;
-    @tagBorder: #87e8de;
-}
-
-.blue() {
-    @text: #1890ff;
-    @background: #e6f7ff;
-    @tagBorder: #91d5ff;
-}
-
-.geekblue() {
-    @text: #2f54eb;
-    @background: #f0f5ff;
-    @tagBorder: #adc6ff;
-}
-
-.purple() {
-    @text: #722ed1;
-    @background: #f9f0ff;
-    @tagBorder: #d3adf7;
-}
-
-.discount() {
-    @text: #fc4916;
-    @background: #fff9f7;
-    @tagBorder: #feb6a2;
-}
-
-.service() {
-    @text: #7aba62;
-    @background: #f9fff6;
-    @tagBorder: #cae3c0;
-}
-
-.address() {
-    @text: #fd7622;
-    @background: rgba(253, 118, 34, .08);
-    @tagBorder: transparent;
-}
-
-.coupon() {
-    @text: #fd7622;
-    @background: #fff1e8;
-    @tagBorder: transparent;
-}
-
-.wxcoupon() {
-    @text: #24ab1a;
-    @background: #e4f6e0;
-    @tagBorder: transparent;
-}
-
-.disable() {
-    @text: #666666;
-    @background: #f9f9f9;
-    @tagBorder: #dddddd;
-}
-
-.oak-tag {
+.tag {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: max-content;
-    min-width: 40rpx;
-    padding: 0 @tag-padding;
-    height: @tag-height;
-    line-height: @tag-height;
-    font-size: @font-small;
-    border-radius: @border-radius-base;
     text-align: center;
-    box-sizing: content-box;
+    box-sizing: border-box;
     vertical-align: middle;
+    overflow: hidden;
+    border-radius: @tag-bg-radius;
+    font-size: @tag-font-size;
+    border: none;
+    color: #fff;
 
-    &-default {
-        .default();
-        .colors();
+    &-text {
+        display: inline-block;
+        line-height: @tag-font-height;
+        font-size: @tag-font-size;
+        font-weight: @tag-font-weight-bold;
+        padding: 2rpx @tag-font-spacing-horizontal;
+        border-radius: @tag-bg-radius;
+
+        &:not(.plain) {
+            border: none !important;
+        }
+
+        &.plain {
+            padding: 0 @tag-font-spacing-horizontal;
+            line-height: @tag-font-height;
+            background: #fff;
+            border-width: @tag-border-width;
+            border-style: solid;
+            font-weight: @tag-font-weight-regular;
+        }
     }
 
-    &-magenta {
-        .magenta();
-        .colors();
+    &-image {
+        height: @tag-icon-height;
     }
 
-    &-red {
-        .red();
-        .colors();
+    &-icon {
+        min-width: 16px;
     }
 
-    &-white {
-        .white();
-        .colors();
-        padding: 0 8rpx;
+    &.disabled {
+        background: @tag-disabled-bg;
+        color: #fff;
+        border: none;
+
+        .plain {
+            background: #fff;
+            border-color: @tag-disabled-bg;
+            color: @tag-disabled-color;
+        }
     }
 
-    &-volcano {
-        .volcano();
-        .colors();
+    // 预设样式
+    &.preset {
+        &_gray {
+            background: @tag-bg-color-gradient-deepgray;
+            .tag-text.plain {
+                color: @tag-font-color-gray;
+                border-color: @tag-border-color-gray;
+            }
+        }
+        &_red {
+            background: @tag-bg-color-gradient-red;
+            .tag-text.plain {
+                color: @tag-font-color-red;
+                border-color: @tag-border-color-red;
+            }
+        }
+        &_green {
+            background: @tag-bg-color-gradient-green;
+            .tag-text.plain {
+                color: @tag-font-color-green;
+                border-color: @tag-border-color-green;
+            }
+        }
+        &_blue {
+            background: @tag-bg-color-gradient-lightblue;
+            .tag-text.plain {
+                color: @tag-font-color-blue;
+                border-color: @tag-border-color-lightblue;
+            }
+        }
+        &_orange {
+            background: @tag-bg-color-gradient-orange;
+            .tag-text.plain {
+                color: @tag-font-color-orange;
+                // border-color: @tag-border-color-purple;
+            }
+        }
+        &_purple {
+            background: @tag-bg-color-gradient-purple;
+            .tag-text.plain {
+                color: @tag-font-color-purple;
+                // border-color: @tag-border-color-purple;
+            }
+        }
     }
 
-    &-orange {
-        .orange();
-        .colors();
-    }
-
-    &-gold {
-        .gold();
-        .colors();
-    }
-
-    &-lime {
-        .lime();
-        .colors();
-    }
-
-    &-green {
-        .green();
-        .colors();
-    }
-
-    &-cyan {
-        .cyan();
-        .colors();
-    }
-
-    &-blue {
-        .blue();
-        .colors();
-    }
-
-    &-geekblue {
-        .geekblue();
-        .colors();
-    }
-
-    &-purple {
-        .purple();
-        .colors();
-    }
-
-    &-discount {
-        .discount();
-        .colors();
-    }
-
-    &-service {
-        .service();
-        .colors();
-    }
-
-    &-address {
-        .address();
-        .colors();
-        .sharpen(@tag-height + 2, bold, 20rpx);
-        padding: 0 8rpx;
-    }
-
-    &-coupon {
-        .coupon();
-        .colors();
-        .sharpen(@tag-height + 2, normal, 22rpx);
-        padding: 0 8rpx;
-        border-radius: 8rpx 0;
-    }
-
-    &-wxcoupon {
-        .wxcoupon();
-        .colors();
-        .sharpen(@tag-height + 2, normal, 22rpx);
-        padding: 0 8rpx;
-        border-radius: 8rpx 0;
-    }
-
-    &-disable {
-        .disable();
-        .colors();
-    }
-
-    &.plain {
-        background-color: transparent;
-    }
-
-    &-round {
-        padding: 0 @tag-round-padding;
-        border-radius: @border-radius-max;
-    }
-
-    &-square {
-        border-radius: 0;
-    }
-
-    .image {
-        // width: 28rpx;
-        height: 100%;
-    }
 }

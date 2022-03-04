@@ -1,8 +1,52 @@
 <wxs src="../wxs/base.wxs" module="Utils" />
+<wxs module="ws">
 
-<view class="{{ Utils.classNames('oak-tag', {plain: plain})}} oak-tag-{{color}} oak-tag-{{shape}} custom-class" 
-    style="{{ _style }} {{beforeImage ? 'padding-left:0;' : ''}} {{afterImage ? 'padding-right:0;' : ''}}">
-    <image wx:if="{{beforeImage}}" mode="heightFix" class="image before-class" src="{{beforeImage}}" />
-    <slot></slot>
-    <image wx:if="{{afterImage}}" mode="heightFix" class="image after-class" src="{{afterImage}}" />
+    function rootStyle(color, background, radius, disabled) {
+        if(disabled) return ''
+        var style = '';
+        if (color) style = 'color:' + color + ';';
+        if (background) style += 'background:' + background + ';';
+        if (radius) style += 'border-radius:' + radius + ';';
+        return style;
+    }
+
+    function textStyle(color, borderColor, icon, iconPosition, disabled) {
+        if (disabled) return ''
+        var style = '';
+        if (color) style = 'color:' + color + ';';
+        if (borderColor) style += 'border-color:' + borderColor + ';';
+
+        if (icon) {
+            if(iconPosition === 'before'){
+                style += 'padding-left:0; border-left:none; border-top-left-radius: 0; border-bottom-left-radius: 0;';
+            }else{
+                style += 'padding-right:0; border-right:none; border-top-right-radius: 0; border-bottom-right-radius: 0;';
+            }
+        }
+        return style;
+    }
+
+    module.exports = {
+        rootStyle: rootStyle,
+        textStyle: textStyle,
+    }
+</wxs>
+<view class="tag {{Utils.classNames({disabled: disabled})}} {{preset?'preset_'+preset:''}} ext-class" 
+    style="{{ws.rootStyle(color, background, radius, disabled)}}"
+>
+    <block wx:if="{{ icon && iconPosition === 'before'}}">
+        <image wx:if="{{Utils.isUrl(icon)}}" mode="heightFix" class="tag-image icon-class before-class" src="{{icon}}" style="{{iconStyle}}"/>
+        <oak-icon wx:else mode="heightFix" class="tag-icon icon-class" size="20rpx" name="{{icon}}"  style="{{iconStyle}}"/>
+    </block>
+
+    <view class="tag-text {{ Utils.classNames({plain: plain})}} ext-class" 
+        style="{{ws.textStyle(color, borderColor, icon, iconPosition, disabled)}}"
+    >
+        <slot></slot>
+    </view>
+
+    <block wx:if="{{ icon && iconPosition === 'after'}}">
+        <image wx:if="{{Utils.isUrl(icon)}}" mode="heightFix" class="tag-image icon-class after-class" src="{{icon}}" style="{{iconStyle}}" />
+        <oak-icon wx:else mode="heightFix" class="tag-icon icon-class" size="20rpx" name="{{icon}}"  style="{{iconStyle}}"/>
+    </block>
 </view>
