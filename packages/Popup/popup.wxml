@@ -1,27 +1,42 @@
-<wxs src="../wxs/base.wxs"
-    module="Utils" />
-
-<view class="oak-popup oak-popup-{{position}} ext-class"
-    style="z-index: {{zIndex}};"
-    hidden="{{ !_isShow }}">
-    <oak-animation name="{{_maskAnimate}}"
-        bind:tap="popupClose"
-        show="{{ _mask }}"
-        duration="{{duration}}"
-        ext-class="oak-popup-mask">
-    </oak-animation>
-    <oak-animation name="{{_bodyAnimate}}"
-        class="oak-popup-body-wrap body-class"
-        style="width: {{width}};height: {{height}};top: {{top}};bottom: {{bottom}}"
-        show="{{ _bodyShow }}"
+<wxs src="../wxs/base.wxs" module="Utils" />
+<wxs module="ws">
+    function showTitle(position, closable, title, subTitle){
+        if(['bottom'].indexOf(position) === -1) return false
+        return closable || title || (subTitle && (subTitle.name || subTitle.icon))
+    }
+    module.exports = {
+        showTitle: showTitle,
+    };
+</wxs>
+<oak-overlay
+    show="{{ _maskShow }}"
+    autoClose="{{maskClosable}}"
+    bind:maskClick="maskClick"
+    background="{{!mask ? 'transparent' : ''}}"
+    zIndex="{{zIndex}}"
+>
+    <oak-animation name="{{_animate}}"
+        ext-class="oak-popup-body {{position}} {{ Utils.classNames({iphonex: isIPhonex, showRadius: showRadius}) }} {{sizeInNine ? 'size-' + sizeInNine : ''}} body-class"
+        show="{{_bodyShow}}"
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"
+    >        
+        <view wx:if="{{ws.showTitle(position, closable, title, subTitle)}}"
+            class="oak-popup-header header-class"
         >
-        <view 
-            class="{{ isIPhonex && safeArea ? 'oak-popup-body-iphonex content-class' : 'oak-popup-body content-class' }}" 
-            style="background: {{background}};"
-        >
-            <slot></slot>
+            <oak-icon  wx:if="{{closable}}"
+                ext-class="close" 
+                name="close-light"
+                catch:tap="popupClose"
+            />
+            <view class="main" style="{{titleStyle}}">{{title}}</view>
+            <view class="sub"
+                wx:if="{{subTitle}}"
+                style="{{subTitle.style}}"
+                catch:tap="onSubTitleClick"
+            >{{subTitle.name}}<oak-icon wx:if="{{!subTitle.name && subTitle.icon}}" name="{{subTitle.icon}}"/></view>
         </view>
+
+        <slot></slot>
     </oak-animation>
-</view>
+</oak-overlay>

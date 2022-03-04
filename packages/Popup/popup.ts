@@ -26,18 +26,6 @@ const animationMap: { [key: string]: { in: string; out: string } } = {
 Component({
     behaviors: [BasicBehavior],
     properties: {
-        mask: {
-            type: Boolean,
-            value: true,
-        },
-        safeArea: {
-            type: Boolean,
-            value: true,
-        },
-        zIndex: {
-            type: Number,
-            value: 9,
-        },
         show: {
             type: Boolean,
             value: false,
@@ -45,78 +33,114 @@ Component({
                 this.toggleShow()
             }
         },
+        mask: {
+            type: Boolean,
+            value: true,
+        },
+        maskClosable: {
+            type: Boolean,
+            value: true,
+        },
+        zIndex: {
+            type: Number,
+            value: 10,
+        },
         // 弹窗位置
         position: {
             type: String,
-            value: 'center',
+            value: 'bottom',// center top bottom left right
         },
+        // 动画时长 ms
         duration: {
             type: Number,
-            value: 400,
+            value: 200
         },
-        background: {
+        // 显示尺寸：占宽高比的7/9 6/9 5/9 4/9 3/9，不传为自适应尺寸（根据内容自适应）
+        sizeInNine: {
             type: String,
-            value: '#fff',
+            value: '',// 2 3 4 5 6 7
         },
-        width: {
-            type: String,
-            value: null,
+        // 显示圆角：仅上下浮层
+        showRadius: {
+            type: Boolean,
+            value: true,
         },
-        height: {
-            type: String,
-            value: null,
+        //是否显示左上角的关闭按钮
+        closable: {
+            type: Boolean,
+            value: true,
         },
-        top: {
+        // 标题：中间
+        title: {
             type: String,
-            value: null,
+            value: '',
         },
-        bottom: {
+        // 标题样式
+        titleStyle: {
             type: String,
-            value: null,
-        }
+            value: '',
+        },
+        // 次标题：右侧
+        subTitle: {
+            type: Object,
+            value: {
+                name: '',   // 文字 优先与icon
+                icon: '',   // icon 
+                style: '',  // 样式
+            },
+        },
     },
     data: {
-        _mask: false,
+        _maskShow: false,
         _bodyShow: false,
-        _maskAnimate: 'fadeIn',
-        _bodyAnimate: '',
+        _animate: '',
     },
     attached(): void {
         this.setData({
             isIPhonex: this.isiPhoneXUp(),
         })
     },
-    externalClasses: ['ext-class', 'body-class', 'content-class'],
     methods: {
+        maskClick(): void {
+            this.triggerEvent('onMaskClick')
+            if (this.data.maskClosable) {
+                this.popupClose()
+            }
+        },
         popupClose(): void {
+            this.setData({
+                show: false,
+            })
             this.triggerEvent('onPopupClose')
         },
         animationEnd(e: event): void {
             const animation = animationMap[this.data.position] || {}
-            e.detail.animationName === animation.out && this.setData({
-                _isShow: false,
-            })
+            const isOut = e.detail.animationName === animation.out
+            if (isOut) {
+                this.setData({
+                    _maskShow: false,
+                })
+            }
         },
         toggleShow(): void {
-            const { show, mask, position } = this.data
+            const { show, position } = this.data
             const animation = animationMap[position]
             if (show) {
                 this.setData({
-                    _isShow: show,
-                    _mask: mask,
-                    _maskAnimate: 'fadeIn',
-                    _bodyAnimate: animation.in || '',
+                    _maskShow: true,
                     _bodyShow: true,
+                    _animate: animation.in || '',
                 })
             } else {
                 this.setData({
-                    _maskAnimate: 'fadeOut',
-                    _bodyAnimate: animation.out || '',
-                    _mask: false,
                     _bodyShow: false,
+                    _animate: animation.out || '',
                 })
             }
+        },
+        onSubTitleClick(e: event): void {
+            this.triggerEvent('subTitleClick', e)
         }
-
-    }
+    },
+    externalClasses: ['root-class', 'body-class', 'header-class'],
 })

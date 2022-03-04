@@ -1,80 +1,145 @@
-@import "../style/variable";
+@import "./variable";
 @import "../style/mixin";
 
+@popup-header-height: 104rpx;
+
+.clip(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
 .oak-popup {
     position: relative;
 
-    & &-mask {
-       .mask;
+    &-header {
+        height: @popup-header-height;
+        line-height: @popup-header-height;
+        text-align: center;
+        position: relative;
+        vertical-align: middle;
+
+
+        .close {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            font-size: @popup-icon-size;
+            color: @popup-icon-color;
+            padding: 0 @popup-margin-base;
+        }
+
+        .main {
+            display: inline-block;
+            font-size: @popup-title-size;
+            color: @popup-title-color;
+            box-sizing: border-box;
+            max-width: 12em;
+            .clip()
+        }
+
+        .sub {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            font-size: @popup-textbtn-size;
+            color: @popup-textbtn-color-base;
+            margin: 0 @popup-margin-base;
+            max-width: 4em;
+            .clip()
+        }
     }
 
-    & &-body-wrap {
-        position: fixed;
-        box-sizing: border-box;
-        background-color: inherit;
-    }
-
-    &-body,
-    &-body-iphonex {
+    &-body {
         width: inherit;
         height: inherit;
         box-sizing: border-box;
-    }
+        position: fixed;
+        overflow: hidden;
 
-    &-center {
-        .oak-popup-body-wrap {
+        &.center {
             width: auto;
             height: auto;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
         }
-    }
 
-    &-bottom,
-    &-top {
-        .oak-popup-body-wrap {
-            left: 0;
-            width: 100%;
-            height: auto;
-        }
-    }
-
-    &-bottom .oak-popup-body-wrap {
-        bottom: 0;
-    }
-
-    &-bottom .oak-popup-body-iphonex {
-        padding-bottom: @iphonex-padding;
-    }
-
-    &-top .oak-popup-body-wrap {
-        top: 0;
-    }
-
-    &-top .oak-popup-body-iphonex {
-        padding-top: @iphonex-padding;
-    }
-
-    &-left,
-    &-right {
-        .oak-popup-body-wrap {
+        &.top {
             top: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+
+            &.showRadius {
+                border-radius: 0 0 @popup-down-radius @popup-down-radius;
+            }
+
+            &.size-2 {
+                height: @popup-down-height-min;
+            }
+
+            &.size-6 {
+                height: @popup-down-height-max;
+            }
+        }
+
+        &.bottom {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: auto;
+
+            &.iphonex {
+                padding-bottom: @iphonex-padding;
+            }
+
+            &.showRadius {
+                border-radius: @popup-up-radius @popup-up-radius 0 0;
+            }
+
+            &.size-3 {
+                height: @popup-up-height-min;
+            }
+
+            &.size-4 {
+                height: @popup-up-height-1;
+            }
+
+            &.size-5 {
+                height: @popup-up-height-2;
+            }
+
+            &.size-6 {
+                height: @popup-up-height-3;
+            }
+
+            &.size-7 {
+                height: @popup-up-height-max;
+            }
+        }
+
+        &.left {
+            left: 0;
+            top: 0;
+            bottom: 0;
             width: auto;
-            height: 100vh !important;
+
+            &.iphonex {
+                padding-bottom: @iphonex-padding;
+            }
         }
 
-        .oak-popup-body-iphonex {
-            padding: @iphonex-padding 0;
+        &.right {
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: auto;
+
+            &.iphonex {
+                padding-bottom: @iphonex-padding;
+            }
         }
     }
-
-    &-right .oak-popup-body-wrap {
-        right: 0;
-    }
-
-    &-left .oak-popup-body-wrap {
-        left: 0;
-    }
-
 }
