@@ -2,13 +2,9 @@ import BasicBehavior from '../mixins/basic'
 
 Component({
     behaviors: [BasicBehavior],
-    /**
-     * 组件的属性列表
-     */
     properties: {
         /**
-         * 图片资源地
-         *
+         * 图片资源地址
          * */
         src: {
             type: String,
@@ -19,8 +15,28 @@ Component({
                 }
             }
         },
+        /** 不带单位时，默认px */
+        width: {
+            type: String,
+            value: ''
+        },
+        height: {
+            type: String,
+            value: ''
+        },
+        // 容器圆角
+        radius: {
+            type: null,
+            value: '',
+            optionalTypes: [String, Array]
+        },
         // 背景图
         bgImg: {
+            type: String,
+            value: ''
+        },
+        // 背景颜色
+        bgColor: {
             type: String,
             value: ''
         },
@@ -30,30 +46,17 @@ Component({
          * */
         mode: {
             type: String,
-            value: 'scaleToFill'
+            value: 'aspectFit'
         },
 
-        /** px */
-        width: {
-            type: String,
-            value: ''
-        },
-        height: {
-            type: String,
-            value: ''
-        },
         lazyLoad: {
             type: Boolean,
             value: true
         },
-        // 四个角
-        imgRadius:{
+        // 图片自身圆角，只允许设置一个值
+        imgRadius: {
             type: String,
-            value: ''
-        },
-        radius: {
-            type: Array,
-            value: []
+            value: '',
         },
         webp: {
             type: Boolean,
@@ -69,17 +72,12 @@ Component({
             type: Boolean,
             value: false,
         },
-        // 是否为100%宽度
-        isFullWidth: {
-            type: Boolean,
-            value: false,
-        }
     },
     /**
      * 组件的初始数据
      */
     data: {
-        hideMini: false,
+        status: 0 // 0加载中，1加载成功，2加载失败
     },
     externalClasses: ['class', 'ext-class', 'img-class'],
     options: {
@@ -104,6 +102,15 @@ Component({
                     `[Image Component] ${this.data.src} 图片路径有误！本地图片请使用原生 <image> 组件`
                 )
             }
+        },
+        onLoad(e): void{
+            this.setData({ status: 1 })
+            this.triggerEvent('load', e)
+        },
+
+        onError(e): void{
+            this.setData({ status: 2 })
+            this.triggerEvent('error', e)
         }
     }
 })
