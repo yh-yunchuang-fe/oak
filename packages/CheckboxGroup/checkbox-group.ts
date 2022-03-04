@@ -10,7 +10,13 @@ Component({
     properties: {
         value: {
             type: Object,
-            value: []
+            value: [],
+            observer(): void {
+                const childList = this.getRelationNodes('../Checkbox/checkbox') || []
+                childList.forEach((child): void => {
+                    if (child.init) child.init()
+                })
+            }
         },
         disabled: {
             type: Boolean,
@@ -21,6 +27,8 @@ Component({
             value: null
         }
     },
-    methods: {},
+    methods: {
+
+    },
     externalClasses: ['ext-class']
 })
