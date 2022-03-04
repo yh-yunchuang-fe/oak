@@ -1,40 +1,55 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="h3">Loading 大小</view>
-    <view class="row">
+    <view class="title">Loading 大小</view>
+    <view class="block">
         <oak-loading isShow
             size='small' />
         <oak-loading isShow />
         <oak-loading isShow
             size='large' />
     </view>
-    <view class="h3">Loading 颜色</view>
-    <view class="row">
+    <view class="title">Loading 颜色</view>
+    <view class="block">
         <oak-loading isShow
             size='large'
-            color="#000" />
+            color="red" />
         <oak-loading isShow
             size='large'
-            color="#ccc" />
+            color='blue' />
         <oak-loading isShow
             size='large'
-            color='#0076ff' />
+            color='green' />    
     </view>
-    <view class="h3">Loading 定位</view>
-    <view class="row absolute"
-        bind:tap="fixedTap">
-        fixed定位方式，点击显示。
+    <view class="title">Loading 定位</view>
+    <view class="button" bind:tap="fixedTap">
+        fixed定位
+        <oak-icon class="icon" 
+            name="right-light" 
+            size="20rpx" 
+            color="#999" />
         <oak-loading isShow="{{fixedShow}}"
             position='fixed'
             size='large'
             color="#0076ff" />
     </view>
-    <view class="row absolute"
-        bind:tap="absoluteTap">
-        absolute定位方式，点击显示。
+    <view class="button" bind:tap="absoluteTap">
+        absolute定位
+        <oak-icon class="icon" 
+            name="right-light" 
+            size="20rpx" 
+            color="#999" />
         <oak-loading isShow="{{absoluteShow}}"
             position='absolute'
             size='large'
             color="#0076ff" />
+    </view>
+    <view class="title">全局加载</view>
+    <view class="button" bind:tap="globalTap">
+        全局loading
+        <oak-icon class="icon" 
+            name="right-light" 
+            size="20rpx" 
+            color="#999" />
+        <oak-loading isShow="{{globalShow}}" type='global'/>
     </view>
 </view>

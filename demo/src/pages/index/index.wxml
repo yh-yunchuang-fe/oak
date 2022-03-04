@@ -133,7 +133,7 @@
             <oak-list-item title="Dialog 弹窗"
                 title-class="item-title"
                 navigate="/pages/dialog/dialog" />
-            <!-- <oak-list-item title="Loadding 加载"
+             <oak-list-item title="Loadding 加载"
                 title-class="item-title"
                 navigate="/pages/loading/loading" />
             <oak-list-item title="NoticeBar 通告栏"

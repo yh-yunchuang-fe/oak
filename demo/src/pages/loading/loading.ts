@@ -4,6 +4,17 @@ Page({
     data: {
         absoluteShow: false,
     },
+    globalTap(): void {
+        this.setData!({
+            globalShow: true,
+        }, (): void => {
+            setTimeout((): void => {
+                this.setData!({
+                    globalShow: false,
+                })
+            }, 3000)
+        })
+    },
     absoluteTap(): void {
         this.setData!({
             absoluteShow: true,

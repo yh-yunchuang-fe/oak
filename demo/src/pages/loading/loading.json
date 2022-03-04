@@ -1,6 +1,7 @@
 {
     "navigationBarTitleText": "Loading 加载",
     "usingComponents": {
-        "oak-loading": "/Loading/loading"
+        "oak-loading": "/Loading/loading",
+        "oak-icon": "/Icon/icon"
     }
 }
