@@ -1,0 +1,13 @@
+<wxs src="../wxs/base.wxs" module="Utils" />
+
+<oak-animation
+    show="{{_show}}"
+    name="{{_animate}}"
+    duration="{{_duration}}"
+    extStyle="{{background?'background:'+background+';':''}} z-index:{{zIndex}}"
+    ext-class="oak-overlay {{type}}"
+    bind:onAnimationEnd="animationEnd"
+    bind:tap="onMaskClick"
+>
+    <slot catch:tap="{{Utils.stopPropagation}}"></slot>
+</oak-animation>
