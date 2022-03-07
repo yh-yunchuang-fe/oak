@@ -3,8 +3,12 @@ import OpenTypeBehavior from '../mixins/open-type'
 import ButtonBehavior from '../mixins/button-mixin'
 
 Component({
-    behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
+    behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior, 'wx://form-field-button'],
     properties: {
+        formType: {
+            type: String,
+            value: ''
+        },
         // 按钮类型
         type: {
             type: String,
