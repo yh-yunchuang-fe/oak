@@ -9,7 +9,7 @@
 </wxs>
 
 <button
-  class="oak-button color-{{color}} fill-{{fill}} size-{{size}} {{Utils.classNames({block: block, round: round, angle: angle, waiting: waiting, disabled: disabled, loading: loading })}} button-class"
+  class="oak-button type-{{type}} fill-{{fill}} size-{{size}} {{Utils.classNames({block: block, round: round, angle: angle, waiting: waiting, disabled: disabled, loading: loading })}} button-class"
   open-type="{{ openType }}"
   form-type="{{ formType }}"
   lang="{{ lang }}"
