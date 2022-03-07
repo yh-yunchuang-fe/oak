@@ -69,6 +69,11 @@ Component({
             type: String,
             value: '',
         },
+        // style
+        style: {
+            type: String,
+            value: '',
+        },
     },
     data: {
         loadingColor: ''
