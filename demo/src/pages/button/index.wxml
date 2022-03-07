@@ -3,17 +3,17 @@
   <view class="h3">按钮颜色</view>
   <view class="row">
     <oak-button>Default</oak-button>
-    <oak-button color="primary">Primary</oak-button>
+    <oak-button type="primary">Primary</oak-button>
   </view>
   <view class="h3">按钮大小</view>
   <view class="row">
     <oak-button block>Block</oak-button>
   </view>
   <view class="row">
-    <oak-button block color="primary" size='large'>Large Block</oak-button>
+    <oak-button block type="primary" size='large'>Large Block</oak-button>
   </view>
   <view class="row">
-    <oak-button block color="primary" size='large' angle>Large Angle Block</oak-button>
+    <oak-button block type="primary" size='large' angle>Large Angle Block</oak-button>
   </view>
   <view class="row">
     <oak-button size='large'>Large</oak-button>
@@ -22,16 +22,16 @@
     <oak-button size='mini'>Mini</oak-button>
   </view>
   <view class="row">
-    <oak-button color="primary" size='large'>Large</oak-button>
-    <oak-button color="primary" size="middle">Middle</oak-button>
-    <oak-button color="primary" size='small'>Small</oak-button>
-    <oak-button color="primary" size='mini'>Mini</oak-button>
+    <oak-button type="primary" size='large'>Large</oak-button>
+    <oak-button type="primary" size="middle">Middle</oak-button>
+    <oak-button type="primary" size='small'>Small</oak-button>
+    <oak-button type="primary" size='mini'>Mini</oak-button>
   </view>
   <view class="h3">填充模式</view>
   <view class="row">
-    <oak-button color="primary" fill="solid">solid</oak-button>
-    <oak-button color="primary" fill="outline">outline</oak-button>
-    <oak-button color="primary" fill="none">none</oak-button>
+    <oak-button type="primary" fill="solid">solid</oak-button>
+    <oak-button type="primary" fill="outline">outline</oak-button>
+    <oak-button type="primary" fill="none">none</oak-button>
   </view>
   <view class="h3">按钮形状</view>
   <view class="row">
@@ -40,14 +40,14 @@
     <oak-button angle>直角</oak-button>
   </view>
   <view class="row">
-    <oak-button color="primary" fill="outline">胶囊（默认）</oak-button>
-    <oak-button color="primary" fill="outline" round>圆角</oak-button>
-    <oak-button color="primary" fill="outline" angle>直角</oak-button>
+    <oak-button type="primary" fill="outline">胶囊（默认）</oak-button>
+    <oak-button type="primary" fill="outline" round>圆角</oak-button>
+    <oak-button type="primary" fill="outline" angle>直角</oak-button>
   </view>
   <view class="row">
-    <oak-button color="primary" size='small'>胶囊（默认）</oak-button>
-    <oak-button color="primary" size='small' round >圆角 </oak-button>
-    <oak-button color="primary" size='small' angle >直角 </oak-button>
+    <oak-button type="primary" size='small'>胶囊（默认）</oak-button>
+    <oak-button type="primary" size='small' round >圆角 </oak-button>
+    <oak-button type="primary" size='small' angle >直角 </oak-button>
   </view>
   <view class="h3">加载状态</view>
   <view class="row">
@@ -56,33 +56,33 @@
     <oak-button size='small' fill="outline" loading>Loading</oak-button>
   </view>
   <view class="row">
-    <oak-button color="primary" size='large' fill="outline" round loading>Loading</oak-button>
-    <oak-button color="primary" size='middle' fill="outline" round loading>Loading</oak-button>
-    <oak-button color="primary" size='small' fill="outline" round loading>Loading</oak-button>
+    <oak-button type="primary" size='large' fill="outline" round loading>Loading</oak-button>
+    <oak-button type="primary" size='middle' fill="outline" round loading>Loading</oak-button>
+    <oak-button type="primary" size='small' fill="outline" round loading>Loading</oak-button>
   </view>
   <view class="row">
-    <oak-button color="primary" size='large' loading>Loading</oak-button>
-    <oak-button color="primary" size='middle' loading>Loading</oak-button>
-    <oak-button color="primary" size='small' loading>Loading</oak-button>
+    <oak-button type="primary" size='large' loading>Loading</oak-button>
+    <oak-button type="primary" size='middle' loading>Loading</oak-button>
+    <oak-button type="primary" size='small' loading>Loading</oak-button>
   </view>
   <view class="h3">待唤起</view>
   <view class="row">
     <oak-button fill="outline" round waiting>waiting</oak-button>
-    <oak-button color="primary" round waiting>waiting</oak-button>
-    <oak-button color="primary" fill="outline" round waiting>waiting</oak-button>
+    <oak-button type="primary" round waiting>waiting</oak-button>
+    <oak-button type="primary" fill="outline" round waiting>waiting</oak-button>
   </view>
   <view class="h3">禁用状态</view>
   <view class="row">
     <oak-button fill="outline" round disabled>disabled</oak-button>
-    <oak-button color="primary" disabled>disabled</oak-button>
-    <oak-button color="primary" fill="outline" round disabled>disabled</oak-button>
+    <oak-button type="primary" disabled>disabled</oak-button>
+    <oak-button type="primary" fill="outline" round disabled>disabled</oak-button>
   </view>
   <view class="h3">按钮+图标</view>
   <view class="row">
-    <oak-button icon="down-bold" color="primary" round>分类</oak-button>
-    <oak-button icon="down-bold" color="primary" size="small" fill="outline">分类</oak-button>
-    <oak-button icon="close-facet" color="primary" size="small">取消</oak-button>
+    <oak-button icon="down-bold" type="primary" round>分类</oak-button>
+    <oak-button icon="down-bold" type="primary" size="small" fill="outline">分类</oak-button>
+    <oak-button icon="close-facet" type="primary" size="small">取消</oak-button>
     <oak-button icon="refresh" size="small">刷新</oak-button>
-    <oak-button icon="down-bold" color="primary" size="small" fill="none">分类</oak-button>
+    <oak-button icon="down-bold" type="primary" size="small" fill="none">分类</oak-button>
   </view>
 </view>

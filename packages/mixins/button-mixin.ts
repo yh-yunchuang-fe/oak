@@ -1,5 +1,9 @@
 export const button = Behavior({
     properties: {
+        formType: {
+            type: String,
+            value: ''
+        },
         lang: {
             type: String,
             value: 'en',

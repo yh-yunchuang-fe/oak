@@ -5,8 +5,8 @@ import ButtonBehavior from 'Mixins/button-mixin'
 Component({
     behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
     properties: {
-        // 按钮的颜色
-        color: {
+        // 按钮类型
+        type: {
             type: String,
             value: 'default', // 'default' | 'primary'
         },
@@ -45,7 +45,7 @@ Component({
             type: Boolean,
             value: false
         },
-        // 是否是块级元素
+        // 是否禁用
         disabled: {
             type: Boolean,
             value: false

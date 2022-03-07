@@ -45,7 +45,7 @@ Component({
             type: Boolean,
             value: false
         },
-        // 是否是块级元素
+        // 是否禁用
         disabled: {
             type: Boolean,
             value: false
