@@ -70,7 +70,7 @@ Component({
             value: '',
         },
         // style
-        style: {
+        buttonStyle: {
             type: String,
             value: '',
         },

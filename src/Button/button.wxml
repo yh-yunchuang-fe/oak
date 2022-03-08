@@ -25,7 +25,7 @@
   bindgetphonenumber="bindGetPhoneNumber"
   binderror="bindError"
   bindlaunchapp="bindLaunchApp"
-  style="{{style}};{{width ? 'width:' + width + ';' : ''}};{{height ? 'height:' + height + ';' : ''}}"
+  style="{{buttonStyle}};{{width ? 'width:' + width + ';' : ''}};{{height ? 'height:' + height + ';' : ''}}"
   bindopensetting="bindOpenSetting"
   bind:tap="onTap"
 >
