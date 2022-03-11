@@ -101,6 +101,40 @@
             }
         }
     }
+    
+    &-warning {
+        border: none;
+        color: @btn-font-color-inverse;
+        background: @btn-bg-color-warning-active;
+
+        &.disabled {
+            background: @btn-bg-color-warning-disable;
+        }
+
+        .loader {
+            border-top-color: @btn-font-color-inverse  !important;
+        }
+
+        // 填充模式
+        &.fill {
+            &-outline {
+                border: @btn-border-with solid @btn-border-color-warning-active;
+                color: @btn-font-color-warning-active;
+                background: @btn-bg-color-default-active;
+
+                .loader {
+                    border-top-color: @btn-font-color-warning-active  !important;
+                }
+
+            }
+
+            &-none {
+                border: none;
+                color: @btn-font-color-warning-active;
+                background: @btn-bg-color-transparent;
+            }
+        }
+    }
 }
 
 // 大小

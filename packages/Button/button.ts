@@ -4,6 +4,11 @@ import ButtonBehavior from '../mixins/button-mixin'
 
 Component({
     behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior, 'wx://form-field-button'],
+    relations: {
+        '../ButtonGroup/button-group': {
+            type: 'parent'
+        }
+    },
     properties: {
         formType: {
             type: String,
@@ -12,7 +17,7 @@ Component({
         // 按钮类型
         type: {
             type: String,
-            value: 'default', // 'default' | 'primary'
+            value: 'default', // 'default' | 'primary' ｜ 'warning'
         },
         // 填充模式
         fill: {
@@ -76,15 +81,18 @@ Component({
         },
     },
     data: {
-        loadingColor: ''
     },
-    lifetimes: {
-        ready(): void {
-            this.setLoadingColor()
-        }
+    ready(): void {
+        this.init()
     },
     methods: {
-        setLoadingColor(): void {
+        init(): void {
+            const parent = this.getRelationNodes('../ButtonGroup/button-group')
+            this.hasParent = parent && parent.length > 0
+            if (!this.hasParent) return
+
+            const { size: groupSize } = parent[0].data
+            this.setData({ size: (groupSize || this.data.size), angle: true })
         },
         onTap(e: event): void {
             if (this.data.disabled) return

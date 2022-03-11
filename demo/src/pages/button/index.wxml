@@ -4,6 +4,7 @@
   <view class="row">
     <oak-button>Default</oak-button>
     <oak-button type="primary">Primary</oak-button>
+    <oak-button type="warning">Warning</oak-button>
   </view>
   <view class="h3">按钮大小</view>
   <view class="row">
@@ -84,5 +85,12 @@
     <oak-button icon="close-facet" type="primary" size="small">取消</oak-button>
     <oak-button icon="refresh" size="small">刷新</oak-button>
     <oak-button icon="down-bold" type="primary" size="small" fill="none">分类</oak-button>
+  </view>
+  <view class="h3">按钮组</view>
+  <view class="row">
+    <oak-button-group size="large" class="group">
+      <oak-button class="group-item" type="primary" button-style="width:240rpx">加入购物车</oak-button>
+      <oak-button class="group-item" type="warning" button-style="width:240rpx">立即购买</oak-button>
+    </oak-button-group>
   </view>
 </view>
