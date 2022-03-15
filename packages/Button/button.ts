@@ -95,7 +95,8 @@ Component({
             this.setData({ size: (groupSize || this.data.size), angle: true })
         },
         onTap(e: event): void {
-            if (this.data.disabled) return
+            const {disabled, loading, waiting} = this.data
+            if (disabled || loading || waiting) return
             this.triggerEvent('click', e)
         }
     },

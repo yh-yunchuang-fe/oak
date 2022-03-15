@@ -127,13 +127,13 @@
             icon-class="col-title"
             content-class="content"
             border="{{ false}}">
-            <!-- <oak-list-item title="ActionSheet 菜单"
+            <oak-list-item title="ActionSheet 菜单"
                 title-class="item-title"
-                navigate="/pages/actionSheet/actionSheet" /> -->
+                navigate="/pages/actionSheet/actionSheet" />
             <oak-list-item title="Dialog 弹窗"
                 title-class="item-title"
                 navigate="/pages/dialog/dialog" />
-             <oak-list-item title="Loadding 加载"
+            <!--  <oak-list-item title="Loadding 加载"
                 title-class="item-title"
                 navigate="/pages/loading/loading" />
             <oak-list-item title="NoticeBar 通告栏"
@@ -144,7 +144,7 @@
                 navigate="/pages/slideview/slideview" /> -->
         </oak-collapse-item>
 
-        <!--
+        
         <oak-collapse-item title="业务组件"
             icon="more"
             icon-rotate="{{false}}"
@@ -155,7 +155,7 @@
             <oak-list-item title="SubmitBar 提交订单栏"
                 title-class="item-title"
                 navigate="/pages/submitBar/submitBar" />
-        </oak-collapse-item> -->
+        </oak-collapse-item>
   </oak-collapse>
   <view class="version">
     v0.0.2-beta.14

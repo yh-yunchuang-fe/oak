@@ -2,6 +2,8 @@
     module="Utils" />
 
 <oak-popup position="bottom"
+    closable="{{false}}"
+    showRadius="{{false}}"
     show="{{isShow}}"
     mask="{{mask}}"
     z-index="{{zIndex}}"
@@ -14,22 +16,21 @@
             wx:for-item="action"
             wx:key="index"
             data-index="{{ index }}"
-            size='block'
+            size='large'
+            block
+            angle
             disabled="{{ action.disabled }}"
             open-type="{{ action.openType }}"
             icon="{{ action.icon }}"
-            type="{{ action.type}}"
+            type="{{ action.type || 'default'}}"
             loading="{{ action.loading }}"
-            loader-color="{{ action.loaderColor }}"
-            plain
-            loader-size="default"
             session-from="{{ action.sessionFrom }}"
             send-message-title="{{ action.sendMessageTitle }}"
             send-message-path="{{ action.sendMessagePath }}"
             send-message-img="{{ action.sendMessageImg }}"
             show-message-card="{{ action.showMessageCard }}"
             app-parameter="{{ action.appParameter }}"
-            bind:tap="actionSheetItemClick"
+            bind:click="actionSheetItemClick"
             bindgetuserinfo="bindGetUserInfo"
             bindcontact="bindContact"
             bindgetphonenumber="bindGetPhoneNumber"
@@ -45,7 +46,9 @@
         <oak-button class="oak-action-sheet-cancle"
             button-class="oak-action-sheet-item"
             bind:tap="actionSheetCancle"
-            size='block'
+            size='large'
+            block
+            angle
             wx:if="{{ cancleText }}">{{ cancleText }}</oak-button>
     </view>
 </oak-popup>

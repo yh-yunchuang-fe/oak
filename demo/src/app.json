@@ -12,7 +12,9 @@
     "pages/onReachBottomDemo/onReachBottomDemo",
     "pages/checkbox/checkbox",
     "pages/tab/tab",
-    "pages/toast/toast"
+    "pages/toast/toast",
+    "pages/submitBar/submitBar",
+    "pages/actionSheet/actionSheet"
   ],
   "window":{
     "backgroundTextStyle":"light",
