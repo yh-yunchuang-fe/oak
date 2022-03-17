@@ -21,5 +21,10 @@ Component({
             type: String,
             value: 'fixed',
         },
+        // 描述文字自定义样式
+        descStyleConf: {
+            type: String,
+            value: ''
+        }
     }
 })
