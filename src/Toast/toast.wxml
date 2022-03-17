@@ -1,7 +1,6 @@
 <!--components/ui/Toast/index.js.wxml-->
 <view class='toast-wraper custom-class'>    
-    <view class="content" hidden="{{!isShow}}" style="{{contenStyle}}">
+    <view class="content" hidden="{{!showToast}}" style="{{contenStyle}}">
         <view wx:for="{{_content}}" wx:key="index">{{item}}</view>
     </view>
 </view>
-

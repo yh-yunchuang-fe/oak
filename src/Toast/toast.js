@@ -34,6 +34,7 @@ Component({
      */
     data: {
         _content: [],
+        showToast: true,
     },
 
     /**
@@ -46,12 +47,12 @@ Component({
             } = this.data
             this.setData({
                 _content: content.indexOf('<br/>') > 0 ? content.split('<br/>') : [content],
-                isShow: true,
+                showToast: true,
             })
             clearTimeout(toastTimer)
             toastTimer = setTimeout(() => {
                 this.setData({
-                    isShow: false,
+                    showToast: false,
                 })
             }, this.data.duration)
         },
