@@ -34,7 +34,7 @@ Component({
      */
     data: {
         _content: [],
-        showToast: true,
+        showToast: false,
     },
 
     /**
