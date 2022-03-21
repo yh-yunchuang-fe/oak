@@ -171,8 +171,8 @@ Component({
 
         touchend(e): void {
             // touchend中，拿不到坐标位置信息，故使用全局保存下数据
-            e.plugStartPosition = this.eventMark.plugStartPosition
-            e.plugTouches = this.eventMark.touches
+            e.plugStartPosition = this.eventMark?.plugStartPosition
+            e.plugTouches = this.eventMark?.touches
             this.triggerEvent('onSwipeEnd', e)
             if (!this.isActive) {
                 return
