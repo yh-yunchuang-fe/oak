@@ -47,7 +47,15 @@ function isUrl(url) {
     return url.match(regex);
 }
 
+/**
+ * 禁止事件冒泡
+ */
+ function stopPropagation() {
+    return false
+}
+
 module.exports = {
     classNames: classNames,
-    isUrl: isUrl
+    isUrl: isUrl,
+    stopPropagation: stopPropagation
 };

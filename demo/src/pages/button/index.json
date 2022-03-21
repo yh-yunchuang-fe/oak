@@ -3,6 +3,7 @@
     "usingComponents": {
         "oak-icon": "/Icon/icon",
         "oak-loading": "/Loading/loading",
-        "oak-button": "/Button/button"
+        "oak-button": "/Button/button",
+        "oak-button-group": "/ButtonGroup/button-group"
     }
 }

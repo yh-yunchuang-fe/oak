@@ -26,14 +26,6 @@ Component({
             type: String,
             value: 'primary'
         },
-        buttonShape: {
-            type: String,
-            value: 'round'
-        },
-        buttonColor: {
-            type: String,
-            value: '' // linear-gradient(to right, #FFA133, #F76B1C);
-        },
         currency: {
             type: String,
             value: '¥'
@@ -49,10 +41,6 @@ Component({
         disabled: {
             type: Boolean,
             value: false,
-        },
-        loaderColor: {
-            type: String,
-            value: '#fff',
         },
         tip: {
             type: String,

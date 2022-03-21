@@ -1,5 +1,9 @@
 
 Component({
+    options: {
+        //@ts-ignore
+        styleIsolation: 'apply-shared',
+    },  
     properties: {
         // icon name
         name: {

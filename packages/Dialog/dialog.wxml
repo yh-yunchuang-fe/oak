@@ -16,14 +16,18 @@
         <view class="oak-dialog-button">
             <oak-button class='oak-dialog-btn'
                 button-class="oak-dialog-oakbtn"
-                plain
-                size='block'
+                angle
+                block
+                size='large'
+                fill="outline"
                 wx:if="{{cancleText}}"
                 bindtap="_dialogCancle">{{cancleText}}</oak-button>
             <oak-button class='oak-dialog-btn'
                 button-class="oak-dialog-oakbtn"
-                plain
-                size='block'
+                angle
+                block
+                size='large'
+                fill="outline"
                 type='primary'
                 open-type="{{ confirmType }}"
                 loading="{{ okLoading }}"
