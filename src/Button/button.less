@@ -1,139 +1,245 @@
-@import "Style/variable";
-
+@import "./variable";
 
 .oak-button {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    border-radius: @border-radius-base;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: top;
     -webkit-appearance: none;
     -webkit-text-size-adjust: 100%;
-    width: inherit;
-    min-width: inherit;
-    max-width: inherit;
-
-    &-size_block {
-        width: 100%;
-        padding: 0 @btn-block-lr-padding;
-        height: @button-block-height;
-        font-size: @font-size-btn-block;
-        line-height: @button-block-height - 2;
-        border-radius: 20rpx;
-        display: flex;
-        justify-content: center;
-    }
-
-    &-size_large {
-        padding: 0 @btn-large-lr-padding;
-        height: @button-large-height;
-        font-size: @font-size-btn-large;
-        // line-height: @button-large-height - 2;
-        line-height: 0;
-
-        &.oak-button-shape_circle {
-            padding: 0;
-            width: @button-large-height;
-            border-radius: @button-large-height;
-        }
-    }
-
-    &-size_default {
-        padding: 0 @btn-default-lr-padding;
-        height: @button-default-height;
-        font-size: @font-size-btn-default;
-        // line-height: @button-default-height - 2;
-        line-height: 0;
-
-        &.oak-button-shape_circle {
-            padding: 0;
-            width: @button-default-height;
-            border-radius: @button-default-height;
-        }
-    }
-
-    &-size_small {
-        padding: 0 @btn-small-lr-padding;
-        height: @button-small-height;
-        font-size: @font-size-btn-small;
-        // line-height: @button-small-height - 2;
-        line-height: 0;
-
-        &.oak-button-shape_circle {
-            padding: 0;
-            width: @button-small-height;
-            border-radius: @button-small-height;
-        }
-    }
-
-    &-type_default {
-        background-color: @default-bg;
-        border: @border;
-        color: @txt-default;
-
-        &.disabled {
-            color: @txt-muted;
-        }
-    }
-
-    &-type_primary {
-        background-color: @highlight-bg;
-        border: @border-width solid @highlight-bg;
-        color: @txt-white;
-
-        &.plain {
-            color: @highlight-bg;
-        }
-    }
-
-    &-type_danger {
-        background-color: @danger-bg;
-        border: @border-width solid @danger-bg;
-        color: @txt-white;
-
-        &.plain {
-            color: @danger-bg;
-        }
-    }
-
-    &-type_info {
-        background-color: @active-bg;
-        border: @border-width solid @highlight-bg;
-        color: @highlight-bg;
-    }
-
-
-    &-shape_square {
-        border-radius: 0;
-    }
-
-    &-shape_round {
-        border-radius: @border-radius-max;
-    }
-
-    .button-oak-icon {
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .button-icon {
-        margin-right: 10rpx;
-        font-size: inherit;
-        color: inherit;
-    }
-
-    &.plain {
-        background-color: transparent;
-    }
-
-    &.disabled {
-        opacity: @btn-disabled-opacity;
-    }
 
     &:after {
         display: none;
     }
+
+    &.angle {
+        border-radius: 0;
+    }
+
+    &.block {
+        width: 100%;
+    }
+
+    &.loading,
+    &.disabled,
+    &.waiting {
+        opacity: .5
+    }
+
+    oak-loading {
+        font-size: 0;
+    }
+
+    .icon {
+        margin-left: 6rpx;
+    }
+}
+
+// 按钮类型
+.type {
+    &-default {
+        border: @btn-border-with solid @btn-border-color-default;
+        color: @btn-font-color-default;
+        background: @btn-bg-color-default-active;
+
+        &.disabled {
+            background: @btn-bg-color-default-disable;
+        }
+
+        .loader {
+            border-top-color: @btn-font-color-default  !important;
+        }
+
+        // .icon {
+        // color: @btn-font-color-default  !important;
+        // }
+        &.fill-none {
+            border: none;
+            background: @btn-bg-color-transparent;
+        }
+    }
+
+    &-primary {
+        border: none;
+        color: @btn-font-color-inverse;
+        background: @btn-bg-color-primary-active;
+
+        &.disabled {
+            background: @btn-bg-color-primary-disable;
+        }
+
+        .loader {
+            border-top-color: @btn-font-color-inverse  !important;
+        }
+
+        // .icon {
+        // color: @btn-font-color-inverse  !important;
+        // }
+
+        // 填充模式
+        &.fill {
+            &-outline {
+                border: @btn-border-with solid @btn-border-color-primary-active;
+                color: @btn-font-color-primary-active;
+                background: @btn-bg-color-default-active;
+
+                .loader {
+                    border-top-color: @btn-font-color-primary-active  !important;
+                }
+
+                // .icon {
+                // color: @btn-font-color-primary-active  !important;
+                // }
+            }
+
+            &-none {
+                border: none;
+                color: @btn-font-color-primary-active;
+                background: @btn-bg-color-transparent;
+            }
+        }
+    }
+
+    &-warning {
+        border: none;
+        color: @btn-font-color-inverse;
+        background: @btn-bg-color-warning-active;
+
+        &.disabled {
+            background: @btn-bg-color-warning-disable;
+        }
+
+        .loader {
+            border-top-color: @btn-font-color-inverse  !important;
+        }
+
+        // 填充模式
+        &.fill {
+            &-outline {
+                border: @btn-border-with solid @btn-border-color-warning-active;
+                color: @btn-font-color-warning-active;
+                background: @btn-bg-color-default-active;
+
+                .loader {
+                    border-top-color: @btn-font-color-warning-active  !important;
+                }
+
+            }
+
+            &-none {
+                border: none;
+                color: @btn-font-color-warning-active;
+                background: @btn-bg-color-transparent;
+            }
+        }
+    }
+}
+
+// 大小
+.size {
+    &-mini {
+        font-size: @btn-font-size-mini;
+        height: @btn-height-mini;
+        line-height: @btn-height-mini;
+        border-radius: @btn-height-mini/2;
+        padding: 0 12rpx;
+
+        &.color-default,
+        &.fill-outline {
+            padding: 0 12rpx-@btn-border-with;
+        }
+
+        &.round {
+            border-radius: @btn-radius-s;
+        }
+
+        .loading-icon {
+            margin-right: 6rpx;
+        }
+
+        // .icon {
+        // font-size: @btn-font-size-mini  !important;
+        // }
+    }
+
+    &-small {
+        font-size: @btn-font-size-s;
+        height: @btn-height-s;
+        line-height: @btn-height-s;
+        border-radius: @btn-height-s/2;
+        padding: 0 18rpx;
+
+        &.color-default,
+        &.fill-outline {
+            padding: 0 18rpx-@btn-border-with;
+        }
+
+        &.round {
+            border-radius: @btn-radius-s;
+        }
+
+        .loading-icon {
+            margin-right: 6rpx;
+        }
+
+        // .icon {
+        // font-size: @btn-font-size-s  !important;
+        // }
+    }
+
+    &-middle {
+        font-size: @btn-font-size-m;
+        height: @btn-height-m;
+        line-height: @btn-height-m;
+        border-radius: @btn-height-m/2;
+        padding: 0 30rpx;
+
+        &.color-default,
+        &.fill-outline {
+            padding: 0 30rpx-@btn-border-with;
+        }
+
+        &.round {
+            border-radius: @btn-radius-m;
+        }
+
+        .loading-icon {
+            margin-right: 6rpx;
+        }
+
+        // .icon {
+        // font-size: @btn-font-size-m  !important;
+        // }
+    }
+
+    &-large {
+        font-size: @btn-font-size-l;
+        height: @btn-height-l;
+        line-height: @btn-height-l;
+        border-radius: @btn-height-l/2;
+        padding: 0 30rpx;
+
+        &.color-default,
+        &.fill-outline {
+            padding: 0 30rpx-@btn-border-with;
+        }
+
+        &.round {
+            border-radius: @btn-radius-m;
+        }
+
+        .loading-icon {
+            margin-right: 12rpx;
+        }
+
+        // .icon {
+        // font-size: @btn-font-size-l  !important;
+        // }
+    }
+}
+
+.oak-icon {
+    vertical-align: baseline !important;
 }

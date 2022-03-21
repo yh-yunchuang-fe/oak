@@ -3,12 +3,5 @@
 
 <view class="{{ Utils.classNames('oak-loading', {small: size === 'small', mid: size === 'mid', large: size === 'large', fixed: position === 'fixed', absolute: position === 'absolute'} )}} ext-class" wx:if="{{isShow}}">
     <view wx:if="{{shadow}}" class="shadow"/>
-    <view class='oak-loading-v1'
-        style="border-top-color: {{color}};"></view>
-    <view class='oak-loading-v2 loader-color'
-        style="border-top-color: {{color}};"></view>
-    <view class='oak-loading-v3 loader-color'
-        style="border-top-color: {{color}};"></view>
-    <view class='oak-loading-v4 loader-color'
-        style="border-top-color: {{color}};"></view>
+    <view wx:for="{{[1,2,3]}}" wx:key="index" class='item loader loader-class' style="border-top-color: {{color}};"></view>
 </view>
