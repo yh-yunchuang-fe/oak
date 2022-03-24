@@ -1,0 +1,46 @@
+@import "../Button/variable.less";
+
+.oak {
+    display: inline-block;
+    overflow: hidden;
+
+    &.angle {
+        border-radius: 0;
+    }
+}
+
+// 大小
+.size {
+    &-mini {
+        border-radius: @btn-height-mini/2;
+
+        &.round {
+            border-radius: @btn-radius-s;
+        }
+
+    }
+
+    &-small {
+        border-radius: @btn-height-s/2;
+
+        &.round {
+            border-radius: @btn-radius-s;
+        }
+    }
+
+    &-middle {
+        border-radius: @btn-height-m/2;
+
+        &.round {
+            border-radius: @btn-radius-m;
+        }
+    }
+
+    &-large {
+        border-radius: @btn-height-l/2;
+
+        &.round {
+            border-radius: @btn-radius-m;
+        }
+    }
+}

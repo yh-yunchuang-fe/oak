@@ -29,7 +29,7 @@
         top: 50%;
     }
 
-    view {
+    .item {
         box-sizing: border-box;
         display: block;
         position: absolute;
@@ -45,7 +45,7 @@
     &.small {
         width: 30rpx;
         height: 30rpx;
-        view {
+        .item {
             width: 20rpx;
             height: 20rpx;          
         }
@@ -56,7 +56,7 @@
 	&.mid {
 		width: 46rpx;
         height: 46rpx;
-        view {
+        .item {
             width: 36rpx;
             height: 36rpx;
             border-width: 4rpx;
@@ -70,7 +70,7 @@
     &.large {
         width: 54rpx;
         height: 54rpx;
-        view {
+        .item {
             width: 44rpx;
             height: 44rpx;
             border-width: 4rpx;
@@ -80,17 +80,18 @@
             }             
         }
     }
+    & .loader {
+        &:nth-child(1) {
+            animation-delay: -0.45s;
+        }
 
-    .oak-loading-v1 {
-        animation-delay: -0.45s;
-    }
+        &:nth-child(2) {
+            animation-delay: -0.3s;
+        }
 
-    .oak-loading-v2 {
-        animation-delay: -0.3s;
-    }
-
-    .oak-loading-v3 {
-        animation-delay: -0.15s;
+        &:nth-child(3) {
+            animation-delay: -0.15s;
+        }
     }
 
     @keyframes loading {

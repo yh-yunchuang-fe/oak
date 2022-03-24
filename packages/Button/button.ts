@@ -3,57 +3,101 @@ import OpenTypeBehavior from '../mixins/open-type'
 import ButtonBehavior from '../mixins/button'
 
 Component({
-    behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
+    behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior, 'wx://form-field-button'],
+    relations: {
+        '../ButtonGroup/button-group': {
+            type: 'parent'
+        }
+    },
     properties: {
-        size: {
+        formType: {
             type: String,
-            value: 'default',
-            optionalTypes: [String],
+            value: ''
         },
+        // 按钮类型
         type: {
             type: String,
-            value: 'default',
-            optionalTypes: [String],
+            value: 'default', // 'default' | 'primary' ｜ 'warning'
         },
-        shape: {
+        // 填充模式
+        fill: {
             type: String,
-            value: ''
+            value: 'solid',// 'solid' | 'outline' | 'none'
         },
-        icon: {
+        // 大小
+        size: {
             type: String,
-            value: ''
+            value: 'middle', // 'mini' | 'small' | 'middle' | 'large'
         },
-        plain: {
+        // 是否是块级元素
+        block: {
             type: Boolean,
-            value: false,
+            value: false
         },
-        loading: {
+        // 按钮形状-圆角
+        round: {
             type: Boolean,
-            value: false,
+            value: false
         },
-        loaderColor: {
-            type: String,
-            value: ''
+        // 按钮形状-直角
+        angle: {
+            type: Boolean,
+            value: false
         },
-        loaderSize: {
-            type: String,
-            value: ''
+        // // 按钮形状-胶囊（默认）
+        // capsules: {
+        //     type: Boolean,
+        //     value: false
+        // },
+        // 是否是待唤起状态
+        waiting: {
+            type: Boolean,
+            value: false
         },
+        // 是否禁用
         disabled: {
             type: Boolean,
-            value: false,
+            value: false
         },
-        height: {
-            type: String,
-            value: null,
+        // 是否处于加载状态
+        loading: {
+            type: Boolean,
+            value: false
         },
-        width: {
+        // 加载状态下额外展示的文字
+        loadingText: {
             type: String,
-            value: null,
+            value: '',
         },
-        color: {
+        // 图标
+        icon: {
             type: String,
-            value: null,
+            value: '',
+        },
+        // style
+        buttonStyle: {
+            type: String,
+            value: '',
+        },
+    },
+    data: {
+    },
+    ready(): void {
+        this.init()
+    },
+    methods: {
+        init(): void {
+            const parent = this.getRelationNodes('../ButtonGroup/button-group')
+            this.hasParent = parent && parent.length > 0
+            if (!this.hasParent) return
+
+            const { size: groupSize } = parent[0].data
+            this.setData({ size: (groupSize || this.data.size), angle: true })
+        },
+        onTap(e: event): void {
+            const {disabled, loading, waiting} = this.data
+            if (disabled || loading || waiting) return
+            this.triggerEvent('click', e)
         }
     },
     externalClasses: ['button-class', 'hover-class', 'loading-class'],

@@ -1,5 +1,5 @@
 Component({
-    externalClasses: ['ext-class'],
+    externalClasses: ['ext-class', 'loader-class'],
     properties: {
         isShow: {
             type: Boolean,

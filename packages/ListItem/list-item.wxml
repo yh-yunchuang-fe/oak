@@ -60,7 +60,8 @@
         wx:if="{{content}}">{{content}}</view>
     <slot wx:else
         name="content" />
-    <oak-button plain
+    <oak-button
+        round 
         wx:if="{{button}}">{{button}}</oak-button>
     <slot wx:else
         name="button" />

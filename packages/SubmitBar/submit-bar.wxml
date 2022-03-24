@@ -31,16 +31,11 @@
             </view>
         </view>
         <oak-button
-            bind:tap="onSubmitTap" 
-            class="oak-submit-bar-button"
-            button-class="button-class"
+            bind:click="onSubmitTap" 
+            button-class="oak-submit-bar-button button-class"
             type="{{buttonType}}"
             size="large"
-            height="80rpx"
-            shape="{{buttonShape}}"
             loading="{{loading}}"
-            disabled="{{disabled}}"
-            loader-color="{{loaderColor}}"
-            color="{{buttonColor}}">{{loading ? '' : buttonText}}</oak-button>
+            disabled="{{disabled}}">{{loading ? '' : buttonText}}</oak-button>
     </view>
 </view>
