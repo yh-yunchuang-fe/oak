@@ -53,6 +53,7 @@ Component({
             toastTimer = setTimeout(() => {
                 this.setData({
                     showToast: false,
+                    isShow: false,
                 })
             }, this.data.duration)
         },
