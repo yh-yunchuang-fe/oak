@@ -49,6 +49,14 @@ Component({
             type: String,
             value: 'column',
         },
+        center: {
+            type: Boolean,
+            value: false
+        },
+        top: {
+            type: String,
+            value: '',
+        },
     },
     methods: {
         handleImgType(type): void {
