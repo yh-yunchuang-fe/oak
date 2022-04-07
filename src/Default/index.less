@@ -1,3 +1,8 @@
+:host{
+    height: 100%;
+    position: relative;
+    display: block;
+}
 .default {
     width: 100%;
     display: flex;
@@ -42,5 +47,11 @@
         .sub-btn {
             margin-top: 24rpx;
         }
+    }
+    &.center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }

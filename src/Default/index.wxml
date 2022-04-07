@@ -1,5 +1,5 @@
-<view class="default ext-class"
-  style="padding-top: {{(iconName || src || imgType) ? 18 : 48}}rpx;">
+<view class="default  {{center?'center':''}} ext-class"
+  style="padding-top: {{top ? top : ((iconName || src || imgType) ? '18rpx' : '48rpx')}}">
   <oak-image wx:if="{{src}}"
     class="icon"
     mode="aspectFit"

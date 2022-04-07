@@ -53,4 +53,21 @@
     mainBtnText="主按钮"
     subBtnText="次按钮"
     ext-class="default"/>
+
+  <view class="title">垂直居中</view>
+  <view style="height:400px;background:#fff">
+    <oak-default imgType="04"
+      title="主标题文案"
+      subTitle="补充说明文案"
+      center
+    />
+  </view>
+  <view class="title">距顶部50px</view>
+  <view style="height:400px;background:#fff">
+    <oak-default imgType="04"
+      top="50px"
+      title="主标题文案"
+      subTitle="补充说明文案"
+    />
+  </view>
 </view>
