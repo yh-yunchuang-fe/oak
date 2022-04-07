@@ -46,6 +46,8 @@
 | mainBtnText | 主按钮文案，可为空 | `string` | - |
 | subBtnText | 次按钮文案，可为空 | `string` | - |
 | direction | 按钮排列样式 | `string` | `column` |
+| center | 垂直居中，父节点要设有高度 | `boolean` | `false` |
+| top | 可设置paddingTop，(当center不为true时，该值为距离顶部的距离) | `string` | - |
 
 
 ## 外部样式类
