@@ -1,9 +1,15 @@
 import BasicBehavior from '../mixins/basic'
 import OpenTypeBehavior from '../mixins/open-type'
 import ButtonBehavior from '../mixins/button'
+import { compareVersion } from '../mixins/basic'
+import systemInfo from '../mixins/toy-system-info'
+
+const bhv = [BasicBehavior, OpenTypeBehavior, ButtonBehavior]
+const isFormField = compareVersion(systemInfo.SDKVersion, '2.10.3') > 0
+if (isFormField) bhv.push('wx://form-field-button')
 
 Component({
-    behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior, 'wx://form-field-button'],
+    behaviors: bhv,
     relations: {
         '../ButtonGroup/button-group': {
             type: 'parent'
