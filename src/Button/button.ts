@@ -92,10 +92,10 @@ Component({
             if (!this.hasParent) return
 
             const { size: groupSize } = parent[0].data
-            this.setData({ size: (groupSize || this.data.size), angle: true })
+            this.setData({ size: (groupSize || this.data.size), angle: parent.length > 1 })
         },
         onTap(e: event): void {
-            const {disabled, loading, waiting} = this.data
+            const { disabled, loading, waiting } = this.data
             if (disabled || loading || waiting) return
             this.triggerEvent('click', e)
         }
