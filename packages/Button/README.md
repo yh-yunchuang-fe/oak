@@ -127,6 +127,7 @@
 | loading | 加载状态 | `boolen` | `false` |
 | loading-text | Loading 时显示的文案| `string` | - |
 | icon | 图标名 | `string` | - |
+| form-type | 同原生button，支持2.10.3以上版本 | `string` | - |
 
 > 其他属性与小程序 [button](https://developers.weixin.qq.com/miniprogram/dev/component/button.html) 组件同步。
 
