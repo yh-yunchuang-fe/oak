@@ -1,5 +1,5 @@
 import BasicBehavior from 'Mixins/basic'
-
+import getSrc from './utils/index'
 Component({
     behaviors: [BasicBehavior],
     /**
@@ -103,7 +103,14 @@ Component({
                 console.warn(
                     `[Image Component] ${this.data.src} 图片路径有误！本地图片请使用原生 <image> 组件`
                 )
+                return
             }
+            this.getSrc()
+        },
+        getCurSrc(): void {
+            const { src, pixelRatio, width, quality, imgRadius } = this.data
+            const imgSrc = getSrc(src, width, pixelRatio, quality, imgRadius)
+            this.setData({ curSrc: imgSrc})
         }
     }
 })

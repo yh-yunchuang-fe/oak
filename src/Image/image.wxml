@@ -131,7 +131,7 @@
 >
     <image wx:if="{{src}}"
         class="origin-image img-class"
-        src="{{ws.getSrc(src, useWebp, width, pixelRatio, quality, imgRadius)}}" 
+        src="{{getCurSrc()}}" 
         style="{{ws.split(imgRadius, ' ').length > 1 ? 'border-radius:' + imgRadius : ''}}"
         mode="{{mode}}"
         webp="{{webp}}"
