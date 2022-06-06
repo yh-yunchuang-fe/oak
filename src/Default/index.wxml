@@ -1,0 +1,33 @@
+<view class="default  {{center?'center':''}} ext-class"
+  style="padding-top: {{top ? top : ((iconName || src || imgType) ? '18rpx' : '48rpx')}}">
+  <oak-image wx:if="{{src}}"
+    class="icon"
+    mode="aspectFit"
+    src="{{src}}"
+    width="{{iconSize}}"
+    height="{{iconSize}}"
+  />
+  <oak-icon wx:if="{{iconName}}"
+    class="icon"
+    name="trash"
+    color="{{iconColor}}"
+    size="{{iconSize}}px"
+  />
+  <text wx:if="{{title}}" class="title title-class">{{title}}</text>
+  <text wx:if="{{subTitle}}" class="sub-title sub-title-class">{{subTitle}}</text>
+  <view wx:if="{{mainBtnText || subBtnText}}" class="btns direc-{{direction}}">
+    <oak-button wx:if="{{mainBtnText}}"
+      class="main-btn"
+      button-class="btn-ext main-btn-class"
+      type="primary"
+      size="large"
+      bind:click="onMainBtnClick"
+      fill="outline">{{mainBtnText}}</oak-button>
+    <oak-button wx:if="{{subBtnText}}"
+      class="sub-btn"
+      size="large"
+      bind:click="onSubBtnClick"
+      button-class="btn-ext sub-btn-class">{{subBtnText}}</oak-button>
+  </view>
+  <slot></slot>
+</view>

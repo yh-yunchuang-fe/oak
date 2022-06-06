@@ -93,12 +93,20 @@ Component({
     },
     methods: {
         init(): void {
-            const parent = this.getRelationNodes('../ButtonGroup/button-group')
-            this.hasParent = parent && parent.length > 0
+            this.parents = this.getRelationNodes('../ButtonGroup/button-group')
+            this.hasParent = this.parents && this.parents.length > 0
             if (!this.hasParent) return
 
-            const { size: groupSize } = parent[0].data
-            this.setData({ size: (groupSize || this.data.size), angle: parent.length > 1 })
+            const parent = this.parents[0] || {}
+            const { size: groupSize } = parent.data || {}
+
+            // 同级按钮个数，默认是1，是该按钮自己也算一个
+            const childNum = (parent.getChildNum && parent.getChildNum()) || 1
+
+            this.setData({
+                size: (groupSize || this.data.size),
+                angle: childNum > 1 //当按钮个数大于1时，按钮需要是直角的
+            })
         },
         onTap(e: event): void {
             const { disabled, loading, waiting } = this.data

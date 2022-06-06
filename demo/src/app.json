@@ -29,7 +29,8 @@
     "pages/image/index",
     "pages/progress/progress",
     "pages/confirm/confirm",
-    "pages/scroll/index"
+    "pages/scroll/index",
+    "pages/default/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

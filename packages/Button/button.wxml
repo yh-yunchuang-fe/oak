@@ -35,6 +35,7 @@
       ext-class="loading-icon loading-class"
       isShow="{{loading}}"
       size="{{ws.loadingSize(size)}}"
+      class="oak-loading"
     />
     {{loadingText}}
   </block>
