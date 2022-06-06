@@ -126,7 +126,7 @@
 </wxs>
 
 <view id="image-wrap" 
-    class="oak-image class ext-class" 
+    class="oak-image {{noBgImg ? 'no-bg': '' }} class ext-class " 
     style="{{ws.getStyle(bgImg, width, height, radius, imgRadius, noBgImg, isFullWidth)}}"
 >
     <image wx:if="{{src}}"
