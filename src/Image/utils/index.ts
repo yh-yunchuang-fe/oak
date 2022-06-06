@@ -26,7 +26,7 @@ var getSrc = (src: string, width: string, pixelRatio: number, quality: number, i
 
     // var thumbnail = width.match("\d+", "g") || ""
     // @ts-ignore
-    var thumbnail = width.match(/\d+/g)[0] || ''
+    var thumbnail = (width && width.match(/\d+/g)[0]) || ''
         // , format = _getExt(src, useWebp)
         , format = _getExt()
         // , serviceW = (src.match("w=(\d+)") || [])[1] || ''
