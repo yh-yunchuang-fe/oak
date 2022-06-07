@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <oak-default ext-class="default"/> -->
+  <!-- <oak-default iconName="trash" ext-class="default"/> -->
+  <view class="title">文本类型 00-A</view>
+  <oak-default title="主标题文案"
+    subTitle="补充说明文案"
+    ext-class="default"/>
+  <view class="title">文本类型 01-A</view>
+  <oak-default title="主标题文案"
+    subTitle="补充说明文案"
+    mainBtnText="主按钮"
+    bind:onMainBtnClick="onMainBtnClick"
+    ext-class="default"/>
+  <view class="title">文本类型 02-A</view>
+  <oak-default title="主标题文案"
+    subTitle="补充说明文案"
+    mainBtnText="主按钮"
+    subBtnText="次按钮"
+    direction="row"
+    bind:onMainBtnClick="onMainBtnClick"
+    bind:onSubBtnClick="onSubBtnClick"
+    ext-class="default"/>
+  <view class="title">文本类型 02-B</view>
+  <oak-default title="主标题文案"
+    subTitle="补充说明文案"
+    mainBtnText="主按钮"
+    subBtnText="次按钮"
+    ext-class="default"/>
+  <view class="title">图文类型 00-A</view>
+  <oak-default imgType="01"
+    title="主标题文案"
+    subTitle="补充说明文案"
+    ext-class="default"/>
+  <view class="title">图文类型 01-A</view>
+  <oak-default src="https://static.yonghuivip.com/weapp/defaultImg02.png"
+    title="主标题文案"
+    subTitle="补充说明文案"
+    mainBtnText="行动按钮"
+    ext-class="default"/>
+  <view class="title">图文类型 02-A</view>
+  <oak-default imgType="03"
+    title="主标题文案"
+    subTitle="补充说明文案"
+    mainBtnText="主按钮"
+    subBtnText="次按钮"
+    direction="row"
+    ext-class="default"/>
+  <view class="title">图文类型 02-B</view>
+  <oak-default imgType="04"
+    title="主标题文案"
+    subTitle="补充说明文案"
+    mainBtnText="主按钮"
+    subBtnText="次按钮"
+    ext-class="default"/>
+
+  <view class="title">垂直居中</view>
+  <view style="height:400px;background:#fff">
+    <oak-default imgType="04"
+      title="主标题文案"
+      subTitle="补充说明文案"
+      center
+    />
+  </view>
+  <view class="title">距顶部50px</view>
+  <view style="height:400px;background:#fff">
+    <oak-default imgType="04"
+      top="50px"
+      title="主标题文案"
+      subTitle="补充说明文案"
+    />
+  </view>
+</view>

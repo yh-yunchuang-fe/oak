@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "Default 默认页面",
+    "usingComponents": {
+        "oak-default": "/Default/index"
+    }
+}

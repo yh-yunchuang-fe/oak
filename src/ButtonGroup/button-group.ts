@@ -24,15 +24,10 @@ Component({
             value: false
         },
     },
-    ready(): void {
-        this.init()
-    },
     methods: {
-        init(): void {
+        getChildNum(): number {
             const childList = this.getRelationNodes('../Button/button') || []
-            childList.forEach((child): void => {
-                if (child.init) child.init()
-            })
+            return childList.length
         }
     },
     externalClasses: ['ext-class']
