@@ -1,3 +1,0 @@
-<view class="oak-scroll_item">
-  <slot></slot>
-</view>

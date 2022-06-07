@@ -1,5 +1,0 @@
-<wxs src="../wxs/base.wxs" module="Utils" />
-
-<view class="{{ Utils.classNames('oak-collapse ', {border: border}) }} ext-class">
-    <slot />
-</view>

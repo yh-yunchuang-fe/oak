@@ -1,7 +1,0 @@
-<wxs src="../wxs/base.wxs"
-    module="Utils" />
-
-<view class="{{ Utils.classNames('oak-loading', {small: size === 'small', mid: size === 'mid', large: size === 'large', fixed: position === 'fixed', absolute: position === 'absolute'} )}} ext-class" wx:if="{{isShow}}">
-    <view wx:if="{{shadow}}" class="shadow"/>
-    <view wx:for="{{[1,2,3]}}" wx:key="index" class='item loader loader-class' style="border-top-color: {{color}};"></view>
-</view>
