@@ -6,7 +6,7 @@
 -->
 
 <wxs module='ws'>
-    function getSrc (src, useWebp, width, pixelRatio, quality, imgRadius) {
+    function getSrc (src, width, pixelRatio, quality, imgRadius) {
         if (src.indexOf('/service') > -1 || src.indexOf('/server') > -1) return src
 
         width = width ? width + '' : width
@@ -17,7 +17,7 @@
             .split('?')[0] + '?'
             
         var thumbnail = width.match("\d+", "g") || ""
-            , format = _getExt(src, useWebp)
+            , format = 'webp'
             , service_w = (src.match("w=(\d+)") || [])[1] || ''
             , widthScript = "imageMogr2/auto-orient"
             , qualityScript = "/interlace/1/quality/" + quality + "/size-limit/300k!"
@@ -72,15 +72,6 @@
         return length
     }
 
-    function _getExt(src, useWebp) {
-        var fileUrl = src.split('?')[0]
-        var splitUlr = fileUrl.split('/')
-        var filepath = splitUlr[splitUlr.length - 1]
-        var format = filepath.split('.')[1] || 'jpg'
-
-        return 'webp'
-    }
-
     function getStyle(bgImg, width, height, radius, imgRadius, noBgImg, isFullWidth) {
         var r = ""
         var b = bgImg && !noBgImg ? "background-image: url('" + bgImg + "');" : ''
@@ -126,12 +117,12 @@
 </wxs>
 
 <view id="image-wrap" 
-    class="oak-image class ext-class" 
+    class="oak-image {{noBgImg ? 'no-bg': '' }} class ext-class " 
     style="{{ws.getStyle(bgImg, width, height, radius, imgRadius, noBgImg, isFullWidth)}}"
 >
     <image wx:if="{{src}}"
         class="origin-image img-class"
-        src="{{ws.getSrc(src, useWebp, width, pixelRatio, quality, imgRadius)}}" 
+        src="{{ws.getSrc(src, width, pixelRatio, quality, imgRadius)}}" 
         style="{{ws.split(imgRadius, ' ').length > 1 ? 'border-radius:' + imgRadius : ''}}"
         mode="{{mode}}"
         webp="{{webp}}"

@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-      "oak-icon": "../Icon/icon",
-      "oak-loading": "../Loading/loading"
-  },
-  "component": true
-}
