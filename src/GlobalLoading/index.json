@@ -1,5 +1,6 @@
 {
   "component": true,
   "usingComponents": {
+    "c-loading": "../Loading/loading"
   }
 }
