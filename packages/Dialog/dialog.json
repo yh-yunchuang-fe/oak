@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "oak-popup": "../Popup/popup",
-    "oak-button": "../Button/button"
-  },
-  "component": true
-}

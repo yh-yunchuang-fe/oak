@@ -1,5 +1,4 @@
 import BasicBehavior from 'Mixins/basic'
-
 Component({
     behaviors: [BasicBehavior],
     /**
