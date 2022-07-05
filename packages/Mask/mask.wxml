@@ -1,2 +1,0 @@
-<!--components/ui/Mask/index.wxml-->
-<view  catch:touchmove="{{true}}" class="yh-mask mask-custom-class" bindtap="onMaskClick" wx:if="{{isShow}}"></view>
