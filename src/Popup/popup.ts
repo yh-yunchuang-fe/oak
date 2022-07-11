@@ -1,43 +1,5 @@
-import BasicBehavior from 'Mixins/basic'
-
-const animationMap: { [key: string]: { in: string; out: string } } = {
-    left: {
-        in: 'slideInLeft',
-        out: 'slideOutLeft',
-    },
-    top: {
-        in: 'slideInDown',
-        out: 'slideOutUp',
-    },
-    right: {
-        in: 'slideInRight',
-        out: 'slideOutRight',
-    },
-    bottom: {
-        in: 'slideInUp',
-        out: 'slideOutDown',
-    },
-    center: {
-        in: 'fadeIn',
-        out: 'fadeOut'
-    }
-}
-
 Component({
-    behaviors: [BasicBehavior],
     properties: {
-        mask: {
-            type: Boolean,
-            value: true,
-        },
-        safeArea: {
-            type: Boolean,
-            value: true,
-        },
-        zIndex: {
-            type: Number,
-            value: 9,
-        },
         show: {
             type: Boolean,
             value: false,
@@ -45,78 +7,156 @@ Component({
                 this.toggleShow()
             }
         },
+        mask: {
+            type: Boolean,
+            value: true,
+        },
+        maskClosable: {
+            type: Boolean,
+            value: true,
+        },
+        zIndex: {
+            type: Number,
+            value: 20,
+        },
         // 弹窗位置
         position: {
             type: String,
-            value: 'center',
+            value: 'bottom',// center top bottom left right
         },
+        // 动画时长 ms
         duration: {
             type: Number,
-            value: 400,
+            value: 200
         },
-        background: {
+        // 显示尺寸：占宽高比的7/9 6/9 5/9 4/9 3/9
+        sizeInNine: {
             type: String,
-            value: '#fff',
+            value: '6',// 2 3 4 5 6 7
         },
-        width: {
-            type: String,
-            value: null,
+        // 显示圆角：仅上下浮层
+        showRadius: {
+            type: Boolean,
+            value: true,
         },
-        height: {
-            type: String,
-            value: null,
+        //是否显示左上角的关闭按钮
+        closable: {
+            type: Boolean,
+            value: true,
         },
-        top: {
-            type: String,
-            value: null,
+        safeArea: {
+            type: Boolean,
+            value: true,
         },
-        bottom: {
+        // 标题：中间
+        title: {
             type: String,
-            value: null,
+            value: '',
+        },
+        // 标题样式
+        titleStyle: {
+            type: String,
+            value: '',
+        },
+        // 次标题：右侧
+        subTitle: {
+            type: Object,
+            value: {
+                name: '',   // 文字 优先与icon
+                icon: '',   // icon 
+                style: '',  // 样式
+            },
         }
     },
     data: {
-        _mask: false,
+        _maskShow: false,
         _bodyShow: false,
-        _maskAnimate: 'fadeIn',
-        _bodyAnimate: '',
+        _show: false,
     },
-    attached(): void {
-        this.setData({
-            isIPhonex: this.isiPhoneXUp(),
-        })
-    },
-    externalClasses: ['ext-class', 'body-class', 'content-class'],
     methods: {
-        popupClose(): void {
+        /**
+         * 设置页面overflow，解决覆层滚动穿透问题
+         * @param overflow 
+         * @returns 
+         */
+        setPageOverflow(overflow): void {
+            try {
+                // @ts-ignore
+                wx.setPageStyle({
+                    style: {
+                        overflow,
+                    },
+                })
+            } catch (err) {
+                console.warn(err)
+            }
+        },
+        wrapClick(): void {
+            this.triggerEvent('onWrapClick')
+        },
+        maskClick(): void {
+            this.triggerEvent('onMaskClick')
+            if (this.data.maskClosable) {
+                this.popupClose()
+            }
+        },
+        async popupClose(): Promise<void> {
+            await this.close()
             this.triggerEvent('onPopupClose')
         },
-        animationEnd(e: event): void {
-            const animation = animationMap[this.data.position] || {}
-            e.detail.animationName === animation.out && this.setData({
-                _isShow: false,
+        open(): void {
+            this.setPageOverflow('hidden')
+            this.setData({
+                _show: true,
+            }, (): void => {
+                this.setData({
+                    _maskShow: true,
+                    _bodyShow: true,
+                })
+            })
+        },
+        close(): Promise<void> {
+            this.setPageOverflow('visible')
+            const { _show } = this.data
+            if (!_show) return Promise.resolve()
+
+            return new Promise<void>((res): void => {
+                this.setData({
+                    _bodyShow: false,
+                    _maskShow: false,
+                }, (): void => {
+                    const { duration } = this.data
+                    this.timer = setTimeout((): void => {
+                        res()
+                        this.clearTimer()
+                    }, duration)
+                })
+            }).then((): void => {
+                this.setData({
+                    _show: false,
+                }, this.clearTimer)
             })
         },
         toggleShow(): void {
-            const { show, mask, position } = this.data
-            const animation = animationMap[position]
+            const { show } = this.data
             if (show) {
-                this.setData({
-                    _isShow: show,
-                    _mask: mask,
-                    _maskAnimate: 'fadeIn',
-                    _bodyAnimate: animation.in || '',
-                    _bodyShow: true,
-                })
+                this.open()
             } else {
-                this.setData({
-                    _maskAnimate: 'fadeOut',
-                    _bodyAnimate: animation.out || '',
-                    _mask: false,
-                    _bodyShow: false,
-                })
+                this.close()
             }
-        }
-
-    }
+        },
+        clearTimer(): void {
+            if (this.timer) {
+                clearTimeout(this.timer)
+                this.timer = null
+            }
+        },
+        detached(): void {
+            this.clearTimer()
+        },
+        onSubTitleClick(e: event): void {
+            this.triggerEvent('subTitleClick', e)
+        },
+    },
+    externalClasses: ['root-class', 'wrap-class', 'header-class', 'body-class'],
 })
