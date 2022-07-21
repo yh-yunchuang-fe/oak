@@ -72,6 +72,11 @@ Component({
         isFullWidth: {
             type: Boolean,
             value: false,
+        },
+        // 将最终图片的src赋值给image组件
+        srcAttr: {
+            type: Boolean,
+            value: false
         }
     },
     /**
