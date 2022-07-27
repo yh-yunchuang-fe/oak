@@ -98,7 +98,9 @@
 
     function onLoad(e, ownerInstance) {
         var instance = ownerInstance.selectComponent('#image-wrap')
-        instance && instance.addClass('oak-image-load')
+        instance && instance.setStyle({"background": "transparent !important"})
+        var imgIns = ownerInstance.selectComponent('.origin-image')
+        imgIns && imgIns.setStyle({"opacity": "1"})
         ownerInstance.triggerEvent('load')
     }
     
