@@ -3,7 +3,7 @@
 
 <oak-popup show="{{ show }}"
     duration="{{duration}}"
-    background="transparent"
+    position="center"
     z-index="{{zIndex}}"
     bind:onPopupClose="_onPopupClose"
     mask="{{mask}}">
