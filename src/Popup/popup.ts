@@ -1,5 +1,21 @@
+
+const animationMap: { [key: string]: { in: string; out: string } } = {
+    center: {
+        in: 'fadeIn',
+        out: 'fadeOut'
+    },
+    top: {
+        in: 'slideInDown',
+        out: 'slideOutUp',
+    },
+    bottom: {
+        in: 'slideInUp',
+        out: 'slideOutDown',
+    },
+}
 Component({
     properties: {
+        // 是否显示
         show: {
             type: Boolean,
             value: false,
@@ -7,14 +23,17 @@ Component({
                 this.toggleShow()
             }
         },
+        // 是否显示蒙层
         mask: {
             type: Boolean,
             value: true,
         },
+        // 蒙层是否可点击关闭
         maskClosable: {
             type: Boolean,
             value: true,
         },
+        // 浮层层级
         zIndex: {
             type: Number,
             value: 20,
@@ -22,12 +41,12 @@ Component({
         // 弹窗位置
         position: {
             type: String,
-            value: 'bottom',// center top bottom left right
+            value: 'bottom',// center top bottom
         },
         // 动画时长 ms
         duration: {
             type: Number,
-            value: 200
+            value: 400
         },
         // 显示尺寸：占宽高比的7/9 6/9 5/9 4/9 3/9
         sizeInNine: {
@@ -44,6 +63,7 @@ Component({
             type: Boolean,
             value: true,
         },
+        // 底部安全区域，针对iOS异形屏
         safeArea: {
             type: Boolean,
             value: true,
@@ -66,16 +86,18 @@ Component({
                 icon: '',   // icon 
                 style: '',  // 样式
             },
-        }
+        },
     },
     data: {
         _maskShow: false,
         _bodyShow: false,
         _show: false,
+        _animate: '',   // 动画
+        _loaded: false, //首次显示后 置为true，使组件仅在首次显示时才加载内容
     },
     methods: {
         /**
-         * 设置页面overflow，解决覆层滚动穿透问题
+         * 设置页面overflow，解决浮层滚动穿透问题
          * @param overflow 
          * @returns 
          */
@@ -83,9 +105,7 @@ Component({
             try {
                 // @ts-ignore
                 wx.setPageStyle({
-                    style: {
-                        overflow,
-                    },
+                    style: { overflow },
                 })
             } catch (err) {
                 console.warn(err)
@@ -106,8 +126,12 @@ Component({
         },
         open(): void {
             this.setPageOverflow('hidden')
+            const { position } = this.data
+            const _animate = (animationMap[position] || {}).in || ''
             this.setData({
                 _show: true,
+                _loaded: true,
+                _animate,
             }, (): void => {
                 this.setData({
                     _maskShow: true,
@@ -115,26 +139,21 @@ Component({
                 })
             })
         },
-        close(): Promise<void> {
+        animationEnd(e: event): void {
+            const animation = animationMap[this.data.position] || {}
+            e.detail.animationName === animation.out && this.setData({
+                _show: false,
+            })
+        },
+        close(): void {
             this.setPageOverflow('visible')
-            const { _show } = this.data
-            if (!_show) return Promise.resolve()
-
-            return new Promise<void>((res): void => {
-                this.setData({
-                    _bodyShow: false,
-                    _maskShow: false,
-                }, (): void => {
-                    const { duration } = this.data
-                    this.timer = setTimeout((): void => {
-                        res()
-                        this.clearTimer()
-                    }, duration)
-                })
-            }).then((): void => {
-                this.setData({
-                    _show: false,
-                }, this.clearTimer)
+            const { _show, position } = this.data
+            const _animate = (animationMap[position] || {}).out || ''
+            if (!_show) return
+            this.setData({
+                _bodyShow: false,
+                _maskShow: false,
+                _animate
             })
         },
         toggleShow(): void {
@@ -145,18 +164,9 @@ Component({
                 this.close()
             }
         },
-        clearTimer(): void {
-            if (this.timer) {
-                clearTimeout(this.timer)
-                this.timer = null
-            }
-        },
-        detached(): void {
-            this.clearTimer()
-        },
         onSubTitleClick(e: event): void {
             this.triggerEvent('subTitleClick', e)
         },
     },
-    externalClasses: ['root-class', 'wrap-class', 'header-class', 'body-class'],
+    externalClasses: ['root-class', 'wrap-class', 'header-class', 'body-class', 'safe-class'],
 })

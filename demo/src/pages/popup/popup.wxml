@@ -4,10 +4,10 @@
         基本用法
     </view>
     <view class="row">
-        <!-- <oak-button block
+        <oak-button block
             data-position="center"
             data-style="width: 400rpx;height: 400rpx;"
-            bindtap="onPopupShow">居中弹出</oak-button> -->
+            bindtap="onPopupShow">居中弹出</oak-button>
         <oak-button block
             data-position="top"
             data-style="height: 400rpx;"

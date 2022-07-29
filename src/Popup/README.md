@@ -70,6 +70,7 @@ API说明。
 | sizeInNine | 弹窗尺寸，屏幕高度9等分，向上支持尺寸3/9，4/9，5/9，6/9，7/9，向下支持2/9，6/9，不传则根据内容自定义高度 | `string` | - |
 | showRadius | 是否显示圆角，仅上下浮层 | `boolean` | `true` |
 | closable | 是否显示闭按钮，仅在向上弹出才有效 | `boolean` | `true` |
+| safeArea | 是否显示安全区域 | `boolean` | `true` |
 | title | 标题，仅在向上弹出才有效 | `string` | - |
 | titleStyle | 标题样式，仅在向上弹出才有效 | `string` | - |
 | subTitle | 右侧次标题，仅在向上弹出才有效，对象，name优先于icon| `{name:string,icon:string,style:string}` | - |
@@ -81,7 +82,10 @@ API说明。
 
 | 类名 | 说明 |
 |-----------|-----------|
-| body-class | 作用于弹窗内容（含标题） |
+| root-class | 根节点 |
+| warp-class | 作用于弹窗内容包裹节点（含标题、内容，底部安全区域） |
+| body-class | 作用于弹窗内 |
 | header-class | 作用于标题 |
+| safe-class | 作用于底部安全区域 |
 
 
