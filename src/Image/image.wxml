@@ -77,7 +77,6 @@
         var r = ""
         var b = bgImg && !noBgImg ? "background-image: url('" + bgImg + "');" : ''
         var w = width ? 'width:' + getLength(width) + 'rpx;' : ''
-        if (!height) height = width
         var h = height ? 'height:' + getLength(height) + 'rpx;' : 'min-height:1px;'
         
         if (radius && radius.length === 1) r = radius[0] + 'rpx'
