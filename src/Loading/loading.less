@@ -80,6 +80,32 @@
             }             
         }
     }
+
+        
+    &.xlarge {
+        width: 66rpx;
+        height: 66rpx;
+        .item {
+            height: 60rpx;
+            width: 60rpx;
+            animation: loading 0.8s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+            border-width: 6rpx;
+        }
+        .loader {
+            &:nth-child(1) {
+                animation-delay: -0.3s;
+            }
+    
+            &:nth-child(2) {
+                animation-delay: -0.2s;
+            }
+    
+            &:nth-child(3) {
+                animation-delay: -0.1s;
+            }
+        }
+    }
+
     & .loader {
         &:nth-child(1) {
             animation-delay: -0.45s;

@@ -1,7 +1,8 @@
 
 <c-loading
     isShow="{{isShow}}"
-    color="#FCDEE2"
+    color="#FF1A34"
     position="fixed"
+    size="xlarge"
     ext-class="gl"
 />
