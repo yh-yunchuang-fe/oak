@@ -17,4 +17,15 @@
             imgRadius="200rpx"
         />
     </view>
+    <view class="row">
+        <oak-image 
+            class="h8"
+            src="http://image.yonghuivip.com/product/R-CB61667277/1658122591584ae1eb231b436195aa6a45755c07eadf55a414733.jpg?w=0&h=0&imageMogr2/thumbnail/200x200"
+            width="80"
+            imgRadius="9rpx"
+            mode="scaleToFill"
+            lazy-load="true"
+            bgImg="https://static.yonghuivip.com/wechatapp/static/images/product/default_light@3x.png?imageMogr2/auto-orient/thumbnail/320x/strip/format/jpg/interlace/1"
+        />
+    </view>
 </view>
