@@ -27,6 +27,7 @@
 
         if (hasUnit(width.toLowerCase(), 'px')) {
             thumbnail = pixelRatio >= 2 ? thumbnail * 2 : thumbnail * pixelRatio
+            if (!service_w || service_w === '0') service_w = thumbnail
             thumbnail = (service_w && service_w < thumbnail) ? service_w : thumbnail
         }
 
