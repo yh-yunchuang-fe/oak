@@ -132,11 +132,14 @@ Component({
                 _show: true,
                 _loaded: true,
                 _animate,
+                _maskShow: true,
+                _bodyShow: true,
             }, (): void => {
-                this.setData({
-                    _maskShow: true,
-                    _bodyShow: true,
-                })
+                // 异步的情况会导致，mask先显示，body动画后显示，有一定的延迟，全部改为同步
+                // this.setData({
+                //     _maskShow: true,
+                //     _bodyShow: true,
+                // })
             })
         },
         animationEnd(e: event): void {

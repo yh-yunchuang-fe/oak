@@ -28,7 +28,7 @@
             >
                 <oak-icon
                     wx:if="{{closable}}"
-                    ext-class="close"
+                    ext-class="o-p-close"
                     name="close-light"
                     catch:tap="popupClose"
                 />
