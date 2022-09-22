@@ -21,6 +21,7 @@
         <view
             class="popup-wrap {{position}} {{ Utils.classNames({showRadius: showRadius}) }} {{sizeInNine ? 'size-' + sizeInNine : ''}} wrap-class"
             catch:tap="wrapClick"
+            style="{{height?('height:'+ height): '' }}"
         >
             <view
                 wx:if="{{ws.showTitle(position, closable, title, subTitle)}}"

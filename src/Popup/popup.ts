@@ -63,6 +63,10 @@ Component({
             type: Boolean,
             value: true,
         },
+        height: {
+            type: String, 
+            value: ''
+        },
         // 底部安全区域，针对iOS异形屏
         safeArea: {
             type: Boolean,
