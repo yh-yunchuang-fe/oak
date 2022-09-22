@@ -74,6 +74,7 @@
                         type="primary"
                         openType="{{ openType }}"
                         fill="{{ btn.fill || 'solid' }}"
+                        style="opacity: {{disableConfirmBtn ? 0.5 : 1}}"
                         block
                         loading="{{okLoading}}"
                         disabled="{{ isAgreement && confirmMustAgreement && !agreement }}"

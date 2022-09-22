@@ -24,6 +24,11 @@ Component({
             type: Boolean,
             value: true,
         },
+        // 是否置灰确认按钮
+        disableConfirmBtn: {
+            type: Boolean,
+            value: false,
+        },
         duration: {
             type: Number,
             value: 200,
@@ -124,6 +129,7 @@ Component({
          * 确认
          */
         _dialogConfirm(): void {
+            if (this.data.disableConfirmBtn) {return  }
             const { onConfirm } = this.data
             !this.data.confirmAsync && this.close()
             this.data.confirmAsync && this.setData({
