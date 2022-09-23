@@ -34,6 +34,7 @@
 
             <!-- 标题 -->
             <view wx:if="{{ws.trim(title)}}"
+                style="margin-bottom: {{ ws.trim(content) ? '18px': '30px'  }}"
                 class="oak-dialog-title title-class" 
             >{{ws.trim(title)}}</view>
 
