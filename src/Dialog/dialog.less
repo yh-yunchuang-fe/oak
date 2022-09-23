@@ -63,7 +63,33 @@
         color: @dialog-textarea-color;
         // margin-bottom: @dialog-padding-text-bottom;
         overflow: scroll;
-        white-space: pre-line;
+        // white-space: pre-line;
+        text-align: left;
+        // 超出最高高度，强制显示滚动条
+        &::-webkit-scrollbar {
+                -webkit-appearance: none;
+            }
+            &::-webkit-scrollbar:vertical {
+                // 纵向滚动条
+                width: .06rem;
+            }
+            &::-webkit-scrollbar:horizontal {
+                // 横向滚动条
+                width: .06rem;
+            }
+            &::-webkit-scrollbar-thumb {
+                // 滚动块
+                background-color: #bbb;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-track {
+                // 滚动条的轨道
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar {
+                display: block;
+                width: .02rem;
+            }
     }
 
     &-slot {

@@ -29,6 +29,11 @@ Component({
             type: Boolean,
             value: false,
         },
+        //标题的margin-bottom
+        titleMarginBottom: {
+            type: String,
+            value: ''
+        },
         duration: {
             type: Number,
             value: 200,
