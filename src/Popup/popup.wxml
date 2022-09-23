@@ -7,9 +7,8 @@
 
 <view
     class="popup {{ Utils.classNames({mask: mask && _maskShow}) }} root-class"
-    style="transition-duration: {{duration}}ms; z-index: {{zIndex}};"
+    style="transition-duration: {{duration}}ms; z-index: {{zIndex}};opacity: {{_show ? '1': '0'}}; visibility: {{_show ? 'visible': 'hidden'}}"
     catch:tap="maskClick"
-    hidden="{{ !_show }}"
     wx:if="{{ _loaded }}"
 >
     <oak-animation
