@@ -1,27 +1,56 @@
-<wxs src="WXS/base.wxs"
-    module="Utils" />
+<wxs src="../wxs/base.wxs" module="Utils" />
+<wxs module="ws">
+    function showTitle(position, closable, title, subTitle){ if(['bottom'].indexOf(position) === -1)
+    return false return closable || title || (subTitle && (subTitle.name || subTitle.icon)) }
+    module.exports = { showTitle: showTitle, };
+</wxs>
 
-<view class="oak-popup oak-popup-{{position}} ext-class"
-    style="z-index: {{zIndex}};"
-    hidden="{{ !_isShow }}">
-    <oak-animation name="{{_maskAnimate}}"
-        bind:tap="popupClose"
-        show="{{ _mask }}"
-        duration="{{duration}}"
-        ext-class="oak-popup-mask">
-    </oak-animation>
-    <oak-animation name="{{_bodyAnimate}}"
-        class="oak-popup-body-wrap body-class"
-        style="width: {{width}};height: {{height}};top: {{top}};bottom: {{bottom}}"
+<view
+    class="popup {{ Utils.classNames({mask: mask && _maskShow}) }} root-class"
+    style="transition-duration: {{duration}}ms; z-index: {{zIndex}};opacity: {{_show ? '1': '0'}}; visibility: {{_show ? 'visible': 'hidden'}}"
+    catch:tap="maskClick"
+    wx:if="{{ _loaded }}"
+>
+    <oak-animation
+        name="{{_animate}}"
         show="{{ _bodyShow }}"
         duration="{{duration}}"
         bind:onAnimationEnd="animationEnd"
+    >
+        <view
+            class="popup-wrap {{position}} {{ Utils.classNames({showRadius: showRadius}) }} {{sizeInNine ? 'size-' + sizeInNine : ''}} wrap-class"
+            catch:tap="wrapClick"
+            style="{{height?('height:'+ height): '' }}"
         >
-        <view 
-            class="{{ isIPhonex && safeArea ? 'oak-popup-body-iphonex content-class' : 'oak-popup-body content-class' }}" 
-            style="background: {{background}};"
-        >
-            <slot></slot>
+            <view
+                wx:if="{{ws.showTitle(position, closable, title, subTitle)}}"
+                class="popup-header {{ Utils.classNames({showRadius: showRadius && position === 'bottom'}) }} header-class"
+            >
+                <oak-icon
+                    wx:if="{{closable}}"
+                    ext-class="o-p-close"
+                    name="close-light"
+                    catch:tap="popupClose"
+                />
+                <view class="title" style="{{titleStyle}}">{{title}}</view>
+                <view
+                    class="sub-title"
+                    wx:if="{{subTitle}}"
+                    style="{{subTitle.style}}"
+                    catch:tap="onSubTitleClick"
+                    >{{subTitle.name}}<oak-icon
+                        wx:if="{{!subTitle.name && subTitle.icon}}"
+                        name="{{subTitle.icon}}"
+                /></view>
+            </view>
+            <view class="popup-body body-class">
+                <slot></slot>
+            </view>
+            <!-- 底部安全区域 异形屏小白条  -->
+            <view
+                hidden="{{position !== 'bottom'}}"
+                class="popup-safe {{ Utils.classNames({safeArea: safeArea}) }} safe-class"
+            />
         </view>
     </oak-animation>
 </view>
