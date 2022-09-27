@@ -41,7 +41,7 @@
             <!-- 内容 -->
             <view wx:if="{{ws.trim(content)}}"
                 class="oak-dialog-content content-class"
-            >{{ws.trim(content)}}</view>
+            ><text class="txt">{{ws.trim(content)}}</text></view>
         </block>
 
         <!-- 自定义内容 -->
