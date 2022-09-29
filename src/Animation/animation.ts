@@ -19,6 +19,10 @@ Component({
             type: String,
             value: 'ease'
         },
+        extStyle: {
+            type: String,
+            value: '',
+        },
         name: {
             type: String,
             value: 'fadeIn',

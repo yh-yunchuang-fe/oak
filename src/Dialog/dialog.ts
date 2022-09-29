@@ -1,38 +1,53 @@
 import BasicBehavior from 'Mixins/basic'
 import OpenTypeBehavior from 'Mixins/open-type'
-import ButtonBehavior from 'Mixins/open-type'
+import ButtonBehavior from 'Mixins/button'
 
 Component({
     behaviors: [BasicBehavior, OpenTypeBehavior, ButtonBehavior],
+    options: {
+        multipleSlots: true
+    },
     properties: {
-        mask: {
-            type: Boolean,
-            value: true,
-        },
         show: {
             type: Boolean,
             value: false,
-            observer(newVal: boolean, oldVal: boolean): void {
-                if (!newVal && oldVal) {
-                    this._resetData()
-                }
-            }
         },
-        duration: {
-            type: Number,
-            value: 500,
+        type: {
+            type: String,
+            value: 'default', // default | bottom-close
+        },
+        closable: {
+            type: Boolean,
+            value: false,
         },
         maskClosable: {
             type: Boolean,
             value: true,
         },
-        cancleText: {
-            type: String,
-            value: '取消',
+        // 是否置灰确认按钮
+        disableConfirmBtn: {
+            type: Boolean,
+            value: false,
         },
-        confirmText: {
+        //标题的margin-bottom
+        titleMarginBottom: {
             type: String,
-            value: '确认',
+            value: ''
+        },
+        duration: {
+            type: Number,
+            value: 200,
+        },
+        buttons: {
+            type: Array,
+            value: [
+                { text: '取消', type: 'cancel', },
+                { text: '确认', type: 'confirm', }, //type: confirm | cancel
+            ]
+        },
+        buttonBlock: {
+            type: Boolean,
+            value: false
         },
         title: {
             type: String,
@@ -42,30 +57,43 @@ Component({
             type: String,
             value: '',
         },
-        confirmType: {
-            type: String,
-            value: '',
-        },
         zIndex: {
             type: Number,
-            value: 9,
+            value: 20,
         },
         confirmAsync: {
             type: Boolean,
             value: false,
-        }
+        },
+        /** 是否有协议 */
+        isAgreement: {
+            type: Boolean,
+            value: false,
+        },
+        /** 确认时必须勾选协议 */
+        confirmMustAgreement: {
+            type: Boolean,
+            value: false,
+        },
     },
     data: {
         okLoading: false,
+        agreement: false,
     },
     methods: {
+        /**
+         * 确认
+         * @param options 
+         */
         confirm(options: {}): void {
             const defaultOptions = {
                 onCancel: Function,
                 onConfirm: Function,
                 onClose: Function,
-                cancleText: '取消',
-                confirmText: '确认',
+                buttons: [
+                    { text: '取消', type: 'cancel', },
+                    { text: '确认', type: 'confirm', },
+                ]
             }
             this.setData({
                 show: true,
@@ -73,28 +101,40 @@ Component({
                 ...options,
             })
         },
-        _onPopupClose(): void {
-            const { maskClosable, onClose } = this.data
-
-            if (maskClosable) {
+        /**
+         * 关闭
+         */
+        close(): void {
+            this.setData({
+                show: false,
+            }, (): void => {
+                const { onClose } = this.data
                 if (typeof onClose === 'function') {
                     onClose()
+                    this._resetData()
                 } else {
                     this.triggerEvent('onClose')
                 }
-                this.close()
-            }
+            })
         },
-        _dialogCancle(): void {
-            const { onCancle } = this.data
+        /**
+         * 取消
+         */
+        _dialogCancel(): void {
+            const { onCancel } = this.data
             this.close()
-            if (typeof onCancle === 'function') {
-                onCancle()
+            if (typeof onCancel === 'function') {
+                onCancel()
+                this._resetData()
             } else {
-                this.triggerEvent('onCancle')
+                this.triggerEvent('onCancel')
             }
         },
+        /**
+         * 确认
+         */
         _dialogConfirm(): void {
+            if (this.data.disableConfirmBtn) {return  }
             const { onConfirm } = this.data
             !this.data.confirmAsync && this.close()
             this.data.confirmAsync && this.setData({
@@ -103,28 +143,35 @@ Component({
             if (typeof onConfirm === 'function') {
                 const close = this.close.bind(this)
                 onConfirm(close)
+                this._resetData()
             } else {
                 this.triggerEvent('onConfirm')
             }
         },
-        close(): void {
-            this.setData({
-                show: false,
-            }, (): void => {
-                this._resetData()
-            })
-        },
+        /**
+         * 关闭后重置数据
+         */
         _resetData(): void {
             clearTimeout(this.resetHandle)
             this.resetHandle = setTimeout((): void => {
                 this.setData({
                     title: '',
                     content: '',
+                    agreement: false,
                     okLoading: false,
                     confirmAsync: false
                 })
             }, this.data.duration)
-        }
+        },
+        // 协议点击
+        _changeAgreement(): void {
+            const agreement = this.data.agreement
+            this.setData({
+                agreement: !agreement
+            }, (): void => {
+                this.triggerEvent('onAgreement', { value: !agreement })
+            })
+        },
     },
-    externalClasses: ['dialog-class',],
+    externalClasses: ['dialog-class', 'title-class', 'content-class',],
 })

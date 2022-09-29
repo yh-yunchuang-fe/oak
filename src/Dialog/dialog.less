@@ -1,50 +1,160 @@
-@import "Style/variable";
-@import "Style/mixin";
+@import "./variable";
 
 .oak-dialog {
-    min-width: 500rpx;
-    background-color: @default-bg;
-    color: @txt-default;
+    width: @dialog-width;
+    border-radius: @dialog-radius;
+    position: absolute;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: #999;
+    position: relative;
     text-align: center;
-    border-radius: 30rpx;
     overflow: hidden;
+    background: @dialog-background-base;
+    padding-top: 30px;// ui坚持使用精确的px单位
+    padding-left: 36rpx;
+    padding-right: 36rpx;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    &-title {
-        padding: @wrap-padding 0 10rpx 0;
-        font-size: @font-size-title;
-        font-weight: bold;
-        line-height: 1;
+    &.onlySlot {
+        padding: 0;
     }
 
-    &-title_pd {
-        padding: 50rpx 0;
+    &.bottomClose {
+        background: @dialog-background-withclose;
+        border-radius: @dialog-radius-img;
+        padding: 0;
+        width: auto;
+    }
+
+    &-close {
+        width: @dialog-closeicon-outline-width;
+        height: @dialog-closeicon-outline-height;
+        color: @dialog-closeicon-outline-color;
+        font-size: 15px;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+
+        &_bottom {
+            display: inline-block;
+            font-size: @dialog-closeicon-size;
+            margin-top: @dialog-closeicon-padding;
+            line-height: 1em;
+            color: #fff;
+        }
+    }
+
+    &-title {
+        font-size: @dialog-title-size;
+        font-weight: @dialog-title-weight;
+        line-height: @dialog-title-height;
+        color: @dialog-title-color;
+        margin-bottom: 18px;
     }
 
     &-content {
-        padding: @wrap-padding-s 0 @wrap-padding-s * 2;
-        font-size: @font-size-subtitle;
-        line-height: @line-height-base;
+        font-size: @dialog-textarea-size;
+        line-height: @dialog-textarea-height;
+        max-height: @dialog-textarea-maxheight;
+        font-weight: @dialog-textarea-weight;
+        color: @dialog-textarea-color;
+        // margin-bottom: @dialog-padding-text-bottom;
+        overflow: scroll;
+        // white-space: pre-line;
+        text-align: left;
+        // 超出最高高度，强制显示滚动条
+        &::-webkit-scrollbar {
+                -webkit-appearance: none;
+            }
+            &::-webkit-scrollbar:vertical {
+                // 纵向滚动条
+                width: .06rem;
+            }
+            &::-webkit-scrollbar:horizontal {
+                // 横向滚动条
+                width: .06rem;
+            }
+            &::-webkit-scrollbar-thumb {
+                // 滚动块
+                background-color: #bbb;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-track {
+                // 滚动条的轨道
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar {
+                display: block;
+                width: .02rem;
+            }
+        font-size: 0;
+        .txt {
+            font-size: 30rpx;
+            margin: 0 auto;
+            display: inline-block;
+            text-align: left;
+            width: auto;
+            word-break: break-all;
+        }
+    }
 
+    &-slot {
+        max-height: 1000rpx;
+    }
 
-        &_pd {
-            padding-top: @wrap-padding-s * 2;
+    &-agreement {
+        display: flex;
+        margin-bottom: @dialog-agreement-margin-vertical;
+
+        .checkbox {
+            font-size: @dialog-agreement-icon-size;
+            margin-right: @dialog-agreement-icon-padding;
+        }
+
+        .text {
+            flex: 1;
+            font-size: @dialog-agreement-font-size;
+            line-height: @dialog-agreement-font-height;
+            color: @dialog-agreement-font-color;
+            text-align: left;
+            vertical-align: middle;
         }
     }
 
     &-button {
+        width: 100%;
+        max-width: 100%;
         display: flex;
-    }
+        justify-content: center;
+        align-items: center;
+        margin-top: 18px;
+        margin-bottom: 18px;
+        flex-direction: row;
 
-    &-btn {
-        border-top: @border;
-        flex: 1;
+        .oak-button {
+            width: @dialog-btn-view-s;
+            margin: 0;
+            max-width: 100%;
 
-        &:first-child {
-            border-right: @border;
+            &:not(:first-child) {
+                margin-left: @dialog-btngroup-padding-horizontal;
+            }
         }
-    }
 
-    &-oakbtn {
-        border: none !important;
+        &.block {
+            flex-direction: column;
+
+            .oak-button {
+                width: @dialog-btn-view-l;
+                margin: 0;
+
+                &:not(:first-child) {
+                    margin: @dialog-btngroup-padding-vertical 0 0;
+                }
+            }
+        }
     }
 }

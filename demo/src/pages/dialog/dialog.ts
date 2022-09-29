@@ -2,7 +2,15 @@
 //获取应用实例
 Page({
     data: {
-        confirmAsync: false
+        confirmAsync: false,
+        show: false,
+        buttonBlock: false,
+        closable: false,
+        maskClosable: true,
+        title: '',
+        content: '',
+        buttons: [],
+        type: 'default',
     },
     onShareAppMessage(): object {
         return {
@@ -36,14 +44,27 @@ Page({
         this.selectComponent!('#dialog').confirm({
             title: '实例调用',
             content: '同一页面中存在多次调用时推荐',
-            cancleText: '取消',
-            confirmText: '知道了',
+            buttons:[{text:'取消', type:'cancel'},{text:'知道了',type:'confirm'}],
             confirmAsync: true,
             onConfirm(hide: Function): void {
                 setTimeout((): void => {
                     hide()
                 }, 2000)
             }
+        })
+    },
+    onClose(): void {
+        this.setData!({
+            title: '',
+            content: '',
+            diy: false,
+            confirmAsync: false,
+            show: false,
+            buttonBlock: false,
+            closable: false,
+            maskClosable: true,
+            buttons: [],
+            type: 'default',
         })
     }
 })

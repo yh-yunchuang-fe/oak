@@ -1,6 +1,7 @@
 {
     "navigationBarTitleText": "Dialog 弹窗",
     "usingComponents": {
+        "oak-image": "/Image/image",
         "oak-dialog": "/Dialog/dialog",
         "oak-button": "/Button/button"
     }

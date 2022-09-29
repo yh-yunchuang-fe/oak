@@ -1,7 +1,9 @@
 {
   "usingComponents": {
-    "oak-popup": "../Popup/popup",
-    "oak-button": "../Button/button"
+    "oak-overlay": "../Overlay/overlay",
+    "oak-button": "../Button/button",
+    "oak-icon": "../Icon/icon",
+    "oak-checkbox": "../Checkbox/checkbox"
   },
   "component": true
 }
